@@ -5,6 +5,9 @@
   var rpp = 10;
   var pagination = document.getElementById('pagination')
 
+
+
+
   function filterTable(value, columns, classesToHide) {
     [].forEach.call(rows, function(row, index) {
       var hideRow = true
@@ -48,9 +51,11 @@
 
   // Bind filtering functionality to search box
   var searchBox = document.getElementById('search-input')
-  var applicationType = document.getElementById('application-type')
-  var applicationProgress = document.getElementById('application-progress')
+  var applicationGroup = document.getElementById('application-group')
+  var applicationType = document.getElementById('application-type2')
+  var applicationProgress = document.getElementById('application-progress2')
   var searchForm = document.getElementById('search')
+  var searchButton = document.getElementById('search-button')
   searchForm.addEventListener('submit', function(e) {
     e.preventDefault()
     updateSearch()
@@ -60,8 +65,9 @@
 
 
   // Change handler on the checkboxes
-  applicationProgressCheckboxes = Array.prototype.slice.call(document.querySelectorAll('[name="application-progress"]'));
-  applicationTypeCheckboxes = Array.prototype.slice.call(document.querySelectorAll('[name="application-type"]'));
+  applicationGroupCheckboxes = Array.prototype.slice.call(document.querySelectorAll('[name="application-group"]'));
+  applicationProgressCheckboxes = Array.prototype.slice.call(document.querySelectorAll('[name="application-progress2"]'));
+  applicationTypeCheckboxes = Array.prototype.slice.call(document.querySelectorAll('[name="application-type2"]'));
   applicationProgressCheckboxes.concat(applicationTypeCheckboxes).forEach(function(checkbox, index) {
     checkbox.addEventListener('change', function(e) {
       updateSearch()
@@ -81,24 +87,23 @@
   function updateSearch() {
     resetTable()
 
-    const applicationProgressChoices = getSelectedCheckboxValues(applicationProgressCheckboxes)
-    // if (applicationProgressChoices.length > 0) {
-        filterTable(applicationProgressChoices, [5])
+    if(searchBox.value.length >= 1) {
+      filterTable(searchBox.value, [0,1,2,3,4,5,6,7])
+    }
 
-    // }
+    const applicationGroupChoices = getSelectedCheckboxValues(applicationGroupCheckboxes)
+    if (applicationGroupChoices.length >=1) {
+        filterTable(applicationGroupChoices, [3])}
 
     const applicationTypeChoices = getSelectedCheckboxValues(applicationTypeCheckboxes)
-    if (applicationTypeChoices.length > 0) {
-        filterTable(applicationTypeChoices, [3])
+    if (applicationTypeChoices.length >=1) {
+        filterTable(applicationTypeChoices, [3])}
 
-    } else {
-        filterTable(applicationTypeChoices, [0])
-      }
+    const applicationProgressChoices = getSelectedCheckboxValues(applicationProgressCheckboxes)
+    if (applicationProgressChoices.length >=1) {
+        filterTable(applicationProgressChoices, [3])}
 
 
-    if(searchBox.value.length > 0) {
-      filterTable(searchBox.value, [2, 3])
-    }
 
 // //     // paginate
 //     resultSet = Array.prototype.slice.call(rows).filter(function(row) {
@@ -135,50 +140,12 @@
 
     searchBox.value = ''
     applicationTypeCheckboxes.concat(applicationProgressCheckboxes).forEach(function(checkbox) {
-      checkbox.checked = true
+      checkbox.checked = false
     })
     // hideViewed.checked = false
   })
 
-  // // Pagination control
-  // function renderPagination(resultSet) {
-  //
-  //   var totalPages = Math.ceil(resultSet.length / rpp)
-  //   pagination.innerHTML = ''
-  //   if(totalPages > 1) {
-  //     var link
-  //     for(i=0; i<totalPages; i++) {
-  //         link = document.createElement('a')
-  //         link.textContent = i + 1
-  //         link.href = '#'
-  //         link.style.marginRight = '10px'
-  //         link.setAttribute('data-page', i)
-  //         link.addEventListener('click', function(e) {
-  //           e.preventDefault()
-  //           page = parseInt(this.getAttribute('data-page'))
-  //           updateSearch()
-  //         })
-  //         pagination.appendChild(link)
-  //     }
-  //   }
-  // }
 
-  // select all //
-  $('#select-all').click(function(event) {
-      if(this.checked) {
-          // Iterate each checkbox
-          $('.checkbox-progress input[type="checkbox"]').each(function() {
-              this.checked = true;
-          });
-      } else {
-          $('.checkbox-progress input[type="checkbox"]').each(function() {
-              this.checked = false;
-          });
-        }
-
-      updateSearch();
-
-  });
 
   // select all session C//
   $('#select-all').click(function(event) {
@@ -197,29 +164,5 @@
 
   });
 
-
-
-
-
-
-
 })()
 
-
-
-// var coll = document.getElementsByClassName("filter");
-// var i;
-//
-// for (i = 0; i < coll.length; i++) {
-//   coll[i].addEventListener("click", function() {
-//     this.classList.toggle("active");
-//     var content = this.nextElementSibling;
-//     if (content.style.display === "block") {
-//       content.style.display = "none";
-//     } else {
-//       content.style.display = "block";
-//     }
-//   });
-// }
-
-// table filter icons //
