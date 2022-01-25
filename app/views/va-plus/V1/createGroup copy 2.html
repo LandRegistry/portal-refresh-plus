@@ -1,0 +1,1551 @@
+<!DOCTYPE html>
+{% extends "layout_unbranded.html" %}
+{% block pageTitle %} View my applications
+{% endblock %}
+{% block content %}
+
+<script src="/public/javascripts/jquery-1.11.3.js"></script>
+
+<script type="text/javascript">
+    function goFurther(){
+    if (document.getElementById("chkAgree").checked == true)
+    document.getElementById("btnSubmit").disabled = false;
+    else
+    document.getElementById("btnSubmit").disabled = true;
+    }
+    </script>
+
+<script>
+    /* When the user clicks on the button, 
+    toggle between hiding and showing the dropdown content */
+    function myFunction() {
+      document.getElementById("myDropdown").classList.toggle("show");
+    }
+    
+    // Close the dropdown if the user clicks outside of it
+    window.onclick = function(event) {
+      if (!event.target.matches('.dropbtn')) {
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+          var openDropdown = dropdowns[i];
+          if (openDropdown.classList.contains('show')) {
+            openDropdown.classList.remove('show');
+          }
+        }
+      }
+    }
+
+    </script>
+
+<script type="text/javascript">
+    function hide_show_table(col_name)
+    {
+     var checkbox_val=document.getElementById(col_name).value;
+     if(checkbox_val=="hide")
+     {
+      var all_col=document.getElementsByClassName(col_name);
+      for(var i=0;i<all_col.length;i++)
+      {
+       all_col[i].style.display="none";
+      }
+      document.getElementById(col_name+"_head").style.display="none";
+      document.getElementById(col_name).value="show";
+     }
+        
+     else
+     {
+      var all_col=document.getElementsByClassName(col_name);
+      for(var i=0;i<all_col.length;i++)
+      {
+       all_col[i].style.display="table-cell";
+      }
+      document.getElementById(col_name+"_head").style.display="table-cell";
+      document.getElementById(col_name).value="hide";
+     }
+    }
+    </script>
+
+<style>
+.alert-icon {
+    animation: blink 2s;
+    animation-iteration-count: 3;
+}
+
+@keyframes blink {
+  0% { opacity: 0;}
+  50% { opacity: 1;}
+  100% { opacity: 0; }
+}
+
+.govuk-grid-column-one-half {
+    max-width: unset;
+}
+
+.govuk-width-container {
+    max-width: 100%;
+    padding: 0px !Important;
+}
+
+.navbar-container {
+    background-color: #00703C;
+    display:flow-root;
+    padding-right: 15px;
+    -webkit-box-shadow: inset 0px 2px 4px 0px rgb(0 0 0 / 15%);
+    -moz-box-shadow: inset 0px 2px 4px 0px rgba(0,0,0,0.15);
+    box-shadow: inset 0px 2px 4px 0px rgb(0 0 0 / 15%);
+    border-bottom: 0px solid #005ea5;
+}
+/* Navbar container */
+.navbar {
+  overflow: hidden;
+
+  font-family: Arial;
+  float: right;
+}
+
+/* Links inside the navbar */
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 0px 16px;
+  text-decoration: none;
+  line-height:70px;
+  font-weight: 700;
+}
+
+/* The dropdown container */
+.dropdown2 {
+  float: left;
+  overflow: hidden;
+}
+
+
+.dropdown2 .dropbtn2 {
+    font-size: 16px;
+    border: none;
+    outline: none;
+    color: white;
+    padding: 0px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+    line-height: 70px;
+    font-weight: 700;
+}
+
+.dropdown2 .dropbtn2:hover {
+    background-color: #1F8153;
+  cursor: pointer;
+}
+
+/* Add a red background color to navbar links on hover */
+.navbar a:hover, .dropdown:hover .dropbtn2 {
+  background-color: #1F8153;
+  cursor: pointer;
+}
+
+/* Dropdown content (hidden by default) */
+.dropdown-content2 {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  border-top: 0px solid #005ea5;
+}
+
+/* Links inside the dropdown */
+.dropdown-content2 a {
+  float: none;
+  color: black;
+  padding: 0px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    line-height: 50px;
+}
+
+/* Add a grey background color to dropdown links on hover */
+.dropdown-content2 a:hover {
+    background-color: #1F8153;
+    color: #fff;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown2:hover .dropdown-content2 {
+  display: block;
+}
+
+
+.searchBox {
+    border-width: 1px;
+    background-image:unset;
+    padding-left:10px;
+}
+
+.search-button {
+    margin-top: 0px; 
+    cursor: pointer; 
+    border-radius: 0px;
+    border-style: none;
+    height:39px;
+    width:39px;
+    background-color:#00703C;
+    color: white;
+    border-color: #00703C;
+    font-size: 17px;
+}
+
+.search-button:hover {
+    margin-top: 0px; 
+    cursor: pointer; 
+    border-radius: 0px;
+    border-style: none;
+    height:39px;
+    width:39px;
+    background:#1F8153;
+}
+
+.search-button:focus {
+    margin-top: 0px; 
+    cursor: pointer; 
+    border-radius: 0px;
+    border-style: none;
+    height:39px;
+    width:39px;
+    background:#1F8153;
+    outline:unset;
+}
+
+#search-button {
+    margin-top: 0px; 
+    cursor: pointer; 
+    border-radius: 0px;
+    border-style: none;
+    height:39px;
+    width:39px;
+}
+
+#search-button:hover {
+    margin-top: 0px; 
+    cursor: pointer; 
+    border-radius: 0px;
+    border-style: none;
+    height:39px;
+    width:39px;
+    background:#1F8153;
+}
+
+#search-button:focus {
+    margin-top: 0px; 
+    cursor: pointer; 
+    border-radius: 0px;
+    border-style: none;
+    height:39px;
+    width:39px;
+    background:#1F8153;
+    outline:unset;
+}
+
+.fa {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.fas {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.far {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.helpButton {
+    float:unset;
+}
+.govuk-details__summary {
+    display: inline-block;
+    position: relative;
+    margin-bottom: 10px;
+    padding-left: 25px;
+    color: #1F8153;
+    cursor: pointer;
+}
+
+.govuk-details__summary:hover {
+    color: #1F8153;
+}
+
+.govuk-details__summary:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    display: block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-color: transparent;
+    -webkit-clip-path: polygon(0% 0%, 100% 50%, 0% 100%);
+    clip-path: polygon(0% 0%, 100% 50%, 0% 100%);
+    border-width: 7px 0 7px 12.124px;
+    border-left-color: inherit;
+    background-image: url(/public/images/down-arrow.svg);
+    background-repeat: no-repeat;
+    background-position: center left -2px;
+    background-size: 40px 40px;
+}
+
+.govuk-details[open] > .govuk-details__summary:before {
+    display: block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-color: transparent;
+    -webkit-clip-path: polygon(0% 0%, 50% 100%, 100% 0%);
+    clip-path: polygon(0% 0%, 50% 100%, 100% 0%);
+    border-width: 12.124px 7px 0 7px;
+    border-top-color: inherit;
+    background-image: url(/public/images/up-arrow.svg);
+    background-repeat: no-repeat;
+    background-position: center left -2px;
+    background-size: 40px 40px;
+}
+
+.govuk-details__text {
+    padding: unset;
+    padding-left: unset;
+    border-left: unset;
+}
+
+a {
+    color:#00703C;
+}
+
+.govuk-link:link, a:link {
+    color: #00703C;
+}
+
+.govuk-link--no-visited-state {
+    color: #00703C !important;
+}
+
+/* New accordion expandable */
+
+.accordionNEW {
+  background-color: #ffffff;
+  padding: 18px 8px 0px 0px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 19px;
+  transition: 0.4s;
+  color: #00703C;
+  cursor: pointer;
+  margin-top: 9px;
+}
+
+.active, .accordionNEW:hover {
+  background-color: #ffffff;
+}
+
+.accordionNEW:before {
+    content: "";
+    width: 30px;
+    height: 30px;
+    background: white url(/public/images/down-arrow.svg);
+    background-size: 30px 30px;
+    top: -4px;
+    right: 5px;
+    position: relative;
+    float: left;
+}
+
+.active:before {
+    content: "";
+    width: 30px;
+    height: 30px;
+    background: white url(/public/images/up-arrow.svg);
+    background-size: 30px 30px;
+    top: -4px;
+    right: 5px;
+    position: relative;
+    float: left;
+}
+
+.panelNEW {
+  padding: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+
+
+.panelNEW.active {
+  overflow: unset;
+  max-height:unset;
+}
+
+.panelNEW.active:before {
+    content: unset;
+    width: unset;
+    height: unset;
+    background: unset;
+    background-size: unset;
+    top: unset;
+    right: unset;
+    position: unset;
+    float: unset;
+}
+
+.accordionBorder {
+    border-top:1px solid #b1b4b6;
+}
+
+.select2-container {
+    width: 300px !important;
+}
+
+.select2-container--open .select2-dropdown--below {
+    width: unset;
+    box-shadow: 0px 8px 16px 0px rgb(0 0 0 / 20%);
+}
+
+.dropbtn {
+    background-image: unset;
+    padding: 0px 15px;
+}
+
+.dropbtn:hover {
+    background-image: unset;
+    padding: 0px 15px;
+}
+
+
+
+.dropdown .dropdown-label {
+    width: 280px !important;
+    padding-left: 8px;
+    padding-right: 10px;
+    background-position-x: 273px;
+}
+
+.dropdown.on .dropdown-list {
+    width: 274px !important;
+}
+
+
+.dropbtn:hover, .dropbtn:focus {
+    background-image: unset;
+}
+
+.govuk-fieldset {
+    padding: 0px;
+}
+
+.checkbox2 .govuk-checkboxes__item {
+    width: 100%;
+    margin-bottom: 0px;
+}
+
+.checkbox3 .govuk-checkboxes__item {
+    width: 100%;
+    margin-bottom: 0px;
+}
+
+.govuk-form-group {
+    margin-bottom: 9px;
+}
+
+
+.hmlrRef_col {
+    display:none;
+}
+
+#hmlrRef_col_head {
+    display:none;
+}
+
+.expand_col {
+    display:none;
+}
+
+#expand_col_head {
+    display:none;
+}
+
+.govuk-table {
+    box-sizing: border-box;
+    border: unset;
+    position: relative;
+    border-width: unset;
+}
+
+.open {
+    border-bottom: 1px solid #44a477 !important;
+    background: #44a477 !important;
+    color: #fff !important;
+}
+
+.expandy-row {
+    border-bottom: 0px;
+}
+
+.my-work tbody td {
+    border-bottom: 0px solid #ddd;
+    border-top: 0px solid #ddd;
+    padding: 10px 16px 10px 16px;
+    font-size: .875rem;
+    line-height: 1.25rem;
+    font-weight: 400;
+    letter-spacing: .0178571429em;
+}
+
+tr {
+    border-bottom: 1px solid #dedede;
+}
+
+ th {
+    -webkit-font-smoothing: antialiased;
+    font-size: 1rem;
+    line-height: 1.375rem;
+}
+.govuk-table__header {
+    border-bottom: 0px solid #bfc1c3;
+}
+
+.govuk-table__header, .govuk-table__cell {
+    padding: 17px 16px 13px 16px;
+}
+
+.my-work {
+    -webkit-font-smoothing: antialiased;
+    font-size: .875rem;
+    line-height: 1.375rem;;
+}
+
+.sortable:after {
+    margin-left: 10px;
+    font-size:10px;
+    color:#00703C;
+}
+
+
+.tag {
+    border-radius: 0px;
+    float: right;
+    color: #0b0c0c;
+}
+
+.delayed-req {
+    margin-left: 85px;
+}
+
+.open .delayed {
+    background: #ffb5b5;
+}
+
+tr:hover {
+    background: #f4f4f4;
+}
+
+.expandedTitles {
+    font-size: 18px;
+    line-height: 24px;
+    padding-bottom: 5px;
+    float: left;
+    width: 100%;
+}
+
+.expandedText {
+    font-size: 0.9rem;
+    line-height: 1.2rem;
+    padding-bottom: 5px;
+    float: left;
+    width: 100%;
+}
+
+#search-button {
+    background-color: #00703C;
+    border-color: #00703C;
+}
+
+.rowContentSection {
+    padding-bottom: 20px;
+    padding-right: unset;
+    width: 100%;
+}
+
+.combinedColumns {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.left-column {
+    padding: 30px 30px 0px 30px;
+    border-bottom: 5px solid #44a477;
+    border-left: 5px solid #44a477;
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    flex: 1;
+}
+
+.right-column {
+    padding: 30px 0px 0px 0px;
+    border-bottom: 5px solid #44a477;
+    border-right: 5px solid #44a477;
+    /* border-left: 0px; */
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    flex: 2;
+}
+
+.govuk-checkboxes--small .govuk-checkboxes__label {
+    padding: 11px 0px 10px 0px;
+    width: 100%;
+    letter-spacing: -0.1px;
+}
+
+.my-work tbody tr:hover {
+    cursor: pointer;
+}
+
+.my-work tr.expandy-row:hover {
+    background-color: transparent;
+    cursor: default;
+    color: #0b0c0c;
+}
+
+
+.my-work-2 tbody td {
+    border-bottom: 0px solid #ddd;
+    border-top: 0px solid #ddd;
+    padding: 10px 16px 10px 16px;
+    font-size: .875rem;
+    line-height: 1.25rem;
+    font-weight: 400;
+    letter-spacing: .0178571429em;
+}
+
+.table-content-section {
+    box-shadow: 0px 2px 4px 0px rgb(0 0 0 / 15%);
+    border-radius: 5px;
+    background: #ffffff;
+    padding: 50px;
+    max-width: 650px;
+    margin: auto;
+}
+
+.my-work-2 tbody tr:hover {
+    cursor: pointer;
+
+}
+
+.my-work-2 tr.expandy-row:hover {
+    background-color: transparent;
+    cursor: default;
+    color: #0b0c0c;
+}
+
+.greyIcons {
+    fill:#dedede;
+}
+
+.greyButton:hover {
+    background-color: #1F8153;
+    border: 1px solid #1F8153;
+    color: #ffffff !important;
+    text-decoration: none;
+}
+
+.dropbtn:hover, .dropbtn:focus {
+    background-color: #1F8153;
+    border: 1px solid #1F8153;
+}
+
+
+.notificationContent {
+  padding: 20px;
+  width:290px;
+  margin-bottom: 0px;
+  background: #fff;
+}
+
+.notificationTopRow {
+  width:100%;
+display:flex;
+padding-bottom: 3px;
+}
+
+.notificationTitle {
+  font-size:16px;
+  font-weight:700;
+width:50%;
+}
+
+.myAccountTitle {
+  font-size:16px;
+  font-weight:700;
+padding-bottom: 3px;
+}
+
+.notificationTime {
+  font-size:12px;
+  font-weight:400;
+  text-align: right;
+  width:50%;
+}
+
+.notification2ndLine {
+  font-size:14px;
+  font-weight:400;
+  width: 100%;
+  padding-bottom:15px;
+}
+
+.myAccount2ndLine {
+  font-size:14px;
+  font-weight:400;
+  width: 100%;
+  padding-bottom:0px;
+}
+
+.notificationLink a {
+  font-size: 15px;
+    width: 100%;
+    float: left;
+    line-height: unset;
+    background-color: unset !important;
+    color: #00703C !important;
+    font-weight: 700;
+    padding: unset;
+}
+
+.myAccountLinks a {
+  font-size: 15px;
+    width: 100%;
+    line-height: unset;
+    background-color: unset !important;
+    color: #00703C !important;
+    font-weight: 700;
+    padding: unset;
+}
+
+
+.NotificationSingle {
+    display: grid;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #dedede;
+    margin-bottom: 20px;
+}
+
+.NotificationSingleLast {
+    display: grid;
+}
+
+.notificationNavNumber {
+  color: #1F8153;
+    background-color: #fff;
+    padding: 5px 9px;
+    border-radius: 500px;
+    font-weight: 700;
+}
+
+.myAccountContent {
+  width:177px;
+  padding: 25px;
+  background: #ffffff;
+  margin-bottom: 0px;
+}
+
+.myAccountContent a {
+  padding: 0px;
+}
+
+hr {
+  background: #dedede;
+    height: 1px;
+    border-style: none;
+    margin: 15px 0px;
+}
+
+#logOut {
+  margin-bottom: 0px;
+    margin-top: 25px;
+    width: 100%;
+}
+
+.parent {display: block;position: relative;float: left;line-height: 70px;}
+.parent a{margin: 20px;color: #FFFFFF;text-decoration: none;}
+.parent:hover > ul {display:block;position:absolute;}
+.child {display: none;}
+.child li {background-color: #ffffff;line-height: 40px;border-right:#CCC 1px solid; width:100%;}
+.child li a{color: #00703C; font-weight:700;font-size:15px;}
+ul{list-style: none;margin: 0;padding: 0px; min-width:10em;}
+ul ul ul{left: 100%;top: 0;margin-left:1px;}
+/* li:hover {background-color: #0ba961;} */
+.parent li:hover {background-color: #F0F0F0;}
+.expand{font-size:12px;float:right;margin-right:5px;}
+
+.child {
+    display: none;
+    box-shadow: 0px 8px 16px 0px rgb(0 0 0 / 10%);
+    z-index: 99999;
+}
+
+.govuk-radios__label {
+    font-size: 16px;
+}
+
+.govuk-button--secondary {
+    background-color: #ececec;
+    -webkit-box-shadow: 0 2px 0 #929191;
+    box-shadow: 0 2px 0 #929191;
+    color: #0b0c0c;
+    font-size: 17px;
+}
+
+
+.select2-container--default .select2-selection--single {
+    border: 2px solid #000000;
+}
+
+
+.select2-container--default .select2-selection--single .select2-selection__arrow b {
+    left: 0px;
+
+}
+
+.removeButton{
+  cursor: pointer;
+  border: none;
+  background-color: #ffffff;
+  text-decoration: underline;
+  color: #d3451c;
+  font-size: 14px;
+}
+
+.removeButton::before{
+  content: '(';
+  color: #0b0c0c;
+}
+
+.removeButton::after{
+  content: ')';
+  color: #0b0c0c;
+}
+
+</style>
+
+
+<!-- Back & clear data top -->
+<!-- Back & clear data top -->
+<div>
+
+<!-- Navigation Menu - Start -->
+<div class="navbar-container">
+
+    <img src="/public/images/HMLR_Logo.svg" alt="hmlrlogo" style="height: 44px;
+    padding-left: 30px;
+    padding-top: 14px;
+    padding-bottom: 5px;">
+     
+     <ul id="menu" style="float:right;">
+         <li class="parent"><a href="#">Home</a></li>
+         <li class="parent"><a href="#">Services <i class="fas fa-angle-down" style="margin-left:5px;"></i></a>
+         <ul class="child">
+             <li class="parent"><a href="#">Applications <span class="expand"><i class="fas fa-angle-right"></i></span></a>
+                 <ul class="child">
+                 <li><a href="#">Link 1</a></li>
+                 <li><a href="#">Link 2</a></li>
+                 <li><a href="#">Link 3</a></li>
+                 <li><a href="#">Link 4</a></li>
+                 <li><a href="#">Link 5</a></li>
+                 <li><a href="#">Link 6</a></li>
+                 <li><a href="#">Link 8</a></li>
+                 <li><a href="#">Link 9</a></li>
+                 </ul>
+  
+             </li>
+             <li class="parent"><a href="#">Service 3</a>
+  
+             </li>
+             <li class="parent"><a href="#">Service 4</a>
+             </li>
+             <li class="parent"><a href="#">Service 5</a>
+             </li>
+             <li class="parent"><a href="#">Service 6</a>
+  
+             </li>
+             <li class="parent"><a href="#">Service 7</a>
+  
+             </li>
+             <li class="parent"><a href="#">Service 8</a>
+  
+             </li>
+  
+         </ul>
+         </li>
+         <!-- <li class="parent"><a href="#">Notifications <span class="notificationNavNumber">2</span> <i class="fas fa-angle-down"></i></a>
+         <ul class="child">
+             <div class="notificationContent govuk-body">
+  
+  
+           <div class="NotificationSingle">
+               <div class="notificationTopRow">
+                   <div class="notificationTitle">
+                     New Requisition
+                   </div>
+                   <div class="notificationTime">
+                     6 minutes ago
+                   </div>
+             </div>
+               <div class="notification2ndLine">
+                 <b>Title number:</b> CC78908
+               </div>
+               <div class="notificationLink">
+                 <a href="#" style="margin:0px;">Respond to requisition</a>
+               </div>
+           </div>
+  
+  
+           <div class="NotificationSingleLast">
+             <div class="notificationTopRow">
+                 <div class="notificationTitle">
+                   New PDF Available
+                 </div>
+                 <div class="notificationTime">
+                   12 minutes ago
+                 </div>
+           </div>
+             <div class="notification2ndLine">
+               <b>Official Copy</b>
+             </div>
+             <div class="notificationLink">
+               <a href="#" style="margin:0px;">Download</a>
+             </div>
+         </div>
+  
+  
+         </div>
+         </ul>
+         
+         </li> -->
+  
+         <li class="parent"><a href="#">Contact us</a></li>
+  
+         <li class="parent"><a href="#">Andy Carr <i class="fas fa-angle-down" style="margin-left:5px;"></i></a>
+             <ul class="child" style="right:0;">
+         
+         
+         
+         
+             <div class="govuk-body myAccountContent">
+  
+                   <div>
+                     <div class="myAccountTitle" style="padding-bottom:3px;">
+                       Logged in as:
+                     </div>
+                     <div class="myAccount2ndLine">
+                        Administrator 
+                     </div>
+                     <a href="#" style="margin:0px;color:#00703C;font-weight:700;font-size:14px;">View profile</a>
+                   </div>
+  
+                   <hr>
+  
+                   <div class="myAccountTitle" style="padding-bottom:3px;">
+                     <b>Primary Business Unit Administrator (BUA):</b> 
+                   </div>
+                   <div class="myAccount2ndLine">
+                     John Taylor
+                     <!-- <a href="#" style="margin:0px;color:#00703C;"><b>JohnTaylor@bigbusiness.com</b></a> -->
+                   </div>
+  
+  
+  
+  
+                   <button id="logOut" class="govuk-button" style="margin-top:20px;">Log out</button>
+                 </div>
+  </div>
+<!-- Navigation Menu - End -->
+
+<!-- Content Area - Start -->
+<div style="background: #ececec;display: flex;">
+
+      <!-- Filters and Search Section - Start -->
+
+
+    <div id="FiltersAndSearch" style="width: 300px;float: left;padding: 30px;background: #fff;padding-top:50px;position: relative;">
+        <form id="search" style="padding-bottom:100px;">
+        <div class="" style="">
+          
+
+            <div>
+                <h1 class="govuk-heading-l" style="font-size:34px;">View applications</h1>
+            </div>
+    
+            <div class="govuk-body" style="margin-bottom: 0px;">
+                <div class="govuk-form-group" style="margin-bottom: 20px;">
+                   <label class="govuk-label form-label-bold">
+                      Search for an application by
+                   </label>
+                   <fieldset class="govuk-fieldset" style="padding:0px;">
+                     <div class="govuk-radios govuk-radios--small">
+                       <div class="govuk-radios__item">
+                         <input class="govuk-radios__input" id="changed-name" name="changed-name" type="radio" value="hmlrRef" checked>
+                         <label class="govuk-label govuk-radios__label" for="changed-name">
+                            HMLR reference or title number
+                         </label>
+                       </div>
+                       <div class="govuk-radios__item">
+                         <input class="govuk-radios__input" id="changed-name-3" name="changed-name" type="radio" value="year2">
+                         <label class="govuk-label govuk-radios__label" for="changed-name-3">
+                           Customer reference
+                         </label>
+                       </div>
+                     </div>
+                 
+                   </fieldset>
+                </div>
+ 
+ 
+            </div>
+ 
+ 
+             <div class="govuk-body" style="margin-bottom: 30px;">
+ 
+                <input type="text" id="search-input" class="searchBox" style="width: calc(100% - 57px);">
+                <button class="searchButton" value="submit" id="search-button"><i class="fas fa-search"></i></button>
+                <a href="#" id="reset" class="govuk-link govuk-link--no-visited-state" style="font-size: 14px;padding-top: 10px;display: block;"><u> Reset search</u></a>
+ 
+          </div>
+ 
+          <label class="govuk-label form-label-bold" style="padding-top:10px;">
+            Filter applications by
+         </label>
+ 
+
+         <button class="accordionNEW accordionBorder">Projects and teams</button>
+         <div class="panelNEW">
+            <button class="govuk-button govuk-button--secondary" style="margin-top: 10px;margin-bottom: 15px; "data-module="govuk-button" onclick="window.location.href='/projects/2.html'">
+                Create new
+              </button>
+         </div>
+
+
+
+            <button class="accordionNEW accordionBorder">Type</button>
+            <div class="panelNEW">
+
+      
+                        {{ govukCheckboxes ({
+                            idPrefix: "application-type2",
+                            name: "application-type2",
+                            classes: "govuk-checkboxes govuk-checkboxes--small checkbox2",
+                            fieldset: {
+                              legend: {
+                                text: ""
+                              }
+                            },
+                            items: [
+                            {
+                              value: "NewLease",
+                              text: "New lease (22)",
+                              checked: false,
+                              id: "NewLease"
+                            },
+
+                            {
+                                value: "OfficialCopies",
+                                text: "Official copies (17)"   ,
+                                  checked: false,
+                                id: "OfficialCopies"
+                              },
+
+                              {
+                                value: "OfficialSearchPart",
+                                text: "Official search of part with priority (34)"   ,
+                                  checked: false,
+                                id: "OfficialSearchPart"
+                              },
+
+                            {
+                                value: "OfficialSearchWhole",
+                                text: "Official search of whole with priority (12)"   ,
+                                  checked: false,
+                                id: "OfficialSearchWhole"
+                              },
+
+                              {
+                                value: "RegisterUpdate",
+                                text: "Register update (3)"   ,
+                                  checked: false,
+                                id: "RegisterUpdate"
+                              },
+
+                                                            {
+                                value: "SearchIndexMap",
+                                text: "Search of the index map (25)"   ,
+                                  checked: false,
+                                id: "SearchIndexMap"
+                              },
+
+                              {
+                                value: "TransferOfPart",
+                                text: "Transfer of part (24)"   ,
+                                  checked: false,
+                                id: "TransferOfPart"
+                              }
+                            ]
+                          }) }}     
+      
+ 
+            </div>
+
+
+          <button class="accordionNEW accordionBorder">Status</button>
+          <div class="panelNEW">
+                      {{ govukCheckboxes ({
+                        idPrefix: "application-progress2",
+                        name: "application-progress2",
+                        classes: "govuk-checkboxes govuk-checkboxes--small checkbox3",
+                        fieldset: {
+                        legend: {
+                          text: ""
+                        }
+                        },
+                        items: [
+
+                        {
+                        value: "Received",
+                        text: "Received (22)"   ,
+                        checked: false,
+                        id: "Received"
+                        },
+                        {
+                        value: "Cancelled",
+                        text: "Cancelled (14)"   ,
+                          checked: false,
+                        id: "Cancelled"
+                        },
+                        {
+                            value: "Completed",
+                            text: "Completed (74)"   ,
+                              checked: false,
+                            id: "Completed"
+                            },
+                        {
+                        value: "Delayed",
+                        text: "Delayed (6)"   ,
+                          checked: false,
+                        id: "Delayed"
+                        },
+                        {
+                            value: "DelayedRA",
+                            text: "Delayed - Requires Action (3)"   ,
+                              checked: false,
+                            id: "DelayedRA"
+                            },
+                            {
+                            value: "DelayedTime",
+                            text: "Delayed - Time Extension (2)"   ,
+                              checked: false,
+                            id: "DelayedTime"
+                            },
+
+                            {
+                                value: "DelayedPending",
+                                text: "Delayed - Prior Pending (1)"   ,
+                                  checked: false,
+                                id: "DelayedPending"
+                                }   
+                        ]
+                        }) 
+                    }}
+
+          </div>
+
+          <div class="accordionBorder" style="padding-top: 15px;margin-top: 9px; width: 100%;"></div>
+
+
+          <button class="govuk-button govuk-button--secondary" data-module="govuk-button" style="margin-right:18px;" onclick="window.location.href='/public/files/example-export.csv'">
+            Export applications
+          </button>
+
+          <button class="govuk-button govuk-button--secondary" data-module="govuk-button" onclick="window.location.href='#'">
+            Guidance
+          </button>
+         </div>
+
+          <div>
+
+        </div>
+        </form>
+        <button class="govuk-button" data-module="govuk-button" style="width: 285px; position:absolute; bottom:0px;margin-top:50px;" onclick="window.location.href='#'">
+            Start new application
+          </button>
+
+        <script>
+            var acc = document.getElementsByClassName("accordionNEW");
+            var i;
+            
+            for (i = 0; i < acc.length; i++) {
+              acc[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var panelNEW = this.nextElementSibling;
+                if (panelNEW.style.minHeight) {
+                  panelNEW.style.minHeight = null;
+                } else {
+  
+                  panelNEW.classList.toggle("active");
+                } 
+              });
+            }
+            </script>
+
+
+        </div>
+    <!-- Filters and Search Section - End -->
+
+
+        
+    <!-- Table Area - Start -->
+    <div style="width:calc(100% - 352px);float:left;; overflow-x: auto;padding:30px;">   
+
+        <div class="table-content-section">
+
+            <h1 class="govuk-heading-l" style="font-size:34px;margin-bottom:30px;">Create new project or team filter</h1>
+
+
+                 
+           <div class="govuk-grid-row">
+              <div class="govuk-grid-column-full">
+                 <hr style="margin-bottom:25px;">
+                 <div style="padding-top: 20px;min-height: 100px;">
+
+                  <div class="govuk-form-group" style="float: left;">
+                      <label class="govuk-label govuk-!-font-weight-bold" for="address-town">
+                        Project name
+                      </label>
+
+                      <input class="govuk-input" id="project-name" name="project-name" type="text" style="width:300px;" value="{{ data['project-name'] }}">
+                  </div>
+      
+                  <div class="govuk-form-group" style="float: left;margin-left: 50px;">
+                      <label class="govuk-label govuk-!-font-weight-bold" for="address-town">
+                        Project email address
+                      </label>
+                      
+                      <input class="govuk-input" id="project-email" name="project-email" type="text" style="width:300px;" value="{{ data['project-email'] }}"><div class="govuk-hint" style="font-size:16px;margin-top: 5px;">Notifications will be sent to this address</div>
+                  </div>
+      
+              </div>
+  
+              <div style="padding-top:25px;">
+                  <div class="govuk-body" style="margin-bottom: 0px;">
+                      <label class="govuk-label form-label-bold">
+                          Add project team members
+                      </label>
+                      <select id="cat" class="form-control" style="height:39px;width:300px;border:2px solid #000000;" type="submit" onchange="TeamMemberSelected()">
+                              <option value="#"></option>
+                              <option value="AaronFlynn">Aaron Flynn</option>
+                              <option value="AlexBlewett">Alex Blewett</option>
+                              <option value="AndyCarr">Andy Carr</option>
+                              <option value="DuncanAnderson">Duncan Anderson</option>
+                              <option value="JamesThomas">James Thomas</option>
+                              <option value="JohnBaptisteKelly">John Baptiste-Kelly</option>
+                              <option value="JohnJames">John James</option>
+                              <option value="JohnTaylor">John Taylor</option>
+                              <option value="JonParker">Jon Parker</option>
+                              <option value="JuanPintodelRio">Juan Pinto-del-Rio</option>
+                              <option value="LukasKroeningMaynard">Lukas Kroening-Maynard</option>
+                              <option value="MarkHornsby">Mark Hornsby</option>
+                              <option value="MelviaMathew">Melvia Mathew</option>
+                              <option value="NeilButler">Neil Butler</option>
+                              <option value="NicolaAndrews">Nicola Andrews</option>
+                              <option value="PatGannon">Pat Gannon</option>
+                              <option value="RomaniDavies">Romani Davies</option>
+                              <option value="SimonSkidmore">Simon Skidmore</option>
+                              <option value="SueWatchman">Sue Watchman</option>
+                              <option value="TonyWatson">Tony Watson</option>
+                      </select>
+                  </div>
+
+                <!-- <label class="govuk-label form-label-bold" style="padding-top:30px;">
+                    Select the project owner
+                </label>
+  
+                  <div class="govuk-form-group">
+                    <fieldset class="govuk-fieldset">
+                      <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                        <div class="govuk-checkboxes__item">
+                          <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc" checked>
+                          <label class="govuk-label govuk-checkboxes__label" for="organisation">
+                            John Baptise-Kelly (<span style="color:#d4351c; text-decoration: underline;font-size:14px;">remove</span>)
+                          </label>
+                        </div>
+                        <div class="govuk-checkboxes__item">
+                          <input class="govuk-checkboxes__input" id="organisation-2" name="organisation" type="checkbox" value="employment-tribunal">
+                          <label class="govuk-label govuk-checkboxes__label" for="organisation-2">
+                            Andy Carr (<span style="color:#d4351c; text-decoration: underline;font-size:14px;">remove</span>)
+                          </label>
+                        </div>
+                        <div class="govuk-checkboxes__item">
+                          <input class="govuk-checkboxes__input" id="organisation-3" name="organisation" type="checkbox" value="MOD">
+                          <label class="govuk-label govuk-checkboxes__label" for="organisation-3">
+                            Pat Gannon (<span style="color:#d4351c; text-decoration: underline;font-size:14px;">remove</span>)
+                          </label>
+                        </div>
+                        <div class="govuk-checkboxes__item">
+                          <input class="govuk-checkboxes__input" id="organisation-4" name="organisation" type="checkbox" value="DfT">
+                          <label class="govuk-label govuk-checkboxes__label" for="organisation-4">
+                            John Taylor (<span style="color:#d4351c; text-decoration: underline;font-size:14px;">remove</span>)
+                          </label>
+                        </div>
+                      </div> -->
+
+              </div>
+              <div class="Header_container">
+                <ul id="addHeaderhere">
+
+                </ul>
+              </div>
+
+              <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset">
+                  <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes" id="MembersGoHere">
+                    <!-- <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="AaronFlynn" name="AaronFlynn" type="checkbox" value="AaronFlynn">
+                      <label class="govuk-label govuk-checkboxes__label" for="organisation">
+                        Aaron Flynn
+                      </label>
+                    </div> -->
+                    
+                    
+ 
+                  </div>
+              
+                </fieldset>
+              </div>
+
+            </form>
+  
+              <hr style="margin:50px 0px 40px 0px;">
+  
+  
+              <div class="govuk-body" style="margin-bottom:0px;">
+                  <h3 class="govuk-heading-m" style="margin-bottom:5px;">Confirm</h3>
+          
+                  <p style="margin-bottom:0px;letter-spacing:-0.2px;">
+  In creating this project, I am aware that <b>all</b> project team members will have access to <b>all</b> correspondence and notifications related to this project. Members of this project will be able to reply to requisitions and access DRS applications on behalf of my organisation.
+  
+  
+  <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset" aria-describedby="waste-hint" style="padding:0px;">
+  
+        <div class="govuk-checkboxes" style="margin-top:25px;">
+          
+              <div class="govuk-checkboxes__item">
+                  <input type="checkbox" id="chkAgree" onclick="goFurther()" class="govuk-checkboxes__input" name="chkAgree">
+                  <label class="govuk-label govuk-checkboxes__label" for="chkAgree" style="font-weight: 700;">
+                     I consent to this on behalf of my organisation
+                  </label>
+               </div>
+           </div>
+       </fieldset>
+   </div>
+  
+  
+  
+                  </p>
+          
+              </div>
+  
+              <hr style="margin:50px 0px;">
+  
+              <div style="padding-bottom:40px;">
+                  <button class="govuk-button govuk-button--secondary" data-module="govuk-button"  style="float:left;margin-bottom:0px;">
+                      Cancel
+                  </button>
+  
+                  <button class="govuk-button" data-module="govuk-button" style="float:right;width:150px;margin-bottom:0px;" id="btnSubmit" onclick="window.location.href='5.html'" disabled>
+                      Create project
+                    </button>
+          
+  
+              </div>
+              </div>
+           </div>
+           <!--This answer appears if you select the "NO" radio button in question 1--> 
+           <div class="govuk-grid-row desc" id="question1B">
+            <div class="govuk-grid-column-full">
+               <hr style="margin-bottom:25px;">
+               <div style="padding-top: 20px;min-height: 100px;">
+
+                <div class="govuk-form-group" style="float: left;">
+                    <label class="govuk-label govuk-!-font-weight-bold" for="address-town">
+                      Team name
+                    </label>
+
+                    <input class="govuk-input" id="team-name" name="team-name" type="text" style="width:300px;" value="{{ data['team-name'] }}">
+                </div>
+    
+                <div class="govuk-form-group" style="float: left;margin-left: 50px;">
+                  <label class="govuk-label form-label-bold">
+                    Add team members
+                </label>
+                <select id="cat" class="form-control" style="height:39px;width:300px;border:2px solid #000000;" onchange="location = this.value;">
+                        <option value="#"></option>
+                        <option value="#">Aaron Flynn</option>
+                        <option value="#">Alex Blewett</option>
+                        <option value="2.html">Andy Carr</option>
+                        <option value="#">Duncan Anderson</option>
+                        <option value="#">James Thomas</option>
+                        <option value="/teams/1.html">John Baptiste-Kelly</option>
+                        <option value="#">John James</option>
+                        <option value="4.html">John Taylor</option>
+                        <option value="#">Jon Parker</option>
+                        <option value="#">Juan Pinto-del-Rio</option>
+                        <option value="#">Lukas Kroening-Maynard</option>
+                        <option value="#">Mark Hornsby</option>
+                        <option value="#">Melvia Mathew</option>
+                        <option value="#">Neil Butler</option>
+                        <option value="#">Nicola Andrews</option>
+                        <option value="3.html">Pat Gannon</option>
+                        <option value="#">Romani Davies</option>
+                        <option value="#">Simon Skidmore</option>
+                        <option value="#">Sue Watchman</option>
+                        <option value="#">Tony Watson</option>
+                </select>
+                </div>
+
+                
+
+               
+    
+            </div>
+
+            <!-- <label class="govuk-label form-label-bold" style="padding-top:0px;">
+              Select the team owner
+          </label>
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset">
+                <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc" checked>
+                    <label class="govuk-label govuk-checkboxes__label" for="organisation">
+                      John Baptise-Kelly (<span style="color:#d4351c; text-decoration: underline;font-size:14px;">remove</span>)
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="organisation-2" name="organisation" type="checkbox" value="employment-tribunal">
+                    <label class="govuk-label govuk-checkboxes__label" for="organisation-2">
+                      Andy Carr (<span style="color:#d4351c; text-decoration: underline;font-size:14px;">remove</span>)
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="organisation-3" name="organisation" type="checkbox" value="MOD">
+                    <label class="govuk-label govuk-checkboxes__label" for="organisation-3">
+                      Pat Gannon (<span style="color:#d4351c; text-decoration: underline;font-size:14px;">remove</span>)
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="organisation-4" name="organisation" type="checkbox" value="DfT">
+                    <label class="govuk-label govuk-checkboxes__label" for="organisation-4">
+                      John Taylor (<span style="color:#d4351c; text-decoration: underline;font-size:14px;">remove</span>)
+                    </label>
+                  </div>
+                </div> -->
+
+            <hr style="margin:25px 0px 40px 0px;">
+
+
+            <div style="padding-bottom:40px;">
+                <button class="govuk-button govuk-button--secondary" data-module="govuk-button"  style="float:left;margin-bottom:0px;">
+                    Cancel
+                </button>
+
+                <button class="govuk-button" data-module="govuk-button" style="float:right;width:150px;margin-bottom:0px;" id="btnSubmit" onclick="window.location.href='5.html'">
+                    Create team
+                  </button>
+        
+
+            </div>
+            </div>
+         </div>
+           <!--This answer appears if you select the "Don't know" radio button in question 1--> 
+
+        
+          </div>
+
+        </div>
+   
+
+        <!---CONTENT----------------------------------------------------------------->
+    </div>
+
+</div>
+
+</div>
+<!-- Content Area - End -->
+
+        <!-- footer -->
+
+            <div class="govuk-grid-column-full" style="padding:0px;border-top:5px solid #00703C;">
+
+        
+        
+        
+<div style="padding:20px 30px;">
+            <a class="footlink" style="text-color: grey; text-decoration: none;"><u>Terms and conditions</u></a>
+            <a>|</a>
+            <a class="footlink" style="text-color: grey; text-decoration: none;"><u>Accessibility statement</u></a>
+            <a>|</a>
+            <a class="footlink" style="text-color: grey; text-decoration: none;"><u>Freedom of information</u></a>
+            <a>|</a>
+            <a class="footlink" style="text-color: grey; text-decoration: none;"><u>© Crown copyright</u></a>
+            <br>
+            <br>
+            <p style="color: grey; text-decoration: none;    font-size: 16px;"><i>These links will open in a new window.</i></p>
+        </div>
+            </div>
+
+
+
+    
+    
+        <!-- </footer> -->
+
+
+
+
+
+
+{% endblock %}

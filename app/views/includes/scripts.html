@@ -9,7 +9,43 @@
 <script src="/public/javascripts/table-filtering.js"></script>
 <script src="/public/javascripts/expandy-rows.js"></script>
 <script src="/public/javascripts/sortable-table.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+<script src="/public/javascripts/AddTeam-members-project.js" defer></script>
 
 {% if useAutoStoreData %}
   <script src="/public/javascripts/auto-store-data.js"></script>
 {% endif %}
+
+<script>
+  $(document).ready(function() {
+  $('#cat').select2({
+    placeholder: "Select a colleague"
+    });
+  });
+  </script>
+
+<script>
+  (function($) {
+
+var Defaults = $.fn.select2.amd.require('select2/defaults');
+
+$.extend(Defaults.defaults, {
+    searchInputPlaceholder: 'Search...'
+});
+
+var SearchDropdown = $.fn.select2.amd.require('select2/dropdown/search');
+
+var _renderSearchDropdown = SearchDropdown.prototype.render;
+
+SearchDropdown.prototype.render = function(decorated) {
+
+    // invoke parent method
+    var $rendered = _renderSearchDropdown.apply(this, Array.prototype.slice.apply(arguments));
+
+    this.$search.attr('placeholder', this.options.get('searchInputPlaceholder'));
+
+    return $rendered;
+};
+
+})(window.jQuery);
+</script>
