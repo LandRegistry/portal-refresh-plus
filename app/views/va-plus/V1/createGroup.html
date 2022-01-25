@@ -618,6 +618,24 @@ tr:hover {
     font-size: 17px;
 }
 
+.govuk-fieldset {
+    padding: 10px 20px 10px 0px;
+}
+
+.govuk-form-group {
+    margin-bottom: 0px;
+}
+
+.open {
+    border-bottom: 1px solid #44a477 !important;
+    background: #44a477 !important;
+    color: #fff !important;
+}
+
+.govuk-table {
+    border-collapse: inherit;
+}
+
 </style>
 
 
@@ -817,6 +835,35 @@ tr:hover {
 
          <button class="accordionNEW accordionBorder">Groups</button>
          <div class="panelNEW">
+
+
+            {{ govukCheckboxes ({
+                idPrefix: "application-group",
+                name: "application-group",
+                classes: "govuk-checkboxes govuk-checkboxes--small checkbox2",
+                fieldset: {
+                  legend: {
+                    text: ""
+                  }
+                },
+                items: [
+                {
+                  value: "HS2",
+                  text: "HS2",
+                  checked: false,
+                  id: "HS2"
+                },
+
+                {
+                    value: "Westfields",
+                    text: "Westfields"   ,
+                      checked: false,
+                    id: "Westfields"
+                  }
+
+                ]
+              }) }}  
+
             <button class="govuk-button govuk-button--secondary" style="margin-top: 10px;margin-bottom: 15px; "data-module="govuk-button" onclick="window.location.href='/projects/2.html'">
                 Create new group
               </button>
@@ -840,49 +887,35 @@ tr:hover {
                             items: [
                             {
                               value: "NewLease",
-                              text: "New lease (22)",
+                              text: "New lease (1)",
                               checked: false,
                               id: "NewLease"
                             },
 
                             {
                                 value: "OfficialCopies",
-                                text: "Official copies (17)"   ,
+                                text: "Official copies (1)"   ,
                                   checked: false,
                                 id: "OfficialCopies"
                               },
 
-                              {
-                                value: "OfficialSearchPart",
-                                text: "Official search of part with priority (34)"   ,
-                                  checked: false,
-                                id: "OfficialSearchPart"
-                              },
-
                             {
                                 value: "OfficialSearchWhole",
-                                text: "Official search of whole with priority (12)"   ,
+                                text: "Official search of whole with priority (1)"   ,
                                   checked: false,
                                 id: "OfficialSearchWhole"
                               },
 
                               {
                                 value: "RegisterUpdate",
-                                text: "Register update (3)"   ,
+                                text: "Register update (4)"   ,
                                   checked: false,
                                 id: "RegisterUpdate"
                               },
 
-                                                            {
-                                value: "SearchIndexMap",
-                                text: "Search of the index map (25)"   ,
-                                  checked: false,
-                                id: "SearchIndexMap"
-                              },
-
                               {
                                 value: "TransferOfPart",
-                                text: "Transfer of part (24)"   ,
+                                text: "Transfer of part (1)"   ,
                                   checked: false,
                                 id: "TransferOfPart"
                               }
@@ -938,7 +971,7 @@ tr:hover {
 
           <div class="accordionBorder" style="padding-top: 15px;margin-top: 9px; width: 100%;"></div>
 
-          <div style="padding-bottom: 65px;">
+          <div style="padding-bottom: 65px;margin-bottom: 65px;">
             <button id="reset" class="govuk-button govuk-button--secondary" data-module="govuk-button" style="margin-right:10px;margin-bottom:10px;" onclick="window.location.href='#'">
                Reset search and filters
              </button>
@@ -1013,7 +1046,7 @@ tr:hover {
                  <div>Title number</div>
               </th>
             <th class="govuk-table__header sortable" scope="col">
-               <div>Project/Team</div>
+               <div>Group</div>
             </th>
               <th class="govuk-table__header sortable" scope="col">
                  <div>Customer reference</div>
@@ -1045,8 +1078,8 @@ tr:hover {
               <td class="govuk-table__cell "></td>
               <td class="govuk-table__cell ">Jones.20313</td>
               <td class="govuk-table__cell Substantive" id="">
-                 Register Update
-                 <p class="govuk-visually-hidden"> Preliminary Cancelled </p>
+                 Register update
+                 <p class="govuk-visually-hidden"> RegisterUpdate Cancelled </p>
               </td>
               <td class="govuk-table__cell " scope="row" data-sortable="2021-08-05">05/08/21</td>
               <td class="govuk-table__cell " scope="row">Cancelled</td>
@@ -1055,7 +1088,7 @@ tr:hover {
            </tr>
            <!-- 1 Expanded row -->
            <tr class="govuk-table__row expandy-row hide-row accordion-default-content-1" style="vertical-align: top;">
-              <td class="govuk-table__cell" colspan="7" style="padding-top: 30px;">
+              <td class="govuk-table__cell" colspan="8" style="padding-top: 30px; border: 5px solid #44a477;">
                  <div>
                     <div class="rowContentSection">
                        <div class="expandedTitles">
@@ -1145,8 +1178,8 @@ tr:hover {
             <td class="govuk-table__cell "></td>
             <td class="govuk-table__cell ">Benson.Hall85</td>
             <td class="govuk-table__cell Substantive" id="">
-                Register Update
-                <p class="govuk-visually-hidden"> Preliminary Received </p>
+                Register update
+                <p class="govuk-visually-hidden"> RegisterUpdate Received </p>
             </td>
             <td class="govuk-table__cell " scope="row" data-sortable="2021-08-01">01/08/21</td>
             <td class="govuk-table__cell " scope="row">Received</td>
@@ -1156,7 +1189,7 @@ tr:hover {
         <!-- 1 Expanded row -->
         <tr class="govuk-table__row expandy-row hide-row accordion-default-content-1" style="vertical-align: top;">
 
-            <td class="govuk-table__cell" colspan="7" style="padding-top: 30px;">
+            <td class="govuk-table__cell" colspan="8" style="padding-top: 30px; border: 5px solid #44a477;">
                 <div>
                     <div class="rowContentSection">
                     <div class="expandedTitles">
@@ -1246,8 +1279,8 @@ tr:hover {
                 <td class="govuk-table__cell "></td>
                 <td class="govuk-table__cell ">Ainsley.Brown.43</td>
                 <td class="govuk-table__cell Substantive" id="">
-                    Register Update
-                    <p class="govuk-visually-hidden"> Preliminary Delayed </p>
+                    Register update
+                    <p class="govuk-visually-hidden"> RegisterUpdate Delayed </p>
                 </td>
                 <td class="govuk-table__cell " scope="row" data-sortable="2021-07-25">25/07/21</td>
                 <td class="govuk-table__cell " scope="row">Delayed</td>
@@ -1257,7 +1290,7 @@ tr:hover {
             <!-- 1 Expanded row -->
             <tr class="govuk-table__row expandy-row hide-row accordion-default-content-1" style="vertical-align: top;">
 
-                <td class="govuk-table__cell" colspan="7" style="padding-top: 30px;">
+                <td class="govuk-table__cell" colspan="8" style="padding-top: 30px; border: 5px solid #44a477;">
                     <div>
                         <div class="rowContentSection">
                         <div class="expandedTitles">
@@ -1334,8 +1367,8 @@ tr:hover {
                 <td class="govuk-table__cell "></td>
                 <td class="govuk-table__cell ">Ainsley.Brown.43</td>
                 <td class="govuk-table__cell Substantive" id="">
-                    Register Update
-                    <p class="govuk-visually-hidden"> Preliminary Received </p>
+                    Register update
+                    <p class="govuk-visually-hidden"> RegisterUpdate Received </p>
                 </td>
                 <td class="govuk-table__cell " scope="row" data-sortable="2021-07-25">25/07/21</td>
                 <td class="govuk-table__cell " scope="row">Received</td>
@@ -1345,7 +1378,7 @@ tr:hover {
             <!-- 1 Expanded row -->
             <tr class="govuk-table__row expandy-row hide-row accordion-default-content-1" style="vertical-align: top;">
 
-                <td class="govuk-table__cell" colspan="7" style="padding-top: 30px;">
+                <td class="govuk-table__cell" colspan="8" style="padding-top: 30px; border: 5px solid #44a477;">
                     <div>
                         <div class="rowContentSection">
                         <div class="expandedTitles">
@@ -1420,11 +1453,11 @@ tr:hover {
                   <p class="govuk-visually-hidden">LP980123</p>
                   <!-- THIS IS PAGE {{page}} -->
                </td>
-               <td class="govuk-table__cell "></td>
+               <td class="govuk-table__cell ">HS2</td>
                <td class="govuk-table__cell ">JT/391/Williams</td>
                <td class="govuk-table__cell Substantive" id="">
-                New Lease
-                  <p class="govuk-visually-hidden"> Preliminary Received </p>
+                New lease
+                  <p class="govuk-visually-hidden"> HS2 NewLease Received</p>
                </td>
                <td class="govuk-table__cell " scope="row" data-sortable="2021-07-14">14/07/21</td>
                <td class="govuk-table__cell " scope="row">Received</td>
@@ -1434,7 +1467,7 @@ tr:hover {
             <!-- 1 Expanded row -->
             <tr class="govuk-table__row expandy-row hide-row accordion-default-content-1" style="vertical-align: top;">
 
-               <td class="govuk-table__cell" colspan="7" style="padding-top: 30px;">
+               <td class="govuk-table__cell" colspan="8" style="padding-top: 30px; border: 5px solid #44a477;">
                   <div>
                      <div class="rowContentSection">
                         <div class="expandedTitles">
@@ -1517,11 +1550,11 @@ tr:hover {
                 <p class="govuk-visually-hidden">LP09209</p>
                 <!-- THIS IS PAGE {{page}} -->
             </td>
-            <td class="govuk-table__cell ">Montpellier</td>
+            <td class="govuk-table__cell ">HS2</td>
             <td class="govuk-table__cell ">Bartlett.23124</td>
             <td class="govuk-table__cell Substantive" id="">
-                Official Copies
-                <p class="govuk-visually-hidden"> Substantive Completed </p>
+                Official copies
+                <p class="govuk-visually-hidden"> HS2 OfficialCopies Completed </p>
             </td>
             <td class="govuk-table__cell " scope="row" data-sortable="2021-08-01">01/08/21</td>
             <td class="govuk-table__cell " scope="row">Completed</td>
@@ -1531,7 +1564,7 @@ tr:hover {
             <!-- 1 Expanded row -->
             <tr class="govuk-table__row expandy-row hide-row accordion-default-content-1" style="vertical-align: top;">
 
-            <td class="govuk-table__cell" colspan="7" style="padding-top: 30px;">
+            <td class="govuk-table__cell" colspan="8" style="padding-top: 30px; border: 5px solid #44a477;">
                 <div>
                     <div class="rowContentSection">
                         <div class="expandedTitles">
@@ -1620,11 +1653,11 @@ tr:hover {
                 <p class="govuk-visually-hidden">CB980123</p>
                 <!-- THIS IS PAGE {{page}} -->
             </td>
-            <td class="govuk-table__cell ">Montpellier</td>
+            <td class="govuk-table__cell ">Westfields</td>
             <td class="govuk-table__cell ">Smith.20313</td>
             <td class="govuk-table__cell Substantive" id="">
-                Official Search of Whole with Priority
-                <p class="govuk-visually-hidden"> Substantive Completed </p>
+                Official search of whole with priority
+                <p class="govuk-visually-hidden"> Westfields OfficialSearchWhole Completed </p>
             </td>
             <td class="govuk-table__cell " scope="row" data-sortable="2021-05-14">14/05/21</td>
             <td class="govuk-table__cell " scope="row">Completed</td>
@@ -1634,7 +1667,7 @@ tr:hover {
             <!-- 1 Expanded row -->
             <tr class="govuk-table__row expandy-row hide-row accordion-default-content-1" style="vertical-align: top;">
 
-            <td class="govuk-table__cell" colspan="7" style="padding-top: 30px;">
+            <td class="govuk-table__cell" colspan="8" style="padding-top: 30px; border: 5px solid #44a477;">
                 <div>
                     <div class="rowContentSection">
                         <div class="expandedTitles">
@@ -1729,8 +1762,8 @@ tr:hover {
             <td class="govuk-table__cell "></td>
             <td class="govuk-table__cell ">Terry.43123</td>
             <td class="govuk-table__cell Substantive" id="">
-                Transfer of Part
-                <p class="govuk-visually-hidden"> Substantive Received </p>
+                Transfer of part
+                <p class="govuk-visually-hidden"> TransferOfPart Received </p>
             </td>
             <td class="govuk-table__cell " scope="row" data-sortable="2021-05-10">10/05/21</td>
             <td class="govuk-table__cell " scope="row">Received</td>
@@ -1740,7 +1773,7 @@ tr:hover {
             <!-- 1 Expanded row -->
             <tr class="govuk-table__row expandy-row hide-row accordion-default-content-1" style="vertical-align: top;">
 
-            <td class="govuk-table__cell" colspan="7" style="padding-top: 30px;">
+            <td class="govuk-table__cell" colspan="8" style="padding-top: 30px; border: 5px solid #44a477;">
                 <div>
                     <div class="rowContentSection">
                         <div class="expandedTitles">

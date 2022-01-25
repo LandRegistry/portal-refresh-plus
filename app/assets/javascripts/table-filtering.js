@@ -68,7 +68,7 @@
   applicationGroupCheckboxes = Array.prototype.slice.call(document.querySelectorAll('[name="application-group"]'));
   applicationProgressCheckboxes = Array.prototype.slice.call(document.querySelectorAll('[name="application-progress2"]'));
   applicationTypeCheckboxes = Array.prototype.slice.call(document.querySelectorAll('[name="application-type2"]'));
-  applicationProgressCheckboxes.concat(applicationTypeCheckboxes).forEach(function(checkbox, index) {
+  applicationProgressCheckboxes.concat(applicationTypeCheckboxes, applicationGroupCheckboxes).forEach(function(checkbox, index) {
     checkbox.addEventListener('change', function(e) {
       updateSearch()
     })
@@ -105,28 +105,6 @@
 
 
 
-// //     // paginate
-//     resultSet = Array.prototype.slice.call(rows).filter(function(row) {
-//       return !row.classList.contains('govuk-visually-hidden')
-//     })
-//
-//     // Only paginate if we've got enough
-//     if(resultSet.length > rpp) {
-//       // Find the rows that are not on the current page, and hide them
-//       previousPageRows = resultSet.slice(0, page * rpp)
-//       subsequentPageRows = resultSet.slice((page + 1) * rpp)
-//
-//
-//       previousPageRows.concat(subsequentPageRows).forEach(function(row) {
-//         row.classList.add('govuk-visually-hidden')
-//       })
-//     }
-//
-//     renderPagination(resultSet)
-
-    // if (hideViewed.checked) {
-    //     hideViewedRows()
-    // }
   }
 
   // Do an initial search on page load
