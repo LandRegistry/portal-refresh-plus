@@ -305,7 +305,7 @@ ul ul ul{left: 100%;top: 0;margin-left:1px;}
 
 
 .govuk-phase-banner {
-    margin-bottom: 30px;
+    margin: 0px 30px 30px 30px;
 }
 
 
@@ -361,8 +361,9 @@ ul ul ul{left: 100%;top: 0;margin-left:1px;}
     border-radius: 5px;
     background: #ffffff;
     padding: 50px;
-    max-width: 650px;
+    max-width: 675px;
     margin: auto;
+    margin-bottom: 50px;
 }
 
 .select2-container--default .select2-selection--single .select2-selection__rendered {
@@ -382,10 +383,8 @@ ul ul ul{left: 100%;top: 0;margin-left:1px;}
 .removeButton {
     cursor: pointer;
     border: none;
-    background-color: #ffffff;
     text-decoration: underline;
-    color: #d3451c;
-    font-size: 14px;
+    color: #D10A1E !important;
 }
 
 .govuk-checkboxes--small .govuk-checkboxes__label {
@@ -419,6 +418,90 @@ ul ul ul{left: 100%;top: 0;margin-left:1px;}
     -webkit-user-select: none;
     font-family: arial;
     font-size: 16px;
+}
+
+#search-button {
+    margin-top: 0px;
+    cursor: pointer;
+    border-radius: 0px;
+    border-style: none;
+    height: 40px;
+    width: 40px;
+    background-color: #006637;
+    border-color: #006637;
+}
+
+
+.searchBox {
+    width: 245px;
+    height: 34px;
+    font-size: 16px;
+    padding-left: 35px;
+    margin-top: 0px;
+    float: left;
+    border-color: #000;
+    border-width: 1px;
+    border-radius: 0px;
+    font-family: arial;
+    font-size: 16px;
+    outline: none !important;
+    position: relative;
+    background-image: url(/public/images/icon-search.svg);
+    background-repeat: no-repeat;
+    background-position: center left -2px;
+    background-size: 40px 40px;
+}
+
+.searchBox {
+    border-width: 2px;
+    background-image: unset;
+    padding-left: 10px;
+}
+
+.govuk-heading-l {
+    margin-bottom: 25px;
+    font-size:30px;
+}
+
+.box-container{
+  padding:20px;
+  background-color: #F4F4F4;
+  margin-top: 20px;
+  max-width: 400px;
+}
+
+.box-container-wide{
+  padding:20px;
+  background-color: #F4F4F4;
+  margin-top: 20px;
+}
+
+.box-container-title {
+  font-size: 24px;
+  font-weight:600;
+  margin-bottom:5px;
+}
+
+.temporaryBox{
+display: block;
+background-color: red;
+font-size: 30px;
+color:#000000;
+text-align: center;
+padding: 50px 0px;
+margin-bottom:5px;
+}
+
+.govuk-table__header, .govuk-table__cell {
+  font-size: 16px;
+}
+
+.govuk-table__cell {
+    border-bottom: 1px solid #D8DDE0;
+}
+
+.govuk-table__header {
+    border-bottom: 2px solid #000000;
 }
 
 </style>
@@ -572,7 +655,7 @@ ul ul ul{left: 100%;top: 0;margin-left:1px;}
 
       
   <!-- Table Area - Start -->
-  <div style="width:100%;overflow-x: auto;padding:0px 30px 30px 30px;">   
+  <div style="width:100%;overflow-x: auto;">   
 
    <div class="govuk-phase-banner">
       <p class="govuk-phase-banner__content">
@@ -586,99 +669,176 @@ ul ul ul{left: 100%;top: 0;margin-left:1px;}
     </div>
 
 
+
     <div class="table-content-section">
 
         <h1 class="govuk-heading-xl">Create a new group</h1>
 
         <form>
-            <div class="govuk-grid-row">
-               <div class="govuk-grid-column-full" style="padding-bottom:50px;">
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-full" style="padding-bottom:20px;">
 
-                    <h2 class="govuk-heading-l">Step 1: Add group details</h2>
+              <h2 class="govuk-heading-l">Step 1: Add group details</h2>
+          
+              <div class="govuk-form-group" style="float: left;">
+                  <label class="govuk-label govuk-!-font-weight-bold" for="address-town">
+                      Group name
+                  </label>
+          
+                  <input class="govuk-input" id="project-name" name="project-name" type="text" style="width:300px;" value="{{ data['project-name'] }}">
+              </div>
+          
+              <div class="govuk-form-group" style="float: left;margin-left: 50px;">
+                  <label class="govuk-label govuk-!-font-weight-bold" for="address-town">
+                      Group email address
+                  </label>
+                  
+                  <input class="govuk-input" id="project-email" name="project-email" type="text" style="width:300px;" value="{{ data['project-email'] }}"><div class="govuk-hint" style="font-size:16px;margin-top: 5px;">Notifications will be sent to this address</div>
+              </div>
+          
+          
+            </div>  
 
-                    <div class="govuk-form-group" style="float: left;">
-                        <label class="govuk-label govuk-!-font-weight-bold" for="address-town">
-                            Group name
-                        </label>
-    
-                        <input class="govuk-input" id="project-name" name="project-name" type="text" style="width:300px;" value="{{ data['project-name'] }}">
-                    </div>
+
+
+
+            <div class="govuk-grid-column-full" style="padding-bottom:50px;">
+              <h2 class="govuk-heading-l">Step 2: Add group team members</h2>
+          
+              <div class="govuk-body" style="margin-bottom: 0px;">
+                <label class="govuk-label form-label-bold">
+                    Select team team members
+                </label>
+                  <select id="cat" class="form-control" style="height:39px;width:300px;border:2px solid #000000;" type="submit" onchange="TeamMemberSelected()">
+                    <option value="#"></option>
+                    <option value="AaronFlynn">Aaron Flynn</option>
+                    <option value="AlexBlewett">Alex Blewett</option>
+                    <option value="AndyCarr">Andy Carr</option>
+                    <option value="DuncanAnderson">Duncan Anderson</option>
+                    <option value="JamesThomas">James Thomas</option>
+                    <option value="JohnBaptisteKelly">John Baptiste-Kelly</option>
+                    <option value="JohnJames">John James</option>
+                    <option value="JohnTaylor">John Taylor</option>
+                    <option value="JonParker">Jon Parker</option>
+                    <option value="JuanPintodelRio">Juan Pinto-del-Rio</option>
+                    <option value="LukasKroeningMaynard">Lukas Kroening-Maynard</option>
+                    <option value="MarkHornsby">Mark Hornsby</option>
+                    <option value="MelviaMathew">Melvia Mathew</option>
+                    <option value="NeilButler">Neil Butler</option>
+                    <option value="NicolaAndrews">Nicola Andrews</option>
+                    <option value="PatGannon">Pat Gannon</option>
+                    <option value="RomaniDavies">Romani Davies</option>
+                    <option value="SimonSkidmore">Simon Skidmore</option>
+                    <option value="SueWatchman">Sue Watchman</option>
+                    <option value="TonyWatson">Tony Watson</option>
+                  </select>
+              </div>
+              <div class="box-container">
+                  <div class="Header_container">
+                    <ul id="addHeaderhere">
+              
+                    </ul>
+                  </div>
+              
+                  <div class="govuk-form-group" style="margin-bottom: 0px;">
+                    <fieldset class="govuk-fieldset">
+                      <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes" id="MembersGoHere">
+                        <!-- <div class="govuk-checkboxes__item">
+                          <input class="govuk-checkboxes__input" id="AaronFlynn" name="AaronFlynn" type="checkbox" value="AaronFlynn">
+                          <label class="govuk-label govuk-checkboxes__label" for="organisation">
+                            Aaron Flynn
+                          </label>
+                        </div> -->
+                      </div>
+                    </fieldset>
+                  </div>
+            </div>
+          </div>
+
+
+
+          <div class="govuk-grid-column-full" style="padding-bottom:20px;">
+
+            <h2 class="govuk-heading-l">Step 3: Link applications to this group</h2>
         
-                    <div class="govuk-form-group" style="float: left;margin-left: 50px;">
-                        <label class="govuk-label govuk-!-font-weight-bold" for="address-town">
-                            Group email address
-                        </label>
-                        
-                        <input class="govuk-input" id="project-email" name="project-email" type="text" style="width:300px;" value="{{ data['project-email'] }}"><div class="govuk-hint" style="font-size:16px;margin-top: 5px;">Notifications will be sent to this address</div>
-                    </div>
-       
+            <div class="govuk-body" style="margin-bottom: 30px;">
+ 
+              <input type="text" id="search-input" class="searchBox" style="">
+              <button class="searchButton" value="submit" id="search-button" style=""> <img width="20" height="20" style="margin-top:6px;" src="/public/images/search-icon.svg"></button>
+
+            </div>
+        
+              <div class="temporaryBox" id="titleOne">
+                LP67555
+              </div>
+
+              <div class="temporaryBox" id="titleTwo">
+                NN22989
+              </div>
+
+              <div class="temporaryBox" id="titleThree">
+                JK44466
+              </div>
+
+              <div class="box-container-wide">
+                <div class="govuk-body box-container-title">
+                    Applications
+                </div> 
+                <div>
+                  
+                  
+                  <table class="govuk-table" style="margin-bottom:0px;">
+                    <thead class="govuk-table__head">
+                      <tr class="govuk-table__row">
+                        <th scope="col" class="govuk-table__header">Title number</th>
+                        <th scope="col" class="govuk-table__header">Application type</th>
+                        <th scope="col" class="govuk-table__header">Status</th>
+                        <th scope="col" class="govuk-table__header"></th>
+                      </tr>
+                    </thead>
+                    <tbody class="govuk-table__body">
+                      <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__cell">LP67555</th>
+                        <td class="govuk-table__cell">Register update</td>
+                        <td class="govuk-table__cell">Received</td>
+                        <td class="govuk-table__cell"><a class="removeButton" href="#">Remove</a></td>
+                      </tr>
+                      <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__cell">NN22989</th>
+                        <td class="govuk-table__cell">Transfer of whole with priority</td>
+                        <td class="govuk-table__cell">Completed</td>
+                        <td class="govuk-table__cell"><a class="removeButton" href="#">Remove</a></td>
+                      </tr>
+                      <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__cell">JK44466</th>
+                        <td class="govuk-table__cell">New lease</td>
+                        <td class="govuk-table__cell">Cancelled</td>
+                        <td class="govuk-table__cell"><a class="removeButton" href="#">Remove</a></td>
+                      </tr>
+                    </tbody>
+                  </table>
+
                 </div>
-   
+              </div>
+        
+          </div> 
+
 
             <div class="govuk-grid-column-full">
-                <h2 class="govuk-heading-l">Step 2: Add group team members</h2>
+                <button class="govuk-button govuk-button--secondary" data-module="govuk-button" style="float:left;margin-bottom:0px;" onclick="window.location.href='index.html'">
+                  Cancel
+                </button>
 
-                   <div class="govuk-body" style="margin-bottom: 0px;">
-                       <label class="govuk-label form-label-bold">
-                           Select team team members
-                       </label>
-                       <select id="cat" class="form-control" style="height:39px;width:300px;border:2px solid #000000;" type="submit" onchange="TeamMemberSelected()">
-                               <option value="#"></option>
-                               <option value="AaronFlynn">Aaron Flynn</option>
-                               <option value="AlexBlewett">Alex Blewett</option>
-                               <option value="AndyCarr">Andy Carr</option>
-                               <option value="DuncanAnderson">Duncan Anderson</option>
-                               <option value="JamesThomas">James Thomas</option>
-                               <option value="JohnBaptisteKelly">John Baptiste-Kelly</option>
-                               <option value="JohnJames">John James</option>
-                               <option value="JohnTaylor">John Taylor</option>
-                               <option value="JonParker">Jon Parker</option>
-                               <option value="JuanPintodelRio">Juan Pinto-del-Rio</option>
-                               <option value="LukasKroeningMaynard">Lukas Kroening-Maynard</option>
-                               <option value="MarkHornsby">Mark Hornsby</option>
-                               <option value="MelviaMathew">Melvia Mathew</option>
-                               <option value="NeilButler">Neil Butler</option>
-                               <option value="NicolaAndrews">Nicola Andrews</option>
-                               <option value="PatGannon">Pat Gannon</option>
-                               <option value="RomaniDavies">Romani Davies</option>
-                               <option value="SimonSkidmore">Simon Skidmore</option>
-                               <option value="SueWatchman">Sue Watchman</option>
-                               <option value="TonyWatson">Tony Watson</option>
-                       </select>
-                   </div>
- 
-               <div class="Header_container">
-                 <ul id="addHeaderhere">
- 
-                 </ul>
-               </div>
- 
-               <div class="govuk-form-group">
-                 <fieldset class="govuk-fieldset">
-                   <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes" id="MembersGoHere">
-                     <!-- <div class="govuk-checkboxes__item">
-                       <input class="govuk-checkboxes__input" id="AaronFlynn" name="AaronFlynn" type="checkbox" value="AaronFlynn">
-                       <label class="govuk-label govuk-checkboxes__label" for="organisation">
-                         Aaron Flynn
-                       </label>
-                     </div> -->
-                     
-                     
-  
-                   </div>
-               
-                 </fieldset>
-               </div>
- 
-             </form>
-
+                <button class="govuk-button" data-module="govuk-button" style="float:right;width:150px;margin-bottom:0px;" id="btnSubmit" onclick="window.location.href='indexUpdated.html'">
+                  Create group
+                </button>
+            </div>
+          </div>
+        </form>
 
     </div>
-    </div>
 
-
-
-
+  </div>
 
 </div>
 

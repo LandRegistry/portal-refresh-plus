@@ -97,8 +97,7 @@ function CreateDeleteHeading(){
         var header = document.getElementById("addHeaderhere");
         var li_header = document.createElement('LI');
         li_header.setAttribute("id", "header_id");
-        li_header.setAttribute("class", "govuk-label form-label-bold");
-        li_header.setAttribute("style", "margin-top:25px;");
+        li_header.setAttribute("class", "govuk-body box-container-title");
 
         var tn_header = document.createTextNode("Team members");
         var litn_header = li_header.appendChild(tn_header);
