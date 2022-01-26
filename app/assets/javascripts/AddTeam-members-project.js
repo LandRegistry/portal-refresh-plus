@@ -1,7 +1,7 @@
 var howmanyMembersSelected = 0;
 var anyMemberSelected = false;
-var AaronFlynn, AlexBlewett, AndyCarr, DuncanAnderson, JamesThomas, JohnBaptisteKelly, JohnJames, JohnTaylor, JonParker, JuanPintodelRio, LukasKroeningMaynard, MarkHornsby, MelviaMathew, NeilButler, NicolaAndrews, PatGannon, RomaniDavies, SimonSkidmore, SueWatchman, TonyWatson;
-AaronFlynn= AlexBlewett= AndyCarr= DuncanAnderson= JamesThomas= JohnBaptisteKelly= JohnJames= JohnTaylor= JonParker= JuanPintodelRio= LukasKroeningMaynard= MarkHornsby= MelviaMathew= NeilButler= NicolaAndrews= PatGannon= RomaniDavies= SimonSkidmore= SueWatchman= TonyWatson = false;
+var AaronFlynn, AlexBlewett, AndyCarr, DuncanAnderson, JamesThomas, JohnBaptisteKelly, JohnJames, JohnTaylor, JonParker, JuanPintodelRio, LaurenDowling, LukasKroeningMaynard, MarkHornsby, MelviaMathew, NeilButler, NicolaAndrews, PatGannon, RomaniDavies, SimonSkidmore, SueWatchman, TonyWatson;
+AaronFlynn= AlexBlewett= AndyCarr= DuncanAnderson= JamesThomas= JohnBaptisteKelly= JohnJames= JohnTaylor= JonParker= JuanPintodelRio= LaurenDowling= LukasKroeningMaynard= MarkHornsby= MelviaMathew= NeilButler= NicolaAndrews= PatGannon= RomaniDavies= SimonSkidmore= SueWatchman= TonyWatson = false;
 
 function TeamMemberSelected(){
 
@@ -47,6 +47,10 @@ function TeamMemberSelected(){
         JuanPintodelRioSelected();
     }
     
+    if ((TeamMember === 'LaurenDowling') && (LaurenDowling === false)){
+      LaurenDowlingSelected();
+  }
+
     if ((TeamMember === 'LukasKroeningMaynard') && (LukasKroeningMaynard === false)){
         LukasKroeningMaynardSelected();
     }
@@ -173,24 +177,13 @@ function AaronFlynnSelected() {
 
 	var div_AaronFlynn = document.createElement('DIV');
 	div_AaronFlynn.setAttribute('id', 'AaronFlynn_id');
-  div_AaronFlynn.setAttribute('class', 'govuk-checkboxes__item');
-  div_AaronFlynn.setAttribute('style', 'height: 44px;');
 
-
-
-	var checkbox_AaronFlynn = document.createElement('input');
-    checkbox_AaronFlynn.type = 'checkbox';
-    checkbox_AaronFlynn.id = 'AaronFlynn_checkbox';
-    checkbox_AaronFlynn.name = 'AaronFlynn';
-    checkbox_AaronFlynn.value = 'AaronFlynn';
-    // checkbox_AaronFlynn.setAttribute('class', 'govuk-checkboxes__input');
-    checkbox_AaronFlynn.className = "govuk-checkboxes__input";
-    
+   
   	var label_AaronFlynn = document.createElement('label');
     label_AaronFlynn.htmlFor = 'AaronFlynn';
     label_AaronFlynn.appendChild(document.createTextNode('Aaron Flynn'));
-    label_AaronFlynn.setAttribute('class', 'govuk-label govuk-checkboxes__label');
-    label_AaronFlynn.setAttribute('style', 'padding: 11.5px 10px 5px 0px;');
+    label_AaronFlynn.setAttribute('class', 'govuk-label');
+
     
   	var button_AaronFlynn = document.createElement('button');
     console.log('button created');
@@ -204,7 +197,6 @@ function AaronFlynnSelected() {
     
  
     listOfMembers.appendChild(div_AaronFlynn);
-  	div_AaronFlynn.appendChild(checkbox_AaronFlynn);
     div_AaronFlynn.appendChild(label_AaronFlynn);
     label_AaronFlynn.appendChild(button_AaronFlynn);
 
@@ -233,24 +225,11 @@ function AlexBlewettSelected() {
 
 	var div_AlexBlewett = document.createElement('DIV');
 	div_AlexBlewett.setAttribute('id', 'AlexBlewett_id');
-  div_AlexBlewett.setAttribute('class', 'govuk-checkboxes__item');
-  div_AlexBlewett.setAttribute('style', 'height: 44px;');
-
-
-
-	var checkbox_AlexBlewett = document.createElement('input');
-    checkbox_AlexBlewett.type = 'checkbox';
-    checkbox_AlexBlewett.id = 'AlexBlewett_checkbox';
-    checkbox_AlexBlewett.name = 'AlexBlewett';
-    checkbox_AlexBlewett.value = 'AlexBlewett';
-    // checkbox_AlexBlewett.setAttribute('class', 'govuk-checkboxes__input');
-    checkbox_AlexBlewett.className = "govuk-checkboxes__input";
     
   	var label_AlexBlewett = document.createElement('label');
     label_AlexBlewett.htmlFor = 'AlexBlewett';
     label_AlexBlewett.appendChild(document.createTextNode('Alex Blewett'));
-    label_AlexBlewett.setAttribute('class', 'govuk-label govuk-checkboxes__label');
-    label_AlexBlewett.setAttribute('style', 'padding: 11.5px 10px 5px 0px;');
+    label_AlexBlewett.setAttribute('class', 'govuk-label');
     
   	var button_AlexBlewett = document.createElement('button');
     console.log('button created');
@@ -264,7 +243,6 @@ function AlexBlewettSelected() {
     
  
     listOfMembers.appendChild(div_AlexBlewett);
-  	div_AlexBlewett.appendChild(checkbox_AlexBlewett);
     div_AlexBlewett.appendChild(label_AlexBlewett);
     label_AlexBlewett.appendChild(button_AlexBlewett);
 
@@ -293,24 +271,11 @@ function AndyCarrSelected() {
 
 	var div_AndyCarr = document.createElement('DIV');
 	div_AndyCarr.setAttribute('id', 'AndyCarr_id');
-  div_AndyCarr.setAttribute('class', 'govuk-checkboxes__item');
-  div_AndyCarr.setAttribute('style', 'height: 44px;');
-
-
-
-	var checkbox_AndyCarr = document.createElement('input');
-    checkbox_AndyCarr.type = 'checkbox';
-    checkbox_AndyCarr.id = 'AndyCarr_checkbox';
-    checkbox_AndyCarr.name = 'AndyCarr';
-    checkbox_AndyCarr.value = 'AndyCarr';
-    // checkbox_AndyCarr.setAttribute('class', 'govuk-checkboxes__input');
-    checkbox_AndyCarr.className = "govuk-checkboxes__input";
     
   	var label_AndyCarr = document.createElement('label');
     label_AndyCarr.htmlFor = 'AndyCarr';
     label_AndyCarr.appendChild(document.createTextNode('Andy Carr'));
-    label_AndyCarr.setAttribute('class', 'govuk-label govuk-checkboxes__label');
-    label_AndyCarr.setAttribute('style', 'padding: 11.5px 10px 5px 0px;');
+    label_AndyCarr.setAttribute('class', 'govuk-label');
     
   	var button_AndyCarr = document.createElement('button');
     console.log('button created');
@@ -324,7 +289,6 @@ function AndyCarrSelected() {
     
  
     listOfMembers.appendChild(div_AndyCarr);
-  	div_AndyCarr.appendChild(checkbox_AndyCarr);
     div_AndyCarr.appendChild(label_AndyCarr);
     label_AndyCarr.appendChild(button_AndyCarr);
 
@@ -353,24 +317,11 @@ function DuncanAndersonSelected() {
 
 	var div_DuncanAnderson = document.createElement('DIV');
 	div_DuncanAnderson.setAttribute('id', 'DuncanAnderson_id');
-  div_DuncanAnderson.setAttribute('class', 'govuk-checkboxes__item');
-  div_DuncanAnderson.setAttribute('style', 'height: 44px;');
-
-
-
-	var checkbox_DuncanAnderson = document.createElement('input');
-    checkbox_DuncanAnderson.type = 'checkbox';
-    checkbox_DuncanAnderson.id = 'DuncanAnderson_checkbox';
-    checkbox_DuncanAnderson.name = 'DuncanAnderson';
-    checkbox_DuncanAnderson.value = 'DuncanAnderson';
-    // checkbox_DuncanAnderson.setAttribute('class', 'govuk-checkboxes__input');
-    checkbox_DuncanAnderson.className = "govuk-checkboxes__input";
     
   	var label_DuncanAnderson = document.createElement('label');
     label_DuncanAnderson.htmlFor = 'DuncanAnderson';
     label_DuncanAnderson.appendChild(document.createTextNode('Duncan Anderson'));
-    label_DuncanAnderson.setAttribute('class', 'govuk-label govuk-checkboxes__label');
-    label_DuncanAnderson.setAttribute('style', 'padding: 11.5px 10px 5px 0px;');
+    label_DuncanAnderson.setAttribute('class', 'govuk-label');
     
   	var button_DuncanAnderson = document.createElement('button');
     console.log('button created');
@@ -384,7 +335,6 @@ function DuncanAndersonSelected() {
     
  
     listOfMembers.appendChild(div_DuncanAnderson);
-  	div_DuncanAnderson.appendChild(checkbox_DuncanAnderson);
     div_DuncanAnderson.appendChild(label_DuncanAnderson);
     label_DuncanAnderson.appendChild(button_DuncanAnderson);
 
@@ -413,24 +363,11 @@ function JamesThomasSelected() {
 
 	var div_JamesThomas = document.createElement('DIV');
 	div_JamesThomas.setAttribute('id', 'JamesThomas_id');
-  div_JamesThomas.setAttribute('class', 'govuk-checkboxes__item');
-  div_JamesThomas.setAttribute('style', 'height: 44px;');
-
-
-
-	var checkbox_JamesThomas = document.createElement('input');
-    checkbox_JamesThomas.type = 'checkbox';
-    checkbox_JamesThomas.id = 'JamesThomas_checkbox';
-    checkbox_JamesThomas.name = 'JamesThomas';
-    checkbox_JamesThomas.value = 'JamesThomas';
-    // checkbox_JamesThomas.setAttribute('class', 'govuk-checkboxes__input');
-    checkbox_JamesThomas.className = "govuk-checkboxes__input";
     
   	var label_JamesThomas = document.createElement('label');
     label_JamesThomas.htmlFor = 'JamesThomas';
     label_JamesThomas.appendChild(document.createTextNode('James Thomas'));
-    label_JamesThomas.setAttribute('class', 'govuk-label govuk-checkboxes__label');
-    label_JamesThomas.setAttribute('style', 'padding: 11.5px 10px 5px 0px;');
+    label_JamesThomas.setAttribute('class', 'govuk-label');
     
   	var button_JamesThomas = document.createElement('button');
     console.log('button created');
@@ -444,7 +381,6 @@ function JamesThomasSelected() {
     
  
     listOfMembers.appendChild(div_JamesThomas);
-  	div_JamesThomas.appendChild(checkbox_JamesThomas);
     div_JamesThomas.appendChild(label_JamesThomas);
     label_JamesThomas.appendChild(button_JamesThomas);
 
@@ -472,24 +408,11 @@ function JohnBaptisteKellySelected() {
 
 	var div_JohnBaptisteKelly = document.createElement('DIV');
 	div_JohnBaptisteKelly.setAttribute('id', 'JohnBaptisteKelly_id');
-  div_JohnBaptisteKelly.setAttribute('class', 'govuk-checkboxes__item');
-  div_JohnBaptisteKelly.setAttribute('style', 'height: 44px;');
-
-
-
-	var checkbox_JohnBaptisteKelly = document.createElement('input');
-    checkbox_JohnBaptisteKelly.type = 'checkbox';
-    checkbox_JohnBaptisteKelly.id = 'JohnBaptisteKelly_checkbox';
-    checkbox_JohnBaptisteKelly.name = 'JohnBaptisteKelly';
-    checkbox_JohnBaptisteKelly.value = 'JohnBaptisteKelly';
-    // checkbox_JohnBaptisteKelly.setAttribute('class', 'govuk-checkboxes__input');
-    checkbox_JohnBaptisteKelly.className = "govuk-checkboxes__input";
     
   	var label_JohnBaptisteKelly = document.createElement('label');
     label_JohnBaptisteKelly.htmlFor = 'JohnBaptisteKelly';
     label_JohnBaptisteKelly.appendChild(document.createTextNode('John Baptiste-Kelly'));
-    label_JohnBaptisteKelly.setAttribute('class', 'govuk-label govuk-checkboxes__label');
-    label_JohnBaptisteKelly.setAttribute('style', 'padding: 11.5px 10px 5px 0px;');
+    label_JohnBaptisteKelly.setAttribute('class', 'govuk-label');
     
   	var button_JohnBaptisteKelly = document.createElement('button');
     console.log('button created');
@@ -503,7 +426,6 @@ function JohnBaptisteKellySelected() {
     
  
     listOfMembers.appendChild(div_JohnBaptisteKelly);
-  	div_JohnBaptisteKelly.appendChild(checkbox_JohnBaptisteKelly);
     div_JohnBaptisteKelly.appendChild(label_JohnBaptisteKelly);
     label_JohnBaptisteKelly.appendChild(button_JohnBaptisteKelly);
 
@@ -529,24 +451,11 @@ function JohnJamesSelected() {
 
 	var div_JohnJames = document.createElement('DIV');
 	div_JohnJames.setAttribute('id', 'JohnJames_id');
-  div_JohnJames.setAttribute('class', 'govuk-checkboxes__item');
-  div_JohnJames.setAttribute('style', 'height: 44px;');
-
-
-
-	var checkbox_JohnJames = document.createElement('input');
-    checkbox_JohnJames.type = 'checkbox';
-    checkbox_JohnJames.id = 'JohnJames_checkbox';
-    checkbox_JohnJames.name = 'JohnJames';
-    checkbox_JohnJames.value = 'JohnJames';
-    // checkbox_JohnJames.setAttribute('class', 'govuk-checkboxes__input');
-    checkbox_JohnJames.className = "govuk-checkboxes__input";
-    
+      
   	var label_JohnJames = document.createElement('label');
     label_JohnJames.htmlFor = 'JohnJames';
     label_JohnJames.appendChild(document.createTextNode('John James'));
-    label_JohnJames.setAttribute('class', 'govuk-label govuk-checkboxes__label');
-    label_JohnJames.setAttribute('style', 'padding: 11.5px 10px 5px 0px;');
+    label_JohnJames.setAttribute('class', 'govuk-label');
     
   	var button_JohnJames = document.createElement('button');
     console.log('button created');
@@ -560,7 +469,6 @@ function JohnJamesSelected() {
     
  
     listOfMembers.appendChild(div_JohnJames);
-  	div_JohnJames.appendChild(checkbox_JohnJames);
     div_JohnJames.appendChild(label_JohnJames);
     label_JohnJames.appendChild(button_JohnJames);
 
@@ -586,24 +494,11 @@ function JohnTaylorSelected() {
 
 	var div_JohnTaylor = document.createElement('DIV');
 	div_JohnTaylor.setAttribute('id', 'JohnTaylor_id');
-  div_JohnTaylor.setAttribute('class', 'govuk-checkboxes__item');
-  div_JohnTaylor.setAttribute('style', 'height: 44px;');
-
-
-
-	var checkbox_JohnTaylor = document.createElement('input');
-    checkbox_JohnTaylor.type = 'checkbox';
-    checkbox_JohnTaylor.id = 'JohnTaylor_checkbox';
-    checkbox_JohnTaylor.name = 'JohnTaylor';
-    checkbox_JohnTaylor.value = 'JohnTaylor';
-    // checkbox_JohnTaylor.setAttribute('class', 'govuk-checkboxes__input');
-    checkbox_JohnTaylor.className = "govuk-checkboxes__input";
-    
+      
   	var label_JohnTaylor = document.createElement('label');
     label_JohnTaylor.htmlFor = 'JohnTaylor';
     label_JohnTaylor.appendChild(document.createTextNode('John Taylor'));
-    label_JohnTaylor.setAttribute('class', 'govuk-label govuk-checkboxes__label');
-    label_JohnTaylor.setAttribute('style', 'padding: 11.5px 10px 5px 0px;');
+    label_JohnTaylor.setAttribute('class', 'govuk-label');
     
   	var button_JohnTaylor = document.createElement('button');
     console.log('button created');
@@ -617,7 +512,6 @@ function JohnTaylorSelected() {
     
  
     listOfMembers.appendChild(div_JohnTaylor);
-  	div_JohnTaylor.appendChild(checkbox_JohnTaylor);
     div_JohnTaylor.appendChild(label_JohnTaylor);
     label_JohnTaylor.appendChild(button_JohnTaylor);
 
@@ -643,24 +537,11 @@ function JonParkerSelected() {
 
 	var div_JonParker = document.createElement('DIV');
 	div_JonParker.setAttribute('id', 'JonParker_id');
-  div_JonParker.setAttribute('class', 'govuk-checkboxes__item');
-  div_JonParker.setAttribute('style', 'height: 44px;');
-
-
-
-	var checkbox_JonParker = document.createElement('input');
-    checkbox_JonParker.type = 'checkbox';
-    checkbox_JonParker.id = 'JonParker_checkbox';
-    checkbox_JonParker.name = 'JonParker';
-    checkbox_JonParker.value = 'JonParker';
-    // checkbox_JonParker.setAttribute('class', 'govuk-checkboxes__input');
-    checkbox_JonParker.className = "govuk-checkboxes__input";
-    
+  
   	var label_JonParker = document.createElement('label');
     label_JonParker.htmlFor = 'JonParker';
     label_JonParker.appendChild(document.createTextNode('Jon Parker'));
-    label_JonParker.setAttribute('class', 'govuk-label govuk-checkboxes__label');
-    label_JonParker.setAttribute('style', 'padding: 11.5px 10px 5px 0px;');
+    label_JonParker.setAttribute('class', 'govuk-label');
     
   	var button_JonParker = document.createElement('button');
     console.log('button created');
@@ -674,7 +555,6 @@ function JonParkerSelected() {
     
  
     listOfMembers.appendChild(div_JonParker);
-  	div_JonParker.appendChild(checkbox_JonParker);
     div_JonParker.appendChild(label_JonParker);
     label_JonParker.appendChild(button_JonParker);
 
@@ -700,24 +580,11 @@ function JuanPintodelRioSelected() {
 
 	var div_JuanPintodelRio = document.createElement('DIV');
 	div_JuanPintodelRio.setAttribute('id', 'JuanPintodelRio_id');
-  div_JuanPintodelRio.setAttribute('class', 'govuk-checkboxes__item');
-  div_JuanPintodelRio.setAttribute('style', 'height: 44px;');
-
-
-
-	var checkbox_JuanPintodelRio = document.createElement('input');
-    checkbox_JuanPintodelRio.type = 'checkbox';
-    checkbox_JuanPintodelRio.id = 'JuanPintodelRio_checkbox';
-    checkbox_JuanPintodelRio.name = 'JuanPintodelRio';
-    checkbox_JuanPintodelRio.value = 'JuanPintodelRio';
-    // checkbox_JuanPintodelRio.setAttribute('class', 'govuk-checkboxes__input');
-    checkbox_JuanPintodelRio.className = "govuk-checkboxes__input";
-    
+      
   	var label_JuanPintodelRio = document.createElement('label');
     label_JuanPintodelRio.htmlFor = 'JuanPintodelRio';
     label_JuanPintodelRio.appendChild(document.createTextNode('Juan Pinto-del-Rio'));
-    label_JuanPintodelRio.setAttribute('class', 'govuk-label govuk-checkboxes__label');
-    label_JuanPintodelRio.setAttribute('style', 'padding: 11.5px 10px 5px 0px;');
+    label_JuanPintodelRio.setAttribute('class', 'govuk-label');
     
   	var button_JuanPintodelRio = document.createElement('button');
     console.log('button created');
@@ -731,7 +598,6 @@ function JuanPintodelRioSelected() {
     
  
     listOfMembers.appendChild(div_JuanPintodelRio);
-  	div_JuanPintodelRio.appendChild(checkbox_JuanPintodelRio);
     div_JuanPintodelRio.appendChild(label_JuanPintodelRio);
     label_JuanPintodelRio.appendChild(button_JuanPintodelRio);
 
@@ -748,6 +614,52 @@ function remove_JuanPintodelRio(){
 
     JuanPintodelRio = false;
 }
+
+
+// LAUREN DOWLING
+function LaurenDowlingSelected() {
+  LaurenDowling = true;
+
+	var listOfMembers = document.getElementById("MembersGoHere");
+
+	var div_LaurenDowling = document.createElement('DIV');
+	div_LaurenDowling.setAttribute('id', 'LaurenDowling_id');
+    
+  	var label_LaurenDowling = document.createElement('label');
+    label_LaurenDowling.htmlFor = 'LukasKroeningMaynard';
+    label_LaurenDowling.appendChild(document.createTextNode('Lauren Dowling'));
+    label_LaurenDowling.setAttribute('class', 'govuk-label');
+    
+  	var button_LaurenDowling = document.createElement('button');
+    console.log('button created');
+  	button_LaurenDowling.setAttribute('id', 'LaurenDowling_id_remove');
+    button_LaurenDowling.setAttribute('class', 'removeButton');
+	  button_LaurenDowling.setAttribute('onclick', 'remove_LaurenDowling()');
+    button_LaurenDowling.setAttribute('style', 'padding-left:6px;');
+    tn_button_LaurenDowling = document.createTextNode("remove");
+    litn_button_LaurenDowling = button_LaurenDowling.appendChild(tn_button_LaurenDowling);
+    console.log('button complete');
+    
+ 
+    listOfMembers.appendChild(div_LaurenDowling);
+    div_LaurenDowling.appendChild(label_LaurenDowling);
+    label_LaurenDowling.appendChild(button_LaurenDowling);
+
+
+    
+  	howmanyMembersSelected += 1;
+    CreateDeleteHeading();
+    }
+    
+function remove_LaurenDowling(){
+	LaurenDowling_id.remove();
+  	howmanyMembersSelected -= 1;
+    CreateDeleteHeading();
+
+    LaurenDowling = false;
+}
+
+
 // LUKAS KROENING MAYNARD
 function LukasKroeningMaynardSelected() {
   LukasKroeningMaynard = true;
@@ -756,24 +668,11 @@ function LukasKroeningMaynardSelected() {
 
 	var div_LukasKroeningMaynard = document.createElement('DIV');
 	div_LukasKroeningMaynard.setAttribute('id', 'LukasKroeningMaynard_id');
-  div_LukasKroeningMaynard.setAttribute('class', 'govuk-checkboxes__item');
-  div_LukasKroeningMaynard.setAttribute('style', 'height: 44px;');
-
-
-
-	var checkbox_LukasKroeningMaynard = document.createElement('input');
-    checkbox_LukasKroeningMaynard.type = 'checkbox';
-    checkbox_LukasKroeningMaynard.id = 'LukasKroeningMaynard_checkbox';
-    checkbox_LukasKroeningMaynard.name = 'LukasKroeningMaynard';
-    checkbox_LukasKroeningMaynard.value = 'LukasKroeningMaynard';
-    // checkbox_LukasKroeningMaynard.setAttribute('class', 'govuk-checkboxes__input');
-    checkbox_LukasKroeningMaynard.className = "govuk-checkboxes__input";
     
   	var label_LukasKroeningMaynard = document.createElement('label');
     label_LukasKroeningMaynard.htmlFor = 'LukasKroeningMaynard';
     label_LukasKroeningMaynard.appendChild(document.createTextNode('Lukas Kroening-Maynard'));
-    label_LukasKroeningMaynard.setAttribute('class', 'govuk-label govuk-checkboxes__label');
-    label_LukasKroeningMaynard.setAttribute('style', 'padding: 11.5px 10px 5px 0px;');
+    label_LukasKroeningMaynard.setAttribute('class', 'govuk-label');
     
   	var button_LukasKroeningMaynard = document.createElement('button');
     console.log('button created');
@@ -787,7 +686,6 @@ function LukasKroeningMaynardSelected() {
     
  
     listOfMembers.appendChild(div_LukasKroeningMaynard);
-  	div_LukasKroeningMaynard.appendChild(checkbox_LukasKroeningMaynard);
     div_LukasKroeningMaynard.appendChild(label_LukasKroeningMaynard);
     label_LukasKroeningMaynard.appendChild(button_LukasKroeningMaynard);
 
@@ -805,6 +703,7 @@ function remove_LukasKroeningMaynard(){
     LukasKroeningMaynard = false;
 }
 
+
 // // MARK HORNSBY
 function MarkHornsbySelected() {
   MarkHornsby = true;
@@ -813,24 +712,11 @@ function MarkHornsbySelected() {
 
 	var div_MarkHornsby = document.createElement('DIV');
 	div_MarkHornsby.setAttribute('id', 'MarkHornsby_id');
-  div_MarkHornsby.setAttribute('class', 'govuk-checkboxes__item');
-  div_MarkHornsby.setAttribute('style', 'height: 44px;');
-
-
-
-	var checkbox_MarkHornsby = document.createElement('input');
-    checkbox_MarkHornsby.type = 'checkbox';
-    checkbox_MarkHornsby.id = 'MarkHornsby_checkbox';
-    checkbox_MarkHornsby.name = 'MarkHornsby';
-    checkbox_MarkHornsby.value = 'MarkHornsby';
-    // checkbox_MarkHornsby.setAttribute('class', 'govuk-checkboxes__input');
-    checkbox_MarkHornsby.className = "govuk-checkboxes__input";
-    
+      
   	var label_MarkHornsby = document.createElement('label');
     label_MarkHornsby.htmlFor = 'MarkHornsby';
     label_MarkHornsby.appendChild(document.createTextNode('Mark Hornsby'));
-    label_MarkHornsby.setAttribute('class', 'govuk-label govuk-checkboxes__label');
-    label_MarkHornsby.setAttribute('style', 'padding: 11.5px 10px 5px 0px;');
+    label_MarkHornsby.setAttribute('class', 'govuk-label');
     
   	var button_MarkHornsby = document.createElement('button');
     console.log('button created');
@@ -844,7 +730,6 @@ function MarkHornsbySelected() {
     
  
     listOfMembers.appendChild(div_MarkHornsby);
-  	div_MarkHornsby.appendChild(checkbox_MarkHornsby);
     div_MarkHornsby.appendChild(label_MarkHornsby);
     label_MarkHornsby.appendChild(button_MarkHornsby);
 
@@ -872,24 +757,11 @@ function MelviaMathewSelected() {
 
 	var div_MelviaMathew = document.createElement('DIV');
 	div_MelviaMathew.setAttribute('id', 'MelviaMathew_id');
-  div_MelviaMathew.setAttribute('class', 'govuk-checkboxes__item');
-  div_MelviaMathew.setAttribute('style', 'height: 44px;');
-
-
-
-	var checkbox_MelviaMathew = document.createElement('input');
-    checkbox_MelviaMathew.type = 'checkbox';
-    checkbox_MelviaMathew.id = 'MelviaMathew_checkbox';
-    checkbox_MelviaMathew.name = 'MelviaMathew';
-    checkbox_MelviaMathew.value = 'MelviaMathew';
-    // checkbox_MelviaMathew.setAttribute('class', 'govuk-checkboxes__input');
-    checkbox_MelviaMathew.className = "govuk-checkboxes__input";
-    
+      
   	var label_MelviaMathew = document.createElement('label');
     label_MelviaMathew.htmlFor = 'MelviaMathew';
     label_MelviaMathew.appendChild(document.createTextNode('Melvia Mathew'));
-    label_MelviaMathew.setAttribute('class', 'govuk-label govuk-checkboxes__label');
-    label_MelviaMathew.setAttribute('style', 'padding: 11.5px 10px 5px 0px;');
+    label_MelviaMathew.setAttribute('class', 'govuk-label');
     
   	var button_MelviaMathew = document.createElement('button');
     console.log('button created');
@@ -903,7 +775,6 @@ function MelviaMathewSelected() {
     
  
     listOfMembers.appendChild(div_MelviaMathew);
-  	div_MelviaMathew.appendChild(checkbox_MelviaMathew);
     div_MelviaMathew.appendChild(label_MelviaMathew);
     label_MelviaMathew.appendChild(button_MelviaMathew);
 
@@ -929,25 +800,12 @@ function NeilButlerSelected() {
 
 	var div_NeilButler = document.createElement('DIV');
 	div_NeilButler.setAttribute('id', 'NeilButler_id');
-  div_NeilButler.setAttribute('class', 'govuk-checkboxes__item');
-  div_NeilButler.setAttribute('style', 'height: 44px;');
-
-
-
-	var checkbox_NeilButler = document.createElement('input');
-    checkbox_NeilButler.type = 'checkbox';
-    checkbox_NeilButler.id = 'NeilButler_checkbox';
-    checkbox_NeilButler.name = 'NeilButler';
-    checkbox_NeilButler.value = 'NeilButler';
-    // checkbox_NeilButler.setAttribute('class', 'govuk-checkboxes__input');
-    checkbox_NeilButler.className = "govuk-checkboxes__input";
-    
+      
   	var label_NeilButler = document.createElement('label');
     label_NeilButler.htmlFor = 'NeilButler';
     label_NeilButler.appendChild(document.createTextNode('Neil Butler'));
-    label_NeilButler.setAttribute('class', 'govuk-label govuk-checkboxes__label');
-    label_NeilButler.setAttribute('style', 'padding: 11.5px 10px 5px 0px;');
-    
+    label_NeilButler.setAttribute('class', 'govuk-label');
+      
   	var button_NeilButler = document.createElement('button');
     console.log('button created');
   	button_NeilButler.setAttribute('id', 'NeilButler_id_remove');
@@ -960,7 +818,6 @@ function NeilButlerSelected() {
     
  
     listOfMembers.appendChild(div_NeilButler);
-  	div_NeilButler.appendChild(checkbox_NeilButler);
     div_NeilButler.appendChild(label_NeilButler);
     label_NeilButler.appendChild(button_NeilButler);
 
@@ -987,24 +844,11 @@ function NicolaAndrewsSelected() {
 
 	var div_NicolaAndrews = document.createElement('DIV');
 	div_NicolaAndrews.setAttribute('id', 'NicolaAndrews_id');
-  div_NicolaAndrews.setAttribute('class', 'govuk-checkboxes__item');
-  div_NicolaAndrews.setAttribute('style', 'height: 44px;');
-
-
-
-	var checkbox_NicolaAndrews = document.createElement('input');
-    checkbox_NicolaAndrews.type = 'checkbox';
-    checkbox_NicolaAndrews.id = 'NicolaAndrews_checkbox';
-    checkbox_NicolaAndrews.name = 'NicolaAndrews';
-    checkbox_NicolaAndrews.value = 'NicolaAndrews';
-    // checkbox_NicolaAndrews.setAttribute('class', 'govuk-checkboxes__input');
-    checkbox_NicolaAndrews.className = "govuk-checkboxes__input";
-    
+      
   	var label_NicolaAndrews = document.createElement('label');
     label_NicolaAndrews.htmlFor = 'NicolaAndrews';
     label_NicolaAndrews.appendChild(document.createTextNode('Nicola Andrews'));
-    label_NicolaAndrews.setAttribute('class', 'govuk-label govuk-checkboxes__label');
-    label_NicolaAndrews.setAttribute('style', 'padding: 11.5px 10px 5px 0px;');
+    label_NicolaAndrews.setAttribute('class', 'govuk-label');
     
   	var button_NicolaAndrews = document.createElement('button');
     console.log('button created');
@@ -1018,7 +862,6 @@ function NicolaAndrewsSelected() {
     
  
     listOfMembers.appendChild(div_NicolaAndrews);
-  	div_NicolaAndrews.appendChild(checkbox_NicolaAndrews);
     div_NicolaAndrews.appendChild(label_NicolaAndrews);
     label_NicolaAndrews.appendChild(button_NicolaAndrews);
 
@@ -1044,24 +887,11 @@ function PatGannonSelected() {
 
 	var div_PatGannon = document.createElement('DIV');
 	div_PatGannon.setAttribute('id', 'PatGannon_id');
-  div_PatGannon.setAttribute('class', 'govuk-checkboxes__item');
-  div_PatGannon.setAttribute('style', 'height: 44px;');
-
-
-
-	var checkbox_PatGannon = document.createElement('input');
-    checkbox_PatGannon.type = 'checkbox';
-    checkbox_PatGannon.id = 'PatGannon_checkbox';
-    checkbox_PatGannon.name = 'PatGannon';
-    checkbox_PatGannon.value = 'PatGannon';
-    // checkbox_PatGannon.setAttribute('class', 'govuk-checkboxes__input');
-    checkbox_PatGannon.className = "govuk-checkboxes__input";
-    
+      
   	var label_PatGannon = document.createElement('label');
     label_PatGannon.htmlFor = 'PatGannon';
     label_PatGannon.appendChild(document.createTextNode('Pat Gannon'));
-    label_PatGannon.setAttribute('class', 'govuk-label govuk-checkboxes__label');
-    label_PatGannon.setAttribute('style', 'padding: 11.5px 10px 5px 0px;');
+    label_PatGannon.setAttribute('class', 'govuk-label');
     
   	var button_PatGannon = document.createElement('button');
     console.log('button created');
@@ -1075,7 +905,6 @@ function PatGannonSelected() {
     
  
     listOfMembers.appendChild(div_PatGannon);
-  	div_PatGannon.appendChild(checkbox_PatGannon);
     div_PatGannon.appendChild(label_PatGannon);
     label_PatGannon.appendChild(button_PatGannon);
 
@@ -1101,24 +930,11 @@ function RomaniDaviesSelected() {
 
 	var div_RomaniDavies = document.createElement('DIV');
 	div_RomaniDavies.setAttribute('id', 'RomaniDavies_id');
-  div_RomaniDavies.setAttribute('class', 'govuk-checkboxes__item');
-  div_RomaniDavies.setAttribute('style', 'height: 44px;');
-
-
-
-	var checkbox_RomaniDavies = document.createElement('input');
-    checkbox_RomaniDavies.type = 'checkbox';
-    checkbox_RomaniDavies.id = 'RomaniDavies_checkbox';
-    checkbox_RomaniDavies.name = 'RomaniDavies';
-    checkbox_RomaniDavies.value = 'RomaniDavies';
-    // checkbox_RomaniDavies.setAttribute('class', 'govuk-checkboxes__input');
-    checkbox_RomaniDavies.className = "govuk-checkboxes__input";
-    
+      
   	var label_RomaniDavies = document.createElement('label');
     label_RomaniDavies.htmlFor = 'RomaniDavies';
     label_RomaniDavies.appendChild(document.createTextNode('Romani Davies'));
-    label_RomaniDavies.setAttribute('class', 'govuk-label govuk-checkboxes__label');
-    label_RomaniDavies.setAttribute('style', 'padding: 11.5px 10px 5px 0px;');
+    label_RomaniDavies.setAttribute('class', 'govuk-label');
     
   	var button_RomaniDavies = document.createElement('button');
     console.log('button created');
@@ -1132,7 +948,6 @@ function RomaniDaviesSelected() {
     
  
     listOfMembers.appendChild(div_RomaniDavies);
-  	div_RomaniDavies.appendChild(checkbox_RomaniDavies);
     div_RomaniDavies.appendChild(label_RomaniDavies);
     label_RomaniDavies.appendChild(button_RomaniDavies);
 
@@ -1159,24 +974,11 @@ function SimonSkidmoreSelected() {
 
 	var div_SimonSkidmore = document.createElement('DIV');
 	div_SimonSkidmore.setAttribute('id', 'SimonSkidmore_id');
-  div_SimonSkidmore.setAttribute('class', 'govuk-checkboxes__item');
-  div_SimonSkidmore.setAttribute('style', 'height: 44px;');
-
-
-
-	var checkbox_SimonSkidmore = document.createElement('input');
-    checkbox_SimonSkidmore.type = 'checkbox';
-    checkbox_SimonSkidmore.id = 'SimonSkidmore_checkbox';
-    checkbox_SimonSkidmore.name = 'SimonSkidmore';
-    checkbox_SimonSkidmore.value = 'SimonSkidmore';
-    // checkbox_SimonSkidmore.setAttribute('class', 'govuk-checkboxes__input');
-    checkbox_SimonSkidmore.className = "govuk-checkboxes__input";
-    
+      
   	var label_SimonSkidmore = document.createElement('label');
     label_SimonSkidmore.htmlFor = 'SimonSkidmore';
     label_SimonSkidmore.appendChild(document.createTextNode('Simon Skidmore'));
-    label_SimonSkidmore.setAttribute('class', 'govuk-label govuk-checkboxes__label');
-    label_SimonSkidmore.setAttribute('style', 'padding: 11.5px 10px 5px 0px;');
+    label_SimonSkidmore.setAttribute('class', 'govuk-label');
     
   	var button_SimonSkidmore = document.createElement('button');
     console.log('button created');
@@ -1190,7 +992,6 @@ function SimonSkidmoreSelected() {
     
  
     listOfMembers.appendChild(div_SimonSkidmore);
-  	div_SimonSkidmore.appendChild(checkbox_SimonSkidmore);
     div_SimonSkidmore.appendChild(label_SimonSkidmore);
     label_SimonSkidmore.appendChild(button_SimonSkidmore);
 
@@ -1217,24 +1018,11 @@ function SueWatchmanSelected() {
 
 	var div_SueWatchman = document.createElement('DIV');
 	div_SueWatchman.setAttribute('id', 'SueWatchman_id');
-  div_SueWatchman.setAttribute('class', 'govuk-checkboxes__item');
-  div_SueWatchman.setAttribute('style', 'height: 44px;');
-
-
-
-	var checkbox_SueWatchman = document.createElement('input');
-    checkbox_SueWatchman.type = 'checkbox';
-    checkbox_SueWatchman.id = 'SueWatchman_checkbox';
-    checkbox_SueWatchman.name = 'SueWatchman';
-    checkbox_SueWatchman.value = 'SueWatchman';
-    // checkbox_SueWatchman.setAttribute('class', 'govuk-checkboxes__input');
-    checkbox_SueWatchman.className = "govuk-checkboxes__input";
-    
+      
   	var label_SueWatchman = document.createElement('label');
     label_SueWatchman.htmlFor = 'SueWatchman';
     label_SueWatchman.appendChild(document.createTextNode('Sue Watchman'));
-    label_SueWatchman.setAttribute('class', 'govuk-label govuk-checkboxes__label');
-    label_SueWatchman.setAttribute('style', 'padding: 11.5px 10px 5px 0px;');
+    label_SueWatchman.setAttribute('class', 'govuk-label');
     
   	var button_SueWatchman = document.createElement('button');
     console.log('button created');
@@ -1248,7 +1036,6 @@ function SueWatchmanSelected() {
     
  
     listOfMembers.appendChild(div_SueWatchman);
-  	div_SueWatchman.appendChild(checkbox_SueWatchman);
     div_SueWatchman.appendChild(label_SueWatchman);
     label_SueWatchman.appendChild(button_SueWatchman);
 
@@ -1274,24 +1061,11 @@ function TonyWatsonSelected() {
 
 	var div_TonyWatson = document.createElement('DIV');
 	div_TonyWatson.setAttribute('id', 'TonyWatson_id');
-  div_TonyWatson.setAttribute('class', 'govuk-checkboxes__item');
-  div_TonyWatson.setAttribute('style', 'height: 44px;');
-
-
-
-	var checkbox_TonyWatson = document.createElement('input');
-    checkbox_TonyWatson.type = 'checkbox';
-    checkbox_TonyWatson.id = 'TonyWatson_checkbox';
-    checkbox_TonyWatson.name = 'TonyWatson';
-    checkbox_TonyWatson.value = 'TonyWatson';
-    // checkbox_TonyWatson.setAttribute('class', 'govuk-checkboxes__input');
-    checkbox_TonyWatson.className = "govuk-checkboxes__input";
-    
+      
   	var label_TonyWatson = document.createElement('label');
     label_TonyWatson.htmlFor = 'TonyWatson';
     label_TonyWatson.appendChild(document.createTextNode('Tony Watson'));
-    label_TonyWatson.setAttribute('class', 'govuk-label govuk-checkboxes__label');
-    label_TonyWatson.setAttribute('style', 'padding: 11.5px 10px 5px 0px;');
+    label_TonyWatson.setAttribute('class', 'govuk-label');
     
   	var button_TonyWatson = document.createElement('button');
     console.log('button created');
@@ -1305,7 +1079,6 @@ function TonyWatsonSelected() {
     
  
     listOfMembers.appendChild(div_TonyWatson);
-  	div_TonyWatson.appendChild(checkbox_TonyWatson);
     div_TonyWatson.appendChild(label_TonyWatson);
     label_TonyWatson.appendChild(button_TonyWatson);
 
