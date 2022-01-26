@@ -325,6 +325,15 @@ ul ul ul{left: 100%;top: 0;margin-left:1px;}
     outline: none;
 }
 
+:focus-visible {
+    outline: unset !Important;
+}
+
+.select2-container--default.select2-container--open.select2-container--below .select2-selection--single {
+    border-radius: 0px !important;
+}
+
+
 .select2-search--dropdown .select2-search__field {
     padding: 4px;
     width: 100%;
@@ -332,7 +341,7 @@ ul ul ul{left: 100%;top: 0;margin-left:1px;}
 }
 
 .select2-container--default .select2-search--dropdown .select2-search__field {
-    border: 0px solid #000;
+    border: 1px solid #000;
     font-family: arial;
     font-size: 16px;
     background-color: #ffffff;
@@ -833,7 +842,7 @@ margin-bottom:5px;
 
 
             <div class="govuk-grid-column-full">
-                <button class="govuk-button govuk-button--secondary" data-module="govuk-button" style="float:left;margin-bottom:0px;" onclick="window.location.href='index.html'">
+                <button class="govuk-button govuk-button--secondary" data-module="govuk-button" style="float:left;margin-bottom:0px;" id="btnCancel" onclick="window.location.href='index.html'">
                   Cancel
                 </button>
 
