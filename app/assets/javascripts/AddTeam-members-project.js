@@ -146,7 +146,7 @@ function CreateDeleteHeading(){
 //     button_AaronFlynn.setAttribute('class', 'removeButton');
 // 	  button_AaronFlynn.setAttribute('onclick', 'remove_AaronFlynn()');
 //     button_AaronFlynn.setAttribute('style', 'padding-left:0px;');
-//     tn_button_AaronFlynn = document.createTextNode("remove");
+//     tn_button_AaronFlynn = document.createTextNode("Remove");
 //     litn_button_AaronFlynn = button_AaronFlynn.appendChild(tn_button_AaronFlynn);
     
  
@@ -190,8 +190,7 @@ function AaronFlynnSelected() {
   	button_AaronFlynn.setAttribute('id', 'AaronFlynn_id_remove');
     button_AaronFlynn.setAttribute('class', 'removeButton');
 	  button_AaronFlynn.setAttribute('onclick', 'remove_AaronFlynn()');
-    button_AaronFlynn.setAttribute('style', 'padding-left:6px;');
-    tn_button_AaronFlynn = document.createTextNode("remove");
+    tn_button_AaronFlynn = document.createTextNode("Remove");
     litn_button_AaronFlynn = button_AaronFlynn.appendChild(tn_button_AaronFlynn);
     console.log('button complete');
     
@@ -236,8 +235,7 @@ function AlexBlewettSelected() {
   	button_AlexBlewett.setAttribute('id', 'AlexBlewett_id_remove');
     button_AlexBlewett.setAttribute('class', 'removeButton');
 	  button_AlexBlewett.setAttribute('onclick', 'remove_AlexBlewett()');
-    button_AlexBlewett.setAttribute('style', 'padding-left:6px;');
-    tn_button_AlexBlewett = document.createTextNode("remove");
+    tn_button_AlexBlewett = document.createTextNode("Remove");
     litn_button_AlexBlewett = button_AlexBlewett.appendChild(tn_button_AlexBlewett);
     console.log('button complete');
     
@@ -282,8 +280,7 @@ function AndyCarrSelected() {
   	button_AndyCarr.setAttribute('id', 'AndyCarr_id_remove');
     button_AndyCarr.setAttribute('class', 'removeButton');
 	  button_AndyCarr.setAttribute('onclick', 'remove_AndyCarr()');
-    button_AndyCarr.setAttribute('style', 'padding-left:6px;');
-    tn_button_AndyCarr = document.createTextNode("remove");
+    tn_button_AndyCarr = document.createTextNode("Remove");
     litn_button_AndyCarr = button_AndyCarr.appendChild(tn_button_AndyCarr);
     console.log('button complete');
     
@@ -328,8 +325,7 @@ function DuncanAndersonSelected() {
   	button_DuncanAnderson.setAttribute('id', 'DuncanAnderson_id_remove');
     button_DuncanAnderson.setAttribute('class', 'removeButton');
 	  button_DuncanAnderson.setAttribute('onclick', 'remove_DuncanAnderson()');
-    button_DuncanAnderson.setAttribute('style', 'padding-left:6px;');
-    tn_button_DuncanAnderson = document.createTextNode("remove");
+    tn_button_DuncanAnderson = document.createTextNode("Remove");
     litn_button_DuncanAnderson = button_DuncanAnderson.appendChild(tn_button_DuncanAnderson);
     console.log('button complete');
     
@@ -374,8 +370,7 @@ function JamesThomasSelected() {
   	button_JamesThomas.setAttribute('id', 'JamesThomas_id_remove');
     button_JamesThomas.setAttribute('class', 'removeButton');
 	  button_JamesThomas.setAttribute('onclick', 'remove_JamesThomas()');
-    button_JamesThomas.setAttribute('style', 'padding-left:6px;');
-    tn_button_JamesThomas = document.createTextNode("remove");
+    tn_button_JamesThomas = document.createTextNode("Remove");
     litn_button_JamesThomas = button_JamesThomas.appendChild(tn_button_JamesThomas);
     console.log('button complete');
     
@@ -419,8 +414,7 @@ function JohnBaptisteKellySelected() {
   	button_JohnBaptisteKelly.setAttribute('id', 'JohnBaptisteKelly_id_remove');
     button_JohnBaptisteKelly.setAttribute('class', 'removeButton');
 	  button_JohnBaptisteKelly.setAttribute('onclick', 'remove_JohnBaptisteKelly()');
-    button_JohnBaptisteKelly.setAttribute('style', 'padding-left:6px;');
-    tn_button_JohnBaptisteKelly = document.createTextNode("remove");
+    tn_button_JohnBaptisteKelly = document.createTextNode("Remove");
     litn_button_JohnBaptisteKelly = button_JohnBaptisteKelly.appendChild(tn_button_JohnBaptisteKelly);
     console.log('button complete');
     
@@ -462,8 +456,7 @@ function JohnJamesSelected() {
   	button_JohnJames.setAttribute('id', 'JohnJames_id_remove');
     button_JohnJames.setAttribute('class', 'removeButton');
 	  button_JohnJames.setAttribute('onclick', 'remove_JohnJames()');
-    button_JohnJames.setAttribute('style', 'padding-left:6px;');
-    tn_button_JohnJames = document.createTextNode("remove");
+    tn_button_JohnJames = document.createTextNode("Remove");
     litn_button_JohnJames = button_JohnJames.appendChild(tn_button_JohnJames);
     console.log('button complete');
     
@@ -505,8 +498,7 @@ function JohnTaylorSelected() {
   	button_JohnTaylor.setAttribute('id', 'JohnTaylor_id_remove');
     button_JohnTaylor.setAttribute('class', 'removeButton');
 	  button_JohnTaylor.setAttribute('onclick', 'remove_JohnTaylor()');
-    button_JohnTaylor.setAttribute('style', 'padding-left:6px;');
-    tn_button_JohnTaylor = document.createTextNode("remove");
+    tn_button_JohnTaylor = document.createTextNode("Remove");
     litn_button_JohnTaylor = button_JohnTaylor.appendChild(tn_button_JohnTaylor);
     console.log('button complete');
     
@@ -548,8 +540,7 @@ function JonParkerSelected() {
   	button_JonParker.setAttribute('id', 'JonParker_id_remove');
     button_JonParker.setAttribute('class', 'removeButton');
 	  button_JonParker.setAttribute('onclick', 'remove_JonParker()');
-    button_JonParker.setAttribute('style', 'padding-left:6px;');
-    tn_button_JonParker = document.createTextNode("remove");
+    tn_button_JonParker = document.createTextNode("Remove");
     litn_button_JonParker = button_JonParker.appendChild(tn_button_JonParker);
     console.log('button complete');
     
@@ -591,8 +582,7 @@ function JuanPintodelRioSelected() {
   	button_JuanPintodelRio.setAttribute('id', 'JuanPintodelRio_id_remove');
     button_JuanPintodelRio.setAttribute('class', 'removeButton');
 	  button_JuanPintodelRio.setAttribute('onclick', 'remove_JuanPintodelRio()');
-    button_JuanPintodelRio.setAttribute('style', 'padding-left:6px;');
-    tn_button_JuanPintodelRio = document.createTextNode("remove");
+    tn_button_JuanPintodelRio = document.createTextNode("Remove");
     litn_button_JuanPintodelRio = button_JuanPintodelRio.appendChild(tn_button_JuanPintodelRio);
     console.log('button complete');
     
@@ -635,8 +625,7 @@ function LaurenDowlingSelected() {
   	button_LaurenDowling.setAttribute('id', 'LaurenDowling_id_remove');
     button_LaurenDowling.setAttribute('class', 'removeButton');
 	  button_LaurenDowling.setAttribute('onclick', 'remove_LaurenDowling()');
-    button_LaurenDowling.setAttribute('style', 'padding-left:6px;');
-    tn_button_LaurenDowling = document.createTextNode("remove");
+    tn_button_LaurenDowling = document.createTextNode("Remove");
     litn_button_LaurenDowling = button_LaurenDowling.appendChild(tn_button_LaurenDowling);
     console.log('button complete');
     
@@ -679,8 +668,7 @@ function LukasKroeningMaynardSelected() {
   	button_LukasKroeningMaynard.setAttribute('id', 'LukasKroeningMaynard_id_remove');
     button_LukasKroeningMaynard.setAttribute('class', 'removeButton');
 	  button_LukasKroeningMaynard.setAttribute('onclick', 'remove_LukasKroeningMaynard()');
-    button_LukasKroeningMaynard.setAttribute('style', 'padding-left:6px;');
-    tn_button_LukasKroeningMaynard = document.createTextNode("remove");
+    tn_button_LukasKroeningMaynard = document.createTextNode("Remove");
     litn_button_LukasKroeningMaynard = button_LukasKroeningMaynard.appendChild(tn_button_LukasKroeningMaynard);
     console.log('button complete');
     
@@ -723,8 +711,7 @@ function MarkHornsbySelected() {
   	button_MarkHornsby.setAttribute('id', 'MarkHornsby_id_remove');
     button_MarkHornsby.setAttribute('class', 'removeButton');
 	  button_MarkHornsby.setAttribute('onclick', 'remove_MarkHornsby()');
-    button_MarkHornsby.setAttribute('style', 'padding-left:6px;');
-    tn_button_MarkHornsby = document.createTextNode("remove");
+    tn_button_MarkHornsby = document.createTextNode("Remove");
     litn_button_MarkHornsby = button_MarkHornsby.appendChild(tn_button_MarkHornsby);
     console.log('button complete');
     
@@ -768,8 +755,7 @@ function MelviaMathewSelected() {
   	button_MelviaMathew.setAttribute('id', 'MelviaMathew_id_remove');
     button_MelviaMathew.setAttribute('class', 'removeButton');
 	  button_MelviaMathew.setAttribute('onclick', 'remove_MelviaMathew()');
-    button_MelviaMathew.setAttribute('style', 'padding-left:6px;');
-    tn_button_MelviaMathew = document.createTextNode("remove");
+    tn_button_MelviaMathew = document.createTextNode("Remove");
     litn_button_MelviaMathew = button_MelviaMathew.appendChild(tn_button_MelviaMathew);
     console.log('button complete');
     
@@ -811,8 +797,7 @@ function NeilButlerSelected() {
   	button_NeilButler.setAttribute('id', 'NeilButler_id_remove');
     button_NeilButler.setAttribute('class', 'removeButton');
 	  button_NeilButler.setAttribute('onclick', 'remove_NeilButler()');
-    button_NeilButler.setAttribute('style', 'padding-left:6px;');
-    tn_button_NeilButler = document.createTextNode("remove");
+    tn_button_NeilButler = document.createTextNode("Remove");
     litn_button_NeilButler = button_NeilButler.appendChild(tn_button_NeilButler);
     console.log('button complete');
     
@@ -855,8 +840,7 @@ function NicolaAndrewsSelected() {
   	button_NicolaAndrews.setAttribute('id', 'NicolaAndrews_id_remove');
     button_NicolaAndrews.setAttribute('class', 'removeButton');
 	  button_NicolaAndrews.setAttribute('onclick', 'remove_NicolaAndrews()');
-    button_NicolaAndrews.setAttribute('style', 'padding-left:6px;');
-    tn_button_NicolaAndrews = document.createTextNode("remove");
+    tn_button_NicolaAndrews = document.createTextNode("Remove");
     litn_button_NicolaAndrews = button_NicolaAndrews.appendChild(tn_button_NicolaAndrews);
     console.log('button complete');
     
@@ -898,8 +882,7 @@ function PatGannonSelected() {
   	button_PatGannon.setAttribute('id', 'PatGannon_id_remove');
     button_PatGannon.setAttribute('class', 'removeButton');
 	  button_PatGannon.setAttribute('onclick', 'remove_PatGannon()');
-    button_PatGannon.setAttribute('style', 'padding-left:6px;');
-    tn_button_PatGannon = document.createTextNode("remove");
+    tn_button_PatGannon = document.createTextNode("Remove");
     litn_button_PatGannon = button_PatGannon.appendChild(tn_button_PatGannon);
     console.log('button complete');
     
@@ -941,8 +924,7 @@ function RomaniDaviesSelected() {
   	button_RomaniDavies.setAttribute('id', 'RomaniDavies_id_remove');
     button_RomaniDavies.setAttribute('class', 'removeButton');
 	  button_RomaniDavies.setAttribute('onclick', 'remove_RomaniDavies()');
-    button_RomaniDavies.setAttribute('style', 'padding-left:6px;');
-    tn_button_RomaniDavies = document.createTextNode("remove");
+    tn_button_RomaniDavies = document.createTextNode("Remove");
     litn_button_RomaniDavies = button_RomaniDavies.appendChild(tn_button_RomaniDavies);
     console.log('button complete');
     
@@ -985,8 +967,7 @@ function SimonSkidmoreSelected() {
   	button_SimonSkidmore.setAttribute('id', 'SimonSkidmore_id_remove');
     button_SimonSkidmore.setAttribute('class', 'removeButton');
 	  button_SimonSkidmore.setAttribute('onclick', 'remove_SimonSkidmore()');
-    button_SimonSkidmore.setAttribute('style', 'padding-left:6px;');
-    tn_button_SimonSkidmore = document.createTextNode("remove");
+    tn_button_SimonSkidmore = document.createTextNode("Remove");
     litn_button_SimonSkidmore = button_SimonSkidmore.appendChild(tn_button_SimonSkidmore);
     console.log('button complete');
     
@@ -1029,8 +1010,7 @@ function SueWatchmanSelected() {
   	button_SueWatchman.setAttribute('id', 'SueWatchman_id_remove');
     button_SueWatchman.setAttribute('class', 'removeButton');
 	  button_SueWatchman.setAttribute('onclick', 'remove_SueWatchman()');
-    button_SueWatchman.setAttribute('style', 'padding-left:6px;');
-    tn_button_SueWatchman = document.createTextNode("remove");
+    tn_button_SueWatchman = document.createTextNode("Remove");
     litn_button_SueWatchman = button_SueWatchman.appendChild(tn_button_SueWatchman);
     console.log('button complete');
     
@@ -1072,8 +1052,7 @@ function TonyWatsonSelected() {
   	button_TonyWatson.setAttribute('id', 'TonyWatson_id_remove');
     button_TonyWatson.setAttribute('class', 'removeButton');
 	  button_TonyWatson.setAttribute('onclick', 'remove_TonyWatson()');
-    button_TonyWatson.setAttribute('style', 'padding-left:6px;');
-    tn_button_TonyWatson = document.createTextNode("remove");
+    tn_button_TonyWatson = document.createTextNode("Remove");
     litn_button_TonyWatson = button_TonyWatson.appendChild(tn_button_TonyWatson);
     console.log('button complete');
     
