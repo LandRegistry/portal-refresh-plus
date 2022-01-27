@@ -5,7 +5,7 @@
 {% block content %}
 
 <script src="/public/javascripts/jquery-1.11.3.js"></script>
-<script>require('../javascripts/AddTeam-members-project.js')</script>
+<script>require('../javascripts/AddTeam-members-group.js')</script>
 
 <style>
 
@@ -690,7 +690,7 @@ margin-bottom:5px;
 
         <h1 class="govuk-heading-xl">Edit group</h1>
 
-        <form>
+        <form  method="post" class="form">
           <div class="govuk-grid-row">
             <div class="govuk-grid-column-full" style="padding-bottom:20px;">
 
@@ -701,7 +701,7 @@ margin-bottom:5px;
                       Group name
                   </label>
           
-                  <input class="govuk-input" id="project-name" name="project-name" type="text" style="width:300px;" value="{{ data['project-name'] }}">
+                  <input class="govuk-input" id="group-name" name="group-name" type="text" style="width:300px;" value="{{ data['group-name'] }}">
               </div>
           
               <div class="govuk-form-group" style="float: left;margin-left: 50px;">
@@ -709,7 +709,7 @@ margin-bottom:5px;
                       Group email address
                   </label>
                   
-                  <input class="govuk-input" id="project-email" name="project-email" type="text" style="width:300px;" value="{{ data['project-email'] }}"><div class="govuk-hint" style="font-size:16px;margin-top: 5px;">Notifications will be sent to this address</div>
+                  <input class="govuk-input" id="group-email" name="group-email" type="text" style="width:300px;" value="{{ data['group-email'] }}"><div class="govuk-hint" style="font-size:16px;margin-top: 5px;">Notifications will be sent to this address</div>
               </div>
           
           
@@ -833,8 +833,8 @@ margin-bottom:5px;
                   Cancel
                 </button>
 
-                <button class="govuk-button" data-module="govuk-button" style="float:right;width:150px;margin-bottom:0px;" id="btnSubmit" onclick="window.location.href='indexUpdated.html'">
-                  Create group
+                <button class="govuk-button" type="submit" data-module="govuk-button" style="float:right;width:150px;margin-bottom:0px;" formaction="indexUpdated">
+                  Save changes
                 </button>
             </div>
           </div>
