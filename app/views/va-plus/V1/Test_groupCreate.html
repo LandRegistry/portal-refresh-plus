@@ -5,7 +5,7 @@
 {% block content %}
 
 <script src="/public/javascripts/jquery-1.11.3.js"></script>
-<script>require('../javascripts/AddTeam-members-project.js')</script>
+<script>require('../javascripts/AddTeam-members-group.js')</script>
 
 <style>
 
@@ -475,7 +475,7 @@ ul ul ul{left: 100%;top: 0;margin-left:1px;}
 }
 
 .govuk-heading-l {
-    margin-bottom: 15px;
+    margin-bottom: 25px;
     font-size:30px;
 }
 
@@ -688,77 +688,45 @@ margin-bottom:5px;
 
     <div class="table-content-section">
 
-      <a href="javascript: history.go(-1)" class="govuk-back-link" style="margin-top:0px;">Back to applications</a>
+        <h1 class="govuk-heading-xl">Create a new group</h1>
 
-      <button class="govuk-button" data-module="govuk-button" style="float:right;width:112px;margin-bottom:0px;margin-top: 0px;" id="btnEdit" onclick="window.location.href='editGroup.html'">
-        Edit group
-      </button>
-
-        
-
-
+        <form method="post" class="form">
           <div class="govuk-grid-row">
-            <div class="govuk-grid-column-full" style="padding-top:30px;">
-              <h1 class="govuk-heading-xl" style="float:left;">Group: '{{ data['group-name'] }}'</h1>
+            <div class="govuk-grid-column-full" style="padding-bottom:20px;">
 
-            </div>
-              <div class="govuk-grid-column-one-half" style="padding-bottom:50px;">
-                <h2 class="govuk-heading-l">Team members</h2>
-                <div id="JohnBaptisteKelly_id"><label for="JohnBaptisteKelly" class="govuk-label">John BaptisteKelly</label></div>
-                <div id="AndyCarr_id"><label for="AndyCarr" class="govuk-label">Andy Carr</label></div>
-                <div id="LaurenDowling_id"><label for="LaurenDowling" class="govuk-label">Lauren Dowling</label></div>
-                <div id="LaurenThomas_id"><label for="LaurenThomas" class="govuk-label">Lauren Thomas</label></div>
-              </div> 
-            
-                <div class="govuk-grid-column-one-half" style="padding-bottom:50px;">
-                  <h2 class="govuk-heading-l">Group email address</h2>
-                  <div id=""><label for="" class="govuk-label">{{ data['group-email'] }}</label></div>
-                </div>
-            
-
-            <div class="govuk-grid-column-full" style="padding-bottom:0px;">
-
-              <h2 class="govuk-heading-l">Applications linked to this group</h2>
-                
-
-                    <table class="govuk-table" style="margin-bottom:0px;">
-                      <thead class="govuk-table__head">
-                        <tr class="govuk-table__row">
-                          <th scope="col" class="govuk-table__header">Title number</th>
-                          <th scope="col" class="govuk-table__header">Application type</th>
-                          <th scope="col" class="govuk-table__header">Status</th>
-
-                        </tr>
-                      </thead>
-                      <tbody class="govuk-table__body" id="applications-table">
-                        <tr class="govuk-table__row">
-                          <th scope="row" class="govuk-table__cell">LP67555</th>
-                          <td class="govuk-table__cell">Register update</td>
-                          <td class="govuk-table__cell">Received</td>
-
-                        </tr>
-                        <tr class="govuk-table__row">
-                          <th scope="row" class="govuk-table__cell">NN22989</th>
-                          <td class="govuk-table__cell">Official search of whole with priority</td>
-                          <td class="govuk-table__cell">Completed</td>
-
-                        </tr>
-                        <tr class="govuk-table__row">
-                          <th scope="row" class="govuk-table__cell">JK44466</th>
-                          <td class="govuk-table__cell">Official copies</td>
-                          <td class="govuk-table__cell">Cancelled</td>
-
-                        </tr>
-                      </tbody>
-                    </table>
-
+              <h2 class="govuk-heading-l">Step 1: Add group details</h2>
           
-            </div> 
+              <div class="govuk-form-group" style="float: left;">
+                  <label class="govuk-label govuk-!-font-weight-bold" for="address-town">
+                      Group name
+                  </label>
+          
+                  <input class="govuk-input" id="group-name" name="group-name" type="text" style="width:300px;" value="{{ data['group-name'] }}">
+              </div>
+          
+              <div class="govuk-form-group" style="float: left;margin-left: 50px;">
+                  <label class="govuk-label govuk-!-font-weight-bold" for="address-town">
+                      Group email address
+                  </label>
+                  
+                  <input class="govuk-input" id="group-email" name="group-email" type="text" style="width:300px;" value="{{ data['group-email'] }}"><div class="govuk-hint" style="font-size:16px;margin-top: 5px;">Notifications will be sent to this address</div>
+              </div>
+          
+          
+            </div>  
 
 
 
+
+            <div class="govuk-grid-column-full">
+
+
+                <button class="govuk-button" type="submit" data-module="govuk-button" style="float:right;width:150px;margin-bottom:0px;" formaction="Test_groupView">
+                  Create group
+                </button>
+            </div>
           </div>
-
+        </form>
 
     </div>
 
