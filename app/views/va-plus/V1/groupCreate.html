@@ -500,12 +500,12 @@ ul ul ul{left: 100%;top: 0;margin-left:1px;}
 
 .temporaryBox{
 display: block;
-background-color: red;
+/* background-color: red; */
 font-size: 30px;
 color:#000000;
 text-align: center;
 /* padding: 50px 0px; */
-margin-bottom:5px;
+margin-bottom:30px;
 }
 
 .govuk-table__header, .govuk-table__cell {
@@ -804,8 +804,8 @@ margin-bottom:5px;
                           <fieldset class="govuk-fieldset">
                             <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
                               <div class="govuk-checkboxes__item">
-                                <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
-                                <label class="govuk-label govuk-checkboxes__label" for="organisation">
+                                <input class="govuk-checkboxes__input" id="DK88932-Transfer" name="DK88932-Transfer" type="checkbox" value="checked" onclick="dk88932Transfer()">
+                                <label class="govuk-label govuk-checkboxes__label" for="DK88932-Transfer">
                                   DK88932
                                 </label>
                               </div>
@@ -826,8 +826,8 @@ margin-bottom:5px;
                           <fieldset class="govuk-fieldset">
                             <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
                               <div class="govuk-checkboxes__item">
-                                <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
-                                <label class="govuk-label govuk-checkboxes__label" for="organisation">
+                                <input class="govuk-checkboxes__input" id="DK88932-OfficialCopy" name="DK88932-OfficialCopy" type="checkbox" value="checked" onclick="dk88932OfficialCopy()">
+                                <label class="govuk-label govuk-checkboxes__label" for="DK88932-OfficialCopy">
                                   DK88932
                                 </label>
                               </div>
@@ -848,8 +848,8 @@ margin-bottom:5px;
                           <fieldset class="govuk-fieldset">
                             <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
                               <div class="govuk-checkboxes__item">
-                                <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
-                                <label class="govuk-label govuk-checkboxes__label" for="organisation">
+                                <input class="govuk-checkboxes__input" id="dk88932-newLease" name="dk88932-newLease" type="checkbox" value="checked" onclick="dk88932NewLease()">
+                                <label class="govuk-label govuk-checkboxes__label" for="dk88932-newLease">
                                   DK88932
                                 </label>
                               </div>
@@ -884,8 +884,8 @@ margin-bottom:5px;
                           <fieldset class="govuk-fieldset">
                             <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
                               <div class="govuk-checkboxes__item">
-                                <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc" onclick="test()">
-                                <label class="govuk-label govuk-checkboxes__label" for="organisation">
+                                <input class="govuk-checkboxes__input" id="NN22989-Transfer" name="NN22989-Transfer" type="checkbox" value="checked" onclick="NN22989Transfer()">
+                                <label class="govuk-label govuk-checkboxes__label" for="NN22989-Transfer">
                                   NN22989
                                 </label>
                               </div>
@@ -906,8 +906,8 @@ margin-bottom:5px;
                           <fieldset class="govuk-fieldset">
                             <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
                               <div class="govuk-checkboxes__item">
-                                <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
-                                <label class="govuk-label govuk-checkboxes__label" for="organisation">
+                                <input class="govuk-checkboxes__input" id="NN22989-OfficialCopy" name="NN22989-OfficialCopy" type="checkbox" value="checked" onclick="NN22989OfficialCopy()">
+                                <label class="govuk-label govuk-checkboxes__label" for="NN22989-OfficialCopy">
                                   NN22989
                                 </label>
                               </div>
@@ -928,8 +928,8 @@ margin-bottom:5px;
                           <fieldset class="govuk-fieldset">
                             <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
                               <div class="govuk-checkboxes__item">
-                                <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
-                                <label class="govuk-label govuk-checkboxes__label" for="organisation">
+                                <input class="govuk-checkboxes__input" id="NN22989-newLease" name="NN22989-newLease" type="checkbox" value="checked" onclick="NN22989NewLease()">
+                                <label class="govuk-label govuk-checkboxes__label" for="NN22989-newLease">
                                   NN22989
                                 </label>
                               </div>
@@ -1028,12 +1028,10 @@ margin-bottom:5px;
                 </table>
               </div>
 
-              <div class="box-container-wide">
+              <div class="box-container-wide" id="greyBoxBlock" style="display:none; margin-bottom: 60px;">
                 <div class="govuk-body box-container-title">
                     Applications
-                </div> 
-              <div>
-                  
+                </div>                   
                   
                   <table class="govuk-table" style="margin-bottom:0px;">
                     <thead class="govuk-table__head">
@@ -1045,7 +1043,7 @@ margin-bottom:5px;
                       </tr>
                     </thead>
                     <tbody class="govuk-table__body" id="applications-table">
-                      <tr class="govuk-table__row">
+                      <!-- <tr class="govuk-table__row">
                         <th scope="row" class="govuk-table__cell">LP67555</th>
                         <td class="govuk-table__cell">Register update</td>
                         <td class="govuk-table__cell">Received</td>
@@ -1062,25 +1060,25 @@ margin-bottom:5px;
                         <td class="govuk-table__cell">New lease</td>
                         <td class="govuk-table__cell">Cancelled</td>
                         <td class="govuk-table__cell"><a class="removeButton" href="#">Remove</a></td>
-                      </tr>
+                      </tr> -->
                     </tbody>
                   </table>
 
                 </div>
-              </div>
         
-          </div> 
 
 
-            <div class="govuk-grid-column-full">
-                <button class="govuk-button govuk-button--secondary" data-module="govuk-button" style="float:left;margin-bottom:0px;" id="btnCancel" onclick="window.location.href='index.html'">
+            <!-- <div class="govuk-grid-column-full"> -->
+                <button class="govuk-button govuk-button--secondary" data-module="govuk-button" style="float:left;margin-bottom:0px;" id="btnCancel" formaction="index" type="submit">
                   Cancel
                 </button>
 
                 <button class="govuk-button" type="submit" data-module="govuk-button" style="float:right;width:150px;margin-bottom:0px;" formaction="indexUpdated">
                   Create group
                 </button>
-            </div>
+            <!-- </div> -->
+          </div> 
+
           </div>
         </form>
 

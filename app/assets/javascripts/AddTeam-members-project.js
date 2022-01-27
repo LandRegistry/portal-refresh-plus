@@ -1110,32 +1110,149 @@ function searchTitleNumbers(){
     if(trimmedTN == 'JK44466'){
       console.log('code is executing');
       boxJK44466.style.display = 'block';
-      // var applicationsTable = document.getElementById('applications-table');
-      // var rowCount = applicationsTable.rows.length;
-      // console.log(rowCount);
-
-      // var addRow = applicationsTable.insertRow(rowCount);
-      // var cell1 = addRow.insertCell(0);
-      // cell1.setAttribute('class', 'govuk-table__cell');
-      // cell1.innerHTML = "<b>JK44466<b>";
-
-      // var cell2 = addRow.insertCell(1);
-      // cell2.setAttribute('class', 'govuk-table__cell');
-      // cell2.innerHTML = "New lease";
-
-      // var cell3 = addRow.insertCell(2);
-      // cell3.setAttribute('class', 'govuk-table__cell');
-      // cell3.innerHTML = "Cancelled";
-
-      // var cell4 = addRow.insertCell(3);
-      // cell4.setAttribute('class', 'govuk-table__cell govuk-link');
-      // cell4.setAttribute('style', 'color: #D10A1E; cursor: pointer; float: right;');
-      // cell4.innerHTML = "Remove";
     }
   }
   else{
     console.log('no title number entered')
   }
+}
+
+var noOfApplications = 0;
+var applicationsVisible = false;
+
+function applicationsAdded(){
+  console.log('function is being called');
+  console.log(noOfApplications);
+  console.log(applicationsVisible);
+
+  if((noOfApplications == 1) && (applicationsVisible === false)){
+    console.log('function is being called here');
+
+    // var applicationsBoxBlock = document.getElementById("greyBoxBlock");
+    // applicationsBoxBlock.style.display = 'block';
+    document.getElementById("greyBoxBlock").style.display = 'block';
+    applicationsVisible = true;
+  }
+
+  if((noOfApplications == 0) && (applicationsVisible == true)){
+    var applicationsBoxBlock = document.getElementById("greyBoxBlock");
+    applicationsBoxBlock.style.display = 'none';
+    applicationsVisible = false;
+  }
+}
+
+function dk88932Transfer() {
+  console.log('its checked');
+  var exists = document.getElementById('DK88932-Transfer');
+  console.log(exists);
+  if (document.getElementById('DK88932-Transfer').checked) {
+    console.log('the if statement is working')
+    var applicationsTable = document.getElementById('applications-table');
+    var rowCount1 = applicationsTable.rows.length;
+
+    var addRow1 = applicationsTable.insertRow(rowCount1);
+    addRow1.setAttribute('id', 'rowID1');
+
+    var cell1_1 = addRow1.insertCell(0);
+    cell1_1.setAttribute('class', 'govuk-table__cell');
+    cell1_1.innerHTML = "<b>DK88932<b>";
+
+    var cell2_1 = addRow1.insertCell(1);
+    cell2_1.setAttribute('class', 'govuk-table__cell');
+    cell2_1.innerHTML = "Transfer of whole with priority";
+
+    var cell3_1 = addRow1.insertCell(2);
+    cell3_1.setAttribute('class', 'govuk-table__cell');
+    cell3_1.innerHTML = "Cancelled";
+
+    var cell4_1 = addRow1.insertCell(3);
+    cell4_1.setAttribute('class', 'govuk-table__cell govuk-link');
+    cell4_1.setAttribute('style', 'color: #D10A1E; cursor: pointer; text-align: right;');
+    cell4_1.setAttribute('onclick', 'removedk88932Transfer()');
+    cell4_1.innerHTML = "Remove";
+
+    noOfApplications += 1;
+    applicationsAdded();
+
+    }
+
+  else{
+    var row1 = document.getElementById('rowID1');
+    var currentPosition1 = row1.rowIndex;
+    console.log('row index:' + currentPosition1);
+    var remove1 = document.getElementById("applications-table").deleteRow(currentPosition1 - 1);
+
+    noOfApplications -= 1;
+    applicationsAdded();
+  }
+}
+
+function removedk88932Transfer(){
+  var row1 = document.getElementById('rowID1');
+  var currentPosition1 = row1.rowIndex;
+  console.log('row index:' + currentPosition1);
+  var remove1 = document.getElementById("applications-table").deleteRow(currentPosition1 - 1);
+
+  noOfApplications -= 1;
+  applicationsAdded();
+  document.getElementById('DK88932-Transfer').checked = false;
+}
+
+function NN22989Transfer() {
+  console.log('its checked');
+  var exists = document.getElementById('NN22989-Transfer');
+  console.log(exists);
+  if (document.getElementById('NN22989-Transfer').checked) {
+    console.log('the if statement is working')
+    var applicationsTable = document.getElementById('applications-table');
+    var rowCount4 = applicationsTable.rows.length;
+
+    var addRow4 = applicationsTable.insertRow(rowCount4);
+    addRow4.setAttribute('id', 'rowID4');
+
+    var cell4_4 = addRow4.insertCell(0);
+    cell4_4.setAttribute('class', 'govuk-table__cell');
+    cell4_4.innerHTML = "<b>NN22989<b>";
+
+    var cell2_4 = addRow4.insertCell(1);
+    cell2_4.setAttribute('class', 'govuk-table__cell');
+    cell2_4.innerHTML = "Transfer of whole with priority";
+
+    var cell3_4 = addRow4.insertCell(2);
+    cell3_4.setAttribute('class', 'govuk-table__cell');
+    cell3_4.innerHTML = "Cancelled";
+
+    var cell4_4 = addRow4.insertCell(3);
+    cell4_4.setAttribute('class', 'govuk-table__cell govuk-link');
+    cell4_4.setAttribute('style', 'color: #D10A1E; cursor: pointer; text-align: right;');
+    cell4_4.setAttribute('onclick', 'removeNN22989Transfer()');
+    cell4_4.innerHTML = "Remove";
+
+    noOfApplications += 1;
+    applicationsAdded();
+
+    }
+
+  else{
+    var row4 = document.getElementById('rowID4');
+    var currentPosition4 = row4.rowIndex;
+    console.log('row index:' + currentPosition4);
+    var remove4 = document.getElementById("applications-table").deleteRow(currentPosition4 - 1);
+
+    noOfApplications -= 1;
+    applicationsAdded();
+  }
+}
+
+function removeNN22989Transfer(){
+  var row4 = document.getElementById('rowID4');
+  var currentPosition4 = row4.rowIndex;
+  console.log('row index:' + currentPosition4);
+  var remove4 = document.getElementById("applications-table").deleteRow(currentPosition4 - 1);
+
+  noOfApplications -= 1;
+  applicationsAdded();
+  document.getElementById('NN22989-Transfer').checked = false;
 }
 
 function jk44466Transfer() {
@@ -1145,36 +1262,169 @@ function jk44466Transfer() {
   if (document.getElementById('jk44466-Transfer').checked) {
     console.log('the if statement is working')
     var applicationsTable = document.getElementById('applications-table');
-    var rowCount = applicationsTable.rows.length;
-    console.log(rowCount);
+    var rowCount7 = applicationsTable.rows.length;
+    console.log(rowCount7);
 
-    var addRow = applicationsTable.insertRow(rowCount);
-    addRow.setAttribute('id', 'rowID');
+    var addRow7 = applicationsTable.insertRow(rowCount7);
+    addRow7.setAttribute('id', 'rowID7');
 
-    var cell1 = addRow.insertCell(0);
-    cell1.setAttribute('class', 'govuk-table__cell');
-    cell1.innerHTML = "<b>JK44466<b>";
+    var cell1_7 = addRow7.insertCell(0);
+    cell1_7.setAttribute('class', 'govuk-table__cell');
+    cell1_7.innerHTML = "<b>JK44466<b>";
 
-    var cell2 = addRow.insertCell(1);
-    cell2.setAttribute('class', 'govuk-table__cell');
-    cell2.innerHTML = "Transfer of whole with priority";
+    var cell2_7 = addRow7.insertCell(1);
+    cell2_7.setAttribute('class', 'govuk-table__cell');
+    cell2_7.innerHTML = "Transfer of whole with priority";
 
-    var cell3 = addRow.insertCell(2);
-    cell3.setAttribute('class', 'govuk-table__cell');
-    cell3.innerHTML = "Cancelled";
+    var cell3_7 = addRow7.insertCell(2);
+    cell3_7.setAttribute('class', 'govuk-table__cell');
+    cell3_7.innerHTML = "Cancelled";
 
-    var cell4 = addRow.insertCell(3);
-    cell4.setAttribute('class', 'govuk-table__cell govuk-link');
-    cell4.setAttribute('style', 'color: #D10A1E; cursor: pointer; text-align: right;');
-    cell4.innerHTML = "Remove";
+    var cell4_7 = addRow7.insertCell(3);
+    cell4_7.setAttribute('class', 'govuk-table__cell govuk-link');
+    cell4_7.setAttribute('style', 'color: #D10A1E; cursor: pointer; text-align: right;');
+    cell4_7.setAttribute('onclick', 'removejk44466Transfer()');
+    cell4_7.innerHTML = "Remove";
+
+    noOfApplications += 1;
+    applicationsAdded();
+
     }
 
   else{
-    var row = document.getElementById('rowID');
-    var currentPosition = row.rowIndex;
-    console.log('row index:' + currentPosition);
-    var remove = document.getElementById("applications-table").deleteRow(currentPosition - 1);
+    var row7 = document.getElementById('rowID7');
+    var currentPosition7 = row7.rowIndex;
+    console.log('row index:' + currentPosition7);
+    var remove7 = document.getElementById("applications-table").deleteRow(currentPosition7 - 1);
+
+    noOfApplications -= 1;
+    applicationsAdded();
   }
+}
+
+function removejk44466Transfer(){
+  var row7 = document.getElementById('rowID7');
+  var currentPosition7 = row7.rowIndex;
+  console.log('row index:' + currentPosition7);
+  var remove7 = document.getElementById("applications-table").deleteRow(currentPosition7 - 1);
+
+  noOfApplications -= 1;
+  applicationsAdded();
+  document.getElementById('jk44466-Transfer').checked = false;
+}
+
+function dk88932NewLease() {
+  console.log('its checked');
+  if (document.getElementById('dk88932-newLease').checked) {
+    var applicationsTable = document.getElementById('applications-table');
+    var rowCount = applicationsTable.rows.length;
+    console.log(rowCount);
+
+    var addRow3 = applicationsTable.insertRow(rowCount);
+    addRow3.setAttribute('id', 'rowID3');
+
+    var cell1_3 = addRow3.insertCell(0);
+    cell1_3.setAttribute('class', 'govuk-table__cell');
+    cell1_3.innerHTML = "<b>DK88932<b>";
+
+    var cell2_3 = addRow3.insertCell(1);
+    cell2_3.setAttribute('class', 'govuk-table__cell');
+    cell2_3.innerHTML = "New lease";
+
+    var cell3_3 = addRow3.insertCell(2);
+    cell3_3.setAttribute('class', 'govuk-table__cell');
+    cell3_3.innerHTML = "Received";
+
+    var cell4_3 = addRow3.insertCell(3);
+    cell4_3.setAttribute('class', 'govuk-table__cell govuk-link');
+    cell4_3.setAttribute('style', 'color: #D10A1E; cursor: pointer; text-align: right;');
+    cell4_3.setAttribute('onclick', 'removedk88932NewLease()');
+    cell4_3.innerHTML = "Remove";
+
+    noOfApplications += 1;
+    applicationsAdded();
+
+
+    }
+
+  else{
+    var row_3 = document.getElementById('rowID3');
+    var currentPosition3 = row_3.rowIndex;
+    console.log('row index:' + currentPosition3);
+    var remove3 = document.getElementById("applications-table").deleteRow(currentPosition3 - 1);
+
+    noOfApplications -= 1;
+    applicationsAdded();
+
+  }
+}
+
+function removedk88932NewLease(){
+  var row_3 = document.getElementById('rowID3');
+  var currentPosition3 = row_3.rowIndex;
+  console.log('row index:' + currentPosition3);
+  var remove3 = document.getElementById("applications-table").deleteRow(currentPosition3 - 1);
+  document.getElementById('dk88932-newLease').checked = false;
+
+  noOfApplications -= 1;
+  applicationsAdded();
+}
+
+function NN22989NewLease() {
+  console.log('its checked');
+  if (document.getElementById('NN22989-newLease').checked) {
+    var applicationsTable = document.getElementById('applications-table');
+    var rowCount = applicationsTable.rows.length;
+    console.log(rowCount);
+
+    var addRow6 = applicationsTable.insertRow(rowCount);
+    addRow6.setAttribute('id', 'rowID6');
+
+    var cell1_6 = addRow6.insertCell(0);
+    cell1_6.setAttribute('class', 'govuk-table__cell');
+    cell1_6.innerHTML = "<b>NN22989<b>";
+
+    var cell2_6 = addRow6.insertCell(1);
+    cell2_6.setAttribute('class', 'govuk-table__cell');
+    cell2_6.innerHTML = "New lease";
+
+    var cell3_6 = addRow6.insertCell(2);
+    cell3_6.setAttribute('class', 'govuk-table__cell');
+    cell3_6.innerHTML = "Cancelled";
+
+    var cell4_6 = addRow6.insertCell(3);
+    cell4_6.setAttribute('class', 'govuk-table__cell govuk-link');
+    cell4_6.setAttribute('style', 'color: #D10A1E; cursor: pointer; text-align: right;');
+    cell4_6.setAttribute('onclick', 'removeNN22989NewLease()');
+    cell4_6.innerHTML = "Remove";
+
+    noOfApplications += 1;
+    applicationsAdded();
+
+
+    }
+
+  else{
+    var row_6 = document.getElementById('rowID6');
+    var currentPosition6 = row_6.rowIndex;
+    console.log('row index:' + currentPosition6);
+    var remove6 = document.getElementById("applications-table").deleteRow(currentPosition6 - 1);
+
+    noOfApplications -= 1;
+    applicationsAdded();
+
+  }
+}
+
+function removeNN22989NewLease(){
+  var row_6 = document.getElementById('rowID6');
+  var currentPosition6 = row_6.rowIndex;
+  console.log('row index:' + currentPosition6);
+  var remove6 = document.getElementById("applications-table").deleteRow(currentPosition6 - 1);
+  document.getElementById('NN22989-newLease').checked = false;
+
+  noOfApplications -= 1;
+  applicationsAdded();
 }
 
 
@@ -1185,34 +1435,170 @@ function jk44466NewLease() {
     var rowCount = applicationsTable.rows.length;
     console.log(rowCount);
 
-    var addRow = applicationsTable.insertRow(rowCount);
-    addRow.setAttribute('id', 'rowID');
+    var addRow8 = applicationsTable.insertRow(rowCount);
+    addRow8.setAttribute('id', 'rowID8');
 
-    var cell1 = addRow.insertCell(0);
-    cell1.setAttribute('class', 'govuk-table__cell');
-    cell1.innerHTML = "<b>JK44466<b>";
+    var cell1_8 = addRow8.insertCell(0);
+    cell1_8.setAttribute('class', 'govuk-table__cell');
+    cell1_8.innerHTML = "<b>JK44466<b>";
 
-    var cell2 = addRow.insertCell(1);
-    cell2.setAttribute('class', 'govuk-table__cell');
-    cell2.innerHTML = "New lease";
+    var cell2_8 = addRow8.insertCell(1);
+    cell2_8.setAttribute('class', 'govuk-table__cell');
+    cell2_8.innerHTML = "New lease";
 
-    var cell3 = addRow.insertCell(2);
-    cell3.setAttribute('class', 'govuk-table__cell');
-    cell3.innerHTML = "Cancelled";
+    var cell3_8 = addRow8.insertCell(2);
+    cell3_8.setAttribute('class', 'govuk-table__cell');
+    cell3_8.innerHTML = "Cancelled";
 
-    var cell4 = addRow.insertCell(3);
-    cell4.setAttribute('class', 'govuk-table__cell govuk-link');
-    cell4.setAttribute('style', 'color: #D10A1E; cursor: pointer; text-align: right;');
-    cell4.innerHTML = "Remove";
+    var cell4_8 = addRow8.insertCell(3);
+    cell4_8.setAttribute('class', 'govuk-table__cell govuk-link');
+    cell4_8.setAttribute('style', 'color: #D10A1E; cursor: pointer; text-align: right;');
+    cell4_8.setAttribute('onclick', 'removejk44466NewLease()');
+    cell4_8.innerHTML = "Remove";
+
+    noOfApplications += 1;
+    applicationsAdded();
+
+
     }
 
   else{
-    var row = document.getElementById('rowID');
-    var currentPosition = row.rowIndex;
-    console.log('row index:' + currentPosition);
-    var remove = document.getElementById("applications-table").deleteRow(currentPosition - 1);
+    var row_8 = document.getElementById('rowID8');
+    var currentPosition8 = row_8.rowIndex;
+    console.log('row index:' + currentPosition8);
+    var remove8 = document.getElementById("applications-table").deleteRow(currentPosition8 - 1);
+
+    noOfApplications -= 1;
+    applicationsAdded();
+
   }
 }
+
+function removejk44466NewLease(){
+  var row_8 = document.getElementById('rowID8');
+  var currentPosition8 = row_8.rowIndex;
+  console.log('row index:' + currentPosition8);
+  var remove8 = document.getElementById("applications-table").deleteRow(currentPosition8 - 1);
+  document.getElementById('JK44466-newLease').checked = false;
+
+  noOfApplications -= 1;
+  applicationsAdded();
+}
+
+function dk88932OfficialCopy() {
+  console.log('its checked');
+  var exists = document.getElementById('DK88932-OfficialCopy');
+  console.log(exists);
+  if (document.getElementById('DK88932-OfficialCopy').checked) {
+    console.log('the if statement is working')
+    var applicationsTable = document.getElementById('applications-table');
+    var rowCount2 = applicationsTable.rows.length;
+
+    var addRow2 = applicationsTable.insertRow(rowCount2);
+    addRow2.setAttribute('id', 'rowID2');
+
+    var cell1_2 = addRow2.insertCell(0);
+    cell1_2.setAttribute('class', 'govuk-table__cell');
+    cell1_2.innerHTML = "<b>DK88932<b>";
+
+    var cell2_2 = addRow2.insertCell(1);
+    cell2_2.setAttribute('class', 'govuk-table__cell');
+    cell2_2.innerHTML = "Official Copy";
+
+    var cell3_2 = addRow2.insertCell(2);
+    cell3_2.setAttribute('class', 'govuk-table__cell');
+    cell3_2.innerHTML = "Completed";
+
+    var cell4_2 = addRow2.insertCell(3);
+    cell4_2.setAttribute('class', 'govuk-table__cell govuk-link');
+    cell4_2.setAttribute('style', 'color: #D10A1E; cursor: pointer; text-align: right;');
+    cell4_2.setAttribute('onclick', 'removedk88932OfficialCopy()');
+    cell4_2.innerHTML = "Remove";
+
+    noOfApplications += 1;
+    applicationsAdded();
+
+    }
+
+  else{
+    var row2 = document.getElementById('rowID2');
+    var currentPosition2 = row2.rowIndex;
+    console.log('row index:' + currentPosition2);
+    var remove2 = document.getElementById("applications-table").deleteRow(currentPosition2 - 1);
+
+    noOfApplications -= 1;
+    applicationsAdded();
+  }
+}
+
+function removedk88932OfficialCopy(){
+  var row2 = document.getElementById('rowID2');
+  var currentPosition2 = row2.rowIndex;
+  console.log('row index:' + currentPosition2);
+  var remove2 = document.getElementById("applications-table").deleteRow(currentPosition2 - 1);
+
+  noOfApplications -= 1;
+  applicationsAdded();
+  document.getElementById('DK88932-OfficialCopy').checked = false;
+}
+
+function NN22989OfficialCopy() {
+  console.log('its checked');
+  var exists = document.getElementById('NN22989-OfficialCopy');
+  console.log(exists);
+  if (document.getElementById('NN22989-OfficialCopy').checked) {
+    console.log('the if statement is working')
+    var applicationsTable = document.getElementById('applications-table');
+    var rowCount5 = applicationsTable.rows.length;
+
+    var addRow5 = applicationsTable.insertRow(rowCount5);
+    addRow5.setAttribute('id', 'rowID5');
+
+    var cell1_5 = addRow5.insertCell(0);
+    cell1_5.setAttribute('class', 'govuk-table__cell');
+    cell1_5.innerHTML = "<b>NN22989<b>";
+
+    var cell2_5 = addRow5.insertCell(1);
+    cell2_5.setAttribute('class', 'govuk-table__cell');
+    cell2_5.innerHTML = "Official Copy";
+
+    var cell3_5 = addRow5.insertCell(2);
+    cell3_5.setAttribute('class', 'govuk-table__cell');
+    cell3_5.innerHTML = "Completed";
+
+    var cell4_5 = addRow5.insertCell(3);
+    cell4_5.setAttribute('class', 'govuk-table__cell govuk-link');
+    cell4_5.setAttribute('style', 'color: #D10A1E; cursor: pointer; text-align: right;');
+    cell4_5.setAttribute('onclick', 'removeNN22989OfficialCopy()');
+    cell4_5.innerHTML = "Remove";
+
+    noOfApplications += 1;
+    applicationsAdded();
+
+    }
+
+  else{
+    var row5 = document.getElementById('rowID5');
+    var currentPosition5 = row5.rowIndex;
+    console.log('row index:' + currentPosition5);
+    var remove5 = document.getElementById("applications-table").deleteRow(currentPosition5 - 1);
+
+    noOfApplications -= 1;
+    applicationsAdded();
+  }
+}
+
+function removeNN22989OfficialCopy(){
+  var row5 = document.getElementById('rowID5');
+  var currentPosition5 = row5.rowIndex;
+  console.log('row index:' + currentPosition5);
+  var remove5 = document.getElementById("applications-table").deleteRow(currentPosition5 - 1);
+
+  noOfApplications -= 1;
+  applicationsAdded();
+  document.getElementById('NN22989-OfficialCopy').checked = false;
+}
+
 
 function jk44466OfficialCopy() {
   console.log('its checked');
@@ -1221,31 +1607,53 @@ function jk44466OfficialCopy() {
     var rowCount = applicationsTable.rows.length;
     console.log(rowCount);
 
-    var addRow = applicationsTable.insertRow(rowCount);
-    addRow.setAttribute('id', 'rowID');
+    var addRow9 = applicationsTable.insertRow(rowCount);
+    addRow9.setAttribute('id', 'rowID9');
 
-    var cell1 = addRow.insertCell(0);
-    cell1.setAttribute('class', 'govuk-table__cell');
-    cell1.innerHTML = "<b>JK44466<b>";
+    var cell1_9 = addRow9.insertCell(0);
+    cell1_9.setAttribute('class', 'govuk-table__cell');
+    cell1_9.innerHTML = "<b>JK44466<b>";
 
-    var cell2 = addRow.insertCell(1);
-    cell2.setAttribute('class', 'govuk-table__cell');
-    cell2.innerHTML = "Official Copy";
+    var cell2_9 = addRow9.insertCell(1);
+    cell2_9.setAttribute('class', 'govuk-table__cell');
+    cell2_9.innerHTML = "Official Copy";
 
-    var cell3 = addRow.insertCell(2);
-    cell3.setAttribute('class', 'govuk-table__cell');
-    cell3.innerHTML = "Cancelled";
+    var cell3_9 = addRow9.insertCell(2);
+    cell3_9.setAttribute('class', 'govuk-table__cell');
+    cell3_9.innerHTML = "Cancelled";
 
-    var cell4 = addRow.insertCell(3);
-    cell4.setAttribute('class', 'govuk-table__cell govuk-link');
-    cell4.setAttribute('style', 'color: #D10A1E; cursor: pointer; text-align: right;');
-    cell4.innerHTML = "Remove";
+    var cell4_9 = addRow9.insertCell(3);
+    cell4_9.setAttribute('class', 'govuk-table__cell govuk-link');
+    cell4_9.setAttribute('style', 'color: #D10A1E; cursor: pointer; text-align: right;');
+    cell4_9.setAttribute('onclick', 'removejk44466OfficialCopy()');
+    cell4_9.innerHTML = "Remove";
+
+    noOfApplications += 1;
+    applicationsAdded();
+
+
     }
 
   else{
-    var row = document.getElementById('rowID');
-    var currentPosition = row.rowIndex;
-    console.log('row index:' + currentPosition);
-    var remove = document.getElementById("applications-table").deleteRow(currentPosition - 1);
+    var row9 = document.getElementById('rowID9');
+    var currentPosition9 = row9.rowIndex;
+    console.log('row index:' + currentPosition9);
+    var remove9 = document.getElementById("applications-table").deleteRow(currentPosition9 - 1);
+
+    noOfApplications -= 1;
+    applicationsAdded();
+
   }
 }
+
+function removejk44466OfficialCopy(){
+  var row_9 = document.getElementById('rowID9');
+  var currentPosition9 = row_9.rowIndex;
+  console.log('row index:' + currentPosition9);
+  var remove8 = document.getElementById("applications-table").deleteRow(currentPosition9 - 1);
+  document.getElementById('JK44466-officialCopy').checked = false;
+
+  noOfApplications -= 1;
+  applicationsAdded();
+}
+

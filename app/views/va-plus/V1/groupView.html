@@ -731,24 +731,78 @@ margin-bottom:5px;
                         </tr>
                       </thead>
                       <tbody class="govuk-table__body" id="applications-table">
+                        {% if data['DK88932-Transfer'] %}
                         <tr class="govuk-table__row">
-                          <th scope="row" class="govuk-table__cell">LP67555</th>
-                          <td class="govuk-table__cell">Register update</td>
-                          <td class="govuk-table__cell">Received</td>
-
+                          <th scope="row" class="govuk-table__cell">DK88932</th>
+                          <td class="govuk-table__cell">Transfer of whole with priority</td>
+                          <td class="govuk-table__cell">Cancelled</td>
                         </tr>
+                        {% endif %}
+                        {% if data['DK88932-OfficialCopy'] %}
+                        <tr class="govuk-table__row">
+                          <th scope="row" class="govuk-table__cell">DK88932</th>
+                          <td class="govuk-table__cell">Official copy</td>
+                          <td class="govuk-table__cell">Completed</td>
+                        </tr>
+                        {% endif %}
+                        
+                        {% if data['dk88932-newLease'] %}
+                        <tr class="govuk-table__row">
+                          <th scope="row" class="govuk-table__cell">DK88932</th>
+                          <td class="govuk-table__cell">New lease</td>
+                          <td class="govuk-table__cell">Received</td>
+                        </tr>
+                        {% endif %}
+
+                        {% if data['NN22989-Transfer'] %}
                         <tr class="govuk-table__row">
                           <th scope="row" class="govuk-table__cell">NN22989</th>
-                          <td class="govuk-table__cell">Official search of whole with priority</td>
-                          <td class="govuk-table__cell">Completed</td>
-
+                          <td class="govuk-table__cell">Transfer of whole with priority</td>
+                          <td class="govuk-table__cell">Cancelled</td>
                         </tr>
+                        {% endif %}
+
+                        {% if data['NN22989-OfficialCopy'] %}
+                        <tr class="govuk-table__row">
+                          <th scope="row" class="govuk-table__cell">NN22989</th>
+                          <td class="govuk-table__cell">Official copy</td>
+                          <td class="govuk-table__cell">Completed</td>
+                        </tr>
+                        {% endif %}
+
+                        {% if data['NN22989-newLease'] %}
+                        <tr class="govuk-table__row">
+                          <th scope="row" class="govuk-table__cell">NN22989</th>
+                          <td class="govuk-table__cell">New lease</td>
+                          <td class="govuk-table__cell">Received</td>
+                        </tr>
+                        {% endif %}
+
+                        {% if data['jk44466-Transfer'] %}
                         <tr class="govuk-table__row">
                           <th scope="row" class="govuk-table__cell">JK44466</th>
-                          <td class="govuk-table__cell">Official copies</td>
+                          <td class="govuk-table__cell">Transfer of whole with priority</td>
                           <td class="govuk-table__cell">Cancelled</td>
-
                         </tr>
+                        {% endif %}
+
+                        {% if data['JK44466-officialCopy'] %}
+                        <tr class="govuk-table__row">
+                          <th scope="row" class="govuk-table__cell">JK44466</th>
+                          <td class="govuk-table__cell">Official copy</td>
+                          <td class="govuk-table__cell">Completed</td>
+                        </tr>
+                        {% endif %}
+
+                        {% if data['JK44466-newLease'] %}
+                        <tr class="govuk-table__row">
+                          <th scope="row" class="govuk-table__cell">JK44466</th>
+                          <td class="govuk-table__cell">New lease</td>
+                          <td class="govuk-table__cell">Received</td>
+                        </tr>
+                        {% endif %}
+
+
                       </tbody>
                     </table>
 
