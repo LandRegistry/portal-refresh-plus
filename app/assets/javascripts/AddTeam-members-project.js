@@ -108,12 +108,18 @@ function CreateDeleteHeading(){
         var tn_header = document.createTextNode("Team members");
         var litn_header = li_header.appendChild(tn_header);
         header.insertBefore(li_header, header.childNodes[0]);
+
+        var teamBox = document.getElementById("greyBoxForTeamMembers");      
+        teamBox.style.display = 'block';
+      
     }
     if ((howmanyMembersSelected === 0) && (anyMemberSelected === true)){
         anyMemberSelected = false;
         console.log('DELETE HEADING');
 
         header_id.remove();
+        var teamBox = document.getElementById("greyBoxForTeamMembers");      
+        teamBox.style.display = 'none';
     }
 }
 
