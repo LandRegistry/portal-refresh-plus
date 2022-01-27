@@ -5,7 +5,7 @@
 {% block content %}
 
 <script src="/public/javascripts/jquery-1.11.3.js"></script>
-
+<script>require('../javascripts/AddTeam-members-project.js')</script>
 
 <style>
 
@@ -504,7 +504,7 @@ background-color: red;
 font-size: 30px;
 color:#000000;
 text-align: center;
-padding: 50px 0px;
+/* padding: 50px 0px; */
 margin-bottom:5px;
 }
 
@@ -777,31 +777,262 @@ margin-bottom:5px;
           <div class="govuk-grid-column-full" style="padding-bottom:20px;">
 
             <h2 class="govuk-heading-l">Step 3: Link applications to this group</h2>
+            {% if data['testing'] %}
+            <h2 class="govuk-heading-l">Step 3: Link applications to this group</h2>
+            {% endif %}
+
         
             <div class="govuk-body" style="margin-bottom: 30px;">
  
               <input type="text" id="search-input" class="searchBox" style="">
-              <button class="searchButton" value="submit" id="search-button" style=""> <img width="20" height="20" style="margin-top:6px;" src="/public/images/search-icon.svg"></button>
-
+              <button class="searchButton" value="button" id="search-button" onclick="searchTitleNumbers(); return false"><img width="20" height="20" style="margin-top:6px;" src="/public/images/search-icon.svg"></button>
             </div>
         
-              <div class="temporaryBox" id="titleOne">
-                LP67555
+              <div class="temporaryBox" id="titleOne" style="display: none;">
+                <table class="govuk-table" style="margin-bottom: 0px;">
+                  <thead class="govuk-table__head">
+                    <tr class="govuk-table__row">
+                      <th scope="col" class="govuk-table__header" style="padding-left: 35px;">Title number</th>
+                      <th scope="col" class="govuk-table__header">Application type</th>
+                      <th scope="col" class="govuk-table__header">Status</th>
+                    </tr>
+                  </thead>
+                  <tbody class="govuk-table__body">
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        <div class="govuk-form-group" style="margin-bottom: 0px;">
+                          <fieldset class="govuk-fieldset">
+                            <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                              <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+                                <label class="govuk-label govuk-checkboxes__label" for="organisation">
+                                  DK88932
+                                </label>
+                              </div>
+                            </div>
+                          </fieldset>
+                        </div>
+                      </td>
+                      <td class="govuk-table__cell">
+                        Transfer of whole with priority
+                      </td>
+                      <td class="govuk-table__cell">
+                        Cancelled
+                      </td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        <div class="govuk-form-group" style="margin-bottom: 0px;">
+                          <fieldset class="govuk-fieldset">
+                            <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                              <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+                                <label class="govuk-label govuk-checkboxes__label" for="organisation">
+                                  DK88932
+                                </label>
+                              </div>
+                            </div>
+                          </fieldset>
+                        </div>
+                      </td>
+                      <td class="govuk-table__cell">
+                        Official copy
+                      </td>
+                      <td class="govuk-table__cell">
+                        Completed
+                      </td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        <div class="govuk-form-group" style="margin-bottom: 0px;">
+                          <fieldset class="govuk-fieldset">
+                            <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                              <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+                                <label class="govuk-label govuk-checkboxes__label" for="organisation">
+                                  DK88932
+                                </label>
+                              </div>
+                            </div>
+                          </fieldset>
+                        </div>
+                      </td>
+                      <td class="govuk-table__cell">
+                        New lease
+                      </td>
+                      <td class="govuk-table__cell">
+                        Received
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
               </div>
 
-              <div class="temporaryBox" id="titleTwo">
-                NN22989
+              <div class="temporaryBox" id="titleTwo" style="display: none;">
+                <table class="govuk-table" style="margin-bottom: 0px;">
+                  <thead class="govuk-table__head">
+                    <tr class="govuk-table__row">
+                      <th scope="col" class="govuk-table__header" style="padding-left: 35px;">Title number</th>
+                      <th scope="col" class="govuk-table__header">Application type</th>
+                      <th scope="col" class="govuk-table__header">Status</th>
+                    </tr>
+                  </thead>
+                  <tbody class="govuk-table__body">
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        <div class="govuk-form-group" style="margin-bottom: 0px;">
+                          <fieldset class="govuk-fieldset">
+                            <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                              <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc" onclick="test()">
+                                <label class="govuk-label govuk-checkboxes__label" for="organisation">
+                                  NN22989
+                                </label>
+                              </div>
+                            </div>
+                          </fieldset>
+                        </div>
+                      </td>
+                      <td class="govuk-table__cell">
+                        Transfer of whole with priority
+                      </td>
+                      <td class="govuk-table__cell">
+                        Cancelled
+                      </td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        <div class="govuk-form-group" style="margin-bottom: 0px;">
+                          <fieldset class="govuk-fieldset">
+                            <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                              <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+                                <label class="govuk-label govuk-checkboxes__label" for="organisation">
+                                  NN22989
+                                </label>
+                              </div>
+                            </div>
+                          </fieldset>
+                        </div>
+                      </td>
+                      <td class="govuk-table__cell">
+                        Official copy
+                      </td>
+                      <td class="govuk-table__cell">
+                        Completed
+                      </td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        <div class="govuk-form-group" style="margin-bottom: 0px;">
+                          <fieldset class="govuk-fieldset">
+                            <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                              <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+                                <label class="govuk-label govuk-checkboxes__label" for="organisation">
+                                  NN22989
+                                </label>
+                              </div>
+                            </div>
+                          </fieldset>
+                        </div>
+                      </td>
+                      <td class="govuk-table__cell">
+                        New lease
+                      </td>
+                      <td class="govuk-table__cell">
+                        Received
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
               </div>
 
-              <div class="temporaryBox" id="titleThree">
-                JK44466
+              <div class="temporaryBox" id="titleThree" style="display: none;">
+                <table class="govuk-table" style="margin-bottom: 0px;">
+                  <thead class="govuk-table__head">
+                    <tr class="govuk-table__row">
+                      <th scope="col" class="govuk-table__header" style="padding-left: 35px;">Title number</th>
+                      <th scope="col" class="govuk-table__header">Application type</th>
+                      <th scope="col" class="govuk-table__header">Status</th>
+                    </tr>
+                  </thead>
+                  <tbody class="govuk-table__body">
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        <div class="govuk-form-group" style="margin-bottom: 0px;">
+                          <fieldset class="govuk-fieldset">
+                            <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                              <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" id="jk44466-Transfer" name="jk44466-Transfer" type="checkbox" onclick="jk44466Transfer()" value="checked">
+                                <label class="govuk-label govuk-checkboxes__label" for="jk44466-Transfer">
+                                  JK44466
+                                </label>
+                              </div>
+                            </div>
+                          </fieldset>
+                        </div>
+                      </td>
+                      <td class="govuk-table__cell">
+                        Transfer of whole with priority
+                      </td>
+                      <td class="govuk-table__cell">
+                        Cancelled
+                      </td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        <div class="govuk-form-group" style="margin-bottom: 0px;">
+                          <fieldset class="govuk-fieldset">
+                            <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                              <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" id="JK44466-officialCopy" name="JK44466-officialCopy" type="checkbox" value="checked" onclick="jk44466OfficialCopy()">
+                                <label class="govuk-label govuk-checkboxes__label" for="JK44466-officialCopy">
+                                  JK44466
+                                </label>
+                              </div>
+                            </div>
+                          </fieldset>
+                        </div>
+                      </td>
+                      <td class="govuk-table__cell">
+                        Official copy
+                      </td>
+                      <td class="govuk-table__cell">
+                        Completed
+                      </td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        <div class="govuk-form-group" style="margin-bottom: 0px;">
+                          <fieldset class="govuk-fieldset">
+                            <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                              <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" id="JK44466-newLease" name="JK44466-newLease" type="checkbox" value="checked" onclick="jk44466NewLease()">
+                                <label class="govuk-label govuk-checkboxes__label" for="JK44466-newLease">
+                                  JK44466
+                                </label>
+                              </div>
+                            </div>
+                          </fieldset>
+                        </div>
+                      </td>
+                      <td class="govuk-table__cell">
+                        New lease
+                      </td>
+                      <td class="govuk-table__cell">
+                        Received
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
               </div>
 
               <div class="box-container-wide">
                 <div class="govuk-body box-container-title">
                     Applications
                 </div> 
-                <div>
+              <div>
                   
                   
                   <table class="govuk-table" style="margin-bottom:0px;">
@@ -813,7 +1044,7 @@ margin-bottom:5px;
                         <th scope="col" class="govuk-table__header"></th>
                       </tr>
                     </thead>
-                    <tbody class="govuk-table__body">
+                    <tbody class="govuk-table__body" id="applications-table">
                       <tr class="govuk-table__row">
                         <th scope="row" class="govuk-table__cell">LP67555</th>
                         <td class="govuk-table__cell">Register update</td>
@@ -827,7 +1058,7 @@ margin-bottom:5px;
                         <td class="govuk-table__cell"><a class="removeButton" href="#">Remove</a></td>
                       </tr>
                       <tr class="govuk-table__row">
-                        <th scope="row" class="govuk-table__cell">JK44466</th>
+                        <th scope="row" class="govuk-table__cell">-JK44466-</th>
                         <td class="govuk-table__cell">New lease</td>
                         <td class="govuk-table__cell">Cancelled</td>
                         <td class="govuk-table__cell"><a class="removeButton" href="#">Remove</a></td>
@@ -871,6 +1102,8 @@ margin-bottom:5px;
                 <a class="footlink" style="text-color: grey; text-decoration: none;"><u>Accessibility statement</u></a>
                 <a>|</a>
                 <a class="footlink" style="text-color: grey; text-decoration: none;"><u>Freedom of information</u></a>
+                <a>|</a>
+                <a class="footlink" style="text-color: grey; text-decoration: none;" href="/setup/stored-data"><u>Check data</u></a>
                 <a>
                 <br>
                 <br>
