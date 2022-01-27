@@ -842,32 +842,29 @@ tr:hover {
          <div class="panelNEW">
 
 
-            {{ govukCheckboxes ({
-                idPrefix: "application-group",
-                name: "application-group",
-                classes: "govuk-checkboxes govuk-checkboxes--small checkbox2",
-                fieldset: {
-                  legend: {
-                    text: ""
-                  }
-                },
-                items: [
-                {
-                  value: "HS2",
-                  text: "HS2",
-                  checked: false,
-                  id: "HS2"
-                },
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset">
+                  <div class="govuk-checkboxes--small checkbox2" data-module="govuk-checkboxes" name="application-group" id="application-group">
 
-                {
-                    value: "Westfields",
-                    text: "Westfields"   ,
-                      checked: false,
-                    id: "Westfields"
-                  }
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="HS2" name="application-group" type="checkbox" value="HS2">
+                      <label class="govuk-label govuk-checkboxes__label" for="HS2">
+                        HS2 (<a href="groupViewHS2.html">view</a>)
+                      </label>
+                    </div>
 
-                ]
-              }) }}  
+                    <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="Westfields" name="application-group" type="checkbox" value="Westfields">
+                        <label class="govuk-label govuk-checkboxes__label" for="Westfields">
+                          Westfields (<a href="groupViewWestfields.html">view</a>)
+                        </label>
+                      </div>
+
+
+                  </div>
+              
+                </fieldset>
+              </div>
 
             <button class="govuk-button govuk-button--secondary" style="margin-top: 10px;margin-bottom: 15px; "data-module="govuk-button" onclick="window.location.href='groupCreate.html'">
                 Create new group
