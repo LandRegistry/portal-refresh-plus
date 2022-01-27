@@ -5,7 +5,7 @@
 {% block content %}
 
 <script src="/public/javascripts/jquery-1.11.3.js"></script>
-
+<script>require('../javascripts/AddTeam-members-project.js')</script>
 
 <style>
 
@@ -875,7 +875,7 @@ margin-bottom:5px;
                           <fieldset class="govuk-fieldset">
                             <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
                               <div class="govuk-checkboxes__item">
-                                <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+                                <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc" onclick="test()">
                                 <label class="govuk-label govuk-checkboxes__label" for="organisation">
                                   NN22989
                                 </label>
@@ -955,8 +955,8 @@ margin-bottom:5px;
                           <fieldset class="govuk-fieldset">
                             <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
                               <div class="govuk-checkboxes__item">
-                                <input class="govuk-checkboxes__input" id="jk44466-transfer" name="jk44466-transfer" type="checkbox" value="checked" onclick="jk44466Transfer()">
-                                <label class="govuk-label govuk-checkboxes__label" for="jk44466-transfer">
+                                <input class="govuk-checkboxes__input" id="jk44466-Transfer" name="jk44466-Transfer" type="checkbox" onclick="jk44466Transfer()" value="checked">
+                                <label class="govuk-label govuk-checkboxes__label" for="jk44466-Transfer">
                                   JK44466
                                 </label>
                               </div>
@@ -1023,7 +1023,7 @@ margin-bottom:5px;
                 <div class="govuk-body box-container-title">
                     Applications
                 </div> 
-                <div>
+              <div>
                   
                   
                   <table class="govuk-table" style="margin-bottom:0px;">

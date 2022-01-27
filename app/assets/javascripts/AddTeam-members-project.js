@@ -1,4 +1,4 @@
-const session = require("express-session");
+// const session = require("express-session");
 
 var howmanyMembersSelected = 0;
 var anyMemberSelected = false;
@@ -1138,6 +1138,45 @@ function searchTitleNumbers(){
   }
 }
 
+function jk44466Transfer() {
+  console.log('its checked');
+  var exists = document.getElementById('jk44466-Transfer');
+  console.log(exists);
+  if (document.getElementById('jk44466-Transfer').checked) {
+    console.log('the if statement is working')
+    var applicationsTable = document.getElementById('applications-table');
+    var rowCount = applicationsTable.rows.length;
+    console.log(rowCount);
+
+    var addRow = applicationsTable.insertRow(rowCount);
+    addRow.setAttribute('id', 'rowID');
+
+    var cell1 = addRow.insertCell(0);
+    cell1.setAttribute('class', 'govuk-table__cell');
+    cell1.innerHTML = "<b>JK44466<b>";
+
+    var cell2 = addRow.insertCell(1);
+    cell2.setAttribute('class', 'govuk-table__cell');
+    cell2.innerHTML = "Transfer of whole with priority";
+
+    var cell3 = addRow.insertCell(2);
+    cell3.setAttribute('class', 'govuk-table__cell');
+    cell3.innerHTML = "Cancelled";
+
+    var cell4 = addRow.insertCell(3);
+    cell4.setAttribute('class', 'govuk-table__cell govuk-link');
+    cell4.setAttribute('style', 'color: #D10A1E; cursor: pointer; text-align: right;');
+    cell4.innerHTML = "Remove";
+    }
+
+  else{
+    var row = document.getElementById('rowID');
+    var currentPosition = row.rowIndex;
+    console.log('row index:' + currentPosition);
+    var remove = document.getElementById("applications-table").deleteRow(currentPosition - 1);
+  }
+}
+
 
 function jk44466NewLease() {
   console.log('its checked');
@@ -1192,43 +1231,6 @@ function jk44466OfficialCopy() {
     var cell2 = addRow.insertCell(1);
     cell2.setAttribute('class', 'govuk-table__cell');
     cell2.innerHTML = "Official Copy";
-
-    var cell3 = addRow.insertCell(2);
-    cell3.setAttribute('class', 'govuk-table__cell');
-    cell3.innerHTML = "Cancelled";
-
-    var cell4 = addRow.insertCell(3);
-    cell4.setAttribute('class', 'govuk-table__cell govuk-link');
-    cell4.setAttribute('style', 'color: #D10A1E; cursor: pointer; text-align: right;');
-    cell4.innerHTML = "Remove";
-    }
-
-  else{
-    var row = document.getElementById('rowID');
-    var currentPosition = row.rowIndex;
-    console.log('row index:' + currentPosition);
-    var remove = document.getElementById("applications-table").deleteRow(currentPosition - 1);
-  }
-}
-
-
-function jk44466Transfer() {
-  console.log('its checked');
-  if (document.getElementById('JK44466-transfer').checked) {
-    var applicationsTable = document.getElementById('applications-table');
-    var rowCount = applicationsTable.rows.length;
-    console.log(rowCount);
-
-    var addRow = applicationsTable.insertRow(rowCount);
-    addRow.setAttribute('id', 'rowID');
-
-    var cell1 = addRow.insertCell(0);
-    cell1.setAttribute('class', 'govuk-table__cell');
-    cell1.innerHTML = "<b>JK44466<b>";
-
-    var cell2 = addRow.insertCell(1);
-    cell2.setAttribute('class', 'govuk-table__cell');
-    cell2.innerHTML = "Transfer of whole with priority";
 
     var cell3 = addRow.insertCell(2);
     cell3.setAttribute('class', 'govuk-table__cell');
