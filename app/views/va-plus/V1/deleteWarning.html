@@ -688,172 +688,31 @@ margin-bottom:5px;
 
     <div class="table-content-section">
 
-        <h1 class="govuk-heading-xl">Edit group</h1>
 
-        <form  method="post" class="form">
-          <div class="govuk-grid-row">
-            <div class="govuk-grid-column-full" style="padding-bottom:20px;">
 
-              <h2 class="govuk-heading-l">Group details</h2>
+        <h2 class="govuk-heading-l">Are you sure you want to delete the group '{{ data['group-name'] }}'?</h2>
+
+
+
+
+      <div>
+
+
+            <button class="govuk-button govuk-button--secondary" data-module="govuk-button" style="margin-bottom:0px;" id="btnCancel" onclick="window.location.href='groupEdit.html'">
+              Cancel
+            </button>
+
+
+            <button class="govuk-button" type="submit" data-module="govuk-button" style="float:right;width:150px;margin-bottom:0px;" onclick="window.location.href='index.html'">
+              Confirm
+            </button>
+
           
-              <div class="govuk-form-group" style="float: left;">
-                  <label class="govuk-label govuk-!-font-weight-bold" for="address-town">
-                      Group name
-                  </label>
-          
-                  <input class="govuk-input" id="group-name" name="group-name" type="text" style="width:300px;" value="{{ data['group-name'] }}">
-              </div>
-          
-              <div class="govuk-form-group" style="float: left;margin-left: 50px;">
-                  <label class="govuk-label govuk-!-font-weight-bold" for="address-town">
-                      Group email address
-                  </label>
-                  
-                  <input class="govuk-input" id="group-email" name="group-email" type="text" style="width:300px;" value="{{ data['group-email'] }}"><div class="govuk-hint" style="font-size:16px;margin-top: 5px;">Notifications will be sent to this address</div>
-              </div>
-          
-          
-            </div>  
-
-
-
-
-            <div class="govuk-grid-column-full" style="padding-bottom:50px;">
-              <h2 class="govuk-heading-l">Group team members</h2>
-          
-              <div class="govuk-body" style="margin-bottom: 0px;">
-                <label class="govuk-label form-label-bold">
-                    Select team team members
-                </label>
-                  <select id="cat" class="form-control" style="height:39px;width:300px;border:2px solid #000000;" type="submit" onchange="TeamMemberSelected()">
-                    <option value="#"></option>
-                    <option value="AaronFlynn">Aaron Flynn</option>
-                    <option value="AlexBlewett">Alex Blewett</option>
-                    <option value="AndyCarr">Andy Carr</option>
-                    <option value="DuncanAnderson">Duncan Anderson</option>
-                    <option value="JamesThomas">James Thomas</option>
-                    <option value="JohnBaptisteKelly">John Baptiste-Kelly</option>
-                    <option value="JohnJames">John James</option>
-                    <option value="JohnTaylor">John Taylor</option>
-                    <option value="JonParker">Jon Parker</option>
-                    <option value="JuanPintodelRio">Juan Pinto-del-Rio</option>
-                    <option value="LaurenDowling">Lauren Dowling</option>
-                    <option value="LukasKroeningMaynard">Lukas Kroening-Maynard</option>
-                    <option value="MarkHornsby">Mark Hornsby</option>
-                    <option value="MelviaMathew">Melvia Mathew</option>
-                    <option value="NeilButler">Neil Butler</option>
-                    <option value="NicolaAndrews">Nicola Andrews</option>
-                    <option value="PatGannon">Pat Gannon</option>
-                    <option value="RomaniDavies">Romani Davies</option>
-                    <option value="SimonSkidmore">Simon Skidmore</option>
-                    <option value="SueWatchman">Sue Watchman</option>
-                    <option value="TonyWatson">Tony Watson</option>
-                  </select>
-              </div>
-              <div class="box-container">
-                  <div class="Header_container">
-                    <ul id="addHeaderhere">
-              
-                    </ul>
-                  </div>
-              
-                  <div class="govuk-form-group" style="margin-bottom: 0px;">
-                    <fieldset class="govuk-fieldset">
-                      <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes" id="MembersGoHere">
-                        <!-- <div class="govuk-checkboxes__item">
-                          <input class="govuk-checkboxes__input" id="AaronFlynn" name="AaronFlynn" type="checkbox" value="AaronFlynn">
-                          <label class="govuk-label govuk-checkboxes__label" for="organisation">
-                            Aaron Flynn
-                          </label>
-                        </div> -->
-                      </div>
-                    </fieldset>
-                  </div>
-            </div>
-          </div>
-
-
-
-          <div class="govuk-grid-column-full" style="padding-bottom:20px;">
-
-            <h2 class="govuk-heading-l">Linked applications to this group</h2>
-        
-            <div class="govuk-body" style="margin-bottom: 30px;">
- 
-              <input type="text" id="search-input" class="searchBox" style="">
-              <button class="searchButton" value="button" id="search-button" onclick="searchTitleNumbers(); return false"><img width="20" height="20" style="margin-top:6px;" src="/public/images/search-icon.svg"></button>
-            </div>
-
-              <div class="box-container-wide">
-                <div class="govuk-body box-container-title">
-                    Applications
-                </div> 
-              <div>
-                  
-                  
-                  <table class="govuk-table" style="margin-bottom:0px;">
-                    <thead class="govuk-table__head">
-                      <tr class="govuk-table__row">
-                        <th scope="col" class="govuk-table__header">Title number</th>
-                        <th scope="col" class="govuk-table__header">Application type</th>
-                        <th scope="col" class="govuk-table__header">Status</th>
-                        <th scope="col" class="govuk-table__header"></th>
-                      </tr>
-                    </thead>
-                    <tbody class="govuk-table__body" id="applications-table">
-                      <tr class="govuk-table__row">
-                        <th scope="row" class="govuk-table__cell">LP67555</th>
-                        <td class="govuk-table__cell">Register update</td>
-                        <td class="govuk-table__cell">Received</td>
-                        <td class="govuk-table__cell"><a class="removeButton" href="#">Remove</a></td>
-                      </tr>
-                      <tr class="govuk-table__row">
-                        <th scope="row" class="govuk-table__cell">NN22989</th>
-                        <td class="govuk-table__cell">Official search of whole with priority</td>
-                        <td class="govuk-table__cell">Completed</td>
-                        <td class="govuk-table__cell"><a class="removeButton" href="#">Remove</a></td>
-                      </tr>
-                      <tr class="govuk-table__row">
-                        <th scope="row" class="govuk-table__cell">JK44466</th>
-                        <td class="govuk-table__cell">Official copies</td>
-                        <td class="govuk-table__cell">Cancelled</td>
-                        <td class="govuk-table__cell"><a class="removeButton" href="#">Remove</a></td>
-                      </tr>
-                    </tbody>
-                  </table>
-
-                </div>
-              </div>
-        
-          </div> 
-
-
-            <div class="govuk-grid-column-full">
-              <button class="govuk-button" type="submit" data-module="govuk-button" style="float:right;width:150px;margin-bottom:0px;" formaction="groupView">
-                Save changes
-              </button>
-            </div>
-          </div>
-        </form>
-
-        <div class="govuk-grid-column-full" style="padding:0px;">
-          <button class="govuk-button govuk-button--secondary" data-module="govuk-button" style="float:left;margin-bottom:0px;margin-top: -40px;" id="btnCancel" onclick="window.location.href='groupView.html'">
-            Cancel
-          </button>
-        </div>
+      </div>
 
     </div>
 
-    <div class="table-content-section">
 
-      <h2 class="govuk-heading-l">Would you like to delete this group?</h2>
-
-      <button class="govuk-button govuk-button--warning" data-module="govuk-button" style="margin-bottom:0px;" id="btnDelete" onclick="window.location.href='deleteWarning.html'">
-        Delete group
-      </button>
-
-
-    </div>
 
   </div>
 
