@@ -6,6 +6,17 @@
 
 <script src="/public/javascripts/jquery-1.11.3.js"></script>
 <script>require('../javascripts/AddTeam-members-group.js')</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function(event){
+    DisplayingTeamMembersSelected();
+  
+  })
+  
+  window.addEventListener("load", function(event) {
+              document.querySelector("body").style.display = "block";
+          });
+  
+  </script>
 
 <style>
 
@@ -522,6 +533,8 @@ margin-bottom:5px;
 
 </style>
 
+<body style="display:none;">
+
 
 <!-- Back & clear data top -->
 <!-- Back & clear data top -->
@@ -704,10 +717,51 @@ margin-bottom:5px;
             </div>
               <div class="govuk-grid-column-one-half" style="padding-bottom:50px;">
                 <h2 class="govuk-heading-l">Team members</h2>
-                <div id="JohnBaptisteKelly_id"><label for="JohnBaptisteKelly" class="govuk-label">John BaptisteKelly</label></div>
+                <!-- <div id="JohnBaptisteKelly_id"><label for="JohnBaptisteKelly" class="govuk-label">John BaptisteKelly</label></div>
                 <div id="AndyCarr_id"><label for="AndyCarr" class="govuk-label">Andy Carr</label></div>
                 <div id="LaurenDowling_id"><label for="LaurenDowling" class="govuk-label">Lauren Dowling</label></div>
-                <div id="LaurenThomas_id"><label for="LaurenThomas" class="govuk-label">Lauren Thomas</label></div>
+                <div id="LaurenThomas_id"><label for="LaurenThomas" class="govuk-label">Lauren Thomas</label></div> -->
+                <div id="AaronFlynn_id"><label for="AaronFlynn" class="govuk-label">Aaron Flynn</label></div>
+
+                <div id="AlexBlewett_id"><label for="AlexBlewett" class="govuk-label">Alex Blewett</label></div>
+
+                <div id="AndyCarr_id"><label for="AndyCarr" class="govuk-label">Andy Carr</label></div>
+
+                <div id="DuncanAnderson_id"><label for="DuncanAnderson" class="govuk-label">Duncan Anderson</label></div>
+
+                <div id="JamesThomas_id"><label for="JamesThomas" class="govuk-label">James Thomas</label></div>
+
+                <div id="JohnBaptisteKelly_id"><label for="JohnBaptisteKelly" class="govuk-label">John Baptiste-Kelly</label></div>
+
+                <div id="JohnJames_id"><label for="JohnJames" class="govuk-label">John James</label></div>
+
+                <div id="JohnTaylor_id"><label for="JohnTaylor" class="govuk-label">John Taylor</label></div>
+
+                <div id="JonParker_id"><label for="JonParker" class="govuk-label">Jon Parker</label></div>
+
+                <div id="JuanPintodelRio_id"><label for="JuanPintodelRio" class="govuk-label">Juan Pinto-del-Rio</label></div>
+
+                <div id="LaurenDowling_id"><label for="LukasKroeningMaynard" class="govuk-label">Lauren Dowling</label></div>
+
+                <div id="LukasKroeningMaynard_id"><label for="LukasKroeningMaynard" class="govuk-label">Lukas Kroening-Maynard</label></div>
+
+                <div id="MarkHornsby_id"><label for="MarkHornsby" class="govuk-label">Mark Hornsby</label></div>
+
+                <div id="MelviaMathew_id"><label for="MelviaMathew" class="govuk-label">Melvia Mathew</label></div>
+
+                <div id="NeilButler_id"><label for="NeilButler" class="govuk-label">Neil Butler</label></div>
+
+                <div id="NicolaAndrews_id"><label for="NicolaAndrews" class="govuk-label">Nicola Andrews</label></div>
+
+                <div id="PatGannon_id"><label for="PatGannon" class="govuk-label">Pat Gannon</label></div>
+
+                <div id="RomaniDavies_id"><label for="RomaniDavies" class="govuk-label">Romani Davies</label></div>
+
+                <div id="SimonSkidmore_id"><label for="SimonSkidmore" class="govuk-label">Simon Skidmore</label></div>
+
+                <div id="SueWatchman_id"><label for="SueWatchman" class="govuk-label">Sue Watchman</label></div>
+
+                <div id="TonyWatson_id"><label for="TonyWatson" class="govuk-label">Tony Watson</label></div>
               </div> 
             
                 <div class="govuk-grid-column-one-half" style="padding-bottom:50px;">
@@ -841,7 +895,7 @@ margin-bottom:5px;
             </div>
                 </div>
 
-
+</body>
 <!-- Content Area - End -->
 
 {% endblock %}

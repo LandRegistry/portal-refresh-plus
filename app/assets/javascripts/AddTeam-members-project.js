@@ -210,15 +210,19 @@ function AaronFlynnSelected() {
 
     
   	howmanyMembersSelected += 1;
+    sessionStorage.setItem("Aaron Flynn", "true");
+
     CreateDeleteHeading();
     }
     
 function remove_AaronFlynn(){
 	AaronFlynn_id.remove();
   	howmanyMembersSelected -= 1;
+    sessionStorage.removeItem("Aaron Flynn");
     CreateDeleteHeading();
 
     AaronFlynn = false;
+
 
     
 }
@@ -255,12 +259,15 @@ function AlexBlewettSelected() {
 
     
   	howmanyMembersSelected += 1;
+    sessionStorage.setItem("Alex Blewett", "true");
+
     CreateDeleteHeading();
     }
     
 function remove_AlexBlewett(){
 	AlexBlewett_id.remove();
   	howmanyMembersSelected -= 1;
+    sessionStorage.removeItem("Alex Blewett");
     CreateDeleteHeading();
 
     AlexBlewett = false;
@@ -300,12 +307,15 @@ function AndyCarrSelected() {
 
     
   	howmanyMembersSelected += 1;
+    sessionStorage.setItem("Andy Carr", "true");
+
     CreateDeleteHeading();
     }
     
 function remove_AndyCarr(){
 	AndyCarr_id.remove();
   	howmanyMembersSelected -= 1;
+    sessionStorage.removeItem("Andy Carr");
     CreateDeleteHeading();
 
     AndyCarr = false;
@@ -343,7 +353,7 @@ function DuncanAndersonSelected() {
     label_DuncanAnderson.appendChild(button_DuncanAnderson);
 
 
-    
+    sessionStorage.setItem("Duncan Anderson", "true");
   	howmanyMembersSelected += 1;
     CreateDeleteHeading();
     }
@@ -351,6 +361,8 @@ function DuncanAndersonSelected() {
 function remove_DuncanAnderson(){
 	DuncanAnderson_id.remove();
   	howmanyMembersSelected -= 1;
+    sessionStorage.removeItem("Duncan Anderson");
+
     CreateDeleteHeading();
 
     DuncanAnderson = false;
@@ -388,7 +400,8 @@ function JamesThomasSelected() {
     label_JamesThomas.appendChild(button_JamesThomas);
 
 
-    
+    sessionStorage.setItem("James Thomas", "true");
+
   	howmanyMembersSelected += 1;
     CreateDeleteHeading();
     }
@@ -396,6 +409,8 @@ function JamesThomasSelected() {
 function remove_JamesThomas(){
 	JamesThomas_id.remove();
   	howmanyMembersSelected -= 1;
+    sessionStorage.removeItem("James Thomas");
+
     CreateDeleteHeading();
 
     JamesThomas = false;
@@ -432,7 +447,8 @@ function JohnBaptisteKellySelected() {
     label_JohnBaptisteKelly.appendChild(button_JohnBaptisteKelly);
 
 
-    
+    sessionStorage.setItem("John Baptiste-Kelly", "true");
+
   	howmanyMembersSelected += 1;
     CreateDeleteHeading();
     }
@@ -440,6 +456,8 @@ function JohnBaptisteKellySelected() {
 function remove_JohnBaptisteKelly(){
 	JohnBaptisteKelly_id.remove();
   	howmanyMembersSelected -= 1;
+    sessionStorage.removeItem("John Baptiste-Kelly");
+
     CreateDeleteHeading();
 
     JohnBaptisteKelly = false;
@@ -474,7 +492,8 @@ function JohnJamesSelected() {
     label_JohnJames.appendChild(button_JohnJames);
 
 
-    
+    sessionStorage.setItem("John James", "true");
+
   	howmanyMembersSelected += 1;
     CreateDeleteHeading();
     }
@@ -482,6 +501,8 @@ function JohnJamesSelected() {
 function remove_JohnJames(){
 	JohnJames_id.remove();
   	howmanyMembersSelected -= 1;
+    sessionStorage.removeItem("John James");
+
     CreateDeleteHeading();
 
     JohnJames = false;
@@ -516,7 +537,8 @@ function JohnTaylorSelected() {
     label_JohnTaylor.appendChild(button_JohnTaylor);
 
 
-    
+    sessionStorage.setItem("John Taylor", "true");
+
   	howmanyMembersSelected += 1;
     CreateDeleteHeading();
     }
@@ -524,6 +546,8 @@ function JohnTaylorSelected() {
 function remove_JohnTaylor(){
 	JohnTaylor_id.remove();
   	howmanyMembersSelected -= 1;
+    sessionStorage.removeItem("John Taylor");
+
     CreateDeleteHeading();
 
     JohnTaylor = false;
@@ -558,7 +582,8 @@ function JonParkerSelected() {
     label_JonParker.appendChild(button_JonParker);
 
 
-    
+    sessionStorage.setItem("Jon Parker", "true");
+
   	howmanyMembersSelected += 1;
     CreateDeleteHeading();
     }
@@ -566,6 +591,8 @@ function JonParkerSelected() {
 function remove_JonParker(){
 	JonParker_id.remove();
   	howmanyMembersSelected -= 1;
+    sessionStorage.removeItem("Jon Parker");
+
     CreateDeleteHeading();
 
     JonParker = false;
@@ -600,7 +627,8 @@ function JuanPintodelRioSelected() {
     label_JuanPintodelRio.appendChild(button_JuanPintodelRio);
 
 
-    
+    sessionStorage.setItem("Juan Pinto-del-Rio", "true");
+
   	howmanyMembersSelected += 1;
     CreateDeleteHeading();
     }
@@ -608,6 +636,8 @@ function JuanPintodelRioSelected() {
 function remove_JuanPintodelRio(){
 	JuanPintodelRio_id.remove();
   	howmanyMembersSelected -= 1;
+    sessionStorage.removeItem("Juan Pinto-del-Rio");
+
     CreateDeleteHeading();
 
     JuanPintodelRio = false;
@@ -643,7 +673,8 @@ function LaurenDowlingSelected() {
     label_LaurenDowling.appendChild(button_LaurenDowling);
 
 
-    
+    sessionStorage.setItem("Lauren Dowling", "true");
+
   	howmanyMembersSelected += 1;
     CreateDeleteHeading();
     }
@@ -651,6 +682,8 @@ function LaurenDowlingSelected() {
 function remove_LaurenDowling(){
 	LaurenDowling_id.remove();
   	howmanyMembersSelected -= 1;
+    sessionStorage.removeItem("Lauren Dowling");
+
     CreateDeleteHeading();
 
     LaurenDowling = false;
@@ -686,7 +719,8 @@ function LukasKroeningMaynardSelected() {
     label_LukasKroeningMaynard.appendChild(button_LukasKroeningMaynard);
 
 
-    
+    sessionStorage.setItem("Lukas Kroening-Maynard", "true");
+
   	howmanyMembersSelected += 1;
     CreateDeleteHeading();
     }
@@ -694,6 +728,8 @@ function LukasKroeningMaynardSelected() {
 function remove_LukasKroeningMaynard(){
 	LukasKroeningMaynard_id.remove();
   	howmanyMembersSelected -= 1;
+    sessionStorage.removeItem("Lukas Kroening-Maynard");
+
     CreateDeleteHeading();
 
     LukasKroeningMaynard = false;
@@ -729,7 +765,8 @@ function MarkHornsbySelected() {
     label_MarkHornsby.appendChild(button_MarkHornsby);
 
 
-    
+    sessionStorage.setItem("Mark Hornsby", "true");
+
   	howmanyMembersSelected += 1;
     CreateDeleteHeading();
     }
@@ -737,6 +774,8 @@ function MarkHornsbySelected() {
 function remove_MarkHornsby(){
 	MarkHornsby_id.remove();
   	howmanyMembersSelected -= 1;
+    sessionStorage.removeItem("Mark Hornsby");
+
     CreateDeleteHeading();
 
     MarkHornsby = false;
@@ -773,7 +812,8 @@ function MelviaMathewSelected() {
     label_MelviaMathew.appendChild(button_MelviaMathew);
 
 
-    
+    sessionStorage.setItem("Melvia Mathew", "true");
+
   	howmanyMembersSelected += 1;
     CreateDeleteHeading();
     }
@@ -781,6 +821,8 @@ function MelviaMathewSelected() {
 function remove_MelviaMathew(){
 	MelviaMathew_id.remove();
   	howmanyMembersSelected -= 1;
+    sessionStorage.removeItem("Melvia Mathew");
+
     CreateDeleteHeading();
 
     MelviaMathew = false;
@@ -815,7 +857,8 @@ function NeilButlerSelected() {
     label_NeilButler.appendChild(button_NeilButler);
 
 
-    
+    sessionStorage.setItem("Neil Butler", "true");
+
   	howmanyMembersSelected += 1;
     CreateDeleteHeading();
     }
@@ -823,6 +866,9 @@ function NeilButlerSelected() {
 function remove_NeilButler(){
 	NeilButler_id.remove();
   	howmanyMembersSelected -= 1;
+    sessionStorage.removeItem("Neil Butler");
+
+    
     CreateDeleteHeading();
 
     NeilButler = false;
@@ -858,7 +904,8 @@ function NicolaAndrewsSelected() {
     label_NicolaAndrews.appendChild(button_NicolaAndrews);
 
 
-    
+    sessionStorage.setItem("Nicola Andrews", "true");
+
   	howmanyMembersSelected += 1;
     CreateDeleteHeading();
     }
@@ -866,6 +913,8 @@ function NicolaAndrewsSelected() {
 function remove_NicolaAndrews(){
 	NicolaAndrews_id.remove();
   	howmanyMembersSelected -= 1;
+    sessionStorage.removeItem("Nicola Andrews");
+
     CreateDeleteHeading();
 
     NicolaAndrews = false;
@@ -900,7 +949,8 @@ function PatGannonSelected() {
     label_PatGannon.appendChild(button_PatGannon);
 
 
-    
+    sessionStorage.setItem("Pat Gannon", "true");
+
   	howmanyMembersSelected += 1;
     CreateDeleteHeading();
     }
@@ -908,6 +958,8 @@ function PatGannonSelected() {
 function remove_PatGannon(){
 	PatGannon_id.remove();
   	howmanyMembersSelected -= 1;
+    sessionStorage.removeItem("Pat Gannon");
+
     CreateDeleteHeading();
 
     PatGannon = false;
@@ -942,7 +994,8 @@ function RomaniDaviesSelected() {
     label_RomaniDavies.appendChild(button_RomaniDavies);
 
 
-    
+    sessionStorage.setItem("Romani Davies", "true");
+
   	howmanyMembersSelected += 1;
     CreateDeleteHeading();
     }
@@ -950,6 +1003,8 @@ function RomaniDaviesSelected() {
 function remove_RomaniDavies(){
 	RomaniDavies_id.remove();
   	howmanyMembersSelected -= 1;
+    sessionStorage.removeItem("Romani Davies");
+
     CreateDeleteHeading();
 
     RomaniDavies = false;
@@ -985,7 +1040,8 @@ function SimonSkidmoreSelected() {
     label_SimonSkidmore.appendChild(button_SimonSkidmore);
 
 
-    
+    sessionStorage.setItem("Simon Skidmore", "true");
+
   	howmanyMembersSelected += 1;
     CreateDeleteHeading();
     }
@@ -993,6 +1049,8 @@ function SimonSkidmoreSelected() {
 function remove_SimonSkidmore(){
 	SimonSkidmore_id.remove();
   	howmanyMembersSelected -= 1;
+    sessionStorage.removeItem("Simon Skidmore");
+
     CreateDeleteHeading();
 
     SimonSkidmore = false;
@@ -1028,7 +1086,8 @@ function SueWatchmanSelected() {
     label_SueWatchman.appendChild(button_SueWatchman);
 
 
-    
+    sessionStorage.setItem("Sue Watchman", "true");
+
   	howmanyMembersSelected += 1;
     CreateDeleteHeading();
     }
@@ -1036,6 +1095,8 @@ function SueWatchmanSelected() {
 function remove_SueWatchman(){
 	SueWatchman_id.remove();
   	howmanyMembersSelected -= 1;
+    sessionStorage.removeItem("Sue Watchman");
+
     CreateDeleteHeading();
 
     SueWatchman = false;
@@ -1070,7 +1131,8 @@ function TonyWatsonSelected() {
     label_TonyWatson.appendChild(button_TonyWatson);
 
 
-    
+    sessionStorage.setItem("Tony Watson", "true");
+
   	howmanyMembersSelected += 1;
     CreateDeleteHeading();
     }
@@ -1078,6 +1140,8 @@ function TonyWatsonSelected() {
 function remove_TonyWatson(){
 	TonyWatson_id.remove();
   	howmanyMembersSelected -= 1;
+    sessionStorage.removeItem("Tony Watson");
+
     CreateDeleteHeading();
 
     TonyWatson = false;
@@ -1126,26 +1190,68 @@ function searchTitleNumbers(){
 var noOfApplications = 0;
 var applicationsVisible = false;
 
+
+// function applicationsAdded(){
+//   console.log('function is being called');
+//   console.log(noOfApplications);
+//   console.log(applicationsVisible);
+
+//   if((noOfApplications == 1) && (applicationsVisible === false)){
+//     console.log('function is being called here');
+
+//     // var applicationsBoxBlock = document.getElementById("greyBoxBlock");
+//     // applicationsBoxBlock.style.display = 'block';
+//     document.getElementById("greyBoxBlock").style.display = 'block';
+//     applicationsVisible = true;
+//   }
+
+//   if((noOfApplications == 0) && (applicationsVisible == true)){
+//     var applicationsBoxBlock = document.getElementById("greyBoxBlock");
+//     applicationsBoxBlock.style.display = 'none';
+//     applicationsVisible = false;
+//   }
+// }
+
 function applicationsAdded(){
   console.log('function is being called');
   console.log(noOfApplications);
   console.log(applicationsVisible);
+  sessionStorage.setItem("Number Of Applications Selected", noOfApplications);
 
-  if((noOfApplications == 1) && (applicationsVisible === false)){
+  if(noOfApplications >= 1){
     console.log('function is being called here');
 
-    // var applicationsBoxBlock = document.getElementById("greyBoxBlock");
+    var applicationsBoxBlock = document.getElementById("greyBoxBlock");
     // applicationsBoxBlock.style.display = 'block';
     document.getElementById("greyBoxBlock").style.display = 'block';
-    applicationsVisible = true;
   }
 
-  if((noOfApplications == 0) && (applicationsVisible == true)){
+  if(noOfApplications == 0){
     var applicationsBoxBlock = document.getElementById("greyBoxBlock");
     applicationsBoxBlock.style.display = 'none';
     applicationsVisible = false;
   }
 }
+
+// function applicationsAdded(){
+//   console.log('function is being called');
+//   var appsAddedonEditPage = false;
+
+//   if(noOfApplications >= 1){
+//     console.log('function is being called here');
+
+//     // var applicationsBoxBlock = document.getElementById("greyBoxBlock");
+//     // applicationsBoxBlock.style.display = 'block';
+//     document.getElementById("greyBoxBlock").style.display = 'block';
+//     applicationsVisible = true;
+//   }
+
+//   if((noOfApplications == 0) && (applicationsVisible == true)){
+//     var applicationsBoxBlock = document.getElementById("greyBoxBlock");
+//     applicationsBoxBlock.style.display = 'none';
+//     applicationsVisible = false;
+//   }
+// }
 
 function dk88932Transfer() {
   console.log('its checked');
@@ -1178,6 +1284,8 @@ function dk88932Transfer() {
     cell4_1.innerHTML = "Remove";
 
     noOfApplications += 1;
+    sessionStorage.setItem("DTransfer", "true");
+
     applicationsAdded();
 
     }
@@ -1189,6 +1297,7 @@ function dk88932Transfer() {
     var remove1 = document.getElementById("applications-table").deleteRow(currentPosition1 - 1);
 
     noOfApplications -= 1;
+    sessionStorage.removeItem("DTransfer");
     applicationsAdded();
   }
 }
@@ -1200,6 +1309,7 @@ function removedk88932Transfer(){
   var remove1 = document.getElementById("applications-table").deleteRow(currentPosition1 - 1);
 
   noOfApplications -= 1;
+  sessionStorage.removeItem("DTransfer");
   applicationsAdded();
   document.getElementById('DK88932-Transfer').checked = false;
 }
@@ -1235,6 +1345,8 @@ function NN22989Transfer() {
     cell4_4.innerHTML = "Remove";
 
     noOfApplications += 1;
+    sessionStorage.setItem("NTransfer", "true");
+
     applicationsAdded();
 
     }
@@ -1246,17 +1358,21 @@ function NN22989Transfer() {
     var remove4 = document.getElementById("applications-table").deleteRow(currentPosition4 - 1);
 
     noOfApplications -= 1;
+    sessionStorage.removeItem("NTransfer");
     applicationsAdded();
   }
 }
 
 function removeNN22989Transfer(){
+  console.log('function is being called');
   var row4 = document.getElementById('rowID4');
   var currentPosition4 = row4.rowIndex;
   console.log('row index:' + currentPosition4);
   var remove4 = document.getElementById("applications-table").deleteRow(currentPosition4 - 1);
 
   noOfApplications -= 1;
+  sessionStorage.removeItem("NTransfer");
+  console.log('row has been removed. Number of applications is now'+ noOfApplications);
   applicationsAdded();
   document.getElementById('NN22989-Transfer').checked = false;
 }
@@ -1293,6 +1409,7 @@ function jk44466Transfer() {
     cell4_7.innerHTML = "Remove";
 
     noOfApplications += 1;
+    sessionStorage.setItem("JTransfer", "true");
     applicationsAdded();
 
     }
@@ -1304,6 +1421,7 @@ function jk44466Transfer() {
     var remove7 = document.getElementById("applications-table").deleteRow(currentPosition7 - 1);
 
     noOfApplications -= 1;
+    sessionStorage.removeItem("JTransfer");
     applicationsAdded();
   }
 }
@@ -1315,6 +1433,7 @@ function removejk44466Transfer(){
   var remove7 = document.getElementById("applications-table").deleteRow(currentPosition7 - 1);
 
   noOfApplications -= 1;
+  sessionStorage.removeItem("JTransfer");
   applicationsAdded();
   document.getElementById('jk44466-Transfer').checked = false;
 }
@@ -1348,6 +1467,8 @@ function dk88932NewLease() {
     cell4_3.innerHTML = "Remove";
 
     noOfApplications += 1;
+    sessionStorage.setItem("DNewLease", "true");
+
     applicationsAdded();
 
 
@@ -1360,6 +1481,8 @@ function dk88932NewLease() {
     var remove3 = document.getElementById("applications-table").deleteRow(currentPosition3 - 1);
 
     noOfApplications -= 1;
+    sessionStorage.removeItem("DNewLease");
+
     applicationsAdded();
 
   }
@@ -1373,6 +1496,7 @@ function removedk88932NewLease(){
   document.getElementById('dk88932-newLease').checked = false;
 
   noOfApplications -= 1;
+  sessionStorage.removeItem("DNewLease");
   applicationsAdded();
 }
 
@@ -1663,3 +1787,119 @@ function removejk44466OfficialCopy(){
   applicationsAdded();
 }
 
+function howManyappsSelectedEditPage(){
+  console.log('onload function is working');
+}
+
+
+
+function DisplayingTeamMembersSelected(){
+  console.log('hello its me');
+
+  if (sessionStorage.getItem("Aaron Flynn") === null){
+      var one = document.getElementById("AaronFlynn_id");
+      one.remove();
+  }
+
+  if (sessionStorage.getItem("Alex Blewett") === null){
+      var two = document.getElementById("AlexBlewett_id");
+      two.remove();
+  }
+
+  if (sessionStorage.getItem("Andy Carr")=== null){
+      var three = document.getElementById("AndyCarr_id");
+      three.remove();
+  }
+
+  if (sessionStorage.getItem("Duncan Anderson")=== null){
+      var four = document.getElementById("DuncanAnderson_id");
+      four.remove();
+  }
+
+  if (sessionStorage.getItem("James Thomas")=== null){
+      var five = document.getElementById("JamesThomas_id");
+      five.remove();
+  }
+
+  if (sessionStorage.getItem("John Baptiste-Kelly")=== null){
+      var six = document.getElementById("JohnBaptisteKelly_id");
+      six.remove();
+  }
+
+  if (sessionStorage.getItem("John James")=== null){
+      var seven = document.getElementById("JohnJames_id");
+      seven.remove();
+  }
+
+  if (sessionStorage.getItem("John Taylor") === null){
+    var one = document.getElementById("JohnTaylor_id");
+    one.remove();
+}
+
+if (sessionStorage.getItem("Jon Parker") === null){
+    var two = document.getElementById("JonParker_id");
+    two.remove();
+}
+
+if (sessionStorage.getItem("Juan Pinto-del-Rio")=== null){
+    var three = document.getElementById("JuanPintodelRio_id");
+    three.remove();
+}
+
+if (sessionStorage.getItem("Lauren Dowling")=== null){
+    var five = document.getElementById("LaurenDowling_id");
+    five.remove();
+}
+
+if (sessionStorage.getItem("Lukas Kroening-Maynard")=== null){
+    var six = document.getElementById("LukasKroeningMaynard_id");
+    six.remove();
+}
+
+if (sessionStorage.getItem("Mark Hornsby")=== null){
+    var seven = document.getElementById("MarkHornsby_id");
+    seven.remove();
+}
+
+if (sessionStorage.getItem("Melvia Mathew") === null){
+  var two = document.getElementById("MelviaMathew_id");
+  two.remove();
+}
+
+if (sessionStorage.getItem("Neil Butler")=== null){
+  var three = document.getElementById("NeilButler_id");
+  three.remove();
+}
+
+if (sessionStorage.getItem("Nicola Andrews")=== null){
+  var four = document.getElementById("NicolaAndrews_id");
+  four.remove();
+}
+
+if (sessionStorage.getItem("Pat Gannon")=== null){
+  var five = document.getElementById("PatGannon_id");
+  five.remove();
+}
+
+if (sessionStorage.getItem("Romani Davies")=== null){
+  var six = document.getElementById("RomaniDavies_id");
+  six.remove();
+}
+
+if (sessionStorage.getItem("Simon Skidmore")=== null){
+  var seven = document.getElementById("SimonSkidmore_id");
+  seven.remove();
+}
+
+if (sessionStorage.getItem("Sue Watchman")=== null){
+  var six = document.getElementById("SueWatchman_id");
+  six.remove();
+}
+
+if (sessionStorage.getItem("Tony Watson")=== null){
+  var seven = document.getElementById("TonyWatson_id");
+  seven.remove();
+}
+
+
+}

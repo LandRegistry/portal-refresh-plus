@@ -7,6 +7,29 @@
 <script src="/public/javascripts/jquery-1.11.3.js"></script>
 <script>require('../javascripts/AddTeam-members-group.js')</script>
 
+<!-- <script>
+  // window.onload = howManyappsSelectedEditPage();
+  window.addEventListener("load", function(event) {
+            console.log('ello ello');
+            // var NNTransfer = sessionStorage.getItem("NN22989-Transfer");
+            // console.log(NNTransfer);
+            var noOfApplications = parseInt(sessionStorage.getItem("Number Of Applications Selected"));
+            console.log(noOfApplications);
+        });
+</script> -->
+
+<script>
+  document.addEventListener("DOMContentLoaded", function(event){
+    DisplayingTeamMembersSelected();
+  
+  })
+  
+  window.addEventListener("load", function(event) {
+              document.querySelector("body").style.display = "block";
+          });
+  
+  </script>
+
 <style>
 
 .govuk-table__header, .govuk-table__cell {
@@ -521,6 +544,7 @@ margin-bottom:5px;
 }
 
 </style>
+<body style="display: none;">
 
 
 <!-- Back & clear data top -->
@@ -752,9 +776,48 @@ margin-bottom:5px;
               </div>
               <div class="box-container">
                   <div class="Header_container">
-                    <ul id="addHeaderhere">
-              
-                    </ul>
+                    <div id="AaronFlynn_id"><label for="AaronFlynn" class="govuk-label">Aaron Flynn<button id="AaronFlynn_id_remove" class="removeButton" onclick="remove_AaronFlynn()">Remove</button></label></div>
+
+                    <div id="AlexBlewett_id"><label for="AlexBlewett" class="govuk-label">Alex Blewett<button id="AlexBlewett_id_remove" class="removeButton" onclick="remove_AlexBlewett()">Remove</button></label></div>
+
+                    <div id="AndyCarr_id"><label for="AndyCarr" class="govuk-label">Andy Carr<button id="AndyCarr_id_remove" class="removeButton" onclick="remove_AndyCarr()">Remove</button></label></div>
+
+                    <div id="DuncanAnderson_id"><label for="DuncanAnderson" class="govuk-label">Duncan Anderson<button id="DuncanAnderson_id_remove" class="removeButton" onclick="remove_DuncanAnderson()">Remove</button></label></div>
+
+                    <div id="JamesThomas_id"><label for="JamesThomas" class="govuk-label">James Thomas<button id="JamesThomas_id_remove" class="removeButton" onclick="remove_JamesThomas()">Remove</button></label></div>
+
+                    <div id="JohnBaptisteKelly_id"><label for="JohnBaptisteKelly" class="govuk-label">John Baptiste-Kelly<button id="JohnBaptisteKelly_id_remove" class="removeButton" onclick="remove_JohnBaptisteKelly()">Remove</button></label></div>
+
+                    <div id="JohnJames_id"><label for="JohnJames" class="govuk-label">John James<button id="JohnJames_id_remove" class="removeButton" onclick="remove_JohnJames()">Remove</button></label></div>
+
+                    <div id="JohnTaylor_id"><label for="JohnTaylor" class="govuk-label">John Taylor<button id="JohnTaylor_id_remove" class="removeButton" onclick="remove_JohnTaylor()">Remove</button></label></div>
+
+                    <div id="JonParker_id"><label for="JonParker" class="govuk-label">Jon Parker<button id="JonParker_id_remove" class="removeButton" onclick="remove_JonParker()">Remove</button></label></div>
+
+                    <div id="JuanPintodelRio_id"><label for="JuanPintodelRio" class="govuk-label">Juan Pinto-del-Rio<button id="JuanPintodelRio_id_remove" class="removeButton" onclick="remove_JuanPintodelRio()">Remove</button></label></div>
+
+                    <div id="LaurenDowling_id"><label for="LukasKroeningMaynard" class="govuk-label">Lauren Dowling<button id="LaurenDowling_id_remove" class="removeButton" onclick="remove_LaurenDowling()">Remove</button></label></div>
+
+                    <div id="LukasKroeningMaynard_id"><label for="LukasKroeningMaynard" class="govuk-label">Lukas Kroening-Maynard<button id="LukasKroeningMaynard_id_remove" class="removeButton" onclick="remove_LukasKroeningMaynard()">Remove</button></label></div>
+
+                    <div id="MarkHornsby_id"><label for="MarkHornsby" class="govuk-label">Mark Hornsby<button id="MarkHornsby_id_remove" class="removeButton" onclick="remove_MarkHornsby()">Remove</button></label></div>
+
+                    <div id="MelviaMathew_id"><label for="MelviaMathew" class="govuk-label">Melvia Mathew<button id="MelviaMathew_id_remove" class="removeButton" onclick="remove_MelviaMathew()">Remove</button></label></div>
+
+                    <div id="NeilButler_id"><label for="NeilButler" class="govuk-label">Neil Butler<button id="NeilButler_id_remove" class="removeButton" onclick="remove_NeilButler()">Remove</button></label></div>
+
+                    <div id="NicolaAndrews_id"><label for="NicolaAndrews" class="govuk-label">Nicola Andrews<button id="NicolaAndrews_id_remove" class="removeButton" onclick="remove_NicolaAndrews()">Remove</button></label></div>
+
+                    <div id="PatGannon_id"><label for="PatGannon" class="govuk-label">Pat Gannon<button id="PatGannon_id_remove" class="removeButton" onclick="remove_PatGannon()">Remove</button></label></div>
+
+                    <div id="RomaniDavies_id"><label for="RomaniDavies" class="govuk-label">Romani Davies<button id="RomaniDavies_id_remove" class="removeButton" onclick="remove_RomaniDavies()">Remove</button></label></div>
+
+                    <div id="SimonSkidmore_id"><label for="SimonSkidmore" class="govuk-label">Simon Skidmore<button id="SimonSkidmore_id_remove" class="removeButton" onclick="remove_SimonSkidmore()">Remove</button></label></div>
+
+                    <div id="SueWatchman_id"><label for="SueWatchman" class="govuk-label">Sue Watchman<button id="SueWatchman_id_remove" class="removeButton" onclick="remove_SueWatchman()">Remove</button></label></div>
+
+                    <div id="TonyWatson_id"><label for="TonyWatson" class="govuk-label">Tony Watson<button id="TonyWatson_id_remove" class="removeButton" onclick="remove_TonyWatson()">Remove</button></label></div>
+                  
                   </div>
               
                   <div class="govuk-form-group" style="margin-bottom: 0px;">
@@ -784,7 +847,7 @@ margin-bottom:5px;
               <button class="searchButton" value="button" id="search-button" onclick="searchTitleNumbers(); return false"><img width="20" height="20" style="margin-top:6px;" src="/public/images/search-icon.svg"></button>
             </div>
 
-              <div class="box-container-wide">
+              <div class="box-container-wide" id="greyBoxBlock">
                 <div class="govuk-body box-container-title">
                     Applications
                 </div> 
@@ -801,24 +864,92 @@ margin-bottom:5px;
                       </tr>
                     </thead>
                     <tbody class="govuk-table__body" id="applications-table">
+                      {% if data['DK88932-Transfer'] %}
                       <tr class="govuk-table__row">
-                        <th scope="row" class="govuk-table__cell">LP67555</th>
-                        <td class="govuk-table__cell">Register update</td>
-                        <td class="govuk-table__cell">Received</td>
-                        <td class="govuk-table__cell"><a class="removeButton" href="#">Remove</a></td>
-                      </tr>
-                      <tr class="govuk-table__row">
-                        <th scope="row" class="govuk-table__cell">NN22989</th>
-                        <td class="govuk-table__cell">Official search of whole with priority</td>
-                        <td class="govuk-table__cell">Completed</td>
-                        <td class="govuk-table__cell"><a class="removeButton" href="#">Remove</a></td>
-                      </tr>
-                      <tr class="govuk-table__row">
-                        <th scope="row" class="govuk-table__cell">JK44466</th>
-                        <td class="govuk-table__cell">Official copies</td>
+                        <th scope="row" class="govuk-table__cell" id="rowID1">DK88932</th>
+                        <td class="govuk-table__cell">Transfer of whole with priority</td>
                         <td class="govuk-table__cell">Cancelled</td>
-                        <td class="govuk-table__cell"><a class="removeButton" href="#">Remove</a></td>
+                        <td class="govuk-table__cell govuk-link" style="color: #D10A1E; cursor: pointer; text-align: right;" onclick="removedk88932Transfer()">Remove</td>
                       </tr>
+                      {% endif %}
+                      {% if data['DK88932-OfficialCopy'] %}
+                      <tr class="govuk-table__row" id="rowID2">
+                        <th scope="row" class="govuk-table__cell">DK88932</th>
+                        <td class="govuk-table__cell">Official copy</td>
+                        <td class="govuk-table__cell">Completed</td>
+                        <td class="govuk-table__cell govuk-link" style="color: #D10A1E; cursor: pointer; text-align: right;" onclick="removedk88932OfficialCopy()">Remove</td>
+
+                      </tr>
+                      {% endif %}
+                      
+                      {% if data['dk88932-newLease'] %}
+                      <tr class="govuk-table__row" id="rowID3">
+                        <th scope="row" class="govuk-table__cell">DK88932</th>
+                        <td class="govuk-table__cell">New lease</td>
+                        <td class="govuk-table__cell">Received</td>
+                        <td class="govuk-table__cell govuk-link" style="color: #D10A1E; cursor: pointer; text-align: right;" onclick="removedk88932NewLease()">Remove</td>
+
+                      </tr>
+                      {% endif %}
+
+                      {% if data['NN22989-Transfer'] %}
+                      <tr class="govuk-table__row" id="rowID4">
+                        <th scope="row" class="govuk-table__cell">NN22989</th>
+                        <td class="govuk-table__cell">Transfer of whole with priority</td>
+                        <td class="govuk-table__cell">Cancelled</td>
+                        <td class="govuk-table__cell govuk-link" style="color: #D10A1E; cursor: pointer; text-align: right;" onclick="removeNN22989Transfer()">Remove</td>
+                      </tr>
+                      {% endif %}
+
+                      {% if data['NN22989-OfficialCopy'] %}
+                      <tr class="govuk-table__row" id="rowID5">
+                        <th scope="row" class="govuk-table__cell">NN22989</th>
+                        <td class="govuk-table__cell">Official copy</td>
+                        <td class="govuk-table__cell">Completed</td>
+                        <td class="govuk-table__cell govuk-link" style="color: #D10A1E; cursor: pointer; text-align: right;" onclick="removeNN22989OfficialCopy()">Remove</td>
+
+                      </tr>
+                      {% endif %}
+
+                      {% if data['NN22989-newLease'] %}
+                      <tr class="govuk-table__row" id="rowID6">
+                        <th scope="row" class="govuk-table__cell">NN22989</th>
+                        <td class="govuk-table__cell">New lease</td>
+                        <td class="govuk-table__cell">Received</td>
+                        <td class="govuk-table__cell govuk-link" style="color: #D10A1E; cursor: pointer; text-align: right;" onclick="removeNN22989NewLease()">Remove</td>
+
+                      </tr>
+                      {% endif %}
+
+                      {% if data['jk44466-Transfer'] %}
+                      <tr class="govuk-table__row" id="rowID7">
+                        <th scope="row" class="govuk-table__cell">JK44466</th>
+                        <td class="govuk-table__cell">Transfer of whole with priority</td>
+                        <td class="govuk-table__cell">Cancelled</td>
+                        <td class="govuk-table__cell govuk-link" style="color: #D10A1E; cursor: pointer; text-align: right;" onclick="removejk44466Transfer()">Remove</td>
+
+                      </tr>
+                      {% endif %}
+
+                      {% if data['JK44466-officialCopy'] %}
+                      <tr class="govuk-table__row" id="rowID9">
+                        <th scope="row" class="govuk-table__cell">JK44466</th>
+                        <td class="govuk-table__cell">Official copy</td>
+                        <td class="govuk-table__cell">Completed</td>
+                        <td class="govuk-table__cell govuk-link" style="color: #D10A1E; cursor: pointer; text-align: right;" onclick="removejk44466OfficialCopy()">Remove</td>
+
+                      </tr>
+                      {% endif %}
+
+                      {% if data['JK44466-newLease'] %}
+                      <tr class="govuk-table__row" id="rowID8">
+                        <th scope="row" class="govuk-table__cell">JK44466</th>
+                        <td class="govuk-table__cell">New lease</td>
+                        <td class="govuk-table__cell">Received</td>
+                        <td class="govuk-table__cell govuk-link" style="color: #D10A1E; cursor: pointer; text-align: right;" onclick="removejk44466NewLease()">Remove</td>
+
+                      </tr>
+                      {% endif %}
                     </tbody>
                   </table>
 
@@ -880,7 +1011,7 @@ margin-bottom:5px;
             </div>
                 </div>
 
-
+</body>
 <!-- Content Area - End -->
 
 {% endblock %}
