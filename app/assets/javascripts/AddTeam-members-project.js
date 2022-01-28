@@ -1509,11 +1509,11 @@ function dk88932OfficialCopy() {
 
     var cell2_2 = addRow2.insertCell(1);
     cell2_2.setAttribute('class', 'govuk-table__cell');
-    cell2_2.innerHTML = "Official Copy";
+    cell2_2.innerHTML = "Register updated";
 
     var cell3_2 = addRow2.insertCell(2);
     cell3_2.setAttribute('class', 'govuk-table__cell');
-    cell3_2.innerHTML = "Completed";
+    cell3_2.innerHTML = "Received";
 
     var cell4_2 = addRow2.insertCell(3);
     cell4_2.setAttribute('class', 'govuk-table__cell govuk-link');
