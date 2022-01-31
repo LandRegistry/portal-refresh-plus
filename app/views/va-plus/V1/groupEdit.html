@@ -842,7 +842,9 @@ margin-bottom:5px;
             <h2 class="govuk-heading-l">Linked applications to this group</h2>
         
             <div class="govuk-body" style="margin-bottom: 30px;">
- 
+              <label class="govuk-label form-label-bold">
+                Search by title number
+            </label>
               <input type="text" id="search-input" class="searchBox" style="">
               <button class="searchButton" value="button" id="search-button" onclick="searchTitleNumbers(); return false"><img width="20" height="20" style="margin-top:6px;" src="/public/images/search-icon.svg"></button>
             </div>
@@ -895,7 +897,7 @@ margin-bottom:5px;
                       {% if data['NN22989-Transfer'] %}
                       <tr class="govuk-table__row" id="rowID4">
                         <th scope="row" class="govuk-table__cell">NN22989</th>
-                        <td class="govuk-table__cell">Transfer of whole with priority</td>
+                        <td class="govuk-table__cell">Register update</td>
                         <td class="govuk-table__cell">Cancelled</td>
                         <td class="govuk-table__cell govuk-link" style="color: #D10A1E; cursor: pointer; text-align: right;" onclick="removeNN22989Transfer()">Remove</td>
                       </tr>
@@ -904,7 +906,7 @@ margin-bottom:5px;
                       {% if data['NN22989-OfficialCopy'] %}
                       <tr class="govuk-table__row" id="rowID5">
                         <th scope="row" class="govuk-table__cell">NN22989</th>
-                        <td class="govuk-table__cell">Official copy</td>
+                        <td class="govuk-table__cell">Official search of whole with priority </td>
                         <td class="govuk-table__cell">Completed</td>
                         <td class="govuk-table__cell govuk-link" style="color: #D10A1E; cursor: pointer; text-align: right;" onclick="removeNN22989OfficialCopy()">Remove</td>
 
@@ -1004,6 +1006,9 @@ margin-bottom:5px;
                 <a class="footlink" style="text-color: grey; text-decoration: none;"><u>Freedom of information</u></a>
                 <a>|</a>
                 <a class="footlink" style="text-color: grey; text-decoration: none;" href="/setup/stored-data"><u>Check data</u></a>
+                <a>
+                <a>|</a>
+                <a class="footlink" style="text-color: grey; text-decoration: none;" href="/prototype-admin/clear-data"><u>Clear data</u></a>
                 <a>
                 <br>
                 <br>

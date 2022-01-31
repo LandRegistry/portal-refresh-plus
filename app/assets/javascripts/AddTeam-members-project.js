@@ -1332,7 +1332,7 @@ function NN22989Transfer() {
 
     var cell2_4 = addRow4.insertCell(1);
     cell2_4.setAttribute('class', 'govuk-table__cell');
-    cell2_4.innerHTML = "Transfer of whole with priority";
+    cell2_4.innerHTML = "Register update";
 
     var cell3_4 = addRow4.insertCell(2);
     cell3_4.setAttribute('class', 'govuk-table__cell');
@@ -1690,7 +1690,7 @@ function NN22989OfficialCopy() {
 
     var cell2_5 = addRow5.insertCell(1);
     cell2_5.setAttribute('class', 'govuk-table__cell');
-    cell2_5.innerHTML = "Official Copy";
+    cell2_5.innerHTML = "Official search of whole with priority ";
 
     var cell3_5 = addRow5.insertCell(2);
     cell3_5.setAttribute('class', 'govuk-table__cell');
