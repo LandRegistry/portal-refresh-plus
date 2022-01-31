@@ -523,7 +523,7 @@ ul ul ul{left: 100%;top: 0;margin-left:1px;}
 
 .temporaryBox{
 display: block;
-background-color: red;
+/* background-color: red; */
 font-size: 30px;
 color:#000000;
 text-align: center;
@@ -847,6 +847,246 @@ margin-bottom:5px;
             </label>
               <input type="text" id="search-input" class="searchBox" style="">
               <button class="searchButton" value="button" id="search-button" onclick="searchTitleNumbers(); return false"><img width="20" height="20" style="margin-top:6px;" src="/public/images/search-icon.svg"></button>
+            </div>
+
+            <div class="temporaryBox" id="titleOne" style="display: none;">
+              <table class="govuk-table" style="margin-bottom: 0px;">
+                <thead class="govuk-table__head">
+                  <tr class="govuk-table__row">
+                    <th scope="col" class="govuk-table__header" style="padding-left: 35px;">Title number</th>
+                    <th scope="col" class="govuk-table__header">Application type</th>
+                    <th scope="col" class="govuk-table__header">Status</th>
+                  </tr>
+                </thead>
+                <tbody class="govuk-table__body">
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">
+                      <div class="govuk-form-group" style="margin-bottom: 0px;">
+                        <fieldset class="govuk-fieldset">
+                          <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                            <div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input" id="DK88932-Transfer" name="DK88932-Transfer" type="checkbox" value="checked" onclick="dk88932Transfer()">
+                              <label class="govuk-label govuk-checkboxes__label" for="DK88932-Transfer">
+                                DK88932
+                              </label>
+                            </div>
+                          </div>
+                        </fieldset>
+                      </div>
+                    </td>
+                    <td class="govuk-table__cell">
+                      Transfer of whole with priority
+                    </td>
+                    <td class="govuk-table__cell">
+                      Cancelled
+                    </td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">
+                      <div class="govuk-form-group" style="margin-bottom: 0px;">
+                        <fieldset class="govuk-fieldset">
+                          <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                            <div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input" id="DK88932-OfficialCopy" name="DK88932-OfficialCopy" type="checkbox" value="checked" onclick="dk88932OfficialCopy()">
+                              <label class="govuk-label govuk-checkboxes__label" for="DK88932-OfficialCopy">
+                                DK88932
+                              </label>
+                            </div>
+                          </div>
+                        </fieldset>
+                      </div>
+                    </td>
+                    <td class="govuk-table__cell">
+                      Official copy
+                    </td>
+                    <td class="govuk-table__cell">
+                      Completed
+                    </td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">
+                      <div class="govuk-form-group" style="margin-bottom: 0px;">
+                        <fieldset class="govuk-fieldset">
+                          <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                            <div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input" id="dk88932-newLease" name="dk88932-newLease" type="checkbox" value="checked" onclick="dk88932NewLease()">
+                              <label class="govuk-label govuk-checkboxes__label" for="dk88932-newLease">
+                                DK88932
+                              </label>
+                            </div>
+                          </div>
+                        </fieldset>
+                      </div>
+                    </td>
+                    <td class="govuk-table__cell">
+                      New lease
+                    </td>
+                    <td class="govuk-table__cell">
+                      Received
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="temporaryBox" id="titleTwo" style="display: none;">
+              <table class="govuk-table" style="margin-bottom: 0px;">
+                <thead class="govuk-table__head">
+                  <tr class="govuk-table__row">
+                    <th scope="col" class="govuk-table__header" style="padding-left: 35px;">Title number</th>
+                    <th scope="col" class="govuk-table__header">Application type</th>
+                    <th scope="col" class="govuk-table__header">Status</th>
+                  </tr>
+                </thead>
+                <tbody class="govuk-table__body">
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">
+                      <div class="govuk-form-group" style="margin-bottom: 0px;">
+                        <fieldset class="govuk-fieldset">
+                          <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                            <div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input" id="NN22989-Transfer" name="NN22989-Transfer" type="checkbox" value="checked" onclick="NN22989Transfer()">
+                              <label class="govuk-label govuk-checkboxes__label" for="NN22989-Transfer">
+                                NN22989
+                              </label>
+                            </div>
+                          </div>
+                        </fieldset>
+                      </div>
+                    </td>
+                    <td class="govuk-table__cell">
+                      Transfer of whole with priority
+                    </td>
+                    <td class="govuk-table__cell">
+                      Cancelled
+                    </td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">
+                      <div class="govuk-form-group" style="margin-bottom: 0px;">
+                        <fieldset class="govuk-fieldset">
+                          <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                            <div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input" id="NN22989-OfficialCopy" name="NN22989-OfficialCopy" type="checkbox" value="checked" onclick="NN22989OfficialCopy()">
+                              <label class="govuk-label govuk-checkboxes__label" for="NN22989-OfficialCopy">
+                                NN22989
+                              </label>
+                            </div>
+                          </div>
+                        </fieldset>
+                      </div>
+                    </td>
+                    <td class="govuk-table__cell">
+                      Official copy
+                    </td>
+                    <td class="govuk-table__cell">
+                      Completed
+                    </td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">
+                      <div class="govuk-form-group" style="margin-bottom: 0px;">
+                        <fieldset class="govuk-fieldset">
+                          <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                            <div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input" id="NN22989-newLease" name="NN22989-newLease" type="checkbox" value="checked" onclick="NN22989NewLease()">
+                              <label class="govuk-label govuk-checkboxes__label" for="NN22989-newLease">
+                                NN22989
+                              </label>
+                            </div>
+                          </div>
+                        </fieldset>
+                      </div>
+                    </td>
+                    <td class="govuk-table__cell">
+                      New lease
+                    </td>
+                    <td class="govuk-table__cell">
+                      Received
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="temporaryBox" id="titleThree" style="display: none;">
+              <table class="govuk-table" style="margin-bottom: 0px;">
+                <thead class="govuk-table__head">
+                  <tr class="govuk-table__row">
+                    <th scope="col" class="govuk-table__header" style="padding-left: 35px;">Title number</th>
+                    <th scope="col" class="govuk-table__header">Application type</th>
+                    <th scope="col" class="govuk-table__header">Status</th>
+                  </tr>
+                </thead>
+                <tbody class="govuk-table__body">
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">
+                      <div class="govuk-form-group" style="margin-bottom: 0px;">
+                        <fieldset class="govuk-fieldset">
+                          <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                            <div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input" id="jk44466-Transfer" name="jk44466-Transfer" type="checkbox" onclick="jk44466Transfer()" value="checked">
+                              <label class="govuk-label govuk-checkboxes__label" for="jk44466-Transfer">
+                                JK44466
+                              </label>
+                            </div>
+                          </div>
+                        </fieldset>
+                      </div>
+                    </td>
+                    <td class="govuk-table__cell">
+                      Transfer of whole with priority
+                    </td>
+                    <td class="govuk-table__cell">
+                      Cancelled
+                    </td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">
+                      <div class="govuk-form-group" style="margin-bottom: 0px;">
+                        <fieldset class="govuk-fieldset">
+                          <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                            <div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input" id="JK44466-officialCopy" name="JK44466-officialCopy" type="checkbox" value="checked" onclick="jk44466OfficialCopy()">
+                              <label class="govuk-label govuk-checkboxes__label" for="JK44466-officialCopy">
+                                JK44466
+                              </label>
+                            </div>
+                          </div>
+                        </fieldset>
+                      </div>
+                    </td>
+                    <td class="govuk-table__cell">
+                      Official copy
+                    </td>
+                    <td class="govuk-table__cell">
+                      Completed
+                    </td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">
+                      <div class="govuk-form-group" style="margin-bottom: 0px;">
+                        <fieldset class="govuk-fieldset">
+                          <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                            <div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input" id="JK44466-newLease" name="JK44466-newLease" type="checkbox" value="checked" onclick="jk44466NewLease()">
+                              <label class="govuk-label govuk-checkboxes__label" for="JK44466-newLease">
+                                JK44466
+                              </label>
+                            </div>
+                          </div>
+                        </fieldset>
+                      </div>
+                    </td>
+                    <td class="govuk-table__cell">
+                      New lease
+                    </td>
+                    <td class="govuk-table__cell">
+                      Received
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
 
               <div class="box-container-wide" id="greyBoxBlock">
