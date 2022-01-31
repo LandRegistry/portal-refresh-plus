@@ -1534,6 +1534,8 @@ function NN22989NewLease() {
     cell4_6.innerHTML = "Remove";
 
     noOfApplications += 1;
+    sessionStorage.setItem("NNewLease", "true");
+
     applicationsAdded();
 
 
@@ -1559,6 +1561,8 @@ function removeNN22989NewLease(){
   document.getElementById('NN22989-newLease').checked = false;
 
   noOfApplications -= 1;
+  sessionStorage.removeItem("NNewLease");
+
   applicationsAdded();
 }
 
@@ -1592,6 +1596,8 @@ function jk44466NewLease() {
     cell4_8.innerHTML = "Remove";
 
     noOfApplications += 1;
+    sessionStorage.setItem("JNewLease", "true");
+
     applicationsAdded();
 
 
@@ -1617,6 +1623,8 @@ function removejk44466NewLease(){
   document.getElementById('JK44466-newLease').checked = false;
 
   noOfApplications -= 1;
+  sessionStorage.removeItem("JNewLease");
+
   applicationsAdded();
 }
 
@@ -1651,6 +1659,8 @@ function dk88932OfficialCopy() {
     cell4_2.innerHTML = "Remove";
 
     noOfApplications += 1;
+    sessionStorage.setItem("DOfficial", "true");
+
     applicationsAdded();
 
     }
@@ -1673,6 +1683,8 @@ function removedk88932OfficialCopy(){
   var remove2 = document.getElementById("applications-table").deleteRow(currentPosition2 - 1);
 
   noOfApplications -= 1;
+  sessionStorage.removeItem("DOfficial");
+
   applicationsAdded();
   document.getElementById('DK88932-OfficialCopy').checked = false;
 }
@@ -1708,6 +1720,8 @@ function NN22989OfficialCopy() {
     cell4_5.innerHTML = "Remove";
 
     noOfApplications += 1;
+    sessionStorage.setItem("NOfficial", "true");
+
     applicationsAdded();
 
     }
@@ -1730,6 +1744,8 @@ function removeNN22989OfficialCopy(){
   var remove5 = document.getElementById("applications-table").deleteRow(currentPosition5 - 1);
 
   noOfApplications -= 1;
+  sessionStorage.removeItem("NOfficial");
+
   applicationsAdded();
   document.getElementById('NN22989-OfficialCopy').checked = false;
 }
@@ -1764,6 +1780,8 @@ function jk44466OfficialCopy() {
     cell4_9.innerHTML = "Remove";
 
     noOfApplications += 1;
+    sessionStorage.setItem("JOfficial", "true");
+
     applicationsAdded();
 
 
@@ -1789,8 +1807,12 @@ function removejk44466OfficialCopy(){
   document.getElementById('JK44466-officialCopy').checked = false;
 
   noOfApplications -= 1;
+  sessionStorage.removeItem("JOfficial");
+
   applicationsAdded();
 }
+
+
 
 function howManyappsSelectedEditPage(){
   console.log('onload function is working');
