@@ -1080,7 +1080,7 @@ tr:hover {
         </thead>
         {% macro rows(page) %}
      
-     
+     {% if data['DK88932-OfficialCopy'] %}
         <!-- Application 1 -->
         <tbody class="govuk-table__body">
             <tr class="govuk-table__row govuk-link-table">
@@ -1180,7 +1180,7 @@ tr:hover {
                 </td>
             </tr>
         </tbody>
-
+{% endif %}
 
         <!-- Application 2 -->
         <tbody class="govuk-table__body">

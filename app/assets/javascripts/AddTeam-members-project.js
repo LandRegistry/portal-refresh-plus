@@ -1337,7 +1337,7 @@ function NN22989Transfer() {
 
     var cell2_4 = addRow4.insertCell(1);
     cell2_4.setAttribute('class', 'govuk-table__cell');
-    cell2_4.innerHTML = "Register update";
+    cell2_4.innerHTML = "Transfer of whole with priority";
 
     var cell3_4 = addRow4.insertCell(2);
     cell3_4.setAttribute('class', 'govuk-table__cell');
@@ -1646,7 +1646,7 @@ function dk88932OfficialCopy() {
 
     var cell2_2 = addRow2.insertCell(1);
     cell2_2.setAttribute('class', 'govuk-table__cell');
-    cell2_2.innerHTML = "Register updated";
+    cell2_2.innerHTML = "Register update";
 
     var cell3_2 = addRow2.insertCell(2);
     cell3_2.setAttribute('class', 'govuk-table__cell');
@@ -1767,11 +1767,11 @@ function jk44466OfficialCopy() {
 
     var cell2_9 = addRow9.insertCell(1);
     cell2_9.setAttribute('class', 'govuk-table__cell');
-    cell2_9.innerHTML = "Official Copy";
+    cell2_9.innerHTML = "Official Copies";
 
     var cell3_9 = addRow9.insertCell(2);
     cell3_9.setAttribute('class', 'govuk-table__cell');
-    cell3_9.innerHTML = "Cancelled";
+    cell3_9.innerHTML = "Completed";
 
     var cell4_9 = addRow9.insertCell(3);
     cell4_9.setAttribute('class', 'govuk-table__cell govuk-link');
