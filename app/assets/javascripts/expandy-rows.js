@@ -12,13 +12,13 @@
   function closeRow(row) {
     row.nextElementSibling.classList.add('hide-row')
     row.classList.remove('open')
-    row.querySelector('.expandy-row-trigger2').textContent = '+'
+    row.querySelector('.expandy-row-trigger2').innerHTML = '<img class="chevronsize" src="/public/images/icon_govuk_chevrondown.svg">'
   }
 
   function openRow(row) {
     row.nextElementSibling.classList.remove('hide-row')
     row.classList.add('open')
-    row.querySelector('.expandy-row-trigger2').textContent = '-'
+    row.querySelector('.expandy-row-trigger2').innerHTML = '<img class="chevronsize" src="/public/images/icon_govuk_chevronupWhite.svg">'
   }
 
   [].forEach.call(expandyRowTriggers, function(item) {

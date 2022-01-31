@@ -640,6 +640,11 @@ tr:hover {
     border-bottom: 0px solid #b1b4b6;
 }
 
+.chevronsize {
+    width: 30px;
+    display: block;
+    margin-top:0px;
+}
 
 </style>
 
@@ -1043,7 +1048,7 @@ tr:hover {
      <table  class="govuk-table my-work" style="margin-top: 0px; ">
         <thead class="govuk-table__head">
            <tr class="govuk-table__row" style="font-size:14px;background-color: #ffffff;">
-
+            <th class="govuk-table__header"scope="col" style="width:30px;"></th>
               <th class="govuk-table__header sortable" scope="col" id="Title">
                  <div>Title number</div>
               </th>
@@ -1061,7 +1066,7 @@ tr:hover {
               <th class="govuk-table__header" scope="col">
                  <div>Estimated completion date <a style="font-size:12px;display:block;" href="V1-help#ecd" target="_blank">What's this?</a></div>
               </th>
-              <th class="govuk-table__header"scope="col">Show/hide details</th>
+
            </tr>
         </thead>
         {% macro rows(page) %}
@@ -1071,7 +1076,7 @@ tr:hover {
         <!-- Application 1 -->
         <tbody class="govuk-table__body">
            <tr class="govuk-table__row govuk-link-table">
-
+            <td class="govuk-table__cell" scope="row"><a class="expandy-row-trigger2" href="#"><img class="chevronsize" src="/public/images/icon_govuk_chevrondown.svg"></a></td>
               <td class="govuk-table__cell " scope="row">
                  E23-66ABCD 
                  <p class="govuk-visually-hidden"> E23-66ABCD </p>
@@ -1086,7 +1091,7 @@ tr:hover {
               <td class="govuk-table__cell " scope="row" data-sortable="2021-08-05">05/08/21</td>
               <td class="govuk-table__cell " scope="row">Cancelled</td>
               <td class="govuk-table__cell "  data-sortable="0"></td>
-              <td class="govuk-table__cell" scope="row"><a class="expandy-row-trigger2" href="#">+</a></td>
+
            </tr>
            <!-- 1 Expanded row -->
            <tr class="govuk-table__row expandy-row hide-row accordion-default-content-1" style="vertical-align: top;">
@@ -1171,7 +1176,7 @@ tr:hover {
         <!-- Application 2 -->
         <tbody class="govuk-table__body">
         <tr class="govuk-table__row govuk-link-table">
-
+            <td class="govuk-table__cell" scope="row"><a class="expandy-row-trigger2" href="#"><img class="chevronsize" src="/public/images/icon_govuk_chevrondown.svg"></a></td>
             <td class="govuk-table__cell " scope="row">
             E23-66EF 
                 <p class="govuk-visually-hidden"> E23-66EF </p>
@@ -1186,7 +1191,7 @@ tr:hover {
             <td class="govuk-table__cell " scope="row" data-sortable="2021-08-01">01/08/21</td>
             <td class="govuk-table__cell " scope="row">Received</td>
             <td class="govuk-table__cell "  data-sortable="0">04/11/2021</td>
-            <td class="govuk-table__cell" scope="row"><a class="expandy-row-trigger2" href="#">+</a></td>
+
         </tr>
         <!-- 1 Expanded row -->
         <tr class="govuk-table__row expandy-row hide-row accordion-default-content-1" style="vertical-align: top;">
@@ -1272,7 +1277,7 @@ tr:hover {
         <!-- Application 3 -->
         <tbody class="govuk-table__body">
             <tr class="govuk-table__row govuk-link-table">
-
+                <td class="govuk-table__cell" scope="row"><a class="expandy-row-trigger2" href="#"><img class="chevronsize" src="/public/images/icon_govuk_chevrondown.svg"></a></td>
                 <td class="govuk-table__cell " scope="row">
                 E23-66G 
                     <p class="govuk-visually-hidden"> E23-66G </p>
@@ -1287,7 +1292,7 @@ tr:hover {
                 <td class="govuk-table__cell " scope="row" data-sortable="2021-07-25">25/07/21</td>
                 <td class="govuk-table__cell " scope="row">Delayed</td>
                 <td class="govuk-table__cell "  data-sortable="0">24/10/2021</td>
-                <td class="govuk-table__cell" scope="row"><a class="expandy-row-trigger2" href="#">+</a></td>
+
             </tr>
             <!-- 1 Expanded row -->
             <tr class="govuk-table__row expandy-row hide-row accordion-default-content-1" style="vertical-align: top;">
@@ -1360,7 +1365,7 @@ tr:hover {
          <!-- Application 4 -->
         <tbody class="govuk-table__body">
             <tr class="govuk-table__row govuk-link-table">
-
+                <td class="govuk-table__cell" scope="row"><a class="expandy-row-trigger2" href="#"><img class="chevronsize" src="/public/images/icon_govuk_chevrondown.svg"></a></td>
                 <td class="govuk-table__cell " scope="row">
                 E23-66H
                     <p class="govuk-visually-hidden"> E23-66H </p>
@@ -1375,7 +1380,7 @@ tr:hover {
                 <td class="govuk-table__cell " scope="row" data-sortable="2021-07-25">25/07/21</td>
                 <td class="govuk-table__cell " scope="row">Received</td>
                 <td class="govuk-table__cell "  data-sortable="0">28/10/2021</td>
-                <td class="govuk-table__cell" scope="row"><a class="expandy-row-trigger2" href="#">+</a></td>
+
             </tr>
             <!-- 1 Expanded row -->
             <tr class="govuk-table__row expandy-row hide-row accordion-default-content-1" style="vertical-align: top;">
@@ -1449,7 +1454,7 @@ tr:hover {
          <!-- Application 5 -->
         <tbody class="govuk-table__body">
             <tr class="govuk-table__row govuk-link-table">
-
+                <td class="govuk-table__cell" scope="row"><a class="expandy-row-trigger2" href="#"><img class="chevronsize" src="/public/images/icon_govuk_chevrondown.svg"></a></td>
                <td class="govuk-table__cell " scope="row">
                 LP980123 
                   <p class="govuk-visually-hidden">LP980123</p>
@@ -1464,7 +1469,7 @@ tr:hover {
                <td class="govuk-table__cell " scope="row" data-sortable="2021-07-14">14/07/21</td>
                <td class="govuk-table__cell " scope="row">Received</td>
                <td class="govuk-table__cell "  data-sortable="0">14/10/21</td>
-               <td class="govuk-table__cell" scope="row"><a class="expandy-row-trigger2" href="#">+</a></td>
+
             </tr>
             <!-- 1 Expanded row -->
             <tr class="govuk-table__row expandy-row hide-row accordion-default-content-1" style="vertical-align: top;">
@@ -1546,7 +1551,7 @@ tr:hover {
         <!-- Application 6 -->
         <tbody class="govuk-table__body">
             <tr class="govuk-table__row govuk-link-table">
-
+                <td class="govuk-table__cell" scope="row"><a class="expandy-row-trigger2" href="#"><img class="chevronsize" src="/public/images/icon_govuk_chevrondown.svg"></a></td>
             <td class="govuk-table__cell " scope="row">
                 LP09209 
                 <p class="govuk-visually-hidden">LP09209</p>
@@ -1561,7 +1566,7 @@ tr:hover {
             <td class="govuk-table__cell " scope="row" data-sortable="2021-08-01">01/08/21</td>
             <td class="govuk-table__cell " scope="row">Completed</td>
             <td class="govuk-table__cell "  data-sortable="0"></td>
-            <td class="govuk-table__cell" scope="row"><a class="expandy-row-trigger2" href="#">+</a></td>
+
             </tr>
             <!-- 1 Expanded row -->
             <tr class="govuk-table__row expandy-row hide-row accordion-default-content-1" style="vertical-align: top;">
@@ -1649,7 +1654,7 @@ tr:hover {
         <!-- Application 7 -->
         <tbody class="govuk-table__body">
             <tr class="govuk-table__row govuk-link-table">
-
+                <td class="govuk-table__cell" scope="row"><a class="expandy-row-trigger2" href="#"><img class="chevronsize" src="/public/images/icon_govuk_chevrondown.svg"></a></td>
             <td class="govuk-table__cell " scope="row">
                 CB980123 
                 <p class="govuk-visually-hidden">CB980123</p>
@@ -1664,7 +1669,7 @@ tr:hover {
             <td class="govuk-table__cell " scope="row" data-sortable="2021-05-14">14/05/21</td>
             <td class="govuk-table__cell " scope="row">Completed</td>
             <td class="govuk-table__cell "  data-sortable="0"></td>
-            <td class="govuk-table__cell" scope="row"><a class="expandy-row-trigger2" href="#">+</a></td>
+
             </tr>
             <!-- 1 Expanded row -->
             <tr class="govuk-table__row expandy-row hide-row accordion-default-content-1" style="vertical-align: top;">
@@ -1755,7 +1760,7 @@ tr:hover {
         <!-- Application 8 -->
         <tbody class="govuk-table__body">
             <tr class="govuk-table__row govuk-link-table">
-
+                <td class="govuk-table__cell" scope="row"><a class="expandy-row-trigger2" href="#"><img class="chevronsize" src="/public/images/icon_govuk_chevrondown.svg"></a></td>
             <td class="govuk-table__cell " scope="row">
                 LP54312
                 <p class="govuk-visually-hidden">LP54312</p>
@@ -1770,7 +1775,7 @@ tr:hover {
             <td class="govuk-table__cell " scope="row" data-sortable="2021-05-10">10/05/21</td>
             <td class="govuk-table__cell " scope="row">Received</td>
             <td class="govuk-table__cell "  data-sortable="0">07/09/2021</td>
-            <td class="govuk-table__cell" scope="row"><a class="expandy-row-trigger2" href="#">+</a></td>
+
             </tr>
             <!-- 1 Expanded row -->
             <tr class="govuk-table__row expandy-row hide-row accordion-default-content-1" style="vertical-align: top;">
