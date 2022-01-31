@@ -9,88 +9,130 @@ function TeamMemberSelected(){
 
     var TeamMember = document.getElementById("cat").value;
 
-    if ((TeamMember === 'AaronFlynn') && (AaronFlynn === false)){
-        AaronFlynnSelected();
+    if (TeamMember === 'AaronFlynn'){
+      if(sessionStorage.getItem("Aaron Flynn") == null){
+          AaronFlynnSelected();
+      }
     }
 
-    if ((TeamMember === 'AlexBlewett') && (AlexBlewett === false)){
+    if (TeamMember === 'AlexBlewett'){
+      if(sessionStorage.getItem("Alex Blewett") == null){
         AlexBlewettSelected();
+      }
     }
 
-    if ((TeamMember === 'AndyCarr') && (AndyCarr === false)){
+    if (TeamMember === 'AndyCarr'){
+      if(sessionStorage.getItem("Andy Carr") == null){
         AndyCarrSelected();
+      }
     }
 
-    if ((TeamMember === 'DuncanAnderson') && (DuncanAnderson === false)){
+    if (TeamMember === 'DuncanAnderson'){
+      if(sessionStorage.getItem("Duncan Anderson") == null){
         DuncanAndersonSelected();
+      }
     }
 
-    if ((TeamMember === 'JamesThomas') && (JamesThomas === false)){
+    if (TeamMember === 'JamesThomas'){
+      if(sessionStorage.getItem("James Thomas") == null){
         JamesThomasSelected();
+      }
     }
 
-    if ((TeamMember === 'JohnBaptisteKelly') && (JohnBaptisteKelly === false)){
+    if (TeamMember === 'JohnBaptisteKelly'){
+      if(sessionStorage.getItem("John Baptiste-Kelly") == null){
         JohnBaptisteKellySelected();
+      }
     }
 
-    if ((TeamMember === 'JohnJames') && (JohnJames === false)){
+    if (TeamMember === 'JohnJames'){
+      if(sessionStorage.getItem("John James") == null){
         JohnJamesSelected();
+      }
     }
 
-    if ((TeamMember === 'JohnTaylor') && (JohnTaylor === false)){
+    if (TeamMember === 'JohnTaylor'){
+      if(sessionStorage.getItem("John Taylor") == null){
         JohnTaylorSelected();
+      }
     }
 
-    if ((TeamMember === 'JonParker') && (JonParker === false)){
+    if (TeamMember === 'JonParker'){
+      if(sessionStorage.getItem("Jon Parker") == null){
         JonParkerSelected();
+      }
     }
 
-    if ((TeamMember === 'JuanPintodelRio') && (JuanPintodelRio === false)){
+    if (TeamMember === 'JuanPintodelRio'){
+      if(sessionStorage.getItem("Juan Pinto-del-Rio") == null){
         JuanPintodelRioSelected();
+      }
     }
     
-    if ((TeamMember === 'LaurenDowling') && (LaurenDowling === false)){
-      LaurenDowlingSelected();
+    if (TeamMember === 'LaurenDowling'){
+      if(sessionStorage.getItem("Lauren Dowling") == null){
+        LaurenDowlingSelected();
+      }
   }
 
-    if ((TeamMember === 'LukasKroeningMaynard') && (LukasKroeningMaynard === false)){
+    if (TeamMember === 'LukasKroeningMaynard'){
+      if(sessionStorage.getItem("Lukas Kroening Maynard") == null){
         LukasKroeningMaynardSelected();
+      }
     }
 
-    if ((TeamMember === 'MarkHornsby') && (MarkHornsby === false)){
+    if (TeamMember === 'MarkHornsby'){
+      if(sessionStorage.getItem("Mark Hornsby") == null){
         MarkHornsbySelected();
+      }
     }
 
-    if ((TeamMember === 'MelviaMathew') && (MelviaMathew === false)){
+    if (TeamMember === 'MelviaMathew'){
+      if(sessionStorage.getItem("Melvia Mathew") == null){
         MelviaMathewSelected();
+      }
     }
 
-    if ((TeamMember === 'NeilButler') && (NeilButler === false)){
+    if (TeamMember === 'NeilButler'){
+      if(sessionStorage.getItem("Neil Butler") == null){
         NeilButlerSelected();
+      }
     }
 
-    if ((TeamMember === 'NicolaAndrews') && (NicolaAndrews === false)){
+    if (TeamMember === 'NicolaAndrews'){
+      if(sessionStorage.getItem("Nicola Andrews") == null){
         NicolaAndrewsSelected();
+      }
     }
 
-    if ((TeamMember === 'PatGannon') && (PatGannon === false)){
+    if (TeamMember === 'PatGannon'){
+      if(sessionStorage.getItem("Pat Gannon") == null){
         PatGannonSelected();
+      }
     }
 
-    if ((TeamMember === 'RomaniDavies') && (RomaniDavies === false)){
+    if (TeamMember === 'RomaniDavies'){
+      if(sessionStorage.getItem("Romani Davies") == null){
         RomaniDaviesSelected();
+      }
     }
 
-    if ((TeamMember === 'SimonSkidmore') && (SimonSkidmore === false)){
+    if (TeamMember === 'SimonSkidmore'){
+      if(sessionStorage.getItem("Simon Skidmore") == null){
         SimonSkidmoreSelected();
+      }
     }
 
-    if ((TeamMember === 'SueWatchman') && (SueWatchman === false)){
+    if (TeamMember === 'SueWatchman'){
+      if(sessionStorage.getItem("Sue Watchman") == null){
         SueWatchmanSelected();
+      }
     }
 
-    if ((TeamMember === 'TonyWatson') && (TonyWatson === false)){
+    if (TeamMember === 'TonyWatson'){
+      if(sessionStorage.getItem("Tony Watson") == null){
         TonyWatsonSelected();
+      }
     }
 
 }
@@ -1822,30 +1864,48 @@ function CreateToEditApplications(){
   console.log('hello');
   if (sessionStorage.getItem("DTransfer") != null){
     document.getElementById("DK88932-Transfer").checked = true;
+    noOfApplications += 1;
+
   }
   if (sessionStorage.getItem("DNewLease") != null){
     document.getElementById("dk88932-newLease").checked = true;
+    noOfApplications += 1;
+
   }
   if (sessionStorage.getItem("DOfficial") != null){
     document.getElementById("DK88932-OfficialCopy").checked = true;
+    noOfApplications += 1;
+
   }
   if (sessionStorage.getItem("NTransfer") != null){
     document.getElementById("NN22989-Transfer").checked = true;
+    noOfApplications += 1;
+
   }
   if (sessionStorage.getItem("NNewLease") != null){
     document.getElementById("NN22989-newLease").checked = true;
+    noOfApplications += 1;
+
   }
   if (sessionStorage.getItem("NOfficial") != null){
     document.getElementById("NN22989-OfficialCopy").checked = true;
+    noOfApplications += 1;
+
   }
   if (sessionStorage.getItem("JTransfer") != null){
     document.getElementById("jk44466-Transfer").checked = true;
+    noOfApplications += 1;
+
   }
   if (sessionStorage.getItem("JNewLease") != null){
     document.getElementById("JK44466-newLease").checked = true;
+    noOfApplications += 1;
+
   }
   if (sessionStorage.getItem("JOfficial") != null){
     document.getElementById("JK44466-officialCopy").checked = true;
+    noOfApplications += 1;
+
   }
 }
 
