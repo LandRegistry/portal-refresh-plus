@@ -1818,6 +1818,37 @@ function howManyappsSelectedEditPage(){
   console.log('onload function is working');
 }
 
+function CreateToEditApplications(){
+  console.log('hello');
+  if (sessionStorage.getItem("DTransfer") != null){
+    document.getElementById("DK88932-Transfer").checked = true;
+  }
+  if (sessionStorage.getItem("DNewLease") != null){
+    document.getElementById("dk88932-newLease").checked = true;
+  }
+  if (sessionStorage.getItem("DOfficial") != null){
+    document.getElementById("DK88932-OfficialCopy").checked = true;
+  }
+  if (sessionStorage.getItem("NTransfer") != null){
+    document.getElementById("NN22989-Transfer").checked = true;
+  }
+  if (sessionStorage.getItem("NNewLease") != null){
+    document.getElementById("NN22989-newLease").checked = true;
+  }
+  if (sessionStorage.getItem("NOfficial") != null){
+    document.getElementById("NN22989-OfficialCopy").checked = true;
+  }
+  if (sessionStorage.getItem("JTransfer") != null){
+    document.getElementById("jk44466-Transfer").checked = true;
+  }
+  if (sessionStorage.getItem("JNewLease") != null){
+    document.getElementById("JK44466-newLease").checked = true;
+  }
+  if (sessionStorage.getItem("JOfficial") != null){
+    document.getElementById("JK44466-officialCopy").checked = true;
+  }
+}
+
 
 
 function DisplayingTeamMembersSelected(){
