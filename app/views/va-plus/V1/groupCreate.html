@@ -7,12 +7,25 @@
 <script src="/public/javascripts/jquery-1.11.3.js"></script>
 <script>require('../javascripts/AddTeam-members-group.js')</script>
 
-<script>
+<!-- <script>
   window.addEventListener("load", function(event) {
             var noOfApplications = 0;
             console.log('Initiasing the number of applications:' + noOfApplications);
         });
-</script>
+</script> -->
+
+<!-- <script>
+  document.addEventListener("DOMContentLoaded", function(event){
+    DisplayingTeamMembersSelected();
+  
+  })
+  
+  window.addEventListener("load", function(event) {
+              document.querySelector("body").style.display = "block";
+          });
+  
+  </script> -->
+
 
 <style>
 
@@ -790,9 +803,7 @@ margin-bottom:30px;
 
         
             <div class="govuk-body" style="margin-bottom: 30px;">
-              <label class="govuk-label form-label-bold">
-                Search by title number
-            </label>
+ 
               <input type="text" id="search-input" class="searchBox" style="">
               <button class="searchButton" value="button" id="search-button" onclick="searchTitleNumbers(); return false"><img width="20" height="20" style="margin-top:6px;" src="/public/images/search-icon.svg"></button>
             </div>
@@ -845,10 +856,10 @@ margin-bottom:30px;
                         </div>
                       </td>
                       <td class="govuk-table__cell">
-                        Register update
+                        Official copy
                       </td>
                       <td class="govuk-table__cell">
-                        Received
+                        Completed
                       </td>
                     </tr>
                     <tr class="govuk-table__row">
@@ -903,7 +914,7 @@ margin-bottom:30px;
                         </div>
                       </td>
                       <td class="govuk-table__cell">
-                        Register update
+                        Transfer of whole with priority
                       </td>
                       <td class="govuk-table__cell">
                         Cancelled
@@ -925,7 +936,7 @@ margin-bottom:30px;
                         </div>
                       </td>
                       <td class="govuk-table__cell">
-                        Official search of whole with priority 
+                        Official copy
                       </td>
                       <td class="govuk-table__cell">
                         Completed
@@ -1111,9 +1122,6 @@ margin-bottom:30px;
                 <a class="footlink" style="text-color: grey; text-decoration: none;"><u>Freedom of information</u></a>
                 <a>|</a>
                 <a class="footlink" style="text-color: grey; text-decoration: none;" href="/setup/stored-data"><u>Check data</u></a>
-                <a>
-                <a>|</a>
-                <a class="footlink" style="text-color: grey; text-decoration: none;" href="/prototype-admin/clear-data"><u>Clear data</u></a>
                 <a>
                 <br>
                 <br>
