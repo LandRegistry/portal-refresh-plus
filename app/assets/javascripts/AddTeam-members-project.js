@@ -1149,6 +1149,7 @@ function remove_TonyWatson(){
 
 
 function searchTitleNumbers(){
+  console.log('function being called');
   var boxDK88932 = document.getElementById("titleOne");
   var boxNN22989 = document.getElementById("titleTwo");
   var boxJK44466 = document.getElementById("titleThree");
@@ -1185,6 +1186,10 @@ function searchTitleNumbers(){
   else{
     console.log('no title number entered')
   }
+}
+
+function searchTitleNumbersEdit(){
+  console.log('function running');
 }
 
 var noOfApplications = 0;
