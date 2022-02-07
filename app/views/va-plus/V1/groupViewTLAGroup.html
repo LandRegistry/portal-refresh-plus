@@ -6,17 +6,6 @@
 
 <script src="/public/javascripts/jquery-1.11.3.js"></script>
 <script>require('../javascripts/AddTeam-members-group.js')</script>
-<script>
-  document.addEventListener("DOMContentLoaded", function(event){
-    DisplayingTeamMembersSelected();
-  
-  })
-  
-  window.addEventListener("load", function(event) {
-              document.querySelector("body").style.display = "block";
-          });
-  
-  </script>
 
 <style>
 
@@ -540,8 +529,6 @@ margin-bottom:5px;
 
 </style>
 
-<body style="display:none;">
-
 
 <!-- Back & clear data top -->
 <!-- Back & clear data top -->
@@ -713,7 +700,7 @@ margin-bottom:5px;
 
       <a href="indexUpdated.html" class="govuk-back-link" style="margin-top:0px;">Back to applications</a>
 
-      <button class="govuk-button" data-module="govuk-button" style="float:right;width:112px;margin-bottom:0px;margin-top: 0px;" id="btnEdit" onclick="window.location.href='groupEdit.html'">
+      <button class="govuk-button" data-module="govuk-button" style="float:right;width:112px;margin-bottom:0px;margin-top: 0px;cursor: not-allowed;" id="btnEdit" disabled>
         Edit group
       </button>
 
@@ -722,61 +709,23 @@ margin-bottom:5px;
 
           <div class="govuk-grid-row">
             <div class="govuk-grid-column-full" style="padding-top:30px;">
-              <h1 class="govuk-heading-xl" style="float:left;">Group: '{{ data['group-name'] }}'</h1>
+              <h1 class="govuk-heading-xl" style="float:left;">Group: 'TLA Group'</h1>
 
             </div>
               <div class="govuk-grid-column-one-half" style="padding-bottom:50px;">
                 <h2 class="govuk-heading-l">Team members</h2>
-                <!-- <div id="JohnBaptisteKelly_id"><label for="JohnBaptisteKelly" class="govuk-label">John BaptisteKelly</label></div>
-                <div id="AndyCarr_id"><label for="AndyCarr" class="govuk-label">Andy Carr</label></div>
-                <div id="LaurenDowling_id"><label for="LaurenDowling" class="govuk-label">Lauren Dowling</label></div>
-                <div id="LaurenThomas_id"><label for="LaurenThomas" class="govuk-label">Lauren Thomas</label></div> -->
-                <div id="AaronFlynn_id"><label for="AaronFlynn" class="govuk-label">Aaron Flynn</label></div>
-
-                <div id="AlexBlewett_id"><label for="AlexBlewett" class="govuk-label">Alex Blewett</label></div>
-
-                <div id="AndyCarr_id"><label for="AndyCarr" class="govuk-label">Andy Carr</label></div>
-
-                <div id="DuncanAnderson_id"><label for="DuncanAnderson" class="govuk-label">Duncan Anderson</label></div>
-
-                <div id="JamesThomas_id"><label for="JamesThomas" class="govuk-label">James Thomas</label></div>
-
-                <div id="JohnBaptisteKelly_id"><label for="JohnBaptisteKelly" class="govuk-label">John Baptiste-Kelly</label></div>
-
-                <div id="JohnJames_id"><label for="JohnJames" class="govuk-label">John James</label></div>
-
-                <div id="JohnTaylor_id"><label for="JohnTaylor" class="govuk-label">John Taylor</label></div>
-
-                <div id="JonParker_id"><label for="JonParker" class="govuk-label">Jon Parker</label></div>
-
-                <div id="JuanPintodelRio_id"><label for="JuanPintodelRio" class="govuk-label">Juan Pinto-del-Rio</label></div>
-
-                <div id="LaurenDowling_id"><label for="LukasKroeningMaynard" class="govuk-label">Lauren Dowling</label></div>
-
-                <div id="LukasKroeningMaynard_id"><label for="LukasKroeningMaynard" class="govuk-label">Lukas Kroening-Maynard</label></div>
-
-                <div id="MarkHornsby_id"><label for="MarkHornsby" class="govuk-label">Mark Hornsby</label></div>
-
-                <div id="MelviaMathew_id"><label for="MelviaMathew" class="govuk-label">Melvia Mathew</label></div>
-
-                <div id="NeilButler_id"><label for="NeilButler" class="govuk-label">Neil Butler</label></div>
-
-                <div id="NicolaAndrews_id"><label for="NicolaAndrews" class="govuk-label">Nicola Andrews</label></div>
-
-                <div id="PatGannon_id"><label for="PatGannon" class="govuk-label">Pat Gannon</label></div>
-
-                <div id="RomaniDavies_id"><label for="RomaniDavies" class="govuk-label">Romani Davies</label></div>
-
-                <div id="SimonSkidmore_id"><label for="SimonSkidmore" class="govuk-label">Simon Skidmore</label></div>
-
-                <div id="SueWatchman_id"><label for="SueWatchman" class="govuk-label">Sue Watchman</label></div>
-
-                <div id="TonyWatson_id"><label for="TonyWatson" class="govuk-label">Tony Watson</label></div>
+                <div><label class="govuk-label">Peter Jones</label></div>
+                <div><label class="govuk-label">Cathy Wood</label></div>
+                <div><label class="govuk-label">Michael Thomas</label></div>
+                <div><label class="govuk-label">Sam Hopkins</label></div>
+                <div><label class="govuk-label">Elon Onnerson</label></div>
+                <div><label class="govuk-label">Lesley Smith</label></div>
+                <div><label class="govuk-label">Danny Jones</label></div>
               </div> 
             
                 <div class="govuk-grid-column-one-half" style="padding-bottom:50px;">
                   <h2 class="govuk-heading-l">Group email address</h2>
-                  <div id=""><label for="" class="govuk-label">{{ data['group-email'] }}</label></div>
+                  <div id=""><label for="" class="govuk-label">tlagroup@bigbusiness.com</label></div>
                 </div>
             
 
@@ -795,78 +744,46 @@ margin-bottom:5px;
                         </tr>
                       </thead>
                       <tbody class="govuk-table__body" id="applications-table">
-                        {% if data['DK88932-Transfer'] %}
                         <tr class="govuk-table__row">
-                          <th scope="row" class="govuk-table__cell">DK88932</th>
-                          <td class="govuk-table__cell">Transfer of whole with priority</td>
-                          <td class="govuk-table__cell">Cancelled</td>
-                        </tr>
-                        {% endif %}
-                        {% if data['DK88932-OfficialCopy'] %}
-                        <tr class="govuk-table__row">
-                          <th scope="row" class="govuk-table__cell">DK88932</th>
-                          <td class="govuk-table__cell">Register update</td>
-                          <td class="govuk-table__cell">Received</td>
-                        </tr>
-                        {% endif %}
-                        
-                        {% if data['dk88932-newLease'] %}
-                        <tr class="govuk-table__row">
-                          <th scope="row" class="govuk-table__cell">DK88932</th>
+                          <th scope="row" class="govuk-table__cell">PL893723</th>
                           <td class="govuk-table__cell">New lease</td>
                           <td class="govuk-table__cell">Received</td>
                         </tr>
-                        {% endif %}
-
-                        {% if data['NN22989-Transfer'] %}
                         <tr class="govuk-table__row">
-                          <th scope="row" class="govuk-table__cell">NN22989</th>
+                          <th scope="row" class="govuk-table__cell">E23-66EF</th>
                           <td class="govuk-table__cell">Register update</td>
-                          <td class="govuk-table__cell">Cancelled</td>
-                        </tr>
-                        {% endif %}
-
-                        {% if data['NN22989-OfficialCopy'] %}
-                        <tr class="govuk-table__row">
-                          <th scope="row" class="govuk-table__cell">NN22989</th>
-                          <td class="govuk-table__cell">Official search of whole with priority </td>
-                          <td class="govuk-table__cell">Completed</td>
-                        </tr>
-                        {% endif %}
-
-                        {% if data['NN22989-newLease'] %}
-                        <tr class="govuk-table__row">
-                          <th scope="row" class="govuk-table__cell">NN22989</th>
-                          <td class="govuk-table__cell">New lease</td>
                           <td class="govuk-table__cell">Received</td>
                         </tr>
-                        {% endif %}
-
-                        {% if data['jk44466-Transfer'] %}
                         <tr class="govuk-table__row">
-                          <th scope="row" class="govuk-table__cell">JK44466</th>
-                          <td class="govuk-table__cell">Transfer of whole with priority</td>
-                          <td class="govuk-table__cell">Cancelled</td>
-                        </tr>
-                        {% endif %}
-
-                        {% if data['JK44466-officialCopy'] %}
-                        <tr class="govuk-table__row">
-                          <th scope="row" class="govuk-table__cell">JK44466</th>
+                          <th scope="row" class="govuk-table__cell">AA312789</th>
                           <td class="govuk-table__cell">Official copies</td>
                           <td class="govuk-table__cell">Completed</td>
                         </tr>
-                        {% endif %}
-
-                        {% if data['JK44466-newLease'] %}
                         <tr class="govuk-table__row">
-                          <th scope="row" class="govuk-table__cell">JK44466</th>
+                          <th scope="row" class="govuk-table__cell">JJ789743</th>
+                          <td class="govuk-table__cell">Official search of whole with priority</td>
+                          <td class="govuk-table__cell">Completed</td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                          <th scope="row" class="govuk-table__cell">PT676767</th>
+                          <td class="govuk-table__cell">Official search of whole with priority</td>
+                          <td class="govuk-table__cell">Completed</td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                          <th scope="row" class="govuk-table__cell">CC678932</th>
+                          <td class="govuk-table__cell">Official search of whole with priority</td>
+                          <td class="govuk-table__cell">Completed</td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                          <th scope="row" class="govuk-table__cell">LP980124</th>
                           <td class="govuk-table__cell">New lease</td>
                           <td class="govuk-table__cell">Received</td>
                         </tr>
-                        {% endif %}
-
-
+                        <tr class="govuk-table__row">
+                          <th scope="row" class="govuk-table__cell">FN890342</th>
+                          <td class="govuk-table__cell">Register update</td>
+                          <td class="govuk-table__cell">Delayed</td>
+                        </tr>
                       </tbody>
                     </table>
 
@@ -908,7 +825,7 @@ margin-bottom:5px;
             </div>
                 </div>
 
-</body>
+
 <!-- Content Area - End -->
 
 {% endblock %}

@@ -292,15 +292,22 @@ hr {
 
 
 .parent {display: block;position: relative;float: left;line-height: 70px;}
+.parentIconDown {background-image: url("/public/images/icon_govuk_chevrondownWhite.svg"); background-size: 25px; background-repeat: no-repeat; background-position-x: 83px;background-position-y: center;}
+.parentIconDown2 {background-image: url("/public/images/icon_govuk_chevrondownWhite.svg"); background-size: 25px; background-repeat: no-repeat; background-position-x: 108px;background-position-y: center;}
 .parent a{margin: 20px;color: #FFFFFF;text-decoration: none;}
 .parent:hover > ul {display:block;position:absolute;}
 .child {display: none;box-shadow: 0px 8px 16px 0px rgb(0 0 0 / 10%);z-index:99999;}
 .child li {background-color: #ffffff;line-height: 40px;border-right:#CCC 0px solid; width:100%;}
-.child li a{color: #00703C; font-weight:700;font-size:15px;}
+.child li a{color: #00703C; font-size:15px;}
 ul{list-style: none;margin: 0;padding: 0px; min-width:10em;}
-ul ul ul{left: 100%;top: 0;margin-left:1px;}
+ul ul ul{left: 100%;top: 0;border-left: 1px solid #dedede;}
+li:hover {background-color: #ffffff;color:#00703C;}
+.parent:hover > a {color:#00703C !important;}
+.parentIconDown:hover {background-image: url("/public/images/icon_govuk_chevrondownGreen.svg");}
+.parentIconDown2:hover {background-image: url("/public/images/icon_govuk_chevrondownGreen.svg");}
 .parent li:hover {background-color: #F0F0F0;}
 .expand{font-size:12px;float:right;margin-right:5px;}
+.iconRight {background-image: url("/public/images/icon_govuk_chevronrightGreen.svg"); background-size: 25px; background-repeat: no-repeat; background-position-x: 134px;background-position-y: center;}
 
 
 
@@ -531,131 +538,134 @@ margin-bottom:5px;
 
 <div class="navbar-container">
 
-   <img src="/public/images/HMLR_Logo.svg" alt="hmlrlogo" style="height: 44px;
-   padding-left: 30px;
-   padding-top: 14px;
-   padding-bottom: 5px;">
-    
-    <ul id="menu" style="float:right;">
-        <li class="parent"><a href="#">Home</a></li>
-        <li class="parent"><a href="#">Services <i class="fas fa-angle-down" style="margin-left:5px;"></i></a>
-        <ul class="child">
-            <li class="parent"><a href="#">Applications <span class="expand"><i class="fas fa-angle-right"></i></span></a>
-                <ul class="child">
-                <li><a href="#">Link 1</a></li>
-                <li><a href="#">Link 2</a></li>
-                <li><a href="#">Link 3</a></li>
-                <li><a href="#">Link 4</a></li>
-                <li><a href="#">Link 5</a></li>
-                <li><a href="#">Link 6</a></li>
-                <li><a href="#">Link 8</a></li>
-                <li><a href="#">Link 9</a></li>
-                </ul>
+  <img src="/public/images/HMLR_Logo.svg" alt="hmlrlogo" style="height: 44px;
+  padding-left: 30px;
+  padding-top: 14px;
+  padding-bottom: 5px;">
+   
+   <ul id="menu" style="float:right;">
+       <li class="parent"><a href="#">Home</a></li>
+       <li class="parent parentIconDown"><a style="padding-right: 25px;" href="#">Services</a>
+       <ul class="child" style="left:-34px;">
+        <li class="parent"><a href="#">Service 1</a>
 
-            </li>
-            <li class="parent"><a href="#">Service 3</a>
-
-            </li>
-            <li class="parent"><a href="#">Service 4</a>
-            </li>
-            <li class="parent"><a href="#">Service 5</a>
-            </li>
-            <li class="parent"><a href="#">Service 6</a>
-
-            </li>
-            <li class="parent"><a href="#">Service 7</a>
-
-            </li>
-            <li class="parent"><a href="#">Service 8</a>
-
-            </li>
-
-        </ul>
         </li>
-        <!-- <li class="parent"><a href="#">Notifications <span class="notificationNavNumber">2</span> <i class="fas fa-angle-down"></i></a>
-        <ul class="child">
-            <div class="notificationContent govuk-body">
+           <li class="parent iconRight"><a href="#">Service 2 </a>
+               <ul class="child">
+               <li><a href="#">Link 1</a></li>
+               <li><a href="#">Link 2</a></li>
+               <li><a href="#">Link 3</a></li>
+               <li><a href="#">Link 4</a></li>
+               <li><a href="#">Link 5</a></li>
+               <li><a href="#">Link 6</a></li>
+               <li><a href="#">Link 8</a></li>
+               <li><a href="#">Link 9</a></li>
+               </ul>
+
+           </li>
+           <li class="parent"><a href="#">Service 3</a>
+
+           </li>
+           <li class="parent"><a href="#">Service 4</a>
+           </li>
+           <li class="parent"><a href="#">Service 5</a>
+           </li>
+           <li class="parent"><a href="#">Service 6</a>
+
+           </li>
+           <li class="parent"><a href="#">Service 7</a>
+
+           </li>
+           <li class="parent"><a href="#">Service 8</a>
+
+           </li>
+
+       </ul>
+       </li>
+       <!-- <li class="parent"><a href="#">Notifications <span class="notificationNavNumber">2</span> <i class="fas fa-angle-down"></i></a>
+       <ul class="child">
+           <div class="notificationContent govuk-body">
 
 
-          <div class="NotificationSingle">
-              <div class="notificationTopRow">
-                  <div class="notificationTitle">
-                    New Requisition
-                  </div>
-                  <div class="notificationTime">
-                    6 minutes ago
-                  </div>
-            </div>
-              <div class="notification2ndLine">
-                <b>Title number:</b> CC78908
-              </div>
-              <div class="notificationLink">
-                <a href="#" style="margin:0px;">Respond to requisition</a>
-              </div>
-          </div>
+         <div class="NotificationSingle">
+             <div class="notificationTopRow">
+                 <div class="notificationTitle">
+                   New Requisition
+                 </div>
+                 <div class="notificationTime">
+                   6 minutes ago
+                 </div>
+           </div>
+             <div class="notification2ndLine">
+               <b>Title number:</b> CC78908
+             </div>
+             <div class="notificationLink">
+               <a href="#" style="margin:0px;">Respond to requisition</a>
+             </div>
+         </div>
 
 
-          <div class="NotificationSingleLast">
-            <div class="notificationTopRow">
-                <div class="notificationTitle">
-                  New PDF Available
-                </div>
-                <div class="notificationTime">
-                  12 minutes ago
-                </div>
-          </div>
-            <div class="notification2ndLine">
-              <b>Official Copy</b>
-            </div>
-            <div class="notificationLink">
-              <a href="#" style="margin:0px;">Download</a>
-            </div>
-        </div>
+         <div class="NotificationSingleLast">
+           <div class="notificationTopRow">
+               <div class="notificationTitle">
+                 New PDF Available
+               </div>
+               <div class="notificationTime">
+                 12 minutes ago
+               </div>
+         </div>
+           <div class="notification2ndLine">
+             <b>Official Copy</b>
+           </div>
+           <div class="notificationLink">
+             <a href="#" style="margin:0px;">Download</a>
+           </div>
+       </div>
 
 
-        </div>
-        </ul>
-        
-        </li> -->
+       </div>
+       </ul>
+       
+       </li> -->
 
-        <li class="parent"><a href="#">Contact us</a></li>
+       <li class="parent"><a href="#">Contact us</a></li>
 
-        <li class="parent"><a href="#">John James<i class="fas fa-angle-down" style="margin-left:5px;"></i></a>
-            <ul class="child" style="right:0;">
-        
-        
-        
-        
-            <div class="govuk-body myAccountContent">
+       <li class="parent parentIconDown2"><a style="padding-right: 25px;" href="#">John James </a>
+           <ul class="child" style="right:0;">
+       
+       
+       
+       
+           <div class="govuk-body myAccountContent">
 
-                  <div>
-                    <div class="myAccountTitle" style="padding-bottom:3px;">
-                      Logged in as:
-                    </div>
-                    <div class="myAccount2ndLine">
-                       Administrator 
-                    </div>
-                    <a href="#" style="margin:0px;color:#00703C;font-weight:700;font-size:14px;">View profile</a>
-                  </div>
+                 <div>
+                   <div class="myAccountTitle" style="padding-bottom:3px;">
+                     Logged in as:
+                   </div>
+                   <div class="myAccount2ndLine">
+                      Administrator 
+                   </div>
+                   <a href="#" style="margin:0px;color:#00703C;font-weight:700;font-size:14px;">View profile</a>
+                 </div>
 
-                  <hr>
+                 <hr>
 
-                  <div class="myAccountTitle" style="padding-bottom:3px;">
-                    <b>Primary Business Unit Administrator (BUA):</b> 
-                  </div>
-                  <div class="myAccount2ndLine">
-                    John Taylor
-                    <!-- <a href="#" style="margin:0px;color:#00703C;"><b>JohnTaylor@bigbusiness.com</b></a> -->
-                  </div>
-
-
+                 <div class="myAccountTitle" style="padding-bottom:3px;">
+                   <b>Primary Business Unit Administrator (BUA):</b> 
+                 </div>
+                 <div class="myAccount2ndLine">
+                   John Taylor
+                   <!-- <a href="#" style="margin:0px;color:#00703C;"><b>JohnTaylor@bigbusiness.com</b></a> -->
+                 </div>
 
 
-                  <button id="logOut" class="govuk-button" style="margin-top:20px;">Log out</button>
-                </div>
-                </ul>
-                </li>
-                <li class="parent"><a href="#">Log out</a></li>
+
+
+                 <button id="logOut" class="govuk-button" style="margin-top:20px;">Log out</button>
+               </div>
+               </ul>
+               </li>
+               <li class="parent"><a href="#">Log out</a></li>
 </div>
         
 
@@ -688,7 +698,7 @@ margin-bottom:5px;
 
     <div class="table-content-section">
 
-      <a href="javascript: history.go(-1)" class="govuk-back-link" style="margin-top:0px;">Back to applications</a>
+      <a href="indexUpdated.html" class="govuk-back-link" style="margin-top:0px;">Back to applications</a>
 
       <button class="govuk-button" data-module="govuk-button" style="float:right;width:112px;margin-bottom:0px;margin-top: 0px;cursor: not-allowed;" id="btnEdit" disabled>
         Edit group
