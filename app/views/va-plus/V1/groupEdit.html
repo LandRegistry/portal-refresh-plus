@@ -724,17 +724,17 @@ margin-bottom:5px;
 
     <div class="table-content-section">
 
-        <h1 class="govuk-heading-xl">Edit group</h1>
+        <h1 class="govuk-heading-xl">Edit project</h1>
 
         <form  method="post" class="form">
           <div class="govuk-grid-row">
             <div class="govuk-grid-column-full" style="padding-bottom:20px;">
 
-              <h2 class="govuk-heading-l">Group details</h2>
+              <h2 class="govuk-heading-l">Project details</h2>
           
               <div class="govuk-form-group" style="float: left;">
                   <label class="govuk-label govuk-!-font-weight-bold" for="address-town">
-                      Group name
+                      Project name
                   </label>
           
                   <input class="govuk-input" id="group-name" name="group-name" type="text" style="width:300px;" value="{{ data['group-name'] }}">
@@ -742,7 +742,7 @@ margin-bottom:5px;
           
               <div class="govuk-form-group" style="float: left;margin-left: 50px;">
                   <label class="govuk-label govuk-!-font-weight-bold" for="address-town">
-                      Group email address
+                      Project email address
                   </label>
                   
                   <input class="govuk-input" id="group-email" name="group-email" type="text" style="width:300px;" value="{{ data['group-email'] }}"><div class="govuk-hint" style="font-size:16px;margin-top: 5px;">Notifications will be sent to this address</div>
@@ -754,12 +754,14 @@ margin-bottom:5px;
 
 
 
-            <div class="govuk-grid-column-full" style="padding-bottom:50px;">
-              <h2 class="govuk-heading-l">Group team members</h2>
+            <div class="govuk-grid-column-full" style="padding-bottom:75px;">
+              <h2 class="govuk-heading-l" style="margin-bottom:10px;"">Project team members</h2>
+          
+<p>All members will receive notifications related to the applications added.</p>
           
               <div class="govuk-body" style="margin-bottom: 0px;">
                 <label class="govuk-label form-label-bold">
-                    Select team team members
+                    Select team members
                 </label>
                   <select id="cat" class="form-control" style="height:39px;width:300px;border:2px solid #000000;" type="submit" onchange="TeamMemberSelected()">
                     <option value="#"></option>
@@ -851,7 +853,7 @@ margin-bottom:5px;
 
           <div class="govuk-grid-column-full" style="padding-bottom:20px;">
 
-            <h2 class="govuk-heading-l">Linked applications to this group</h2>
+            <h2 class="govuk-heading-l">Linked applications to this project</h2>
         
             <div class="govuk-body" style="margin-bottom: 30px;">
               <label class="govuk-label form-label-bold">
@@ -1231,10 +1233,10 @@ margin-bottom:5px;
 
     <div class="table-content-section">
 
-      <h2 class="govuk-heading-l">Would you like to delete this group?</h2>
+      <h2 class="govuk-heading-l">Would you like to delete this project?</h2>
 
       <button class="govuk-button govuk-button--warning" data-module="govuk-button" style="margin-bottom:0px;" id="btnDelete" onclick="window.location.href='deleteWarning.html'">
-        Delete group
+        Delete project
       </button>
 
 

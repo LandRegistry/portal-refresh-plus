@@ -718,17 +718,17 @@ margin-bottom:30px;
 
     <div class="table-content-section">
 
-        <h1 class="govuk-heading-xl">Create a new group</h1>
+        <h1 class="govuk-heading-xl">Create a new project</h1>
 
         <form  method="post" class="form">
           <div class="govuk-grid-row">
             <div class="govuk-grid-column-full" style="padding-bottom:20px;">
 
-              <h2 class="govuk-heading-l">Step 1: Add group details</h2>
+              <h2 class="govuk-heading-l">Step 1: Add project details</h2>
           
               <div class="govuk-form-group" style="float: left;">
                   <label class="govuk-label govuk-!-font-weight-bold" for="address-town">
-                      Group name
+                      Project name
                   </label>
           
                   <input class="govuk-input" id="group-name" name="group-name" type="text" style="width:300px;" value="{{ data['group-name'] }}">
@@ -736,7 +736,7 @@ margin-bottom:30px;
           
               <div class="govuk-form-group" style="float: left;margin-left: 50px;">
                   <label class="govuk-label govuk-!-font-weight-bold" for="address-town">
-                      Group email address
+                      Project email address (optional)
                   </label>
                   
                   <input class="govuk-input" id="group-email" name="group-email" type="text" style="width:300px;" value="{{ data['group-email'] }}"><div class="govuk-hint" style="font-size:16px;margin-top: 5px;">Notifications will be sent to this address</div>
@@ -748,12 +748,28 @@ margin-bottom:30px;
 
 
 
-            <div class="govuk-grid-column-full" style="padding-bottom:50px;">
-              <h2 class="govuk-heading-l">Step 2: Add group team members</h2>
+            <div class="govuk-grid-column-full" style="padding-bottom:75px;">
+              <h2 class="govuk-heading-l" style="margin-bottom:10px;"">Step 2: Add project team members</h2>
           
+<p>All members will receive notifications related to the applications added.</p>
+
+
+<!-- <div class="govuk-warning-text">
+  <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+  <strong class="govuk-warning-text__text">
+    <span class="govuk-warning-text__assistive">Warning</span>
+    All members of the group will receive notifications related to the applications added to the group.
+  </strong>
+</div> -->
+
+<!-- <div class="govuk-inset-text">
+  All members of the group will receive notifications related to the applications added to the group.
+</div> -->
+
+
               <div class="govuk-body" style="margin-bottom: 0px;">
                 <label class="govuk-label form-label-bold">
-                    Select team team members
+                    Select team members
                 </label>
                   <select id="cat" class="form-control" style="height:39px;width:300px;border:2px solid #000000;" type="submit" onchange="TeamMemberSelected()">
                     <option value="#"></option>
@@ -779,6 +795,7 @@ margin-bottom:30px;
                     <option value="SueWatchman">Sue Watchman</option>
                     <option value="TonyWatson">Tony Watson</option>
                   </select>
+                  
               </div>
               <div class="box-container" id="greyBoxForTeamMembers" style="display:none;">
                   <div class="Header_container">
@@ -806,14 +823,16 @@ margin-bottom:30px;
 
           <div class="govuk-grid-column-full" style="padding-bottom:20px;">
 
-            <h2 class="govuk-heading-l">Step 3: Link applications to this group</h2>
+            <h2 class="govuk-heading-l">Step 3: Link applications to this project</h2>
             {% if data['testing'] %}
-            <h2 class="govuk-heading-l">Step 3: Link applications to this group</h2>
+            <h2 class="govuk-heading-l">Step 3: Link applications to this project</h2>
             {% endif %}
 
         
             <div class="govuk-body" style="margin-bottom: 30px;">
- 
+              <label class="govuk-label form-label-bold">
+                Search by title number
+            </label>
               <input type="text" id="search-input" class="searchBox" style="">
               <button class="searchButton" value="button" id="search-button" onclick="searchTitleNumbers(); return false"><img width="20" height="20" style="margin-top:6px;" src="/public/images/search-icon.svg"></button>
             </div>
@@ -1104,7 +1123,7 @@ margin-bottom:30px;
                 </button>
 
                 <button class="govuk-button" type="submit" data-module="govuk-button" style="float:right;width:150px;margin-bottom:0px;" formaction="indexUpdated">
-                  Create group
+                  Create project
                 </button>
             <!-- </div> -->
           </div> 
