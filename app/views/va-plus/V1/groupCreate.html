@@ -718,17 +718,17 @@ margin-bottom:30px;
 
     <div class="table-content-section">
 
-        <h1 class="govuk-heading-xl">Create a new project</h1>
+        <h1 class="govuk-heading-xl">Create a new group</h1>
 
         <form  method="post" class="form">
           <div class="govuk-grid-row">
             <div class="govuk-grid-column-full" style="padding-bottom:20px;">
 
-              <h2 class="govuk-heading-l">Step 1: Add project details</h2>
+              <h2 class="govuk-heading-l">Step 1: Add group details</h2>
           
               <div class="govuk-form-group" style="float: left;">
                   <label class="govuk-label govuk-!-font-weight-bold" for="address-town">
-                      Project name
+                      Group name
                   </label>
           
                   <input class="govuk-input" id="group-name" name="group-name" type="text" style="width:300px;" value="{{ data['group-name'] }}">
@@ -736,7 +736,7 @@ margin-bottom:30px;
           
               <div class="govuk-form-group" style="float: left;margin-left: 50px;">
                   <label class="govuk-label govuk-!-font-weight-bold" for="address-town">
-                      Project email address (optional)
+                      Group email address (optional)
                   </label>
                   
                   <input class="govuk-input" id="group-email" name="group-email" type="text" style="width:300px;" value="{{ data['group-email'] }}"><div class="govuk-hint" style="font-size:16px;margin-top: 5px;">Notifications will be sent to this address</div>
@@ -749,9 +749,9 @@ margin-bottom:30px;
 
 
             <div class="govuk-grid-column-full" style="padding-bottom:75px;">
-              <h2 class="govuk-heading-l" style="margin-bottom:10px;"">Step 2: Add project team members</h2>
+              <h2 class="govuk-heading-l" style="margin-bottom:10px;"">Step 2: Add Group team members</h2>
           
-<p>Team members can view and interact with all applications added to the project, as well as receive their notifications.</p>
+<p>Team members can view and interact with all applications added to the Group, as well as receive their notifications.</p>
 
 
 <!-- <div class="govuk-warning-text">
@@ -823,9 +823,9 @@ margin-bottom:30px;
 
           <div class="govuk-grid-column-full" style="padding-bottom:20px;">
 
-            <h2 class="govuk-heading-l">Step 3: Link applications to this project</h2>
+            <h2 class="govuk-heading-l">Step 3: Link applications to this group</h2>
             {% if data['testing'] %}
-            <h2 class="govuk-heading-l">Step 3: Link applications to this project</h2>
+            <h2 class="govuk-heading-l">Step 3: Link applications to this group</h2>
             {% endif %}
 
         
@@ -1123,7 +1123,7 @@ margin-bottom:30px;
                 </button>
 
                 <button class="govuk-button" type="submit" data-module="govuk-button" style="float:right;width:150px;margin-bottom:0px;" formaction="indexUpdated">
-                  Create project
+                  Create group
                 </button>
             <!-- </div> -->
           </div> 
