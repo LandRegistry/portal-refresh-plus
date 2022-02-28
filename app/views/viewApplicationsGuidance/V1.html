@@ -215,11 +215,17 @@ margin:auto;
 }
 
 .dividerSection{
-  padding-bottom:75px;
+  padding-bottom:50px;
 }
 
 .govuk-list > li {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
+}
+
+.sideMenuLinks {
+  text-decoration: none;
+  font-weight: 700;
+  color:#006637;
 }
 
 </style>
@@ -387,18 +393,35 @@ margin:auto;
         <div class="govuk-width-container wide960">
     
             <div class="govuk-grid-row">
+
+              <div class="govuk-grid-column-one-third">
+                <h3 class="govuk-heading-m">Contents</h3>
+                <ul class="govuk-list">
+                  <li><a class="sideMenuLinks" href="#viewmyapplications">View My Applications</a></li>
+                  <li><a class="sideMenuLinks" href="#filter">Filter</a></li>
+                  <li><a class="sideMenuLinks" href="#search">Search</a></li>
+                  <li><a class="sideMenuLinks" href="#exportapplications">Export Applications</a></li>
+                  <li><a class="sideMenuLinks" href="#sort">Sort</a></li>
+                  <li><a class="sideMenuLinks" href="#collapsedrow">Initial Application Information<br>(collapsed row)</a></li>
+                  <li><a class="sideMenuLinks" href="#ecd">Estimated completion date</a></li>
+                  <li><a class="sideMenuLinks" href="#expandedrow">Additional Application Information<br>(expanded row)</a></li>
+                  <li><a class="sideMenuLinks" href="#actions">Actions</a></li>
+                </ul>
+              </div>
+
+
               <div class="govuk-grid-column-two-thirds">
 
 
                 <!-- Intro -->
-                <div class="dividerSection">
+                <div class="dividerSection" id="viewmyapplications">
                     <h1 class="govuk-heading-xl">View applications</h1>
                     <p class="govuk-body">View applications allows you to search for applications from your business unit, submitted via the HM Land Registry Portal. This guide helps to explain what the features on the page do. </p>
                 </div>
 
 
                 <!-- Filter -->
-                <div class="dividerSection">
+                <div class="dividerSection" id="filter">
                     <h2 class="govuk-heading-l">Filter</h2>
                     <h3 class="govuk-heading-m">Filter by application type</h2>
                     <p class="govuk-body">Use this to display applications by their type. You can filter by:</p>
@@ -441,7 +464,7 @@ margin:auto;
                 
 
                 <!-- Search -->
-                <div class="dividerSection">
+                <div class="dividerSection" id="search">
                   <h2 class="govuk-heading-l">Search</h2>
                   <p class="govuk-body">Search can locate applications from within the entire business unit as well as the individuals own applications by: </p>
                   <ul class="govuk-list govuk-list--bullet">
@@ -455,18 +478,15 @@ margin:auto;
                     <li>The search input field requires a minimum of 3 characters.</li>
                     <li>Search results contain any applications submitted via the portal by a user or users whilst they were within that business unit.</li>
                   </ul>
-                </div>
 
-
-                <!-- Reset -->
-                <div class="dividerSection">
-                  <h2 class="govuk-heading-l">Reset</h2>
+                  <h3 class="govuk-heading-m">Reset</h3>
                   <p class="govuk-body">Allows you to clear any existing search term, sort or filter. When the page is reset the system returns to displaying only the applications submitted by you via the portal. </p>
+
                 </div>
-                
+
 
                 <!-- Export applications -->
-                <div class="dividerSection">
+                <div class="dividerSection" id="exportapplications">
                   <h2 class="govuk-heading-l">Export Applications</h2>
                   <p class="govuk-body">Allows you to extract information relating to all or a selected sample of applications based on the search and filter options you have used.</p>
 
@@ -476,7 +496,7 @@ margin:auto;
 
 
                 <!-- Sort -->
-                <div class="dividerSection">
+                <div class="dividerSection" id="sort">
                   <h2 class="govuk-heading-l">Sort</h2>
                   <p class="govuk-body">Use sort to order your list of applications. You can sort by: </p>
                   <ul class="govuk-list govuk-list--bullet">
@@ -488,7 +508,7 @@ margin:auto;
 
 
                 <!-- Initial application information (collapsed row) -->
-                <div class="dividerSection">
+                <div class="dividerSection" id="collapsedrow">
                   <h2 class="govuk-heading-l">Initial Application Information (collapsed row)</h2>
                   <p class="govuk-body">Use sort to order your list of applications. You can sort by: </p>
                   <h3 class="govuk-heading-m">Note 1:</h3>
@@ -517,7 +537,7 @@ margin:auto;
                     <li>Delayed Prior Pending Application(s) or Official Search(es)</li>
                     <li>Delayed - Extension of Time Granted</li>
                   </ul>
-                  <h3 class="govuk-heading-m">Estimated completion date (ECD) </h3>
+                  <h3 class="govuk-heading-m" id="ecd">Estimated completion date (ECD) </h3>
                   <p class="govuk-body">Is a date by which the application is likely to be completed. It is not based on the individual application, but is an estimate of when the majority (90%) of that application type will be completed. </p>
                   <h3 class="govuk-heading-m">ECD key points</h3>
                   <ul class="govuk-list govuk-list--bullet">
@@ -549,7 +569,7 @@ margin:auto;
 
 
                 <!-- Additional application information (expanded row) -->
-                <div class="dividerSection">
+                <div class="dividerSection" id="expandedrow">
                   <h2 class="govuk-heading-l" style="margin-bottom:25px;">Additional Application Information (expanded row)</h2>
                   <h3 class="govuk-heading-m">Application progress - details</h3>
                   <p class="govuk-body">This shows the progress of an application by the following stages:</p>
@@ -626,7 +646,7 @@ margin:auto;
                   <h3 class="govuk-heading-m">Show / hide details (-) </h3>
                   <p class="govuk-body">Collapses the row so less information about your application is displayed. </p>
 
-                  <h3 class="govuk-heading-m">Actions </h3>
+                  <h3 class="govuk-heading-m" id="actions">Actions </h3>
                   <ul class="govuk-list govuk-list--bullet">
                     <li><b>Respond </b><br>
                       HMLR correspondence does not need to have been received on an application to use ‘Respond’.<br><br>
