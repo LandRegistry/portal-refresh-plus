@@ -6,19 +6,9 @@
 
 <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
 
-<script language="JavaScript">
-function toggle(source) {
-    var checkboxes = document.querySelectorAll('input[type="checkbox"]');
-    for (var i = 0; i < checkboxes.length; i++) {
-        if (checkboxes[i] != source)
-            checkboxes[i].checked = source.checked;
-    }
-}
-    </script>
-
 <script>
+
   $(document).ready(function () {
-      $('#content0').hide();
       $('#content1').hide();
       $('#content2').hide();
   
@@ -26,15 +16,16 @@ function toggle(source) {
           if ($('tr#' + $(this).data("href")).is(":visible")) {
               $('tr#' + $(this).data("href")).remove();
           } else {
-              $(this).closest('tr').after('<tr id="' + $(this).data("href") + '" class="addedToBasketBox"><td colspan="6">' + $('#' + $(this).data("href")).html() + '</td></tr>');
+              $(this).closest('tr').after('<tr id="' + $(this).data("href") + '"><td colspan="6">' + $('#' + $(this).data("href")).html() + '</td></tr>');
           }                       
       });
   
   });
   </script>
 
-
 <style>
+
+
 
 .govuk-main-wrapper--auto-spacing:first-child, .govuk-main-wrapper--l {
     padding-top: 0px;
@@ -183,8 +174,6 @@ padding-bottom: 3px;
   padding: 0px;
 }
 
-
-
 hr {
   background: #dedede;
     height: 1px;
@@ -214,7 +203,7 @@ hr {
 .child li {background-color: #ffffff;line-height: 40px;border-right:#CCC 0px solid; width:100%;}
 .child li a{color: #00703C; font-size:15px;}
 ul{list-style: none;margin: 0;padding: 0px; min-width:10em;}
-
+ul ul ul{left: 100%;top: 0;border-left: 1px solid #dedede;}
 li:hover {background-color: #ffffff;color:#00703C;}
 .parent:hover > a {color:#00703C !important;}
 .parentIconDown:hover {background-image: url("/public/images/icon_govuk_chevrondownGreen.svg");}
@@ -564,91 +553,15 @@ float:left;
     border-color: #006637;
 }
 
-.basketContent {
-  width: 325px;
-    padding: 0px;
-    background: #ffffff;
-    margin-bottom: 0px;
+table {
+    table-layout: fixed;
+    width: 100%;
+    border-collapse: collapse;
 }
-
-.basketContent a {
-  padding: 0px;
-}
-
-.addedToBasketBox {
-  margin-top:-1px;position:relative;border-bottom: 1px solid #b1b4b6;
-}
-
-.basketItem {
-  border-bottom:1px solid #E5E5E5;
-  padding-bottom: 25px;
-  margin-bottom: 25px;
-}
-
-.basketItemLast {
-  padding-bottom: 0px;
-}
-
-.basketSection {
-  min-height:25px;
-}
-
-.basketTitle {
-  color: #00703C;
-  font-size: 19px;
-  font-weight: 700;
-  float: left;
-}
-
-.basketRemove {
-  float: right;
-  text-align: right;
-}
-
-.basketRemoveText {
-  color:#D10A1E !important;
-  font-size: 16px;
-}
-
-.basketAddress {
-  color:#000000;
-  font-size:16px;
-  font-weight:700;
-    display: block;
-}
-
-.basketItemSelected {
-  color:#000000;
-  font-size:16px;
-  font-weight:400;
-}
-
-.basketItemPrice {
-  color:#000000;
-  font-size:16px;
-  font-weight:400;
-  text-align: right;
-  float: right;
-}
-
-.basketItemSubText {
-  color:#000000;
-  font-size:19px;
-  font-weight:700;
-}
-
-.basketItemSubTotal {
-  color:#000000;
-  font-size:19px;
-  font-weight:400;
-  text-align: right;
-  float: right;
-}
-
-.basketItems {
-  max-height: 360px;
-    overflow: auto;
-    padding: 25px 25px 0px 25px;
+td {
+    border: 1px solid #000;
+    padding: 5px;
+    vertical-align: top;
 }
 
 </style>
@@ -668,14 +581,98 @@ float:left;
   padding-bottom: 5px;">
    
    <ul id="menu" style="float:right;">
-      <li class="parent"><a href="#">Home</a></li>
+       <li class="parent"><a href="#">Home</a></li>
+       <li class="parent parentIconDown"><a style="padding-right: 25px;" href="#">Services</a>
+       <ul class="child" style="left:-34px;">
+        <li class="parent"><a href="#">Service 1</a>
 
-      <li class="parent parentIconDown"><a style="padding-right: 25px;" href="#">Services</a>
+        </li>
+           <li class="parent iconRight"><a href="#">Service 2 </a>
+               <ul class="child">
+               <li><a href="#">Link 1</a></li>
+               <li><a href="#">Link 2</a></li>
+               <li><a href="#">Link 3</a></li>
+               <li><a href="#">Link 4</a></li>
+               <li><a href="#">Link 5</a></li>
+               <li><a href="#">Link 6</a></li>
+               <li><a href="#">Link 8</a></li>
+               <li><a href="#">Link 9</a></li>
+               </ul>
+
+           </li>
+           <li class="parent"><a href="#">Service 3</a>
+
+           </li>
+           <li class="parent"><a href="#">Service 4</a>
+           </li>
+           <li class="parent"><a href="#">Service 5</a>
+           </li>
+           <li class="parent"><a href="#">Service 6</a>
+
+           </li>
+           <li class="parent"><a href="#">Service 7</a>
+
+           </li>
+           <li class="parent"><a href="#">Service 8</a>
+
+           </li>
+
+       </ul>
+       </li>
+       <!-- <li class="parent"><a href="#">Notifications <span class="notificationNavNumber">2</span> <i class="fas fa-angle-down"></i></a>
+       <ul class="child">
+           <div class="notificationContent govuk-body">
+
+
+         <div class="NotificationSingle">
+             <div class="notificationTopRow">
+                 <div class="notificationTitle">
+                   New Requisition
+                 </div>
+                 <div class="notificationTime">
+                   6 minutes ago
+                 </div>
+           </div>
+             <div class="notification2ndLine">
+               <b>Title number:</b> CC78908
+             </div>
+             <div class="notificationLink">
+               <a href="#" style="margin:0px;">Respond to requisition</a>
+             </div>
+         </div>
+
+
+         <div class="NotificationSingleLast">
+           <div class="notificationTopRow">
+               <div class="notificationTitle">
+                 New PDF Available
+               </div>
+               <div class="notificationTime">
+                 12 minutes ago
+               </div>
+         </div>
+           <div class="notification2ndLine">
+             <b>Official Copy</b>
+           </div>
+           <div class="notificationLink">
+             <a href="#" style="margin:0px;">Download</a>
+           </div>
+       </div>
+
+
+       </div>
+       </ul>
        
-      <li class="parent"><a href="#">Contact us</a></li>
+       </li> -->
 
-      <li class="parent parentIconDown2"><a style="padding-right: 25px;" href="#">John James </a>
+       <li class="parent"><a href="#">Contact us</a></li>
+
+       <li class="parent parentIconDown2"><a style="padding-right: 25px;" href="#">John James </a>
            <ul class="child" style="right:0;">
+       
+       
+       
+       
            <div class="govuk-body myAccountContent">
 
                  <div>
@@ -704,100 +701,26 @@ float:left;
                  <button id="logOut" class="govuk-button" style="margin-top:20px;">Log out</button>
                </div>
                </ul>
-      </li>
+               </li>
               
                
-        <li class="parent parentIconDown3"><a style="padding-left:25px;" href="#">Basket</a>
-          <ul class="child" style="right:0;">
-            <div class="govuk-body basketContent">
-
-              <div class="basketItems">
-
-              <!-- First item in dropdown basket -->
-                  <div class="basketItem">
-                      <div class="basketSection">
-                          <div class="basketTitle">
-                            SGL479276
-                          </div>
-                          <div class="basketRemove">
-                            <a class="basketRemoveText" style="margin:0;text-decoration: underline;" href="#">Remove</a>
-                          </div>
+               <li class="parent parentIconDown3"><a style="padding-left:25px;" href="#">Basket</a>
+                <ul class="child" style="right:0;">
+                <div class="govuk-body myAccountContent">
+     
+                      <div>
+                        <div class="myAccountTitle" style="padding-bottom:3px;">
+                          Coming soon
+                        </div>
+                        <div class="myAccount2ndLine">
+                          
+                        </div>
+                        
                       </div>
 
-                      <div class="basketSection" style="padding:15px 0px;">
-                            <div><span class="basketItemSelected">Register</span><span class="basketItemPrice">£3.00</span></div>
-                            <div><span class="basketItemSelected">Title plan</span><span class="basketItemPrice">£3.00</span></div>
-                      </div>
-
-                      <div class="basketSection">
-                        <span class="basketAddress">27a Drakefell Road, CV5 BKK</span>
-                      </div>
-
-                  </div>
-
-                  <!-- Second item in dropdown basket -->
-                  <div class="basketItem">
-                    <div class="basketSection">
-                        <div class="basketTitle">
-                          SGL479276
-                        </div>
-                        <div class="basketRemove">
-                          <a class="basketRemoveText" style="margin:0;text-decoration: underline;" href="#">Remove</a>
-                        </div>
                     </div>
-
-                    <div class="basketSection" style="padding:15px 0px;">
-                          <div><span class="basketItemSelected">Register</span><span class="basketItemPrice">£3.00</span></div>
-                          <div><span class="basketItemSelected">Title plan</span><span class="basketItemPrice">£3.00</span></div>
-                    </div>
-
-                    <div class="basketSection">
-                      <span class="basketAddress">27b Drakefell Road, CV5 BKK</span>
-                    </div>
-
-                  </div>
-
-                  <!-- Third item in dropdown basket -->
-                  <div class="basketItem" style="margin-bottom:0px;">
-                    <div class="basketSection">
-                        <div class="basketTitle">
-                          SGL479276
-                        </div>
-                        <div class="basketRemove">
-                          <a class="basketRemoveText" style="margin:0;text-decoration: underline;" href="#">Remove</a>
-                        </div>
-                    </div>
-
-                    <div class="basketSection" style="padding:15px 0px;">
-                          <div><span class="basketItemSelected">Register</span><span class="basketItemPrice">£3.00</span></div>
-                          <div><span class="basketItemSelected">Title plan</span><span class="basketItemPrice">£3.00</span></div>
-                    </div>
-
-                    <div class="basketSection">
-                      <span class="basketAddress">27b Drakefell Road, CV5 BKK</span>
-                    </div>
-
-                  </div>
-
-              </div>
-
-              <!-- Subtotal and basket button -->
-              <div class="basketItemLast" style="padding:0px 25px 25px 25px;">
-                <div class="basketSection" style="padding-bottom: 25px;padding-top: 25px;">
-                  <div><span class="basketItemSubText">Subtotal:</span><span class="basketItemSubTotal">£12.00</span></div>
-                </div>
-
-                <div class="basketSection">
-                  <button class="govuk-button" data-module="govuk-button" style="width:100%;">
-                    View basket
-                  </button>
-                </div>
-
-              </div>
-
-            </div>
-          </ul>
-        </li>
+                    </ul>
+                    </li>
 
 
 </div>
@@ -912,115 +835,18 @@ float:left;
                         </a>
                       </h4>
                     </div>
+
                     <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
                         <div class="panel-body">
-
+              
                             <p style="margin-bottom:15px;">If you order both the register and title plan, they will be delivered together either electronically or by post.</p>
                             <form class="form" action="allDocuments1" method="post">
                                 <fieldset class="govuk-fieldset  govuk-checkboxes--small" aria-describedby="waste-hint">
                                     <table class="govuk-table">
                                       <thead>
                                         <tr class="govuk-table__row">
-                                              <th class="govuk-table__header" style="width:50px;">
-                                                <div class="govuk-checkboxes__item">
-                                                <input  class="govuk-checkboxes__input" type="checkbox"  data-href="content0" onclick="toggle(this);" />
-                                                <label class="govuk-label govuk-checkboxes__label"></label>
-                                              </div>
-                                              </th>
-                                              <th scope="row" class="govuk-table__header">Document type</th>
-                                              <th scope="row" class="govuk-table__header">Status</th>
-                                              <th scope="row" class="govuk-table__header">Date</th>
-                                              <th scope="row" class="govuk-table__header">Format</th>
-                                              <th scope="row" class="govuk-table__header">Cost</th> 
-                                          </tr>
-                                      </thead>
-                                      <tbody class="govuk-table__body">
-                                          <tr class="govuk-table__row">
-                                            <td class="govuk-table__cell">                                
-                                              <div class="govuk-checkboxes__item">
-                                              <input class="govuk-checkboxes__input" name="checkbox-1" data-href="content1" type="checkbox">
-                                              <label class="govuk-label govuk-checkboxes__label" for="checkbox-1" ></label>
-                                            </div></td>
-                                              <td class="govuk-table__cell">Register</td>
-                                              <td class="govuk-table__cell">Official Copy</td>
-                                              <td class="govuk-table__cell">20/01/2022</td>
-                                              <td class="govuk-table__cell">PDF</td>
-                                              <td class="govuk-table__cell">£3.00</td>
-                                          </tr>
-
-                                          
-                                          <tr class="govuk-table__row govuk-table__row">
-                                            <td class="govuk-table__cell">                                
-                                              <div class="govuk-checkboxes__item">
-                                              <input class="govuk-checkboxes__input" name="checkbox-2" data-href="content2" type="checkbox">
-                                              <label class="govuk-label govuk-checkboxes__label" for="checkbox-2" ></label>
-                                            </div></td>
-                                              <td class="govuk-table__cell">Title plan</td>
-                                              <td class="govuk-table__cell">Official Copy</td>
-                                              <td class="govuk-table__cell">14/03/2019</td>
-                                              <td class="govuk-table__cell">PDF</td>
-                                              <td class="govuk-table__cell">£3.00</td>
-                                          </tr>
-
-
-                                      </tbody>
-                                    </table>
-                                </fieldset>
-
-
-
-                                  <!-- Content for all documents -->
-                                  <div id="content0" class="addedToBasketBox">
-                                    <td class="govuk-table__cell" colspan="6"> 
-                                      <div class="addedToBasket">Register and title plan added to basket</div>
-                                    </td>
-                                  </div>
-
-                                  <!-- Content for document 1 -->
-                                  <div id="content1" class="addedToBasketBox">
-                                    <td class="govuk-table__cell" colspan="6"> 
-                                      <div class="addedToBasket">Register added to basket</div>
-                                    </td>
-                                  </div>
-
-                                  <!-- Content for document 2 -->
-                                  <div id="content2" class="addedToBasketBox">
-                                    <td class="govuk-table__cell" colspan="6"> 
-                                      <div class="addedToBasket">Title plan added to basket</div>
-                                    </td>
-                                  </div>
-
-
-                                <button class="govuk-button" data-module="govuk-button" >
-                                  View all documents
-                                </button>
-                            </form>
-                        </div>
-                    </div>
-                  </section>
-
-                  <section class="panel panel-default">
-                    <div class="panel-heading" role="tab" id="headingTwo">
-                      <h4 class="panel-title">
-                        <a role="button" class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-                          <div class="accordionTitle">SGL479276</div><div class="accordionAddress">27b Drakefell Road, Coventry, CV5 K2X</div>
-                          <span class="glyphicon glyphicon-chevron-right pull-right" aria-hidden="true"><img style="margin-bottom:-5px;" width="25" src="/public/images/icon_govuk_chevrondown.svg"></span>
-                        </a>
-                      </h4>
-                    </div>
-                    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-                        <div class="panel-body">
-              
-                            <p style="margin-bottom:15px;">If you order both the register and title plan, they will be delivered together either electronically or by post.</p>
-                            <form class="form" action="allDocuments2" method="post">
-                                <fieldset class="govuk-fieldset  govuk-checkboxes--small" aria-describedby="waste-hint">
-                                    <table class="govuk-table">
-                                      <thead>
-                                        <tr class="govuk-table__row">
                                               <th class="govuk-table__header" style="width:50px;"><div class="govuk-checkboxes__item">
-                                                <input class="govuk-checkboxes__input" id="allcbTwo" name="allcbTwo" type="checkbox" value="allcbTwo" onclick="checkbox4()">
-                                                <label class="govuk-label govuk-checkboxes__label" for="allcbTwo"></label>
-                                              </div></th>
+                                                &nbsp;       </th>
                                               <th scope="row" class="govuk-table__header">Document type</th>
                                               <th scope="row" class="govuk-table__header">Status</th>
                                               <th scope="row" class="govuk-table__header">Date</th>
@@ -1031,48 +857,59 @@ float:left;
                                       <tbody class="govuk-table__body">
                                           <tr class="govuk-table__row">
                                               <td class="govuk-table__cell">                                
-                                                <div class="govuk-checkboxes__item">
-                                                <input class="govuk-checkboxes__input" id="cb1Two" name="cb1Two" type="checkbox" value="cb1Two" onclick="checkbox5()">
-                                                <label class="govuk-label govuk-checkboxes__label" for="cb1Two"></label>
-                                              </div></td>
+                                                  <input type="button" name="" value=" " data-href="content1">
+                                              </td>
                                               <td class="govuk-table__cell">Register</td>
                                               <td class="govuk-table__cell">Official Copy</td>
-                                              <td class="govuk-table__cell">16/09/2021</td>
+                                              <td class="govuk-table__cell">20/01/2022</td>
                                               <td class="govuk-table__cell">PDF</td>
                                               <td class="govuk-table__cell">£3.00</td>
                                           </tr>
-                                          <tr class="govuk-table__row" style="display:none;position: relative;" id="added3">
+
+                                          <tr class="govuk-table__row govuk-table__row">
+                                              <td class="govuk-table__cell">                                
+                                                <input type="button" name="" value=" " data-href="content2">
+                                              </td>
+                                              <td class="govuk-table__cell">Title plan</td>
+                                              <td class="govuk-table__cell">Official Copy</td>
+                                              <td class="govuk-table__cell">14/03/2019</td>
+                                              <td class="govuk-table__cell">PDF</td>
+                                              <td class="govuk-table__cell">£3.00</td>
+                                          </tr>
+
+
+
+
+                                      </tbody>
+                                    </table>
+
+                                          <!-- Content for document 1 -->
+                                          <div id="content1">
                                             <td class="govuk-table__cell" colspan="6"> 
                                               <div class="addedToBasket">Register added to basket</div>
                                             </td>
-                                          </tr>
-                                          <tr class="govuk-table__row">
-                                              <td class="govuk-table__cell"><div class="govuk-checkboxes__item">
-                                                <input class="govuk-checkboxes__input" id="cb2Two" name="cb2Two" type="checkbox" value="cb2Two" onclick="checkbox6()">
-                                                <label class="govuk-label govuk-checkboxes__label" for="cb2Two"></label>
-                                              </div></td>
-                                              <td class="govuk-table__cell">Title plan</td>
-                                              <td class="govuk-table__cell">Official Copy</td>
-                                              <td class="govuk-table__cell">02/06/2018</td>
-                                              <td class="govuk-table__cell">PDF</td>
-                                              <td class="govuk-table__cell">£3.00</td>
-                                          </tr>
-                                          <tr class="govuk-table__row" style="display:none;position: relative;" id="added4">
+                                          </div>
+
+                                          <!-- Content for document 2 -->
+                                          <div id="content2">
                                             <td class="govuk-table__cell" colspan="6"> 
                                               <div class="addedToBasket">Title plan added to basket</div>
                                             </td>
-                                          </tr>
-                                      </tbody>
-                                    </table>
+                                          </div>
+
                                 </fieldset>
 
-                                <button class="govuk-button" data-module="govuk-button" onclick="">
+
+
+                                <button class="govuk-button" data-module="govuk-button" >
                                   View all documents
                                 </button>
                             </form>
                         </div>
                     </div>
                   </section>
+
+
 
 
 
@@ -1109,18 +946,21 @@ float:left;
 
     <p style="color: #6d6d6d; text-decoration: none;font-size: 16px;margin-bottom:15px;">The following links open in a new tab.</p>
 
-    <a class="footlink" style="color: grey; text-decoration: none;"><u>Terms and conditions</u></a>
+    <a class="footlink" style="text-color: grey; text-decoration: none;"><u>Terms and conditions</u></a>
     |
-    <a class="footlink" style="color: grey; text-decoration: none;"><u>Accessibility statement</u></a>
+    <a class="footlink" style="text-color: grey; text-decoration: none;"><u>Accessibility statement</u></a>
     |
-    <a class="footlink" style="color: grey; text-decoration: none;"><u>Freedom of information</u></a>
+    <a class="footlink" style="text-color: grey; text-decoration: none;"><u>Freedom of information</u></a>
     |
-    <a class="footlink" style="color: grey; text-decoration: none;"><u>© Crown copyright</u></a>
+    <a class="footlink" style="text-color: grey; text-decoration: none;"><u>© Crown copyright</u></a>
 
           </div>
               </div>
 
 
 <!-- Content Area - End -->
+
+
+
 
 {% endblock %}

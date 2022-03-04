@@ -183,8 +183,6 @@ padding-bottom: 3px;
   padding: 0px;
 }
 
-
-
 hr {
   background: #dedede;
     height: 1px;
@@ -214,7 +212,7 @@ hr {
 .child li {background-color: #ffffff;line-height: 40px;border-right:#CCC 0px solid; width:100%;}
 .child li a{color: #00703C; font-size:15px;}
 ul{list-style: none;margin: 0;padding: 0px; min-width:10em;}
-
+ul ul ul{left: 100%;top: 0;border-left: 1px solid #dedede;}
 li:hover {background-color: #ffffff;color:#00703C;}
 .parent:hover > a {color:#00703C !important;}
 .parentIconDown:hover {background-image: url("/public/images/icon_govuk_chevrondownGreen.svg");}
@@ -564,91 +562,8 @@ float:left;
     border-color: #006637;
 }
 
-.basketContent {
-  width: 325px;
-    padding: 0px;
-    background: #ffffff;
-    margin-bottom: 0px;
-}
-
-.basketContent a {
-  padding: 0px;
-}
-
 .addedToBasketBox {
   margin-top:-1px;position:relative;border-bottom: 1px solid #b1b4b6;
-}
-
-.basketItem {
-  border-bottom:1px solid #E5E5E5;
-  padding-bottom: 25px;
-  margin-bottom: 25px;
-}
-
-.basketItemLast {
-  padding-bottom: 0px;
-}
-
-.basketSection {
-  min-height:25px;
-}
-
-.basketTitle {
-  color: #00703C;
-  font-size: 19px;
-  font-weight: 700;
-  float: left;
-}
-
-.basketRemove {
-  float: right;
-  text-align: right;
-}
-
-.basketRemoveText {
-  color:#D10A1E !important;
-  font-size: 16px;
-}
-
-.basketAddress {
-  color:#000000;
-  font-size:16px;
-  font-weight:700;
-    display: block;
-}
-
-.basketItemSelected {
-  color:#000000;
-  font-size:16px;
-  font-weight:400;
-}
-
-.basketItemPrice {
-  color:#000000;
-  font-size:16px;
-  font-weight:400;
-  text-align: right;
-  float: right;
-}
-
-.basketItemSubText {
-  color:#000000;
-  font-size:19px;
-  font-weight:700;
-}
-
-.basketItemSubTotal {
-  color:#000000;
-  font-size:19px;
-  font-weight:400;
-  text-align: right;
-  float: right;
-}
-
-.basketItems {
-  max-height: 360px;
-    overflow: auto;
-    padding: 25px 25px 0px 25px;
 }
 
 </style>
@@ -668,14 +583,98 @@ float:left;
   padding-bottom: 5px;">
    
    <ul id="menu" style="float:right;">
-      <li class="parent"><a href="#">Home</a></li>
+       <li class="parent"><a href="#">Home</a></li>
+       <li class="parent parentIconDown"><a style="padding-right: 25px;" href="#">Services</a>
+       <ul class="child" style="left:-34px;">
+        <li class="parent"><a href="#">Service 1</a>
 
-      <li class="parent parentIconDown"><a style="padding-right: 25px;" href="#">Services</a>
+        </li>
+           <li class="parent iconRight"><a href="#">Service 2 </a>
+               <ul class="child">
+               <li><a href="#">Link 1</a></li>
+               <li><a href="#">Link 2</a></li>
+               <li><a href="#">Link 3</a></li>
+               <li><a href="#">Link 4</a></li>
+               <li><a href="#">Link 5</a></li>
+               <li><a href="#">Link 6</a></li>
+               <li><a href="#">Link 8</a></li>
+               <li><a href="#">Link 9</a></li>
+               </ul>
+
+           </li>
+           <li class="parent"><a href="#">Service 3</a>
+
+           </li>
+           <li class="parent"><a href="#">Service 4</a>
+           </li>
+           <li class="parent"><a href="#">Service 5</a>
+           </li>
+           <li class="parent"><a href="#">Service 6</a>
+
+           </li>
+           <li class="parent"><a href="#">Service 7</a>
+
+           </li>
+           <li class="parent"><a href="#">Service 8</a>
+
+           </li>
+
+       </ul>
+       </li>
+       <!-- <li class="parent"><a href="#">Notifications <span class="notificationNavNumber">2</span> <i class="fas fa-angle-down"></i></a>
+       <ul class="child">
+           <div class="notificationContent govuk-body">
+
+
+         <div class="NotificationSingle">
+             <div class="notificationTopRow">
+                 <div class="notificationTitle">
+                   New Requisition
+                 </div>
+                 <div class="notificationTime">
+                   6 minutes ago
+                 </div>
+           </div>
+             <div class="notification2ndLine">
+               <b>Title number:</b> CC78908
+             </div>
+             <div class="notificationLink">
+               <a href="#" style="margin:0px;">Respond to requisition</a>
+             </div>
+         </div>
+
+
+         <div class="NotificationSingleLast">
+           <div class="notificationTopRow">
+               <div class="notificationTitle">
+                 New PDF Available
+               </div>
+               <div class="notificationTime">
+                 12 minutes ago
+               </div>
+         </div>
+           <div class="notification2ndLine">
+             <b>Official Copy</b>
+           </div>
+           <div class="notificationLink">
+             <a href="#" style="margin:0px;">Download</a>
+           </div>
+       </div>
+
+
+       </div>
+       </ul>
        
-      <li class="parent"><a href="#">Contact us</a></li>
+       </li> -->
 
-      <li class="parent parentIconDown2"><a style="padding-right: 25px;" href="#">John James </a>
+       <li class="parent"><a href="#">Contact us</a></li>
+
+       <li class="parent parentIconDown2"><a style="padding-right: 25px;" href="#">John James </a>
            <ul class="child" style="right:0;">
+       
+       
+       
+       
            <div class="govuk-body myAccountContent">
 
                  <div>
@@ -704,100 +703,26 @@ float:left;
                  <button id="logOut" class="govuk-button" style="margin-top:20px;">Log out</button>
                </div>
                </ul>
-      </li>
+               </li>
               
                
-        <li class="parent parentIconDown3"><a style="padding-left:25px;" href="#">Basket</a>
-          <ul class="child" style="right:0;">
-            <div class="govuk-body basketContent">
-
-              <div class="basketItems">
-
-              <!-- First item in dropdown basket -->
-                  <div class="basketItem">
-                      <div class="basketSection">
-                          <div class="basketTitle">
-                            SGL479276
-                          </div>
-                          <div class="basketRemove">
-                            <a class="basketRemoveText" style="margin:0;text-decoration: underline;" href="#">Remove</a>
-                          </div>
+               <li class="parent parentIconDown3"><a style="padding-left:25px;" href="#">Basket</a>
+                <ul class="child" style="right:0;">
+                <div class="govuk-body myAccountContent">
+     
+                      <div>
+                        <div class="myAccountTitle" style="padding-bottom:3px;">
+                          Coming soon
+                        </div>
+                        <div class="myAccount2ndLine">
+                          
+                        </div>
+                        
                       </div>
 
-                      <div class="basketSection" style="padding:15px 0px;">
-                            <div><span class="basketItemSelected">Register</span><span class="basketItemPrice">£3.00</span></div>
-                            <div><span class="basketItemSelected">Title plan</span><span class="basketItemPrice">£3.00</span></div>
-                      </div>
-
-                      <div class="basketSection">
-                        <span class="basketAddress">27a Drakefell Road, CV5 BKK</span>
-                      </div>
-
-                  </div>
-
-                  <!-- Second item in dropdown basket -->
-                  <div class="basketItem">
-                    <div class="basketSection">
-                        <div class="basketTitle">
-                          SGL479276
-                        </div>
-                        <div class="basketRemove">
-                          <a class="basketRemoveText" style="margin:0;text-decoration: underline;" href="#">Remove</a>
-                        </div>
                     </div>
-
-                    <div class="basketSection" style="padding:15px 0px;">
-                          <div><span class="basketItemSelected">Register</span><span class="basketItemPrice">£3.00</span></div>
-                          <div><span class="basketItemSelected">Title plan</span><span class="basketItemPrice">£3.00</span></div>
-                    </div>
-
-                    <div class="basketSection">
-                      <span class="basketAddress">27b Drakefell Road, CV5 BKK</span>
-                    </div>
-
-                  </div>
-
-                  <!-- Third item in dropdown basket -->
-                  <div class="basketItem" style="margin-bottom:0px;">
-                    <div class="basketSection">
-                        <div class="basketTitle">
-                          SGL479276
-                        </div>
-                        <div class="basketRemove">
-                          <a class="basketRemoveText" style="margin:0;text-decoration: underline;" href="#">Remove</a>
-                        </div>
-                    </div>
-
-                    <div class="basketSection" style="padding:15px 0px;">
-                          <div><span class="basketItemSelected">Register</span><span class="basketItemPrice">£3.00</span></div>
-                          <div><span class="basketItemSelected">Title plan</span><span class="basketItemPrice">£3.00</span></div>
-                    </div>
-
-                    <div class="basketSection">
-                      <span class="basketAddress">27b Drakefell Road, CV5 BKK</span>
-                    </div>
-
-                  </div>
-
-              </div>
-
-              <!-- Subtotal and basket button -->
-              <div class="basketItemLast" style="padding:0px 25px 25px 25px;">
-                <div class="basketSection" style="padding-bottom: 25px;padding-top: 25px;">
-                  <div><span class="basketItemSubText">Subtotal:</span><span class="basketItemSubTotal">£12.00</span></div>
-                </div>
-
-                <div class="basketSection">
-                  <button class="govuk-button" data-module="govuk-button" style="width:100%;">
-                    View basket
-                  </button>
-                </div>
-
-              </div>
-
-            </div>
-          </ul>
-        </li>
+                    </ul>
+                    </li>
 
 
 </div>
