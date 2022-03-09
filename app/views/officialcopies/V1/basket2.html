@@ -1,0 +1,921 @@
+<!DOCTYPE html>
+{% extends "layout_unbranded.html" %}
+{% block pageTitle %} View Applications
+{% endblock %}
+{% block content %}
+
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+
+
+<style>
+
+
+.govuk-main-wrapper--auto-spacing:first-child, .govuk-main-wrapper--l {
+    padding-top: 0px;
+}
+
+
+
+.govuk-footer {
+display:none;
+}
+
+
+.govuk-link:link, a:link {
+    color: #006637;
+}
+
+.govuk-width-container {
+    max-width: 100%;
+    padding: 0px !Important;
+}
+
+.navbar-container {
+    background-color: #006637;
+    display:flow-root;
+    padding-right: 15px;
+    -webkit-box-shadow: inset 0px 2px 4px 0px rgb(0 0 0 / 15%);
+    -moz-box-shadow: inset 0px 2px 4px 0px rgba(0,0,0,0.15);
+    box-shadow: inset 0px 2px 4px 0px rgb(0 0 0 / 15%);
+    border-bottom: 0px solid #005ea5;
+}
+
+
+.navbar {
+  overflow: hidden;
+
+  font-family: Arial;
+  float: right;
+}
+
+
+.navbar a {
+    float: left;
+    font-size: 17px;
+    color: white;
+    text-align: center;
+    padding: 0px 25px;
+    text-decoration: none;
+    line-height: 70px;
+    font-weight: 400;
+}
+
+
+
+
+.notificationContent {
+  padding: 20px;
+  width:290px;
+  margin-bottom: 0px;
+  background: #fff;
+}
+
+.notificationTopRow {
+  width:100%;
+display:flex;
+padding-bottom: 3px;
+}
+
+.notificationTitle {
+  font-size:16px;
+  font-weight:700;
+width:50%;
+}
+
+.myAccountTitle {
+  font-size:16px;
+  font-weight:700;
+padding-bottom: 3px;
+}
+
+.notificationTime {
+  font-size:12px;
+  font-weight:400;
+  text-align: right;
+  width:50%;
+}
+
+.notification2ndLine {
+  font-size:14px;
+  font-weight:400;
+  width: 100%;
+  padding-bottom:15px;
+}
+
+.myAccount2ndLine {
+  font-size:14px;
+  font-weight:400;
+  width: 100%;
+  padding-bottom:0px;
+}
+
+.notificationLink a {
+  font-size: 15px;
+    width: 100%;
+    float: left;
+    line-height: unset;
+    background-color: unset !important;
+    color: #00703C !important;
+    font-weight: 700;
+    padding: unset;
+}
+
+.myAccountLinks a {
+  font-size: 15px;
+    width: 100%;
+    line-height: unset;
+    background-color: unset !important;
+    color: #00703C !important;
+    font-weight: 700;
+    padding: unset;
+}
+
+
+.NotificationSingle {
+    display: grid;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #dedede;
+    margin-bottom: 20px;
+}
+
+.NotificationSingleLast {
+    display: grid;
+}
+
+.notificationNavNumber {
+  color: #1F8153;
+    background-color: #fff;
+    padding: 5px 9px;
+    border-radius: 500px;
+    font-weight: 700;
+}
+
+.myAccountContent {
+  width:177px;
+  padding: 25px;
+  background: #ffffff;
+    margin-bottom:0px;
+}
+
+.myAccountContent a {
+  padding: 0px;
+}
+
+hr {
+  background: #dedede;
+    height: 1px;
+    border-style: none;
+    margin: 15px 0px;
+}
+
+#logOut {
+  margin-bottom: 0px;
+    margin-top: 25px;
+    width: 100%;
+}
+
+#inputs {
+    margin: 0% 2%;
+    float:left;
+    margin-top: 27px;
+}
+
+
+.parent {display: block;position: relative;float: left;line-height: 70px;}
+.parentIconDown {background-image: url("/public/images/icon_govuk_chevrondownWhite.svg"); background-size: 25px; background-repeat: no-repeat; background-position-x: 83px;background-position-y: center;}
+.parentIconDown2 {background-image: url("/public/images/icon_govuk_chevrondownWhite.svg"); background-size: 25px; background-repeat: no-repeat; background-position-x: 108px;background-position-y: center;}
+.parent a{margin: 20px;color: #FFFFFF;text-decoration: none;}
+.parent:hover > ul {display:block;position:absolute;}
+.child {display: none;box-shadow: 0px 8px 16px 0px rgb(0 0 0 / 10%);z-index:99999;}
+.child li {background-color: #ffffff;line-height: 40px;border-right:#CCC 0px solid; width:100%;}
+.child li a{color: #00703C; font-size:15px;}
+ul{list-style: none;margin: 0;padding: 0px; min-width:10em;}
+
+li:hover {background-color: #ffffff;color:#00703C;}
+.parent:hover > a {color:#00703C !important;}
+.parentIconDown:hover {background-image: url("/public/images/icon_govuk_chevrondownGreen.svg");}
+.parentIconDown2:hover {background-image: url("/public/images/icon_govuk_chevrondownGreen.svg");}
+.parent li:hover {background-color: #F0F0F0;}
+.expand{font-size:12px;float:right;margin-right:5px;}
+.iconRight {background-image: url("/public/images/icon_govuk_chevronrightGreen.svg"); background-size: 25px; background-repeat: no-repeat; background-position-x: 134px;background-position-y: center;}
+
+.parentIconDown3 {
+  background-image: url(/public/images/icon_Basket.svg);
+    background-size: 23px;
+    background-repeat: no-repeat;
+    background-position-x: 16px;
+    background-position-y: 23px;
+  }
+
+  .parentIconDown3:hover {
+  background-image: url(/public/images/icon_BasketGreen.svg);
+  }
+
+.wide960 {
+max-width:960px;
+margin:auto;
+}
+
+.wide1100 {
+max-width:1100px;
+margin:auto;
+}
+
+.wide80percent {
+  width:80%;
+  float: left;
+  box-sizing: border-box;
+  padding: 0 15px;
+}
+
+.wide20percent {
+  width:20%;
+  float: left;
+  box-sizing: border-box;
+  padding: 0 15px 0px 0px;
+}
+
+
+.basketContent {
+  width: 325px;
+    padding: 0px;
+    background: #ffffff;
+    margin-bottom: 0px;
+}
+
+.basketContent a {
+  padding: 0px;
+}
+
+.addedToBasketBox {
+  margin-top:-1px;position:relative;border-bottom: 1px solid #b1b4b6;
+}
+
+.basketItem {
+  border-bottom:1px solid #E5E5E5;
+  padding-bottom: 25px;
+  margin-bottom: 25px;
+}
+
+.basketItemLast {
+  padding-bottom: 0px;
+}
+
+.basketSection {
+  min-height:25px;
+}
+
+.basketTitle {
+  color: #00703C;
+  font-size: 19px;
+  font-weight: 700;
+  float: left;
+}
+
+.basketRemove {
+  float: right;
+  text-align: right;
+}
+
+.basketRemoveText {
+  color:#D10A1E !important;
+  font-size: 16px;
+}
+
+.basketAddress {
+  color:#000000;
+  font-size:16px;
+  font-weight:700;
+    display: block;
+}
+
+.basketItemSelected {
+  color:#000000;
+  font-size:16px;
+  font-weight:400;
+}
+
+.basketItemPrice {
+  color:#000000;
+  font-size:16px;
+  font-weight:400;
+  text-align: right;
+  float: right;
+}
+
+.basketItemSubText {
+  color:#000000;
+  font-size:19px;
+  font-weight:700;
+}
+
+.basketItemSubTotal {
+  color:#000000;
+  font-size:19px;
+  font-weight:400;
+  text-align: right;
+  float: right;
+}
+
+.basketItems {
+  max-height: 360px;
+    overflow: auto;
+    padding: 25px 25px 0px 25px;
+}
+
+.govuk-heading-xl {
+  margin-bottom:25px;
+}
+
+
+.bs-accordion .panel-heading {
+  padding: 0;
+}
+
+.panel-group .panel-heading {
+  border-bottom: 0;
+}
+
+.glyphicon {
+  position: relative;
+  top: -1px;
+  display: inline-block;
+
+}
+
+.pull-right {
+  float: right!important;
+}
+
+
+
+
+
+.collapse {
+  display: none;
+}
+
+.collapse.in {
+    display: block;
+}
+
+.collapsing {
+  position: relative;
+  height: 0;
+  overflow: hidden;
+  -webkit-transition-timing-function: ease;
+       -o-transition-timing-function: ease;
+          transition-timing-function: ease;
+  -webkit-transition-duration: .35s;
+       -o-transition-duration: .35s;
+          transition-duration: .35s;
+  -webkit-transition-property: height, visibility;
+       -o-transition-property: height, visibility;
+          transition-property: height, visibility;
+}
+
+.accordionTitle {
+color:#00703C;
+font-size:16px;
+font-weight:700;
+float:left;
+margin-right:20px;
+}
+
+.accordionAddress {
+color:#000000;
+font-size:16px;
+font-weight:400;
+float:left;
+}
+
+
+.bs-accordion .panel-heading {
+	 padding: 0;
+}
+
+ /* .bs-accordion .panel-heading a[aria-expanded=true] .glyphicon.glyphicon-chevron-right {
+	 transform: rotate(-180deg);
+	 transition: transform 350ms cubic-bezier(0.645, 0.045, 0.355, 1);
+} */
+
+.bs-accordion .panel-heading a .glyphicon.glyphicon-chevron-right {
+  transform: rotate(0deg);
+  transition: transform 350ms cubic-bezier(0.645, 0.090, 0.355, 1);
+}
+
+  /* Bootstrap accordion */
+
+  .bs-accordion .panel-heading a {
+    display: inline-block;
+    padding: 15px 15px 5px 15px;
+    text-decoration: none;
+    width: -webkit-fill-available;
+}
+
+
+.panel {
+  margin-bottom: 20px;
+  background-color: #fff;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 1px 1px rgb(0 0 0 / 5%);
+  box-shadow: 0 1px 1px rgb(0 0 0 / 5%);
+}
+
+.panel-default {
+  border-color: #ddd;
+}
+
+.panel-group .panel {
+  margin-bottom: 10px;
+  border-radius: 0px;
+}
+
+.panel-group .panel+.panel {
+  margin-top: 5px;
+}
+
+.panel-body {
+    padding: 15px 15px 15px 15px;
+    background-color: #f5f5f5;
+    color: #0b0c0c;
+}
+
+.panel-title {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 16px;
+  color: inherit;
+}
+
+.panel-default>.panel-heading {
+  color: #0b0c0c;
+  background-color: #f5f5f5;
+  border-color: #ddd;
+}
+
+
+.panel-heading {
+  padding: 10px 15px;
+  border-bottom: 1px solid transparent;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+}
+
+.accordionRemove {
+  color:#D10A1E !important;
+}
+
+.govuk-table {
+    margin-bottom: 0px;
+    font-size:16px;
+}
+
+.last {
+  border-bottom: 0px solid #b1b4b6;
+}
+
+.govuk-table__header:last-child, .govuk-table__cell:last-child {
+    padding-right: 0;
+    text-align: right;
+    max-width: 35px;
+}
+
+.govuk-input {
+  height: 50px;
+  border: 1px solid #ddd;
+  margin-bottom: 15px;
+  padding: 0px 15px;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.govuk-grid-column-one-third {
+    padding: 0px 15px 0px 0px;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #dddddd;
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: #dddddd;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+  color: #dddddd;
+}
+
+.dividerLine5 {
+    margin: 10px auto;
+    height: 5px;
+    background-color: #006637;
+    display: block;
+}
+
+</style>
+
+
+<!-- Back & clear data top -->
+<!-- Back & clear data top -->
+<div>
+
+<!-- Navigation Menu - Start -->
+
+<div class="navbar-container">
+
+  <img src="/public/images/HMLR_Logo.svg" alt="hmlrlogo" style="height: 44px;
+  padding-left: 30px;
+  padding-top: 14px;
+  padding-bottom: 5px;">
+   
+   <ul id="menu" style="float:right;">
+      <li class="parent"><a href="#">Home</a></li>
+
+      <li class="parent parentIconDown"><a style="padding-right: 25px;" href="#">Services</a>
+       
+      <li class="parent"><a href="#">Contact us</a></li>
+
+      <li class="parent parentIconDown2"><a style="padding-right: 25px;" href="#">John James </a>
+           <ul class="child" style="right:0;">
+           <div class="govuk-body myAccountContent">
+
+                 <div>
+                   <div class="myAccountTitle" style="padding-bottom:3px;">
+                     Logged in as:
+                   </div>
+                   <div class="myAccount2ndLine">
+                      Administrator 
+                   </div>
+                   <a href="#" style="margin:0px;color:#00703C;font-weight:700;font-size:14px;">View profile</a>
+                 </div>
+
+                 <hr>
+
+                 <div class="myAccountTitle" style="padding-bottom:3px;">
+                   <b>Primary Business Unit Administrator (BUA):</b> 
+                 </div>
+                 <div class="myAccount2ndLine">
+                   John Taylor
+                   <!-- <a href="#" style="margin:0px;color:#00703C;"><b>JohnTaylor@bigbusiness.com</b></a> -->
+                 </div>
+
+
+
+
+                 <button id="logOut" class="govuk-button" style="margin-top:20px;">Log out</button>
+               </div>
+               </ul>
+      </li>
+              
+               
+        <li class="parent parentIconDown3"><a style="padding-left:25px;" href="#">Basket</a>
+          <ul class="child" style="right:0;">
+            <div class="govuk-body basketContent">
+
+              <div class="basketItems">
+
+              <!-- First item in dropdown basket -->
+                  <div class="basketItem">
+                      <div class="basketSection">
+                          <div class="basketTitle">
+                            SGL479276
+                          </div>
+                          <div class="basketRemove">
+                            <a class="basketRemoveText" style="margin:0;text-decoration: underline;" href="#">Remove</a>
+                          </div>
+                      </div>
+
+                      <div class="basketSection" style="padding:15px 0px;">
+                            <div><span class="basketItemSelected">Register</span><span class="basketItemPrice">£3.00</span></div>
+                            <div><span class="basketItemSelected">Title plan</span><span class="basketItemPrice">£3.00</span></div>
+                      </div>
+
+                      <div class="basketSection">
+                        <span class="basketAddress">27a Drakefell Road, CV5 BKK</span>
+                      </div>
+
+                  </div>
+
+                  <!-- Second item in dropdown basket -->
+                  <div class="basketItem">
+                    <div class="basketSection">
+                        <div class="basketTitle">
+                          SGL479276
+                        </div>
+                        <div class="basketRemove">
+                          <a class="basketRemoveText" style="margin:0;text-decoration: underline;" href="#">Remove</a>
+                        </div>
+                    </div>
+
+                    <div class="basketSection" style="padding:15px 0px;">
+                          <div><span class="basketItemSelected">Register</span><span class="basketItemPrice">£3.00</span></div>
+                          <div><span class="basketItemSelected">Title plan</span><span class="basketItemPrice">£3.00</span></div>
+                    </div>
+
+                    <div class="basketSection">
+                      <span class="basketAddress">27b Drakefell Road, CV5 BKK</span>
+                    </div>
+
+                  </div>
+
+                  <!-- Third item in dropdown basket -->
+                  <div class="basketItem" style="margin-bottom:0px;">
+                    <div class="basketSection">
+                        <div class="basketTitle">
+                          SGL479276
+                        </div>
+                        <div class="basketRemove">
+                          <a class="basketRemoveText" style="margin:0;text-decoration: underline;" href="#">Remove</a>
+                        </div>
+                    </div>
+
+                    <div class="basketSection" style="padding:15px 0px;">
+                          <div><span class="basketItemSelected">Register</span><span class="basketItemPrice">£3.00</span></div>
+                          <div><span class="basketItemSelected">Title plan</span><span class="basketItemPrice">£3.00</span></div>
+                    </div>
+
+                    <div class="basketSection">
+                      <span class="basketAddress">27b Drakefell Road, CV5 BKK</span>
+                    </div>
+
+                  </div>
+
+              </div>
+
+              <!-- Subtotal and basket button -->
+              <div class="basketItemLast" style="padding:0px 25px 25px 25px;">
+                <div class="basketSection" style="padding-bottom: 25px;padding-top: 25px;">
+                  <div><span class="basketItemSubText">Subtotal:</span><span class="basketItemSubTotal">£12.00</span></div>
+                </div>
+
+                <div class="basketSection">
+                  <button class="govuk-button" data-module="govuk-button" style="width:100%;margin-bottom:0px;" onclick="window.location.href='basket.html'">
+                    View basket
+                  </button>
+                </div>
+
+              </div>
+
+            </div>
+          </ul>
+        </li>
+
+
+</div>
+        
+
+<!-- Navigation Menu - End -->
+
+<!-- Content Area - Start -->
+
+<div style="margin: auto;">
+
+    <!-- Filters and Search Section - Start -->
+
+
+
+      
+  <!-- Table Area - Start -->
+
+
+
+    <div class="govuk-width-container wide1100">
+
+    
+      <main class="govuk-main-wrapper" style="padding:100px 0px;">
+    
+        <div class="govuk-grid-row">
+
+          <div class="govuk-grid-column-full" style="padding-bottom: 25px;">
+            <h1 class="govuk-heading-xl">Basket</h1>
+            <p class="govuk-body">Check your basket, add customer references, then press the ‘Place order’ button to make your purchase.</p>
+            <p class="govuk-body">Your variable Direct Debit (VDD) will then be charged.</p>
+          </div>
+
+                          <div class="wide80percent">
+                            <p class="govuk-body govuk-!-font-weight-bold" style="margin-bottom:10px;">Title numbers</p>
+                          </div>
+
+                          <div class="wide20percent">
+                            <p class="govuk-body govuk-!-font-weight-bold" style="margin-bottom:10px;">Customer references</p>
+                          </div>
+
+
+
+                          <article class="panel-group bs-accordion" id="accordion" role="tablist" aria-multiselectable="true">
+                        <div>
+                          <div class="wide80percent">
+                            <section class="panel panel-default">
+                              <div class="panel-heading" role="tab" id="headingOne">
+                                <h4 class="panel-title">
+                                  <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    <div class="accordionTitle">SGL479276</div><div class="accordionAddress">27a Drakefell Road, Coventry, CV5 K2X</div>
+                                    <span class="glyphicon glyphicon-chevron-right pull-right" aria-hidden="true"><img style="margin-bottom:-5px;" width="25" src="/public/images/icon_govuk_chevrondown.svg"></span>
+                                  </a>
+                                </h4>
+                              </div>
+                              <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                                  <div class="panel-body">
+
+                                          <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+                                              <table class="govuk-table">
+                                                <thead>
+                                                  <tr class="govuk-table__row">
+                                                        <th scope="row" class="govuk-table__header">Document type</th>
+                                                        <th scope="row" class="govuk-table__header">Format</th>
+                                                        <th scope="row" class="govuk-table__header">Cost</th> 
+                                                        <th scope="row" class="govuk-table__header"></th> 
+                                                    </tr>
+                                                </thead>
+
+                                                <tbody class="govuk-table__body">
+
+                                                    <tr class="govuk-table__row">
+                                                        <td class="govuk-table__cell">Register</td>
+                                                        <td class="govuk-table__cell">PDF</td>
+                                                        <td class="govuk-table__cell">£3.00</td>
+                                                        <td class="govuk-table__cell"><a class="accordionRemove" href="">Remove</a></td>
+                                                    </tr>
+                                                    
+                                                    <tr class="govuk-table__row govuk-table__row">
+                                                      <td class="govuk-table__cell">Title plan</td>
+                                                      <td class="govuk-table__cell">PDF</td>
+                                                      <td class="govuk-table__cell">£3.00</td>
+                                                      <td class="govuk-table__cell"><a class="accordionRemove" href="">Remove</a></td>
+                                                    </tr>
+
+                                                    <tr class="govuk-table__row govuk-table__row">
+                                                      <td class="govuk-table__cell">Deed</td>
+                                                      <td class="govuk-table__cell">PDF</td>
+                                                      <td class="govuk-table__cell">£3.00</td>
+                                                      <td class="govuk-table__cell"><a class="accordionRemove" href="">Remove</a></td>
+                                                    </tr>
+
+                                                    <tr class="govuk-table__row govuk-table__row">
+                                                      <td class="govuk-table__cell last">Lease</td>
+                                                      <td class="govuk-table__cell last">PDF</td>
+                                                      <td class="govuk-table__cell last">£3.00</td>
+                                                      <td class="govuk-table__cell last"><a class="accordionRemove" href="">Remove</a></td>
+                                                    </tr>
+          
+                                                </tbody>
+                                              </table>
+                                          </fieldset>
+          
+
+                                  </div>
+                              </div>
+                            </section>
+                          </div>
+                          <div class="wide20percent">
+                            
+                            <fieldset class="govuk-fieldset">
+
+                              <div class="">
+
+                                <input class="govuk-input" id="reference-1" name="reference-1" type="text" placeholder="Reference">
+                              </div>
+                            
+                            </fieldset>
+
+                          </div>
+                        </div>
+
+                        <div>
+                          <div class="wide80percent">
+                            <section class="panel panel-default">
+                              <div class="panel-heading" role="tab" id="headingTwo">
+                                <h4 class="panel-title">
+                                  <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                                    <div class="accordionTitle">NN890234</div><div class="accordionAddress">144a Drakefell Road, Coventry, CV5 K2X</div>
+                                    <span class="glyphicon glyphicon-chevron-right pull-right" aria-hidden="true"><img style="margin-bottom:-5px;" width="25" src="/public/images/icon_govuk_chevrondown.svg"></span>
+                                  </a>
+                                </h4>
+                              </div>
+                              <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                                  <div class="panel-body">
+
+                                          <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+                                              <table class="govuk-table">
+                                                <thead>
+                                                  <tr class="govuk-table__row">
+                                                        <th scope="row" class="govuk-table__header">Document type</th>
+                                                        <th scope="row" class="govuk-table__header">Format</th>
+                                                        <th scope="row" class="govuk-table__header">Cost</th> 
+                                                        <th scope="row" class="govuk-table__header"></th> 
+                                                    </tr>
+                                                </thead>
+
+                                                <tbody class="govuk-table__body">
+
+                                                    <tr class="govuk-table__row">
+                                                        <td class="govuk-table__cell">Register</td>
+                                                        <td class="govuk-table__cell">PDF</td>
+                                                        <td class="govuk-table__cell">£3.00</td>
+                                                        <td class="govuk-table__cell"><a class="accordionRemove" href="">Remove</a></td>
+                                                    </tr>
+                                                    
+                                                    <tr class="govuk-table__row govuk-table__row">
+                                                      <td class="govuk-table__cell">Title plan</td>
+                                                      <td class="govuk-table__cell">PDF</td>
+                                                      <td class="govuk-table__cell">£3.00</td>
+                                                      <td class="govuk-table__cell"><a class="accordionRemove" href="">Remove</a></td>
+                                                    </tr>
+
+                                                    <tr class="govuk-table__row govuk-table__row">
+                                                      <td class="govuk-table__cell">Deed</td>
+                                                      <td class="govuk-table__cell">PDF</td>
+                                                      <td class="govuk-table__cell">£3.00</td>
+                                                      <td class="govuk-table__cell"><a class="accordionRemove" href="">Remove</a></td>
+                                                    </tr>
+
+                                                    <tr class="govuk-table__row govuk-table__row">
+                                                      <td class="govuk-table__cell last">Lease</td>
+                                                      <td class="govuk-table__cell last">PDF</td>
+                                                      <td class="govuk-table__cell last">£3.00</td>
+                                                      <td class="govuk-table__cell last"><a class="accordionRemove" href="">Remove</a></td>
+                                                    </tr>
+          
+                                                </tbody>
+                                              </table>
+                                          </fieldset>
+          
+
+                                  </div>
+                              </div>
+                            </section>
+                          </div>
+                          <div class="wide20percent">
+                            
+                            <fieldset class="govuk-fieldset">
+
+                              <div class="">
+
+                                <input class="govuk-input" id="reference-2" name="reference-2" type="text" placeholder="Reference">
+                              </div>
+                            
+                            </fieldset>
+
+                          </div>
+                        </div>
+          
+          
+                          </article>
+                          
+
+          </div>
+
+          <div class="dividerLine5"></div>
+
+          <div>
+              <div class="wide80percent" style="padding-left:0px;">
+                <p class="govuk-body govuk-!-font-weight-bold" style="margin-bottom:0px;line-height:38px;">Order total: £18.00</p>
+              </div>
+
+              <div class="wide20percent" style="padding:0px 0px 0px 10px;">
+                <button class="govuk-button" data-module="govuk-button" style="width:100%;margin-bottom:0px;" onclick="window.location.href='confirmation.html'">
+                  Place order
+                </button>
+              </div>
+          </div>
+
+        </div>
+
+        
+    
+      </main>
+    </div>
+
+
+
+
+</div>
+
+
+<div class="govuk-grid-column-full" style="padding:0px;border-top:5px solid #00703C;">
+
+        
+        
+        
+  <div style="padding:30px; background: #f3f2f1;">
+
+    <p style="color: #6d6d6d; text-decoration: none;font-size: 16px;margin-bottom:15px;">The following links open in a new tab.</p>
+
+    <a class="footlink" style="text-color: grey; text-decoration: none;"><u>Terms and conditions</u></a>
+    |
+    <a class="footlink" style="text-color: grey; text-decoration: none;"><u>Accessibility statement</u></a>
+    |
+    <a class="footlink" style="text-color: grey; text-decoration: none;"><u>Freedom of information</u></a>
+    |
+    <a class="footlink" style="text-color: grey; text-decoration: none;"><u>© Crown copyright</u></a>
+
+          </div>
+              </div>
+
+
+<!-- Content Area - End -->
+
+{% endblock %}

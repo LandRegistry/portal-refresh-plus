@@ -565,16 +565,17 @@ display:none;
     border-radius: 0px;
 }
 
+
 .parent {display: block;position: relative;float: left;line-height: 70px;}
 .parentIconDown {background-image: url("/public/images/icon_govuk_chevrondownWhite.svg"); background-size: 25px; background-repeat: no-repeat; background-position-x: 83px;background-position-y: center;}
-.parentIconDown2 {background-image: url("/public/images/icon_govuk_chevrondownWhite.svg"); background-size: 25px; background-repeat: no-repeat; background-position-x: 93px;background-position-y: center;}
+.parentIconDown2 {background-image: url("/public/images/icon_govuk_chevrondownWhite.svg"); background-size: 25px; background-repeat: no-repeat; background-position-x: 108px;background-position-y: center;}
 .parent a{margin: 20px;color: #FFFFFF;text-decoration: none;}
 .parent:hover > ul {display:block;position:absolute;}
 .child {display: none;box-shadow: 0px 8px 16px 0px rgb(0 0 0 / 10%);z-index:99999;}
 .child li {background-color: #ffffff;line-height: 40px;border-right:#CCC 0px solid; width:100%;}
 .child li a{color: #00703C; font-size:15px;}
 ul{list-style: none;margin: 0;padding: 0px; min-width:10em;}
-ul ul ul{left: 100%;top: 0;border-left: 1px solid #dedede;}
+
 li:hover {background-color: #ffffff;color:#00703C;}
 .parent:hover > a {color:#00703C !important;}
 .parentIconDown:hover {background-image: url("/public/images/icon_govuk_chevrondownGreen.svg");}
@@ -582,6 +583,20 @@ li:hover {background-color: #ffffff;color:#00703C;}
 .parent li:hover {background-color: #F0F0F0;}
 .expand{font-size:12px;float:right;margin-right:5px;}
 .iconRight {background-image: url("/public/images/icon_govuk_chevronrightGreen.svg"); background-size: 25px; background-repeat: no-repeat; background-position-x: 134px;background-position-y: center;}
+
+.parentIconDown3 {
+  background-image: url(/public/images/icon_Basket.svg);
+    background-size: 23px;
+    background-repeat: no-repeat;
+    background-position-x: 16px;
+    background-position-y: 23px;
+  }
+
+  .parentIconDown3:hover {
+  background-image: url(/public/images/icon_BasketGreen.svg);
+  }
+
+
 
 .hmlr-card-group li:hover {background-color: unset;}
 
@@ -768,6 +783,44 @@ li:hover {background-color: #ffffff;color:#00703C;}
     box-shadow: 0 2px 0 #0b0c0c;
 }
 
+
+#search-button2 {
+    margin-top: 0px;
+    cursor: pointer;
+    border-radius: 0px;
+    border-style: none;
+    height: 40px;
+    width: 40px;
+    background-color: #006637;
+    border-color: #006637;
+    position: absolute;
+    margin-left: -40px;
+}
+
+#search-button2:hover {
+   margin-top: 0px;
+    cursor: pointer;
+    border-radius: 0px;
+    border-style: none;
+    height: 39px;
+    width: 39px;
+    background-color: #005a30;
+}
+
+#search-button2:focus {
+   margin-top: 0px;
+    cursor: pointer;
+    border-radius: 0px;
+    border-style: none;
+    height: 39px;
+    width: 39px;
+   border-color: #fd0;
+    color: #0b0c0c;
+    background-color: #fd0;
+    -webkit-box-shadow: 0 2px 0 #0b0c0c;
+    box-shadow: 0 2px 0 #0b0c0c;
+}
+
 .govuk-radios--small .govuk-radios__conditional {
     margin-left: unset;
     padding-left: unset;
@@ -792,6 +845,94 @@ li:hover {background-color: #ffffff;color:#00703C;}
   margin-bottom: 25px;
 }
 
+
+.basketContent {
+  width: 325px;
+    padding: 0px;
+    background: #ffffff;
+    margin-bottom: 0px;
+}
+
+.basketContent a {
+  padding: 0px;
+}
+
+.addedToBasketBox {
+  margin-top:-1px;position:relative;border-bottom: 1px solid #b1b4b6;
+}
+
+.basketItem {
+  border-bottom:1px solid #E5E5E5;
+  padding-bottom: 25px;
+  margin-bottom: 25px;
+}
+
+.basketItemLast {
+  padding-bottom: 0px;
+}
+
+.basketSection {
+  min-height:25px;
+}
+
+.basketTitle {
+  color: #00703C;
+  font-size: 19px;
+  font-weight: 700;
+  float: left;
+}
+
+.basketRemove {
+  float: right;
+  text-align: right;
+}
+
+.basketRemoveText {
+  color:#D10A1E !important;
+  font-size: 16px;
+}
+
+.basketAddress {
+  color:#000000;
+  font-size:16px;
+  font-weight:700;
+    display: block;
+}
+
+.basketItemSelected {
+  color:#000000;
+  font-size:16px;
+  font-weight:400;
+}
+
+.basketItemPrice {
+  color:#000000;
+  font-size:16px;
+  font-weight:400;
+  text-align: right;
+  float: right;
+}
+
+.basketItemSubText {
+  color:#000000;
+  font-size:19px;
+  font-weight:700;
+}
+
+.basketItemSubTotal {
+  color:#000000;
+  font-size:19px;
+  font-weight:400;
+  text-align: right;
+  float: right;
+}
+
+.basketItems {
+  max-height: 360px;
+    overflow: auto;
+    padding: 25px 25px 0px 25px;
+}
+
 </style>
 
 
@@ -801,6 +942,7 @@ li:hover {background-color: #ffffff;color:#00703C;}
 
 <!-- Navigation Menu - Start -->
 
+
 <div class="navbar-container">
 
   <img src="/public/images/HMLR_Logo.svg" alt="hmlrlogo" style="height: 44px;
@@ -809,99 +951,15 @@ li:hover {background-color: #ffffff;color:#00703C;}
   padding-bottom: 5px;">
    
    <ul id="menu" style="float:right;">
-       <li class="parent"><a href="#">Home</a></li>
-       <li class="parent parentIconDown"><a style="padding-right: 25px;" href="#">Services</a>
-       <ul class="child" style="left:-34px;">
-        <li class="parent"><a href="#">Service 1</a>
+      <li class="parent"><a href="#">Home</a></li>
 
-        </li>
-           <li class="parent iconRight"><a href="#">Service 2 </a>
-               <ul class="child">
-               <li><a href="#">Link 1</a></li>
-               <li><a href="#">Link 2</a></li>
-               <li><a href="#">Link 3</a></li>
-               <li><a href="#">Link 4</a></li>
-               <li><a href="#">Link 5</a></li>
-               <li><a href="#">Link 6</a></li>
-               <li><a href="#">Link 8</a></li>
-               <li><a href="#">Link 9</a></li>
-               </ul>
-
-           </li>
-           <li class="parent"><a href="#">Service 3</a>
-
-           </li>
-           <li class="parent"><a href="#">Service 4</a>
-           </li>
-           <li class="parent"><a href="#">Service 5</a>
-           </li>
-           <li class="parent"><a href="#">Service 6</a>
-
-           </li>
-           <li class="parent"><a href="#">Service 7</a>
-
-           </li>
-           <li class="parent"><a href="#">Service 8</a>
-
-           </li>
-
-       </ul>
-       </li>
-       <!-- <li class="parent"><a href="#">Notifications <span class="notificationNavNumber">2</span> <i class="fas fa-angle-down"></i></a>
-       <ul class="child">
-           <div class="notificationContent govuk-body">
-
-
-         <div class="NotificationSingle">
-             <div class="notificationTopRow">
-                 <div class="notificationTitle">
-                   New Requisition
-                 </div>
-                 <div class="notificationTime">
-                   6 minutes ago
-                 </div>
-           </div>
-             <div class="notification2ndLine">
-               <b>Title number:</b> CC78908
-             </div>
-             <div class="notificationLink">
-               <a href="#" style="margin:0px;">Respond to requisition</a>
-             </div>
-         </div>
-
-
-         <div class="NotificationSingleLast">
-           <div class="notificationTopRow">
-               <div class="notificationTitle">
-                 New PDF Available
-               </div>
-               <div class="notificationTime">
-                 12 minutes ago
-               </div>
-         </div>
-           <div class="notification2ndLine">
-             <b>Official Copy</b>
-           </div>
-           <div class="notificationLink">
-             <a href="#" style="margin:0px;">Download</a>
-           </div>
-       </div>
-
-
-       </div>
-       </ul>
+      <li class="parent parentIconDown"><a style="padding-right: 25px;" href="#">Services</a>
        
-       </li> -->
+      <li class="parent"><a href="#">Contact us</a></li>
 
-       <li class="parent"><a href="#">Contact us</a></li>
-
-       <li class="parent parentIconDown2"><a style="padding-right: 25px;" href="#">Andy Carr </a>
+      <li class="parent parentIconDown2"><a style="padding-right: 25px;" href="#">John James </a>
            <ul class="child" style="right:0;">
-       
-       
-       
-       
-           <div class="govuk-body myAccountContent" style="margin-bottom:0px;">
+           <div class="govuk-body myAccountContent">
 
                  <div>
                    <div class="myAccountTitle" style="padding-bottom:3px;">
@@ -923,10 +981,108 @@ li:hover {background-color: #ffffff;color:#00703C;}
                    <!-- <a href="#" style="margin:0px;color:#00703C;"><b>JohnTaylor@bigbusiness.com</b></a> -->
                  </div>
 
+
+
+
+                 <button id="logOut" class="govuk-button" style="margin-top:20px;">Log out</button>
                </div>
                </ul>
-               </li>
-               <li class="parent"><a href="#">Log out</a></li>
+      </li>
+              
+               
+        <li class="parent parentIconDown3"><a style="padding-left:25px;" href="#">Basket</a>
+          <ul class="child" style="right:0;">
+            <div class="govuk-body basketContent">
+
+              <div class="basketItems">
+
+              <!-- First item in dropdown basket -->
+                  <div class="basketItem">
+                      <div class="basketSection">
+                          <div class="basketTitle">
+                            SGL479276
+                          </div>
+                          <div class="basketRemove">
+                            <a class="basketRemoveText" style="margin:0;text-decoration: underline;" href="#">Remove</a>
+                          </div>
+                      </div>
+
+                      <div class="basketSection" style="padding:15px 0px;">
+                            <div><span class="basketItemSelected">Register</span><span class="basketItemPrice">£3.00</span></div>
+                            <div><span class="basketItemSelected">Title plan</span><span class="basketItemPrice">£3.00</span></div>
+                      </div>
+
+                      <div class="basketSection">
+                        <span class="basketAddress">27a Drakefell Road, CV5 BKK</span>
+                      </div>
+
+                  </div>
+
+                  <!-- Second item in dropdown basket -->
+                  <div class="basketItem">
+                    <div class="basketSection">
+                        <div class="basketTitle">
+                          SGL479276
+                        </div>
+                        <div class="basketRemove">
+                          <a class="basketRemoveText" style="margin:0;text-decoration: underline;" href="#">Remove</a>
+                        </div>
+                    </div>
+
+                    <div class="basketSection" style="padding:15px 0px;">
+                          <div><span class="basketItemSelected">Register</span><span class="basketItemPrice">£3.00</span></div>
+                          <div><span class="basketItemSelected">Title plan</span><span class="basketItemPrice">£3.00</span></div>
+                    </div>
+
+                    <div class="basketSection">
+                      <span class="basketAddress">27b Drakefell Road, CV5 BKK</span>
+                    </div>
+
+                  </div>
+
+                  <!-- Third item in dropdown basket -->
+                  <div class="basketItem" style="margin-bottom:0px;">
+                    <div class="basketSection">
+                        <div class="basketTitle">
+                          SGL479276
+                        </div>
+                        <div class="basketRemove">
+                          <a class="basketRemoveText" style="margin:0;text-decoration: underline;" href="#">Remove</a>
+                        </div>
+                    </div>
+
+                    <div class="basketSection" style="padding:15px 0px;">
+                          <div><span class="basketItemSelected">Register</span><span class="basketItemPrice">£3.00</span></div>
+                          <div><span class="basketItemSelected">Title plan</span><span class="basketItemPrice">£3.00</span></div>
+                    </div>
+
+                    <div class="basketSection">
+                      <span class="basketAddress">27b Drakefell Road, CV5 BKK</span>
+                    </div>
+
+                  </div>
+
+              </div>
+
+              <!-- Subtotal and basket button -->
+              <div class="basketItemLast" style="padding:0px 25px 25px 25px;">
+                <div class="basketSection" style="padding-bottom: 25px;padding-top: 25px;">
+                  <div><span class="basketItemSubText">Subtotal:</span><span class="basketItemSubTotal">£12.00</span></div>
+                </div>
+
+                <div class="basketSection">
+                  <button class="govuk-button" data-module="govuk-button" style="width:100%;margin-bottom:0px;">
+                    View basket
+                  </button>
+                </div>
+
+              </div>
+
+            </div>
+          </ul>
+        </li>
+
+
 </div>
         
         
@@ -947,7 +1103,7 @@ li:hover {background-color: #ffffff;color:#00703C;}
 
   <div id="heroLeft">
       <div class="heroText">
-          <h1 class="govuk-heading-xl">Hello, Andy!</h1>
+          <h1 class="govuk-heading-xl">Hello, Andy</h1>
           <p style="margin-bottom:0px;">You are signed in to the<br> 
           <span style="font-weight:700;">HM Land Registry Portal</span></p>
       </div>
@@ -960,7 +1116,7 @@ li:hover {background-color: #ffffff;color:#00703C;}
 
 
         <div class="">
-          <form>
+
           <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
             <div class="govuk-radios govuk-radios--small govuk-radios--inline" data-module="govuk-radios">
                   <div class="govuk-radios__item">
@@ -984,7 +1140,7 @@ li:hover {background-color: #ffffff;color:#00703C;}
                   <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="title-number">
                    
                       <input type="text" id="search-input" class="searchBox" >
-                      <button class="searchButton" value="submit" id="search-button" style="" formaction="split/search-result"> <img width="20" height="20" style="margin-top:6px;" src="/public/images/search-icon.svg"></button>
+                      <button class="searchButton"  id="search-button2" style=""  onclick="window.location.href='search-result.html'"> <img width="20" height="20" style="margin-top:6px;" src="/public/images/search-icon.svg"></button>
        
                   </div>
 
@@ -1050,7 +1206,7 @@ li:hover {background-color: #ffffff;color:#00703C;}
         
           </fieldset>
 
-        </form>
+
         </div>
 
 
@@ -1066,7 +1222,7 @@ li:hover {background-color: #ffffff;color:#00703C;}
     <div id="linksPanel" class="govuk-body" style="background: #ffffff;">
 
           <!-- Filters and Search Section - Start -->
-          <h2 class="govuk-heading-l govuk-!-font-size-36" style="margin-bottom:60px;">My Services<button id="edit" class="govuk-button" style="float:right;margin-bottom: 0;" onclick="myFunction()">Edit Links</button></h2> 
+          <h2 class="govuk-heading-l govuk-!-font-size-36" style="margin-bottom:60px;">My services<button id="edit" class="govuk-button" style="float:right;margin-bottom: 0;" onclick="myFunction()">Edit links</button></h2> 
           
 
     <div id="linksDisplay">
@@ -1602,7 +1758,7 @@ li:hover {background-color: #ffffff;color:#00703C;}
 
       <div class="newsTextSection">
           <p class="govuk-body govuk-!-font-size-14">10 December 2021 — News story</p>
-          <h3 class="govuk-heading-s newsTextTitle"><a style="color:#006637;" href="#">View Colleagues Applications</a></h3>
+          <h3 class="govuk-heading-s newsTextTitle"><a style="color:#006637;" href="#">View colleagues applications</a></h3>
           <p>A short video designed to showcase the new functionality recently added.</p>
       </div>
 
@@ -1674,7 +1830,7 @@ li:hover {background-color: #ffffff;color:#00703C;}
   <div class="govuk-grid-row">
 
     <div class="govuk-grid-column-one-third">
-      <h2 class="govuk-heading-l govuk-!-font-size-36" style="margin-top: 0;">Service<br>Information</h2>
+      <h2 class="govuk-heading-l govuk-!-font-size-36" style="margin-top: 0;">Service<br>information</h2>
     </div>
     
     <div class="govuk-grid-column-two-thirds">
@@ -1761,168 +1917,168 @@ li:hover {background-color: #ffffff;color:#00703C;}
     },
     { 
       id: 'digitalRegistrationService',
-      heading: 'Digital Registration Service', 
+      heading: 'Digital registration service', 
       subheading: 'Submit application to HM Land Registry online', 
       label: 'Submit applications', 
       href: '#'
     },
     { 
       id: 'viewMyApplications',
-      heading: 'View My Applications', 
+      heading: 'View applications', 
       subheading: 'View the progress of your applications', 
       label: 'View applications', 
       href: '#'
     },
     { 
       id: 'applicationEnquiry',
-      heading: 'Application Enquiry', 
+      heading: 'Application enquiry', 
       subheading: 'Request information regarding your applications', 
       label: 'Make enquiry', 
       href: '#'
     },
     { 
       id: 'localLandCharges',
-      heading: 'Local Land Charges', 
+      heading: 'Local land charges', 
       subheading: 'Lorem ipsum aut et harum quiam, anduscime atia con', 
       label: 'Start new search', 
       href: '#'
     },
     { 
       id: 'officialSearchOfWholeOS1',
-      heading: 'Official Search of Whole (OS1)', 
+      heading: 'Official search of whole (OS1)', 
       subheading: 'Protect a transaction for value on the whole of the land', 
       label: 'Start new search', 
       href: '#'
     },
     { 
       id: 'officialSearchOfPartOS2',
-      heading: 'Official Search of Part (OS2)', 
+      heading: 'Official search of part (OS2)', 
       subheading: 'Protect a transaction for value on part of the land', 
       label: 'Start new search', 
       href: '#'
     },
     { 
       id: 'officialSearchOfWholeOrPartWithoutPriorityOS3',
-      heading: 'Official Search of whole or part without priority (OS3)', 
+      heading: 'Official search of whole or part without priority (OS3)', 
       subheading: 'Allow a person who is not entitled to make a priority search or search of the register', 
       label: 'Start new search', 
       href: '#'
     },
     { 
       id: 'cancellationOfOfficialSearchOfWholeOS1',
-      heading: 'Cancellation of Official Search of Whole (OS1)', 
+      heading: 'Cancellation of official Search of Whole (OS1)', 
       subheading: 'An OS1 can be cancelled within the priority 30 day period if no longer required', 
       label: 'Start new search', 
       href: '#'
     },
     { 
       id: 'cancellationOfOfficialSearchOfPartOS2',
-      heading: 'Cancellation of Official Search of Part (OS2)', 
+      heading: 'Cancellation of official Search of Part (OS2)', 
       subheading: 'An OS2 can be cancelled within the priority 30 day period if no longer required', 
       label: 'Start new search', 
       href: '#'
     },
     { 
       id: 'documentView',
-      heading: 'Document View', 
+      heading: 'Document view', 
       subheading: 'Documents can be viewed on line to find out information', 
       label: 'View documents', 
       href: '#'
     },
     { 
       id: 'homeRightsSearch',
-      heading: 'Home Rights Search', 
+      heading: 'Home rights search', 
       subheading: 'Establish if a notice has been registered protecting a spouse or civil partnership rights', 
       label: 'Start new search', 
       href: '#'
     },
     { 
       id: 'officialCopyDeedsReferred',
-      heading: 'Official Copy – Deeds referred', 
+      heading: 'Official copy – deeds referred', 
       subheading: 'An official copy of a deed that is referred to on the register', 
       label: 'Request a document', 
       href: '#'
     },
     { 
       id: 'officialCopyRegisterHistorical', 
-      heading: 'Official Copy – Register (Historical)', 
+      heading: 'Official copy – register (historical)', 
       subheading: 'An official copy of the register from a historical date', 
       label: 'Request a document', 
       href: '#'
     },
     { 
       id: 'officialCopyTitlePlanHistorical',
-      heading: 'Official Copy – Title Plan (Historical)', 
+      heading: 'Official copy – title plan (Historical)', 
       subheading: 'An official copy of the title plan from a historical date', 
       label: 'Request a document', 
       href: '#'
     },
     { 
       id: 'officialCopyRegisterPlanCI',
-      heading: 'Official Copy – Register, Title Plan or CI', 
+      heading: 'Official copy – register, title plan or CI', 
       subheading: 'Lorem ipsum aut et harum quiam, anduscime atia con', 
       label: 'Request a document', 
       href: '#'
     },
     { 
       id: 'searchOfTheIndexMap',
-      heading: 'Search of the Index Map', 
+      heading: 'Search of the index map', 
       subheading: 'Find out if a piece of land or property is registered with the Land Registry', 
       label: 'Start new search', 
       href: '#'
     },
     { 
       id: 'registerViewPDF', 
-      heading: 'Register View (PDF)', 
+      heading: 'Register view (PDF)', 
       subheading: 'The ability for a user to view a register as a PDF', 
       label: 'View applications', 
       href: '#'
     },
     { 
       id: 'registerViewHTML',
-      heading: 'Register View (HTML)', 
+      heading: 'Register view (HTML)', 
       subheading: 'The ability for a user to view a register as in HTML', 
       label: 'View applications', 
       href: '#'
     },
     { 
       id: 'searchOfTheIndexFranchisesAndManors', 
-      heading: 'Search of the Index of Franchies and Manors (SIF)', 
+      heading: 'Search of the index of franchies and manors (SIF)', 
       subheading: 'A SIF allows the user to search this index for a Franchise or Manor', 
       label: 'Start new search', 
       href: '#'
     },
     { 
       id: 'titlePlanView',
-      heading: 'Title Plan View', 
+      heading: 'Title plan view', 
       subheading: 'This enables you to view the title plan of a registered title', 
       label: 'Start new search', 
       href: '#'
     },
     { 
       id: 'withdrawlOfficialSearchWithPriority', 
-      heading: 'Withdraw Official Search with Priority', 
+      heading: 'Withdraw official search with priority', 
       subheading: 'Apply for the search to be withdrawn if a customer no longer needs the protection', 
       label: 'Make withdrawl', 
       href: '#'
     },
     { 
       id: 'agreedNotice',
-      heading: 'Agreed Notice', 
+      heading: 'Agreed notice', 
       subheading: 'Apply to have an interest noted on the register', 
       label: 'Make application', 
       href: '#'
     },
     { 
       id: 'cancellationOfACaution',
-      heading: 'Cancellation of a Caution', 
+      heading: 'Cancellation of a caution', 
       subheading: 'Proprietors of an estate affected by a caution may apply for a caution to be cancelled', 
       label: 'Make a cancellation', 
       href: '#'
     },
     { 
       id: 'cancellationOfANotice', 
-      heading: 'Cancellation of a Notice (Not Unilateral)', 
+      heading: 'Cancellation of a notice (not unilateral)', 
       subheading: 'This enables you to cancel an Agreed Notice', 
       label: 'Make a cancellation', 
       href: '#'
@@ -1936,49 +2092,49 @@ li:hover {background-color: #ffffff;color:#00703C;}
     },
     { 
       id: 'changeOfName',
-      heading: 'Change of Name', 
+      heading: 'Change of name', 
       subheading: 'A registered proprietor can apply to change their address for service', 
       label: 'Request change', 
       href: '#'
     },
     { 
       id: 'changeOfPropertyDescription',
-      heading: 'Change of Property Description', 
+      heading: 'Change of property description', 
       subheading: 'Apply to change the property description of their property at any time', 
       label: 'Request change', 
       href: '#'
     },
     { 
       id: 'statutoryCharge',
-      heading: 'Statutory Charge', 
+      heading: 'Statutory charge', 
       subheading: 'Make an electronic application to register a statutory charge', 
       label: 'Make an application', 
       href: '#'
     },
     { 
       id: 'deathOfJointProprietor',
-      heading: 'Death of Joint Proprietor', 
+      heading: 'Death of joint proprietor', 
       subheading: 'Register notice of the death of a joint proprietor of a registered estate', 
       label: 'Request change', 
       href: '#'
     },
     { 
       id: 'homeRights',
-      heading: 'Home Rights (E-HR1 Notice <br>of home rights)', 
+      heading: 'Home rights (E-HR1 notice <br>of home rights)', 
       subheading: 'Protect a right to occupy the matrimonial or civil partnership home with an agreed notice', 
       label: 'Request change', 
       href: '#'
     },
     { 
       id: 'cancellationOfHomeRights', 
-      heading: 'Cancellation of Home rights (e-HR4)', 
+      heading: 'Cancellation of home rights (e-HR4)', 
       subheading: 'A request to cancel a Home rights entry from the register', 
       label: 'Request change', 
       href: '#'
     },
     { 
       id: 'restrictions', 
-      heading: 'Restrictions (Standard e-RX1)', 
+      heading: 'Restrictions (standard e-RX1)', 
       subheading: 'For restrictions that follow one of the forms set out in schedule 4, LRR 2003', 
       label: 'Request change', 
       href: '#'
@@ -1992,105 +2148,105 @@ li:hover {background-color: #ffffff;color:#00703C;}
     },
     { 
       id: 'withdrawlOfARestriction',
-      heading: 'Withdrawal of a Restriction (e-RX4)', 
+      heading: 'Withdrawal of a restriction (e-RX4)', 
       subheading: 'Withdraw voluntary restrictions', 
       label: 'Make withdrawl', 
       href: '#'
     },
     { 
       id: 'unilateralNotice',
-      heading: 'Unilateral Notice (e-UN1)', 
+      heading: 'Unilateral notice (e-UN1)', 
       subheading: 'Proprietors of an estate affected by a caution may apply for a caution to be cancelled', 
       label: 'Request cancellation', 
       href: '#'
     },
     { 
       id: 'cancellationOfUnilateralNotice', 
-      heading: 'Cancellation of Unilateral Notice (eUN4)', 
+      heading: 'Cancellation of unilateral notice (eUN4)', 
       subheading: 'Cancel a unilateral notice from the registered title', 
       label: 'Request cancellation', 
       href: '#'
     },
     { 
       id: 'removalOfUnilateralNotice',
-      heading: 'Removal of a Unilateral Notice (e-UN2)', 
+      heading: 'Removal of a unilateral notice (e-UN2)', 
       subheading: 'Remove a unilateral notice from the registered title', 
       label: 'Request removal', 
       href: '#'
     },
     { 
       id: 'withdrawlOfCaution',
-      heading: 'Withdrawl of Caution', 
+      heading: 'Withdrawl of caution', 
       subheading: 'Remove a caution entry form the registered title', 
       label: 'Make withdrawl', 
       href: '#'
     },
     { 
       id: 'dischargeOfCharge',
-      heading: 'Discharge of a Charge', 
+      heading: 'Discharge of a charge', 
       subheading: 'Remove a charge entry from the register of title as the debt has been repaid', 
       label: 'Request cancellation', 
       href: '#'
     },
     { 
       id: 'enquiryByPropertyDescription',
-      heading: 'Enquiry by Property Description <br>- Title View', 
+      heading: 'Enquiry by property description <br>- title view', 
       subheading: 'Lorem ipsum essimin plate voluptatis digent', 
       label: 'Make an enquiry', 
       href: '#'
     },
     { 
       id: 'bankruptcySearch',
-      heading: 'Bankruptcy Search', 
+      heading: 'Bankruptcy search', 
       subheading: 'Lorem ipsum rum etur autet aut ape la sant volo mossunt facerum niscii', 
       label: 'Start new search', 
       href: '#'
     },
     { 
       id: 'fullSearch',
-      heading: 'Full Search', 
+      heading: 'Full search', 
       subheading: 'Lorem ipsum rum etur autet aut ape la sant volo mossunt facerum nisciis imolor adi', 
       label: 'Start new search', 
       href: '#'
     },
     { 
       id: 'documentRegistrationService',
-      heading: 'Document Registration Service', 
+      heading: 'Document registration service', 
       subheading: 'Lorem ipsum rum etur autet aut ape la sant volo mossunt facerum nisciis imolor adi', 
       label: 'Submit applications', 
       href: '#'
     },
     { 
       id: 'registrationView',
-      heading: 'Registration View', 
+      heading: 'Registration view', 
       subheading: 'Lorem ipsum rum etur autet aut ape la sant volo mossunt facerum nisciis imolor adi', 
       label: 'View the register', 
       href: '#'
     },
     { 
       id: 'replyToRequisition', 
-      heading: 'Reply To Requisition', 
+      heading: 'Reply to requisition', 
       subheading: 'Lorem ipsum rum etur autet aut ape la sant volo mossunt facerum nisciis imolor adi', 
       label: 'Reply to requisition', 
       href: '#'
     },
     { 
       id: 'dataSynchronisationEnquiry',
-      heading: 'Data Synchronisation Enquiry', 
+      heading: 'Data synchronisation enquiry', 
       subheading: 'Lorem ipsum rum etur autet aut ape la sant volo mossunt facerum nisciis imolor adi', 
       label: 'Make an enquiry', 
       href: '#'
     },
     { 
       id: 'dataSynchronisationDownloads',
-      heading: 'Data Synchronisation Downloads', 
+      heading: 'Data synchronisation downloads', 
       subheading: 'Lorem ipsum rum etur autet aut ape la sant volo mossunt facerum nisciis imolor adi', 
       label: 'Download document', 
       href: '#'
     },
     { 
       id: 'pdfDownloads',
-      heading: 'PDF Downloads', 
+      heading: 'PDF downloads', 
       subheading: 'Access your PDF downloads from the download centre', 
       label: 'View downloads', 
       href: '#'
@@ -2104,14 +2260,14 @@ li:hover {background-color: #ffffff;color:#00703C;}
     },
     { 
       id: 'messageArea', 
-      heading: 'Message Area', 
+      heading: 'Message area', 
       subheading: 'Lorem ipsum rum etur autet aut ape la sant volo mossunt facerum', 
       label: 'View messages', 
       href: '#'
     },
     { 
       id: 'servicesRequested',
-      heading: 'Services Requested', 
+      heading: 'Services requested', 
       subheading: 'Lorem ipsum rum etur autet aut ape la sant volo mossunt facerum', 
       label: 'View requests', 
       href: '#'
@@ -2125,63 +2281,63 @@ li:hover {background-color: #ffffff;color:#00703C;}
     },
     { 
       id: 'manageBusinessUnits', 
-      heading: 'Manage Business Units', 
+      heading: 'Manage business units', 
       subheading: 'Lorem ipsum rum etur autet aut ape la sant volo mossunt facerum', 
       label: 'Manage units', 
       href: '#'
     },
     { 
       id: 'manageGroups', 
-      heading: 'Manage Groups', 
+      heading: 'Manage groups', 
       subheading: 'Lorem ipsum rum etur autet aut ape la sant volo mossunt facerum', 
       label: 'Manage groups', 
       href: '#'
     },
     { 
       id: 'manageUsers',
-      heading: 'Manage Users', 
+      heading: 'Manage users', 
       subheading: "Manage your business unit's users", 
       label: 'Manage users', 
       href: '#'
     },
     { 
       id: 'createUser',
-      heading: 'Create User', 
+      heading: 'Create user', 
       subheading: 'Lorem ipsum rum etur autet aut ape la sant volo mossunt facerum', 
       label: 'Create user', 
       href: '#'
     },
     { 
       id: 'personalDetails', 
-      heading: 'Personal Details', 
+      heading: 'Personal details', 
       subheading: 'Lorem ipsum rum etur autet aut ape la sant volo mossunt facerum', 
       label: 'View details', 
       href: '#'
     },
     { 
       id: 'changePassword', 
-      heading: 'Change Password', 
+      heading: 'Change password', 
       subheading: 'Lorem ipsum rum etur autet aut ape la sant volo mossunt facerum', 
       label: 'Change password', 
       href: '#'
     },
     { 
       id: 'administratorReport', 
-      heading: 'Administrator Report', 
+      heading: 'Administrator report', 
       subheading: 'Lorem ipsum rum etur autet aut ape la sant volo mossunt facerum', 
       label: 'View report', 
       href: '#'
     },
     { 
       id: 'vddinformation',
-      heading: 'VDD Information', 
+      heading: 'VDD information', 
       subheading: 'Lorem ipsum rum etur autet aut ape la sant volo mossunt facerum niscii', 
       label: 'View information', 
       href: '#'
     },
     { 
       id: 'mapSearch', 
-      heading: 'Map Search', 
+      heading: 'Map search', 
       subheading: 'Find out if a property is registered, its location, title number & tenure details', 
       label: 'Start new search', 
       href: '#'
