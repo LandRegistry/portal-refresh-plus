@@ -464,6 +464,10 @@ font-weight:400;
   color:#D10A1E !important;
 }
 
+.accordionDownload {
+  color:#006637 !important;
+}
+
 .govuk-table {
     margin-bottom: 0px;
     font-size:16px;
@@ -510,6 +514,11 @@ font-weight:400;
     height: 5px;
     background-color: #006637;
     display: block;
+}
+
+.govuk-panel--confirmation {
+    color: #ffffff;
+    background: #006637;
 }
 
 </style>
@@ -680,225 +689,216 @@ font-weight:400;
 
 
     <div class="govuk-width-container wide1100">
-
-      <a class="govuk-back-link" style="margin-top:50px;margin-bottom: 50px;" href="javascript: history.go(-1)">Back</a>
     
-      <main class="govuk-main-wrapper" style="padding:0px 0px 100px 0px;">
+      <main class="govuk-main-wrapper" style="padding:50px 0px 100px 0px;">
     
-        <div class="govuk-grid-row">
+        <div class="govuk-width-container">
+          <main class="govuk-main-wrapper govuk-main-wrapper--l" id="main-content" role="main">
+            <div class="govuk-grid-row">
+              <div class="govuk-grid-column-two-thirds">
+                <div class="govuk-panel govuk-panel--confirmation">
+                  <h1 class="govuk-panel__title">
+                    Order confirmed
+                  </h1>
+                  <div class="govuk-panel__body">
+                    Your reference number<br><strong>HDJ2123F</strong>
+                  </div>
+                </div>
+        
+                <p class="govuk-body"  style="padding-bottom:25px;">We have sent you a confirmation email.</p>
+        
+                <h2 class="govuk-heading-l">Available documents</h2>
+                <button class="govuk-button" data-module="govuk-button" style="width:250px;margin-top:-70px;float:right;">
+                  Download all documents
+                </button>
 
-          <div class="govuk-grid-column-full" style="padding-bottom: 25px;">
-            <h1 class="govuk-heading-xl">Basket</h1>
-            <p class="govuk-body">Check your basket, add customer references, then press the ‘Place order’ button to make your purchase.</p>
-            <p class="govuk-body">Your variable Direct Debit (VDD) will then be charged.</p>
-          </div>
+                <!-- First application section -->
+                <!-- <div class="">
+                  <p class="govuk-body" style="margin-bottom:10px;"><span class="govuk-!-font-weight-bold">Customer reference:</span> Wilson.Jones.87</p>
+                </div> -->
 
-                          <div class="wide80percent">
-                            <p class="govuk-body govuk-!-font-weight-bold" style="margin-bottom:10px;">Documents</p>
-                          </div>
-
-                          <div class="wide20percent">
-                            <p class="govuk-body govuk-!-font-weight-bold" style="margin-bottom:10px;">Customer references</p>
-                          </div>
+                <article class="panel-group bs-accordion" id="accordion" role="tablist" aria-multiselectable="true" style="padding-bottom:50px;">
+                <div class="" style="padding-bottom:0px;">
+                  <section class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="headingOne">
+                      <h4 class="panel-title">
+                        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
 
 
+                          <table class="govuk-table">
+                            <thead>
+                              <tr class="govuk-table__row">
+                                    <th scope="row" class="govuk-table__header accordionTitle" style="border-bottom:0px;padding:0px;width: 25%;">SGL479276</th>
+                                    <th scope="row" class="govuk-table__header accordionAddress" style="border-bottom:0px;padding:0px;width: 50%;">27a Drakefell Road, CV5 K2X</th>
+                                    <th scope="row" class="govuk-table__header accordionCost" style="border-bottom:0px;padding:0px;width: 15%;"></th> 
+                                    <th scope="row" class="govuk-table__header" style="border-bottom:0px;padding:0px;width: 10%;"><span class="glyphicon glyphicon-chevron-right pull-right" aria-hidden="true"><img style="margin-bottom:-5px;" width="25" src="/public/images/icon_govuk_chevrondown.svg"></span></th> 
+                                </tr>
+                            </thead>
+                          </table>
+                          
+                        </a>
+                      </h4>
+                    </div>
+                    <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                        <div class="panel-body">
 
-                          <article class="panel-group bs-accordion" id="accordion" role="tablist" aria-multiselectable="true">
-                        <div>
-                          <div class="wide80percent">
-                            <section class="panel panel-default">
-                              <div class="panel-heading" role="tab" id="headingOne">
-                                <h4 class="panel-title">
-                                  <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-
-
+                                <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
                                     <table class="govuk-table">
                                       <thead>
                                         <tr class="govuk-table__row">
-                                              <th scope="row" class="govuk-table__header accordionTitle" style="border-bottom:0px;padding:0px;width: 25%;">SGL479276</th>
-                                              <th scope="row" class="govuk-table__header accordionAddress" style="border-bottom:0px;padding:0px;width: 50%;">27a Drakefell Road, CV5 K2X</th>
-                                              <th scope="row" class="govuk-table__header accordionCost" style="border-bottom:0px;padding:0px;width: 15%;">£12.00</th> 
-                                              <th scope="row" class="govuk-table__header" style="border-bottom:0px;padding:0px;width: 10%;"><span class="glyphicon glyphicon-chevron-right pull-right" aria-hidden="true"><img style="margin-bottom:-5px;" width="25" src="/public/images/icon_govuk_chevrondown.svg"></span></th> 
+                                              <th scope="row" class="govuk-table__header" style="width: 25%;">Document type</th>
+                                              <th scope="row" class="govuk-table__header" style="width: 25%;">Details</th>
+                                              <th scope="row" class="govuk-table__header" style="width: 25%;">Format</th>
+                                              <th scope="row" class="govuk-table__header" style="width: 15%;">Cost</th> 
+                                              <th scope="row" class="govuk-table__header" style="width: 10%;"></th> 
                                           </tr>
                                       </thead>
-                                    </table>
-                                    
-                                  </a>
-                                </h4>
-                              </div>
-                              <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
-                                  <div class="panel-body">
 
-                                          <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
-                                              <table class="govuk-table">
-                                                <thead>
-                                                  <tr class="govuk-table__row">
-                                                        <th scope="row" class="govuk-table__header" style="width: 25%;">Document type</th>
-                                                        <th scope="row" class="govuk-table__header" style="width: 25%;">Details</th>
-                                                        <th scope="row" class="govuk-table__header" style="width: 25%;">Format</th>
-                                                        <th scope="row" class="govuk-table__header" style="width: 15%;">Cost</th> 
-                                                        <th scope="row" class="govuk-table__header" style="width: 10%;"></th> 
-                                                    </tr>
-                                                </thead>
+                                      <tbody class="govuk-table__body">
 
-                                                <tbody class="govuk-table__body">
-
-                                                    <tr class="govuk-table__row">
-                                                        <td class="govuk-table__cell">Register</td>
-                                                        <td class="govuk-table__cell">Official copy</td>
-                                                        <td class="govuk-table__cell">PDF</td>
-                                                        <td class="govuk-table__cell">£3.00</td>
-                                                        <td class="govuk-table__cell"><a class="accordionRemove" href="">Remove</a></td>
-                                                    </tr>
-                                                    
-                                                    <tr class="govuk-table__row govuk-table__row">
-                                                      <td class="govuk-table__cell">Title plan</td>
-                                                      <td class="govuk-table__cell">Official copy</td>
-                                                      <td class="govuk-table__cell">PDF</td>
-                                                      <td class="govuk-table__cell">£3.00</td>
-                                                      <td class="govuk-table__cell"><a class="accordionRemove" href="">Remove</a></td>
-                                                    </tr>
-
-                                                    <tr class="govuk-table__row govuk-table__row">
-                                                      <td class="govuk-table__cell">Deed</td>
-                                                      <td class="govuk-table__cell">B3</td>
-                                                      <td class="govuk-table__cell">PDF</td>
-                                                      <td class="govuk-table__cell">£3.00</td>
-                                                      <td class="govuk-table__cell"><a class="accordionRemove" href="">Remove</a></td>
-                                                    </tr>
-
-                                                    <tr class="govuk-table__row govuk-table__row">
-                                                      <td class="govuk-table__cell last">Lease</td>
-                                                      <td class="govuk-table__cell last">L1</td>
-                                                      <td class="govuk-table__cell last">PDF</td>
-                                                      <td class="govuk-table__cell last">£3.00</td>
-                                                      <td class="govuk-table__cell last"><a class="accordionRemove" href="">Remove</a></td>
-                                                    </tr>
-          
-                                                </tbody>
-                                              </table>
-                                          </fieldset>
-          
-
-                                  </div>
-                              </div>
-                            </section>
-                          </div>
-                          <div class="wide20percent">
-                            
-                            <fieldset class="govuk-fieldset">
-
-                              <div class="">
-
-                                <input class="govuk-input" id="reference-1" name="reference-1" type="text" placeholder="Reference">
-                              </div>
-                            
-                            </fieldset>
-
-                          </div>
-                        </div>
-
-                        <div>
-                          <div class="wide80percent">
-                            <section class="panel panel-default">
-                              <div class="panel-heading" role="tab" id="headingTwo">
-                                <h4 class="panel-title">
-                                  <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-
-                                    <table class="govuk-table">
-                                      <thead>
-                                        <tr class="govuk-table__row">
-                                              <th scope="row" class="govuk-table__header accordionTitle" style="border-bottom:0px;padding:0px;width: 25%;">SGL479276</th>
-                                              <th scope="row" class="govuk-table__header accordionAddress" style="border-bottom:0px;padding:0px;width: 50%;">27b Drakefell Road,CV5 K2X</th>
-                                              <th scope="row" class="govuk-table__header accordionCost" style="border-bottom:0px;padding:0px;width: 15%;">£6.00</th> 
-                                              <th scope="row" class="govuk-table__header" style="border-bottom:0px;padding:0px;width: 10%;"><span class="glyphicon glyphicon-chevron-right pull-right" aria-hidden="true"><img style="margin-bottom:-5px;" width="25" src="/public/images/icon_govuk_chevrondown.svg"></span></th> 
-                                          </tr>
-                                      </thead>
-                                    </table>
-
-                                  </a>
-                                </h4>
-                              </div>
-                              <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-                                  <div class="panel-body">
-
-                                    <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
-                                      <table class="govuk-table">
-                                        <thead>
                                           <tr class="govuk-table__row">
-                                                <th scope="row" class="govuk-table__header" style="width: 25%;">Document type</th>
-                                                <th scope="row" class="govuk-table__header" style="width: 25%;">Details</th>
-                                                <th scope="row" class="govuk-table__header" style="width: 25%;">Format</th>
-                                                <th scope="row" class="govuk-table__header" style="width: 15%;">Cost</th> 
-                                                <th scope="row" class="govuk-table__header" style="width: 10%;"></th> 
-                                            </tr>
-                                        </thead>
-
-                                        <tbody class="govuk-table__body">
-
-                                            <tr class="govuk-table__row">
-                                                <td class="govuk-table__cell">Register</td>
-                                                <td class="govuk-table__cell">Official copy</td>
-                                                <td class="govuk-table__cell">PDF</td>
-                                                <td class="govuk-table__cell">£3.00</td>
-                                                <td class="govuk-table__cell"><a class="accordionRemove" href="">Remove</a></td>
-                                            </tr>
-                                            
-                                            <tr class="govuk-table__row govuk-table__row">
-                                              <td class="govuk-table__cell">Title plan</td>
+                                              <td class="govuk-table__cell">Register</td>
                                               <td class="govuk-table__cell">Official copy</td>
                                               <td class="govuk-table__cell">PDF</td>
                                               <td class="govuk-table__cell">£3.00</td>
-                                              <td class="govuk-table__cell"><a class="accordionRemove" href="">Remove</a></td>
-                                            </tr>
+                                              <td class="govuk-table__cell"><a class="accordionDownload" href="">Download</a></td>
+                                          </tr>
+                                          
+                                          <tr class="govuk-table__row govuk-table__row">
+                                            <td class="govuk-table__cell">Title plan</td>
+                                            <td class="govuk-table__cell">Official copy</td>
+                                            <td class="govuk-table__cell">PDF</td>
+                                            <td class="govuk-table__cell">£3.00</td>
+                                            <td class="govuk-table__cell"><a class="accordionDownload" href="">Download</a></td>
+                                          </tr>
 
-  
-                                        </tbody>
-                                      </table>
-                                  </fieldset>
-          
+                                          <tr class="govuk-table__row govuk-table__row">
+                                            <td class="govuk-table__cell">Deed</td>
+                                            <td class="govuk-table__cell">B3</td>
+                                            <td class="govuk-table__cell">PDF</td>
+                                            <td class="govuk-table__cell">£3.00</td>
+                                            <td class="govuk-table__cell"><a class="accordionDownload" href="">Download</a></td>
+                                          </tr>
 
-                                  </div>
-                              </div>
-                            </section>
-                          </div>
-                          <div class="wide20percent">
-                            
-                            <fieldset class="govuk-fieldset">
+                                          <tr class="govuk-table__row govuk-table__row">
+                                            <td class="govuk-table__cell last">Lease</td>
+                                            <td class="govuk-table__cell last">L1</td>
+                                            <td class="govuk-table__cell last">PDF</td>
+                                            <td class="govuk-table__cell last">£3.00</td>
+                                            <td class="govuk-table__cell last"><a class="accordionDownload" href="">Download</a></td>
+                                          </tr>
 
-                              <div class="">
+                                      </tbody>
+                                    </table>
+                                </fieldset>
 
-                                <input class="govuk-input" id="reference-2" name="reference-2" type="text" placeholder="Reference">
-                              </div>
-                            
-                            </fieldset>
 
-                          </div>
                         </div>
-          
-          
-                          </article>
-                          
+                    </div>
+                  </section>
+                </div>
 
-          </div>
 
-          <div class="dividerLine5"></div>
+                <!-- Second application section -->
+              <!-- <div class="">
+                <p class="govuk-body" style="margin-bottom:10px;"><span class="govuk-!-font-weight-bold">Customer reference:</span> Sally.Dowling.34</p>
+              </div> -->
 
-          <div>
-              <div class="wide80percent" style="padding-left:0px;">
-                <p class="govuk-body govuk-!-font-weight-bold" style="margin-bottom:0px;line-height:38px;">Order total: £18.00</p>
-              </div>
+                <div class="" style="padding-bottom:0px;">
+                  <section class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="headingTwo">
+                      <h4 class="panel-title">
+                        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
 
-              <div class="wide20percent" style="padding:0px 0px 0px 10px;">
-                <button class="govuk-button" data-module="govuk-button" style="width:100%;margin-bottom:0px;" onclick="window.location.href='confirmation.html'">
-                  Place order
-                </button>
-              </div>
-          </div>
+                          <table class="govuk-table">
+                            <thead>
+                              <tr class="govuk-table__row">
+                                    <th scope="row" class="govuk-table__header accordionTitle" style="border-bottom:0px;padding:0px;width: 25%;">SGL479276</th>
+                                    <th scope="row" class="govuk-table__header accordionAddress" style="border-bottom:0px;padding:0px;width: 50%;">27b Drakefell Road,CV5 K2X</th>
+                                    <th scope="row" class="govuk-table__header accordionCost" style="border-bottom:0px;padding:0px;width: 15%;"></th> 
+                                    <th scope="row" class="govuk-table__header" style="border-bottom:0px;padding:0px;width: 10%;"><span class="glyphicon glyphicon-chevron-right pull-right" aria-hidden="true"><img style="margin-bottom:-5px;" width="25" src="/public/images/icon_govuk_chevrondown.svg"></span></th> 
+                                </tr>
+                            </thead>
+                          </table>
 
-        </div>
+                        </a>
+                      </h4>
+                    </div>
+                    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                        <div class="panel-body">
 
+                          <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+                            <table class="govuk-table">
+                              <thead>
+                                <tr class="govuk-table__row">
+                                      <th scope="row" class="govuk-table__header" style="width: 25%;">Document type</th>
+                                      <th scope="row" class="govuk-table__header" style="width: 25%;">Details</th>
+                                      <th scope="row" class="govuk-table__header" style="width: 25%;">Format</th>
+                                      <th scope="row" class="govuk-table__header" style="width: 15%;">Cost</th> 
+                                      <th scope="row" class="govuk-table__header" style="width: 10%;"></th> 
+                                  </tr>
+                              </thead>
+
+                              <tbody class="govuk-table__body">
+
+                                  <tr class="govuk-table__row">
+                                      <td class="govuk-table__cell">Register</td>
+                                      <td class="govuk-table__cell">Official copy</td>
+                                      <td class="govuk-table__cell">PDF</td>
+                                      <td class="govuk-table__cell">£3.00</td>
+                                      <td class="govuk-table__cell"><a class="accordionDownload" href="">Download</a></td>
+                                  </tr>
+                                  
+                                  <tr class="govuk-table__row govuk-table__row">
+                                    <td class="govuk-table__cell last">Title plan</td>
+                                    <td class="govuk-table__cell last">Official copy</td>
+                                    <td class="govuk-table__cell last">PDF</td>
+                                    <td class="govuk-table__cell last">£3.00</td>
+                                    <td class="govuk-table__cell last"><a class="accordionDownload" href="">Download</a></td>
+                                  </tr>
+
+
+                              </tbody>
+                            </table>
+                        </fieldset>
+
+
+                        </div>
+                    </div>
+                  </section>
+                </div>
+
+
+                </article>
+
+                <h2 class="govuk-heading-l" style="margin-bottom: 5px;">Pending documents</h2>
+                <p class="govuk-body"  style="padding-bottom:25px;">All documents requested are available for immediate download.</p>
+
+
+
+
+
+
+
+
+
+
+                <!-- <h2 class="govuk-heading-m">What happens next</h2>
         
+                <p class="govuk-body">
+                  We’ve sent your application to Hackney Electoral Register Office.
+                </p>
+                <p class="govuk-body">
+                  They will contact you either to confirm your registration, or to ask for more information.
+                </p>
+        
+                <p class="govuk-body">
+                  <a href="#" class="govuk-link">What did you think of this service?</a> (takes 30 seconds)
+                </p> -->
+              </div>
+            </div>
+          </main>
+        </div>
     
       </main>
     </div>
