@@ -1,8 +1,10 @@
 <!DOCTYPE html>
-{% extends "layout_unbranded.html" %}
-{% block pageTitle %} View my applications
+{% extends "layout_officialCopies.html" %}
+{% block pageTitle %} Home
 {% endblock %}
 {% block content %}
+
+{% include "includes/officialCopiesNavigation.html" %} 
 
 <script>
     /* When the user clicks on the button, 
@@ -936,168 +938,7 @@ li:hover {background-color: #ffffff;color:#00703C;}
 </style>
 
 
-<!-- Back & clear data top -->
-<!-- Back & clear data top -->
-<div>
 
-<!-- Navigation Menu - Start -->
-
-
-<div class="navbar-container">
-
-  <img src="/public/images/HMLR_Logo.svg" alt="hmlrlogo" style="height: 44px;
-  padding-left: 30px;
-  padding-top: 14px;
-  padding-bottom: 5px;">
-   
-   <ul id="menu" style="float:right;">
-      <li class="parent"><a href="#">Home</a></li>
-
-      <li class="parent parentIconDown"><a style="padding-right: 25px;" href="#">Services</a>
-       
-      <li class="parent"><a href="#">Contact us</a></li>
-
-      <li class="parent parentIconDown2"><a style="padding-right: 25px;" href="#">John James </a>
-           <ul class="child" style="right:0;">
-           <div class="govuk-body myAccountContent">
-
-                 <div>
-                   <div class="myAccountTitle" style="padding-bottom:3px;">
-                     Logged in as:
-                   </div>
-                   <div class="myAccount2ndLine">
-                      Administrator 
-                   </div>
-                   <a href="#" style="margin:0px;color:#00703C;font-weight:700;font-size:14px;">View profile</a>
-                 </div>
-
-                 <hr>
-
-                 <div class="myAccountTitle" style="padding-bottom:3px;">
-                   <b>Primary Business Unit Administrator (BUA):</b> 
-                 </div>
-                 <div class="myAccount2ndLine">
-                   John Taylor
-                   <!-- <a href="#" style="margin:0px;color:#00703C;"><b>JohnTaylor@bigbusiness.com</b></a> -->
-                 </div>
-
-
-
-
-                 <button id="logOut" class="govuk-button" style="margin-top:20px;">Log out</button>
-               </div>
-               </ul>
-      </li>
-              
-               
-        <li class="parent parentIconDown3"><a style="padding-left:25px;" href="#">Basket</a>
-          <ul class="child" style="right:0;">
-            <div class="govuk-body basketContent">
-
-              <div class="basketItems">
-
-              <!-- First item in dropdown basket -->
-                  <div class="basketItem">
-                      <div class="basketSection">
-                          <div class="basketTitle">
-                            SGL479276
-                          </div>
-                          <div class="basketRemove">
-                            <a class="basketRemoveText" style="margin:0;text-decoration: underline;" href="#">Remove</a>
-                          </div>
-                      </div>
-
-                      <div class="basketSection" style="padding:15px 0px;">
-                            <div><span class="basketItemSelected">Register</span><span class="basketItemPrice">£3.00</span></div>
-                            <div><span class="basketItemSelected">Title plan</span><span class="basketItemPrice">£3.00</span></div>
-                      </div>
-
-                      <div class="basketSection">
-                        <span class="basketAddress">27a Drakefell Road, CV5 BKK</span>
-                      </div>
-
-                  </div>
-
-                  <!-- Second item in dropdown basket -->
-                  <div class="basketItem">
-                    <div class="basketSection">
-                        <div class="basketTitle">
-                          SGL479276
-                        </div>
-                        <div class="basketRemove">
-                          <a class="basketRemoveText" style="margin:0;text-decoration: underline;" href="#">Remove</a>
-                        </div>
-                    </div>
-
-                    <div class="basketSection" style="padding:15px 0px;">
-                          <div><span class="basketItemSelected">Register</span><span class="basketItemPrice">£3.00</span></div>
-                          <div><span class="basketItemSelected">Title plan</span><span class="basketItemPrice">£3.00</span></div>
-                    </div>
-
-                    <div class="basketSection">
-                      <span class="basketAddress">27b Drakefell Road, CV5 BKK</span>
-                    </div>
-
-                  </div>
-
-                  <!-- Third item in dropdown basket -->
-                  <div class="basketItem" style="margin-bottom:0px;">
-                    <div class="basketSection">
-                        <div class="basketTitle">
-                          SGL479276
-                        </div>
-                        <div class="basketRemove">
-                          <a class="basketRemoveText" style="margin:0;text-decoration: underline;" href="#">Remove</a>
-                        </div>
-                    </div>
-
-                    <div class="basketSection" style="padding:15px 0px;">
-                          <div><span class="basketItemSelected">Register</span><span class="basketItemPrice">£3.00</span></div>
-                          <div><span class="basketItemSelected">Title plan</span><span class="basketItemPrice">£3.00</span></div>
-                    </div>
-
-                    <div class="basketSection">
-                      <span class="basketAddress">27b Drakefell Road, CV5 BKK</span>
-                    </div>
-
-                  </div>
-
-              </div>
-
-              <!-- Subtotal and basket button -->
-              <div class="basketItemLast" style="padding:0px 25px 25px 25px;">
-                <div class="basketSection" style="padding-bottom: 25px;padding-top: 25px;">
-                  <div><span class="basketItemSubText">Subtotal:</span><span class="basketItemSubTotal">£12.00</span></div>
-                </div>
-
-                <div class="basketSection">
-                  <button class="govuk-button" data-module="govuk-button" style="width:100%;margin-bottom:0px;">
-                    View basket
-                  </button>
-                </div>
-
-              </div>
-
-            </div>
-          </ul>
-        </li>
-
-
-</div>
-        
-        
-        </ul>
-        
-        
-        </li>
-    </ul>
-
-
-  </div>
-
-<!-- Navigation Menu - End -->
-
-<!-- Content Area - Start -->
 
 <div id="SectionHero">
 
@@ -1297,439 +1138,439 @@ li:hover {background-color: #ffffff;color:#00703C;}
           </div>
 
         </div> 
-    </div>   
+</div>   
       
-    <div id="inputs">
+<div id="inputs">
 
 
-              <div class="govuk-grid-column-one-third" style="margin-bottom: 30px;">
-                <label class="govuk-label form-label-bold" for="input">
-                  Position 1
-                </label>
-                <select class="govuk-select selects" name="input" id="input">
-                    <option value="placeholder">Select a link...</option>
-                    <option value="administratorReport">Administrator Report</option>
-                    <option value="agreedNotice">Agreed Notice</option>
-                    <option value="alternateDespatchAddress">Alternate despatch address</option>
-                    <option value="applicationEnquiry">Application Enquiry</option>
-                    <option value="bankruptcySearch">Bankruptcy Search</option>
-                    <option value="cancellationOfACaution">Cancellation of a Caution</option>
-                    <option value="cancellationOfANotice">Cancellation of a Notice (Not Unilateral)</option>
-                    <option value="cancellationOfHomeRights">Cancellation of Home rights (e-HR4)</option>
-                    <option value="cancellationOfOfficialSearchOfWholeOS1">Cancellation of Official Search of Whole (OS1)</option>
-                    <option value="cancellationOfOfficialSearchOfPartOS2">Cancellation of Official Search of Part (OS2)</option>
-                    <option value="cancellationOfRestriction">Cancellation of restriction (e-RX3)</option>
-                    <option value="cancellationOfUnilateralNotice">Cancellation of Unilateral Notice (eUN4)</option>
-                    <option value="changeOfAddressForService">Change of address for service</option>
-                    <option value="changeOfName">Change of Name</option>
-                    <option value="changeOfPropertyDescription">Change of Property Description</option>
-                    <option value="changePassword">Change Password</option>
-                    <option value="createUser">Create User</option>
-                    <option value="dataSynchronisationDownloads">Data Synchronisation Downloads</option>
-                    <option value="dataSynchronisationEnquiry">Data Synchronisation Enquiry</option>
-                    <option value="deathOfJointProprietor">Death of Joint Proprietor</option>
-                    <option value="digitalRegistrationService" selected>Digital Registration Service</option>
-                    <option value="dischargeOfCharge">Discharge of a Charge</option>
-                    <option value="documentRegistrationService">Document Registration Service</option>
-                    <option value="documentView">Document View</option>
-                    <option value="enquiryByPropertyDescription">Enquiry by Property Description - Title View</option>
-                    <option value="fullSearch">Full Search</option>
-                    <option value="homeRights">Home Rights (E-HR1 Notice of home rights)</option>
-                    <option value="homeRightsSearch">Home Rights Search</option>
-                    <option value="localLandCharges">Local Land Charges</option>
-                    <option value="manageBusinessUnits">Manage Business Units</option>
-                    <option value="manageGroups">Manage Groups</option>
-                    <option value="manageUsers">Manage users</option>
-                    <option value="mapSearch">Map Search</option>
-                    <option value="messageArea">Message Area</option>
-                    <option value="Notifications">Notifications</option>
-                    <option value="officialCopyDeedsReferred">Official Copy – Deeds referred</option>
-                    <option value="officialCopyRegisterPlanCI">Official Copy – Register, Title Plan or CI</option>
-                    <option value="officialCopyRegisterHistorical">Official Copy – Register (Historical)</option>
-                    <option value="officialCopyTitlePlanHistorical">Official Copy – Title Plan (Historical)</option>
-                    <option value="officialSearchOfWholeOS1">Official Search of Whole (OS1)</option>
-                    <option value="officialSearchOfPartOS2">Official Search of Part (OS2)</option>
-                    <option value="officialSearchOfWholeOrPartWithoutPriorityOS3">Official Search of whole or part without priority (OS3)</option>
-                    <option value="pdfDownloads">PDF Downloads</option>
-                    <option value="personalDetails">Personal Details</option>
-                    <option value="registerViewHTML">Register View (HTML)</option>
-                    <option value="registerViewPDF">Register View (PDF)</option>
-                    <option value="registrationView">Registration View</option>
-                    <option value="removalOfUnilateralNotice">Removal of a Unilateral Notice (e-UN2)</option>
-                    <option value="replyToRequisition">Reply To Requisition</option>
-                    <option value="restrictions">Restrictions (Standard e-RX1)</option>
-                    <option value="searchOfTheIndexFranchisesAndManors">Search of the Index of Franchies and Manors (SIF)</option>
-                    <option value="searchOfTheIndexMap">Search of the Index Map</option>
-                    <option value="servicesRequested">Services Requested</option>
-                    <option value="statutoryCharge">Statutory Charge</option>
-                    <option value="titlePlanView">Title Plan View</option>
-                    <option value="unilateralNotice">Unilateral Notice (e-UN1)</option>
-                    <option value="vddinformation">VDD Information</option>
-                    <option value="viewMyApplications">View My Applications</option>
-                    <option value="withdrawlOfARestriction">Withdrawal of a Restriction (e-RX4)</option>
-                    <option value="withdrawlOfCaution">Withdrawl of Caution</option>
-                    <option value="withdrawlOfficialSearchWithPriority">Withdraw Official Search with Priority</option>
-                </select>
-              </div>
+          <div class="govuk-grid-column-one-third" style="margin-bottom: 30px;">
+            <label class="govuk-label form-label-bold" for="input">
+              Position 1
+            </label>
+            <select class="govuk-select selects" name="input" id="input">
+                <option value="placeholder">Select a link...</option>
+                <option value="administratorReport">Administrator Report</option>
+                <option value="agreedNotice">Agreed Notice</option>
+                <option value="alternateDespatchAddress">Alternate despatch address</option>
+                <option value="applicationEnquiry">Application Enquiry</option>
+                <option value="bankruptcySearch">Bankruptcy Search</option>
+                <option value="cancellationOfACaution">Cancellation of a Caution</option>
+                <option value="cancellationOfANotice">Cancellation of a Notice (Not Unilateral)</option>
+                <option value="cancellationOfHomeRights">Cancellation of Home rights (e-HR4)</option>
+                <option value="cancellationOfOfficialSearchOfWholeOS1">Cancellation of Official Search of Whole (OS1)</option>
+                <option value="cancellationOfOfficialSearchOfPartOS2">Cancellation of Official Search of Part (OS2)</option>
+                <option value="cancellationOfRestriction">Cancellation of restriction (e-RX3)</option>
+                <option value="cancellationOfUnilateralNotice">Cancellation of Unilateral Notice (eUN4)</option>
+                <option value="changeOfAddressForService">Change of address for service</option>
+                <option value="changeOfName">Change of Name</option>
+                <option value="changeOfPropertyDescription">Change of Property Description</option>
+                <option value="changePassword">Change Password</option>
+                <option value="createUser">Create User</option>
+                <option value="dataSynchronisationDownloads">Data Synchronisation Downloads</option>
+                <option value="dataSynchronisationEnquiry">Data Synchronisation Enquiry</option>
+                <option value="deathOfJointProprietor">Death of Joint Proprietor</option>
+                <option value="digitalRegistrationService" selected>Digital Registration Service</option>
+                <option value="dischargeOfCharge">Discharge of a Charge</option>
+                <option value="documentRegistrationService">Document Registration Service</option>
+                <option value="documentView">Document View</option>
+                <option value="enquiryByPropertyDescription">Enquiry by Property Description - Title View</option>
+                <option value="fullSearch">Full Search</option>
+                <option value="homeRights">Home Rights (E-HR1 Notice of home rights)</option>
+                <option value="homeRightsSearch">Home Rights Search</option>
+                <option value="localLandCharges">Local Land Charges</option>
+                <option value="manageBusinessUnits">Manage Business Units</option>
+                <option value="manageGroups">Manage Groups</option>
+                <option value="manageUsers">Manage users</option>
+                <option value="mapSearch">Map Search</option>
+                <option value="messageArea">Message Area</option>
+                <option value="Notifications">Notifications</option>
+                <option value="officialCopyDeedsReferred">Official Copy – Deeds referred</option>
+                <option value="officialCopyRegisterPlanCI">Official Copy – Register, Title Plan or CI</option>
+                <option value="officialCopyRegisterHistorical">Official Copy – Register (Historical)</option>
+                <option value="officialCopyTitlePlanHistorical">Official Copy – Title Plan (Historical)</option>
+                <option value="officialSearchOfWholeOS1">Official Search of Whole (OS1)</option>
+                <option value="officialSearchOfPartOS2">Official Search of Part (OS2)</option>
+                <option value="officialSearchOfWholeOrPartWithoutPriorityOS3">Official Search of whole or part without priority (OS3)</option>
+                <option value="pdfDownloads">PDF Downloads</option>
+                <option value="personalDetails">Personal Details</option>
+                <option value="registerViewHTML">Register View (HTML)</option>
+                <option value="registerViewPDF">Register View (PDF)</option>
+                <option value="registrationView">Registration View</option>
+                <option value="removalOfUnilateralNotice">Removal of a Unilateral Notice (e-UN2)</option>
+                <option value="replyToRequisition">Reply To Requisition</option>
+                <option value="restrictions">Restrictions (Standard e-RX1)</option>
+                <option value="searchOfTheIndexFranchisesAndManors">Search of the Index of Franchies and Manors (SIF)</option>
+                <option value="searchOfTheIndexMap">Search of the Index Map</option>
+                <option value="servicesRequested">Services Requested</option>
+                <option value="statutoryCharge">Statutory Charge</option>
+                <option value="titlePlanView">Title Plan View</option>
+                <option value="unilateralNotice">Unilateral Notice (e-UN1)</option>
+                <option value="vddinformation">VDD Information</option>
+                <option value="viewMyApplications">View My Applications</option>
+                <option value="withdrawlOfARestriction">Withdrawal of a Restriction (e-RX4)</option>
+                <option value="withdrawlOfCaution">Withdrawl of Caution</option>
+                <option value="withdrawlOfficialSearchWithPriority">Withdraw Official Search with Priority</option>
+            </select>
+          </div>
 
 
-              <div class="govuk-grid-column-one-third" style="margin-bottom: 30px;">
-                <label class="govuk-label form-label-bold" for="input1">
-                  Position 2
-                </label>
-                <select class="govuk-select selects" name="input1" id="input1">
-                    <option value="placeholder">Select a link...</option>
-                    <option value="administratorReport">Administrator Report</option>
-                    <option value="agreedNotice">Agreed Notice</option>
-                    <option value="alternateDespatchAddress">Alternate despatch address</option>
-                    <option value="applicationEnquiry">Application Enquiry</option>
-                    <option value="bankruptcySearch">Bankruptcy Search</option>
-                    <option value="cancellationOfACaution">Cancellation of a Caution</option>
-                    <option value="cancellationOfANotice">Cancellation of a Notice (Not Unilateral)</option>
-                    <option value="cancellationOfHomeRights">Cancellation of Home rights (e-HR4)</option>
-                    <option value="cancellationOfOfficialSearchOfWholeOS1">Cancellation of Official Search of Whole (OS1)</option>
-                    <option value="cancellationOfOfficialSearchOfPartOS2">Cancellation of Official Search of Part (OS2)</option>
-                    <option value="cancellationOfRestriction">Cancellation of restriction (e-RX3)</option>
-                    <option value="cancellationOfUnilateralNotice">Cancellation of Unilateral Notice (eUN4)</option>
-                    <option value="changeOfAddressForService">Change of address for service</option>
-                    <option value="changeOfName">Change of Name</option>
-                    <option value="changeOfPropertyDescription">Change of Property Description</option>
-                    <option value="changePassword">Change Password</option>
-                    <option value="createUser">Create User</option>
-                    <option value="dataSynchronisationDownloads">Data Synchronisation Downloads</option>
-                    <option value="dataSynchronisationEnquiry">Data Synchronisation Enquiry</option>
-                    <option value="deathOfJointProprietor">Death of Joint Proprietor</option>
-                    <option value="digitalRegistrationService">Digital Registration Service</option>
-                    <option value="dischargeOfCharge">Discharge of a Charge</option>
-                    <option value="documentRegistrationService">Document Registration Service</option>
-                    <option value="documentView">Document View</option>
-                    <option value="enquiryByPropertyDescription">Enquiry by Property Description - Title View</option>
-                    <option value="fullSearch">Full Search</option>
-                    <option value="homeRights">Home Rights (E-HR1 Notice of home rights)</option>
-                    <option value="homeRightsSearch">Home Rights Search</option>
-                    <option value="localLandCharges">Local Land Charges</option>
-                    <option value="manageBusinessUnits">Manage Business Units</option>
-                    <option value="manageGroups">Manage Groups</option>
-                    <option value="manageUsers">Manage users</option>
-                    <option value="mapSearch">Map Search</option>
-                    <option value="messageArea">Message Area</option>
-                    <option value="Notifications">Notifications</option>
-                    <option value="officialCopyDeedsReferred">Official Copy – Deeds referred</option>
-                    <option value="officialCopyRegisterPlanCI">Official Copy – Register, Title Plan or CI</option>
-                    <option value="officialCopyRegisterHistorical">Official Copy – Register (Historical)</option>
-                    <option value="officialCopyTitlePlanHistorical">Official Copy – Title Plan (Historical)</option>
-                    <option value="officialSearchOfWholeOS1">Official Search of Whole (OS1)</option>
-                    <option value="officialSearchOfPartOS2">Official Search of Part (OS2)</option>
-                    <option value="officialSearchOfWholeOrPartWithoutPriorityOS3">Official Search of whole or part without priority (OS3)</option>
-                    <option value="pdfDownloads">PDF Downloads</option>
-                    <option value="personalDetails">Personal Details</option>
-                    <option value="registerViewHTML">Register View (HTML)</option>
-                    <option value="registerViewPDF">Register View (PDF)</option>
-                    <option value="registrationView">Registration View</option>
-                    <option value="removalOfUnilateralNotice">Removal of a Unilateral Notice (e-UN2)</option>
-                    <option value="replyToRequisition">Reply To Requisition</option>
-                    <option value="restrictions">Restrictions (Standard e-RX1)</option>
-                    <option value="searchOfTheIndexFranchisesAndManors">Search of the Index of Franchies and Manors (SIF)</option>
-                    <option value="searchOfTheIndexMap">Search of the Index Map</option>
-                    <option value="servicesRequested">Services Requested</option>
-                    <option value="statutoryCharge">Statutory Charge</option>
-                    <option value="titlePlanView">Title Plan View</option>
-                    <option value="unilateralNotice">Unilateral Notice (e-UN1)</option>
-                    <option value="vddinformation">VDD Information</option>
-                    <option value="viewMyApplications" selected>View My Applications</option>
-                    <option value="withdrawlOfARestriction">Withdrawal of a Restriction (e-RX4)</option>
-                    <option value="withdrawlOfCaution">Withdrawl of Caution</option>
-                    <option value="withdrawlOfficialSearchWithPriority">Withdraw Official Search with Priority</option>
-                </select>
-              </div>
+          <div class="govuk-grid-column-one-third" style="margin-bottom: 30px;">
+            <label class="govuk-label form-label-bold" for="input1">
+              Position 2
+            </label>
+            <select class="govuk-select selects" name="input1" id="input1">
+                <option value="placeholder">Select a link...</option>
+                <option value="administratorReport">Administrator Report</option>
+                <option value="agreedNotice">Agreed Notice</option>
+                <option value="alternateDespatchAddress">Alternate despatch address</option>
+                <option value="applicationEnquiry">Application Enquiry</option>
+                <option value="bankruptcySearch">Bankruptcy Search</option>
+                <option value="cancellationOfACaution">Cancellation of a Caution</option>
+                <option value="cancellationOfANotice">Cancellation of a Notice (Not Unilateral)</option>
+                <option value="cancellationOfHomeRights">Cancellation of Home rights (e-HR4)</option>
+                <option value="cancellationOfOfficialSearchOfWholeOS1">Cancellation of Official Search of Whole (OS1)</option>
+                <option value="cancellationOfOfficialSearchOfPartOS2">Cancellation of Official Search of Part (OS2)</option>
+                <option value="cancellationOfRestriction">Cancellation of restriction (e-RX3)</option>
+                <option value="cancellationOfUnilateralNotice">Cancellation of Unilateral Notice (eUN4)</option>
+                <option value="changeOfAddressForService">Change of address for service</option>
+                <option value="changeOfName">Change of Name</option>
+                <option value="changeOfPropertyDescription">Change of Property Description</option>
+                <option value="changePassword">Change Password</option>
+                <option value="createUser">Create User</option>
+                <option value="dataSynchronisationDownloads">Data Synchronisation Downloads</option>
+                <option value="dataSynchronisationEnquiry">Data Synchronisation Enquiry</option>
+                <option value="deathOfJointProprietor">Death of Joint Proprietor</option>
+                <option value="digitalRegistrationService">Digital Registration Service</option>
+                <option value="dischargeOfCharge">Discharge of a Charge</option>
+                <option value="documentRegistrationService">Document Registration Service</option>
+                <option value="documentView">Document View</option>
+                <option value="enquiryByPropertyDescription">Enquiry by Property Description - Title View</option>
+                <option value="fullSearch">Full Search</option>
+                <option value="homeRights">Home Rights (E-HR1 Notice of home rights)</option>
+                <option value="homeRightsSearch">Home Rights Search</option>
+                <option value="localLandCharges">Local Land Charges</option>
+                <option value="manageBusinessUnits">Manage Business Units</option>
+                <option value="manageGroups">Manage Groups</option>
+                <option value="manageUsers">Manage users</option>
+                <option value="mapSearch">Map Search</option>
+                <option value="messageArea">Message Area</option>
+                <option value="Notifications">Notifications</option>
+                <option value="officialCopyDeedsReferred">Official Copy – Deeds referred</option>
+                <option value="officialCopyRegisterPlanCI">Official Copy – Register, Title Plan or CI</option>
+                <option value="officialCopyRegisterHistorical">Official Copy – Register (Historical)</option>
+                <option value="officialCopyTitlePlanHistorical">Official Copy – Title Plan (Historical)</option>
+                <option value="officialSearchOfWholeOS1">Official Search of Whole (OS1)</option>
+                <option value="officialSearchOfPartOS2">Official Search of Part (OS2)</option>
+                <option value="officialSearchOfWholeOrPartWithoutPriorityOS3">Official Search of whole or part without priority (OS3)</option>
+                <option value="pdfDownloads">PDF Downloads</option>
+                <option value="personalDetails">Personal Details</option>
+                <option value="registerViewHTML">Register View (HTML)</option>
+                <option value="registerViewPDF">Register View (PDF)</option>
+                <option value="registrationView">Registration View</option>
+                <option value="removalOfUnilateralNotice">Removal of a Unilateral Notice (e-UN2)</option>
+                <option value="replyToRequisition">Reply To Requisition</option>
+                <option value="restrictions">Restrictions (Standard e-RX1)</option>
+                <option value="searchOfTheIndexFranchisesAndManors">Search of the Index of Franchies and Manors (SIF)</option>
+                <option value="searchOfTheIndexMap">Search of the Index Map</option>
+                <option value="servicesRequested">Services Requested</option>
+                <option value="statutoryCharge">Statutory Charge</option>
+                <option value="titlePlanView">Title Plan View</option>
+                <option value="unilateralNotice">Unilateral Notice (e-UN1)</option>
+                <option value="vddinformation">VDD Information</option>
+                <option value="viewMyApplications" selected>View My Applications</option>
+                <option value="withdrawlOfARestriction">Withdrawal of a Restriction (e-RX4)</option>
+                <option value="withdrawlOfCaution">Withdrawl of Caution</option>
+                <option value="withdrawlOfficialSearchWithPriority">Withdraw Official Search with Priority</option>
+            </select>
+          </div>
 
 
-              <div class="govuk-grid-column-one-third" style="margin-bottom: 30px;">
-                <label class="govuk-label form-label-bold" for="input2">
-                  Position 3
-                </label>
-                <select class="govuk-select selects" name="input2" id="input2">
-                    <option value="placeholder">Select a link...</option>
-                    <option value="administratorReport">Administrator Report</option>
-                    <option value="agreedNotice">Agreed Notice</option>
-                    <option value="alternateDespatchAddress">Alternate despatch address</option>
-                    <option value="applicationEnquiry">Application Enquiry</option>
-                    <option value="bankruptcySearch">Bankruptcy Search</option>
-                    <option value="cancellationOfACaution">Cancellation of a Caution</option>
-                    <option value="cancellationOfANotice">Cancellation of a Notice (Not Unilateral)</option>
-                    <option value="cancellationOfHomeRights">Cancellation of Home rights (e-HR4)</option>
-                    <option value="cancellationOfOfficialSearchOfWholeOS1">Cancellation of Official Search of Whole (OS1)</option>
-                    <option value="cancellationOfOfficialSearchOfPartOS2">Cancellation of Official Search of Part (OS2)</option>
-                    <option value="cancellationOfRestriction">Cancellation of restriction (e-RX3)</option>
-                    <option value="cancellationOfUnilateralNotice">Cancellation of Unilateral Notice (eUN4)</option>
-                    <option value="changeOfAddressForService">Change of address for service</option>
-                    <option value="changeOfName">Change of Name</option>
-                    <option value="changeOfPropertyDescription">Change of Property Description</option>
-                    <option value="changePassword">Change Password</option>
-                    <option value="createUser">Create User</option>
-                    <option value="dataSynchronisationDownloads">Data Synchronisation Downloads</option>
-                    <option value="dataSynchronisationEnquiry">Data Synchronisation Enquiry</option>
-                    <option value="deathOfJointProprietor">Death of Joint Proprietor</option>
-                    <option value="digitalRegistrationService">Digital Registration Service</option>
-                    <option value="dischargeOfCharge">Discharge of a Charge</option>
-                    <option value="documentRegistrationService">Document Registration Service</option>
-                    <option value="documentView">Document View</option>
-                    <option value="enquiryByPropertyDescription">Enquiry by Property Description - Title View</option>
-                    <option value="fullSearch">Full Search</option>
-                    <option value="homeRights">Home Rights (E-HR1 Notice of home rights)</option>
-                    <option value="homeRightsSearch">Home Rights Search</option>
-                    <option value="localLandCharges">Local Land Charges</option>
-                    <option value="manageBusinessUnits">Manage Business Units</option>
-                    <option value="manageGroups">Manage Groups</option>
-                    <option value="manageUsers">Manage users</option>
-                    <option value="mapSearch">Map Search</option>
-                    <option value="messageArea">Message Area</option>
-                    <option value="Notifications">Notifications</option>
-                    <option value="officialCopyDeedsReferred">Official Copy – Deeds referred</option>
-                    <option value="officialCopyRegisterPlanCI">Official Copy – Register, Title Plan or CI</option>
-                    <option value="officialCopyRegisterHistorical">Official Copy – Register (Historical)</option>
-                    <option value="officialCopyTitlePlanHistorical">Official Copy – Title Plan (Historical)</option>
-                    <option value="officialSearchOfWholeOS1">Official Search of Whole (OS1)</option>
-                    <option value="officialSearchOfPartOS2">Official Search of Part (OS2)</option>
-                    <option value="officialSearchOfWholeOrPartWithoutPriorityOS3">Official Search of whole or part without priority (OS3)</option>
-                    <option value="pdfDownloads" selected>PDF Downloads</option>
-                    <option value="personalDetails">Personal Details</option>
-                    <option value="registerViewHTML">Register View (HTML)</option>
-                    <option value="registerViewPDF">Register View (PDF)</option>
-                    <option value="registrationView">Registration View</option>
-                    <option value="removalOfUnilateralNotice">Removal of a Unilateral Notice (e-UN2)</option>
-                    <option value="replyToRequisition">Reply To Requisition</option>
-                    <option value="restrictions">Restrictions (Standard e-RX1)</option>
-                    <option value="searchOfTheIndexFranchisesAndManors">Search of the Index of Franchies and Manors (SIF)</option>
-                    <option value="searchOfTheIndexMap">Search of the Index Map</option>
-                    <option value="servicesRequested">Services Requested</option>
-                    <option value="statutoryCharge">Statutory Charge</option>
-                    <option value="titlePlanView">Title Plan View</option>
-                    <option value="unilateralNotice">Unilateral Notice (e-UN1)</option>
-                    <option value="vddinformation">VDD Information</option>
-                    <option value="viewMyApplications">View My Applications</option>
-                    <option value="withdrawlOfARestriction">Withdrawal of a Restriction (e-RX4)</option>
-                    <option value="withdrawlOfCaution">Withdrawl of Caution</option>
-                    <option value="withdrawlOfficialSearchWithPriority">Withdraw Official Search with Priority</option>
-                </select>
-              </div>
+          <div class="govuk-grid-column-one-third" style="margin-bottom: 30px;">
+            <label class="govuk-label form-label-bold" for="input2">
+              Position 3
+            </label>
+            <select class="govuk-select selects" name="input2" id="input2">
+                <option value="placeholder">Select a link...</option>
+                <option value="administratorReport">Administrator Report</option>
+                <option value="agreedNotice">Agreed Notice</option>
+                <option value="alternateDespatchAddress">Alternate despatch address</option>
+                <option value="applicationEnquiry">Application Enquiry</option>
+                <option value="bankruptcySearch">Bankruptcy Search</option>
+                <option value="cancellationOfACaution">Cancellation of a Caution</option>
+                <option value="cancellationOfANotice">Cancellation of a Notice (Not Unilateral)</option>
+                <option value="cancellationOfHomeRights">Cancellation of Home rights (e-HR4)</option>
+                <option value="cancellationOfOfficialSearchOfWholeOS1">Cancellation of Official Search of Whole (OS1)</option>
+                <option value="cancellationOfOfficialSearchOfPartOS2">Cancellation of Official Search of Part (OS2)</option>
+                <option value="cancellationOfRestriction">Cancellation of restriction (e-RX3)</option>
+                <option value="cancellationOfUnilateralNotice">Cancellation of Unilateral Notice (eUN4)</option>
+                <option value="changeOfAddressForService">Change of address for service</option>
+                <option value="changeOfName">Change of Name</option>
+                <option value="changeOfPropertyDescription">Change of Property Description</option>
+                <option value="changePassword">Change Password</option>
+                <option value="createUser">Create User</option>
+                <option value="dataSynchronisationDownloads">Data Synchronisation Downloads</option>
+                <option value="dataSynchronisationEnquiry">Data Synchronisation Enquiry</option>
+                <option value="deathOfJointProprietor">Death of Joint Proprietor</option>
+                <option value="digitalRegistrationService">Digital Registration Service</option>
+                <option value="dischargeOfCharge">Discharge of a Charge</option>
+                <option value="documentRegistrationService">Document Registration Service</option>
+                <option value="documentView">Document View</option>
+                <option value="enquiryByPropertyDescription">Enquiry by Property Description - Title View</option>
+                <option value="fullSearch">Full Search</option>
+                <option value="homeRights">Home Rights (E-HR1 Notice of home rights)</option>
+                <option value="homeRightsSearch">Home Rights Search</option>
+                <option value="localLandCharges">Local Land Charges</option>
+                <option value="manageBusinessUnits">Manage Business Units</option>
+                <option value="manageGroups">Manage Groups</option>
+                <option value="manageUsers">Manage users</option>
+                <option value="mapSearch">Map Search</option>
+                <option value="messageArea">Message Area</option>
+                <option value="Notifications">Notifications</option>
+                <option value="officialCopyDeedsReferred">Official Copy – Deeds referred</option>
+                <option value="officialCopyRegisterPlanCI">Official Copy – Register, Title Plan or CI</option>
+                <option value="officialCopyRegisterHistorical">Official Copy – Register (Historical)</option>
+                <option value="officialCopyTitlePlanHistorical">Official Copy – Title Plan (Historical)</option>
+                <option value="officialSearchOfWholeOS1">Official Search of Whole (OS1)</option>
+                <option value="officialSearchOfPartOS2">Official Search of Part (OS2)</option>
+                <option value="officialSearchOfWholeOrPartWithoutPriorityOS3">Official Search of whole or part without priority (OS3)</option>
+                <option value="pdfDownloads" selected>PDF Downloads</option>
+                <option value="personalDetails">Personal Details</option>
+                <option value="registerViewHTML">Register View (HTML)</option>
+                <option value="registerViewPDF">Register View (PDF)</option>
+                <option value="registrationView">Registration View</option>
+                <option value="removalOfUnilateralNotice">Removal of a Unilateral Notice (e-UN2)</option>
+                <option value="replyToRequisition">Reply To Requisition</option>
+                <option value="restrictions">Restrictions (Standard e-RX1)</option>
+                <option value="searchOfTheIndexFranchisesAndManors">Search of the Index of Franchies and Manors (SIF)</option>
+                <option value="searchOfTheIndexMap">Search of the Index Map</option>
+                <option value="servicesRequested">Services Requested</option>
+                <option value="statutoryCharge">Statutory Charge</option>
+                <option value="titlePlanView">Title Plan View</option>
+                <option value="unilateralNotice">Unilateral Notice (e-UN1)</option>
+                <option value="vddinformation">VDD Information</option>
+                <option value="viewMyApplications">View My Applications</option>
+                <option value="withdrawlOfARestriction">Withdrawal of a Restriction (e-RX4)</option>
+                <option value="withdrawlOfCaution">Withdrawl of Caution</option>
+                <option value="withdrawlOfficialSearchWithPriority">Withdraw Official Search with Priority</option>
+            </select>
+          </div>
 
 
-              <div class="govuk-grid-column-one-third" style="margin-bottom: 30px;">
-                <label class="govuk-label form-label-bold" for="input3">
-                  Position 4
-                </label>
-                <select class="govuk-select selects" name="input3" id="input3">
-                    <option value="placeholder">Select a link...</option>
-                    <option value="administratorReport">Administrator Report</option>
-                    <option value="agreedNotice">Agreed Notice</option>
-                    <option value="alternateDespatchAddress">Alternate despatch address</option>
-                    <option value="applicationEnquiry">Application Enquiry</option>
-                    <option value="bankruptcySearch">Bankruptcy Search</option>
-                    <option value="cancellationOfACaution">Cancellation of a Caution</option>
-                    <option value="cancellationOfANotice">Cancellation of a Notice (Not Unilateral)</option>
-                    <option value="cancellationOfHomeRights">Cancellation of Home rights (e-HR4)</option>
-                    <option value="cancellationOfOfficialSearchOfWholeOS1">Cancellation of Official Search of Whole (OS1)</option>
-                    <option value="cancellationOfOfficialSearchOfPartOS2">Cancellation of Official Search of Part (OS2)</option>
-                    <option value="cancellationOfRestriction">Cancellation of restriction (e-RX3)</option>
-                    <option value="cancellationOfUnilateralNotice">Cancellation of Unilateral Notice (eUN4)</option>
-                    <option value="changeOfAddressForService">Change of address for service</option>
-                    <option value="changeOfName">Change of Name</option>
-                    <option value="changeOfPropertyDescription">Change of Property Description</option>
-                    <option value="changePassword">Change Password</option>
-                    <option value="createUser">Create User</option>
-                    <option value="dataSynchronisationDownloads">Data Synchronisation Downloads</option>
-                    <option value="dataSynchronisationEnquiry">Data Synchronisation Enquiry</option>
-                    <option value="deathOfJointProprietor">Death of Joint Proprietor</option>
-                    <option value="digitalRegistrationService">Digital Registration Service</option>
-                    <option value="dischargeOfCharge">Discharge of a Charge</option>
-                    <option value="documentRegistrationService">Document Registration Service</option>
-                    <option value="documentView">Document View</option>
-                    <option value="enquiryByPropertyDescription">Enquiry by Property Description - Title View</option>
-                    <option value="fullSearch">Full Search</option>
-                    <option value="homeRights">Home Rights (E-HR1 Notice of home rights)</option>
-                    <option value="homeRightsSearch">Home Rights Search</option>
-                    <option value="localLandCharges">Local Land Charges</option>
-                    <option value="manageBusinessUnits">Manage Business Units</option>
-                    <option value="manageGroups">Manage Groups</option>
-                    <option value="manageUsers" selected>Manage users</option>
-                    <option value="mapSearch">Map Search</option>
-                    <option value="messageArea">Message Area</option>
-                    <option value="Notifications">Notifications</option>
-                    <option value="officialCopyDeedsReferred">Official Copy – Deeds referred</option>
-                    <option value="officialCopyRegisterPlanCI">Official Copy – Register, Title Plan or CI</option>
-                    <option value="officialCopyRegisterHistorical">Official Copy – Register (Historical)</option>
-                    <option value="officialCopyTitlePlanHistorical">Official Copy – Title Plan (Historical)</option>
-                    <option value="officialSearchOfWholeOS1">Official Search of Whole (OS1)</option>
-                    <option value="officialSearchOfPartOS2">Official Search of Part (OS2)</option>
-                    <option value="officialSearchOfWholeOrPartWithoutPriorityOS3">Official Search of whole or part without priority (OS3)</option>
-                    <option value="pdfDownloads">PDF Downloads</option>
-                    <option value="personalDetails">Personal Details</option>
-                    <option value="registerViewHTML">Register View (HTML)</option>
-                    <option value="registerViewPDF">Register View (PDF)</option>
-                    <option value="registrationView">Registration View</option>
-                    <option value="removalOfUnilateralNotice">Removal of a Unilateral Notice (e-UN2)</option>
-                    <option value="replyToRequisition">Reply To Requisition</option>
-                    <option value="restrictions">Restrictions (Standard e-RX1)</option>
-                    <option value="searchOfTheIndexFranchisesAndManors">Search of the Index of Franchies and Manors (SIF)</option>
-                    <option value="searchOfTheIndexMap">Search of the Index Map</option>
-                    <option value="servicesRequested">Services Requested</option>
-                    <option value="statutoryCharge">Statutory Charge</option>
-                    <option value="titlePlanView">Title Plan View</option>
-                    <option value="unilateralNotice">Unilateral Notice (e-UN1)</option>
-                    <option value="vddinformation">VDD Information</option>
-                    <option value="viewMyApplications">View My Applications</option>
-                    <option value="withdrawlOfARestriction">Withdrawal of a Restriction (e-RX4)</option>
-                    <option value="withdrawlOfCaution">Withdrawl of Caution</option>
-                    <option value="withdrawlOfficialSearchWithPriority">Withdraw Official Search with Priority</option>
-                </select>
-              </div>
+          <div class="govuk-grid-column-one-third" style="margin-bottom: 30px;">
+            <label class="govuk-label form-label-bold" for="input3">
+              Position 4
+            </label>
+            <select class="govuk-select selects" name="input3" id="input3">
+                <option value="placeholder">Select a link...</option>
+                <option value="administratorReport">Administrator Report</option>
+                <option value="agreedNotice">Agreed Notice</option>
+                <option value="alternateDespatchAddress">Alternate despatch address</option>
+                <option value="applicationEnquiry">Application Enquiry</option>
+                <option value="bankruptcySearch">Bankruptcy Search</option>
+                <option value="cancellationOfACaution">Cancellation of a Caution</option>
+                <option value="cancellationOfANotice">Cancellation of a Notice (Not Unilateral)</option>
+                <option value="cancellationOfHomeRights">Cancellation of Home rights (e-HR4)</option>
+                <option value="cancellationOfOfficialSearchOfWholeOS1">Cancellation of Official Search of Whole (OS1)</option>
+                <option value="cancellationOfOfficialSearchOfPartOS2">Cancellation of Official Search of Part (OS2)</option>
+                <option value="cancellationOfRestriction">Cancellation of restriction (e-RX3)</option>
+                <option value="cancellationOfUnilateralNotice">Cancellation of Unilateral Notice (eUN4)</option>
+                <option value="changeOfAddressForService">Change of address for service</option>
+                <option value="changeOfName">Change of Name</option>
+                <option value="changeOfPropertyDescription">Change of Property Description</option>
+                <option value="changePassword">Change Password</option>
+                <option value="createUser">Create User</option>
+                <option value="dataSynchronisationDownloads">Data Synchronisation Downloads</option>
+                <option value="dataSynchronisationEnquiry">Data Synchronisation Enquiry</option>
+                <option value="deathOfJointProprietor">Death of Joint Proprietor</option>
+                <option value="digitalRegistrationService">Digital Registration Service</option>
+                <option value="dischargeOfCharge">Discharge of a Charge</option>
+                <option value="documentRegistrationService">Document Registration Service</option>
+                <option value="documentView">Document View</option>
+                <option value="enquiryByPropertyDescription">Enquiry by Property Description - Title View</option>
+                <option value="fullSearch">Full Search</option>
+                <option value="homeRights">Home Rights (E-HR1 Notice of home rights)</option>
+                <option value="homeRightsSearch">Home Rights Search</option>
+                <option value="localLandCharges">Local Land Charges</option>
+                <option value="manageBusinessUnits">Manage Business Units</option>
+                <option value="manageGroups">Manage Groups</option>
+                <option value="manageUsers" selected>Manage users</option>
+                <option value="mapSearch">Map Search</option>
+                <option value="messageArea">Message Area</option>
+                <option value="Notifications">Notifications</option>
+                <option value="officialCopyDeedsReferred">Official Copy – Deeds referred</option>
+                <option value="officialCopyRegisterPlanCI">Official Copy – Register, Title Plan or CI</option>
+                <option value="officialCopyRegisterHistorical">Official Copy – Register (Historical)</option>
+                <option value="officialCopyTitlePlanHistorical">Official Copy – Title Plan (Historical)</option>
+                <option value="officialSearchOfWholeOS1">Official Search of Whole (OS1)</option>
+                <option value="officialSearchOfPartOS2">Official Search of Part (OS2)</option>
+                <option value="officialSearchOfWholeOrPartWithoutPriorityOS3">Official Search of whole or part without priority (OS3)</option>
+                <option value="pdfDownloads">PDF Downloads</option>
+                <option value="personalDetails">Personal Details</option>
+                <option value="registerViewHTML">Register View (HTML)</option>
+                <option value="registerViewPDF">Register View (PDF)</option>
+                <option value="registrationView">Registration View</option>
+                <option value="removalOfUnilateralNotice">Removal of a Unilateral Notice (e-UN2)</option>
+                <option value="replyToRequisition">Reply To Requisition</option>
+                <option value="restrictions">Restrictions (Standard e-RX1)</option>
+                <option value="searchOfTheIndexFranchisesAndManors">Search of the Index of Franchies and Manors (SIF)</option>
+                <option value="searchOfTheIndexMap">Search of the Index Map</option>
+                <option value="servicesRequested">Services Requested</option>
+                <option value="statutoryCharge">Statutory Charge</option>
+                <option value="titlePlanView">Title Plan View</option>
+                <option value="unilateralNotice">Unilateral Notice (e-UN1)</option>
+                <option value="vddinformation">VDD Information</option>
+                <option value="viewMyApplications">View My Applications</option>
+                <option value="withdrawlOfARestriction">Withdrawal of a Restriction (e-RX4)</option>
+                <option value="withdrawlOfCaution">Withdrawl of Caution</option>
+                <option value="withdrawlOfficialSearchWithPriority">Withdraw Official Search with Priority</option>
+            </select>
+          </div>
 
 
-              <div class="govuk-grid-column-one-third" style="margin-bottom: 30px;">
-                <label class="govuk-label form-label-bold" for="input4">
-                  Position 5
-                </label>
-                <select class="govuk-select selects" name="input4" id="input4">
-                    <option value="placeholder">Select a link...</option>
-                    <option value="administratorReport">Administrator Report</option>
-                    <option value="agreedNotice">Agreed Notice</option>
-                    <option value="alternateDespatchAddress">Alternate despatch address</option>
-                    <option value="applicationEnquiry">Application Enquiry</option>
-                    <option value="bankruptcySearch">Bankruptcy Search</option>
-                    <option value="cancellationOfACaution">Cancellation of a Caution</option>
-                    <option value="cancellationOfANotice">Cancellation of a Notice (Not Unilateral)</option>
-                    <option value="cancellationOfHomeRights">Cancellation of Home rights (e-HR4)</option>
-                    <option value="cancellationOfOfficialSearchOfWholeOS1">Cancellation of Official Search of Whole (OS1)</option>
-                    <option value="cancellationOfOfficialSearchOfPartOS2">Cancellation of Official Search of Part (OS2)</option>
-                    <option value="cancellationOfRestriction">Cancellation of restriction (e-RX3)</option>
-                    <option value="cancellationOfUnilateralNotice">Cancellation of Unilateral Notice (eUN4)</option>
-                    <option value="changeOfAddressForService">Change of address for service</option>
-                    <option value="changeOfName">Change of Name</option>
-                    <option value="changeOfPropertyDescription">Change of Property Description</option>
-                    <option value="changePassword">Change Password</option>
-                    <option value="createUser">Create User</option>
-                    <option value="dataSynchronisationDownloads">Data Synchronisation Downloads</option>
-                    <option value="dataSynchronisationEnquiry">Data Synchronisation Enquiry</option>
-                    <option value="deathOfJointProprietor">Death of Joint Proprietor</option>
-                    <option value="digitalRegistrationService">Digital Registration Service</option>
-                    <option value="dischargeOfCharge">Discharge of a Charge</option>
-                    <option value="documentRegistrationService">Document Registration Service</option>
-                    <option value="documentView">Document View</option>
-                    <option value="enquiryByPropertyDescription">Enquiry by Property Description - Title View</option>
-                    <option value="fullSearch">Full Search</option>
-                    <option value="homeRights">Home Rights (E-HR1 Notice of home rights)</option>
-                    <option value="homeRightsSearch">Home Rights Search</option>
-                    <option value="localLandCharges">Local Land Charges</option>
-                    <option value="manageBusinessUnits">Manage Business Units</option>
-                    <option value="manageGroups">Manage Groups</option>
-                    <option value="manageUsers">Manage users</option>
-                    <option value="mapSearch"Map Search</option>
-                    <option value="messageArea">Message Area</option>
-                    <option value="Notifications">Notifications</option>
-                    <option value="officialCopyDeedsReferred">Official Copy – Deeds referred</option>
-                    <option value="officialCopyRegisterPlanCI">Official Copy – Register, Title Plan or CI</option>
-                    <option value="officialCopyRegisterHistorical">Official Copy – Register (Historical)</option>
-                    <option value="officialCopyTitlePlanHistorical">Official Copy – Title Plan (Historical)</option>
-                    <option value="officialSearchOfWholeOS1">Official Search of Whole (OS1)</option>
-                    <option value="officialSearchOfPartOS2" selected>Official Search of Part (OS2)</option>
-                    <option value="officialSearchOfWholeOrPartWithoutPriorityOS3">Official Search of whole or part without priority (OS3)</option>
-                    <option value="pdfDownloads">PDF Downloads</option>
-                    <option value="personalDetails">Personal Details</option>
-                    <option value="registerViewHTML">Register View (HTML)</option>
-                    <option value="registerViewPDF">Register View (PDF)</option>
-                    <option value="registrationView">Registration View</option>
-                    <option value="removalOfUnilateralNotice">Removal of a Unilateral Notice (e-UN2)</option>
-                    <option value="replyToRequisition">Reply To Requisition</option>
-                    <option value="restrictions">Restrictions (Standard e-RX1)</option>
-                    <option value="searchOfTheIndexFranchisesAndManors">Search of the Index of Franchies and Manors (SIF)</option>
-                    <option value="searchOfTheIndexMap">Search of the Index Map</option>
-                    <option value="servicesRequested">Services Requested</option>
-                    <option value="statutoryCharge">Statutory Charge</option>
-                    <option value="titlePlanView">Title Plan View</option>
-                    <option value="unilateralNotice">Unilateral Notice (e-UN1)</option>
-                    <option value="vddinformation">VDD Information</option>
-                    <option value="viewMyApplications">View My Applications</option>
-                    <option value="withdrawlOfARestriction">Withdrawal of a Restriction (e-RX4)</option>
-                    <option value="withdrawlOfCaution">Withdrawl of Caution</option>
-                    <option value="withdrawlOfficialSearchWithPriority">Withdraw Official Search with Priority</option>
-                </select>
-              </div>
+          <div class="govuk-grid-column-one-third" style="margin-bottom: 30px;">
+            <label class="govuk-label form-label-bold" for="input4">
+              Position 5
+            </label>
+            <select class="govuk-select selects" name="input4" id="input4">
+                <option value="placeholder">Select a link...</option>
+                <option value="administratorReport">Administrator Report</option>
+                <option value="agreedNotice">Agreed Notice</option>
+                <option value="alternateDespatchAddress">Alternate despatch address</option>
+                <option value="applicationEnquiry">Application Enquiry</option>
+                <option value="bankruptcySearch">Bankruptcy Search</option>
+                <option value="cancellationOfACaution">Cancellation of a Caution</option>
+                <option value="cancellationOfANotice">Cancellation of a Notice (Not Unilateral)</option>
+                <option value="cancellationOfHomeRights">Cancellation of Home rights (e-HR4)</option>
+                <option value="cancellationOfOfficialSearchOfWholeOS1">Cancellation of Official Search of Whole (OS1)</option>
+                <option value="cancellationOfOfficialSearchOfPartOS2">Cancellation of Official Search of Part (OS2)</option>
+                <option value="cancellationOfRestriction">Cancellation of restriction (e-RX3)</option>
+                <option value="cancellationOfUnilateralNotice">Cancellation of Unilateral Notice (eUN4)</option>
+                <option value="changeOfAddressForService">Change of address for service</option>
+                <option value="changeOfName">Change of Name</option>
+                <option value="changeOfPropertyDescription">Change of Property Description</option>
+                <option value="changePassword">Change Password</option>
+                <option value="createUser">Create User</option>
+                <option value="dataSynchronisationDownloads">Data Synchronisation Downloads</option>
+                <option value="dataSynchronisationEnquiry">Data Synchronisation Enquiry</option>
+                <option value="deathOfJointProprietor">Death of Joint Proprietor</option>
+                <option value="digitalRegistrationService">Digital Registration Service</option>
+                <option value="dischargeOfCharge">Discharge of a Charge</option>
+                <option value="documentRegistrationService">Document Registration Service</option>
+                <option value="documentView">Document View</option>
+                <option value="enquiryByPropertyDescription">Enquiry by Property Description - Title View</option>
+                <option value="fullSearch">Full Search</option>
+                <option value="homeRights">Home Rights (E-HR1 Notice of home rights)</option>
+                <option value="homeRightsSearch">Home Rights Search</option>
+                <option value="localLandCharges">Local Land Charges</option>
+                <option value="manageBusinessUnits">Manage Business Units</option>
+                <option value="manageGroups">Manage Groups</option>
+                <option value="manageUsers">Manage users</option>
+                <option value="mapSearch"Map Search</option>
+                <option value="messageArea">Message Area</option>
+                <option value="Notifications">Notifications</option>
+                <option value="officialCopyDeedsReferred">Official Copy – Deeds referred</option>
+                <option value="officialCopyRegisterPlanCI">Official Copy – Register, Title Plan or CI</option>
+                <option value="officialCopyRegisterHistorical">Official Copy – Register (Historical)</option>
+                <option value="officialCopyTitlePlanHistorical">Official Copy – Title Plan (Historical)</option>
+                <option value="officialSearchOfWholeOS1">Official Search of Whole (OS1)</option>
+                <option value="officialSearchOfPartOS2" selected>Official Search of Part (OS2)</option>
+                <option value="officialSearchOfWholeOrPartWithoutPriorityOS3">Official Search of whole or part without priority (OS3)</option>
+                <option value="pdfDownloads">PDF Downloads</option>
+                <option value="personalDetails">Personal Details</option>
+                <option value="registerViewHTML">Register View (HTML)</option>
+                <option value="registerViewPDF">Register View (PDF)</option>
+                <option value="registrationView">Registration View</option>
+                <option value="removalOfUnilateralNotice">Removal of a Unilateral Notice (e-UN2)</option>
+                <option value="replyToRequisition">Reply To Requisition</option>
+                <option value="restrictions">Restrictions (Standard e-RX1)</option>
+                <option value="searchOfTheIndexFranchisesAndManors">Search of the Index of Franchies and Manors (SIF)</option>
+                <option value="searchOfTheIndexMap">Search of the Index Map</option>
+                <option value="servicesRequested">Services Requested</option>
+                <option value="statutoryCharge">Statutory Charge</option>
+                <option value="titlePlanView">Title Plan View</option>
+                <option value="unilateralNotice">Unilateral Notice (e-UN1)</option>
+                <option value="vddinformation">VDD Information</option>
+                <option value="viewMyApplications">View My Applications</option>
+                <option value="withdrawlOfARestriction">Withdrawal of a Restriction (e-RX4)</option>
+                <option value="withdrawlOfCaution">Withdrawl of Caution</option>
+                <option value="withdrawlOfficialSearchWithPriority">Withdraw Official Search with Priority</option>
+            </select>
+          </div>
 
 
-              <div class="govuk-grid-column-one-third" style="margin-bottom: 30px;">
-                <label class="govuk-label form-label-bold" for="input5">
-                  Position 6
-                </label>
-                <select class="govuk-select selects" name="input5" id="input5">
-                    <option value="placeholder">Select a link...</option>
-                    <option value="administratorReport">Administrator Report</option>
-                    <option value="agreedNotice">Agreed Notice</option>
-                    <option value="alternateDespatchAddress">Alternate despatch address</option>
-                    <option value="applicationEnquiry">Application Enquiry</option>
-                    <option value="bankruptcySearch">Bankruptcy Search</option>
-                    <option value="cancellationOfACaution">Cancellation of a Caution</option>
-                    <option value="cancellationOfANotice">Cancellation of a Notice (Not Unilateral)</option>
-                    <option value="cancellationOfHomeRights">Cancellation of Home rights (e-HR4)</option>
-                    <option value="cancellationOfOfficialSearchOfWholeOS1">Cancellation of Official Search of Whole (OS1)</option>
-                    <option value="cancellationOfOfficialSearchOfPartOS2">Cancellation of Official Search of Part (OS2)</option>
-                    <option value="cancellationOfRestriction">Cancellation of restriction (e-RX3)</option>
-                    <option value="cancellationOfUnilateralNotice">Cancellation of Unilateral Notice (eUN4)</option>
-                    <option value="changeOfAddressForService">Change of address for service</option>
-                    <option value="changeOfName">Change of Name</option>
-                    <option value="changeOfPropertyDescription">Change of Property Description</option>
-                    <option value="changePassword">Change Password</option>
-                    <option value="createUser">Create User</option>
-                    <option value="dataSynchronisationDownloads">Data Synchronisation Downloads</option>
-                    <option value="dataSynchronisationEnquiry">Data Synchronisation Enquiry</option>
-                    <option value="deathOfJointProprietor">Death of Joint Proprietor</option>
-                    <option value="digitalRegistrationService">Digital Registration Service</option>
-                    <option value="dischargeOfCharge">Discharge of a Charge</option>
-                    <option value="documentRegistrationService">Document Registration Service</option>
-                    <option value="documentView">Document View</option>
-                    <option value="enquiryByPropertyDescription">Enquiry by Property Description - Title View</option>
-                    <option value="fullSearch">Full Search</option>
-                    <option value="homeRights">Home Rights (E-HR1 Notice of home rights)</option>
-                    <option value="homeRightsSearch">Home Rights Search</option>
-                    <option value="localLandCharges">Local Land Charges</option>
-                    <option value="manageBusinessUnits">Manage Business Units</option>
-                    <option value="manageGroups">Manage Groups</option>
-                    <option value="manageUsers">Manage users</option>
-                    <option value="mapSearch" selected>Map Search</option>
-                    <option value="messageArea">Message Area</option>
-                    <option value="Notifications">Notifications</option>
-                    <option value="officialCopyDeedsReferred">Official Copy – Deeds referred</option>
-                    <option value="officialCopyRegisterPlanCI">Official Copy – Register, Title Plan or CI</option>
-                    <option value="officialCopyRegisterHistorical">Official Copy – Register (Historical)</option>
-                    <option value="officialCopyTitlePlanHistorical">Official Copy – Title Plan (Historical)</option>
-                    <option value="officialSearchOfWholeOS1">Official Search of Whole (OS1)</option>
-                    <option value="officialSearchOfPartOS2">Official Search of Part (OS2)</option>
-                    <option value="officialSearchOfWholeOrPartWithoutPriorityOS3">Official Search of whole or part without priority (OS3)</option>
-                    <option value="pdfDownloads">PDF Downloads</option>
-                    <option value="personalDetails">Personal Details</option>
-                    <option value="registerViewHTML">Register View (HTML)</option>
-                    <option value="registerViewPDF">Register View (PDF)</option>
-                    <option value="registrationView">Registration View</option>
-                    <option value="removalOfUnilateralNotice">Removal of a Unilateral Notice (e-UN2)</option>
-                    <option value="replyToRequisition">Reply To Requisition</option>
-                    <option value="restrictions">Restrictions (Standard e-RX1)</option>
-                    <option value="searchOfTheIndexFranchisesAndManors">Search of the Index of Franchies and Manors (SIF)</option>
-                    <option value="searchOfTheIndexMap">Search of the Index Map</option>
-                    <option value="servicesRequested">Services Requested</option>
-                    <option value="statutoryCharge">Statutory Charge</option>
-                    <option value="titlePlanView">Title Plan View</option>
-                    <option value="unilateralNotice">Unilateral Notice (e-UN1)</option>
-                    <option value="vddinformation">VDD Information</option>
-                    <option value="viewMyApplications">View My Applications</option>
-                    <option value="withdrawlOfARestriction">Withdrawal of a Restriction (e-RX4)</option>
-                    <option value="withdrawlOfCaution">Withdrawl of Caution</option>
-                    <option value="withdrawlOfficialSearchWithPriority">Withdraw Official Search with Priority</option>
-      
-                </select>
-              </div>
+          <div class="govuk-grid-column-one-third" style="margin-bottom: 30px;">
+            <label class="govuk-label form-label-bold" for="input5">
+              Position 6
+            </label>
+            <select class="govuk-select selects" name="input5" id="input5">
+                <option value="placeholder">Select a link...</option>
+                <option value="administratorReport">Administrator Report</option>
+                <option value="agreedNotice">Agreed Notice</option>
+                <option value="alternateDespatchAddress">Alternate despatch address</option>
+                <option value="applicationEnquiry">Application Enquiry</option>
+                <option value="bankruptcySearch">Bankruptcy Search</option>
+                <option value="cancellationOfACaution">Cancellation of a Caution</option>
+                <option value="cancellationOfANotice">Cancellation of a Notice (Not Unilateral)</option>
+                <option value="cancellationOfHomeRights">Cancellation of Home rights (e-HR4)</option>
+                <option value="cancellationOfOfficialSearchOfWholeOS1">Cancellation of Official Search of Whole (OS1)</option>
+                <option value="cancellationOfOfficialSearchOfPartOS2">Cancellation of Official Search of Part (OS2)</option>
+                <option value="cancellationOfRestriction">Cancellation of restriction (e-RX3)</option>
+                <option value="cancellationOfUnilateralNotice">Cancellation of Unilateral Notice (eUN4)</option>
+                <option value="changeOfAddressForService">Change of address for service</option>
+                <option value="changeOfName">Change of Name</option>
+                <option value="changeOfPropertyDescription">Change of Property Description</option>
+                <option value="changePassword">Change Password</option>
+                <option value="createUser">Create User</option>
+                <option value="dataSynchronisationDownloads">Data Synchronisation Downloads</option>
+                <option value="dataSynchronisationEnquiry">Data Synchronisation Enquiry</option>
+                <option value="deathOfJointProprietor">Death of Joint Proprietor</option>
+                <option value="digitalRegistrationService">Digital Registration Service</option>
+                <option value="dischargeOfCharge">Discharge of a Charge</option>
+                <option value="documentRegistrationService">Document Registration Service</option>
+                <option value="documentView">Document View</option>
+                <option value="enquiryByPropertyDescription">Enquiry by Property Description - Title View</option>
+                <option value="fullSearch">Full Search</option>
+                <option value="homeRights">Home Rights (E-HR1 Notice of home rights)</option>
+                <option value="homeRightsSearch">Home Rights Search</option>
+                <option value="localLandCharges">Local Land Charges</option>
+                <option value="manageBusinessUnits">Manage Business Units</option>
+                <option value="manageGroups">Manage Groups</option>
+                <option value="manageUsers">Manage users</option>
+                <option value="mapSearch" selected>Map Search</option>
+                <option value="messageArea">Message Area</option>
+                <option value="Notifications">Notifications</option>
+                <option value="officialCopyDeedsReferred">Official Copy – Deeds referred</option>
+                <option value="officialCopyRegisterPlanCI">Official Copy – Register, Title Plan or CI</option>
+                <option value="officialCopyRegisterHistorical">Official Copy – Register (Historical)</option>
+                <option value="officialCopyTitlePlanHistorical">Official Copy – Title Plan (Historical)</option>
+                <option value="officialSearchOfWholeOS1">Official Search of Whole (OS1)</option>
+                <option value="officialSearchOfPartOS2">Official Search of Part (OS2)</option>
+                <option value="officialSearchOfWholeOrPartWithoutPriorityOS3">Official Search of whole or part without priority (OS3)</option>
+                <option value="pdfDownloads">PDF Downloads</option>
+                <option value="personalDetails">Personal Details</option>
+                <option value="registerViewHTML">Register View (HTML)</option>
+                <option value="registerViewPDF">Register View (PDF)</option>
+                <option value="registrationView">Registration View</option>
+                <option value="removalOfUnilateralNotice">Removal of a Unilateral Notice (e-UN2)</option>
+                <option value="replyToRequisition">Reply To Requisition</option>
+                <option value="restrictions">Restrictions (Standard e-RX1)</option>
+                <option value="searchOfTheIndexFranchisesAndManors">Search of the Index of Franchies and Manors (SIF)</option>
+                <option value="searchOfTheIndexMap">Search of the Index Map</option>
+                <option value="servicesRequested">Services Requested</option>
+                <option value="statutoryCharge">Statutory Charge</option>
+                <option value="titlePlanView">Title Plan View</option>
+                <option value="unilateralNotice">Unilateral Notice (e-UN1)</option>
+                <option value="vddinformation">VDD Information</option>
+                <option value="viewMyApplications">View My Applications</option>
+                <option value="withdrawlOfARestriction">Withdrawal of a Restriction (e-RX4)</option>
+                <option value="withdrawlOfCaution">Withdrawl of Caution</option>
+                <option value="withdrawlOfficialSearchWithPriority">Withdraw Official Search with Priority</option>
+  
+            </select>
+          </div>
 
 
-    </div>
+</div>
 
 
 
@@ -1885,21 +1726,7 @@ li:hover {background-color: #ffffff;color:#00703C;}
 </div>
 
 
-<div class="govuk-grid-column-full" style="padding:0px;border-top:5px solid #006637;/* background: #f3f2f1; */">
- 
-        
-  <div style="padding:30px; background: #f3f2f1;">
-    <a class="footlink" style="text-color: grey; text-decoration: none;"><u>Terms and conditions</u></a>
-    <a>|</a>
-    <a class="footlink" style="text-color: grey; text-decoration: none;"><u>Accessibility statement</u></a>
-    <a>|</a>
-    <a class="footlink" style="text-color: grey; text-decoration: none;"><u>Freedom of information</u></a>
-    <a>
-    <br>
-    <br>
-    <p style="color: grey; text-decoration: none;font-size: 16px;margin-bottom:0px;"><i>These links will open in a new window.</i></p>
-</div>
-    </div>
+{% include "includes/officialCopiesFooter.html" %} 
 
 
 

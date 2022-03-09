@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 {% extends "layout_officialCopies.html" %}
-{% block pageTitle %} View Applications
+{% block pageTitle %} Search reults
 {% endblock %}
 {% block content %}
+
+{% include "includes/officialCopiesNavigation.html" %} 
 
 
 
@@ -622,160 +624,6 @@ float:left;
 
 </style>
 
-
-<!-- Back & clear data top -->
-<!-- Back & clear data top -->
-<div>
-
-<!-- Navigation Menu - Start -->
-
-<div class="navbar-container">
-
-  <img src="/public/images/HMLR_Logo.svg" alt="hmlrlogo" style="height: 44px;
-  padding-left: 30px;
-  padding-top: 14px;
-  padding-bottom: 5px;">
-   
-   <ul id="menu" style="float:right;">
-      <li class="parent"><a href="#">Home</a></li>
-
-      <li class="parent parentIconDown"><a style="padding-right: 25px;" href="#">Services</a>
-       
-      <li class="parent"><a href="#">Contact us</a></li>
-
-      <li class="parent parentIconDown2"><a style="padding-right: 25px;" href="#">John James </a>
-           <ul class="child" style="right:0;">
-           <div class="govuk-body myAccountContent">
-
-                 <div>
-                   <div class="myAccountTitle" style="padding-bottom:3px;">
-                     Logged in as:
-                   </div>
-                   <div class="myAccount2ndLine">
-                      Administrator 
-                   </div>
-                   <a href="#" style="margin:0px;color:#00703C;font-weight:700;font-size:14px;">View profile</a>
-                 </div>
-
-                 <hr>
-
-                 <div class="myAccountTitle" style="padding-bottom:3px;">
-                   <b>Primary Business Unit Administrator (BUA):</b> 
-                 </div>
-                 <div class="myAccount2ndLine">
-                   John Taylor
-                   <!-- <a href="#" style="margin:0px;color:#00703C;"><b>JohnTaylor@bigbusiness.com</b></a> -->
-                 </div>
-
-
-
-
-                 <button id="logOut" class="govuk-button" style="margin-top:20px;">Log out</button>
-               </div>
-               </ul>
-      </li>
-              
-               
-        <li class="parent parentIconDown3"><a style="padding-left:25px;" href="#">Basket</a>
-          <ul class="child" style="right:0;">
-            <div class="govuk-body basketContent">
-
-              <div class="basketItems">
-
-              <!-- First item in dropdown basket -->
-                  <div class="basketItem">
-                      <div class="basketSection">
-                          <div class="basketTitle">
-                            SGL479276
-                          </div>
-                          <div class="basketRemove">
-                            <a class="basketRemoveText" style="margin:0;text-decoration: underline;" href="#">Remove</a>
-                          </div>
-                      </div>
-
-                      <div class="basketSection" style="padding:15px 0px;">
-                            <div><span class="basketItemSelected">Register</span><span class="basketItemPrice">£3.00</span></div>
-                            <div><span class="basketItemSelected">Title plan</span><span class="basketItemPrice">£3.00</span></div>
-                      </div>
-
-                      <div class="basketSection">
-                        <span class="basketAddress">27a Drakefell Road, CV5 BKK</span>
-                      </div>
-
-                  </div>
-
-                  <!-- Second item in dropdown basket -->
-                  <div class="basketItem">
-                    <div class="basketSection">
-                        <div class="basketTitle">
-                          SGL479276
-                        </div>
-                        <div class="basketRemove">
-                          <a class="basketRemoveText" style="margin:0;text-decoration: underline;" href="#">Remove</a>
-                        </div>
-                    </div>
-
-                    <div class="basketSection" style="padding:15px 0px;">
-                          <div><span class="basketItemSelected">Register</span><span class="basketItemPrice">£3.00</span></div>
-                          <div><span class="basketItemSelected">Title plan</span><span class="basketItemPrice">£3.00</span></div>
-                    </div>
-
-                    <div class="basketSection">
-                      <span class="basketAddress">27b Drakefell Road, CV5 BKK</span>
-                    </div>
-
-                  </div>
-
-                  <!-- Third item in dropdown basket -->
-                  <div class="basketItem" style="margin-bottom:0px;">
-                    <div class="basketSection">
-                        <div class="basketTitle">
-                          SGL479276
-                        </div>
-                        <div class="basketRemove">
-                          <a class="basketRemoveText" style="margin:0;text-decoration: underline;" href="#">Remove</a>
-                        </div>
-                    </div>
-
-                    <div class="basketSection" style="padding:15px 0px;">
-                          <div><span class="basketItemSelected">Register</span><span class="basketItemPrice">£3.00</span></div>
-                          <div><span class="basketItemSelected">Title plan</span><span class="basketItemPrice">£3.00</span></div>
-                    </div>
-
-                    <div class="basketSection">
-                      <span class="basketAddress">27b Drakefell Road, CV5 BKK</span>
-                    </div>
-
-                  </div>
-
-              </div>
-
-              <!-- Subtotal and basket button -->
-              <div class="basketItemLast" style="padding:0px 25px 25px 25px;">
-                <div class="basketSection" style="padding-bottom: 25px;padding-top: 25px;">
-                  <div><span class="basketItemSubText">Subtotal:</span><span class="basketItemSubTotal">£12.00</span></div>
-                </div>
-
-                <div class="basketSection">
-                  <button class="govuk-button" data-module="govuk-button" style="width:100%;" onclick="window.location.href='basket.html'">
-                    View basket
-                  </button>
-                </div>
-
-              </div>
-
-            </div>
-          </ul>
-        </li>
-
-
-</div>
-        
-
-<!-- Navigation Menu - End -->
-
-<!-- Content Area - Start -->
-
 <div class="sectionContent">
 
     <!-- Additional Documents 1 - Overlay -->
@@ -1042,29 +890,8 @@ float:left;
 </div>
 
 
-<div class="govuk-grid-column-full" style="padding:0px;border-top:5px solid #00703C;">
 
-        
-        
-        
-  <div style="padding:30px; background: #f3f2f1;">
-
-    <p style="color: #6d6d6d; text-decoration: none;font-size: 16px;margin-bottom:15px;">The following links open in a new tab.</p>
-
-    <a class="footlink" style="text-color: grey; text-decoration: none;"><u>Terms and conditions</u></a>
-    |
-    <a class="footlink" style="text-color: grey; text-decoration: none;"><u>Accessibility statement</u></a>
-    |
-    <a class="footlink" style="text-color: grey; text-decoration: none;"><u>Freedom of information</u></a>
-    |
-    <a class="footlink" style="text-color: grey; text-decoration: none;"><u>© Crown copyright</u></a>
-
-          </div>
-              </div>
-
-
-<!-- Content Area - End -->
-
+{% include "includes/officialCopiesFooter.html" %} 
 
 
 {% endblock %}
