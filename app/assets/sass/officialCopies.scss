@@ -341,7 +341,6 @@ li:hover {background-color: #ffffff;color:#00703C;}
       width: 40px;
       background-color: #006637;
       border-color: #006637;
-      position: absolute;
       margin-left: -40px;
   }
   
@@ -379,7 +378,6 @@ li:hover {background-color: #ffffff;color:#00703C;}
       width: 40px;
       background-color: #006637;
       border-color: #006637;
-      position: absolute;
       margin-left: -40px;
   }
   
@@ -672,4 +670,243 @@ li:hover {background-color: #ffffff;color:#00703C;}
   }
 
 
+// ------------------ Search results page -----------------------
+
+
+
+.sectionContent {
+    display: flex;
+}
+
+.item {
+    flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 0;
+  height: calc(100vh - 190px);
+  overflow-y: auto;
+}
+
+.item2 {
+    flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 0;
+  height: calc(100vh - 190px);
+}
+
+.contentSection {
+    margin-bottom:75px;
+}
+
+
+.resultsFound {
+    color:#757575;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.bs-accordion .panel-heading {
+	 padding: 0;
+}
+
+
+.bs-accordion .panel-heading a .glyphicon.glyphicon-chevron-right {
+    transform: rotate(0deg);
+    transition: transform 350ms cubic-bezier(0.645, 0.090, 0.355, 1);
+  }
   
+    /* Bootstrap accordion */
+  
+    .bs-accordion .panel-heading a {
+      display: inline-block;
+      padding: 15px 25px 10px 25px;
+      text-decoration: none;
+      width: -webkit-fill-available;
+  }
+  
+  
+  .panel {
+    margin-bottom: 20px;
+    background-color: #fff;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    -webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.05);
+    box-shadow: 0 1px 1px rgba(0,0,0,0.05);
+  }
+  
+  .panel-default {
+    border-color: #ddd;
+  }
+  
+  .panel-group .panel {
+    margin-bottom: 10px;
+    border-radius: 0px;
+  }
+  
+  .panel-group .panel+.panel {
+    margin-top: 5px;
+  }
+  
+  .panel-body {
+      padding: 15px 25px 25px 25px;
+      background-color: #f5f5f5;
+      color: #0b0c0c;
+  }
+  
+  .panel-title {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 16px;
+    color: inherit;
+  }
+  
+  .panel-default>.panel-heading {
+    color: #0b0c0c;
+    background-color: #f5f5f5;
+    border-color: #ddd;
+  }
+  
+  
+  .panel-heading {
+    padding: 10px 15px;
+    border-bottom: 1px solid transparent;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+  }
+  
+  
+  .bs-accordion .panel-heading {
+    padding: 0;
+  }
+  
+  .panel-group .panel-heading {
+    border-bottom: 0;
+  }
+  
+  .glyphicon {
+    position: relative;
+    top: 1px;
+    display: inline-block;
+  
+  }
+  
+  .pull-right {
+    float: right;
+  }
+    
+  .collapse {
+    display: none;
+  }
+  
+  .collapse.in {
+      display: block;
+  }
+  
+  .collapsing {
+    position: relative;
+    height: 0;
+    overflow: hidden;
+    -webkit-transition-timing-function: ease;
+         -o-transition-timing-function: ease;
+            transition-timing-function: ease;
+    -webkit-transition-duration: .35s;
+         -o-transition-duration: .35s;
+            transition-duration: .35s;
+    -webkit-transition-property: height, visibility;
+         -o-transition-property: height, visibility;
+            transition-property: height, visibility;
+  }
+  
+  .accordionTitle {
+  color:#00703C;
+  font-size:19px;
+  font-weight:700;
+  float:left;
+  margin-right:50px;
+  }
+  
+  .accordionAddress {
+  color:#000000;
+  font-size:19px;
+  font-weight:400;
+  float:left;
+  }
+
+  
+.govuk-table__cell {
+    padding: 0;
+    border-top: 1px solid #b1b4b6;
+    border-bottom: 0px solid #b1b4b6;
+    text-align: left;
+    vertical-align: top;
+    line-height: 50px;
+}
+
+.govuk-table__header{
+    padding: 0;
+    border-bottom: 0px solid #b1b4b6;
+    text-align: left;
+    vertical-align: top;
+    line-height: 50px;
+}
+
+.govuk-table{
+  border-bottom: 1px solid #b1b4b6;
+}
+
+
+.govuk-checkboxes--small .govuk-checkboxes__label:before {
+    top: 13px;
+    left:10px;
+    background:#ffffff;
+
+}
+
+.govuk-checkboxes--small .govuk-checkboxes__label:after {
+    top: 20px;
+    left: 16px;
+    width: 12px;
+    height: 6.5px;
+    border-width: 0 0 3px 3px;
+}
+
+
+.backgroundMap {
+    background-image: url("/public/images/mapsearchmap.jpg");
+    background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+  }
+  
+  .backgroundMap1 {
+    background-image: url("/public/images/mapsearchmap_location1.jpg");
+    background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+  }
+  
+  .backgroundMap2 {
+    background-image: url("/public/images/mapsearchmap_location1.jpg");
+    background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+  }
+  
+  #additionalDocumentsOverlay1 {
+    display:none;
+  }
+
+  .addedToBasketBox {
+    margin-top: -1px;
+    position: relative;
+    border-bottom: 1px solid #b1b4b6;
+}
+
+  .addedToBasket {
+    background: #D2FAE7;
+    color: #000;
+    padding-left: 10px;
+    line-height: 30px;
+    font-size: 16px;
+    margin-bottom: 10px;
+    margin-top: -2px;
+}
