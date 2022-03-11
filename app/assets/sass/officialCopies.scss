@@ -138,6 +138,8 @@ li:hover {background-color: #ffffff;color:#00703C;}
     background-repeat: no-repeat;
     background-position-x: 16px;
     background-position-y: 23px;
+    width: 130px;
+
   }
 
   .parentIconDown3:hover {
@@ -524,7 +526,21 @@ li:hover {background-color: #ffffff;color:#00703C;}
   }
 
 
-
+  .basketCounter {
+    color: #006637;
+    background-color: #fff;
+    border-radius: 100px;
+    padding: 0px;
+    line-height: 32px;
+    width: 30px;
+    height: 30px;
+    display: block;
+    text-align: center;
+    float: right;
+    margin-top: 18px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+  }
 
 
 
