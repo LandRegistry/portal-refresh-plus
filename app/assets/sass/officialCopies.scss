@@ -719,7 +719,7 @@ li:hover {background-color: #ffffff;color:#00703C;}
     /* Bootstrap accordion */
   
     .bs-accordion .panel-heading a {
-      display: inline-block;
+      display: inline-table;
       padding: 15px 25px 10px 25px;
       text-decoration: none;
       width: -webkit-fill-available;
@@ -786,7 +786,7 @@ li:hover {background-color: #ffffff;color:#00703C;}
   
   .glyphicon {
     position: relative;
-    top: 1px;
+    top: 0px;
     display: inline-block;
   
   }
@@ -823,7 +823,11 @@ li:hover {background-color: #ffffff;color:#00703C;}
   font-size:19px;
   font-weight:700;
   float:left;
-  margin-right:50px;
+  margin-right: 0px;
+  border-bottom: 0px;
+  padding: 0px;
+  width: 25%;
+  line-height: unset !important;
   }
   
   .accordionAddress {
@@ -831,6 +835,19 @@ li:hover {background-color: #ffffff;color:#00703C;}
   font-size:19px;
   font-weight:400;
   float:left;
+  border-bottom: 0px;
+  padding: 0px;
+  width: 45%;
+  line-height: unset !important;
+  }
+
+  .accordionCost {
+    line-height: unset !important;
+    width: 20%;
+  }
+
+  .accordionChevron {
+    line-height: unset !important;
   }
 
   
@@ -898,6 +915,85 @@ li:hover {background-color: #ffffff;color:#00703C;}
     margin-top: -2px;
 }
 
-// ------------------ Additional documents page -----------------------
+.additionalDocButton {
+  margin-top:25px;
+}
 
+// ------------------ Basket page -----------------------
+
+.wide960 {
+  max-width:960px;
+  margin:auto;
+  }
+  
+  .wide1100 {
+  max-width:1100px;
+  margin:auto;
+  }
+  
+  .wide80percent {
+    width:80%;
+    float: left;
+    box-sizing: border-box;
+    padding: 0 15px;
+  }
+  
+  .wide20percent {
+    width:20%;
+    float: left;
+    box-sizing: border-box;
+    padding: 0 15px 0px 0px;
+  }
+
+
+.accordionRemove {
+  color:#D10A1E !important;
+}
+
+
+.govuk-table {
+  margin-bottom: 0px;
+  font-size:16px;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #dddddd;
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: #dddddd;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+  color: #dddddd;
+}
+
+.dividerLine5 {
+    margin: 10px auto;
+    height: 5px;
+    background-color: #006637;
+    display: block;
+}
+
+.referenceFormfield {
+  height: 50px;
+  border: 1px solid #ddd;
+  margin-bottom: 15px;
+  padding: 0px 15px;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+
+// ------------------ Confirmation page -----------------------
+
+.accordionDownload {
+  color:#006637 !important;
+}
+
+.govuk-panel--confirmation {
+  color: #ffffff;
+  background: #006637;
+}
 
