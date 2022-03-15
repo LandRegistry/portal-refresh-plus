@@ -18,7 +18,7 @@ Coditional radio buttons
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-full govuk-!-padding-bottom-9">
         <h1 class=" govuk-heading-xl" style="margin-bottom:10px;">
-            Lauren
+            Radio Buttons
         </h1>
         <h1 class=" govuk-heading-l">
             Displaying content based on radio button selection
@@ -110,9 +110,7 @@ Coditional radio buttons
       </div>
    </div>
 </div>
-
-
-
+<!--This answer appears if you select the "NO" radio button in question 1--> 
 <!--This answer appears if you select the "NO" radio button in question 1--> 
 <div class="govuk-grid-row desc" id="question1B">
    <div class="govuk-grid-column-full govuk-!-padding-bottom-3">
@@ -121,94 +119,6 @@ Coditional radio buttons
          That's the wrong answer! Next question, is Lauren the prettiest girl in the world?
       </h3>
       <div class="govuk-radios" id="myRadioGroup3">
-          <div class="govuk-radios__item">
-            <input class="govuk-radios__input" type="radio" name="question3" value="A" id="Q3A">
-            <label class="govuk-label govuk-radios__label" for="Q3A">
-            Yes
-            </label>
-         </div>
-         <div class="govuk-radios__item">
-            <input class="govuk-radios__input" type="radio" name="question3" value="B" id="Q3B">
-            <label class="govuk-label govuk-radios__label" for="Q3B">
-            No
-            </label>
-         </div>
-         
-                           
-                           
-                           
-                           
-        <!-- YES TO PRETTY -->
-        <div class="govuk-grid-row desc3" id="question3A">
-         <div class="govuk-grid-column-full govuk-!-padding-bottom-3">
-            <hr style="margin-bottom:25px;">
-            <h3 class="govuk-heading-m" style="margin-bottom: 10px;">
-               That's the right answer! Next question, what size feet does Lauren have?
-            </h3>
-            <div class="govuk-radios" id="myRadioGroup3">
-                
-               
-               
-            
-               <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" type="radio" name="question4" value="A" id="Q4A">
-                  <label class="govuk-label govuk-radios__label" for="Q4A">
-                  5
-                  </label>
-               </div>
-               <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" type="radio" name="question4" value="B" id="Q4B">
-                  <label class="govuk-label govuk-radios__label" for="Q4B">
-                  8
-                  </label>
-               </div>
-
-
-         <!-- NO TO PRETTY -->
-         <div class="govuk-grid-row desc3" id="question3B">
-            <div class="govuk-grid-column-full govuk-!-padding-bottom-3">
-               <hr style="margin-bottom:25px;">
-               <h3 class="govuk-heading-m" style="margin-bottom: 10px;">
-                  That's the wrong answer! Next question, how tall is Lauren?
-               </h3>
-               <div class="govuk-radios" id="myRadioGroup3">
-                   
-                  
-                  
-               
-                  <div class="govuk-radios__item">
-                     <input class="govuk-radios__input" type="radio" name="question5" value="A" id="Q5A">
-                     <label class="govuk-label govuk-radios__label" for="Q5A">
-                     5'9
-                     </label>
-                  </div>
-                  <div class="govuk-radios__item">
-                     <input class="govuk-radios__input" type="radio" name="question5" value="B" id="Q5B">
-                     <label class="govuk-label govuk-radios__label" for="Q5B">
-                     5'2
-                     </label>
-                  </div>
-
-
-
-                  </div>
-
-
-
-
-
-               </div>
-               </div>
-                </div>
-
-
-
-
-
-
-
-
-
 <!--This answer appears if you select the "Don't know" radio button in question 1--> 
 <div class="govuk-grid-row desc" id="question1C">
    <div class="govuk-grid-column-full govuk-!-padding-bottom-3 govuk-!-padding-top-3">
@@ -242,53 +152,6 @@ Coditional radio buttons
            $("#question2" + test).show();
        });
    });
-
-   $(document).ready(function() {
-       $("input[name$='question3']").click(function() {
-           var test = $(this).val();
-   
-           $("div.desc3").hide();
-           $("#question3" + test).show();
-       });
-   });
-
-   $(document).ready(function() {
-       $("input[name$='question4']").click(function() {
-           var test = $(this).val();
-   
-           $("div.desc4").hide();
-           $("#question4" + test).show();
-       });
-   });
-
-   $(document).ready(function() {
-       $("input[name$='question5']").click(function() {
-           var test = $(this).val();
-   
-           $("div.desc5").hide();
-           $("#question5" + test).show();
-       });
-   });
-
-   $(document).ready(function() {
-       $("input[name$='question6']").click(function() {
-           var test = $(this).val();
-   
-           $("div.desc6").hide();
-           $("#question6" + test).show();
-       });
-   });
-
-   $(document).ready(function() {
-       $("input[name$='question7']").click(function() {
-           var test = $(this).val();
-   
-           $("div.desc7").hide();
-           $("#question7" + test).show();
-       });
-   });
-
-  
   
 </script>
 
@@ -300,21 +163,7 @@ Coditional radio buttons
    .desc2 {
    display:none;
    }
-   .desc3 {
-   display:none;
-   }
-   .desc4 {
-   display:none;
-   }
-   .desc5 {
-   display:none;
-   }
-   .desc6 {
-   display:none;
-   }
-   .desc7 {
-   display:none;
-   }
+
 </style>
 
 
