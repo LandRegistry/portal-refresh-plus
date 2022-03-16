@@ -121,14 +121,14 @@ h5 {
 .parent a{margin: 20px;color: #FFFFFF;text-decoration: none;}
 .parent:hover > ul {display:block;position:absolute;}
 .child {display: none;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1);z-index:99999;background: #ffffff;}
-.child li {background-color: #ffffff;line-height: 40px;border-right:#CCC 0px solid; width:100%;}
+.child li {background-color: #ffffff;line-height: 28px;border-right:#CCC 0px solid; width:100%;}
 .child li a{color: #00703C; font-size:15px;}
 ul{list-style: none;margin: 0;padding: 0px; min-width:10em;}
 li:hover {background-color: #ffffff;color:#00703C;}
 .parent:hover > a {color:#00703C;}
 .parentIconDown:hover {background-image: url("/public/images/icon_govuk_chevrondownGreen.svg");}
 .parentIconDown2:hover {background-image: url("/public/images/icon_govuk_chevrondownGreen.svg");}
-.parent li:hover {background-color: #F0F0F0;}
+
 .expand{font-size:12px;float:right;margin-right:5px;}
 .iconRight {background-image: url("/public/images/icon_govuk_chevronrightGreen.svg"); background-size: 25px; background-repeat: no-repeat; background-position-x: 134px;background-position-y: center;}
 
@@ -443,7 +443,7 @@ li:hover {background-color: #ffffff;color:#00703C;}
 
 
 .basketContent {
-    width: 325px;
+    width: 350px;
       padding: 0px;
       background: #ffffff;
       margin-bottom: 0px;
@@ -454,9 +454,8 @@ li:hover {background-color: #ffffff;color:#00703C;}
   }
   
   .basketItem {
-    border-bottom:1px solid #E5E5E5;
-    padding-bottom: 25px;
-    margin-bottom: 25px;
+    border-top: 5px solid #00703C;
+    padding-top: 20px;
   }
   
   .basketItemLast {
@@ -465,15 +464,22 @@ li:hover {background-color: #ffffff;color:#00703C;}
   
   .basketSection {
     min-height:25px;
+    font-size:16px;
+    line-height:23px;
+    width: 100%;
+    display: inline-block;
   }
   
-  .basketTitle {
-    color: #00703C;
-    font-size: 19px;
-    font-weight: 700;
-    float: left;
-  }
-  
+.basketAddress {
+  width:60%;
+  float:left;
+}
+
+.basketTitle {
+  width:40%;
+  float:left;
+}
+
   .basketRemove {
     float: right;
     text-align: right;
@@ -483,13 +489,26 @@ li:hover {background-color: #ffffff;color:#00703C;}
     color:#D10A1E !important;
     font-size: 16px;
   }
-  
-  .basketAddress {
-    color:#000000;
-    font-size:16px;
-    font-weight:700;
-      display: block;
+
+  .basketItemRemove {
+    float: right;
+    display: block;
+    background: #ffffff;
+    text-align: center;
+    padding: 15px 16px 12px 13px;
+    margin-top: -1px;
+    margin-left: 10px;
+    margin-right: -7px;
+    background-image: url(/public/images/icon_trash_grey.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
   }
+
+  .basketItemRemove:hover {
+    background-image: url(/public/images/icon_trash_red.svg);
+  }
+  
   
   .basketItemSelected {
     color:#000000;
@@ -520,7 +539,7 @@ li:hover {background-color: #ffffff;color:#00703C;}
   }
   
   .basketItems {
-    max-height: 360px;
+    max-height: 400px;
       overflow: auto;
       padding: 25px 25px 0px 25px;
   }
@@ -542,6 +561,26 @@ li:hover {background-color: #ffffff;color:#00703C;}
     font-family: 'Roboto', sans-serif;
     font-weight: 600;
   }
+
+  .basketCheckoutSection {
+    margin:10px 25px 25px 25px;
+    display:flex;
+    border-top: 5px solid #00703C;
+    padding-top: 25px;
+  }
+
+  .basketCheckout {
+    width:50%;
+    float:left;
+  }
+
+  .basketSubtotal {
+    width:50%;
+    float:left;
+    line-height: 39px;
+    font-size: 16px;
+  }
+
 
 
 
