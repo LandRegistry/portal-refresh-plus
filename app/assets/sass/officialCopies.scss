@@ -454,8 +454,9 @@ li:hover {background-color: #ffffff;color:#00703C;}
   }
   
   .basketItem {
-    border-top: 5px solid #00703C;
-    padding-top: 20px;
+    border-bottom: 5px solid #00703C;
+    padding-bottom: 5px;
+    margin-bottom: 25px;
   }
   
   .basketItemLast {
@@ -563,9 +564,8 @@ li:hover {background-color: #ffffff;color:#00703C;}
   }
 
   .basketCheckoutSection {
-    margin:10px 25px 25px 25px;
+    margin:0px 25px 25px 25px;
     display:flex;
-    border-top: 5px solid #00703C;
     padding-top: 25px;
   }
 
