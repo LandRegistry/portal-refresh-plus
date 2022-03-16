@@ -127,8 +127,7 @@
                                               <th class="govuk-table__header" style="width:50px;">
                                                 <div class="govuk-checkboxes__item">
                                                 <!-- <input  class="govuk-checkboxes__input" id="27a-checkbox-all" name="27a-checkbox-all" type="checkbox"  data-href="content0" onclick="toggle(this);" /> -->
-                                                <input  class="govuk-checkboxes__input" id="27a-checkbox-all" name="27a-checkbox-all" type="checkbox"  data-href="content0" onclick="ACheckAll()" />
-
+                                                <input  class="govuk-checkboxes__input" id="27a-checkbox-all" name="27a-checkbox-all" type="checkbox"  data-href="content0" onclick="SelectAll('27a')">
                                                 <label class="govuk-label govuk-checkboxes__label"></label>
                                               </div>
                                               </th>
@@ -143,7 +142,7 @@
                                           <tr class="govuk-table__row">
                                             <td class="govuk-table__cell">                                
                                               <div class="govuk-checkboxes__item">
-                                              <input class="govuk-checkboxes__input" id="27a-checkbox-1" name="27a-checkbox-1" data-href="content1" type="checkbox" onclick="ARegister()">
+                                              <input class="govuk-checkboxes__input" id="27a-checkbox-1" name="27a-checkbox-1" data-href="content1" type="checkbox" onclick="selectDocument('27a-checkbox-1', '27a-register')">
                                               <label class="govuk-label govuk-checkboxes__label" for="checkbox-1" ></label>
                                             </div></td>
                                               <td class="govuk-table__cell">Register</td>
@@ -165,7 +164,7 @@
                                           <tr class="govuk-table__row">
                                             <td class="govuk-table__cell">                                
                                               <div class="govuk-checkboxes__item">
-                                              <input class="govuk-checkboxes__input" id="27a-checkbox-2" name="27a-checkbox-2" data-href="content2" type="checkbox" onclick="ATitlePlan()">
+                                              <input class="govuk-checkboxes__input" id="27a-checkbox-2" name="27a-checkbox-2" data-href="content2" type="checkbox" onclick="selectDocument('27a-checkbox-2', '27a-titlePlan')">
                                               <label class="govuk-label govuk-checkboxes__label" for="checkbox-2" ></label>
                                             </div></td>
                                               <td class="govuk-table__cell">Title plan</td>
@@ -215,56 +214,70 @@
                             <p style="margin-bottom:15px;">If you order the register and title plan, they will be delivered together either electronically or by post.</p>
                             <form class="form" action="allDocuments2" method="post">
                                 <fieldset class="govuk-fieldset  govuk-checkboxes--small" aria-describedby="waste-hint">
-                                    <table class="govuk-table">
-                                      <thead>
+                                  <table class="govuk-table">
+                                    <thead>
+                                      <tr class="govuk-table__row">
+                                            <th class="govuk-table__header" style="width:50px;">
+                                              <div class="govuk-checkboxes__item">
+                                              <!-- <input  class="govuk-checkboxes__input" id="27a-checkbox-all" name="27a-checkbox-all" type="checkbox"  data-href="content0" onclick="toggle(this);" /> -->
+                                              <input  class="govuk-checkboxes__input" id="27b-checkbox-all" name="27b-checkbox-all" type="checkbox"  data-href="content0" onclick="SelectAll('27b')">
+                                              <label class="govuk-label govuk-checkboxes__label"></label>
+                                            </div>
+                                            </th>
+                                            <th scope="row" class="govuk-table__header">Document type</th>
+                                            <th scope="row" class="govuk-table__header">Status</th>
+                                            <th scope="row" class="govuk-table__header">Date</th>
+                                            <th scope="row" class="govuk-table__header">Format</th>
+                                            <th scope="row" class="govuk-table__header">Cost</th> 
+                                        </tr>
+                                    </thead>
+                                    <tbody class="govuk-table__body">
                                         <tr class="govuk-table__row">
-                                              <th class="govuk-table__header" style="width:50px;"><div class="govuk-checkboxes__item">
-                                                <input class="govuk-checkboxes__input" id="allcbTwo" name="allcbTwo" type="checkbox" value="allcbTwo" onclick="checkbox4()">
-                                                <label class="govuk-label govuk-checkboxes__label" for="allcbTwo"></label>
-                                              </div></th>
-                                              <th scope="row" class="govuk-table__header">Document type</th>
-                                              <th scope="row" class="govuk-table__header">Status</th>
-                                              <th scope="row" class="govuk-table__header">Date</th>
-                                              <th scope="row" class="govuk-table__header">Format</th>
-                                              <th scope="row" class="govuk-table__header">Cost</th> 
-                                          </tr>
-                                      </thead>
-                                      <tbody class="govuk-table__body">
-                                          <tr class="govuk-table__row">
-                                              <td class="govuk-table__cell">                                
-                                                <div class="govuk-checkboxes__item">
-                                                <input class="govuk-checkboxes__input" id="cb1Two" name="cb1Two" type="checkbox" value="cb1Two" onclick="checkbox5()">
-                                                <label class="govuk-label govuk-checkboxes__label" for="cb1Two"></label>
-                                              </div></td>
-                                              <td class="govuk-table__cell">Register</td>
-                                              <td class="govuk-table__cell">Official Copy</td>
-                                              <td class="govuk-table__cell">16/09/2021</td>
-                                              <td class="govuk-table__cell">PDF</td>
-                                              <td class="govuk-table__cell">£3.00</td>
-                                          </tr>
-                                          <tr class="govuk-table__row" style="display:none;position: relative;" id="added3">
-                                            <td class="govuk-table__cell" colspan="6"> 
+                                          <td class="govuk-table__cell">                                
+                                            <div class="govuk-checkboxes__item">
+                                            <input class="govuk-checkboxes__input" id="27b-checkbox-1" name="27b-checkbox-1" data-href="content1" type="checkbox" onclick="selectDocument('27b-checkbox-1', '27b-register')">
+                                            <label class="govuk-label govuk-checkboxes__label" for="27b-checkbox-1" ></label>
+                                          </div></td>
+                                            <td class="govuk-table__cell">Register</td>
+                                            <td class="govuk-table__cell">Official Copy</td>
+                                            <td class="govuk-table__cell">20/01/2022</td>
+                                            <td class="govuk-table__cell">PDF</td>
+                                            <td class="govuk-table__cell">£3.00</td>
+                                        </tr>
+
+                                        <tr class="govuk-table__row" id="27b-register" style="display:none;">
+                                          <div id="content0" class="addedToBasketBox">
+                                            <td class="govuk-table__cell" colspan="6" style="border-top: none;"> 
                                               <div class="addedToBasket">Register added to basket</div>
                                             </td>
-                                          </tr>
-                                          <tr class="govuk-table__row">
-                                              <td class="govuk-table__cell"><div class="govuk-checkboxes__item">
-                                                <input class="govuk-checkboxes__input" id="cb2Two" name="cb2Two" type="checkbox" value="cb2Two" onclick="checkbox6()">
-                                                <label class="govuk-label govuk-checkboxes__label" for="cb2Two"></label>
-                                              </div></td>
-                                              <td class="govuk-table__cell">Title plan</td>
-                                              <td class="govuk-table__cell">Official Copy</td>
-                                              <td class="govuk-table__cell">02/06/2018</td>
-                                              <td class="govuk-table__cell">PDF</td>
-                                              <td class="govuk-table__cell">£3.00</td>
-                                          </tr>
-                                          <tr class="govuk-table__row" style="display:none;position: relative;" id="added4">
-                                            <td class="govuk-table__cell" colspan="6"> 
+                                          </div>
+                                        </tr>
+
+                                        
+                                        <tr class="govuk-table__row">
+                                          <td class="govuk-table__cell">                                
+                                            <div class="govuk-checkboxes__item">
+                                            <input class="govuk-checkboxes__input" id="27b-checkbox-2" name="27b-checkbox-2" data-href="content2" type="checkbox" onclick="selectDocument('27b-checkbox-2', '27b-titlePlan')">
+                                            <label class="govuk-label govuk-checkboxes__label" for="27b-checkbox-2" ></label>
+                                          </div></td>
+                                            <td class="govuk-table__cell">Title plan</td>
+                                            <td class="govuk-table__cell">Official Copy</td>
+                                            <td class="govuk-table__cell">14/03/2019</td>
+                                            <td class="govuk-table__cell">PDF</td>
+                                            <td class="govuk-table__cell">£3.00</td>
+                                        </tr>
+
+                                        <tr class="govuk-table__row" id="27b-titlePlan" style="display:none;">
+                                          <div id="content0" class="addedToBasketBox">
+                                            <td class="govuk-table__cell" colspan="6" style="border-top: none;"> 
                                               <div class="addedToBasket">Title plan added to basket</div>
                                             </td>
-                                          </tr>
-                                      </tbody>
-                                    </table>
+                                          </div>
+                                        </tr>
+
+
+                                    </tbody>
+                                  </table>
                                 </fieldset>
 
                                 <button class="govuk-button additionalDocButton" data-module="govuk-button" onclick="">
