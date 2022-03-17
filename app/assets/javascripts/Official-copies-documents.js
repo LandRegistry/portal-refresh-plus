@@ -10,7 +10,7 @@ function anythingInBasket(){
     }
 }
 
-function selectDocument(checkboxID, tablerowID, selectAllID){
+function selectDocument(checkboxID, tablerowID, selectAllID, Address){
 
     if (document.getElementById(checkboxID).checked) {
 
@@ -19,6 +19,74 @@ function selectDocument(checkboxID, tablerowID, selectAllID){
         basketQuantity += 1;
         anythingInBasket();
         document.getElementById("basketCounter").innerHTML = basketQuantity;
+
+        var div_basketItem = document.createElement("div");
+        div_basketItem.setAttribute("class", "basketItem");
+        var AddingtoBasket = document.getElementById('addBasketItemsHere');
+
+        var div_basketSection = document.createElement("div");
+        div_basketSection.setAttribute("class", "basketSection");
+        div_basketItem.appendChild(div_basketSection);
+        
+        var div_basketAddress = document.createElement("div");
+        div_basketAddress.setAttribute("class", "basketAddress");
+        var tn_addressHeading = document.createTextNode("Address");
+        var addressHeading = document.createElement("p");
+        addressHeading.setAttribute("style", "font-size:16px; margin-bottom:0px; font-weight:700;");
+        addressHeading.appendChild(tn_addressHeading);
+        div_basketAddress.appendChild(addressHeading);
+        console.log('hello');
+        var tn_address = document.createTextNode(Address);
+        var address = document.createElement("p");
+        address.setAttribute("style", "font-size:16px; margin-bottom:0px;");
+        address.appendChild(tn_address);
+        div_basketAddress.appendChild(address);
+
+        var div_basketTitle = document.createElement("div");
+        div_basketTitle.setAttribute("class", "basketTitle");
+        var tn_titleNumber = document.createTextNode("Title number");
+        var titleNumber = document.createElement("p");
+        titleNumber.setAttribute("style", "font-size:16px; margin-bottom:0px; font-weight:700;");
+        titleNumber.appendChild(tn_titleNumber);
+        div_basketTitle.appendChild(titleNumber);
+
+        div_basketSection.appendChild(div_basketAddress);
+        div_basketSection.appendChild(div_basketTitle);
+
+        AddingtoBasket.insertBefore(div_basketItem, AddingtoBasket.childNodes[0]);
+
+        var div_basketSection2 = document.createElement("div");
+        div_basketSection2.setAttribute("class", "basketSection");
+        div_basketSection2.setAttribute("style", "padding: 15px 0px;");
+        div_basketItem.appendChild(div_basketSection2);
+        var tn_documentsHeading = document.createTextNode("Documents");
+        var documentsHeading = document.createElement("p");
+        documentsHeading.setAttribute("style", "font-size:16px; margin-bottom:0px; font-weight:700;");
+        documentsHeading.appendChild(tn_documentsHeading);
+        div_basketSection2.appendChild(documentsHeading);
+        var documentsUL = document.createElement("UL");
+        div_basketSection2.appendChild(documentsUL);
+
+
+        // if statement should end here
+
+        var documentLI = document.createElement("LI");
+        var documentName = document.createElement("span");
+        documentName.setAttribute("class", "basketItemSelected");
+        var documentNameText = document.createTextNode("Register");
+        documentName.appendChild(documentNameText);
+        var removeIcon = document.createElement("span");
+        removeIcon.setAttribute("class", "basketItemRemove");
+        var documentPrice = document.createElement("span");
+        documentPrice.setAttribute("class", "basketItemPrice");
+        var documentPriceText = document.createTextNode("£3.00");
+        documentPrice.appendChild(documentPriceText);
+        documentLI.appendChild(documentName);
+        documentLI.appendChild(removeIcon);
+        documentLI.appendChild(documentPrice);
+        documentsUL.appendChild(documentLI);
+
+
 
     }   
     else{
