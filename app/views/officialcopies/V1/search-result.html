@@ -6,8 +6,15 @@
 
 {% include "includes/officialCopiesNavigation.html" %} 
 
-<style>
-</style>
+<script>
+ 
+  document.addEventListener("DOMContentLoaded", function(event){
+    var InBasket1 = sessionStorage.getItem('InBasket');
+    document.getElementById('addBasketItemsHere').innerHTML = InBasket1;
+  })
+   
+  
+</script>
 
 
 <div class="sectionContent">
@@ -142,7 +149,7 @@
                                           <tr class="govuk-table__row">
                                             <td class="govuk-table__cell">                                
                                               <div class="govuk-checkboxes__item">
-                                              <input class="govuk-checkboxes__input" id="27a-checkbox-1" name="27a-checkbox-1" data-href="content1" type="checkbox" onclick="selectDocument('27a-checkbox-1', '27a-register', '27a-checkbox-all', '27a Drakefell Road, Coventry, CV5K2X')">
+                                              <input class="govuk-checkboxes__input" id="27a-checkbox-1" name="27a-checkbox-1" data-href="content1" type="checkbox" onclick="selectDocument('27a-checkbox-1', '27a-register', '27a-checkbox-all', '27a Drakefell Road, Coventry, CV5K2X', 'SGL479276', 'Register', '27aDIV', '27aLIST', 'RegisterLI', '27a_RegisterIcon')">
                                               <label class="govuk-label govuk-checkboxes__label" for="checkbox-1" ></label>
                                             </div></td>
                                               <td class="govuk-table__cell">Register</td>
@@ -164,7 +171,7 @@
                                           <tr class="govuk-table__row">
                                             <td class="govuk-table__cell">                                
                                               <div class="govuk-checkboxes__item">
-                                              <input class="govuk-checkboxes__input" id="27a-checkbox-2" name="27a-checkbox-2" data-href="content2" type="checkbox" onclick="selectDocument('27a-checkbox-2', '27a-titlePlan', '27a-checkbox-all')">
+                                              <input class="govuk-checkboxes__input" id="27a-checkbox-2" name="27a-checkbox-2" data-href="content2" type="checkbox" onclick="selectDocument('27a-checkbox-2', '27a-titlePlan', '27a-checkbox-all', '27a Drakefell Road, Coventry, CV5K2X', 'SGL479276', 'Title plan', '27aDIV', '27aLIST', 'TitlePlanLI', '27a_TitlePlanIcon')">
                                               <label class="govuk-label govuk-checkboxes__label" for="checkbox-2" ></label>
                                             </div></td>
                                               <td class="govuk-table__cell">Title plan</td>
@@ -235,7 +242,7 @@
                                         <tr class="govuk-table__row">
                                           <td class="govuk-table__cell">                                
                                             <div class="govuk-checkboxes__item">
-                                            <input class="govuk-checkboxes__input" id="27b-checkbox-1" name="27b-checkbox-1" data-href="content1" type="checkbox" onclick="selectDocument('27b-checkbox-1', '27b-register', '27b-checkbox-all')">
+                                            <input class="govuk-checkboxes__input" id="27b-checkbox-1" name="27b-checkbox-1" data-href="content1" type="checkbox" onclick="selectDocument('27b-checkbox-1', '27b-register', '27b-checkbox-all', '27b Drakefell Road, Coventry, CV5K2X', 'SGL479276', 'Register', '27bDIV', '27bLIST', 'RegisterbLI', '27b_RegisterIcon')">
                                             <label class="govuk-label govuk-checkboxes__label" for="27b-checkbox-1" ></label>
                                           </div></td>
                                             <td class="govuk-table__cell">Register</td>
@@ -257,7 +264,7 @@
                                         <tr class="govuk-table__row">
                                           <td class="govuk-table__cell">                                
                                             <div class="govuk-checkboxes__item">
-                                            <input class="govuk-checkboxes__input" id="27b-checkbox-2" name="27b-checkbox-2" data-href="content2" type="checkbox" onclick="selectDocument('27b-checkbox-2', '27b-titlePlan', '27b-checkbox-all')">
+                                            <input class="govuk-checkboxes__input" id="27b-checkbox-2" name="27b-checkbox-2" data-href="content2" type="checkbox" onclick="selectDocument('27b-checkbox-2', '27b-titlePlan', '27b-checkbox-all', '27b Drakefell Road, Coventry, CV5K2X', 'SGL479276', 'Title plan', '27bDIV', '27bLIST', 'TitlePlanbLI', '27b_TitlePlanIcon')">
                                             <label class="govuk-label govuk-checkboxes__label" for="27b-checkbox-2" ></label>
                                           </div></td>
                                             <td class="govuk-table__cell">Title plan</td>

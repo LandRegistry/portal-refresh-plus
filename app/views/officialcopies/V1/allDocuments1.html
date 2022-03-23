@@ -7,9 +7,15 @@
 {% include "includes/officialCopiesNavigation.html" %} 
 
 
-
-<style>
-</style>
+<script>
+ 
+  document.addEventListener("DOMContentLoaded", function(event){
+    var InBasket1 = sessionStorage.getItem('InBasket');
+    document.getElementById('addBasketItemsHere').innerHTML = InBasket1;
+  })
+   
+  
+</script>
 
 
 
