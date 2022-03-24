@@ -7,11 +7,31 @@
 {% include "includes/officialCopiesNavigation.html" %} 
 
 <script>
- 
-  document.addEventListener("DOMContentLoaded", function(event){
+
+ document.addEventListener("DOMContentLoaded", function(event){
     var InBasket1 = sessionStorage.getItem('InBasket');
     document.getElementById('addBasketItemsHere').innerHTML = InBasket1;
+    if(parseInt(sessionStorage.getItem("basketQuantity")) >= 1){
+        document.getElementById("basketCounter").style.display = 'block';
+        var InBasketCounter = sessionStorage.getItem('counterForBasket');
+        document.getElementById("basketCounter").innerHTML = sessionStorage.getItem("basketQuantity");
+        document.getElementById("totalCostofBasket").innerHTML = '£' + sessionStorage.getItem("basketTotalCost") + '.00';
+        document.getElementById("checkout-button").style.display = 'block';
+
+        
+    }
+    // var InBasket2 = sessionStorage.getItem('CostAndCheckoutButton');
+    // document.getElementById('TotalCostandCheckout').innerHTML = InBasket2;
+
+
   })
+ 
+  // document.addEventListener("DOMContentLoaded", function(event){
+  //   if(sessionStorage.getItem("InBasket") != null){
+  //     var InBasket1 = sessionStorage.getItem('InBasket');
+  //     document.getElementById('basketNavigation').innerHTML = InBasket1;
+  //   }
+  // })
    
   
 </script>

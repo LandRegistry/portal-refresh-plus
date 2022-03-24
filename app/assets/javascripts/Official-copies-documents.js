@@ -1,14 +1,25 @@
 // const session = require("express-session");
 
-var basketQuantity = 0;
-var basketCost = 0;
+var firstItemAdded = 1;
+// var basketCost = 0;
+
 
 function anythingInBasket(){
-    if(basketQuantity === 0){
+    // if(basketQuantity === 0){
+    //     document.getElementById("basketCounter").style.display = 'none';
+    // }
+    // if(basketQuantity >= 1){
+    //     document.getElementById("basketCounter").style.display = 'block';
+    // }
+    if(parseInt(sessionStorage.getItem("basketQuantity")) === 0){
         document.getElementById("basketCounter").style.display = 'none';
+        document.getElementById("checkout-button").style.display = 'none';
+
     }
-    if(basketQuantity >= 1){
+    if(parseInt(sessionStorage.getItem("basketQuantity")) >= 1){
         document.getElementById("basketCounter").style.display = 'block';
+        document.getElementById("checkout-button").style.display = 'block';
+
     }
 }
 
@@ -19,10 +30,27 @@ function selectDocument(checkboxID, tablerowID, selectAllID, Address, TitleNumbe
 
         var DocumentAdded = document.getElementById(tablerowID);
         DocumentAdded.style.display = 'table-row';
-        basketQuantity += 1;
+        if(sessionStorage.getItem("basketQuantity") === null){
+            console.log('adding');
+            sessionStorage.setItem('basketQuantity',1);
+            sessionStorage.setItem('basketTotalCost',3);
+            // var newItemNumber = sessionStorage.getItem("basketQuantity");
+        }
+        else{
+            var previousItemsNumber = sessionStorage.getItem("basketQuantity");
+            sessionStorage.setItem('basketQuantity', parseInt(previousItemsNumber) + 1);
+            var previousTotalCost = sessionStorage.getItem("basketTotalCost");
+            sessionStorage.setItem('basketTotalCost', parseInt(previousTotalCost) + 3);
+
+            // var newItemNumber = sessionStorage.getItem('basketQuantity');
+
+        }
+        // basketQuantity += 1;
         anythingInBasket();
-        document.getElementById("basketCounter").innerHTML = basketQuantity;
-        sessionStorage.setItem('basketQuantity',basketQuantity);
+        // sessionStorage.setItem('basketQuantity',basketQuantity);
+        // document.getElementById("basketCounter").innerHTML = basketQuantity;
+        document.getElementById("basketCounter").innerHTML = sessionStorage.getItem("basketQuantity");
+
 
         if(document.getElementById(divID) == null){
             var div_basketItem = document.createElement("div");
@@ -154,20 +182,20 @@ function selectDocument(checkboxID, tablerowID, selectAllID, Address, TitleNumbe
         // let HELLO = ItemFromBasket.bind(null, arguments[0], arguments[1], arguments[2], arguments[3], arguments[4], arguments[5], arguments[6], arguments[7], arguments[8], arguments[9]);
         // removeIcon.setAttribute("onclick", "this.ItemFromBasket.bind(null, arguments[0], arguments[1], arguments[2], arguments[3], arguments[4], arguments[5], arguments[6], arguments[7], arguments[8], arguments[9])");
         
-        var argsString0 = arguments[0];
+        // var argsString0 = arguments[0];
         // argsString0.toString();
-        JSON.stringify(argsString0);
+        // JSON.stringify(argsString0);
         // console.log(argsString0);
-        var argsString1 = arguments[1];
-        var argsString2 = arguments[2];
-        var argsString3 = arguments[3];
-        var argsString4 = arguments[4];
-        var argsString5 = arguments[5];
-        console.log(argsString1);
-        var List = [argsString0, argsString1];
-        console.log(List);
-        var argsString = [arguments[0], arguments[1], arguments[2], arguments[3], arguments[4], arguments[5], arguments[6], arguments[7], arguments[8], arguments[9]];
-        let inner = argsString.toString();
+        // var argsString1 = arguments[1];
+        // var argsString2 = arguments[2];
+        // var argsString3 = arguments[3];
+        // var argsString4 = arguments[4];
+        // var argsString5 = arguments[5];
+        // console.log(argsString1);
+        // var List = [argsString0, argsString1];
+        // console.log(List);
+        // var argsString = [arguments[0], arguments[1], arguments[2], arguments[3], arguments[4], arguments[5], arguments[6], arguments[7], arguments[8], arguments[9]];
+        // let inner = argsString.toString();
         // removeIcon.setAttribute('onclick', 'ItemFromBasket("'+argsString0+','+argsString1+','+argsString2+','+argsString3+','+argsString4+','+argsString5+'")');
         removeIcon.setAttribute('onclick', "ItemFromBasket('"+arguments[0]+"','"+arguments[1]+"','"+arguments[2]+"','"+arguments[3]+"','"+arguments[4]+"','"+arguments[5]+"','"+arguments[6]+"','"+arguments[7]+"','"+arguments[8]+"','"+arguments[9]+"')");
 
@@ -185,25 +213,39 @@ function selectDocument(checkboxID, tablerowID, selectAllID, Address, TitleNumbe
         addToList = document.getElementById(listID)
         addToList.appendChild(documentLI);
 
-        basketCost += 3;
-        document.getElementById("totalCostofBasket").innerHTML = '£' + basketCost + '.00';
-        sessionStorage.setItem('totalCostofBasket', basketCost);
+        // basketCost += 3;
+        document.getElementById("totalCostofBasket").innerHTML = '£' + sessionStorage.getItem("basketTotalCost") + '.00';
+        // document.getElementById("totalCostofBasket").innerHTML = '£' + basketCost + '.00';
+        // sessionStorage.setItem('totalCostofBasket', basketCost);
 
         var AddingtoBasket = document.getElementById('addBasketItemsHere');
         sessionStorage.setItem('InBasket',AddingtoBasket.innerHTML);
+        var BasketCounter = document.getElementById('basketCounter');
+        sessionStorage.setItem('counterForBasket',BasketCounter.innerHTML);
+        // var CostAndCheckout = document.getElementById('TotalCostandCheckout');
+        // sessionStorage.setItem('CostAndCheckoutButton',CostAndCheckout.innerHTML);
 
     }   
     else{
-        // console.log('code executing');
+        console.log('code executing');
         var DocumentAdded = document.getElementById(tablerowID);
         DocumentAdded.style.display = 'none';
-        basketQuantity -= 1;
+        // basketQuantity -= 1;
+        var previousItemsNumber = sessionStorage.getItem("basketQuantity");
+        sessionStorage.setItem('basketQuantity', parseInt(previousItemsNumber) - 1);
+        var previousTotalCost = sessionStorage.getItem("basketTotalCost");
+        sessionStorage.setItem('basketTotalCost', parseInt(previousTotalCost) - 3);
+        document.getElementById("totalCostofBasket").innerHTML = '£' + sessionStorage.getItem("basketTotalCost") + '.00';
+
         anythingInBasket();
-        document.getElementById("basketCounter").innerHTML = basketQuantity;
+        document.getElementById("basketCounter").innerHTML = sessionStorage.getItem("basketQuantity");
         if (document.getElementById(selectAllID).checked) {
             document.getElementById(selectAllID).checked = false;
         }
-        document.getElementById(listItemID).remove();
+
+        // if(document.getElementById(listItemID)){
+            document.getElementById(listItemID).remove();
+        // }
 
         // check if the whole div needs to be removed
         deleteWholeDIV = document.getElementById(listID).childElementCount;
@@ -212,12 +254,16 @@ function selectDocument(checkboxID, tablerowID, selectAllID, Address, TitleNumbe
             document.getElementById(divID).remove();
         }
 
-        basketCost -= 3;
-        document.getElementById("totalCostofBasket").innerHTML = '£' + basketCost + '.00';
-        sessionStorage.setItem('totalCostofBasket', basketCost);
+        // basketCost -= 3;
+        // document.getElementById("totalCostofBasket").innerHTML = '£' + basketCost + '.00';
+        // sessionStorage.setItem('totalCostofBasket', basketCost);
 
         var AddingtoBasket = document.getElementById('addBasketItemsHere');
         sessionStorage.setItem('InBasket',AddingtoBasket.innerHTML);
+        var BasketCounter = document.getElementById('basketCounter');
+        sessionStorage.setItem('counterForBasket',BasketCounter.innerHTML);
+        // var CostAndCheckout = document.getElementById('TotalCostandCheckout');
+        // sessionStorage.setItem('CostAndCheckoutButton',CostAndCheckout.innerHTML);
 
     }
 }
@@ -236,11 +282,49 @@ function ItemFromBasket(checkboxID, tablerowID, selectAllID, Address, TitleNumbe
     console.log('testing the retrieval of arguments');
     // console.log(listItemID);
     // console.log(document.getElementById(listItemID));
-    document.getElementById(listItemID).remove();
+    // document.getElementById(listItemID).remove();
     // THIS WORKS
-    document.getElementById(checkboxID).checked = false;
-    let RemoveITEM = selectDocument.bind(null, arguments[0], arguments[1], arguments[2], arguments[3], arguments[4], arguments[5], arguments[6], arguments[7], arguments[8], arguments[9]);
-    RemoveITEM();
+
+    var current_url = location.pathname;
+    if (current_url == '/officialcopies/V1/search-result') {
+        console.log('Search result page');
+        document.getElementById(checkboxID).checked = false;
+        let RemoveITEM = selectDocument.bind(null, arguments[0], arguments[1], arguments[2], arguments[3], arguments[4], arguments[5], arguments[6], arguments[7], arguments[8], arguments[9]);
+        RemoveITEM();
+    }
+    else{
+        var previousItemsNumber = sessionStorage.getItem("basketQuantity");
+        sessionStorage.setItem('basketQuantity', parseInt(previousItemsNumber) - 1);
+        var previousTotalCost = sessionStorage.getItem("basketTotalCost");
+        sessionStorage.setItem('basketTotalCost', parseInt(previousTotalCost) - 3);
+        document.getElementById("totalCostofBasket").innerHTML = '£' + sessionStorage.getItem("basketTotalCost") + '.00';
+
+        anythingInBasket();
+        document.getElementById("basketCounter").innerHTML = sessionStorage.getItem("basketQuantity");
+        // if (document.getElementById(selectAllID).checked) {
+        //     document.getElementById(selectAllID).checked = false;
+        // }
+
+        // if(document.getElementById(listItemID)){
+            document.getElementById(listItemID).remove();
+        // }
+
+        // check if the whole div needs to be removed
+        deleteWholeDIV = document.getElementById(listID).childElementCount;
+        console.log(deleteWholeDIV);
+        if(deleteWholeDIV == 0){
+            document.getElementById(divID).remove();
+        }
+
+        // basketCost -= 3;
+        // document.getElementById("totalCostofBasket").innerHTML = '£' + basketCost + '.00';
+        // sessionStorage.setItem('totalCostofBasket', basketCost);
+
+        var AddingtoBasket = document.getElementById('addBasketItemsHere');
+        sessionStorage.setItem('InBasket',AddingtoBasket.innerHTML);
+        var BasketCounter = document.getElementById('basketCounter');
+        sessionStorage.setItem('counterForBasket',BasketCounter.innerHTML);
+    }
 }
 
 function SelectAll(whichSelectAll){
