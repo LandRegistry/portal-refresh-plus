@@ -17,9 +17,10 @@
         document.getElementById("basketCounter").innerHTML = sessionStorage.getItem("basketQuantity");
         document.getElementById("totalCostofBasket").innerHTML = '£' + sessionStorage.getItem("basketTotalCost") + '.00';
         document.getElementById("checkout-button").style.display = 'block';
-
-        
     }
+    onloadCheck('27a-checkbox-1', '27a-register');
+    onloadCheck('27a-checkbox-2', '27a-titlePlan');
+
     // var InBasket2 = sessionStorage.getItem('CostAndCheckoutButton');
     // document.getElementById('TotalCostandCheckout').innerHTML = InBasket2;
 

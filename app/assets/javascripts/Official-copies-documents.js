@@ -3,6 +3,15 @@
 var firstItemAdded = 1;
 // var basketCost = 0;
 
+function onloadCheck(checkboxID, tablerowID){
+    console.log('onloadCheck running');
+    if(sessionStorage.getItem(checkboxID)){
+        console.log('session storage item exists');
+        document.getElementById(checkboxID).checked = true;
+        var DocumentAdded = document.getElementById(tablerowID);
+        DocumentAdded.style.display = 'table-row';
+    }
+}
 
 function anythingInBasket(){
     // if(basketQuantity === 0){
@@ -217,13 +226,15 @@ function selectDocument(checkboxID, tablerowID, selectAllID, Address, TitleNumbe
         document.getElementById("totalCostofBasket").innerHTML = '£' + sessionStorage.getItem("basketTotalCost") + '.00';
         // document.getElementById("totalCostofBasket").innerHTML = '£' + basketCost + '.00';
         // sessionStorage.setItem('totalCostofBasket', basketCost);
-
+        sessionStorage.setItem(checkboxID, true);
         var AddingtoBasket = document.getElementById('addBasketItemsHere');
         sessionStorage.setItem('InBasket',AddingtoBasket.innerHTML);
         var BasketCounter = document.getElementById('basketCounter');
         sessionStorage.setItem('counterForBasket',BasketCounter.innerHTML);
         // var CostAndCheckout = document.getElementById('TotalCostandCheckout');
         // sessionStorage.setItem('CostAndCheckoutButton',CostAndCheckout.innerHTML);
+
+        sessionStorage.setItem(checkboxID, true);
 
     }   
     else{
@@ -265,6 +276,8 @@ function selectDocument(checkboxID, tablerowID, selectAllID, Address, TitleNumbe
         // var CostAndCheckout = document.getElementById('TotalCostandCheckout');
         // sessionStorage.setItem('CostAndCheckoutButton',CostAndCheckout.innerHTML);
 
+        sessionStorage.removeItem(checkboxID);
+
     }
 }
 
@@ -285,14 +298,22 @@ function ItemFromBasket(checkboxID, tablerowID, selectAllID, Address, TitleNumbe
     // document.getElementById(listItemID).remove();
     // THIS WORKS
 
-    var current_url = location.pathname;
-    if (current_url == '/officialcopies/V1/search-result') {
-        console.log('Search result page');
+    // TESTING WITH WHAT THE PAGE THE USER IS ON
+    // var current_url = location.pathname;
+    // if (current_url == '/officialcopies/V1/search-result') {
+    //     console.log('Search result page');
+    //     document.getElementById(checkboxID).checked = false;
+    //     let RemoveITEM = selectDocument.bind(null, arguments[0], arguments[1], arguments[2], arguments[3], arguments[4], arguments[5], arguments[6], arguments[7], arguments[8], arguments[9]);
+    //     RemoveITEM();
+    // }
+    if (document.getElementById(checkboxID)) {
+        console.log('Checkbox exists on page');
         document.getElementById(checkboxID).checked = false;
         let RemoveITEM = selectDocument.bind(null, arguments[0], arguments[1], arguments[2], arguments[3], arguments[4], arguments[5], arguments[6], arguments[7], arguments[8], arguments[9]);
         RemoveITEM();
     }
     else{
+        console.log('Checkbox does NOT exist on page');
         var previousItemsNumber = sessionStorage.getItem("basketQuantity");
         sessionStorage.setItem('basketQuantity', parseInt(previousItemsNumber) - 1);
         var previousTotalCost = sessionStorage.getItem("basketTotalCost");
@@ -324,6 +345,9 @@ function ItemFromBasket(checkboxID, tablerowID, selectAllID, Address, TitleNumbe
         sessionStorage.setItem('InBasket',AddingtoBasket.innerHTML);
         var BasketCounter = document.getElementById('basketCounter');
         sessionStorage.setItem('counterForBasket',BasketCounter.innerHTML);
+
+        sessionStorage.removeItem(checkboxID);
+
     }
 }
 
