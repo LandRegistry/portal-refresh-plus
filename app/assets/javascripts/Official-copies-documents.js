@@ -8,8 +8,10 @@ function onloadCheck(checkboxID, tablerowID){
     if(sessionStorage.getItem(checkboxID)){
         console.log('session storage item exists');
         document.getElementById(checkboxID).checked = true;
-        var DocumentAdded = document.getElementById(tablerowID);
-        DocumentAdded.style.display = 'table-row';
+        if(tablerowID != ''){
+            var DocumentAdded = document.getElementById(tablerowID);
+            DocumentAdded.style.display = 'table-row';
+        }
     }
 }
 
@@ -252,6 +254,9 @@ function selectDocument(checkboxID, tablerowID, selectAllID, Address, TitleNumbe
         document.getElementById("basketCounter").innerHTML = sessionStorage.getItem("basketQuantity");
         if (document.getElementById(selectAllID).checked) {
             document.getElementById(selectAllID).checked = false;
+            sessionStorage.removeItem(selectAllID);
+
+
         }
 
         // if(document.getElementById(listItemID)){
@@ -358,19 +363,23 @@ function SelectAll(whichSelectAll){
             // console.log('Select all for 27a Drakefell Road has been selected');
             if(document.getElementById('27a-checkbox-1').checked == false){
                 document.getElementById('27a-checkbox-1').checked = true;
-                selectDocument('27a-checkbox-1', '27a-register', '27a-checkbox-all', '27a Drakefell Road, Coventry, CV5K2X', 'SGL479276', 'Register', '27aDIV', '27aLIST', 'RegisterLI');
+                selectDocument('27a-checkbox-1', '27a-register', '27a-checkbox-all', '27a Drakefell Road, Coventry, CV5K2X', 'SGL479276', 'Register', '27aDIV', '27aLIST', 'RegisterLI', '27a_RegisterIcon');
             }
             if(document.getElementById('27a-checkbox-2').checked == false){
                 document.getElementById('27a-checkbox-2').checked = true;
-                selectDocument('27a-checkbox-2', '27a-titlePlan', '27a-checkbox-all', '27a Drakefell Road, Coventry, CV5K2X', 'SGL479276', 'Title plan', '27aDIV', '27aLIST', 'TitlePlanLI');
+                selectDocument('27a-checkbox-2', '27a-titlePlan', '27a-checkbox-all', '27a Drakefell Road, Coventry, CV5K2X', 'SGL479276', 'Title plan', '27aDIV', '27aLIST', 'TitlePlanLI', '27a_TitlePlanIcon');
             }
+            sessionStorage.setItem('27a-checkbox-all', true);
+
         }
         else{
             // console.log('Select all for 27a Drakefell Road has been deselected');
             document.getElementById('27a-checkbox-1').checked = false;
             document.getElementById('27a-checkbox-2').checked = false;
-            selectDocument('27a-checkbox-1', '27a-register', '27a-checkbox-all', '27a Drakefell Road, Coventry, CV5K2X', 'SGL479276', 'Register', '27aDIV', '27aLIST', 'RegisterLI');
-            selectDocument('27a-checkbox-2', '27a-titlePlan', '27a-checkbox-all', '27a Drakefell Road, Coventry, CV5K2X', 'SGL479276', 'Title plan', '27aDIV', '27aLIST', 'TitlePlanLI');
+            selectDocument('27a-checkbox-1', '27a-register', '27a-checkbox-all', '27a Drakefell Road, Coventry, CV5K2X', 'SGL479276', 'Register', '27aDIV', '27aLIST', 'RegisterLI', '27a_RegisterIcon');
+            selectDocument('27a-checkbox-2', '27a-titlePlan', '27a-checkbox-all', '27a Drakefell Road, Coventry, CV5K2X', 'SGL479276', 'Title plan', '27aDIV', '27aLIST', 'TitlePlanLI', '27a_TitlePlanIcon');
+
+            sessionStorage.removeItem('27a-checkbox-all');
         }
     }
     if(whichSelectAll === '27b'){
@@ -384,6 +393,8 @@ function SelectAll(whichSelectAll){
                 document.getElementById('27b-checkbox-2').checked = true;
                 selectDocument('27b-checkbox-2', '27b-titlePlan', '27b-checkbox-all', '27b Drakefell Road, Coventry, CV5K2X', 'SGL479276', 'Title plan', '27bDIV', '27bLIST', 'TitlePlanbLI', '27b_TitlePlanIcon');
             }
+            sessionStorage.setItem('27b-checkbox-all', true);
+
         }
         else{
             console.log('Select all for 27b Drakefell Road has been deselected');
@@ -391,6 +402,9 @@ function SelectAll(whichSelectAll){
             selectDocument('27b-checkbox-1', '27b-register', '27b-checkbox-all', '27b Drakefell Road, Coventry, CV5K2X', 'SGL479276', 'Register', '27bDIV', '27bLIST', 'RegisterbLI', '27b_RegisterIcon');
             document.getElementById('27b-checkbox-2').checked = false;
             selectDocument('27b-checkbox-2', '27b-titlePlan', '27b-checkbox-all', '27b Drakefell Road, Coventry, CV5K2X', 'SGL479276', 'Title plan', '27bDIV', '27bLIST', 'TitlePlanbLI', '27b_TitlePlanIcon');
+
+            sessionStorage.removeItem('27b-checkbox-all');
+
         }
     }
 }

@@ -22,6 +22,11 @@
     }
     onloadCheck('27a-checkbox-1', '27a-register');
     onloadCheck('27a-checkbox-2', '27a-titlePlan');
+    onloadCheck('27a-checkbox-deed', '27a-deed');
+    onloadCheck('27a-checkbox-lease', '27a-lease');
+    onloadCheck('27a-checkbox-transfer', '27a-transfer');
+    onloadCheck('27a-checkbox-charge', '27a-charge');
+
   })
    
   // document.addEventListener("DOMContentLoaded", function(event){
@@ -142,66 +147,78 @@
                           <tr class="govuk-table__row" id="27a-deed" style="display:none;">
                             <div id="content0" class="addedToBasketBox">
                               <td class="govuk-table__cell" colspan="6" style="border-top: none;"> 
-                                <div class="addedToBasket">Register added to basket</div>
+                                <div class="addedToBasket">Deed added to basket</div>
                               </td>
                             </div>
                           </tr>
 
 
 
-                        <tr class="govuk-table__row govuk-table__row">
-                          <td class="govuk-table__cell"><div class="govuk-checkboxes__item">
-                            <input class="govuk-checkboxes__input" id="cb2" name="cb2" type="checkbox" value="cb2" onclick="showAdded2()">
-                            <label class="govuk-label govuk-checkboxes__label" for="cb2"></label>
-                          </div></td>
-                          <td class="govuk-table__cell">Lease</td>
-                          <td class="govuk-table__cell">L1</td>
-                          <td class="govuk-table__cell">22/05/2017</td>
-                          <td class="govuk-table__cell">PDF</td>
-                          <td class="govuk-table__cell">£3.00</td>
-                      </tr>
-                      <tr class="govuk-table__row" style="display:none;position: relative;" id="added2">
-                        <td class="govuk-table__cell" colspan="6"> 
-                          <div class="addedToBasket">Lease added to basket</div>
-                        </td>
-                      </tr>
+                          <tr class="govuk-table__row">
+                            <td class="govuk-table__cell">                                
+                              <div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input" id="27a-checkbox-lease" name="27a-checkbox-lease" data-href="content1" type="checkbox" onclick="selectDocument('27a-checkbox-lease', '27a-lease', '27a-checkbox-all', '27a Drakefell Road, Coventry, CV5K2X', 'SGL479276', 'Lease', '27aDIV', '27aLIST', 'LeaseLI', '27a_LeaseIcon')">
+                              <label class="govuk-label govuk-checkboxes__label" for="checkbox-1" ></label>
+                            </div></td>
+                              <td class="govuk-table__cell">Lease</td>
+                              <td class="govuk-table__cell">L1</td>
+                              <td class="govuk-table__cell">22/05/2017</td>
+                              <td class="govuk-table__cell">PDF</td>
+                              <td class="govuk-table__cell">£3.00</td>
+                          </tr>
+
+                          <tr class="govuk-table__row" id="27a-lease" style="display:none;">
+                            <div id="content0" class="addedToBasketBox">
+                              <td class="govuk-table__cell" colspan="6" style="border-top: none;"> 
+                                <div class="addedToBasket">Lease added to basket</div>
+                              </td>
+                            </div>
+                          </tr>
 
 
 
-                      <tr class="govuk-table__row govuk-table__row">
-                        <td class="govuk-table__cell"><div class="govuk-checkboxes__item">
-                          <input class="govuk-checkboxes__input" id="cb2" name="cb2" type="checkbox" value="cb2" onclick="showAdded2()">
-                          <label class="govuk-label govuk-checkboxes__label" for="cb2"></label>
-                        </div></td>
-                        <td class="govuk-table__cell">Transfer</td>
-                        <td class="govuk-table__cell">A3, A5, C3, C4</td>
-                        <td class="govuk-table__cell">06/07/2012</td>
-                        <td class="govuk-table__cell">PDF</td>
-                        <td class="govuk-table__cell">£3.00</td>
-                    </tr>
-                    <tr class="govuk-table__row" style="display:none;position: relative;" id="added2">
-                      <td class="govuk-table__cell" colspan="6"> 
-                        <div class="addedToBasket">Transfer added to basket</div>
-                      </td>
-                    </tr>
+                          <tr class="govuk-table__row">
+                            <td class="govuk-table__cell">                                
+                              <div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input" id="27a-checkbox-transfer" name="27a-checkbox-transfer" data-href="content1" type="checkbox" onclick="selectDocument('27a-checkbox-transfer', '27a-transfer', '27a-checkbox-all', '27a Drakefell Road, Coventry, CV5K2X', 'SGL479276', 'Transfer', '27aDIV', '27aLIST', 'TransferLI', '27a_TransferIcon')">
+                              <label class="govuk-label govuk-checkboxes__label" for="checkbox-1" ></label>
+                            </div></td>
+                              <td class="govuk-table__cell">Transfer</td>
+                              <td class="govuk-table__cell">A3,A5,C3,C4</td>
+                              <td class="govuk-table__cell">06/07/2012</td>
+                              <td class="govuk-table__cell">PDF</td>
+                              <td class="govuk-table__cell">£3.00</td>
+                          </tr>
+
+                          <tr class="govuk-table__row" id="27a-transfer" style="display:none;">
+                            <div id="content0" class="addedToBasketBox">
+                              <td class="govuk-table__cell" colspan="6" style="border-top: none;"> 
+                                <div class="addedToBasket">Transfer added to basket</div>
+                              </td>
+                            </div>
+                          </tr>
 
 
-                    <tr class="govuk-table__row govuk-table__row">
-                      <td class="govuk-table__cell"><div class="govuk-checkboxes__item">
-                        <input class="govuk-checkboxes__input" id="cb2" name="cb2" type="checkbox" value="cb2" onclick="showAdded2()">
-                        <label class="govuk-label govuk-checkboxes__label" for="cb2"></label>
-                      </div></td>
-                      <td class="govuk-table__cell">Charge</td>
-                      <td class="govuk-table__cell">C1, C2</td>
-                      <td class="govuk-table__cell">07/04/2012</td>
-                      <td class="govuk-table__cell">PDF</td>
-                      <td class="govuk-table__cell">£3.00</td>
-                  </tr>
-                  <tr class="govuk-table__row" style="display:none;position: relative;" id="added2">
-                    <td class="govuk-table__cell" colspan="6"> 
-                      <div class="addedToBasket">Charge added to basket</div>
-                    </td>
-                  </tr>
+                          <tr class="govuk-table__row">
+                            <td class="govuk-table__cell">                                
+                              <div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input" id="27a-checkbox-charge" name="27a-checkbox-charge" data-href="content1" type="checkbox" onclick="selectDocument('27a-checkbox-charge', '27a-charge', '27a-checkbox-all', '27a Drakefell Road, Coventry, CV5K2X', 'SGL479276', 'Charge', '27aDIV', '27aLIST', 'LeaseLI', '27a_ChargeIcon')">
+                              <label class="govuk-label govuk-checkboxes__label" for="checkbox-1" ></label>
+                            </div></td>
+                              <td class="govuk-table__cell">Charge</td>
+                              <td class="govuk-table__cell">C1,C2</td>
+                              <td class="govuk-table__cell">07/04/2012</td>
+                              <td class="govuk-table__cell">PDF</td>
+                              <td class="govuk-table__cell">£3.00</td>
+                          </tr>
+
+                          <tr class="govuk-table__row" id="27a-charge" style="display:none;">
+                            <div id="content0" class="addedToBasketBox">
+                              <td class="govuk-table__cell" colspan="6" style="border-top: none;"> 
+                                <div class="addedToBasket">Charge added to basket</div>
+                              </td>
+                            </div>
+                          </tr>
 
                       </tbody>
                     </table>
