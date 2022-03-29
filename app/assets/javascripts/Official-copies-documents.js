@@ -369,6 +369,24 @@ function SelectAll(whichSelectAll){
                 document.getElementById('27a-checkbox-2').checked = true;
                 selectDocument('27a-checkbox-2', '27a-titlePlan', '27a-checkbox-all', '27a Drakefell Road, Coventry, CV5K2X', 'SGL479276', 'Title plan', '27aDIV', '27aLIST', 'TitlePlanLI', '27a_TitlePlanIcon');
             }
+            if(document.getElementById('27a-checkbox-deed')){
+                if(document.getElementById('27a-checkbox-deed').checked == false){
+                    document.getElementById('27a-checkbox-deed').checked = true;
+                    selectDocument('27a-checkbox-deed', '27a-deed', '27a-checkbox-all', '27a Drakefell Road, Coventry, CV5K2X', 'SGL479276', 'Deed', '27aDIV', '27aLIST', 'DeedLI', '27a_DeedIcon');
+                }
+                if(document.getElementById('27a-checkbox-lease').checked == false){
+                    document.getElementById('27a-checkbox-lease').checked = true;
+                    selectDocument('27a-checkbox-lease', '27a-lease', '27a-checkbox-all', '27a Drakefell Road, Coventry, CV5K2X', 'SGL479276', 'Lease', '27aDIV', '27aLIST', 'LeaseLI', '27a_LeaseIcon');
+                }
+                if(document.getElementById('27a-checkbox-transfer').checked == false){
+                    document.getElementById('27a-checkbox-transfer').checked = true;
+                    selectDocument('27a-checkbox-transfer', '27a-transfer', '27a-checkbox-all', '27a Drakefell Road, Coventry, CV5K2X', 'SGL479276', 'Transfer', '27aDIV', '27aLIST', 'TransferLI', '27a_TransferIcon');
+                }
+                if(document.getElementById('27a-checkbox-charge').checked == false){
+                    document.getElementById('27a-checkbox-charge').checked = true;
+                    selectDocument('27a-checkbox-charge', '27a-charge', '27a-checkbox-all', '27a Drakefell Road, Coventry, CV5K2X', 'SGL479276', 'Charge', '27aDIV', '27aLIST', 'LeaseLI', '27a_ChargeIcon');
+                }
+            }
             sessionStorage.setItem('27a-checkbox-all', true);
 
         }
@@ -378,6 +396,17 @@ function SelectAll(whichSelectAll){
             document.getElementById('27a-checkbox-2').checked = false;
             selectDocument('27a-checkbox-1', '27a-register', '27a-checkbox-all', '27a Drakefell Road, Coventry, CV5K2X', 'SGL479276', 'Register', '27aDIV', '27aLIST', 'RegisterLI', '27a_RegisterIcon');
             selectDocument('27a-checkbox-2', '27a-titlePlan', '27a-checkbox-all', '27a Drakefell Road, Coventry, CV5K2X', 'SGL479276', 'Title plan', '27aDIV', '27aLIST', 'TitlePlanLI', '27a_TitlePlanIcon');
+
+            if(document.getElementById('27a-checkbox-deed')){
+                document.getElementById('27a-checkbox-deed').checked = false;
+                selectDocument('27a-checkbox-deed', '27a-deed', '27a-checkbox-all', '27a Drakefell Road, Coventry, CV5K2X', 'SGL479276', 'Deed', '27aDIV', '27aLIST', 'DeedLI', '27a_DeedIcon');
+                document.getElementById('27a-checkbox-lease').checked = false;
+                selectDocument('27a-checkbox-lease', '27a-lease', '27a-checkbox-all', '27a Drakefell Road, Coventry, CV5K2X', 'SGL479276', 'Lease', '27aDIV', '27aLIST', 'LeaseLI', '27a_LeaseIcon');
+                document.getElementById('27a-checkbox-transfer').checked = false;
+                selectDocument('27a-checkbox-transfer', '27a-transfer', '27a-checkbox-all', '27a Drakefell Road, Coventry, CV5K2X', 'SGL479276', 'Transfer', '27aDIV', '27aLIST', 'TransferLI', '27a_TransferIcon');
+                document.getElementById('27a-checkbox-charge').checked = false;
+                selectDocument('27a-checkbox-charge', '27a-charge', '27a-checkbox-all', '27a Drakefell Road, Coventry, CV5K2X', 'SGL479276', 'Charge', '27aDIV', '27aLIST', 'LeaseLI', '27a_ChargeIcon');
+            }
 
             sessionStorage.removeItem('27a-checkbox-all');
         }
