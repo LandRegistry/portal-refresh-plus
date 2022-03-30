@@ -25,6 +25,26 @@
     onloadCheck('27b-checkbox-2', '27b-titlePlan');
     onloadCheck('27b-checkbox-all', '');
 
+    var additionalDocsAdded = 0;
+    if(sessionStorage.getItem('27a-checkbox-deed')){
+      additionalDocsAdded += 1;
+    }
+    if(sessionStorage.getItem('27a-checkbox-lease')){
+      additionalDocsAdded += 1;
+    }
+    if(sessionStorage.getItem('27a-checkbox-transfer')){
+      additionalDocsAdded += 1;
+    }
+    if(sessionStorage.getItem('27a-checkbox-charge')){
+      additionalDocsAdded += 1;
+    }
+    if(additionalDocsAdded != 0){
+      document.getElementById('howManyAdditionals').innerHTML = additionalDocsAdded + ' additional documents added';
+      document.getElementById('howManyAdditionals').style.display = 'inline-block';
+
+    }
+ 
+
 
     // var InBasket2 = sessionStorage.getItem('CostAndCheckoutButton');
     // document.getElementById('TotalCostandCheckout').innerHTML = InBasket2;
@@ -223,11 +243,17 @@
 
 
 
-
-                                <button class="govuk-button additionalDocButton" data-module="govuk-button" >
-                                  View all documents
-                                </button>
-                            </form>
+                                <div style="display:flex; align-items: center;">
+                                  <div style="width:190px;">
+                                    <button class="govuk-button additionalDocButton" data-module="govuk-button" >
+                                      View all documents
+                                    </button>
+                                  </div>
+                                  
+                                  <div class="addedToBasket" id="howManyAdditionals" style="display:none;font-family:'Roboto', sans-serif; max-height:fit-content; flex-grow:1;margin-left: 10px;margin-top:35px;">additional documents added</div>
+                                </div>
+                                
+                              </form>
                         </div>
                     </div>
                   </section>
