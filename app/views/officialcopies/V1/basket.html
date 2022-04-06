@@ -6,7 +6,75 @@
 
 {% include "includes/officialCopiesNavigation.html" %} 
 
+<script>
+
+ document.addEventListener("DOMContentLoaded", function(event){
+    var InBasket1 = sessionStorage.getItem('InBasket');
+    document.getElementById('addBasketItemsHere').innerHTML = InBasket1;
+    if(parseInt(sessionStorage.getItem("basketQuantity")) >= 1){
+        document.getElementById("basketCounter").style.display = 'block';
+        var InBasketCounter = sessionStorage.getItem('counterForBasket');
+        document.getElementById("basketCounter").innerHTML = sessionStorage.getItem("basketQuantity");
+        document.getElementById("totalCostofBasket").innerHTML = '£' + sessionStorage.getItem("basketTotalCost") + '.00';
+        document.getElementById("checkout-button").style.display = 'block';
+    }
+    onloadCheck('27a-checkbox-1', '27a-register');
+    onloadCheck('27a-checkbox-2', '27a-titlePlan');
+    onloadCheck('27a-checkbox-all', '');
+    onloadCheck('27b-checkbox-1', '27b-register');
+    onloadCheck('27b-checkbox-2', '27b-titlePlan');
+    onloadCheck('27b-checkbox-all', '');
+    onloadCheck('144a-checkbox-1', '144a-register');
+    onloadCheck('144a-checkbox-2', '144a-titlePlan');
+    onloadCheck('144a-checkbox-all', '');
+    onloadCheck('144b-checkbox-1', '144b-register');
+    onloadCheck('144b-checkbox-2', '144b-titlePlan');
+    onloadCheck('144b-checkbox-all', '');
+    onloadCheck('144c-checkbox-1', '144c-register');
+    onloadCheck('144c-checkbox-2', '144c-titlePlan');
+    onloadCheck('144c-checkbox-all', '');
+    onloadCheck('144d-checkbox-1', '144d-register');
+    onloadCheck('144d-checkbox-2', '144d-titlePlan');
+    onloadCheck('144d-checkbox-all', '');
+
+    var additionalDocsAdded = 0;
+    if(sessionStorage.getItem('27a-checkbox-deed')){
+      additionalDocsAdded += 1;
+    }
+    if(sessionStorage.getItem('27a-checkbox-lease')){
+      additionalDocsAdded += 1;
+    }
+    if(sessionStorage.getItem('27a-checkbox-transfer')){
+      additionalDocsAdded += 1;
+    }
+    if(sessionStorage.getItem('27a-checkbox-charge')){
+      additionalDocsAdded += 1;
+    }
+    if(additionalDocsAdded != 0){
+      document.getElementById('howManyAdditionals').innerHTML = additionalDocsAdded + ' additional documents added';
+      document.getElementById('howManyAdditionals').style.display = 'inline-block';
+
+    }
+ 
+
+
+    // var InBasket2 = sessionStorage.getItem('CostAndCheckoutButton');
+    // document.getElementById('TotalCostandCheckout').innerHTML = InBasket2;
+
+
+  })
+ 
+  // document.addEventListener("DOMContentLoaded", function(event){
+  //   if(sessionStorage.getItem("InBasket") != null){
+  //     var InBasket1 = sessionStorage.getItem('InBasket');
+  //     document.getElementById('basketNavigation').innerHTML = InBasket1;
+  //   }
+  // })
+   
+  
+</script>
 <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+
 
 
 <style>
@@ -236,7 +304,7 @@
 
           <div>
               <div class="wide80percent" style="padding-left:0px;">
-                <p class="govuk-body govuk-!-font-weight-bold" style="margin-bottom:0px;line-height:38px;">Order total: £18.00</p>
+                <p class="govuk-body govuk-!-font-weight-bold" style="margin-bottom:0px;line-height:38px;">Order total: xxxx</p>
               </div>
 
               <div class="wide20percent" style="padding:0px 0px 0px 10px;">
