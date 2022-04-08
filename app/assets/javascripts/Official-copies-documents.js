@@ -34,7 +34,8 @@ function anythingInBasket(){
     }
 }
 
-function selectDocument(checkboxID, tablerowID, selectAllID, Address, TitleNumber, DocumentName, divID, listID, listItemID, IconID){
+function selectDocument(checkboxID, tablerowID, selectAllID, Address, TitleNumber, DocumentName, divID, listID, listItemID, IconID, TableRow, ParentAccordian, CustomerReference, TableID, CostperProperty){
+// function selectDocument(checkboxID, tablerowID, selectAllID, Address, TitleNumber, DocumentName, divID, listID, listItemID, IconID){
 
     if (document.getElementById(checkboxID).checked) {
         console.log(arguments);
@@ -208,7 +209,7 @@ function selectDocument(checkboxID, tablerowID, selectAllID, Address, TitleNumbe
         // var argsString = [arguments[0], arguments[1], arguments[2], arguments[3], arguments[4], arguments[5], arguments[6], arguments[7], arguments[8], arguments[9]];
         // let inner = argsString.toString();
         // removeIcon.setAttribute('onclick', 'ItemFromBasket("'+argsString0+','+argsString1+','+argsString2+','+argsString3+','+argsString4+','+argsString5+'")');
-        removeIcon.setAttribute('onclick', "ItemFromBasket('"+arguments[0]+"','"+arguments[1]+"','"+arguments[2]+"','"+arguments[3]+"','"+arguments[4]+"','"+arguments[5]+"','"+arguments[6]+"','"+arguments[7]+"','"+arguments[8]+"','"+arguments[9]+"')");
+        removeIcon.setAttribute('onclick', "ItemFromBasket('"+arguments[0]+"','"+arguments[1]+"','"+arguments[2]+"','"+arguments[3]+"','"+arguments[4]+"','"+arguments[5]+"','"+arguments[6]+"','"+arguments[7]+"','"+arguments[8]+"','"+arguments[9]+"','"+arguments[10]+"','"+arguments[11]+"','"+arguments[12]+"','"+arguments[13]+"','"+arguments[14]+"')");
 
         // this.ItemFromBasket = this.ItemFromBasket.bind(null, arguments[0], arguments[1], arguments[2], arguments[3], arguments[4], arguments[5], arguments[6], arguments[7], arguments[8], arguments[9]);
         // removeIcon.setAttribute('onclick', this.ItemFromBasket());
@@ -238,6 +239,7 @@ function selectDocument(checkboxID, tablerowID, selectAllID, Address, TitleNumbe
 
         sessionStorage.setItem(checkboxID, true);
 
+
     }   
     else{
         console.log('code executing');
@@ -252,7 +254,7 @@ function selectDocument(checkboxID, tablerowID, selectAllID, Address, TitleNumbe
 
         anythingInBasket();
         document.getElementById("basketCounter").innerHTML = sessionStorage.getItem("basketQuantity");
-        if (document.getElementById(selectAllID).checked) {
+        if (sessionStorage.getItem(selectAllID)) {
             document.getElementById(selectAllID).checked = false;
             sessionStorage.removeItem(selectAllID);
 
@@ -283,6 +285,19 @@ function selectDocument(checkboxID, tablerowID, selectAllID, Address, TitleNumbe
 
         sessionStorage.removeItem(checkboxID);
 
+        // If an item removed when on the checkout screen
+        // var current_url = location.pathname;
+        // if (current_url == '/officialcopies/V1/basket') {
+        //     document.getElementById(DocumentRowAccordian).style.display = 'none';
+        //     var howManyRows = document.getElementById(DocumentTableBody).childElementCount;
+        //     if(howManyRows == 0){
+        //         document.getElementById(propertyAccordian).style.display = 'none';
+        //         document.getElementById(CustomerReference).style.display = 'none';
+        //     }
+        // }
+        
+
+
     }
 }
 
@@ -296,7 +311,7 @@ function selectDocument(checkboxID, tablerowID, selectAllID, Address, TitleNumbe
 //     ULof_triggeredIcon = document.getElementById(LIof_triggeredIconID).parentElement;
 // }
 
-function ItemFromBasket(checkboxID, tablerowID, selectAllID, Address, TitleNumber, DocumentName, divID, listID, listItemID, IconID){
+function ItemFromBasket(checkboxID, tablerowID, selectAllID, Address, TitleNumber, DocumentName, divID, listID, listItemID, IconID, TableRow, ParentAccordian, CustomerReference, TableID, CostperProperty){
     console.log('testing the retrieval of arguments');
     // console.log(listItemID);
     // console.log(document.getElementById(listItemID));
@@ -314,7 +329,7 @@ function ItemFromBasket(checkboxID, tablerowID, selectAllID, Address, TitleNumbe
     if (document.getElementById(checkboxID)) {
         console.log('Checkbox exists on page');
         document.getElementById(checkboxID).checked = false;
-        let RemoveITEM = selectDocument.bind(null, arguments[0], arguments[1], arguments[2], arguments[3], arguments[4], arguments[5], arguments[6], arguments[7], arguments[8], arguments[9]);
+        let RemoveITEM = selectDocument.bind(null, arguments[0], arguments[1], arguments[2], arguments[3], arguments[4], arguments[5], arguments[6], arguments[7], arguments[8], arguments[9], arguments[10], arguments[11], arguments[12], arguments[13], arguments[14]);
         RemoveITEM();
     }
     else{
@@ -353,6 +368,43 @@ function ItemFromBasket(checkboxID, tablerowID, selectAllID, Address, TitleNumbe
 
         sessionStorage.removeItem(checkboxID);
 
+        // var current_url = location.pathname;
+        // if (current_url == '/officialcopies/V1/basket') {
+        //     console.log('were at the checkout');
+        //     document.getElementById(DocumentRowAccordian).style.display = 'none';
+        //     var howManyRows = document.getElementById(DocumentTableBody).childElementCount;
+        //     if(howManyRows == 0){
+        //         document.getElementById(propertyAccordian).style.display = 'none';
+        //         document.getElementById(CustomerReference).style.display = 'none';
+        //     }
+        // }
+
+        var current_url = location.pathname;
+        if (current_url == '/officialcopies/V1/basket') {
+            console.log('items removed when on basket page');
+            document.getElementById(TableRow).style.display = 'none';
+            var numberDisplayed = 0;
+            var Children = document.getElementById(TableID).children;
+            console.log(Children.length);
+            for (let child of Children){
+                // console.log(Children[child]);
+                if(child.style.display == 'table-row'){
+                    console.log('a child is displayed');
+                    numberDisplayed += 1;
+                }
+            }
+            if(numberDisplayed == 0){
+                document.getElementById(ParentAccordian).style.display = 'none';
+                document.getElementById(CustomerReference).style.display = 'none';
+    
+            }
+
+            var PropertyDocumentsCost = numberDisplayed * 3; 
+            document.getElementById(CostperProperty).innerHTML = '£' + PropertyDocumentsCost + '.00';
+            
+
+        }
+
     }
 }
 
@@ -363,28 +415,28 @@ function SelectAll(whichSelectAll){
             // console.log('Select all for 27a Drakefell Road has been selected');
             if(document.getElementById('27a-checkbox-1').checked == false){
                 document.getElementById('27a-checkbox-1').checked = true;
-                selectDocument('27a-checkbox-1', '27a-register', '27a-checkbox-all', '27a Drakefell Road, Coventry, CV5K2X', 'SGL479276', 'Register', '27aDIV', '27aLIST', 'RegisterLI', '27a_RegisterIcon');
+                selectDocument('27a-checkbox-1', '27a-register', '27a-checkbox-all', '27a Drakefell Road, Coventry, CV5K2X', 'SGL479276', 'Register', '27aDIV', '27aLIST', 'RegisterLI', '27a_RegisterIcon','27aRegisterBasket','27aBasket', 'reference-27a', '27aTable', '27aCost');            
             }
             if(document.getElementById('27a-checkbox-2').checked == false){
                 document.getElementById('27a-checkbox-2').checked = true;
-                selectDocument('27a-checkbox-2', '27a-titlePlan', '27a-checkbox-all', '27a Drakefell Road, Coventry, CV5K2X', 'SGL479276', 'Title plan', '27aDIV', '27aLIST', 'TitlePlanLI', '27a_TitlePlanIcon');
+                selectDocument('27a-checkbox-2', '27a-titlePlan', '27a-checkbox-all', '27a Drakefell Road, Coventry, CV5K2X', 'SGL479276', 'Title plan', '27aDIV', '27aLIST', 'TitlePlanLI', '27a_TitlePlanIcon','27aTitlePlanBasket','27aBasket', 'reference-27a', '27aTable', '27aCost');
             }
             if(document.getElementById('27a-checkbox-deed')){
                 if(document.getElementById('27a-checkbox-deed').checked == false){
                     document.getElementById('27a-checkbox-deed').checked = true;
-                    selectDocument('27a-checkbox-deed', '27a-deed', '27a-checkbox-all', '27a Drakefell Road, Coventry, CV5K2X', 'SGL479276', 'Deed', '27aDIV', '27aLIST', 'DeedLI', '27a_DeedIcon');
+                    selectDocument('27a-checkbox-deed', '27a-deed', '27a-checkbox-all', '27a Drakefell Road, Coventry, CV5K2X', 'SGL479276', 'Deed', '27aDIV', '27aLIST', 'DeedLI', '27a_DeedIcon', '27aDeedBasket','27aBasket', 'reference-27a', '27aTable', '27aCost');
                 }
                 if(document.getElementById('27a-checkbox-lease').checked == false){
                     document.getElementById('27a-checkbox-lease').checked = true;
-                    selectDocument('27a-checkbox-lease', '27a-lease', '27a-checkbox-all', '27a Drakefell Road, Coventry, CV5K2X', 'SGL479276', 'Lease', '27aDIV', '27aLIST', 'LeaseLI', '27a_LeaseIcon');
+                    selectDocument('27a-checkbox-lease', '27a-lease', '27a-checkbox-all', '27a Drakefell Road, Coventry, CV5K2X', 'SGL479276', 'Lease', '27aDIV', '27aLIST', 'LeaseLI', '27a_LeaseIcon', '27aLeaseBasket','27aBasket', 'reference-27a', '27aTable', '27aCost');
                 }
                 if(document.getElementById('27a-checkbox-transfer').checked == false){
                     document.getElementById('27a-checkbox-transfer').checked = true;
-                    selectDocument('27a-checkbox-transfer', '27a-transfer', '27a-checkbox-all', '27a Drakefell Road, Coventry, CV5K2X', 'SGL479276', 'Transfer', '27aDIV', '27aLIST', 'TransferLI', '27a_TransferIcon');
+                    selectDocument('27a-checkbox-transfer', '27a-transfer', '27a-checkbox-all', '27a Drakefell Road, Coventry, CV5K2X', 'SGL479276', 'Transfer', '27aDIV', '27aLIST', 'TransferLI', '27a_TransferIcon', '27aTransferBasket','27aBasket', 'reference-27a', '27aTable', '27aCost');
                 }
                 if(document.getElementById('27a-checkbox-charge').checked == false){
                     document.getElementById('27a-checkbox-charge').checked = true;
-                    selectDocument('27a-checkbox-charge', '27a-charge', '27a-checkbox-all', '27a Drakefell Road, Coventry, CV5K2X', 'SGL479276', 'Charge', '27aDIV', '27aLIST', 'LeaseLI', '27a_ChargeIcon');
+                    selectDocument('27a-checkbox-charge', '27a-charge', '27a-checkbox-all', '27a Drakefell Road, Coventry, CV5K2X', 'SGL479276', 'Charge', '27aDIV', '27aLIST', 'ChargeLI', '27a_ChargeIcon', '27aChargeBasket','27aBasket', 'reference-27a', '27aTable', '27aCost');
                 }
             }
             sessionStorage.setItem('27a-checkbox-all', true);
@@ -394,18 +446,18 @@ function SelectAll(whichSelectAll){
             // console.log('Select all for 27a Drakefell Road has been deselected');
             document.getElementById('27a-checkbox-1').checked = false;
             document.getElementById('27a-checkbox-2').checked = false;
-            selectDocument('27a-checkbox-1', '27a-register', '27a-checkbox-all', '27a Drakefell Road, Coventry, CV5K2X', 'SGL479276', 'Register', '27aDIV', '27aLIST', 'RegisterLI', '27a_RegisterIcon');
-            selectDocument('27a-checkbox-2', '27a-titlePlan', '27a-checkbox-all', '27a Drakefell Road, Coventry, CV5K2X', 'SGL479276', 'Title plan', '27aDIV', '27aLIST', 'TitlePlanLI', '27a_TitlePlanIcon');
+            selectDocument('27a-checkbox-1', '27a-register', '27a-checkbox-all', '27a Drakefell Road, Coventry, CV5K2X', 'SGL479276', 'Register', '27aDIV', '27aLIST', 'RegisterLI', '27a_RegisterIcon','27aRegisterBasket','27aBasket', 'reference-27a', '27aTable', '27aCost');            
+            selectDocument('27a-checkbox-2', '27a-titlePlan', '27a-checkbox-all', '27a Drakefell Road, Coventry, CV5K2X', 'SGL479276', 'Title plan', '27aDIV', '27aLIST', 'TitlePlanLI', '27a_TitlePlanIcon','27aTitlePlanBasket','27aBasket', 'reference-27a', '27aTable', '27aCost');
 
             if(document.getElementById('27a-checkbox-deed')){
                 document.getElementById('27a-checkbox-deed').checked = false;
-                selectDocument('27a-checkbox-deed', '27a-deed', '27a-checkbox-all', '27a Drakefell Road, Coventry, CV5K2X', 'SGL479276', 'Deed', '27aDIV', '27aLIST', 'DeedLI', '27a_DeedIcon');
+                selectDocument('27a-checkbox-deed', '27a-deed', '27a-checkbox-all', '27a Drakefell Road, Coventry, CV5K2X', 'SGL479276', 'Deed', '27aDIV', '27aLIST', 'DeedLI', '27a_DeedIcon', '27aDeedBasket','27aBasket', 'reference-27a', '27aTable', '27aCost');
                 document.getElementById('27a-checkbox-lease').checked = false;
-                selectDocument('27a-checkbox-lease', '27a-lease', '27a-checkbox-all', '27a Drakefell Road, Coventry, CV5K2X', 'SGL479276', 'Lease', '27aDIV', '27aLIST', 'LeaseLI', '27a_LeaseIcon');
+                selectDocument('27a-checkbox-lease', '27a-lease', '27a-checkbox-all', '27a Drakefell Road, Coventry, CV5K2X', 'SGL479276', 'Lease', '27aDIV', '27aLIST', 'LeaseLI', '27a_LeaseIcon', '27aLeaseBasket','27aBasket', 'reference-27a', '27aTable', '27aCost');
                 document.getElementById('27a-checkbox-transfer').checked = false;
-                selectDocument('27a-checkbox-transfer', '27a-transfer', '27a-checkbox-all', '27a Drakefell Road, Coventry, CV5K2X', 'SGL479276', 'Transfer', '27aDIV', '27aLIST', 'TransferLI', '27a_TransferIcon');
+                selectDocument('27a-checkbox-transfer', '27a-transfer', '27a-checkbox-all', '27a Drakefell Road, Coventry, CV5K2X', 'SGL479276', 'Transfer', '27aDIV', '27aLIST', 'TransferLI', '27a_TransferIcon', '27aTransferBasket','27aBasket', 'reference-27a', '27aTable', '27aCost');
                 document.getElementById('27a-checkbox-charge').checked = false;
-                selectDocument('27a-checkbox-charge', '27a-charge', '27a-checkbox-all', '27a Drakefell Road, Coventry, CV5K2X', 'SGL479276', 'Charge', '27aDIV', '27aLIST', 'LeaseLI', '27a_ChargeIcon');
+                selectDocument('27a-checkbox-charge', '27a-charge', '27a-checkbox-all', '27a Drakefell Road, Coventry, CV5K2X', 'SGL479276', 'Charge', '27aDIV', '27aLIST', 'ChargeLI', '27a_ChargeIcon', '27aChargeBasket','27aBasket', 'reference-27a', '27aTable', '27aCost');
             }
 
             sessionStorage.removeItem('27a-checkbox-all');
@@ -538,7 +590,45 @@ function SelectAll(whichSelectAll){
     }
 }
 
+// function CheckoutBasket(checkboxID, TableRow, ParentAccordian, CustomerReference){
+//     var current_url = location.pathname;
+//     if (current_url == '/officialcopies/V1/basket') {
+//         if(sessionStorage.getItem(checkboxID)){
+//             document.getElementById(TableRow).style.display = 'table-row';
+//             document.getElementById(ParentAccordian).style.display = 'block';
+//             document.getElementById(CustomerReference).style.display = 'block';
+            
+//         }
+//         else{
+//             var numberDisplayed = 0;
+//             var children = document.getElementById(ParentAccordian).childNodes;
+//             for (child in children){
+//                 if(children[child].style.display == 'table-row'){
+//                     numberDisplayed += 1;
+//                 }
+//             }
+//             if(numberDisplayed == 0){
+//                 document.getElementById(ParentAccordian).style.display = 'none';
+//                 document.getElementById(CustomerReference).style.display = 'none';
+    
+//             }
+//         }
+//     }  
+// }
 
+var PropertyDocumentsNumber = 0;
+
+function CheckoutBasket(checkboxID, TableRow, ParentAccordian, CustomerReference, TableID, CostperProperty){
+    if(sessionStorage.getItem(checkboxID)){
+        document.getElementById(TableRow).style.display = 'table-row';
+        document.getElementById(ParentAccordian).style.display = 'block';
+        document.getElementById(CustomerReference).style.display = 'block';
+        PropertyDocumentsNumber += 1;
+        var PropertyDocumentsCost = PropertyDocumentsNumber * 3; 
+        document.getElementById(CostperProperty).innerHTML = '£' + PropertyDocumentsCost + '.00';
+    }
+  
+}
 
 
 // function ARegister(){
