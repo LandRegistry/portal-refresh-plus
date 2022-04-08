@@ -9,6 +9,8 @@
 <script>
 
  document.addEventListener("DOMContentLoaded", function(event){
+    document.getElementById("checkoutTotal").innerHTML = 'Order total: £' + sessionStorage.getItem("basketTotalCost") + '.00';
+
     var InBasket1 = sessionStorage.getItem('InBasket');
     document.getElementById('addBasketItemsHere').innerHTML = InBasket1;
     if(parseInt(sessionStorage.getItem("basketQuantity")) >= 1){
@@ -640,7 +642,7 @@
 
           <div>
               <div class="wide80percent" style="padding-left:0px;">
-                <p class="govuk-body govuk-!-font-weight-bold" style="margin-bottom:0px;line-height:38px;">Order total: xxxx</p>
+                <p id="checkoutTotal" class="govuk-body govuk-!-font-weight-bold" style="margin-bottom:0px;line-height:38px;">Order total: xxxx</p>
               </div>
 
               <div class="wide20percent" style="padding:0px 0px 0px 10px;">
