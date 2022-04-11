@@ -27,13 +27,27 @@
     CheckoutBasket('27a-checkbox-transfer', '27aTransferBasket', '27aBasket', 'reference-27a', '27aTable', '27aCost');
     CheckoutBasket('27a-checkbox-charge', '27aChargeBasket', '27aBasket', 'reference-27a', '27aTable', '27aCost');
 
+    CheckoutBasket('27b-checkbox-1', '27bRegisterBasket', '27bBasket', 'reference-27b', '27bTable', '27bCost');
+    CheckoutBasket('27b-checkbox-2', '27bTitlePlanBasket', '27bBasket', 'reference-27b', '27bTable', '27bCost');
+
+    CheckoutBasket('144a-checkbox-1', '144aRegisterBasket', '144aBasket', 'reference-144a', '144aTable', '144aCost');
+    CheckoutBasket('144a-checkbox-2', '144aTitlePlanBasket', '144aBasket', 'reference-144a', '144aTable', '144aCost');
+
+    CheckoutBasket('144b-checkbox-1', '144bRegisterBasket', '144bBasket', 'reference-144b', '144bTable', '144bCost');
+    CheckoutBasket('144b-checkbox-2', '144bTitlePlanBasket', '144bBasket', 'reference-144b', '144bTable', '144bCost');
+
+    CheckoutBasket('144c-checkbox-1', '144cRegisterBasket', '144cBasket', 'reference-144c', '144cTable', '144cCost');
+    CheckoutBasket('144c-checkbox-2', '144cTitlePlanBasket', '144cBasket', 'reference-144c', '144cTable', '144cCost');
+
+    CheckoutBasket('144d-checkbox-1', '144dRegisterBasket', '144dBasket', 'reference-144d', '144dTable', '144dCost');
+    CheckoutBasket('144d-checkbox-2', '144dTitlePlanBasket', '144dBasket', 'reference-144d', '144dTable', '144dCost');
   })
 
-  var TotalCostinBasket = document.getElementById('totalCostofBasket');
-  TotalCostinBasket.addEventListener("change", function(event){
-    console.log('the cost has updated');
-  }
-  )
+  // var TotalCostinBasket = document.getElementById('totalCostofBasket');
+  // TotalCostinBasket.addEventListener("change", function(event){
+  //   console.log('the cost has updated');
+  // }
+  // )
 
   document.addEventListener("click", function(event){
     var TotalCostinBasket = document.getElementById('totalCostofBasket');
@@ -142,7 +156,7 @@
                                                             <td class="govuk-table__cell">Official copy</td>
                                                             <td class="govuk-table__cell">PDF</td>
                                                             <td class="govuk-table__cell">£3.00</td>
-                                                            <td class="govuk-table__cell"><a class="accordionRemove" style="cursor: pointer;" onclick="ItemFromBasket('27a-checkbox-1', '27a-register', '27a-checkbox-all', '27a Drakefell Road, Coventry, CV5K2X', 'SGL479276', 'Register', '27aDIV', '27aLIST', 'RegisterLI', '27a_RegisterIcon','27aRegisterBasket','27aBasket', 'reference-27a', '27aTable', '27aCost')">Remove</a></td>
+                                                            <td class="govuk-table__cell"><a class="accordionRemove" style="cursor: pointer;" onclick="ItemFromBasket('27a-checkbox-1', '27a-register', '27a-checkbox-all', '27a Drakefell Road, Coventry, CV5K2X', 'SGL479276', 'Register', '27aDIV', '27aLIST', 'RegisterLI', '27a_RegisterIcon','27aRegisterBasket','27aBasket', 'reference-27a', '27aTable', '27aCost');">Remove</a></td>
                                                         </tr>
                                                         
                                                         <tr class="govuk-table__row govuk-table__row" id="27aTitlePlanBasket" style="display:none;">
@@ -150,7 +164,7 @@
                                                           <td class="govuk-table__cell">Official copy</td>
                                                           <td class="govuk-table__cell">PDF</td>
                                                           <td class="govuk-table__cell">£3.00</td>
-                                                          <td class="govuk-table__cell"><a class="accordionRemove" style="cursor: pointer;" onclick="ItemFromBasket('27a-checkbox-2', '27a-titlePlan', '27a-checkbox-all', '27a Drakefell Road, Coventry, CV5K2X', 'SGL479276', 'Title plan', '27aDIV', '27aLIST', 'TitlePlanLI', '27a_TitlePlanIcon','27aTitlePlanBasket','27aBasket', 'reference-27a', '27aTable', '27aCost')">Remove</a></td>
+                                                          <td class="govuk-table__cell"><a class="accordionRemove" style="cursor: pointer;" onclick="ItemFromBasket('27a-checkbox-2', '27a-titlePlan', '27a-checkbox-all', '27a Drakefell Road, Coventry, CV5K2X', 'SGL479276', 'Title plan', '27aDIV', '27aLIST', 'TitlePlanLI', '27a_TitlePlanIcon','27aTitlePlanBasket','27aBasket', 'reference-27a', '27aTable', '27aCost');">Remove</a></td>
                                                         </tr>
 
                                                         <tr class="govuk-table__row govuk-table__row" id="27aDeedBasket" style="display:none;">
@@ -158,7 +172,7 @@
                                                           <td class="govuk-table__cell">B3</td>
                                                           <td class="govuk-table__cell">PDF</td>
                                                           <td class="govuk-table__cell">£3.00</td>
-                                                          <td class="govuk-table__cell"><a class="accordionRemove" style="cursor: pointer;" onclick="ItemFromBasket('27a-checkbox-deed', '27a-deed', '27a-checkbox-all', '27a Drakefell Road, Coventry, CV5K2X', 'SGL479276', 'Deed', '27aDIV', '27aLIST', 'DeedLI', '27a_DeedIcon', '27aDeedBasket','27aBasket', 'reference-27a', '27aTable', '27aCost')">Remove</a></td>
+                                                          <td class="govuk-table__cell"><a class="accordionRemove" style="cursor: pointer;" onclick="ItemFromBasket('27a-checkbox-deed', '27a-deed', '27a-checkbox-all', '27a Drakefell Road, Coventry, CV5K2X', 'SGL479276', 'Deed', '27aDIV', '27aLIST', 'DeedLI', '27a_DeedIcon', '27aDeedBasket','27aBasket', 'reference-27a', '27aTable', '27aCost');">Remove</a></td>
                                                         </tr>
 
                                                         <tr class="govuk-table__row govuk-table__row" id="27aLeaseBasket" style="display:none;">
@@ -166,7 +180,7 @@
                                                           <td class="govuk-table__cell last">L1</td>
                                                           <td class="govuk-table__cell last">PDF</td>
                                                           <td class="govuk-table__cell last">£3.00</td>
-                                                          <td class="govuk-table__cell last"><a class="accordionRemove" style="cursor: pointer;" onclick="ItemFromBasket('27a-checkbox-lease', '27a-lease', '27a-checkbox-all', '27a Drakefell Road, Coventry, CV5K2X', 'SGL479276', 'Lease', '27aDIV', '27aLIST', 'LeaseLI', '27a_LeaseIcon', '27aLeaseBasket','27aBasket', 'reference-27a', '27aTable', '27aCost')">Remove</a></td>
+                                                          <td class="govuk-table__cell last"><a class="accordionRemove" style="cursor: pointer;" onclick="ItemFromBasket('27a-checkbox-lease', '27a-lease', '27a-checkbox-all', '27a Drakefell Road, Coventry, CV5K2X', 'SGL479276', 'Lease', '27aDIV', '27aLIST', 'LeaseLI', '27a_LeaseIcon', '27aLeaseBasket','27aBasket', 'reference-27a', '27aTable', '27aCost');">Remove</a></td>
                                                         </tr>
 
                                                         <tr class="govuk-table__row govuk-table__row" id="27aTransferBasket" style="display:none;">
@@ -174,7 +188,7 @@
                                                           <td class="govuk-table__cell">A3,A5,C3,C4</td>
                                                           <td class="govuk-table__cell">PDF</td>
                                                           <td class="govuk-table__cell">£3.00</td>
-                                                          <td class="govuk-table__cell"><a class="accordionRemove" style="cursor: pointer;" onclick="ItemFromBasket('27a-checkbox-transfer', '27a-transfer', '27a-checkbox-all', '27a Drakefell Road, Coventry, CV5K2X', 'SGL479276', 'Transfer', '27aDIV', '27aLIST', 'TransferLI', '27a_TransferIcon', '27aTransferBasket','27aBasket', 'reference-27a', '27aTable', '27aCost')">Remove</a></td>
+                                                          <td class="govuk-table__cell"><a class="accordionRemove" style="cursor: pointer;" onclick="ItemFromBasket('27a-checkbox-transfer', '27a-transfer', '27a-checkbox-all', '27a Drakefell Road, Coventry, CV5K2X', 'SGL479276', 'Transfer', '27aDIV', '27aLIST', 'TransferLI', '27a_TransferIcon', '27aTransferBasket','27aBasket', 'reference-27a', '27aTable', '27aCost');">Remove</a></td>
                                                         </tr>
 
                                                         <tr class="govuk-table__row govuk-table__row" id="27aChargeBasket" style="display:none;">
@@ -182,7 +196,7 @@
                                                           <td class="govuk-table__cell last">C1,C2</td>
                                                           <td class="govuk-table__cell last">PDF</td>
                                                           <td class="govuk-table__cell last">£3.00</td>
-                                                          <td class="govuk-table__cell last"><a class="accordionRemove" style="cursor: pointer;" onclick="ItemFromBasket('27a-checkbox-charge', '27a-charge', '27a-checkbox-all', '27a Drakefell Road, Coventry, CV5K2X', 'SGL479276', 'Charge', '27aDIV', '27aLIST', 'ChargeLI', '27a_ChargeIcon', '27aChargeBasket','27aBasket', 'reference-27a', '27aTable', '27aCost')">Remove</a></td>
+                                                          <td class="govuk-table__cell last"><a class="accordionRemove" style="cursor: pointer;" onclick="ItemFromBasket('27a-checkbox-charge', '27a-charge', '27a-checkbox-all', '27a Drakefell Road, Coventry, CV5K2X', 'SGL479276', 'Charge', '27aDIV', '27aLIST', 'ChargeLI', '27a_ChargeIcon', '27aChargeBasket','27aBasket', 'reference-27a', '27aTable', '27aCost');">Remove</a></td>
                                                         </tr>
               
                                                     </tbody>
@@ -210,7 +224,7 @@
 
                             <!-- 27b Drakefell Road -->
                             <div>
-                              <div class="wide80percent">
+                              <div class="wide80percent" id="27bBasket" style="display:none;">
                                 <section class="panel panel-default">
                                   <div class="panel-heading" role="tab" id="headingTwo">
                                     <h4 class="panel-title">
@@ -221,7 +235,7 @@
                                             <tr class="govuk-table__row">
                                                   <th scope="row" class="govuk-table__header accordionTitle">SGL479276</th>
                                                   <th scope="row" class="govuk-table__header accordionAddress">27b Drakefell Road,CV5 K2X</th>
-                                                  <th scope="row" class="govuk-table__header accordionCost">£6.00</th> 
+                                                  <th scope="row" class="govuk-table__header accordionCost" id="27bCost">hello</th> 
                                                   <th scope="row" class="govuk-table__header accordionChevron"><span class="glyphicon glyphicon-chevron-right pull-right" aria-hidden="true"><img style="margin-bottom:-5px;" width="25" src="/public/images/icon_govuk_chevrondown.svg"></span></th> 
                                               </tr>
                                           </thead>
@@ -245,22 +259,22 @@
                                                 </tr>
                                             </thead>
 
-                                            <tbody class="govuk-table__body">
+                                            <tbody class="govuk-table__body" id="27bTable">
 
-                                                <tr class="govuk-table__row">
+                                                <tr class="govuk-table__row" id="27bRegisterBasket" style="display:none;">
                                                     <td class="govuk-table__cell">Register</td>
                                                     <td class="govuk-table__cell">Official copy</td>
                                                     <td class="govuk-table__cell">PDF</td>
                                                     <td class="govuk-table__cell">£3.00</td>
-                                                    <td class="govuk-table__cell"><a class="accordionRemove" href="">Remove</a></td>
+                                                    <td class="govuk-table__cell"><a class="accordionRemove" onclick="ItemFromBasket('27b-checkbox-1', '27b-register', '27b-checkbox-all', '27b Drakefell Road, Coventry, CV5K2X', 'SGL479276', 'Register', '27bDIV', '27bLIST', 'RegisterbLI', '27b_RegisterIcon', '27bRegisterBasket','27bBasket', 'reference-27b', '27bTable', '27bCost')">Remove</a></td>
                                                 </tr>
                                                 
-                                                <tr class="govuk-table__row govuk-table__row">
+                                                <tr class="govuk-table__row govuk-table__row" id="27bTitlePlanBasket" style="display:none;">
                                                   <td class="govuk-table__cell">Title plan</td>
                                                   <td class="govuk-table__cell">Official copy</td>
                                                   <td class="govuk-table__cell">PDF</td>
                                                   <td class="govuk-table__cell">£3.00</td>
-                                                  <td class="govuk-table__cell"><a class="accordionRemove" href="">Remove</a></td>
+                                                  <td class="govuk-table__cell"><a class="accordionRemove" onclick="ItemFromBasket('27b-checkbox-2', '27b-titlePlan', '27b-checkbox-all', '27b Drakefell Road, Coventry, CV5K2X', 'SGL479276', 'Title plan', '27bDIV', '27bLIST', 'TitlePlanbLI', '27b_TitlePlanIcon', '27bTitlePlanBasket','27bBasket', 'reference-27b', '27bTable', '27bCost')">Remove</a></td>
                                                 </tr>
 
       
@@ -273,7 +287,7 @@
                                   </div>
                                 </section>
                               </div>
-                              <div class="wide20percent">
+                              <div class="wide20percent" id="reference-27b" style="display:none;">
                                 
                                 <fieldset class="govuk-fieldset">
 
@@ -289,7 +303,7 @@
 
                             <!-- 144a Drakefell Road -->
                             <div>
-                              <div class="wide80percent">
+                              <div class="wide80percent" id="144aBasket" style="display:none;">
                                 <section class="panel panel-default">
                                   <div class="panel-heading" role="tab" id="headingThree">
                                     <h4 class="panel-title">
@@ -300,7 +314,7 @@
                                             <tr class="govuk-table__row">
                                                   <th scope="row" class="govuk-table__header accordionTitle">NN890234</th>
                                                   <th scope="row" class="govuk-table__header accordionAddress">144a Drakefell Road,CV5 K2X</th>
-                                                  <th scope="row" class="govuk-table__header accordionCost">£6.00</th> 
+                                                  <th scope="row" class="govuk-table__header accordionCost" id="144aCost">£6.00</th> 
                                                   <th scope="row" class="govuk-table__header accordionChevron"><span class="glyphicon glyphicon-chevron-right pull-right" aria-hidden="true"><img style="margin-bottom:-5px;" width="25" src="/public/images/icon_govuk_chevrondown.svg"></span></th> 
                                               </tr>
                                           </thead>
@@ -324,22 +338,22 @@
                                                 </tr>
                                             </thead>
 
-                                            <tbody class="govuk-table__body">
+                                            <tbody class="govuk-table__body" id="144aTable">
 
-                                                <tr class="govuk-table__row">
+                                                <tr class="govuk-table__row" id="144aRegisterBasket" style="display:none;">
                                                     <td class="govuk-table__cell">Register</td>
                                                     <td class="govuk-table__cell">Official copy</td>
                                                     <td class="govuk-table__cell">PDF</td>
                                                     <td class="govuk-table__cell">£3.00</td>
-                                                    <td class="govuk-table__cell"><a class="accordionRemove" href="">Remove</a></td>
+                                                    <td class="govuk-table__cell"><a class="accordionRemove" style="cursor: pointer;" onclick="ItemFromBasket('144a-checkbox-1', '144a-register', '144a-checkbox-all', '144a Drakefell Road, Coventry, CV5K2X', 'NN890234', 'Register', '144aDIV', '144aLIST', 'Register3LI', '144a_RegisterIcon', '144aRegisterBasket', '144aBasket', 'reference-144a', '144aTable', '144aCost');">Remove</a></td>
                                                 </tr>
                                                 
-                                                <tr class="govuk-table__row govuk-table__row">
+                                                <tr class="govuk-table__row govuk-table__row" id="144aTitlePlanBasket" style="display:none;">
                                                   <td class="govuk-table__cell">Title plan</td>
                                                   <td class="govuk-table__cell">Official copy</td>
                                                   <td class="govuk-table__cell">PDF</td>
                                                   <td class="govuk-table__cell">£3.00</td>
-                                                  <td class="govuk-table__cell"><a class="accordionRemove" href="">Remove</a></td>
+                                                  <td class="govuk-table__cell"><a class="accordionRemove" style="cursor: pointer;" onclick="ItemFromBasket('144a-checkbox-2', '144a-titlePlan', '144a-checkbox-all', '144a Drakefell Road, Coventry, CV5K2X', 'NN890234', 'Title plan', '144aDIV', '144aLIST', 'TitlePlan3LI', '144a_TitlePlanIcon', '144aTitlePlanBasket', '144aBasket', 'reference-144a', '144aTable', '144aCost')">Remove</a></td>
                                                 </tr>
 
       
@@ -352,7 +366,7 @@
                                   </div>
                                 </section>
                               </div>
-                              <div class="wide20percent">
+                              <div class="wide20percent" id="reference-144a" style="display:none;">
                                 
                                 <fieldset class="govuk-fieldset">
 
@@ -368,7 +382,7 @@
 
                             <!-- 144b Drakefell Road -->
                             <div>
-                              <div class="wide80percent">
+                              <div class="wide80percent" id="144bBasket" style="display:none;">
                                 <section class="panel panel-default">
                                   <div class="panel-heading" role="tab" id="headingFour">
                                     <h4 class="panel-title">
@@ -379,7 +393,7 @@
                                             <tr class="govuk-table__row">
                                                   <th scope="row" class="govuk-table__header accordionTitle">NN890234</th>
                                                   <th scope="row" class="govuk-table__header accordionAddress">144b Drakefell Road,CV5 K2X</th>
-                                                  <th scope="row" class="govuk-table__header accordionCost">£6.00</th> 
+                                                  <th scope="row" class="govuk-table__header accordionCost" id="144bCost">£6.00</th> 
                                                   <th scope="row" class="govuk-table__header accordionChevron"><span class="glyphicon glyphicon-chevron-right pull-right" aria-hidden="true"><img style="margin-bottom:-5px;" width="25" src="/public/images/icon_govuk_chevrondown.svg"></span></th> 
                                               </tr>
                                           </thead>
@@ -403,22 +417,22 @@
                                                 </tr>
                                             </thead>
 
-                                            <tbody class="govuk-table__body">
+                                            <tbody class="govuk-table__body" id="144bTable">
 
-                                                <tr class="govuk-table__row">
+                                                <tr class="govuk-table__row" id="144bRegisterBasket" style="display:none;">
                                                     <td class="govuk-table__cell">Register</td>
                                                     <td class="govuk-table__cell">Official copy</td>
                                                     <td class="govuk-table__cell">PDF</td>
                                                     <td class="govuk-table__cell">£3.00</td>
-                                                    <td class="govuk-table__cell"><a class="accordionRemove" href="">Remove</a></td>
+                                                    <td class="govuk-table__cell"><a class="accordionRemove" style="cursor: pointer;" onclick="ItemFromBasket('144b-checkbox-1', '144b-register', '144b-checkbox-all', '144b Drakefell Road, Coventry, CV5K2X', 'NN890234', 'Register', '144bDIV', '144bLIST', 'Register4LI', '144b_RegisterIcon', '144bRegisterBasket', '144bBasket', 'reference-144b', '144bTable', '144bCost')">Remove</a></td>
                                                 </tr>
                                                 
-                                                <tr class="govuk-table__row govuk-table__row">
+                                                <tr class="govuk-table__row govuk-table__row" id="144bTitlePlanBasket" style="display:none;">
                                                   <td class="govuk-table__cell">Title plan</td>
                                                   <td class="govuk-table__cell">Official copy</td>
                                                   <td class="govuk-table__cell">PDF</td>
                                                   <td class="govuk-table__cell">£3.00</td>
-                                                  <td class="govuk-table__cell"><a class="accordionRemove" href="">Remove</a></td>
+                                                  <td class="govuk-table__cell"><a class="accordionRemove" style="cursor: pointer;" onclick="ItemFromBasket('144b-checkbox-2', '144b-titlePlan', '144b-checkbox-all', '144b Drakefell Road, Coventry, CV5K2X', 'NN890234', 'Title plan', '144bDIV', '144bLIST', 'TitlePlan4LI', '144b_TitlePlanIcon', '144bTitlePlanBasket', '144bBasket', 'reference-144b', '144bTable', '144bCost');">Remove</a></td>
                                                 </tr>
 
       
@@ -431,7 +445,7 @@
                                   </div>
                                 </section>
                               </div>
-                              <div class="wide20percent">
+                              <div class="wide20percent" id="reference-144b" style="display:none;">
                                 
                                 <fieldset class="govuk-fieldset">
 
@@ -447,7 +461,7 @@
 
                             <!-- 144c Drakefell Road -->
                             <div>
-                              <div class="wide80percent">
+                              <div class="wide80percent" id="144cBasket" style="display:none;">
                                 <section class="panel panel-default">
                                   <div class="panel-heading" role="tab" id="headingFive">
                                     <h4 class="panel-title">
@@ -458,7 +472,7 @@
                                             <tr class="govuk-table__row">
                                                   <th scope="row" class="govuk-table__header accordionTitle">NN890234</th>
                                                   <th scope="row" class="govuk-table__header accordionAddress">144c Drakefell Road,CV5 K2X</th>
-                                                  <th scope="row" class="govuk-table__header accordionCost">£6.00</th> 
+                                                  <th scope="row" class="govuk-table__header accordionCost" id="144cCost">£6.00</th> 
                                                   <th scope="row" class="govuk-table__header accordionChevron"><span class="glyphicon glyphicon-chevron-right pull-right" aria-hidden="true"><img style="margin-bottom:-5px;" width="25" src="/public/images/icon_govuk_chevrondown.svg"></span></th> 
                                               </tr>
                                           </thead>
@@ -482,22 +496,22 @@
                                                 </tr>
                                             </thead>
 
-                                            <tbody class="govuk-table__body">
+                                            <tbody class="govuk-table__body" id="144cTable">
 
-                                                <tr class="govuk-table__row">
+                                                <tr class="govuk-table__row" id="144cRegisterBasket" style="display:none;">
                                                     <td class="govuk-table__cell">Register</td>
                                                     <td class="govuk-table__cell">Official copy</td>
                                                     <td class="govuk-table__cell">PDF</td>
                                                     <td class="govuk-table__cell">£3.00</td>
-                                                    <td class="govuk-table__cell"><a class="accordionRemove" href="">Remove</a></td>
+                                                    <td class="govuk-table__cell"><a class="accordionRemove" style="cursor: pointer;" onclick="ItemFromBasket('144c-checkbox-1', '144c-register', '144c-checkbox-all', '144c Drakefell Road, Coventry, CV5K2X', 'NN890234', 'Register', '144cDIV', '144cLIST', 'Register5LI', '144c_RegisterIcon', '144cRegisterBasket', '144cBasket', 'reference-144c', '144cTable', '144cCost')">Remove</a></td>
                                                 </tr>
                                                 
-                                                <tr class="govuk-table__row govuk-table__row">
+                                                <tr class="govuk-table__row govuk-table__row" id="144cTitlePlanBasket" style="display:none;">
                                                   <td class="govuk-table__cell">Title plan</td>
                                                   <td class="govuk-table__cell">Official copy</td>
                                                   <td class="govuk-table__cell">PDF</td>
                                                   <td class="govuk-table__cell">£3.00</td>
-                                                  <td class="govuk-table__cell"><a class="accordionRemove" href="">Remove</a></td>
+                                                  <td class="govuk-table__cell"><a class="accordionRemove" style="cursor: pointer;" onclick="ItemFromBasket('144c-checkbox-2', '144c-titlePlan', '144c-checkbox-all', '144c Drakefell Road, Coventry, CV5K2X', 'NN890234', 'Title plan', '144cDIV', '144cLIST', 'TitlePlan5LI', '144c_TitlePlanIcon', '144cTitlePlanBasket', '144cBasket', 'reference-144c', '144cTable', '144cCost');">Remove</a></td>
                                                 </tr>
 
       
@@ -510,7 +524,7 @@
                                   </div>
                                 </section>
                               </div>
-                              <div class="wide20percent">
+                              <div class="wide20percent" id="reference-144c" style="display:none;">
                                 
                                 <fieldset class="govuk-fieldset">
 
@@ -526,7 +540,7 @@
 
                             <!-- 144d Drakefell Road -->
                             <div>
-                              <div class="wide80percent">
+                              <div class="wide80percent" id="144dBasket" style="display:none;">
                                 <section class="panel panel-default">
                                   <div class="panel-heading" role="tab" id="headingSix">
                                     <h4 class="panel-title">
@@ -537,7 +551,7 @@
                                             <tr class="govuk-table__row">
                                                   <th scope="row" class="govuk-table__header accordionTitle">NN890234</th>
                                                   <th scope="row" class="govuk-table__header accordionAddress">144d Drakefell Road,CV5 K2X</th>
-                                                  <th scope="row" class="govuk-table__header accordionCost">£6.00</th> 
+                                                  <th scope="row" class="govuk-table__header accordionCost" id="144dBasket">£6.00</th> 
                                                   <th scope="row" class="govuk-table__header accordionChevron"><span class="glyphicon glyphicon-chevron-right pull-right" aria-hidden="true"><img style="margin-bottom:-5px;" width="25" src="/public/images/icon_govuk_chevrondown.svg"></span></th> 
                                               </tr>
                                           </thead>
@@ -561,22 +575,22 @@
                                                 </tr>
                                             </thead>
 
-                                            <tbody class="govuk-table__body">
+                                            <tbody class="govuk-table__body" id="144dTable">
 
-                                                <tr class="govuk-table__row">
+                                                <tr class="govuk-table__row" id="144dRegisterBasket" style="display:none;">
                                                     <td class="govuk-table__cell">Register</td>
                                                     <td class="govuk-table__cell">Official copy</td>
                                                     <td class="govuk-table__cell">PDF</td>
                                                     <td class="govuk-table__cell">£3.00</td>
-                                                    <td class="govuk-table__cell"><a class="accordionRemove" href="">Remove</a></td>
+                                                    <td class="govuk-table__cell"><a class="accordionRemove" style="cursor: pointer;" onclick="ItemFromBasket('144d-checkbox-1', '144d-register', '144d-checkbox-all', '144d Drakefell Road, Coventry, CV5K2X', 'NN890234', 'Register', '144dDIV', '144dLIST', 'Register6LI', '144d_RegisterIcon', '144dRegisterBasket', '144dBasket', 'reference-144d', '144dTable', '144dCost')">Remove</a></td>
                                                 </tr>
                                                 
-                                                <tr class="govuk-table__row govuk-table__row">
+                                                <tr class="govuk-table__row govuk-table__row" id="144dTitlePlanBasket" style="display:none;">
                                                   <td class="govuk-table__cell">Title plan</td>
                                                   <td class="govuk-table__cell">Official copy</td>
                                                   <td class="govuk-table__cell">PDF</td>
                                                   <td class="govuk-table__cell">£3.00</td>
-                                                  <td class="govuk-table__cell"><a class="accordionRemove" href="">Remove</a></td>
+                                                  <td class="govuk-table__cell"><a class="accordionRemove" style="cursor: pointer;" onclick="ItemFromBasket('144d-checkbox-2', '144d-titlePlan', '144d-checkbox-all', '144d Drakefell Road, Coventry, CV5K2X', 'NN890234', 'Title plan', '144dDIV', '144dLIST', 'TitlePlan6LI', '144d_TitlePlanIcon', '144dTitlePlanBasket', '144dBasket', 'reference-144d', '144dTable', '144dCost');">Remove</a></td>
                                                 </tr>
 
       
@@ -589,7 +603,7 @@
                                   </div>
                                 </section>
                               </div>
-                              <div class="wide20percent">
+                              <div class="wide20percent" id="reference-144d" style="display:none;">
                                 
                                 <fieldset class="govuk-fieldset">
 

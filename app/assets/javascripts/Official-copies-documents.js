@@ -468,11 +468,11 @@ function SelectAll(whichSelectAll){
             console.log('Select all for 27b Drakefell Road has been selected');
             if(document.getElementById('27b-checkbox-1').checked == false){
                 document.getElementById('27b-checkbox-1').checked = true;
-                selectDocument('27b-checkbox-1', '27b-register', '27b-checkbox-all', '27b Drakefell Road, Coventry, CV5K2X', 'SGL479276', 'Register', '27bDIV', '27bLIST', 'RegisterbLI', '27b_RegisterIcon');
+                selectDocument('27b-checkbox-1', '27b-register', '27b-checkbox-all', '27b Drakefell Road, Coventry, CV5K2X', 'SGL479276', 'Register', '27bDIV', '27bLIST', 'RegisterbLI', '27b_RegisterIcon', '27bRegisterBasket','27bBasket', 'reference-27b', '27bTable', '27bCost');
             }
             if(document.getElementById('27b-checkbox-2').checked == false){
                 document.getElementById('27b-checkbox-2').checked = true;
-                selectDocument('27b-checkbox-2', '27b-titlePlan', '27b-checkbox-all', '27b Drakefell Road, Coventry, CV5K2X', 'SGL479276', 'Title plan', '27bDIV', '27bLIST', 'TitlePlanbLI', '27b_TitlePlanIcon');
+                selectDocument('27b-checkbox-2', '27b-titlePlan', '27b-checkbox-all', '27b Drakefell Road, Coventry, CV5K2X', 'SGL479276', 'Title plan', '27bDIV', '27bLIST', 'TitlePlanbLI', '27b_TitlePlanIcon', '27bTitlePlanBasket','27bBasket', 'reference-27b', '27bTable', '27bCost');
             }
             sessionStorage.setItem('27b-checkbox-all', true);
 
@@ -480,9 +480,9 @@ function SelectAll(whichSelectAll){
         else{
             console.log('Select all for 27b Drakefell Road has been deselected');
             document.getElementById('27b-checkbox-1').checked = false;
-            selectDocument('27b-checkbox-1', '27b-register', '27b-checkbox-all', '27b Drakefell Road, Coventry, CV5K2X', 'SGL479276', 'Register', '27bDIV', '27bLIST', 'RegisterbLI', '27b_RegisterIcon');
+            selectDocument('27b-checkbox-1', '27b-register', '27b-checkbox-all', '27b Drakefell Road, Coventry, CV5K2X', 'SGL479276', 'Register', '27bDIV', '27bLIST', 'RegisterbLI', '27b_RegisterIcon', '27bRegisterBasket','27bBasket', 'reference-27b', '27bTable', '27bCost');
             document.getElementById('27b-checkbox-2').checked = false;
-            selectDocument('27b-checkbox-2', '27b-titlePlan', '27b-checkbox-all', '27b Drakefell Road, Coventry, CV5K2X', 'SGL479276', 'Title plan', '27bDIV', '27bLIST', 'TitlePlanbLI', '27b_TitlePlanIcon');
+            selectDocument('27b-checkbox-2', '27b-titlePlan', '27b-checkbox-all', '27b Drakefell Road, Coventry, CV5K2X', 'SGL479276', 'Title plan', '27bDIV', '27bLIST', 'TitlePlanbLI', '27b_TitlePlanIcon', '27bTitlePlanBasket','27bBasket', 'reference-27b', '27bTable', '27bCost');
 
             sessionStorage.removeItem('27b-checkbox-all');
 
@@ -493,11 +493,11 @@ function SelectAll(whichSelectAll){
             console.log('Select all for 144a Drakefell Road has been selected');
             if(document.getElementById('144a-checkbox-1').checked == false){
                 document.getElementById('144a-checkbox-1').checked = true;
-                selectDocument('144a-checkbox-1', '144a-register', '144a-checkbox-all', '144a Drakefell Road, Coventry, CV5K2X', 'NN890234', 'Register', '144aDIV', '144aLIST', 'Register3LI', '144a_RegisterIcon');
+                selectDocument('144a-checkbox-1', '144a-register', '144a-checkbox-all', '144a Drakefell Road, Coventry, CV5K2X', 'NN890234', 'Register', '144aDIV', '144aLIST', 'Register3LI', '144a_RegisterIcon', '144aRegisterBasket', '144aBasket', 'reference-144a', '144aTable', '144aCost');
             }
             if(document.getElementById('144a-checkbox-2').checked == false){
                 document.getElementById('144a-checkbox-2').checked = true;
-                selectDocument('144a-checkbox-2', '144a-titlePlan', '144a-checkbox-all', '144a Drakefell Road, Coventry, CV5K2X', 'NN890234', 'Title plan', '144aDIV', '144aLIST', 'TitlePlan3LI', '144a_TitlePlanIcon');
+                selectDocument('144a-checkbox-2', '144a-titlePlan', '144a-checkbox-all', '144a Drakefell Road, Coventry, CV5K2X', 'NN890234', 'Title plan', '144aDIV', '144aLIST', 'TitlePlan3LI', '144a_TitlePlanIcon', '144aTitlePlanBasket', '144aBasket', 'reference-144a', '144aTable', '144aCost');
             }
             sessionStorage.setItem('144a-checkbox-all', true);
     
@@ -505,9 +505,9 @@ function SelectAll(whichSelectAll){
         else{
             console.log('Select all for 144a Drakefell Road has been deselected');
             document.getElementById('144a-checkbox-1').checked = false;
-            selectDocument('144a-checkbox-1', '144a-register', '144a-checkbox-all', '144a Drakefell Road, Coventry, CV5K2X', 'NN890234', 'Register', '144aDIV', '144aLIST', 'Register3LI', '144a_RegisterIcon');
+            selectDocument('144a-checkbox-1', '144a-register', '144a-checkbox-all', '144a Drakefell Road, Coventry, CV5K2X', 'NN890234', 'Register', '144aDIV', '144aLIST', 'Register3LI', '144a_RegisterIcon', '144aRegisterBasket', '144aBasket', 'reference-144a', '144aTable', '144aCost');
             document.getElementById('144a-checkbox-2').checked = false;
-            selectDocument('144a-checkbox-2', '144a-titlePlan', '144a-checkbox-all', '144a Drakefell Road, Coventry, CV5K2X', 'NN890234', 'Title plan', '144aDIV', '144aLIST', 'TitlePlan3LI', '144a_TitlePlanIcon');
+            selectDocument('144a-checkbox-2', '144a-titlePlan', '144a-checkbox-all', '144a Drakefell Road, Coventry, CV5K2X', 'NN890234', 'Title plan', '144aDIV', '144aLIST', 'TitlePlan3LI', '144a_TitlePlanIcon', '144aTitlePlanBasket', '144aBasket', 'reference-144a', '144aTable', '144aCost');
     
             sessionStorage.removeItem('144a-checkbox-all');
     
@@ -518,11 +518,11 @@ function SelectAll(whichSelectAll){
             console.log('Select all for 144b Drakefell Road has been selected');
             if(document.getElementById('144b-checkbox-1').checked == false){
                 document.getElementById('144b-checkbox-1').checked = true;
-                selectDocument('144b-checkbox-1', '144b-register', '144b-checkbox-all', '144b Drakefell Road, Coventry, CV5K2X', 'NN890234', 'Register', '144bDIV', '144bLIST', 'Register4LI', '144b_RegisterIcon');
+                selectDocument('144b-checkbox-1', '144b-register', '144b-checkbox-all', '144b Drakefell Road, Coventry, CV5K2X', 'NN890234', 'Register', '144bDIV', '144bLIST', 'Register4LI', '144b_RegisterIcon', '144bRegisterBasket', '144bBasket', 'reference-144b', '144bTable', '144bCost');
             }
             if(document.getElementById('144b-checkbox-2').checked == false){
                 document.getElementById('144b-checkbox-2').checked = true;
-                selectDocument('144b-checkbox-2', '144b-titlePlan', '144b-checkbox-all', '144b Drakefell Road, Coventry, CV5K2X', 'NN890234', 'Title plan', '144bDIV', '144bLIST', 'TitlePlan4LI', '144b_TitlePlanIcon');
+                selectDocument('144b-checkbox-2', '144b-titlePlan', '144b-checkbox-all', '144b Drakefell Road, Coventry, CV5K2X', 'NN890234', 'Title plan', '144bDIV', '144bLIST', 'TitlePlan4LI', '144b_TitlePlanIcon', '144bTitlePlanBasket', '144bBasket', 'reference-144b', '144bTable', '144bCost');
             }
             sessionStorage.setItem('144b-checkbox-all', true);
     
@@ -530,9 +530,9 @@ function SelectAll(whichSelectAll){
         else{
             console.log('Select all for 144b Drakefell Road has been deselected');
             document.getElementById('144b-checkbox-1').checked = false;
-            selectDocument('144b-checkbox-1', '144b-register', '144b-checkbox-all', '144b Drakefell Road, Coventry, CV5K2X', 'NN890234', 'Register', '144bDIV', '144bLIST', 'Register4LI', '144b_RegisterIcon');
+            selectDocument('144b-checkbox-1', '144b-register', '144b-checkbox-all', '144b Drakefell Road, Coventry, CV5K2X', 'NN890234', 'Register', '144bDIV', '144bLIST', 'Register4LI', '144b_RegisterIcon', '144bRegisterBasket', '144bBasket', 'reference-144b', '144bTable', '144bCost');
             document.getElementById('144b-checkbox-2').checked = false;
-            selectDocument('144b-checkbox-2', '144b-titlePlan', '144b-checkbox-all', '144b Drakefell Road, Coventry, CV5K2X', 'NN890234', 'Title plan', '144bDIV', '144bLIST', 'TitlePlan4LI', '144b_TitlePlanIcon');
+            selectDocument('144b-checkbox-2', '144b-titlePlan', '144b-checkbox-all', '144b Drakefell Road, Coventry, CV5K2X', 'NN890234', 'Title plan', '144bDIV', '144bLIST', 'TitlePlan4LI', '144b_TitlePlanIcon', '144bTitlePlanBasket', '144bBasket', 'reference-144b', '144bTable', '144bCost');
     
             sessionStorage.removeItem('144b-checkbox-all');
     
@@ -543,11 +543,11 @@ function SelectAll(whichSelectAll){
             console.log('Select all for 144c Drakefell Road has been selected');
             if(document.getElementById('144c-checkbox-1').checked == false){
                 document.getElementById('144c-checkbox-1').checked = true;
-                selectDocument('144c-checkbox-1', '144c-register', '144c-checkbox-all', '144c Drakefell Road, Coventry, CV5K2X', 'NN890234', 'Register', '144cDIV', '144cLIST', 'Register5LI', '144c_RegisterIcon');
+                selectDocument('144c-checkbox-1', '144c-register', '144c-checkbox-all', '144c Drakefell Road, Coventry, CV5K2X', 'NN890234', 'Register', '144cDIV', '144cLIST', 'Register5LI', '144c_RegisterIcon', '144cRegisterBasket', '144cBasket', 'reference-144c', '144cTable', '144cCost');
             }
             if(document.getElementById('144c-checkbox-2').checked == false){
                 document.getElementById('144c-checkbox-2').checked = true;
-                selectDocument('144c-checkbox-2', '144c-titlePlan', '144c-checkbox-all', '144c Drakefell Road, Coventry, CV5K2X', 'NN890234', 'Title plan', '144cDIV', '144cLIST', 'TitlePlan5LI', '144c_TitlePlanIcon');
+                selectDocument('144c-checkbox-2', '144c-titlePlan', '144c-checkbox-all', '144c Drakefell Road, Coventry, CV5K2X', 'NN890234', 'Title plan', '144cDIV', '144cLIST', 'TitlePlan5LI', '144c_TitlePlanIcon', '144cTitlePlanBasket', '144cBasket', 'reference-144c', '144cTable', '144cCost');
             }
             sessionStorage.setItem('144c-checkbox-all', true);
     
@@ -555,9 +555,9 @@ function SelectAll(whichSelectAll){
         else{
             console.log('Select all for 144c Drakefell Road has been deselected');
             document.getElementById('144c-checkbox-1').checked = false;
-            selectDocument('144c-checkbox-1', '144c-register', '144c-checkbox-all', '144c Drakefell Road, Coventry, CV5K2X', 'NN890234', 'Register', '144cDIV', '144cLIST', 'Register5LI', '144c_RegisterIcon');
+            selectDocument('144c-checkbox-1', '144c-register', '144c-checkbox-all', '144c Drakefell Road, Coventry, CV5K2X', 'NN890234', 'Register', '144cDIV', '144cLIST', 'Register5LI', '144c_RegisterIcon', '144cRegisterBasket', '144cBasket', 'reference-144c', '144cTable', '144cCost');
             document.getElementById('144c-checkbox-2').checked = false;
-            selectDocument('144c-checkbox-2', '144c-titlePlan', '144c-checkbox-all', '144c Drakefell Road, Coventry, CV5K2X', 'NN890234', 'Title plan', '144cDIV', '144cLIST', 'TitlePlan5LI', '144c_TitlePlanIcon');
+            selectDocument('144c-checkbox-2', '144c-titlePlan', '144c-checkbox-all', '144c Drakefell Road, Coventry, CV5K2X', 'NN890234', 'Title plan', '144cDIV', '144cLIST', 'TitlePlan5LI', '144c_TitlePlanIcon', '144cTitlePlanBasket', '144cBasket', 'reference-144c', '144cTable', '144cCost');
     
             sessionStorage.removeItem('144c-checkbox-all');
     
@@ -568,11 +568,11 @@ function SelectAll(whichSelectAll){
             console.log('Select all for 144d Drakefell Road has been selected');
             if(document.getElementById('144d-checkbox-1').checked == false){
                 document.getElementById('144d-checkbox-1').checked = true;
-                selectDocument('144d-checkbox-1', '144d-register', '144d-checkbox-all', '144d Drakefell Road, Coventry, CV5K2X', 'NN890234', 'Register', '144dDIV', '144dLIST', 'Register6LI', '144d_RegisterIcon');
+                selectDocument('144d-checkbox-1', '144d-register', '144d-checkbox-all', '144d Drakefell Road, Coventry, CV5K2X', 'NN890234', 'Register', '144dDIV', '144dLIST', 'Register6LI', '144d_RegisterIcon', '144dRegisterBasket', '144dBasket', 'reference-144d', '144dTable', '144dCost');
             }
             if(document.getElementById('144d-checkbox-2').checked == false){
                 document.getElementById('144d-checkbox-2').checked = true;
-                selectDocument('144d-checkbox-2', '144d-titlePlan', '144d-checkbox-all', '144d Drakefell Road, Coventry, CV5K2X', 'NN890234', 'Title plan', '144dDIV', '144dLIST', 'TitlePlan6LI', '144d_TitlePlanIcon');
+                selectDocument('144d-checkbox-2', '144d-titlePlan', '144d-checkbox-all', '144d Drakefell Road, Coventry, CV5K2X', 'NN890234', 'Title plan', '144dDIV', '144dLIST', 'TitlePlan6LI', '144d_TitlePlanIcon', '144dTitlePlanBasket', '144dBasket', 'reference-144d', '144dTable', '144dCost');
             }
             sessionStorage.setItem('144d-checkbox-all', true);
     
@@ -580,9 +580,9 @@ function SelectAll(whichSelectAll){
         else{
             console.log('Select all for 144d Drakefell Road has been deselected');
             document.getElementById('144d-checkbox-1').checked = false;
-            selectDocument('144d-checkbox-1', '144d-register', '144d-checkbox-all', '144d Drakefell Road, Coventry, CV5K2X', 'NN890234', 'Register', '144dDIV', '144dLIST', 'Register6LI', '144d_RegisterIcon');
+            selectDocument('144d-checkbox-1', '144d-register', '144d-checkbox-all', '144d Drakefell Road, Coventry, CV5K2X', 'NN890234', 'Register', '144dDIV', '144dLIST', 'Register6LI', '144d_RegisterIcon', '144dRegisterBasket', '144dBasket', 'reference-144d', '144dTable', '144dCost');
             document.getElementById('144d-checkbox-2').checked = false;
-            selectDocument('144d-checkbox-2', '144d-titlePlan', '144d-checkbox-all', '144d Drakefell Road, Coventry, CV5K2X', 'NN890234', 'Title plan', '144dDIV', '144dLIST', 'TitlePlan6LI', '144d_TitlePlanIcon');
+            selectDocument('144d-checkbox-2', '144d-titlePlan', '144d-checkbox-all', '144d Drakefell Road, Coventry, CV5K2X', 'NN890234', 'Title plan', '144dDIV', '144dLIST', 'TitlePlan6LI', '144d_TitlePlanIcon', '144dTitlePlanBasket', '144dBasket', 'reference-144d', '144dTable', '144dCost');
     
             sessionStorage.removeItem('144d-checkbox-all');
     
@@ -616,16 +616,37 @@ function SelectAll(whichSelectAll){
 //     }  
 // }
 
-var PropertyDocumentsNumber = 0;
+
+// var PropertyDocumentsNumber = 0;
+var PropertyDocuments27a = 0;
+var PropertyDocuments27b = 0;
+var PropertyDocuments144a = 0;
+var PropertyDocuments144b = 0;
+var PropertyDocuments144c = 0;
+var PropertyDocuments144d = 0;
+
 
 function CheckoutBasket(checkboxID, TableRow, ParentAccordian, CustomerReference, TableID, CostperProperty){
     if(sessionStorage.getItem(checkboxID)){
         document.getElementById(TableRow).style.display = 'table-row';
         document.getElementById(ParentAccordian).style.display = 'block';
         document.getElementById(CustomerReference).style.display = 'block';
-        PropertyDocumentsNumber += 1;
-        var PropertyDocumentsCost = PropertyDocumentsNumber * 3; 
-        document.getElementById(CostperProperty).innerHTML = '£' + PropertyDocumentsCost + '.00';
+        if(ParentAccordian == '27aBasket'){
+            PropertyDocuments27a += 1;
+            var PropertyDocumentsCost = PropertyDocuments27a * 3; 
+            document.getElementById(CostperProperty).innerHTML = '£' + PropertyDocumentsCost + '.00';
+        }
+        if(ParentAccordian == '27bBasket'){
+            PropertyDocuments27b += 1;
+            var PropertyDocumentsCost = PropertyDocuments27b * 3; 
+            document.getElementById(CostperProperty).innerHTML = '£' + PropertyDocumentsCost + '.00';
+        }
+        if(ParentAccordian == '144aBasket'){
+            PropertyDocuments144a += 1;
+            var PropertyDocumentsCost = PropertyDocuments144a * 3; 
+            document.getElementById(CostperProperty).innerHTML = '£' + PropertyDocumentsCost + '.00';
+        }
+        
     }
   
 }
