@@ -646,6 +646,21 @@ function CheckoutBasket(checkboxID, TableRow, ParentAccordian, CustomerReference
             var PropertyDocumentsCost = PropertyDocuments144a * 3; 
             document.getElementById(CostperProperty).innerHTML = '£' + PropertyDocumentsCost + '.00';
         }
+        if(ParentAccordian == '144bBasket'){
+            PropertyDocuments144b += 1;
+            var PropertyDocumentsCost = PropertyDocuments144b * 3; 
+            document.getElementById(CostperProperty).innerHTML = '£' + PropertyDocumentsCost + '.00';
+        }
+        if(ParentAccordian == '144cBasket'){
+            PropertyDocuments144c += 1;
+            var PropertyDocumentsCost = PropertyDocuments144c * 3; 
+            document.getElementById(CostperProperty).innerHTML = '£' + PropertyDocumentsCost + '.00';
+        }
+        if(ParentAccordian == '144dBasket'){
+            PropertyDocuments144d += 1;
+            var PropertyDocumentsCost = PropertyDocuments144d * 3; 
+            document.getElementById(CostperProperty).innerHTML = '£' + PropertyDocumentsCost + '.00';
+        }
         
     }
   
