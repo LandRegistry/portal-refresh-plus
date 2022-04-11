@@ -9,53 +9,7 @@
 <script>
 
  document.addEventListener("DOMContentLoaded", function(event){
-    var InBasket1 = sessionStorage.getItem('InBasket');
-    document.getElementById('addBasketItemsHere').innerHTML = InBasket1;
-    if(parseInt(sessionStorage.getItem("basketQuantity")) >= 1){
-        document.getElementById("basketCounter").style.display = 'block';
-        var InBasketCounter = sessionStorage.getItem('counterForBasket');
-        document.getElementById("basketCounter").innerHTML = sessionStorage.getItem("basketQuantity");
-        document.getElementById("totalCostofBasket").innerHTML = '£' + sessionStorage.getItem("basketTotalCost") + '.00';
-        document.getElementById("checkout-button").style.display = 'block';
-    }
-    onloadCheck('27a-checkbox-1', '27a-register');
-    onloadCheck('27a-checkbox-2', '27a-titlePlan');
-    onloadCheck('27a-checkbox-all', '');
-    onloadCheck('27b-checkbox-1', '27b-register');
-    onloadCheck('27b-checkbox-2', '27b-titlePlan');
-    onloadCheck('27b-checkbox-all', '');
-    onloadCheck('144a-checkbox-1', '144a-register');
-    onloadCheck('144a-checkbox-2', '144a-titlePlan');
-    onloadCheck('144a-checkbox-all', '');
-    onloadCheck('144b-checkbox-1', '144b-register');
-    onloadCheck('144b-checkbox-2', '144b-titlePlan');
-    onloadCheck('144b-checkbox-all', '');
-    onloadCheck('144c-checkbox-1', '144c-register');
-    onloadCheck('144c-checkbox-2', '144c-titlePlan');
-    onloadCheck('144c-checkbox-all', '');
-    onloadCheck('144d-checkbox-1', '144d-register');
-    onloadCheck('144d-checkbox-2', '144d-titlePlan');
-    onloadCheck('144d-checkbox-all', '');
-
-    var additionalDocsAdded = 0;
-    if(sessionStorage.getItem('27a-checkbox-deed')){
-      additionalDocsAdded += 1;
-    }
-    if(sessionStorage.getItem('27a-checkbox-lease')){
-      additionalDocsAdded += 1;
-    }
-    if(sessionStorage.getItem('27a-checkbox-transfer')){
-      additionalDocsAdded += 1;
-    }
-    if(sessionStorage.getItem('27a-checkbox-charge')){
-      additionalDocsAdded += 1;
-    }
-    if(additionalDocsAdded != 0){
-      document.getElementById('howManyAdditionals').innerHTML = additionalDocsAdded + ' additional documents added';
-      document.getElementById('howManyAdditionals').style.display = 'inline-block';
-
-    }
- 
+  confirmationPage();
 
 
     // var InBasket2 = sessionStorage.getItem('CostAndCheckoutButton');
@@ -144,7 +98,7 @@
                           
                             <!-- 27a Drakefell Road -->
                             <div>
-                              <div class="wide80percent">
+                              <div class="wide80percent" id="27aBasket" style="display:none;">
                                 <section class="panel panel-default">
                                   <div class="panel-heading" role="tab" id="headingOne">
                                     <h4 class="panel-title">
@@ -156,7 +110,7 @@
                                             <tr class="govuk-table__row">
                                                   <th scope="row" class="govuk-table__header accordionTitle">SGL479276</th>
                                                   <th scope="row" class="govuk-table__header accordionAddress">27a Drakefell Road, CV5 K2X</th>
-                                                  <th scope="row" class="govuk-table__header accordionCost">£18.00</th> 
+                                                  <th scope="row" class="govuk-table__header accordionCost" id="27aCost">£0.00</th> 
                                                   <th scope="row" class="govuk-table__header accordionChevron"><span class="glyphicon glyphicon-chevron-right pull-right" aria-hidden="true"><img style="margin-bottom:-5px;" width="25" src="/public/images/icon_govuk_chevrondown.svg"></span></th> 
                                               </tr>
                                           </thead>
@@ -180,54 +134,54 @@
                                                         </tr>
                                                     </thead>
 
-                                                    <tbody class="govuk-table__body">
+                                                    <tbody class="govuk-table__body" id="27aTable">
 
-                                                        <tr class="govuk-table__row">
+                                                        <tr class="govuk-table__row" id="27aRegisterBasket" style="display:none;">
                                                             <td class="govuk-table__cell">Register</td>
                                                             <td class="govuk-table__cell">Official copy</td>
                                                             <td class="govuk-table__cell">PDF</td>
                                                             <td class="govuk-table__cell">£3.00</td>
-                                                            <td class="govuk-table__cell"><a class="accordionRemove" href="">Remove</a></td>
+                                                            <td class="govuk-table__cell"><a class="accordionDownload" style="cursor: pointer;">Download</a></td>
                                                         </tr>
                                                         
-                                                        <tr class="govuk-table__row govuk-table__row">
+                                                        <tr class="govuk-table__row govuk-table__row" id="27aTitlePlanBasket" style="display:none;">
                                                           <td class="govuk-table__cell">Title plan</td>
                                                           <td class="govuk-table__cell">Official copy</td>
                                                           <td class="govuk-table__cell">PDF</td>
                                                           <td class="govuk-table__cell">£3.00</td>
-                                                          <td class="govuk-table__cell"><a class="accordionRemove" href="">Remove</a></td>
+                                                          <td class="govuk-table__cell"><a class="accordionDownload" style="cursor: pointer;">Download</a></td>
                                                         </tr>
 
-                                                        <tr class="govuk-table__row govuk-table__row">
+                                                        <tr class="govuk-table__row govuk-table__row" id="27aDeedBasket" style="display:none;">
                                                           <td class="govuk-table__cell">Deed</td>
                                                           <td class="govuk-table__cell">B3</td>
                                                           <td class="govuk-table__cell">PDF</td>
                                                           <td class="govuk-table__cell">£3.00</td>
-                                                          <td class="govuk-table__cell"><a class="accordionRemove" href="">Remove</a></td>
+                                                          <td class="govuk-table__cell"><a class="accordionDownload" style="cursor: pointer;">Download</a></td>
                                                         </tr>
 
-                                                        <tr class="govuk-table__row govuk-table__row">
+                                                        <tr class="govuk-table__row govuk-table__row" id="27aLeaseBasket" style="display:none;">
                                                           <td class="govuk-table__cell last">Lease</td>
                                                           <td class="govuk-table__cell last">L1</td>
                                                           <td class="govuk-table__cell last">PDF</td>
                                                           <td class="govuk-table__cell last">£3.00</td>
-                                                          <td class="govuk-table__cell last"><a class="accordionRemove" href="">Remove</a></td>
+                                                          <td class="govuk-table__cell last"><a class="accordionDownload" style="cursor: pointer;">Download</a></td>
                                                         </tr>
 
-                                                        <tr class="govuk-table__row govuk-table__row">
+                                                        <tr class="govuk-table__row govuk-table__row" id="27aTransferBasket" style="display:none;">
                                                           <td class="govuk-table__cell">Transfer</td>
                                                           <td class="govuk-table__cell">A3,A5,C3,C4</td>
                                                           <td class="govuk-table__cell">PDF</td>
                                                           <td class="govuk-table__cell">£3.00</td>
-                                                          <td class="govuk-table__cell"><a class="accordionRemove" href="">Remove</a></td>
+                                                          <td class="govuk-table__cell"><a class="accordionDownload" style="cursor: pointer;">Download</a></td>
                                                         </tr>
 
-                                                        <tr class="govuk-table__row govuk-table__row">
+                                                        <tr class="govuk-table__row govuk-table__row" id="27aChargeBasket" style="display:none;">
                                                           <td class="govuk-table__cell last">Charge</td>
                                                           <td class="govuk-table__cell last">C1,C2</td>
                                                           <td class="govuk-table__cell last">PDF</td>
                                                           <td class="govuk-table__cell last">£3.00</td>
-                                                          <td class="govuk-table__cell last"><a class="accordionRemove" href="">Remove</a></td>
+                                                          <td class="govuk-table__cell last"><a class="accordionDownload" style="cursor: pointer;">Download</a></td>
                                                         </tr>
               
                                                     </tbody>
@@ -239,23 +193,24 @@
                                   </div>
                                 </section>
                               </div>
-                              <div class="wide20percent">
+                              <div class="wide20percent" id="reference-27a" style="display:none;">
                                 
                                 <fieldset class="govuk-fieldset">
 
-                                  <div class="">
-
-                                    <input class="govuk-input referenceFormfieldReadOnly" id="reference-1" name="reference-1" type="text" placeholder="Reference" readonly>
+                                  <div class="referenceFormfieldReadOnly">{{ data['reference-1'] }}
+                                    <!-- <input class="govuk-input referenceFormfieldReadOnly" id="reference-1" name="reference-1" type="text" placeholder="Reference"> -->
                                   </div>
                                 
                                 </fieldset>
 
                               </div>
+
+
                             </div>
 
                             <!-- 27b Drakefell Road -->
                             <div>
-                              <div class="wide80percent">
+                              <div class="wide80percent" id="27bBasket" style="display:none;">
                                 <section class="panel panel-default">
                                   <div class="panel-heading" role="tab" id="headingTwo">
                                     <h4 class="panel-title">
@@ -266,7 +221,7 @@
                                             <tr class="govuk-table__row">
                                                   <th scope="row" class="govuk-table__header accordionTitle">SGL479276</th>
                                                   <th scope="row" class="govuk-table__header accordionAddress">27b Drakefell Road,CV5 K2X</th>
-                                                  <th scope="row" class="govuk-table__header accordionCost">£6.00</th> 
+                                                  <th scope="row" class="govuk-table__header accordionCost" id="27bCost">hello</th> 
                                                   <th scope="row" class="govuk-table__header accordionChevron"><span class="glyphicon glyphicon-chevron-right pull-right" aria-hidden="true"><img style="margin-bottom:-5px;" width="25" src="/public/images/icon_govuk_chevrondown.svg"></span></th> 
                                               </tr>
                                           </thead>
@@ -290,22 +245,22 @@
                                                 </tr>
                                             </thead>
 
-                                            <tbody class="govuk-table__body">
+                                            <tbody class="govuk-table__body" id="27bTable">
 
-                                                <tr class="govuk-table__row">
+                                                <tr class="govuk-table__row" id="27bRegisterBasket" style="display:none;">
                                                     <td class="govuk-table__cell">Register</td>
                                                     <td class="govuk-table__cell">Official copy</td>
                                                     <td class="govuk-table__cell">PDF</td>
                                                     <td class="govuk-table__cell">£3.00</td>
-                                                    <td class="govuk-table__cell"><a class="accordionRemove" href="">Remove</a></td>
+                                                    <td class="govuk-table__cell"><a class="accordionDownload">Download</a></td>
                                                 </tr>
                                                 
-                                                <tr class="govuk-table__row govuk-table__row">
+                                                <tr class="govuk-table__row govuk-table__row" id="27bTitlePlanBasket" style="display:none;">
                                                   <td class="govuk-table__cell">Title plan</td>
                                                   <td class="govuk-table__cell">Official copy</td>
                                                   <td class="govuk-table__cell">PDF</td>
                                                   <td class="govuk-table__cell">£3.00</td>
-                                                  <td class="govuk-table__cell"><a class="accordionRemove" href="">Remove</a></td>
+                                                  <td class="govuk-table__cell"><a class="accordionDownload">Download</a></td>
                                                 </tr>
 
       
@@ -318,23 +273,23 @@
                                   </div>
                                 </section>
                               </div>
-                              <div class="wide20percent">
+                              <div class="wide20percent" id="reference-27b" style="display:none;">
                                 
                                 <fieldset class="govuk-fieldset">
 
-                                  <div class="">
-
-                                    <input class="govuk-input referenceFormfieldReadOnly" id="reference-2" name="reference-2" type="text" placeholder="Reference" readonly>
+                                  <div class="referenceFormfieldReadOnly">{{ data['reference-2'] }}
+                                    <!-- <input class="govuk-input referenceFormfieldReadOnly" id="reference-1" name="reference-1" type="text" placeholder="Reference"> -->
                                   </div>
                                 
                                 </fieldset>
 
                               </div>
+                              
                             </div>
 
                             <!-- 144a Drakefell Road -->
                             <div>
-                              <div class="wide80percent">
+                              <div class="wide80percent" id="144aBasket" style="display:none;">
                                 <section class="panel panel-default">
                                   <div class="panel-heading" role="tab" id="headingThree">
                                     <h4 class="panel-title">
@@ -345,7 +300,7 @@
                                             <tr class="govuk-table__row">
                                                   <th scope="row" class="govuk-table__header accordionTitle">NN890234</th>
                                                   <th scope="row" class="govuk-table__header accordionAddress">144a Drakefell Road,CV5 K2X</th>
-                                                  <th scope="row" class="govuk-table__header accordionCost">£6.00</th> 
+                                                  <th scope="row" class="govuk-table__header accordionCost" id="144aCost">£6.00</th> 
                                                   <th scope="row" class="govuk-table__header accordionChevron"><span class="glyphicon glyphicon-chevron-right pull-right" aria-hidden="true"><img style="margin-bottom:-5px;" width="25" src="/public/images/icon_govuk_chevrondown.svg"></span></th> 
                                               </tr>
                                           </thead>
@@ -369,22 +324,22 @@
                                                 </tr>
                                             </thead>
 
-                                            <tbody class="govuk-table__body">
+                                            <tbody class="govuk-table__body" id="144aTable">
 
-                                                <tr class="govuk-table__row">
+                                                <tr class="govuk-table__row" id="144aRegisterBasket" style="display:none;">
                                                     <td class="govuk-table__cell">Register</td>
                                                     <td class="govuk-table__cell">Official copy</td>
                                                     <td class="govuk-table__cell">PDF</td>
                                                     <td class="govuk-table__cell">£3.00</td>
-                                                    <td class="govuk-table__cell"><a class="accordionRemove" href="">Remove</a></td>
+                                                    <td class="govuk-table__cell"><a class="accordionDownload" style="cursor: pointer;">Download</a></td>
                                                 </tr>
                                                 
-                                                <tr class="govuk-table__row govuk-table__row">
+                                                <tr class="govuk-table__row govuk-table__row" id="144aTitlePlanBasket" style="display:none;">
                                                   <td class="govuk-table__cell">Title plan</td>
                                                   <td class="govuk-table__cell">Official copy</td>
                                                   <td class="govuk-table__cell">PDF</td>
                                                   <td class="govuk-table__cell">£3.00</td>
-                                                  <td class="govuk-table__cell"><a class="accordionRemove" href="">Remove</a></td>
+                                                  <td class="govuk-table__cell"><a class="accordionDownload" style="cursor: pointer;">Download</a></td>
                                                 </tr>
 
       
@@ -397,13 +352,12 @@
                                   </div>
                                 </section>
                               </div>
-                              <div class="wide20percent">
+                              <div class="wide20percent" id="reference-144a" style="display:none;">
                                 
                                 <fieldset class="govuk-fieldset">
 
-                                  <div class="">
-
-                                    <input class="govuk-input referenceFormfieldReadOnly" id="reference-3" name="reference-3" type="text" placeholder="Reference" readonly>
+                                  <div class="referenceFormfieldReadOnly">{{ data['reference-3'] }}
+                                    <!-- <input class="govuk-input referenceFormfieldReadOnly" id="reference-1" name="reference-1" type="text" placeholder="Reference"> -->
                                   </div>
                                 
                                 </fieldset>
@@ -413,7 +367,7 @@
 
                             <!-- 144b Drakefell Road -->
                             <div>
-                              <div class="wide80percent">
+                              <div class="wide80percent" id="144bBasket" style="display:none;">
                                 <section class="panel panel-default">
                                   <div class="panel-heading" role="tab" id="headingFour">
                                     <h4 class="panel-title">
@@ -424,7 +378,7 @@
                                             <tr class="govuk-table__row">
                                                   <th scope="row" class="govuk-table__header accordionTitle">NN890234</th>
                                                   <th scope="row" class="govuk-table__header accordionAddress">144b Drakefell Road,CV5 K2X</th>
-                                                  <th scope="row" class="govuk-table__header accordionCost">£6.00</th> 
+                                                  <th scope="row" class="govuk-table__header accordionCost" id="144bCost">£6.00</th> 
                                                   <th scope="row" class="govuk-table__header accordionChevron"><span class="glyphicon glyphicon-chevron-right pull-right" aria-hidden="true"><img style="margin-bottom:-5px;" width="25" src="/public/images/icon_govuk_chevrondown.svg"></span></th> 
                                               </tr>
                                           </thead>
@@ -448,22 +402,22 @@
                                                 </tr>
                                             </thead>
 
-                                            <tbody class="govuk-table__body">
+                                            <tbody class="govuk-table__body" id="144bTable">
 
-                                                <tr class="govuk-table__row">
+                                                <tr class="govuk-table__row" id="144bRegisterBasket" style="display:none;">
                                                     <td class="govuk-table__cell">Register</td>
                                                     <td class="govuk-table__cell">Official copy</td>
                                                     <td class="govuk-table__cell">PDF</td>
                                                     <td class="govuk-table__cell">£3.00</td>
-                                                    <td class="govuk-table__cell"><a class="accordionRemove" href="">Remove</a></td>
+                                                    <td class="govuk-table__cell"><a class="accordionDownload">Download</a></td>
                                                 </tr>
                                                 
-                                                <tr class="govuk-table__row govuk-table__row">
+                                                <tr class="govuk-table__row govuk-table__row" id="144bTitlePlanBasket" style="display:none;">
                                                   <td class="govuk-table__cell">Title plan</td>
                                                   <td class="govuk-table__cell">Official copy</td>
                                                   <td class="govuk-table__cell">PDF</td>
                                                   <td class="govuk-table__cell">£3.00</td>
-                                                  <td class="govuk-table__cell"><a class="accordionRemove" href="">Remove</a></td>
+                                                  <td class="govuk-table__cell"><a class="accordionDownload">Download</a></td>
                                                 </tr>
 
       
@@ -476,13 +430,12 @@
                                   </div>
                                 </section>
                               </div>
-                              <div class="wide20percent">
+                              <div class="wide20percent" id="reference-144b" style="display:none;">
                                 
                                 <fieldset class="govuk-fieldset">
 
-                                  <div class="">
-
-                                    <input class="govuk-input referenceFormfieldReadOnly" id="reference-4" name="reference-4" type="text" placeholder="Reference" readonly>
+                                  <div class="referenceFormfieldReadOnly">{{ data['reference-4'] }}
+                                    <!-- <input class="govuk-input referenceFormfieldReadOnly" id="reference-1" name="reference-1" type="text" placeholder="Reference"> -->
                                   </div>
                                 
                                 </fieldset>
@@ -492,7 +445,7 @@
 
                             <!-- 144c Drakefell Road -->
                             <div>
-                              <div class="wide80percent">
+                              <div class="wide80percent" id="144cBasket" style="display:none;">
                                 <section class="panel panel-default">
                                   <div class="panel-heading" role="tab" id="headingFive">
                                     <h4 class="panel-title">
@@ -503,7 +456,7 @@
                                             <tr class="govuk-table__row">
                                                   <th scope="row" class="govuk-table__header accordionTitle">NN890234</th>
                                                   <th scope="row" class="govuk-table__header accordionAddress">144c Drakefell Road,CV5 K2X</th>
-                                                  <th scope="row" class="govuk-table__header accordionCost">£6.00</th> 
+                                                  <th scope="row" class="govuk-table__header accordionCost" id="144cCost">£6.00</th> 
                                                   <th scope="row" class="govuk-table__header accordionChevron"><span class="glyphicon glyphicon-chevron-right pull-right" aria-hidden="true"><img style="margin-bottom:-5px;" width="25" src="/public/images/icon_govuk_chevrondown.svg"></span></th> 
                                               </tr>
                                           </thead>
@@ -527,22 +480,22 @@
                                                 </tr>
                                             </thead>
 
-                                            <tbody class="govuk-table__body">
+                                            <tbody class="govuk-table__body" id="144cTable">
 
-                                                <tr class="govuk-table__row">
+                                                <tr class="govuk-table__row" id="144cRegisterBasket" style="display:none;">
                                                     <td class="govuk-table__cell">Register</td>
                                                     <td class="govuk-table__cell">Official copy</td>
                                                     <td class="govuk-table__cell">PDF</td>
                                                     <td class="govuk-table__cell">£3.00</td>
-                                                    <td class="govuk-table__cell"><a class="accordionRemove" href="">Remove</a></td>
+                                                    <td class="govuk-table__cell"><a class="accordionRemove" style="cursor: pointer;">Download</a></td>
                                                 </tr>
                                                 
-                                                <tr class="govuk-table__row govuk-table__row">
+                                                <tr class="govuk-table__row govuk-table__row" id="144cTitlePlanBasket" style="display:none;">
                                                   <td class="govuk-table__cell">Title plan</td>
                                                   <td class="govuk-table__cell">Official copy</td>
                                                   <td class="govuk-table__cell">PDF</td>
                                                   <td class="govuk-table__cell">£3.00</td>
-                                                  <td class="govuk-table__cell"><a class="accordionRemove" href="">Remove</a></td>
+                                                  <td class="govuk-table__cell"><a class="accordionRemove" style="cursor: pointer;">Download</a></td>
                                                 </tr>
 
       
@@ -555,13 +508,12 @@
                                   </div>
                                 </section>
                               </div>
-                              <div class="wide20percent">
+                              <div class="wide20percent" id="reference-144c" style="display:none;">
                                 
                                 <fieldset class="govuk-fieldset">
 
-                                  <div class="">
-
-                                    <input class="govuk-input referenceFormfieldReadOnly" id="reference-5" name="reference-5" type="text" placeholder="Reference" readonly>
+                                  <div class="referenceFormfieldReadOnly">{{ data['reference-5'] }}
+                                    <!-- <input class="govuk-input referenceFormfieldReadOnly" id="reference-1" name="reference-1" type="text" placeholder="Reference"> -->
                                   </div>
                                 
                                 </fieldset>
@@ -571,7 +523,7 @@
 
                             <!-- 144d Drakefell Road -->
                             <div>
-                              <div class="wide80percent">
+                              <div class="wide80percent" id="144dBasket" style="display:none;">
                                 <section class="panel panel-default">
                                   <div class="panel-heading" role="tab" id="headingSix">
                                     <h4 class="panel-title">
@@ -582,7 +534,7 @@
                                             <tr class="govuk-table__row">
                                                   <th scope="row" class="govuk-table__header accordionTitle">NN890234</th>
                                                   <th scope="row" class="govuk-table__header accordionAddress">144d Drakefell Road,CV5 K2X</th>
-                                                  <th scope="row" class="govuk-table__header accordionCost">£6.00</th> 
+                                                  <th scope="row" class="govuk-table__header accordionCost" id="144dCost">£6.00</th> 
                                                   <th scope="row" class="govuk-table__header accordionChevron"><span class="glyphicon glyphicon-chevron-right pull-right" aria-hidden="true"><img style="margin-bottom:-5px;" width="25" src="/public/images/icon_govuk_chevrondown.svg"></span></th> 
                                               </tr>
                                           </thead>
@@ -606,22 +558,22 @@
                                                 </tr>
                                             </thead>
 
-                                            <tbody class="govuk-table__body">
+                                            <tbody class="govuk-table__body" id="144dTable">
 
-                                                <tr class="govuk-table__row">
+                                                <tr class="govuk-table__row" id="144dRegisterBasket" style="display:none;">
                                                     <td class="govuk-table__cell">Register</td>
                                                     <td class="govuk-table__cell">Official copy</td>
                                                     <td class="govuk-table__cell">PDF</td>
                                                     <td class="govuk-table__cell">£3.00</td>
-                                                    <td class="govuk-table__cell"><a class="accordionRemove" href="">Remove</a></td>
+                                                    <td class="govuk-table__cell"><a class="accordionRemove" style="cursor: pointer;">Download</a></td>
                                                 </tr>
                                                 
-                                                <tr class="govuk-table__row govuk-table__row">
+                                                <tr class="govuk-table__row govuk-table__row" id="144dTitlePlanBasket" style="display:none;">
                                                   <td class="govuk-table__cell">Title plan</td>
                                                   <td class="govuk-table__cell">Official copy</td>
                                                   <td class="govuk-table__cell">PDF</td>
                                                   <td class="govuk-table__cell">£3.00</td>
-                                                  <td class="govuk-table__cell"><a class="accordionRemove" href="">Remove</a></td>
+                                                  <td class="govuk-table__cell"><a class="accordionRemove" style="cursor: pointer;">Download</a></td>
                                                 </tr>
 
       
@@ -634,13 +586,12 @@
                                   </div>
                                 </section>
                               </div>
-                              <div class="wide20percent">
+                              <div class="wide20percent" id="reference-144d" style="display:none;">
                                 
                                 <fieldset class="govuk-fieldset">
 
-                                  <div class="">
-
-                                    <input class="govuk-input referenceFormfieldReadOnly" id="reference-6" name="reference-6" type="text" placeholder="Reference" readonly>
+                                  <div class="referenceFormfieldReadOnly">{{ data['reference-6'] }}
+                                    <!-- <input class="govuk-input referenceFormfieldReadOnly" id="reference-1" name="reference-1" type="text" placeholder="Reference"> -->
                                   </div>
                                 
                                 </fieldset>

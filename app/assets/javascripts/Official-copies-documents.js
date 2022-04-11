@@ -666,6 +666,120 @@ function CheckoutBasket(checkboxID, TableRow, ParentAccordian, CustomerReference
   
 }
 
+function confirmationPage(){
+    if(sessionStorage.getItem('27a-checkbox-1')||sessionStorage.getItem('27a-checkbox-2')){
+        document.getElementById('27aBasket').style.display = 'block';
+        document.getElementById('reference-27a').style.display = 'block';
+        var PropertyDocuments27a = 0;
+        if(sessionStorage.getItem('27a-checkbox-1')){
+            PropertyDocuments27a += 1;
+            document.getElementById('27aRegisterBasket').style.display = 'table-row';
+        }
+        if(sessionStorage.getItem('27a-checkbox-2')){
+            PropertyDocuments27a += 1;
+            document.getElementById('27aTitlePlanBasket').style.display = 'table-row';
+        }
+        if(sessionStorage.getItem('27a-checkbox-deed')){
+            PropertyDocuments27a += 1;
+            document.getElementById('27aDeedBasket').style.display = 'table-row';
+        }
+        if(sessionStorage.getItem('27a-checkbox-lease')){
+            PropertyDocuments27a += 1;
+            document.getElementById('27aLeaseBasket').style.display = 'table-row';
+        }
+        if(sessionStorage.getItem('27a-checkbox-transfer')){
+            PropertyDocuments27a += 1;
+            document.getElementById('27aTansferBasket').style.display = 'table-row';
+        }
+        if(sessionStorage.getItem('27a-checkbox-charge')){
+            PropertyDocuments27a += 1;
+            document.getElementById('27aChargeBasket').style.display = 'table-row';
+        }
+        var Cost27A = PropertyDocuments27a * 3; 
+        document.getElementById('27aCost').innerHTML = '£' + Cost27A + '.00';
+    }
+
+    if(sessionStorage.getItem('27b-checkbox-1')||sessionStorage.getItem('27b-checkbox-2')){
+        document.getElementById('27bBasket').style.display = 'block';
+        document.getElementById('reference-27b').style.display = 'block';
+        var PropertyDocuments27b = 0;
+        if(sessionStorage.getItem('27b-checkbox-1')){
+            PropertyDocuments27b += 1;
+            document.getElementById('27bRegisterBasket').style.display = 'table-row';
+        }
+        if(sessionStorage.getItem('27b-checkbox-2')){
+            PropertyDocuments27b += 1;
+            document.getElementById('27bTitlePlanBasket').style.display = 'table-row';
+        }
+        var Cost27B = PropertyDocuments27b * 3; 
+        document.getElementById('27bCost').innerHTML = '£' + Cost27B + '.00';
+    }
+
+    if(sessionStorage.getItem('144a-checkbox-1')||sessionStorage.getItem('144a-checkbox-2')){
+        document.getElementById('144aBasket').style.display = 'block';
+        document.getElementById('reference-144a').style.display = 'block';
+        var PropertyDocuments144a = 0;
+        if(sessionStorage.getItem('144a-checkbox-1')){
+            PropertyDocuments144a += 1;
+            document.getElementById('144aRegisterBasket').style.display = 'table-row';
+        }
+        if(sessionStorage.getItem('144a-checkbox-2')){
+            PropertyDocuments144a += 1;
+            document.getElementById('144aTitlePlanBasket').style.display = 'table-row';
+        }
+        var Cost144A = PropertyDocuments144a * 3; 
+        document.getElementById('144aCost').innerHTML = '£' + Cost144A + '.00';
+    }
+
+    if(sessionStorage.getItem('144b-checkbox-1')||sessionStorage.getItem('144b-checkbox-2')){
+        document.getElementById('144bBasket').style.display = 'block';
+        document.getElementById('reference-144b').style.display = 'block';
+        var PropertyDocuments144b = 0;
+        if(sessionStorage.getItem('144b-checkbox-1')){
+            PropertyDocuments144b += 1;
+            document.getElementById('144bRegisterBasket').style.display = 'table-row';
+        }
+        if(sessionStorage.getItem('144b-checkbox-2')){
+            PropertyDocuments144b += 1;
+            document.getElementById('144bTitlePlanBasket').style.display = 'table-row';
+        }
+        var Cost144B = PropertyDocuments144b * 3; 
+        document.getElementById('144bCost').innerHTML = '£' + Cost144B + '.00';
+    }
+
+    if(sessionStorage.getItem('144c-checkbox-1')||sessionStorage.getItem('144c-checkbox-2')){
+        document.getElementById('144cBasket').style.display = 'block';
+        document.getElementById('reference-144c').style.display = 'block';
+        var PropertyDocuments144c = 0;
+        if(sessionStorage.getItem('144c-checkbox-1')){
+            PropertyDocuments144c += 1;
+            document.getElementById('144cRegisterBasket').style.display = 'table-row';
+        }
+        if(sessionStorage.getItem('144c-checkbox-2')){
+            PropertyDocuments144c += 1;
+            document.getElementById('144cTitlePlanBasket').style.display = 'table-row';
+        }
+        var Cost144C = PropertyDocuments144c * 3; 
+        document.getElementById('144cCost').innerHTML = '£' + Cost144C + '.00';
+    }
+
+    if(sessionStorage.getItem('144d-checkbox-1')||sessionStorage.getItem('144d-checkbox-2')){
+        document.getElementById('144dBasket').style.display = 'block';
+        document.getElementById('reference-144d').style.display = 'block';
+        var PropertyDocuments144d = 0;
+        if(sessionStorage.getItem('144d-checkbox-1')){
+            PropertyDocuments144d += 1;
+            document.getElementById('144dRegisterBasket').style.display = 'table-row';
+        }
+        if(sessionStorage.getItem('144d-checkbox-2')){
+            PropertyDocuments144d += 1;
+            document.getElementById('144dTitlePlanBasket').style.display = 'table-row';
+        }
+        var Cost144D = PropertyDocuments144d * 3; 
+        document.getElementById('144dCost').innerHTML = '£' + Cost144D + '.00';
+    }
+}
+
 
 // function ARegister(){
 //     console.log('the javascript is linked');
