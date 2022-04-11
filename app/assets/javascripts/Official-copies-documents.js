@@ -468,11 +468,11 @@ function SelectAll(whichSelectAll){
             console.log('Select all for 27b Drakefell Road has been selected');
             if(document.getElementById('27b-checkbox-1').checked == false){
                 document.getElementById('27b-checkbox-1').checked = true;
-                selectDocument('27b-checkbox-1', '27b-register', '27b-checkbox-all', '27b Drakefell Road, Coventry, CV5K2X', 'SGL479276', 'Register', '27bDIV', '27bLIST', 'RegisterbLI', '27b_RegisterIcon', '27bRegisterBasket','27bBasket', 'reference-27b', '27bTable', '27bCost');
+                selectDocument('27b-checkbox-1', '27b-register', '27b-checkbox-all', '27b Drakefell Road, Coventry, CV5K2X', 'SGL479276', 'Register', '27bDIV', '27bLIST', 'RegisterbLI', '27b_RegisterIcon');
             }
             if(document.getElementById('27b-checkbox-2').checked == false){
                 document.getElementById('27b-checkbox-2').checked = true;
-                selectDocument('27b-checkbox-2', '27b-titlePlan', '27b-checkbox-all', '27b Drakefell Road, Coventry, CV5K2X', 'SGL479276', 'Title plan', '27bDIV', '27bLIST', 'TitlePlanbLI', '27b_TitlePlanIcon', '27bTitlePlanBasket','27bBasket', 'reference-27b', '27bTable', '27bCost');
+                selectDocument('27b-checkbox-2', '27b-titlePlan', '27b-checkbox-all', '27b Drakefell Road, Coventry, CV5K2X', 'SGL479276', 'Title plan', '27bDIV', '27bLIST', 'TitlePlanbLI', '27b_TitlePlanIcon');
             }
             sessionStorage.setItem('27b-checkbox-all', true);
 
@@ -480,9 +480,9 @@ function SelectAll(whichSelectAll){
         else{
             console.log('Select all for 27b Drakefell Road has been deselected');
             document.getElementById('27b-checkbox-1').checked = false;
-            selectDocument('27b-checkbox-1', '27b-register', '27b-checkbox-all', '27b Drakefell Road, Coventry, CV5K2X', 'SGL479276', 'Register', '27bDIV', '27bLIST', 'RegisterbLI', '27b_RegisterIcon', '27bRegisterBasket','27bBasket', 'reference-27b', '27bTable', '27bCost');
+            selectDocument('27b-checkbox-1', '27b-register', '27b-checkbox-all', '27b Drakefell Road, Coventry, CV5K2X', 'SGL479276', 'Register', '27bDIV', '27bLIST', 'RegisterbLI', '27b_RegisterIcon');
             document.getElementById('27b-checkbox-2').checked = false;
-            selectDocument('27b-checkbox-2', '27b-titlePlan', '27b-checkbox-all', '27b Drakefell Road, Coventry, CV5K2X', 'SGL479276', 'Title plan', '27bDIV', '27bLIST', 'TitlePlanbLI', '27b_TitlePlanIcon', '27bTitlePlanBasket','27bBasket', 'reference-27b', '27bTable', '27bCost');
+            selectDocument('27b-checkbox-2', '27b-titlePlan', '27b-checkbox-all', '27b Drakefell Road, Coventry, CV5K2X', 'SGL479276', 'Title plan', '27bDIV', '27bLIST', 'TitlePlanbLI', '27b_TitlePlanIcon');
 
             sessionStorage.removeItem('27b-checkbox-all');
 
