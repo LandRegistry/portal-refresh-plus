@@ -689,7 +689,7 @@ function confirmationPage(){
         }
         if(sessionStorage.getItem('27a-checkbox-transfer')){
             PropertyDocuments27a += 1;
-            document.getElementById('27aTansferBasket').style.display = 'table-row';
+            document.getElementById('27aTransferBasket').style.display = 'table-row';
         }
         if(sessionStorage.getItem('27a-checkbox-charge')){
             PropertyDocuments27a += 1;
