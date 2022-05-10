@@ -1,0 +1,69 @@
+{% extends "layout.html" %}
+
+
+{% block pageTitle %}
+Lauren's Party
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full govuk-!-padding-bottom-9">
+        <h1 class=" govuk-heading-xl" style="margin-bottom:10px;">
+            Lauren
+        </h1>
+        <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner" id="lauren-banner">
+            <div class="govuk-notification-banner__header">
+              <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+                Important
+              </h2>
+            </div>
+            <div class="govuk-notification-banner__content">
+              <p class="govuk-notification-banner__heading">
+                You have 7 days left to send your application.
+              </p>
+              <form method="post">
+                <div>
+                    <label for="terms_and_conditions">I agree to the Terms and Conditions:</label>
+                    <input type="checkbox" id="terms_and_conditions" value="1" />
+                </div>
+                <div>
+                    <button type="submit" id="submit_button" disabled>Close</button>
+                    <button onclick="myFunction()">Close</button>
+                </div>
+            </form>
+            </div>
+          </div>  
+        
+    </div>
+</div>
+
+<script>
+//Add a JQuery click event handler onto our checkbox.
+$('#terms_and_conditions').click(function(){
+    //If the checkbox is checked.
+    if($(this).is(':checked')){
+        //Enable the submit button.
+        $('#submit_button').attr("disabled", false);
+    } else{
+        //If it is not checked, disable the button.
+        $('#submit_button').attr("disabled", true);
+    }
+});
+
+function myFunction() {
+  var x = document.getElementById("submit_button");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+</script>
+{% endblock %}

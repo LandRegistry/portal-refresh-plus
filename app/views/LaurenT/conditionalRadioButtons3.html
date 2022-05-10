@@ -157,7 +157,21 @@ Coditional radio buttons
                                 </label>
                             </div>
                         </div>
-                    </div>         
+                    </div> 
+                       <!-- 5 ANSWER-->  
+ <div class="govuk-grid-row desc4" id="question4A">
+   <div class="govuk-grid-column-full govuk-!-padding-bottom-3 govuk-!-padding-top-3">
+      <hr style="margin-bottom:25px;">
+      <h3 class="govuk-heading-s" style="margin-bottom: 10px;">Congratulations!</h3>
+   </div>
+</div>
+   <!-- 8 ANSWER--> 
+<div class="govuk-grid-row desc4" id="question4B">
+   <div class="govuk-grid-column-full govuk-!-padding-bottom-3 govuk-!-padding-top-3">
+      <hr style="margin-bottom:25px;">
+      <h3 class="govuk-heading-s" style="margin-bottom: 10px;">Better luck next time!</h3>
+   </div>
+</div>        
                 </div>
 
 
@@ -184,11 +198,26 @@ Coditional radio buttons
                             </div>
                         </div>
                     </div>
-                </div>
-
+                    
+   <!-- 5'9 ANSWER-->  
+ <div class="govuk-grid-row desc5" id="question5A">
+   <div class="govuk-grid-column-full govuk-!-padding-bottom-3 govuk-!-padding-top-3">
+      <hr style="margin-bottom:25px;">
+      <h3 class="govuk-heading-s" style="margin-bottom: 10px;">Congratulations!</h3>
+   </div>
+</div>
+   <!-- 5'2 ANSWER--> 
+<div class="govuk-grid-row desc5" id="question5B">
+   <div class="govuk-grid-column-full govuk-!-padding-bottom-3 govuk-!-padding-top-3">
+      <hr style="margin-bottom:25px;">
+      <h3 class="govuk-heading-s" style="margin-bottom: 10px;">Better luck next time!</h3>
+   </div>
+</div>
+                </div>        
         </div>
     </div>
 </div>
+
 
 
 
@@ -205,6 +234,38 @@ Coditional radio buttons
    </div>
 </div>
 
+      <!-- Size 5 Answer -->
+      <div class="govuk-grid-row desc4" id="question4A">
+         <div class="govuk-grid-column-full govuk-!-padding-bottom-3 govuk-!-padding-top-3">
+            <hr style="margin-bottom:25px;">
+            <h3 class="govuk-heading-s" style="margin-bottom: 10px;">Congratulations, that's the right answer!</h3>
+         </div>
+      </div>
+
+             <!-- Size 8 Answer -->
+             <div class="govuk-grid-row desc4" id="question4B">
+               <div class="govuk-grid-column-full govuk-!-padding-bottom-3 govuk-!-padding-top-3">
+                  <hr style="margin-bottom:25px;">
+                  <h3 class="govuk-heading-s" style="margin-bottom: 10px;">Better luck next time, that's the wrong answer!</h3>
+               </div>
+            </div>
+ 
+      
+         <!-- 5'9 Answer -->
+ <div class="govuk-grid-row desc5" id="question5A">
+   <div class="govuk-grid-column-full govuk-!-padding-bottom-3 govuk-!-padding-top-3">
+      <hr style="margin-bottom:25px;">
+      <h3 class="govuk-heading-s" style="margin-bottom: 10px;">Congratulations, that's the right answer!</h3>
+   </div>
+</div>
+
+       <!-- 5'2 Answer -->
+       <div class="govuk-grid-row desc5" id="question5B">
+         <div class="govuk-grid-column-full govuk-!-padding-bottom-3 govuk-!-padding-top-3">
+            <hr style="margin-bottom:25px;">
+            <h3 class="govuk-heading-s" style="margin-bottom: 10px;">Better luck next time, that's the wrong answer!</h3>
+         </div>
+      </div>
 
 <!--Each question containing radio buttons requires it's own javascript element below. If you look at the code, you can see 'question1' and 'question2'. In the 2nd part of the javascript you can see it referencing "div.desc". This class needs to be put in the div containing an answer.--> 
 <script>
@@ -270,7 +331,60 @@ Coditional radio buttons
            $("#question7" + test).show();
        });
    });
+  
+   $(document).ready(function() {
+       $("input[name$='question8']").click(function() {
+           var test = $(this).val();
+   
+           $("div.desc8").hide();
+           $("#question8" + test).show();
+       });
+   });
 
+   $(document).ready(function() {
+       $("input[name$='question9']").click(function() {
+           var test = $(this).val();
+   
+           $("div.desc9").hide();
+           $("#question9" + test).show();
+       });
+   });
+
+   $(document).ready(function() {
+       $("input[name$='question10']").click(function() {
+           var test = $(this).val();
+   
+           $("div.desc10").hide();
+           $("#question11" + test).show();
+       });
+   });
+
+   $(document).ready(function() {
+       $("input[name$='question12']").click(function() {
+           var test = $(this).val();
+   
+           $("div.desc12").hide();
+           $("#question12" + test).show();
+       });
+   });
+
+   $(document).ready(function() {
+       $("input[name$='question13']").click(function() {
+           var test = $(this).val();
+   
+           $("div.desc13").hide();
+           $("#question13" + test).show();
+       });
+   });
+
+   $(document).ready(function() {
+       $("input[name$='question14']").click(function() {
+           var test = $(this).val();
+   
+           $("div.desc14").hide();
+           $("#question14" + test).show();
+       });
+   });
   
   
 </script>
@@ -296,6 +410,27 @@ Coditional radio buttons
    display:none;
    }
    .desc7 {
+   display:none;
+   }
+   .desc8 {
+   display:none;
+   }
+   .desc9 {
+   display:none;
+   }
+   .desc10 {
+   display:none;
+   }
+   .desc11 {
+   display:none;
+   }
+   .desc12 {
+   display:none;
+   }
+   .desc13 {
+   display:none;
+   }
+   .desc14 {
    display:none;
    }
 </style>
