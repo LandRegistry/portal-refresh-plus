@@ -134,6 +134,44 @@ main { /* ADDED */
 p:hover {
   background-color: hwb(178 28% 40%);
 }
+
+.dropbtn {
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropbtn:hover, .dropbtn:focus {
+  background-color: #2980B9;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown a:hover {background-color: #ddd;}
+
+.show {display: block;}
   </style>
 
 
@@ -160,20 +198,19 @@ p:hover {
           <div id="donateList">
                <div class="donateItem">
                   <img src="/public/images/landreg.jpg" alt="landreg" width="214" height="98">
-                </div>
-                <div class="donateItem">
-                    <div class="dropdown">
-                      <p>Navigation</p>
-                      <div class="dropdown-content">
-                      <p>Find a property</p>
-                      <p>News</p>
-                      <p>Services</p>
-                      <p>My Services</p>
-                      <p>Service Information</p>
-                      <p>Contact us</p>
-                      </div>
+               </div>
+
+                   <div class="dropdown">
+                    <button onclick="myFunction()" class="dropbtn">Navigation</button>
+                    <div id="myDropdown" class="dropdown-content">
+                      <a href="#findproperty">Find a property</a>
+                      <a href="#news">News</a>
+                      <a href="#services">Services</a>
+                      <a href="#myservices">My Services</a>
+                      <a href="#serviceinfo">Service Information</a>
+                      <a href="#contact">Contact us</a>
                     </div>
-                </div>
+                  </div>
           </div>  
     </main>
     </div>
@@ -209,6 +246,7 @@ p:hover {
   <footer class="footer"> 
   </footer>
 </div>
+
 
 
 

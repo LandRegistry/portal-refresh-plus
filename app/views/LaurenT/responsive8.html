@@ -92,7 +92,7 @@ header {
 
 .dropdown-content {
   display: none;
-  position: sticky;
+  position: absolute;
   min-width: 160px;
   padding: 12px 16px;
   z-index: 1;
@@ -131,7 +131,7 @@ main { /* ADDED */
   color: white
 }
 
-p:hover {
+a:hover {
   background-color: hwb(178 28% 40%);
 }
   </style>
@@ -163,14 +163,14 @@ p:hover {
                 </div>
                 <div class="donateItem">
                     <div class="dropdown">
-                      <p>Navigation</p>
+                      <h>Navigation</h>
                       <div class="dropdown-content">
-                      <p>Find a property</p>
-                      <p>News</p>
-                      <p>Services</p>
-                      <p>My Services</p>
-                      <p>Service Information</p>
-                      <p>Contact us</p>
+                        <a href="#findproperty">Find a property</a>
+                        <a href="#news">News</a>
+                        <a href="#services">Services</a>
+                        <a href="#myservices">My Services</a>
+                        <a href="#serviceinfo">Service Information</a>
+                        <a href="#contact">Contact us</a>
                       </div>
                     </div>
                 </div>
