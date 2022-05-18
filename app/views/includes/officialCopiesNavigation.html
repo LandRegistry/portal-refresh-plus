@@ -1,0 +1,157 @@
+<script src="/public/javascripts/Official-copies-documents.js" defer></script>
+
+<div class="navbar-container">
+
+    <img src="/public/images/HMLR_Logo.svg" alt="hmlrlogo" style="height: 44px;
+    padding-left: 30px;
+    padding-top: 14px;
+    padding-bottom: 5px;">
+     
+     <ul id="menu" style="float:right;">
+        <li class="parent"><a href="index.html">Home</a></li>
+  
+        <li class="parent parentIconDown"><a style="padding-right: 25px;" href="#">Services</a>
+         
+        <li class="parent"><a href="#">Contact us</a></li>
+  
+        <li class="parent parentIconDown2"><a style="padding-right: 25px;" href="#">John James </a>
+             <ul class="child" style="right:0;">
+             <div class="govuk-body myAccountContent" style="margin-bottom:0px;">
+  
+                   <div>
+                     <div class="myAccountTitle" style="padding-bottom:3px;">
+                       Logged in as:
+                     </div>
+                     <div class="myAccount2ndLine">
+                        Administrator 
+                     </div>
+                     <a href="#" style="margin:0px;color:#00703C;font-weight:700;font-size:14px;">View profile</a>
+                   </div>
+  
+                   <hr>
+  
+                   <div class="myAccountTitle" style="padding-bottom:3px;">
+                     <b>Primary Business Unit Administrator (BUA):</b> 
+                   </div>
+                   <div class="myAccount2ndLine">
+                     John Taylor
+                     <!-- <a href="#" style="margin:0px;color:#00703C;"><b>JohnTaylor@bigbusiness.com</b></a> -->
+                   </div>
+  
+  
+  
+  
+                   <button id="logOut" class="govuk-button" style="margin-top:20px;">Log out</button>
+                 </div>
+                 </ul>
+        </li>
+                
+                 
+          <li class="parent parentIconDown3" id="basketNavigation"><a style="padding-left:25px;" href="#">Basket</a>
+            <span class="basketCounter" id="basketCounter">0</span>
+            <ul class="child" style="right:0;">
+              <div class="govuk-body basketContent">
+  
+                <div class="basketItems">
+                  <h2 style="margin-top:0px;margin-bottom:25px;border-bottom: 5px solid #00703C;padding-bottom:20px;">Basket items</h2>
+  
+                  <div id="addBasketItemsHere">
+                  <!-- First item in dropdown basket - 27a Drakefell Road, Coventry, CV5 K2X -->
+                    <!-- <div class="basketItem">
+                        <div class="basketSection">
+                            <div class="basketAddress">
+                              <b>Address</b><br>
+                              27a Drakefell Road,<br>
+                              CV5 K2X
+                            </div>
+                            <div class="basketTitle">
+                              <b>Title number</b><br>
+                              NN890234
+                          </div>
+                        </div>
+
+                        <div class="basketSection" style="padding:15px 0px;">
+                              <div><b>Documents</b>
+                              <ul>
+                                  <li><span class="basketItemSelected">Register</span><span class="basketItemRemove"></span><span class="basketItemPrice">£3.00</span></li>
+                                  <li><span class="basketItemSelected">Title plan</span><span class="basketItemRemove"></span><span class="basketItemPrice">£3.00</span></li>
+                                  <li><span class="basketItemSelected">Deed</span><span class="basketItemRemove"></span><span class="basketItemPrice">£3.00</span></li>
+                                  <li><span class="basketItemSelected">Lease</span><span class="basketItemRemove"></span><span class="basketItemPrice">£3.00</span></li>
+                                  <li><span class="basketItemSelected">Transfer</span><span class="basketItemRemove"></span><span class="basketItemPrice">£3.00</span></li>
+                                  <li><span class="basketItemSelected">Change</span><span class="basketItemRemove"></span><span class="basketItemPrice">£3.00</span></li>
+                              </ul>
+                        </div>
+                        
+                        </div>
+                    </div> -->
+
+                  <!-- Second item in dropdown basket - 27b Drakefell Road, Coventry, CV5 K2X -->
+                  <!-- <div class="basketItem">
+                    <div class="basketSection">
+                        <div class="basketAddress">
+                          <b>Address</b><br>
+                          27b Drakefell Road,<br>
+                          CV5 K2X
+                        </div>
+                        <div class="basketTitle">
+                          <b>Title number</b><br>
+                          NN890234
+                      </div>
+                    </div>
+
+                    <div class="basketSection" style="padding:15px 0px;">
+                          <div><b>Documents</b>
+                          <ul>
+                              <li><span class="basketItemSelected">Register</span><span class="basketItemRemove"></span><span class="basketItemPrice">£3.00</span></li>
+                              <li><span class="basketItemSelected">Title plan</span><span class="basketItemRemove"></span><span class="basketItemPrice">£3.00</span></li>
+                          </ul>
+                    </div>
+                    
+                    </div>
+                  </div> -->
+
+                </div>
+
+
+  
+                </div>
+
+  
+                <!-- Subtotal and basket button -->
+                <div class="basketCheckoutSection" id="TotalCostandCheckout">
+                    <div class="basketSubtotal">
+                      <span style="padding-right:5px;"><b>Total:</b></span><span id="totalCostofBasket">£0.00</span>
+                    </div>
+
+                    <!-- <div class="basketCheckout">
+                      <button class="govuk-button" data-module="govuk-button" style="width:100%;" onclick="window.location.href='basket.html'">Checkout</button>
+                    </div> -->
+
+                    <div class="basketCheckout">
+                      <button class="govuk-button" id="checkout-button" data-module="govuk-button" style="padding: 8px 20px;float: right; display: none;" onclick="window.location.href='basket.html'">Checkout</button>
+                    </div>
+                </div>
+
+                <!-- Subtotal and basket button
+                <div class="basketCheckout">
+                  <div class="basketSection" style="padding-bottom: 25px;">
+                    <div><span class="basketItemSubText">Subtotal:</span><span class="basketItemSubTotal">£12.00</span></div>
+                  </div>
+  
+                  <div class="basketSection">
+                    <button class="govuk-button" data-module="govuk-button" style="width:100%;" onclick="window.location.href='basket.html'">
+                      Checkout
+                    </button>
+                  </div>
+  
+                </div> -->
+
+
+              </div>
+
+
+            </ul>
+          </li>
+  
+  
+  </div>
