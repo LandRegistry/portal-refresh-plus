@@ -53,3 +53,17 @@ SearchDropdown.prototype.render = function(decorated) {
 })(window.jQuery);
 </script>
 
+<script type="text/javascript">
+  $(document).ready(function(){
+      $('#attachmentSelection').on('change', function() {
+        if ( this.value == '1')
+        {
+          $("#business").show();
+        }
+        else
+        {
+          $("#business").hide();
+        }
+      });
+  });
+      </script>
