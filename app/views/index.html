@@ -5,7 +5,16 @@
   Portal Refresh Plus
 {% endblock %}
 
+<script>
+  $(document).on('keydown', '.button',function(e){
+    if(e.which==13 || e.which==32)
+        $(this).click()
+});
+</script>
+
 {% block content %}
+
+
 
 <style>
 
@@ -38,8 +47,8 @@ li {
 .projectBox:hover {
 display: block;
 background-color: #F3F2F1;
-border-radius: 10px;
 }
+
 
 .projectTitle {
 margin-top: 15px;
@@ -48,7 +57,7 @@ margin-bottom: 0px;
 
 .projectCode {
   font-size:16px;
-}
+} 
 
 .govuk-width-container {
   max-width: 1200px;
@@ -56,6 +65,12 @@ margin-bottom: 0px;
 
 a {
   text-decoration:none;
+  color:#0b0c0c;  
+}
+
+a:link {
+  text-decoration:none;
+  color:#0b0c0c;  
 }
 
 .govuk-heading-xl {
@@ -86,53 +101,53 @@ a {
       </h1>
     </div>
 
-    <div class="govuk-grid-column-one-third projectBox">
-      <a class="projectBoxHighlight" href="projects/notifications/index.html">
+
+      <a class="govuk-grid-column-one-third projectBox projectBoxHighlight" tabindex="1" href="projects/notifications/index.html">
         <div><img class="projectImage" src="/public/images/notificationsBlur.jpg"></div>
         <div class="govuk-heading-m projectTitle">Notifications</div>
         <div class="projectCode"></div>
       </a>
-    </div>
 
-    <div class="govuk-grid-column-one-third projectBox">
-      <a href="projects/projectsAndGroups/index.html">
+
+
+      <a class="govuk-grid-column-one-third projectBox projectBoxHighlight" tabindex="2"  href="projects/projectsAndGroups/index.html">
         <div><img class="projectImage" src="/public/images/groupBlur.jpg"></div>
         <div class="govuk-heading-m projectTitle">Projects & Groups</div>
         <div class="projectCode"></div>
       </a>
-    </div>
 
-    <div class="govuk-grid-column-one-third projectBox">
-      <a href="projects/searchForPropertyDocuments/index.html">
+
+
+      <a class="govuk-grid-column-one-third projectBox projectBoxHighlight" tabindex="3"  href="projects/searchForPropertyDocuments/index.html">
         <div><img class="projectImage" src="/public/images/searchforpropertydocumentsBlur2.jpg"></div>
         <div class="govuk-heading-m projectTitle">Search for property documents</div>
         <div class="projectCode"></div>
       </a>
-    </div>
 
-    <div class="govuk-grid-column-one-third projectBox">
-      <a href="projects/homepage/index.html">
+
+
+      <a class="govuk-grid-column-one-third projectBox projectBoxHighlight" tabindex="4"  href="projects/homepage/index.html">
         <div><img class="projectImage" src="/public/images/homepageBlur2.jpg"></div>
         <div class="govuk-heading-m projectTitle">Homepage</div>
         <div class="projectCode"></div>
       </a>
-    </div>
 
-    <div class="govuk-grid-column-one-third projectBox">
-      <a href="projects/guidance/index.html">
+
+
+      <a class="govuk-grid-column-one-third projectBox projectBoxHighlight" tabindex="5"  href="projects/guidance/index.html">
         <div><img class="projectImage" src="/public/images/guidanceBlur.jpg"></div>
         <div class="govuk-heading-m projectTitle">Guidance page</div>
         <div class="projectCode">E23-74 B</div>
       </a>
-    </div>
 
-    <div class="govuk-grid-column-one-third projectBox">
-      <a href="projects/errorScreens/index.html">
+
+
+      <a class="govuk-grid-column-one-third projectBox projectBoxHighlight" tabindex="6"  href="projects/errorScreens/index.html">
       <div><img class="projectImage" src="/public/images/errorscreenBlur.jpg"></div>
         <div class="govuk-heading-m projectTitle">Error screens</div>
         <div class="projectCode">E23-75 A,B,C,D</div>
       </a>       
-    </div>
+
 
 
 
