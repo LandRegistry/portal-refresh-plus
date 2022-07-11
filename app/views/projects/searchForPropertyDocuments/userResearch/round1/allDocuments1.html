@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+{% extends "layout_officialCopies.html" %}
+{% block pageTitle %} Search reults
+{% endblock %}
+{% block content %}
+
+{% include "includes/officialCopiesNavigation.html" %} 
+
+
+<script>
+ 
+ document.addEventListener("DOMContentLoaded", function(event){
+    var InBasket1 = sessionStorage.getItem('InBasket');
+    document.getElementById('addBasketItemsHere').innerHTML = InBasket1;
+    if(parseInt(sessionStorage.getItem("basketQuantity")) >= 1){
+        document.getElementById("basketCounter").style.display = 'block';
+        var InBasketCounter = sessionStorage.getItem('counterForBasket');
+        document.getElementById("basketCounter").innerHTML = sessionStorage.getItem("basketQuantity");
+        document.getElementById("totalCostofBasket").innerHTML = '£' + sessionStorage.getItem("basketTotalCost") + '.00';    
+        document.getElementById("checkout-button").style.display = 'block';
+
+    }
+    onloadCheck('27a-checkbox-1', '27a-register');
+    onloadCheck('27a-checkbox-2', '27a-titlePlan');
+    onloadCheck('27a-checkbox-deed', '27a-deed');
+    onloadCheck('27a-checkbox-lease', '27a-lease');
+    onloadCheck('27a-checkbox-transfer', '27a-transfer');
+    onloadCheck('27a-checkbox-charge', '27a-charge');
+
+  })
+   
+  // document.addEventListener("DOMContentLoaded", function(event){
+  //   if(sessionStorage.getItem("InBasket") != null){
+  //     var InBasket1 = sessionStorage.getItem('InBasket');
+  //     document.getElementById('basketNavigation').innerHTML = InBasket1;
+  //   }
+  // })
+   
+</script>
+
+
+
+<div class="sectionContent">
+
+    <!-- Additional Documents 1 - Overlay -->
+    <div class="item" id="additionalDocumentsOverlay1">
+      <div style="padding:50px;">
+
+          <div class="contentSection">
+            <a href="search-result.html" class="govuk-back-link" style="margin-top:0px;margin-bottom: 50px;">Back to search results</a>
+              <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Title number: <span style="font-weight:400;">SGL479276</span></h1>
+              
+              <p style="margin-bottom:15px;font-weight:600;">27a Drakefell Road, Coventry, CV5 K2X</p>
+              
+              <p style="margin-bottom:30px;max-width: 680px;">If you order both the register and title plan, they will be delivered together either electronically or by post.</p>
+
+              <div class="contentSection">
+                  <fieldset class="govuk-fieldset  govuk-checkboxes--small" aria-describedby="waste-hint">
+                    <table class="govuk-table" style="margin-bottom: 0px;">
+                      <thead>
+                        <tr class="govuk-table__row">
+                              <th class="govuk-table__header" style="width:50px;"><div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" id="27a-checkbox-all" name="27a-checkbox-all" type="checkbox" value="allcb" onclick="SelectAll('27a')">
+                                <label class="govuk-label govuk-checkboxes__label" for="allcb"></label>
+                              </div></th>
+                              <th scope="row" class="govuk-table__header">Document type</th>
+                              <th scope="row" class="govuk-table__header">Status</th>
+                              <th scope="row" class="govuk-table__header">Date</th>
+                              <th scope="row" class="govuk-table__header">Format</th>
+                              <th scope="row" class="govuk-table__header">Cost</th> 
+                          </tr>
+                      </thead>
+                      <tbody class="govuk-table__body">
+                          <!-- <tr class="govuk-table__row">
+                              <td class="govuk-table__cell">                                
+                                <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" id="cb1" name="cb1" type="checkbox" value="cb1" onclick="showAdded()">
+                                <label class="govuk-label govuk-checkboxes__label" for="cb1"></label>
+                              </div></td>
+                              <td class="govuk-table__cell">Register</td>
+                              <td class="govuk-table__cell">Official Copy</td>
+                              <td class="govuk-table__cell">20/01/2022</td>
+                              <td class="govuk-table__cell">PDF</td>
+                              <td class="govuk-table__cell">£3.00</td>
+                          </tr>
+                          <tr class="govuk-table__row" style="display:none;position: relative;" id="added1">
+                            <td class="govuk-table__cell" colspan="6"> 
+                              <div class="addedToBasket">Register added to basket</div>
+                            </td>
+                          </tr> -->
+                          <tr class="govuk-table__row">
+                            <td class="govuk-table__cell">                                
+                              <div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input" id="27a-checkbox-1" name="27a-checkbox-1" data-href="content1" type="checkbox" onclick="selectDocument('27a-checkbox-1', '27a-register', '27a-checkbox-all', '27a Drakefell Road, Coventry, CV5K2X', 'SGL479276', 'Register', '27aDIV', '27aLIST', 'RegisterLI', '27a_RegisterIcon','27aRegisterBasket','27aBasket', 'reference-27a', '27aTable', '27aCost')">
+                              <label class="govuk-label govuk-checkboxes__label" for="checkbox-1" ></label>
+                            </div></td>
+                              <td class="govuk-table__cell">Register</td>
+                              <td class="govuk-table__cell">Official Copy</td>
+                              <td class="govuk-table__cell">20/01/2022</td>
+                              <td class="govuk-table__cell">PDF</td>
+                              <td class="govuk-table__cell">£3.00</td>
+                          </tr>
+
+                          <tr class="govuk-table__row" id="27a-register" style="display:none;">
+                            <div id="content0" class="addedToBasketBox">
+                              <td class="govuk-table__cell" colspan="6" style="border-top: none;"> 
+                                <div class="addedToBasket">Register added to basket</div>
+                              </td>
+                            </div>
+                          </tr>
+
+                          <tr class="govuk-table__row">
+                            <td class="govuk-table__cell">                                
+                              <div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input" id="27a-checkbox-2" name="27a-checkbox-2" data-href="content2" type="checkbox" onclick="selectDocument('27a-checkbox-2', '27a-titlePlan', '27a-checkbox-all', '27a Drakefell Road, Coventry, CV5K2X', 'SGL479276', 'Title plan', '27aDIV', '27aLIST', 'TitlePlanLI', '27a_TitlePlanIcon','27aTitlePlanBasket','27aBasket', 'reference-27a', '27aTable', '27aCost')">
+                              <label class="govuk-label govuk-checkboxes__label" for="checkbox-2" ></label>
+                            </div></td>
+                              <td class="govuk-table__cell">Title plan</td>
+                              <td class="govuk-table__cell">Official Copy</td>
+                              <td class="govuk-table__cell">14/03/2019</td>
+                              <td class="govuk-table__cell">PDF</td>
+                              <td class="govuk-table__cell">£3.00</td>
+                          </tr>
+
+                          <tr class="govuk-table__row" id="27a-titlePlan" style="display:none;">
+                            <div id="content0" class="addedToBasketBox">
+                              <td class="govuk-table__cell" colspan="6" style="border-top: none;"> 
+                                <div class="addedToBasket">Title plan added to basket</div>
+                              </td>
+                            </div>
+                          </tr>
+
+
+                          <tr class="govuk-table__row">
+                            <td class="govuk-table__cell">                                
+                              <div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input" id="27a-checkbox-deed" name="27a-checkbox-deed" data-href="content1" type="checkbox" onclick="selectDocument('27a-checkbox-deed', '27a-deed', '27a-checkbox-all', '27a Drakefell Road, Coventry, CV5K2X', 'SGL479276', 'Deed', '27aDIV', '27aLIST', 'DeedLI', '27a_DeedIcon', '27aDeedBasket','27aBasket', 'reference-27a', '27aTable', '27aCost')">
+                              <label class="govuk-label govuk-checkboxes__label" for="checkbox-1" ></label>
+                            </div></td>
+                              <td class="govuk-table__cell">Deed</td>
+                              <td class="govuk-table__cell">B3</td>
+                              <td class="govuk-table__cell">20/04/2018</td>
+                              <td class="govuk-table__cell">PDF</td>
+                              <td class="govuk-table__cell">£3.00</td>
+                          </tr>
+
+                          <tr class="govuk-table__row" id="27a-deed" style="display:none;">
+                            <div id="content0" class="addedToBasketBox">
+                              <td class="govuk-table__cell" colspan="6" style="border-top: none;"> 
+                                <div class="addedToBasket">Deed added to basket</div>
+                              </td>
+                            </div>
+                          </tr>
+
+
+
+                          <tr class="govuk-table__row">
+                            <td class="govuk-table__cell">                                
+                              <div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input" id="27a-checkbox-lease" name="27a-checkbox-lease" data-href="content1" type="checkbox" onclick="selectDocument('27a-checkbox-lease', '27a-lease', '27a-checkbox-all', '27a Drakefell Road, Coventry, CV5K2X', 'SGL479276', 'Lease', '27aDIV', '27aLIST', 'LeaseLI', '27a_LeaseIcon', '27aLeaseBasket','27aBasket', 'reference-27a', '27aTable', '27aCost')">
+                              <label class="govuk-label govuk-checkboxes__label" for="checkbox-1" ></label>
+                            </div></td>
+                              <td class="govuk-table__cell">Lease</td>
+                              <td class="govuk-table__cell">L1</td>
+                              <td class="govuk-table__cell">22/05/2017</td>
+                              <td class="govuk-table__cell">PDF</td>
+                              <td class="govuk-table__cell">£3.00</td>
+                          </tr>
+
+                          <tr class="govuk-table__row" id="27a-lease" style="display:none;">
+                            <div id="content0" class="addedToBasketBox">
+                              <td class="govuk-table__cell" colspan="6" style="border-top: none;"> 
+                                <div class="addedToBasket">Lease added to basket</div>
+                              </td>
+                            </div>
+                          </tr>
+
+
+
+                          <tr class="govuk-table__row">
+                            <td class="govuk-table__cell">                                
+                              <div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input" id="27a-checkbox-transfer" name="27a-checkbox-transfer" data-href="content1" type="checkbox" onclick="selectDocument('27a-checkbox-transfer', '27a-transfer', '27a-checkbox-all', '27a Drakefell Road, Coventry, CV5K2X', 'SGL479276', 'Transfer', '27aDIV', '27aLIST', 'TransferLI', '27a_TransferIcon', '27aTransferBasket','27aBasket', 'reference-27a', '27aTable', '27aCost')">
+                              <label class="govuk-label govuk-checkboxes__label" for="checkbox-1" ></label>
+                            </div></td>
+                              <td class="govuk-table__cell">Transfer</td>
+                              <td class="govuk-table__cell">A3,A5,C3,C4</td>
+                              <td class="govuk-table__cell">06/07/2012</td>
+                              <td class="govuk-table__cell">PDF</td>
+                              <td class="govuk-table__cell">£3.00</td>
+                          </tr>
+
+                          <tr class="govuk-table__row" id="27a-transfer" style="display:none;">
+                            <div id="content0" class="addedToBasketBox">
+                              <td class="govuk-table__cell" colspan="6" style="border-top: none;"> 
+                                <div class="addedToBasket">Transfer added to basket</div>
+                              </td>
+                            </div>
+                          </tr>
+
+
+                          <tr class="govuk-table__row">
+                            <td class="govuk-table__cell">                                
+                              <div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input" id="27a-checkbox-charge" name="27a-checkbox-charge" data-href="content1" type="checkbox" onclick="selectDocument('27a-checkbox-charge', '27a-charge', '27a-checkbox-all', '27a Drakefell Road, Coventry, CV5K2X', 'SGL479276', 'Charge', '27aDIV', '27aLIST', 'ChargeLI', '27a_ChargeIcon', '27aChargeBasket','27aBasket', 'reference-27a', '27aTable', '27aCost')">
+                              <label class="govuk-label govuk-checkboxes__label" for="checkbox-1" ></label>
+                            </div></td>
+                              <td class="govuk-table__cell">Charge</td>
+                              <td class="govuk-table__cell">C1,C2</td>
+                              <td class="govuk-table__cell">07/04/2012</td>
+                              <td class="govuk-table__cell">PDF</td>
+                              <td class="govuk-table__cell">£3.00</td>
+                          </tr>
+
+                          <tr class="govuk-table__row" id="27a-charge" style="display:none;">
+                            <div id="content0" class="addedToBasketBox">
+                              <td class="govuk-table__cell" colspan="6" style="border-top: none;"> 
+                                <div class="addedToBasket">Charge added to basket</div>
+                              </td>
+                            </div>
+                          </tr>
+
+                      </tbody>
+                    </table>
+                  </fieldset>
+              </div>
+
+              <div class="contentSection">
+              <h2 class="govuk-heading-l govuk-!-margin-bottom-6">Add certificate in form CI</h1>
+                
+
+                <fieldset class="govuk-fieldset">
+
+                    <h2 class="govuk-heading-m" style="margin-bottom:5px;">
+                      Estate plan plot numbers
+                    </h2>
+
+                    <div id="with-hint-hint" class="govuk-hint">
+                      You can add multiple plots by separating them with commas
+                    </div>
+
+                    <div class="govuk-form-group" style="max-width: 300px;margin-bottom: 15px;">
+                      <input class="govuk-input" id="plotNumbers" name="plotNumbers" type="text" autocomplete="plotNumbers">
+                    </div>
+
+                    <div class="govuk-form-group" style="margin-bottom: 15px;">
+                        <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+                          <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="changed-name" name="changed-name" type="radio" value="month" checked>
+                            <label class="govuk-label govuk-radios__label" for="changed-name">
+                              Receive as PDF
+                            </label>
+                          </div>
+                          <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="changed-name-2" name="changed-name" type="radio" value="year">
+                            <label class="govuk-label govuk-radios__label" for="changed-name-2">
+                              Receive printed document by post
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+
+
+                      <div class="govuk-form-group" style="margin-bottom: 15px;">
+                        <button class="govuk-button" data-module="govuk-button">
+                          Add certificate
+                        </button>
+
+                      </div>
+
+                </fieldset>
+              </div>
+
+
+              <div class="contentSection">
+                <h2 class="govuk-heading-l govuk-!-margin-bottom-6">Non referred document</h1>
+                  
+  
+                  <fieldset class="govuk-fieldset">
+  
+                    <div style="display:flex;">
+                        <div class="govuk-form-group" style="float: left;margin-right:30px;">
+                          <label class="govuk-label govuk-!-font-weight-bold">
+                              Document type
+                          </label>
+                            <select class="form-control" style="height:40px;width:300px;border:2px solid #000000;" type="submit" >
+                              <option value="#"></option>
+                              <option value="abstract">Abstract</option>
+                              <option value="agreement">Agreement</option>
+                              <option value="application-form">Application form</option>
+                              <option value="assent">Assent</option>
+                              <option value="assignment">Assignment</option>
+                              <option value="charge">Charge</option>
+                              <option value="conveyance">Conveyance</option>
+                              <option value="deed">Deed</option>
+                              <option value="indenture">Indenture</option>
+                              <option value="lease">Lease</option>
+                              <option value="licence">Licence</option>
+                              <option value="plan">Plan</option>
+                              <option value="statutory-declaration">Statutory declaration</option>
+                              <option value="sub-charge">Sub-charge</option>
+                              <option value="transfer">Transfer</option>
+                              <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="govuk-form-group" style="float: left;">
+                          <label class="govuk-label govuk-!-font-weight-bold" for="address-town">
+                              Filed under
+                          </label>
+                  
+                          <input class="govuk-input" id="filed-under" name="filed-under" type="text" style="width:300px;" value="{{ data['filed-under'] }}">
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="govuk-form-group">
+                          <label class="govuk-label govuk-!-font-weight-bold" for="address-town">
+                              Dated
+                          </label>
+                          <div id="with-hint-hint" class="govuk-hint">
+                            (DD/MM/YYYY)
+                          </div>
+                          <input class="govuk-input" id="filed-under" name="filed-under" type="text" style="width:90px;margin-right:10px;" value="{{ data['dated-DD'] }}">
+                          <input class="govuk-input" id="filed-under" name="filed-under" type="text" style="width:90px;margin-right:10px;" value="{{ data['dated-MM'] }}">
+                          <input class="govuk-input" id="filed-under" name="filed-under" type="text" style="width:90px;" value="{{ data['dated-YYYY'] }}">
+                        </div>
+                    </div>
+  
+
+                  <div style="max-width: 630px;">
+                    <div class="govuk-form-group">
+                      <label class="govuk-label govuk-!-font-weight-bold" for="address-town">
+                        Further information
+                    </label>
+                    <div id="with-hint-hint" class="govuk-hint">
+                      Mandatory if the document type selected is 'Other'
+                    </div>
+                      <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="5" aria-describedby="more-detail-hint"></textarea>
+                    </div>
+                  </div>
+
+
+                  <div style="display:flex;">
+                  <div class="govuk-form-group" style="margin-bottom: 15px;">
+                    <button class="govuk-button" data-module="govuk-button">
+                      Add certificate
+                    </button>
+
+                  </div>
+                </div>
+
+
+
+
+
+                  </fieldset>
+                </div>
+
+
+          </div>
+
+      </div>
+    </div>
+
+
+    <!-- Right Map -->
+    <div class="item2 backgroundMap1">
+      <div style="opacity: 0;">
+        <a style="cursor: crosshair;" href="search-result-2.html"><img style="width: 100%;height: calc(100vh - 190px);" src="/public/images/red.png"></a>
+      </div>
+    </div>
+
+
+    <!-- <div class="item2 backgroundMap1">
+      <a style="left: 25%;top: 39%;position: relative;opacity: 0.3;" href="search-result-2.html"><img width="50" height="100" src="/public/images/red.png"></a>
+  </div> -->
+
+</div>
+
+
+{% include "includes/officialCopiesFooter.html" %} 
+
+{% endblock %}

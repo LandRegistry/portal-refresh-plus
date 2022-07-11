@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+{% extends "layout_officialCopies.html" %}
+{% block pageTitle %} Search reults
+{% endblock %}
+{% block content %}
+
+{% include "includes/officialCopiesNavigation.html" %} 
+
+
+
+<style>
+</style>
+
+<div class="sectionContent">
+
+    <!-- Additional Documents 1 - Overlay -->
+    <div class="item" id="additionalDocumentsOverlay1">
+      <div style="padding:50px;">
+
+          <div class="contentSection">
+            <a href="search-result.html" class="govuk-back-link" style="margin-top:0px;margin-bottom: 50px;">Back to search results</a>
+              <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Title number: <span style="font-weight:400;">SGL479276</span></h1>
+              
+              <p style="margin-bottom:15px;font-weight:600;">27b Drakefell Road, Coventry, CV5 K2X</p>
+              
+              <p style="margin-bottom:30px;max-width: 680px;">If you order both the register and title plan, they will be delivered together either electronically or by post.</p>
+
+              <div class="contentSection">
+                  <fieldset class="govuk-fieldset  govuk-checkboxes--small" aria-describedby="waste-hint">
+                    <table class="govuk-table" style="margin-bottom: 0px;">
+                      <thead>
+                        <tr class="govuk-table__row">
+                              <th class="govuk-table__header" style="width:50px;"><div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" id="allcb" name="allcb" type="checkbox" value="allcb" onclick="showAddedAll()">
+                                <label class="govuk-label govuk-checkboxes__label" for="allcb"></label>
+                              </div></th>
+                              <th scope="row" class="govuk-table__header">Document type</th>
+                              <th scope="row" class="govuk-table__header">Status</th>
+                              <th scope="row" class="govuk-table__header">Date</th>
+                              <th scope="row" class="govuk-table__header">Format</th>
+                              <th scope="row" class="govuk-table__header">Cost</th> 
+                          </tr>
+                      </thead>
+                      <tbody class="govuk-table__body">
+                          <tr class="govuk-table__row">
+                              <td class="govuk-table__cell">                                
+                                <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" id="cb1" name="cb1" type="checkbox" value="cb1" onclick="showAdded()">
+                                <label class="govuk-label govuk-checkboxes__label" for="cb1"></label>
+                              </div></td>
+                              <td class="govuk-table__cell">Register</td>
+                              <td class="govuk-table__cell">Official Copy</td>
+                              <td class="govuk-table__cell">16/09/2021</td>
+                              <td class="govuk-table__cell">PDF</td>
+                              <td class="govuk-table__cell">£3.00</td>
+                          </tr>
+                          <tr class="govuk-table__row" style="display:none;position: relative;" id="added1">
+                            <td class="govuk-table__cell" colspan="6"> 
+                              <div class="addedToBasket">Register added to basket</div>
+                            </td>
+                          </tr>
+
+
+                          <tr class="govuk-table__row govuk-table__row">
+                              <td class="govuk-table__cell"><div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" id="cb2" name="cb2" type="checkbox" value="cb2" onclick="showAdded2()">
+                                <label class="govuk-label govuk-checkboxes__label" for="cb2"></label>
+                              </div></td>
+                              <td class="govuk-table__cell">Title plan</td>
+                              <td class="govuk-table__cell">Official Copy</td>
+                              <td class="govuk-table__cell">02/06/2018</td>
+                              <td class="govuk-table__cell">PDF</td>
+                              <td class="govuk-table__cell">£3.00</td>
+                          </tr>
+                          <tr class="govuk-table__row" style="display:none;position: relative;" id="added2">
+                            <td class="govuk-table__cell" colspan="6"> 
+                              <div class="addedToBasket">Title plan added to basket</div>
+                            </td>
+                          </tr>
+
+
+                          <tr class="govuk-table__row govuk-table__row">
+                            <td class="govuk-table__cell"><div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input" id="cb2" name="cb2" type="checkbox" value="cb2" onclick="showAdded2()">
+                              <label class="govuk-label govuk-checkboxes__label" for="cb2"></label>
+                            </div></td>
+                            <td class="govuk-table__cell">Deed</td>
+                            <td class="govuk-table__cell">B3</td>
+                            <td class="govuk-table__cell">20/04/2018</td>
+                            <td class="govuk-table__cell">PDF</td>
+                            <td class="govuk-table__cell">£3.00</td>
+                        </tr>
+                        <tr class="govuk-table__row" style="display:none;position: relative;" id="added2">
+                          <td class="govuk-table__cell" colspan="6"> 
+                            <div class="addedToBasket">Deed added to basket</div>
+                          </td>
+                        </tr>
+
+
+
+                        <tr class="govuk-table__row govuk-table__row">
+                          <td class="govuk-table__cell"><div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="cb2" name="cb2" type="checkbox" value="cb2" onclick="showAdded2()">
+                            <label class="govuk-label govuk-checkboxes__label" for="cb2"></label>
+                          </div></td>
+                          <td class="govuk-table__cell">Lease</td>
+                          <td class="govuk-table__cell">L1</td>
+                          <td class="govuk-table__cell">22/05/2017</td>
+                          <td class="govuk-table__cell">PDF</td>
+                          <td class="govuk-table__cell">£3.00</td>
+                      </tr>
+                      <tr class="govuk-table__row" style="display:none;position: relative;" id="added2">
+                        <td class="govuk-table__cell" colspan="6"> 
+                          <div class="addedToBasket">Lease added to basket</div>
+                        </td>
+                      </tr>
+
+
+
+
+                      </tbody>
+                    </table>
+                  </fieldset>
+              </div>
+
+              <div class="contentSection">
+              <h2 class="govuk-heading-l govuk-!-margin-bottom-6">Add certificate in form CI</h1>
+                
+
+                <fieldset class="govuk-fieldset">
+
+                    <h2 class="govuk-heading-m" style="margin-bottom:5px;">
+                      Estate plan plot numbers
+                    </h2>
+
+                    <div id="with-hint-hint" class="govuk-hint">
+                      You can add multiple plots by separating them with commas
+                    </div>
+
+                    <div class="govuk-form-group" style="max-width: 300px;margin-bottom: 15px;">
+                      <input class="govuk-input" id="plotNumbers" name="plotNumbers" type="text" autocomplete="plotNumbers">
+                    </div>
+
+                    <div class="govuk-form-group" style="margin-bottom: 15px;">
+                        <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+                          <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="changed-name" name="changed-name" type="radio" value="month" checked>
+                            <label class="govuk-label govuk-radios__label" for="changed-name">
+                              Receive as PDF
+                            </label>
+                          </div>
+                          <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="changed-name-2" name="changed-name" type="radio" value="year">
+                            <label class="govuk-label govuk-radios__label" for="changed-name-2">
+                              Receive printed document by post
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+
+
+                      <div class="govuk-form-group" style="margin-bottom: 15px;">
+                        <button class="govuk-button" data-module="govuk-button">
+                          Add certificate
+                        </button>
+
+                      </div>
+
+                </fieldset>
+              </div>
+
+
+              <div class="contentSection">
+                <h2 class="govuk-heading-l govuk-!-margin-bottom-6">Non referred document</h1>
+                  
+  
+                  <fieldset class="govuk-fieldset">
+  
+                    <div style="display:flex;">
+                        <div class="govuk-form-group" style="float: left;margin-right:30px;">
+                          <label class="govuk-label govuk-!-font-weight-bold">
+                              Document type
+                          </label>
+                            <select class="form-control" style="height:40px;width:300px;border:2px solid #000000;" type="submit" >
+                              <option value="#"></option>
+                              <option value="abstract">Abstract</option>
+                              <option value="agreement">Agreement</option>
+                              <option value="application-form">Application form</option>
+                              <option value="assent">Assent</option>
+                              <option value="assignment">Assignment</option>
+                              <option value="charge">Charge</option>
+                              <option value="conveyance">Conveyance</option>
+                              <option value="deed">Deed</option>
+                              <option value="indenture">Indenture</option>
+                              <option value="lease">Lease</option>
+                              <option value="licence">Licence</option>
+                              <option value="plan">Plan</option>
+                              <option value="statutory-declaration">Statutory declaration</option>
+                              <option value="sub-charge">Sub-charge</option>
+                              <option value="transfer">Transfer</option>
+                              <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="govuk-form-group" style="float: left;">
+                          <label class="govuk-label govuk-!-font-weight-bold" for="address-town">
+                              Filed under
+                          </label>
+                  
+                          <input class="govuk-input" id="filed-under" name="filed-under" type="text" style="width:300px;" value="{{ data['filed-under'] }}">
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="govuk-form-group">
+                          <label class="govuk-label govuk-!-font-weight-bold" for="address-town">
+                              Dated
+                          </label>
+                          <div id="with-hint-hint" class="govuk-hint">
+                            (DD/MM/YYYY)
+                          </div>
+                          <input class="govuk-input" id="filed-under" name="filed-under" type="text" style="width:90px;margin-right:10px;" value="{{ data['dated-DD'] }}">
+                          <input class="govuk-input" id="filed-under" name="filed-under" type="text" style="width:90px;margin-right:10px;" value="{{ data['dated-MM'] }}">
+                          <input class="govuk-input" id="filed-under" name="filed-under" type="text" style="width:90px;" value="{{ data['dated-YYYY'] }}">
+                        </div>
+                    </div>
+  
+
+                  <div style="max-width: 630px;">
+                    <div class="govuk-form-group">
+                      <label class="govuk-label govuk-!-font-weight-bold" for="address-town">
+                        Further information
+                    </label>
+                    <div id="with-hint-hint" class="govuk-hint">
+                      Mandatory if the document type selected is 'Other'
+                    </div>
+                      <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="5" aria-describedby="more-detail-hint"></textarea>
+                    </div>
+                  </div>
+
+
+                  <div style="display:flex;">
+                  <div class="govuk-form-group" style="margin-bottom: 15px;">
+                    <button class="govuk-button" data-module="govuk-button">
+                      Add certificate
+                    </button>
+
+                  </div>
+                </div>
+
+
+
+
+
+                  </fieldset>
+                </div>
+
+
+          </div>
+
+      </div>
+    </div>
+
+
+    <!-- Right Map -->
+    <div class="item2 backgroundMap1">
+      <div style="opacity: 0;">
+        <a style="cursor: crosshair;" href="search-result-2.html"><img style="width: 100%;height: calc(100vh - 190px);" src="/public/images/red.png"></a>
+      </div>
+    </div>
+
+
+    <!-- <div class="item2 backgroundMap1">
+      <a style="left: 25%;top: 39%;position: relative;opacity: 0.3;" href="search-result-2.html"><img width="50" height="100" src="/public/images/red.png"></a>
+  </div> -->
+
+</div>
+
+
+
+{% include "includes/officialCopiesFooter.html" %} 
+
+
+{% endblock %}
