@@ -24,7 +24,11 @@
   //     document.getElementById('basketNavigation').innerHTML = InBasket1;
   //   }
   // })
-   
+  
+  function clearAll(){
+    sessionStorage.clear();
+    console.log('andy is testing');
+  }
   
 </script>
 <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
@@ -610,7 +614,9 @@
               <h2 class="govuk-heading-l" style="margin-bottom: 5px;">Pending documents</h2>
               <p class="govuk-body"  style="padding-bottom:25px;">All documents requested are available for immediate download.</p>
 
-              <p class="govuk-body"  style="padding-bottom:25px;"><a href="index.html">Return to Portal homepage</a></p>
+              <p class="govuk-body"  style="padding-bottom:25px;">
+                <a onclick='clearAll()' href="index.html">Return to Portal homepage</a>
+              </p>
           </div>
 
         </div>
