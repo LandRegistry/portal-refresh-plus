@@ -63,13 +63,6 @@
     padding-bottom: 0px;
 }
 
-.expandedTitles {
-    font-size: 20px;
-    line-height: 30px;
-    font-weight: 600;
-    display: block;
-    padding-bottom: 5px;
-}
 
 .expandedText {
     font-size: 14pt;
@@ -759,7 +752,7 @@ tr:hover {
 }
 
 .expandedTitles {
-    font-size: 20px;
+    font-size: 24px;
     line-height: 30px;
     font-weight: 600;
     display: block;
@@ -1049,16 +1042,64 @@ h4 {
     float: left;
 }
 
-.panel-default > .panel-heading {
-    color: #0b0c0c;
-    background-color: #ffffff;
-    border-color: #D8DDE0;
+
+
+/* Gov UK Accordion restyled */
+
+.js-enabled .govuk-accordion__section {
+    padding-top: 0;
 }
 
-.panel-default > .panel-heading:hover {
-    background-color: #f3f2f1;
+.govuk-accordion__section-button {
+    margin: 0;
+    padding: 15px 0px !important;
+    border-bottom: 0px !important;
 }
 
+.govuk-accordion__section-heading-text {
+    float: left;
+}
+
+.js-enabled .govuk-accordion__section-toggle, .js-enabled .govuk-accordion__section-heading-text, .js-enabled .govuk-accordion__section-summary {
+    margin-bottom: 0px;
+}
+
+.govuk-accordion__section-heading-text {
+    font-size: 19px;
+    line-height: 1;
+}
+
+.govuk-accordion__section-toggle {
+    float: right;
+}
+
+.js-enabled .govuk-accordion__section-toggle {
+    font-size: 19px;
+    line-height: 1;
+    color: #006637; 
+}
+
+.govuk-accordion__section-toggle-focus {
+    padding-top:0px;
+}
+
+.govuk-accordion__controls {
+    display:none;
+}
+
+.js-enabled .govuk-accordion__section-button:hover .govuk-accordion__section-toggle-text {
+    color: #006637;  
+    text-decoration: underline;
+}
+
+.correspondence {
+    margin-bottom:5px;
+}
+
+.js-enabled .govuk-accordion__section-content {
+    padding-bottom: 30px;
+    padding-top: 5px;
+}
 </style>
 
 
@@ -1468,50 +1509,41 @@ h4 {
           <div class="govuk-accordion__section-header">
             <h2 class="govuk-accordion__section-heading">
               <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
-                Writing well for the web
+                In review (3)
               </span>
             </h2>
           </div>
           <div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
-            <p class='govuk-body'>This is the content for Writing well for the web.</p>
+            <p class='govuk-body correspondence'><a style="color:#006637;" href="#">Letter of cancellation issued 22/09/21</a></p>
+            <p class='govuk-body correspondence'><a style="color:#006637;" href="#">Warning of cancellation issued 15/09/21</a></p>
+            <p class='govuk-body correspondence'><a style="color:#006637;" href="#">Requisition issued 01/09/21</a></p>
           </div>
         </div>
         <div class="govuk-accordion__section ">
           <div class="govuk-accordion__section-header">
             <h2 class="govuk-accordion__section-heading">
               <span class="govuk-accordion__section-button" id="accordion-default-heading-2">
-                Writing well for specialists
+                Resolved (1)
               </span>
             </h2>
           </div>
           <div id="accordion-default-content-2" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-2">
-            <p class='govuk-body'>This is the content for Writing well for specialists.</p>
+            <p class='govuk-body'><a style="color:#006637;" href="#">Letter of cancellation issued 22/09/21</a></p>
           </div>
         </div>
         <div class="govuk-accordion__section ">
           <div class="govuk-accordion__section-header">
             <h2 class="govuk-accordion__section-heading">
               <span class="govuk-accordion__section-button" id="accordion-default-heading-3">
-                Know your audience
+                Information only (1)
               </span>
             </h2>
           </div>
           <div id="accordion-default-content-3" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-3">
-            <p class='govuk-body'>This is the content for Know your audience.</p>
+            <p class='govuk-body'><a style="color:#006637;" href="#">Letter issued 22/09/21</a></p>
           </div>
         </div>
-        <div class="govuk-accordion__section ">
-          <div class="govuk-accordion__section-header">
-            <h2 class="govuk-accordion__section-heading">
-              <span class="govuk-accordion__section-button" id="accordion-default-heading-4">
-                How people read
-              </span>
-            </h2>
-          </div>
-          <div id="accordion-default-content-4" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-4">
-            <p class='govuk-body'>This is the content for How people read.</p>
-          </div>
-        </div>
+
       </div>
 </div>
 
