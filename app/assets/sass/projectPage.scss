@@ -1,0 +1,112 @@
+
+.jobTitle {
+    color:#929191;
+  }
+  
+  .simpleList {
+      display: block;
+      list-style-type: none;
+      margin-block-start: 0em;
+      margin-block-end: 0em;
+      margin-inline-start: 0px;
+      margin-inline-end: 0px;
+      padding-inline-start: 0px;
+  }
+  
+  .simpleList li {
+  padding-bottom:5px;
+  }
+  
+  /* Gov UK Accordion restyled */
+  
+  .js-enabled .govuk-accordion__section {
+      padding-top: 0;
+  }
+  
+  .govuk-accordion__section-button {
+      margin: 0;
+      padding: 20px 0px !important;
+      border-bottom: 0px !important;
+  }
+  
+  .govuk-accordion__section-heading-text {
+      float: left;
+  }
+  
+  .js-enabled .govuk-accordion__section-toggle, .js-enabled .govuk-accordion__section-heading-text, .js-enabled .govuk-accordion__section-summary {
+      margin-bottom: 0px;
+  }
+  
+  .govuk-accordion__section-heading-text {
+      font-size: 24px;
+      line-height: 1;
+  }
+  
+  .govuk-accordion__section-toggle {
+      float: right;
+  }
+  
+  .js-enabled .govuk-accordion__section-toggle {
+      font-size: 24px;
+      line-height: 1;
+      color: #0b0c0c;
+  }
+  
+  .govuk-accordion__section-toggle-focus {
+      padding-top:0px;
+  }
+  
+  .govuk-accordion__controls {
+      display:none;
+  }
+  
+  
+  .correspondence {
+      margin-bottom:5px;
+  }
+  
+  .js-enabled .govuk-accordion__section-content {
+      padding-bottom: 30px;
+      padding-top: 5px;
+  }
+  
+  .js-enabled .govuk-accordion__section-toggle-text {
+    display:none;
+  }
+
+.timelinePost {
+    border-bottom:1px solid #D8DDE0;
+    margin-bottom: 20px;
+}
+
+  .timelinePostTitle {
+font-size:19px;
+font-weight:700;
+margin-top:10px;
+margin-bottom:5px;
+}
+
+   .timelinePostDescription {
+        margin-bottom:0px;
+}
+
+  .timelinePostDate {
+    color: #505a5f;
+    font-size:16px;
+    margin-top:5px;
+  }
+
+.tagDesign {
+    color: #ffffff;
+    background-color: #1d70b8;
+}
+
+.tagUseresearch {
+    color: #594D00;
+    background-color: #FFF7BF;
+}
+
+.tagAnalysis {
+    color: #6E3619;  
+    background-color:#FCD6C3;
+}
