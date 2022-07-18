@@ -4,7 +4,7 @@
 {% endblock %}
 {% block content %}
 
-
+<link href="/public/stylesheets/officialCopies.css" media="all" rel="stylesheet" type="text/css" />
 
 <style>
 
@@ -203,6 +203,12 @@ max-width:960px;
 margin:auto;
 }
 
+.linkTextSectionContent {
+    padding: 32px;
+    background: #f3f2f1;
+    text-align: center;
+}
+
 </style>
 
 
@@ -212,8 +218,8 @@ margin:auto;
     padding-left: 30px;
     padding-top: 14px;
     padding-bottom: 5px;">
-        
-  </div>
+          
+</div>
 
 <!-- Back & clear data top -->
 <!-- Back & clear data top -->
@@ -246,12 +252,45 @@ margin:auto;
     
         <div class="govuk-grid-row">
           <div class="govuk-grid-column-full">
-            <h1 class="govuk-heading-xl" style="margin-bottom:30px;">Scenario one</h1>
-            <p class="govuk-body" style="max-width: 930px;margin-bottom:30px;">You have your work list for the day and need to go onto the HM Land Registry Portal to check which applications within your business unit require a response to enable progress with the registration. </p>
-            
-            <button class="govuk-button" style="padding-left:30px; padding-right:30px;" data-module="govuk-button" data-module="govuk-button" onclick="window.location.href='index'">
-                Start
-                              </button>
+
+            <h1 class="govuk-heading-xl" style="margin-bottom:50px;">User research</h1>
+
+            <p class="govuk-body" style="margin-bottom:50px;">You have your work list for the day and need to go onto the HM Land Registry Portal to check which applications require a response to enable progress with the registration.</p>
+
+
+
+            <ul id="row1Links" class="govuk-grid-row hmlr-card-group" style="margin-bottom: 30px;">
+
+
+              <li class="govuk-grid-column-one-third hmlr-card-group__item"  style="margin-bottom:30px;">
+                  <div class="linkTextSection">
+                    <div class="linkTextSectionContent">
+                      <button class="govuk-button" style="padding-left:30px; padding-right:30px;" data-module="govuk-button" data-module="govuk-button" onclick="window.location.href='scenario1/index.html'">Scenario 1</button>
+                  </div>
+                </div>
+              </li>
+
+              <li class="govuk-grid-column-one-third hmlr-card-group__item"  style="margin-bottom:30px;">
+                  <div class="linkTextSection">
+                    <div class="linkTextSectionContent">
+                      <button class="govuk-button" style="padding-left:30px; padding-right:30px;" data-module="govuk-button" data-module="govuk-button" onclick="window.location.href='scenario2/index.html'">Scenario 2</button>
+                  </div>
+                </div>
+              </li>
+
+              <li class="govuk-grid-column-one-third hmlr-card-group__item"  style="margin-bottom:30px;">
+                <div class="linkTextSection">
+                  <div class="linkTextSectionContent">
+                    <button class="govuk-button" style="padding-left:30px; padding-right:30px;" data-module="govuk-button" data-module="govuk-button" onclick="window.location.href='scenario3/index.html'">Scenario 3</button>
+                </div>
+              </div>
+            </li>
+              
+
+
+            </ul>
+
+          
 
           </div>
         </div>
