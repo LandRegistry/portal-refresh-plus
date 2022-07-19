@@ -1,22 +1,242 @@
-
-{% extends "layout.html" %}
+{% extends "layouts/layout_ProjectPage.html" %}
 
 {% block pageTitle %}
-  Portal Refresh Plus
+Notifications
 {% endblock %}
 
 {% block content %}
 
-<style>
+
+<div class="govuk-grid-row govuk-body">
 
 
-</style>
+<!-- This is where the project title goes and a small descritpion of what the work covers. -->
 
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-full">
-      <h1 class="govuk-heading-xl">
-        Coming soon...
+    <div class="govuk-grid-column-full govuk-!-padding-bottom-9  govuk-!-padding-top-6">
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">
+        Homepage
       </h1>
+      
+
+
+    </div>
+
+
+<!-- This is where the accordion content is added. If the signed-off design is not required, simply comment it out. -->
+
+    <div class="govuk-grid-column-full">
+        <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">
+          <div class="govuk-accordion__section ">
+            <div class="govuk-accordion__section-header">
+              <h2 class="govuk-accordion__section-heading">
+                <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
+                  Overview
+                </span>
+              </h2>
+            </div>
+            <div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
+              
+              <p>The aim of this project is to create a modern feeling homepage that is functional, accessible and meets our user's needs. The current homepage is showing its age and is primarily used as a gateway through to the service the user requires.</p>
+
+              <h3 class="govuk-heading-s govuk-!-margin-bottom-2 govuk-!-margin-top-5">Project team</h3>
+
+              <ul class="simpleList">
+                <li>Andy Carr - <span class="jobTitle">Interaction design</span></li>
+                <li>James Thomas - <span class="jobTitle">Content design</span></li>
+                <li>Jon Parker - <span class="jobTitle">User research</span></li>
+                <li>Juan Pinto Del Rio - <span class="jobTitle">User research</span></li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- <div class="govuk-accordion__section ">
+            <div class="govuk-accordion__section-header">
+              <h2 class="govuk-accordion__section-heading">
+                <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
+                  Signed-off design
+                </span>
+              </h2>
+            </div>
+            <div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
+              <p class='govuk-body'>Lorem ipsum</p>
+            </div>
+          </div> -->
+
+          <div class="govuk-accordion__section ">
+            <div class="govuk-accordion__section-header">
+              <h2 class="govuk-accordion__section-heading">
+                <span class="govuk-accordion__section-button" id="accordion-default-heading-2">
+                  Design
+                </span>
+              </h2>
+            </div>
+            <div id="accordion-default-content-2" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-2">
+              
+              <h3 class="govuk-heading-s govuk-!-margin-bottom-2 govuk-!-margin-top-5">Coded interactive designs</h3>
+              <ul class="simpleList">
+                <li><a target="_blank" href="/projects/homepage/design/index_V1">Design 1</a> - Stripped back version of the homepage with trees for scenery</li>
+                <li><a target="_blank" href="/projects/homepage/design/index_V2">Design 2</a> - Stripped back version of the homepage with heather field for scenery</li>
+                <li><a target="_blank" href="/projects/homepage/design/index_V3">Design 3</a> - Current homepage content placed in to the updated design</li>
+
+              </ul> 
+
+
+              <h3 class="govuk-heading-s govuk-!-margin-bottom-2 govuk-!-margin-top-5">Old static designs</h3>
+              <ul class="simpleList">
+                <li><a target="_blank" href="https://xd.adobe.com/view/8d9ae3e5-a026-4189-a305-f7a4e1d91697-d8c9/">Adobe XD</a> - Original homepage concepts</li>
+                <li><a target="_blank" href="https://xd.adobe.com/view/78e83d88-8489-4209-b926-36aa746e43a3-2dbb/?fullscreen">Adobe XD</a> - Concept iterations</li>
+
+                
+
+            </div>
+          </div>
+
+          <div class="govuk-accordion__section ">
+            <div class="govuk-accordion__section-header">
+              <h2 class="govuk-accordion__section-heading">
+                <span class="govuk-accordion__section-button" id="accordion-default-heading-3">
+                  User research
+                </span>
+              </h2>
+            </div>
+            <div id="accordion-default-content-3" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-3">
+
+<p>The first two rounds of user research may have been lost when Jon Parker and Juan Pinto del Rio left HM Land Registry. The coded prototypes best reflect the findings/direction to take, from the user research at the time.</p>
+              <!-- <ul class="simpleList">
+                <li><a target="_blank" href="https://app.mural.co/t/helensharpslandregistrygovuk6700/m/helensharpslandregistrygovuk6700/1653395504672/19f930427e19188e641d7cb990432495344f6819?sender=ub1df836af3558de0f1090510">Mural</a> - Portal refresh user research planning - homepage</li>
+                <li><a target="_blank" href="https://landregistryuk.sharepoint.com/:w:/r/sites/Janus/_layouts/15/Doc.aspx?sourcedoc=%7B4D2F77D1-7C27-4FE9-8D53-DE09ECACAB1C%7D&file=2022%20User%20Research%20-%20Portal%20Refresh%20working%20UR%20plan.docx&action=default&mobileredirect=true">Working plan</a> - Portal Refresh 2022-2023 User Research</li>
+                <li><a target="_blank" href="https://trello.com/b/UFFtMm4W/p382-user-research-tasks-portal-refresh-board">Trello</a> - P382 User Research tasks - Portal Refresh Board</li>
+              </ul>  
+
+
+              <h3 class="govuk-heading-s govuk-!-margin-bottom-2 govuk-!-margin-top-5">Round 1</h3>
+              <ul class="simpleList">
+                <li><a target="_blank" href="https://landregistryuk.sharepoint.com/:w:/s/Janus/EVW505yWC-JJswtPZlZpzf4BvloYfWk-1ICahUldAFTetw">Research brief</a> - What, why, who, approach/methodology, analysis</li>
+                <li><a target="_blank" href="https://landregistryuk.sharepoint.com/:w:/s/Janus/EV6U4mjSsohClYeVVseakm0BO_kYegZ7VU53wvHMJ2BYwg">Discussion guide</a> - Introduction to UR Team, project and the process for the round of testing</li>
+                <li><a target="_blank" href="https://landregistryuk.sharepoint.com/:w:/r/sites/Janus/_layouts/15/Doc.aspx?sourcedoc=%7B0A454E47-D0DB-4B3F-BA12-B07EA685248E%7D&file=4.%20Scenarios%20-%20Round%201%20Notifications%20in%20VA.docx&nav=eyJjIjoxOTQ5MjU0MjM0fQ&action=default&mobileredirect=true">Scenarios</a> - Remote moderated usability testing of homepage in VA prototype</li>
+                <li><a target="_blank" href="userResearch/round1/scenario1/start.html">Prototype: Scenario 1</a> - Display applications that require action by clicking on a filter button in the left menu</li>
+                <li><a target="_blank" href="userResearch/round1/scenario2/start.html">Prototype: Scenario 2</a> - Display applications that require action by clicking on a tab at the top of the applications</li>
+                <li><a target="_blank" href="https://app.mural.co/t/helensharpslandregistrygovuk6700/m/helensharpslandregistrygovuk6700/1653575641967/e320bbc85f414083a72ed5f500589a8159fb8521?sender=ub1df836af3558de0f1090510">Mural</a> - Round 1 analysis and notes</li>
+              </ul>  
+
+              <h3 class="govuk-heading-s govuk-!-margin-bottom-2 govuk-!-margin-top-5">Round 2</h3>
+              <ul class="simpleList">
+                <li><a target="_blank" href="https://landregistryuk.sharepoint.com/:w:/r/sites/Janus/_layouts/15/Doc.aspx?sourcedoc=%7BD3F6054C-2A6E-4C6C-B952-9015D315B533%7D&file=1.%20Research%20brief%20-%20Round%202%20homepage%20in%20VA.docx&nav=eyJjIjo1NTE0NzgwMDl9&action=default&mobileredirect=true">Research brief</a> - What, why, who, approach/methodology, analysis</li>
+                <li><a target="_blank" href="https://landregistryuk.sharepoint.com/:w:/r/sites/Janus/_layouts/15/Doc.aspx?sourcedoc=%7BFF6FADC7-B1CD-485C-BD6B-EFF610B62208%7D&file=2.%20Discussion%20guide%20-%20Round%202%20homepage%20in%20VA.docx&action=default&mobileredirect=true">Discussion guide</a> - Introduction to UR Team, project and the process for the round of testing</li>
+                <li><a target="_blank" href="https://landregistryuk.sharepoint.com/:w:/r/sites/Janus/_layouts/15/Doc.aspx?sourcedoc=%7BF26FD826-8625-4FAA-B234-384767494AD9%7D&file=4.%20Scenarios%20-%20Round%202%20Notifications%20in%20VA.docx&action=default&mobileredirect=true">Scenarios</a> - Remote moderated usability testing of homepage in VA prototype</li>
+                <li><a target="_blank" href="userResearch/round2/start.html">Prototype: Scenarios</a> - 3 options clearly displayed for the user to select from</li>
+                <li><a target="_blank" href="userResearch/round2/scenario1/start.html">Prototype: Scenario 1</a> - Display applications that require action by using an additional filter option in the left menu</li>
+                <li><a target="_blank" href="userResearch/round2/scenario2/start.html">Prototype: Scenario 2</a> - Display applications that require action by clicking on a tab at the top of the applications</li>
+                <li><a target="_blank" href="userResearch/round2/scenario3/start.html">Prototype: Scenario 3</a> - Display applications that require action by clicking on filter buttons in an expandable panel</li>
+                <li><a target="_blank" href="https://app.mural.co/t/helensharpslandregistrygovuk6700/m/helensharpslandregistrygovuk6700/1657552254613/a859a5beba9695c9c28198e3d6cef9d64160dc10?sender=ub1df836af3558de0f1090510">Mural</a> - Round 2 analysis and notes</li>
+              </ul>   -->
+
+
+
+            </div>
+          </div>
+
+
+<!-- 
+          <div class="govuk-accordion__section ">
+            <div class="govuk-accordion__section-header">
+              <h2 class="govuk-accordion__section-heading">
+                <span class="govuk-accordion__section-button" id="accordion-default-heading-4">
+                  Timeline
+                </span>
+              </h2>
+            </div>
+            <div id="accordion-default-content-3" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-4">
+
+
+                <div class="timelinePost">
+                    <div>
+                        <strong class="govuk-tag tadDesign">Design</strong>
+                        <p class="timelinePostTitle">Round 1</p>
+                        <p class="timelinePostDescription">This consisted of 5 particpants testing 2 different prototypes.</p>
+                        <p class="timelinePostDate">8th June 2022 - 9th June 2022</p>
+                    </div>
+                </div>
+
+                <div class="timelinePost">
+                  <div>
+                    <strong class="govuk-tag tagUseresearch">User research</strong>
+                      <p class="timelinePostTitle">Analysis of round 1 user research </p>
+                      <p class="timelinePostDescription">The outcome of this meeting was to create a third scenario for round 2</p>
+                      <p class="timelinePostDate">10th June 2022</p>
+                  </div>
+              </div>
+
+              <div class="timelinePost">
+                <div>
+                    <strong class="govuk-tag tagUseresearch">User research</strong>
+                    <p class="timelinePostTitle">Round 1</p>
+                    <p class="timelinePostDescription">This consisted of 5 particpants testing 2 different prototypes.</p>
+                    <p class="timelinePostDate">8th June 2022 - 9th June 2022</p>
+                </div>
+            </div>
+
+
+              
+            </div>
+          </div> -->
+
+        </div>
+    </div>
+
+
+<!-- This is where you can display pictures in an accessible, expandable gallery. The best picture size to use is 990px by 495px -->
+
+    <div class="govuk-grid-column-full  govuk-!-padding-top-7">
+      <h2 class="govuk-heading-l govuk-!-margin-bottom-2">
+        Gallery
+      </h2>
+      <p>A selection of concepts and ideas from this project.</p>
+
+      <ul class="js-favs" role=”list”>
+        <li>
+          <button aria-expanded="false">
+            <img src="/public/images/homepage-1.jpg" alt="A concept inspired by the GOV.UK website" />
+          </button>
+        </li>
+        <li>
+          <button aria-expanded="false">
+            <img src="/public/images/homepage-2.jpg" alt="Concept with serviced grouped in to keywords" />
+          </button>
+        </li>
+        <li>
+          <button aria-expanded="false">
+            <img src="/public/images/homepage-3.jpg" alt="Concept that introduces the ability for users to customise the homepage" />
+          </button>
+        </li>
+        <li>
+          <button aria-expanded="false">
+            <img src="/public/images/homepage-4.jpg" alt="A mockup of the customise the homepage wizard" />
+          </button>
+        </li>
+        <li>
+          <button aria-expanded="false">
+            <img src="/public/images/homepage-5.jpg" alt="A wildcard concept" />
+          </button>
+        </li>
+        <li>
+          <button aria-expanded="false">
+            <img src="/public/images/homepage-6.jpg" alt="An early design with notifications running across the middle, similar to a dashboard" />
+          </button>
+        </li>
+        <li>
+          <button aria-expanded="false">
+            <img src="/public/images/homepage-7.jpg" alt="A GOV.UK inspired homepage" />
+          </button>
+        </li>
+        <li>
+          <button aria-expanded="false">
+            <img src="/public/images/homepage-8.jpg" alt="Example versions of the homepage viewed on mobile" />
+          </button>
+        </li>
+      </ul>
+
+
     </div>
 
   </div>
