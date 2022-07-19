@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+{% extends "layout_officialCopies.html" %}
+{% block pageTitle %} Step 1 - Tell us about you
+{% endblock %}
+{% block content %}
+
+{% include "includes/notificationsNavigation.html" %} 
+
+
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+.govuk-width-container-fixed {
+    max-width: 1080px;
+    margin: auto;
+    padding-top: 40px;
+    padding-bottom: 100px;
+}
+</style>
+
+
+
+
+<div class="govuk-width-container-fixed">
+  <a href="javascript: history.go(-1)" class="govuk-back-link">Back</a>
+
+  <main class="govuk-main-wrapper">
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+          <span class="govuk-caption-xl">
+              Step 1
+            </span>
+        <h1 class="govuk-heading-xl">Tell us about you</h1>
+        
+        <form method="post" class="form">
+
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="primaryFocusYou">
+            Which option best describes your main area of work?
+            </label> 
+          <select class="govuk-select govuk-!-width-one-third" id="primaryFocusYou" name="primaryFocusYou" type="text">
+            <option value="" hidden=""></option>
+            <option value="primaryResidentialYou">Residential Conveyancing</option>
+            <option value="primaryCommercialYou">Commercial Conveyancing (Commercial Clients)</option>
+            <option value="primaryOtherYou">Other</option>
+          </select>
+       </div>
+
+       <div class="govuk-form-group">
+          <label class="govuk-label" for="jobRole">
+            Which option best describes your main job role?
+            </label> 
+          <select class="govuk-select govuk-!-width-one-third" id="jobRole" name="jobRole" type="text">
+            <option value="" hidden=""></option>
+            <option value="propertyLawyer">Conveyancer</option>
+            <option value="supportStaff">Support Staff</option>
+            <option value="supervisorTrainer">Supervisor/trainer</option>
+            <option value="other">Other</option>
+          </select>
+       </div>
+
+
+       <div class="govuk-form-group" style="margin-bottom:15px;width: 100%;">
+          <button class="govuk-button" type="submit" formaction="wizard_V1C">Continue</button>
+      </div>
+
+
+</form>
+
+      </div>
+    </div>
+
+  </main>
+</div>
+
+
+
+
+
+
+
+{% include "includes/officialCopiesFooter.html" %} 
+
+
+
+{% endblock %}
+
+{% block pageScripts %}
+  <!-- load accessible autocomplete code (used in both examples) -->
+
+
+  <script type="text/javascript">
+
+    var savedLocation = {{ data['primaryFocus'] | dump | safe }}
+    document.getElementById('primaryFocus').value = savedLocation
+    // note the other way to do this would be to save (or look up) the option text from the value (eg make the option text the value), and then set the defaultValue = savedLocation below
+    // *************************************************************************************
+</script>
+
+<script type="text/javascript">
+
+var savedLocation = {{ data['secondaryFocus'] | dump | safe }}
+document.getElementById('secondaryFocus').value = savedLocation
+// note the other way to do this would be to save (or look up) the option text from the value (eg make the option text the value), and then set the defaultValue = savedLocation below
+// *************************************************************************************
+</script>
+
+<script type="text/javascript">
+
+var savedLocation = {{ data['transactions'] | dump | safe }}
+document.getElementById('transactions').value = savedLocation
+// note the other way to do this would be to save (or look up) the option text from the value (eg make the option text the value), and then set the defaultValue = savedLocation below
+// *************************************************************************************
+</script>
+{% endblock %}
