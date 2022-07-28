@@ -89,6 +89,12 @@
     margin-top: -2px;
 }
 
+.js-enabled .govuk-tabs__tab {
+    font-size: clamp(1.4rem, -0.4333rem + 2.4444vw, 2.5rem);
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
 </style>
 
 
@@ -2997,6 +3003,22 @@
    
  </script>
  
+
+ <script>
+
+    function clampBuilder( minWidthPx, maxWidthPx, minFontSize, maxFontSize ) {
+      const root = document.querySelector( "html" );
+      const pixelsPerRem = Number( getComputedStyle( root ).fontSize.slice( 0,-2 ) );
+    
+      const minWidth = minWidthPx / pixelsPerRem;
+      const maxWidth = maxWidthPx / pixelsPerRem;
+    
+      const slope = ( maxFontSize - minFontSize ) / ( maxWidth - minWidth );
+      const yAxisIntersection = -minWidth * slope + minFontSize
+    
+      return `clamp( ${ minFontSize }rem, ${ yAxisIntersection }rem + ${ slope * 100 }vw, ${ maxFontSize }rem )`;
+    }
+     </script>
 
 
  <style>
