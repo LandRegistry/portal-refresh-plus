@@ -4,7 +4,7 @@
 {% endblock %}
 {% block content %}
 
-{% include "includes/notificationsNavigation.html" %} 
+{% include "includes/notificationsNavigation2.html" %} 
 
 <script src="/public/javascripts/sortable-table.js"></script>
 
@@ -3125,13 +3125,11 @@ font-weight:700;
                                                     <div class="govuk-accordion__section-header">
                                                         <h2 class="govuk-accordion__section-heading">
                                                         <span class="govuk-accordion__section-button" id="accordion-default-heading-1a">
-                                                            By you (<span id="count-value">1</span>), By colleagues (1)
+                                                            By you (<span id="count-value">2</span>), By colleagues (1)
                                                         </span>
                                                         </h2>
                                                     </div>
                                                     <div id="accordion-default-content-1a" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1a">
-
-
 
                                                         <div style="padding-top: 10px;">
                                                             <div class="note">
@@ -3301,7 +3299,7 @@ font-weight:700;
 
     var updateCount = function() {
 
-      var count = counter++;
+      var count = counter++ + 2;
 
       document.getElementById("count-value").innerHTML =  count ;
 
