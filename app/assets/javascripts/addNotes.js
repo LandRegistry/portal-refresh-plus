@@ -1,3 +1,8 @@
+var counter = 1;
+var today  = new Date();
+var localeDateString = today.toLocaleDateString();
+var time = today.toLocaleTimeString(navigator.language, {hour: '2-digit', minute:'2-digit'});
+var dateStamp = localeDateString + " at " + time;
 document.addEventListener("DOMContentLoaded", function() {
     var ntxtIn = document.getElementById("noteText"),
       notesOut = document.getElementById("noteList"),
@@ -71,7 +76,7 @@ document.addEventListener("DOMContentLoaded", function() {
         newNote.noteText = fields.noteText.value;
         result += '<div class="note" data-noteid="' + newNote.id + '">';
         result += '<div class="noteBottom">';
-        result += '<div class="noteName">' + "John James (you)" + "</div>";
+        result += '<div class="noteName">' + "John James (you) - " + '<span class="dateTime">' + dateStamp + '</span>' + "</div>";
         result += '<div id="time">' + "</div>";
         result += '<div class="noteText">' + newNote.noteText + "</div>";
         result += "</div></div>";

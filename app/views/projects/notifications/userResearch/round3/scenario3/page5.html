@@ -8,14 +8,7 @@
 
 <script src="/public/javascripts/sortable-table.js"></script>
 
-
 <style>
-
-#cookie_box
-{ 
-	display: none;
-}
-
 
 .navbar-container {
     -webkit-box-shadow: inset 0px 2px 4px 0px rgb(0 0 0 / 15%);
@@ -69,6 +62,11 @@
     float: left;
 }
 
+.requisitionButton {
+    margin-left: 0px;
+    margin-bottom: 0px;
+}
+
 .step1 {
     min-width: 375px;
 }
@@ -82,6 +80,11 @@
     padding: 25px 40px;
 }
 
+.requisitionWarningText {
+    margin-bottom: 0px;
+    font-size: 24px;
+}
+
 .govuk-warning-text__icon {
     margin-top: -2px;
 }
@@ -90,30 +93,6 @@
     font-size: clamp(1.4rem, -0.4333rem + 2.4444vw, 2.5rem);
     padding-left: 20px;
     padding-right: 20px;
-}
-
-.requisitionButton {
-    margin-bottom: 10px;
-}
-
-.requisitionNotificationBanner {
-    background: #f3f2f1;
-    padding: 15px 25px;
-    margin: 0px 20px 20px 20px;
-}
-
-.hideNotificationButton {
-    position: absolute;
-    right: 0;
-    top: 0;
-    margin-bottom: 0;
-    margin-top: 5px;
-}
-
-.notificationWarningText {
-    margin-bottom: 10px;
-    font-weight: 700;
-    padding-right: 200px;
 }
 
 </style>
@@ -362,7 +341,6 @@
     </div>
 
 
-
     <div class="govuk-tabs" data-module="govuk-tabs">
         <h2 class="govuk-tabs__title">
           Contents
@@ -378,8 +356,13 @@
               Requires action (1)
             </a>
           </li>
+          <li class="govuk-tabs__list-item">
+            <a class="govuk-tabs__tab" href="#inReview">
+              In review (3)
+            </a>
+          </li>
         </ul>
-        <div class="govuk-tabs__panel" id="applications">
+        <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="applications">
             <table  class="govuk-table my-work" style="margin-top: 0px; ">
                 <thead class="govuk-table__head">
                    <tr class="govuk-table__row" style="background-color: #ffffff;">
@@ -2161,25 +2144,8 @@
             </div>
       
         </div>
-        <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="requiresAction">
-
-
-
+        <div class="govuk-tabs__panel" id="requiresAction">
             <table  class="govuk-table my-work" style="margin-top: 0px; ">
-                <div id="cookie_box" class="requisitionNotificationBanner">
-                    <div class="govuk-warning-text">
-                        <span class="govuk-warning-text__icon" aria-hidden="true" style="margin-top: -7px;">!</span>
-                        <strong class="govuk-warning-text__text">
-                        <span class="govuk-warning-text__assistive">Warning</span>
-                        <p class="notificationWarningText">These types of applications require you to reply to requisitions, in order to progress them.</p>
-                        <button class="govuk-button hideNotificationButton cookie_box_close" data-module="govuk-button" onclick="window.location.href='#'">
-                            Hide this message
-                        </button>
-                    </div>
-                </div>
-
-
-
                 <thead class="govuk-table__head">
                     <tr class="govuk-table__row" style="background-color: #ffffff;">
                        <th class="govuk-table__header sortable" scope="col" id="Title">
@@ -2204,7 +2170,7 @@
                
                 <!-- Requires action Application 1 -->
                 <tbody class="govuk-table__body">
-                    <tr class="govuk-table__row govuk-link-table">
+                    <tr class="govuk-table__row govuk-link-table open">
           
                         <td class="govuk-table__cell " scope="row">
                             E17-44Q 
@@ -2223,29 +2189,51 @@
           
                      </tr>
                     <!-- 1 Expanded row -->
-                    <tr class="govuk-table__row expandy-row hide-row accordion-default-content-1">
+                    <tr class="govuk-table__row expandy-row accordion-default-content-1">
                         <td class="govuk-table__cell" colspan="7" style="padding:0px;">
+
+                            <div class="expandedApplicationSectionTop">
+
+                                <div class="requisitionNotification">
+                                    <div class="govuk-warning-text">
+                                        <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+                                        <strong class="govuk-warning-text__text">
+                                        <span class="govuk-warning-text__assistive">Warning</span>
+                                        <p class="requisitionWarningText">This application requires your attention</p>
+                                        </strong>
+                                        
+
+                                    </div>
+                                </div>
+
+                                <div class="stepByStep">
+
+                                    <div class="step1">
+                                        <h3 class="govuk-heading-m">Step 1</h3>
+                                        <p class="govuk-body">Reply to the requisition in part or in full:<br>
+                                            <a class="requisitionLink" target="_blank" href="/public/documents/userResearchRequisition.pdf">Requisition issued 13/07/22</a></p>
+
+                                        <button class="govuk-button requisitionButton" data-module="govuk-button" onclick="window.location.href='page3.html'">
+                                            Reply to requisition
+                                        </button>
+                                    </div>
+
+                                    <div class="step2">
+                                        <h3 class="govuk-heading-m">Step 2</h3>
+                                        <p class="govuk-body">After you have replied in full, to all open requisitions, you can move the application to <b>“In review”</b> whilst you wait for HM Land Registry to review your reply. We will contact you if further updates are required.</p>
+                                        <button class="govuk-button govuk-button--secondary" data-module="govuk-button" onclick="window.location.href='page6#inReview'">
+                                            Move application to “In review”
+                                        </button>
+                                    </div>
+
+                                </div>
+
+
+                            </div>
 
                             <div class="expandedApplicationSectionBottom">
                                 <div  class="expandedApplicationSectionBottomLeft">
                                 
-                                    <div style="margin-bottom:40px;">
-                                        <div class="requisitionNotification">
-                                            <div class="govuk-warning-text">
-                                                <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
-                                                <strong class="govuk-warning-text__text">
-                                                <span class="govuk-warning-text__assistive">Warning</span>
-                                                <p class="requisitionWarningText">This application requires your attention</p>
-                                                <p><a class="requisitionLink" target="_blank" href="/public/documents/userResearchRequisition.pdf">Requisition issued 13/07/22</a></p>
-                                                </strong>
-                                                
-                                                <button class="govuk-button requisitionButton" data-module="govuk-button" onclick="window.location.href='page3.html'">
-                                                    Reply to requisition
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-
                                     <div>
                                         <div style="display: flex;">
                                             <div class="rowContentSectionLeft">
@@ -2307,32 +2295,8 @@
                                     </div>
                                 </div>                                
                                 <div  class="expandedApplicationSectionBottomRight">
-
-                                    <div class="expandedTitles" style="padding-bottom: 10px;">Application notes</div>
-                                    <div>
-                                        <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-defaulta" style="margin-bottom: 15px;">
-                                            <div class="govuk-accordion__section ">
-                                                    <div class="govuk-accordion__section-header">
-                                                        <h2 class="govuk-accordion__section-heading">
-                                                        <span class="govuk-accordion__section-button" id="accordion-default-heading-1a">
-                                                            By you (1), By colleagues (1)
-                                                        </span>
-                                                        </h2>
-                                                    </div>
-                                                    <div id="accordion-default-content-1a" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1a">
-                                                        <p class='govuk-body correspondence'>Empty</p>
-                                                    </div>
-                                            </div>
-                                        </div>
-
-                                        <button class="govuk-button govuk-button--secondary" data-module="govuk-button" style="margin-right:0px;margin-bottom:60px;" onclick="window.location.href='#'">
-                                            Add a note
-                                        </button>
-
-                                    </div>
-
-
                                     <div class="expandedTitles" style="padding-bottom: 10px;">Correspondence</div>
+
                                     <div>
                                         <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">
                                             <div class="govuk-accordion__section ">
@@ -2413,7 +2377,572 @@
             </div>
       
         </div>
+        <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="inReview">
+            <table  class="govuk-table my-work" style="margin-top: 0px; ">
+                <thead class="govuk-table__head">
+                    <tr class="govuk-table__row" style="background-color: #ffffff;">
+                       <th class="govuk-table__header sortable" scope="col" id="Title">
+                          <div>Title number</div>
+                       </th>
+                       <th class="govuk-table__header sortable" scope="col">
+                          <div>Customer reference</div>
+                       </th>
+                       <th class="govuk-table__header" scope="col">Application type</th>
+                       <th class="govuk-table__header sortable" scope="col">
+                          <div>Received by HMLR</div>
+                       </th>
+                       <th class="govuk-table__header" scope="col">Application status</th>
+                       <th class="govuk-table__header" scope="col">
+                          <div>Estimated completion date</div>
+                       </th>
+                       <th class="govuk-table__header"scope="col"></th>
+                    </tr>
+                 </thead>
+                {% macro rows(page) %}
+             
+               
+                <!-- In review Application 1 -->
+                <tbody class="govuk-table__body">
+                    <tr class="govuk-table__row govuk-link-table">
+          
+                        <td class="govuk-table__cell " scope="row">
+                            LR891237
+                           <p class="govuk-visually-hidden"> LR891237</p>
+                           <!-- THIS IS PAGE {{page}} -->
+                        </td>
+                        <td class="govuk-table__cell ">Baker.Smith.12</td>
+                        <td class="govuk-table__cell Substantive" id="">
+                           Register update
+                           <p class="govuk-visually-hidden"> RegisterUpdate Delayed </p>
+                        </td>
+                        <td class="govuk-table__cell " scope="row" data-sortable="2022-06-05">05/06/22</td>
+                        <td class="govuk-table__cell " scope="row">Delayed</td>
+                        <td class="govuk-table__cell "  data-sortable="0">06/09/22</td>
+                        <td class="govuk-table__cell" scope="row"><a class="expandy-row-trigger2" href="#"><img class="chevronsize" src="/public/images/icon_govuk_chevrondown.svg"></a></td>
+          
+                     </tr>
+                    <!-- 1 Expanded row -->
+                    <tr class="govuk-table__row expandy-row hide-row accordion-default-content-1">
+                        <td class="govuk-table__cell" colspan="7" style="padding:0px;">
 
+                            <!-- <div class="expandedApplicationSectionTop">
+                                <div  class="expandedApplicationSectionTopLeft">
+                                    <div class="requisitionNotification">
+                                        <div class="govuk-warning-text">
+                                            <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+                                            <strong class="govuk-warning-text__text">
+                                            <span class="govuk-warning-text__assistive">Warning</span>
+                                            <p class="requisitionWarningText">This application requires your attention</p>
+                                            <p><a class="requisitionLink" target="_blank" href="/public/documents/userResearchRequisition.pdf">Requisition issued 13/07/22</a></p>
+                                            </strong>
+                                            
+                                            <button class="govuk-button requisitionButton" data-module="govuk-button" onclick="window.location.href='page3.html'">
+                                                Reply to requisition
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div  class="expandedApplicationSectionTopRight">
+                                    <h3 class="govuk-heading-m repliedTitle">
+                                        Already replied to the requisition?
+                                    </h3>
+                                    <p>
+                                        If you and your organisation believe you've replied to all points requiring action, you can update the progress state of this application.
+                                    </p>
+                                    <button class="govuk-button govuk-button--secondary" data-module="govuk-button" onclick="window.location.href='page6#past-week'">
+                                        We’ve replied to this requisition
+                                    </button>
+                                </div>
+                            </div> -->
+
+                            <div class="expandedApplicationSectionBottom">
+                                <div  class="expandedApplicationSectionBottomLeft">
+                                
+                                    <div>
+                                        <div style="display: flex;">
+                                            <div class="rowContentSectionLeft">
+                                                <div class="expandedTitles">
+                                                    Application progress
+                                                </div>
+                                                <div class="expandedText">
+                                                    Delayed
+                                                </div>
+                                            </div>
+
+                                            <div class="rowContentSectionRight">
+                                                <div class="expandedTitles">
+                                                    HMLR reference
+                                                </div>
+                                                <div class="expandedText">
+                                                    LR873249
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- <div class="rowContentSectionLeft">
+                                            <div class="expandedTitles">
+                                                Parent Title(s)
+                                            </div>
+                                            <div class="expandedText">
+                                                PPL89232
+                                            </div>
+                                        </div> -->
+
+                                        
+                                        <div class="rowContentSectionRight" style="width:100%;">
+                                            <div class="expandedTitles">
+                                               Files
+                                            </div>
+                                            <div class="expandedText" style="line-height: 30px;">
+                                                <p class="govuk-body correspondence">N/A</p>
+                                             </div>
+                                             
+                                        </div>
+
+
+                                        <div class="rowContentSectionLast">
+                                            <div class="expandedTitles" style="padding-bottom: 10px;">Actions</div>
+                                            <div class="expandedText">
+                                                <div class="expandedText">
+                                                <button class="govuk-button govuk-button--secondary" data-module="govuk-button" style="margin-right:10px;margin-bottom:20px;" onclick="window.location.href='#'">
+                                                    Update application
+                                                    </button>
+                                                    <button class="govuk-button govuk-button--secondary" data-module="govuk-button" style="margin-right:10px;margin-bottom:20px;" onclick="window.location.href='#'">
+                                                    Application enquiry
+                                                    </button>
+                                                    <button class="govuk-button govuk-button--secondary" data-module="govuk-button" style="margin-right:10px;margin-bottom:20px;" onclick="window.location.href='#'">
+                                                    Save as PDF
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>                                
+                                <div  class="expandedApplicationSectionBottomRight">
+                                    <div class="expandedTitles" style="padding-bottom: 10px;">Correspondence</div>
+
+                                    <div>
+                                        <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">
+                                            <div class="govuk-accordion__section ">
+                                            <div class="govuk-accordion__section-header">
+                                                <h2 class="govuk-accordion__section-heading">
+                                                <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
+                                                    In review (1)
+                                                </span>
+                                                </h2>
+                                            </div>
+                                            <div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
+                                                <p class='govuk-body correspondence'><a class="requisitionLink" target="_blank" href="/public/documents/userResearchRequisition.pdf">Requisition issued 10/06/22</a></p>
+                                            </div>
+                                            </div>
+                                            <div class="govuk-accordion__section ">
+                                            <div class="govuk-accordion__section-header">
+                                                <h2 class="govuk-accordion__section-heading">
+                                                <span class="govuk-accordion__section-button" id="accordion-default-heading-2">
+                                                    Resolved (0)
+                                                </span>
+                                                </h2>
+                                            </div>
+                                            <div id="accordion-default-content-2" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-2">
+                                                <p class='govuk-body correspondence'>Empty</p>
+                                            </div>
+                                            </div>
+                                            <div class="govuk-accordion__section ">
+                                            <div class="govuk-accordion__section-header">
+                                                <h2 class="govuk-accordion__section-heading">
+                                                <span class="govuk-accordion__section-button" id="accordion-default-heading-3">
+                                                    Information only (2)
+                                                </span>
+                                                </h2>
+                                            </div>
+                                            <div id="accordion-default-content-3" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-3">
+                                                <p class='govuk-body correspondence'><a style="color:#006637;" href="#">Letter issued 08/06/22</a></p>
+                                                <p class='govuk-body correspondence'><a style="color:#006637;" href="#">Letter issued 07/06/22</a></p>
+                                                <!-- <p class='govuk-body correspondence'><a style="color:#006637;" href="#">Letter issued 09/06/22</a></p> -->
+                                            </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                            </div>
+
+                        </td>
+                    </tr>
+                </tbody>
+          
+
+                <!-- In review Application 2 -->
+                <tbody class="govuk-table__body">
+                    <tr class="govuk-table__row govuk-link-table">
+          
+                        <td class="govuk-table__cell " scope="row">
+                            PP83792
+                           <p class="govuk-visually-hidden"> PP83792</p>
+                           <!-- THIS IS PAGE {{page}} -->
+                        </td>
+                        <td class="govuk-table__cell ">Cullen.Potts.61</td>
+                        <td class="govuk-table__cell Substantive" id="">
+                           Register update
+                           <p class="govuk-visually-hidden"> RegisterUpdate Delayed </p>
+                        </td>
+                        <td class="govuk-table__cell " scope="row" data-sortable="2022-06-04">04/06/22</td>
+                        <td class="govuk-table__cell " scope="row">Delayed</td>
+                        <td class="govuk-table__cell "  data-sortable="0">04/10/22</td>
+                        <td class="govuk-table__cell" scope="row"><a class="expandy-row-trigger2" href="#"><img class="chevronsize" src="/public/images/icon_govuk_chevrondown.svg"></a></td>
+          
+                     </tr>
+                    <!-- 1 Expanded row -->
+                    <tr class="govuk-table__row expandy-row hide-row accordion-default-content-1">
+                        <td class="govuk-table__cell" colspan="7" style="padding:0px;">
+
+                            <!-- <div class="expandedApplicationSectionTop">
+                                <div  class="expandedApplicationSectionTopLeft">
+                                    <div class="requisitionNotification">
+                                        <div class="govuk-warning-text">
+                                            <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+                                            <strong class="govuk-warning-text__text">
+                                            <span class="govuk-warning-text__assistive">Warning</span>
+                                            <p class="requisitionWarningText">This application requires your attention</p>
+                                            <p><a class="requisitionLink" target="_blank" href="/public/documents/userResearchRequisition.pdf">Requisition issued 13/07/22</a></p>
+                                            </strong>
+                                            
+                                            <button class="govuk-button requisitionButton" data-module="govuk-button" onclick="window.location.href='page3.html'">
+                                                Reply to requisition
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div  class="expandedApplicationSectionTopRight">
+                                    <h3 class="govuk-heading-m repliedTitle">
+                                        Already replied to the requisition?
+                                    </h3>
+                                    <p>
+                                        If you and your organisation believe you've replied to all points requiring action, you can update the progress state of this application.
+                                    </p>
+                                    <button class="govuk-button govuk-button--secondary" data-module="govuk-button" onclick="window.location.href='page6#past-week'">
+                                        We’ve replied to this requisition
+                                    </button>
+                                </div>
+                            </div> -->
+
+                            <div class="expandedApplicationSectionBottom">
+                                <div  class="expandedApplicationSectionBottomLeft">
+                                
+                                    <div>
+                                        <div style="display: flex;">
+                                            <div class="rowContentSectionLeft">
+                                                <div class="expandedTitles">
+                                                    Application progress
+                                                </div>
+                                                <div class="expandedText">
+                                                    Delayed
+                                                </div>
+                                            </div>
+
+                                            <div class="rowContentSectionRight">
+                                                <div class="expandedTitles">
+                                                    HMLR reference
+                                                </div>
+                                                <div class="expandedText">
+                                                    LR222111
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- <div class="rowContentSectionLeft">
+                                            <div class="expandedTitles">
+                                                Parent Title(s)
+                                            </div>
+                                            <div class="expandedText">
+                                                PPL89232
+                                            </div>
+                                        </div> -->
+
+                                        
+                                        <div class="rowContentSectionRight" style="width:100%;">
+                                            <div class="expandedTitles">
+                                               Files
+                                            </div>
+                                            <div class="expandedText" style="line-height: 30px;">
+                                                <p class="govuk-body correspondence">N/A</p>
+                                             </div>
+                                             
+                                        </div>
+
+
+                                        <div class="rowContentSectionLast">
+                                            <div class="expandedTitles" style="padding-bottom: 10px;">Actions</div>
+                                            <div class="expandedText">
+                                                <div class="expandedText">
+                                                <button class="govuk-button govuk-button--secondary" data-module="govuk-button" style="margin-right:10px;margin-bottom:20px;" onclick="window.location.href='#'">
+                                                    Update application
+                                                    </button>
+                                                    <button class="govuk-button govuk-button--secondary" data-module="govuk-button" style="margin-right:10px;margin-bottom:20px;" onclick="window.location.href='#'">
+                                                    Application enquiry
+                                                    </button>
+                                                    <button class="govuk-button govuk-button--secondary" data-module="govuk-button" style="margin-right:10px;margin-bottom:20px;" onclick="window.location.href='#'">
+                                                    Save as PDF
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>                                
+                                <div  class="expandedApplicationSectionBottomRight">
+                                    <div class="expandedTitles" style="padding-bottom: 10px;">Correspondence</div>
+
+                                    <div>
+                                        <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">
+                                            <div class="govuk-accordion__section ">
+                                            <div class="govuk-accordion__section-header">
+                                                <h2 class="govuk-accordion__section-heading">
+                                                <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
+                                                    In review (1)
+                                                </span>
+                                                </h2>
+                                            </div>
+                                            <div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
+                                                <p class='govuk-body correspondence'><a class="requisitionLink" target="_blank" href="/public/documents/userResearchRequisition.pdf">Requisition issued 09/06/22</a></p>
+                                            </div>
+                                            </div>
+                                            <div class="govuk-accordion__section ">
+                                            <div class="govuk-accordion__section-header">
+                                                <h2 class="govuk-accordion__section-heading">
+                                                <span class="govuk-accordion__section-button" id="accordion-default-heading-2">
+                                                    Resolved (0)
+                                                </span>
+                                                </h2>
+                                            </div>
+                                            <div id="accordion-default-content-2" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-2">
+                                                <p class='govuk-body correspondence'>Empty</p>
+                                            </div>
+                                            </div>
+                                            <div class="govuk-accordion__section ">
+                                            <div class="govuk-accordion__section-header">
+                                                <h2 class="govuk-accordion__section-heading">
+                                                <span class="govuk-accordion__section-button" id="accordion-default-heading-3">
+                                                    Information only (1)
+                                                </span>
+                                                </h2>
+                                            </div>
+                                            <div id="accordion-default-content-3" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-3">
+                                                <p class='govuk-body correspondence'><a style="color:#006637;" href="#">Letter issued 10/06/22</a></p>
+                                                <!-- <p class='govuk-body correspondence'><a style="color:#006637;" href="#">Letter issued 07/06/22</a></p> -->
+                                                <!-- <p class='govuk-body correspondence'><a style="color:#006637;" href="#">Letter issued 09/06/22</a></p> -->
+                                            </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                            </div>
+
+                        </td>
+                    </tr>
+                </tbody>                
+        
+
+                <!-- In review Application 3 -->
+                <tbody class="govuk-table__body">
+                    <tr class="govuk-table__row govuk-link-table">
+            
+                        <td class="govuk-table__cell " scope="row">
+                            ST786498
+                            <p class="govuk-visually-hidden"> ST786498</p>
+                            <!-- THIS IS PAGE {{page}} -->
+                        </td>
+                        <td class="govuk-table__cell ">Jacob.Kellen.76</td>
+                        <td class="govuk-table__cell Substantive" id="">
+                            Register update
+                            <p class="govuk-visually-hidden"> RegisterUpdate Delayed </p>
+                        </td>
+                        <td class="govuk-table__cell " scope="row" data-sortable="2022-05-22">22/05/22</td>
+                        <td class="govuk-table__cell " scope="row">Delayed</td>
+                        <td class="govuk-table__cell "  data-sortable="0">22/07/22</td>
+                        <td class="govuk-table__cell" scope="row"><a class="expandy-row-trigger2" href="#"><img class="chevronsize" src="/public/images/icon_govuk_chevrondown.svg"></a></td>
+            
+                        </tr>
+                    <!-- 1 Expanded row -->
+                    <tr class="govuk-table__row expandy-row hide-row accordion-default-content-1">
+                        <td class="govuk-table__cell" colspan="7" style="padding:0px;">
+
+                            <!-- <div class="expandedApplicationSectionTop">
+                                <div  class="expandedApplicationSectionTopLeft">
+                                    <div class="requisitionNotification">
+                                        <div class="govuk-warning-text">
+                                            <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+                                            <strong class="govuk-warning-text__text">
+                                            <span class="govuk-warning-text__assistive">Warning</span>
+                                            <p class="requisitionWarningText">This application requires your attention</p>
+                                            <p><a class="requisitionLink" target="_blank" href="/public/documents/userResearchRequisition.pdf">Requisition issued 13/07/22</a></p>
+                                            </strong>
+                                            
+                                            <button class="govuk-button requisitionButton" data-module="govuk-button" onclick="window.location.href='page3.html'">
+                                                Reply to requisition
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div  class="expandedApplicationSectionTopRight">
+                                    <h3 class="govuk-heading-m repliedTitle">
+                                        Already replied to the requisition?
+                                    </h3>
+                                    <p>
+                                        If you and your organisation believe you've replied to all points requiring action, you can update the progress state of this application.
+                                    </p>
+                                    <button class="govuk-button govuk-button--secondary" data-module="govuk-button" onclick="window.location.href='page6#past-week'">
+                                        We’ve replied to this requisition
+                                    </button>
+                                </div>
+                            </div> -->
+
+                            <div class="expandedApplicationSectionBottom">
+                                <div  class="expandedApplicationSectionBottomLeft">
+                                
+                                    <div>
+                                        <div style="display: flex;">
+                                            <div class="rowContentSectionLeft">
+                                                <div class="expandedTitles">
+                                                    Application progress
+                                                </div>
+                                                <div class="expandedText">
+                                                    Delayed
+                                                </div>
+                                            </div>
+
+                                            <div class="rowContentSectionRight">
+                                                <div class="expandedTitles">
+                                                    HMLR reference
+                                                </div>
+                                                <div class="expandedText">
+                                                    LR545454
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- <div class="rowContentSectionLeft">
+                                            <div class="expandedTitles">
+                                                Parent Title(s)
+                                            </div>
+                                            <div class="expandedText">
+                                                PPL89232
+                                            </div>
+                                        </div> -->
+
+                                        
+                                        <div class="rowContentSectionRight" style="width:100%;">
+                                            <div class="expandedTitles">
+                                                Files
+                                            </div>
+                                            <div class="expandedText" style="line-height: 30px;">
+                                                <p class="govuk-body correspondence">N/A</p>
+                                                </div>
+                                                
+                                        </div>
+
+
+                                        <div class="rowContentSectionLast">
+                                            <div class="expandedTitles" style="padding-bottom: 10px;">Actions</div>
+                                            <div class="expandedText">
+                                                <div class="expandedText">
+                                                <button class="govuk-button govuk-button--secondary" data-module="govuk-button" style="margin-right:10px;margin-bottom:20px;" onclick="window.location.href='#'">
+                                                    Update application
+                                                    </button>
+                                                    <button class="govuk-button govuk-button--secondary" data-module="govuk-button" style="margin-right:10px;margin-bottom:20px;" onclick="window.location.href='#'">
+                                                    Application enquiry
+                                                    </button>
+                                                    <button class="govuk-button govuk-button--secondary" data-module="govuk-button" style="margin-right:10px;margin-bottom:20px;" onclick="window.location.href='#'">
+                                                    Save as PDF
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>                                
+                                <div  class="expandedApplicationSectionBottomRight">
+                                    <div class="expandedTitles" style="padding-bottom: 10px;">Correspondence</div>
+
+                                    <div>
+                                        <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">
+                                            <div class="govuk-accordion__section ">
+                                            <div class="govuk-accordion__section-header">
+                                                <h2 class="govuk-accordion__section-heading">
+                                                <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
+                                                    In review (1)
+                                                </span>
+                                                </h2>
+                                            </div>
+                                            <div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
+                                                <p class='govuk-body correspondence'><a class="requisitionLink" target="_blank" href="/public/documents/userResearchRequisition.pdf">Requisition issued 02/06/22</a></p>
+                                            </div>
+                                            </div>
+                                            <div class="govuk-accordion__section ">
+                                            <div class="govuk-accordion__section-header">
+                                                <h2 class="govuk-accordion__section-heading">
+                                                <span class="govuk-accordion__section-button" id="accordion-default-heading-2">
+                                                    Resolved (0)
+                                                </span>
+                                                </h2>
+                                            </div>
+                                            <div id="accordion-default-content-2" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-2">
+                                                <p class='govuk-body correspondence'>Empty</p>
+                                            </div>
+                                            </div>
+                                            <div class="govuk-accordion__section ">
+                                            <div class="govuk-accordion__section-header">
+                                                <h2 class="govuk-accordion__section-heading">
+                                                <span class="govuk-accordion__section-button" id="accordion-default-heading-3">
+                                                    Information only (1)
+                                                </span>
+                                                </h2>
+                                            </div>
+                                            <div id="accordion-default-content-3" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-3">
+                                                <p class='govuk-body correspondence'><a style="color:#006637;" href="#">Letter issued 01/06/22</a></p>
+                                                <!-- <p class='govuk-body correspondence'><a style="color:#006637;" href="#">Letter issued 07/06/22</a></p> -->
+                                                <!-- <p class='govuk-body correspondence'><a style="color:#006637;" href="#">Letter issued 09/06/22</a></p> -->
+                                            </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                            </div>
+
+                        </td>
+                    </tr>
+                </tbody>
+             
+             
+        
+                </tbody>
+                </tbody>
+                {% endmacro %}
+                {{rows(1)}}
+                {# {{rows(2)}}
+                {{rows(3)}}
+                {{rows(4)}}
+                {{rows(5)}} #}
+             </table>
+             <div class="govuk-body paginationDesign" style="">
+         
+         
+                <div>
+                Displaying 1 - 3 of 3 applications
+                </div>
+        
+                <div style="padding-left:30px;">
+                  <span>«</span> 1 <span>»</span>
+                </div>
+            </div>
+      
+        </div>
 
       </div>
 
@@ -2426,28 +2955,7 @@
 </div>
 
 
-<div class="govuk-grid-column-full" style="padding:0px;border-top:5px solid #00703C;">
-
-        
-        
-        
-    <div style="padding:30px; background: #f3f2f1;">
-        <a class="footlink" style="text-color: grey; text-decoration: none;"><u>Terms and conditions</u></a>
-        <a>|</a>
-        <a class="footlink" style="text-color: grey; text-decoration: none;"><u>Accessibility statement</u></a>
-        <a>|</a>
-        <a class="footlink" style="text-color: grey; text-decoration: none;"><u>Freedom of information</u></a>
-        <a>|</a>
-        <a class="footlink" style="text-color: grey; text-decoration: none;" href="/setup/stored-data"><u>Check data</u></a>
-        <a>
-        <a>|</a>
-        <a class="footlink" style="text-color: grey; text-decoration: none;" href="/prototype-admin/clear-data"><u>Clear data</u></a>
-        <a>
-        <br>
-        <br>
-        <p style="color: #6d6d6d; text-decoration: none;font-size: 16px;margin-bottom:0px;"><i>These links will open in a new window.</i></p>
-    </div>
-                </div>
+{% include "includes/notificationsFooter.html" %} 
 
 
 <!-- Content Area - End -->
@@ -2467,21 +2975,22 @@
    
  </script>
  
+
  <script>
 
-function clampBuilder( minWidthPx, maxWidthPx, minFontSize, maxFontSize ) {
-  const root = document.querySelector( "html" );
-  const pixelsPerRem = Number( getComputedStyle( root ).fontSize.slice( 0,-2 ) );
-
-  const minWidth = minWidthPx / pixelsPerRem;
-  const maxWidth = maxWidthPx / pixelsPerRem;
-
-  const slope = ( maxFontSize - minFontSize ) / ( maxWidth - minWidth );
-  const yAxisIntersection = -minWidth * slope + minFontSize
-
-  return `clamp( ${ minFontSize }rem, ${ yAxisIntersection }rem + ${ slope * 100 }vw, ${ maxFontSize }rem )`;
-}
- </script>
+    function clampBuilder( minWidthPx, maxWidthPx, minFontSize, maxFontSize ) {
+      const root = document.querySelector( "html" );
+      const pixelsPerRem = Number( getComputedStyle( root ).fontSize.slice( 0,-2 ) );
+    
+      const minWidth = minWidthPx / pixelsPerRem;
+      const maxWidth = maxWidthPx / pixelsPerRem;
+    
+      const slope = ( maxFontSize - minFontSize ) / ( maxWidth - minWidth );
+      const yAxisIntersection = -minWidth * slope + minFontSize
+    
+      return `clamp( ${ minFontSize }rem, ${ yAxisIntersection }rem + ${ slope * 100 }vw, ${ maxFontSize }rem )`;
+    }
+     </script>
 
 
  <style>

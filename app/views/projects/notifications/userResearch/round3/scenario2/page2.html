@@ -15,6 +15,17 @@ document.getElementById('display').innerHTML=my_time
 }
 </script>
 
+<script>
+    var counter = 1;
+  
+    butEl.addEventListener("click", updateCount);
+  
+    var updateCount = function() {
+      var count = counter++;
+      document.getElementById("count-value").innerHTML = "(" + count + ")";
+    };
+  </script>
+
 <style>
 
 #cookie_box
@@ -160,6 +171,10 @@ document.getElementById('display').innerHTML=my_time
 
 .noteName {
 font-weight:700;
+}
+
+.dateTime {
+    font-weight:400;
 }
 
 </style>
@@ -463,7 +478,7 @@ font-weight:700;
                             Register update
                             <p class="govuk-visually-hidden"> RegisterUpdate Cancelled </p>
                         </td>
-                        <td class="govuk-table__cell " scope="row" data-sortable="2021-08-05">05/08/21</td>
+                        <td class="govuk-table__cell " scope="row" data-sortable="2022-08-05">05/08/22</td>
                         <td class="govuk-table__cell " scope="row">Cancelled</td>
                         <td class="govuk-table__cell "  data-sortable="0"></td>
                         <td class="govuk-table__cell" scope="row"><a class="expandy-row-trigger2" href="#"><img class="chevronsize" src="/public/images/icon_govuk_chevrondown.svg"></a></td>
@@ -474,35 +489,6 @@ font-weight:700;
                     <tr class="govuk-table__row expandy-row hide-row accordion-default-content-1">
                         <td class="govuk-table__cell" colspan="7" style="padding:0px;">
 
-                            <!-- <div class="expandedApplicationSectionTop">
-                                <div  class="expandedApplicationSectionTopLeft">
-                                    <div class="requisitionNotification">
-                                        <div class="govuk-warning-text">
-                                            <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
-                                            <strong class="govuk-warning-text__text">
-                                            <span class="govuk-warning-text__assistive">Warning</span>
-                                            <p class="requisitionWarningText">This application requires your attention</p>
-                                            <p><a class="requisitionLink" target="_blank" href="#">Requisition issued on 05/05/22</a></p>
-                                            </strong>
-                                            
-                                            <button class="govuk-button requisitionButton" data-module="govuk-button">
-                                                Reply to requisition
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div  class="expandedApplicationSectionTopRight">
-                                    <h3 class="govuk-heading-m repliedTitle">
-                                        Already replied to the requisition?
-                                    </h3>
-                                    <p>
-                                        If you and your organisation believe you've replied to all points requiring action, you can update the progress state of this application.
-                                    </p>
-                                    <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
-                                        We’ve replied to this requisition
-                                    </button>
-                                </div>
-                            </div> -->
 
                             <div class="expandedApplicationSectionBottom">
                                 <div  class="expandedApplicationSectionBottomLeft">
@@ -565,7 +551,86 @@ font-weight:700;
                                     </div>
                                 </div>                                
                                 <div  class="expandedApplicationSectionBottomRight">
-                                    <div class="expandedTitles" style="padding-bottom: 10px;">Correspondence</div>
+
+                                    <div class="expandedTitles" style="padding-bottom: 10px;">Application notes</div>
+                                    <div>
+                                        <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-defaulta" style="margin-bottom: 15px;">
+                                            <div class="govuk-accordion__section ">
+                                                    <div class="govuk-accordion__section-header">
+                                                        <h2 class="govuk-accordion__section-heading">
+                                                        <span class="govuk-accordion__section-button" id="accordion-default-heading-1a">
+                                                            By you (1), By colleagues (0)
+                                                        </span>
+                                                        </h2>
+                                                    </div>
+                                                    <div id="accordion-default-content-1a" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1a" >
+
+
+
+                                                        <!-- <div style="padding-top: 10px;">
+                                                            <div class="note">
+                                                                <div class="noteBottom">
+                                                                    <div class="noteName">John James (you) <span style="font-weight:400;">- 22/09/22 at 14:44</span></div>
+                                                                    <div class="noteText">All points in the requisition have been replied to now</div>
+                                                                </div>
+                                                            </div>
+                                                        </div> -->
+                                                        <div style="padding-top: 10px;">
+                                                            <div class="note">
+                                                                <div class="noteBottom">
+                                                                    <div class="noteName">John James (you) <span style="font-weight:400;">- 04/09/22 at 12:02</span></div>
+                                                                    <div class="noteText">I've replied to points one of six</div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <!-- <div>
+                                                            <div class="note">
+                                                                <div class="noteBottom">
+                                                                    <div class="noteName">Jill Peterson <span style="font-weight:400;">- 06/05/22 at 15:22</span></div>
+                                                                    <div class="noteText">We can reply to this after we hear back from Harold</div>
+                                                                </div>
+                                                            </div>
+                                                        </div> -->
+
+
+                                                        <div id="noteEntry" style="padding-top:10px;">
+
+                                                            <div id="middleNE">
+                      
+            
+            
+            
+                                                                <input class="govuk-input" id="noteText" placeholder="Type your note here..."></input>
+                                                            </div>
+            
+                                                            <button id="" class="govuk-button" data-module="govuk-button" style="margin-right:0px;margin-top:20px;margin-bottom:20px;" >
+                                                                Save note
+                                                            </button>
+            
+            
+                                                        </div>
+
+                                                    </div>
+
+
+
+
+                                            </div>
+
+
+
+
+                                            
+
+
+
+                                        </div>
+
+
+
+                                    </div>
+
+                                    <div class="expandedTitles" style="padding-bottom: 10px;padding-top:60px;">Correspondence</div>
 
                                     <div>
                                         <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">
@@ -573,14 +638,13 @@ font-weight:700;
                                             <div class="govuk-accordion__section-header">
                                                 <h2 class="govuk-accordion__section-heading">
                                                 <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
-                                                    In review (3)
+                                                    Review (2)
                                                 </span>
                                                 </h2>
                                             </div>
                                             <div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
-                                                <p class='govuk-body correspondence'><a style="color:#006637;" href="#">Letter of cancellation issued 22/09/21</a></p>
-                                                <p class='govuk-body correspondence'><a style="color:#006637;" href="#">Warning of cancellation issued 15/09/21</a></p>
-                                                <p class='govuk-body correspondence'><a style="color:#006637;" href="#">Requisition issued 01/09/21</a></p>
+                                                <p class='govuk-body correspondence'><a style="color:#006637;" href="#">Warning of cancellation issued 15/09/22</a></p>
+                                                <p class='govuk-body correspondence'><a style="color:#006637;" href="#">Requisition issued 01/09/22</a></p>
                                             </div>
                                             </div>
                                             <div class="govuk-accordion__section ">
@@ -592,7 +656,7 @@ font-weight:700;
                                                 </h2>
                                             </div>
                                             <div id="accordion-default-content-2" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-2">
-                                                <p class='govuk-body'><a style="color:#006637;" href="#">Letter of cancellation issued 22/09/21</a></p>
+                                                <p class='govuk-body'><a style="color:#006637;" href="#">Letter of cancellation issued 22/09/22</a></p>
                                             </div>
                                             </div>
                                             <div class="govuk-accordion__section ">
@@ -604,7 +668,7 @@ font-weight:700;
                                                 </h2>
                                             </div>
                                             <div id="accordion-default-content-3" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-3">
-                                                <p class='govuk-body'><a style="color:#006637;" href="#">Letter issued 22/09/21</a></p>
+                                                <p class='govuk-body'><a style="color:#006637;" href="#">Letter issued 22/09/22</a></p>
                                             </div>
                                             </div>
 
@@ -635,9 +699,9 @@ font-weight:700;
                         New lease
                             <p class="govuk-visually-hidden"> TLAGroup NewLease Received</p>
                         </td>
-                        <td class="govuk-table__cell " scope="row" data-sortable="2021-05-15">15/05/21</td>
+                        <td class="govuk-table__cell " scope="row" data-sortable="2022-05-15">15/05/22</td>
                         <td class="govuk-table__cell " scope="row">Received</td>
-                        <td class="govuk-table__cell "  data-sortable="0">19/09/21</td>
+                        <td class="govuk-table__cell "  data-sortable="0">19/09/22</td>
                         <td class="govuk-table__cell" scope="row"><a class="expandy-row-trigger2" href="#"><img class="chevronsize" src="/public/images/icon_govuk_chevrondown.svg"></a></td>
         
                     </tr>
@@ -736,6 +800,84 @@ font-weight:700;
                                     </div>
                                 </div>                                
                                 <div  class="expandedApplicationSectionBottomRight">
+                                    <div class="expandedTitles" style="padding-bottom: 10px;">Application notes</div>
+                                    <div style="padding-bottom:60px;">
+                                        <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-defaulta" style="margin-bottom: 15px;">
+                                            <div class="govuk-accordion__section ">
+                                                    <div class="govuk-accordion__section-header">
+                                                        <h2 class="govuk-accordion__section-heading">
+                                                        <span class="govuk-accordion__section-button" id="accordion-default-heading-1a">
+                                                            By you (0), By colleagues (0)
+                                                        </span>
+                                                        </h2>
+                                                    </div>
+                                                    <div id="accordion-default-content-1a" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1a" >
+
+
+
+                                                        <!-- <div style="padding-top: 10px;">
+                                                            <div class="note">
+                                                                <div class="noteBottom">
+                                                                    <div class="noteName">John James (you) <span style="font-weight:400;">- 22/09/22 at 14:44</span></div>
+                                                                    <div class="noteText">All points in the requisition have been replied to now</div>
+                                                                </div>
+                                                            </div>
+                                                        </div> -->
+                                                        <!-- <div style="padding-top: 10px;">
+                                                            <div class="note">
+                                                                <div class="noteBottom">
+                                                                    <div class="noteName">John James (you) <span style="font-weight:400;">- 04/09/22 at 12:02</span></div>
+                                                                    <div class="noteText">I've replied to points one of six</div>
+                                                                </div>
+                                                            </div>
+                                                        </div> -->
+                                                        <!-- <div>
+                                                            <div class="note">
+                                                                <div class="noteBottom">
+                                                                    <div class="noteName">Jill Peterson <span style="font-weight:400;">- 06/05/22 at 15:22</span></div>
+                                                                    <div class="noteText">We can reply to this after we hear back from Harold</div>
+                                                                </div>
+                                                            </div>
+                                                        </div> -->
+
+
+                                                        <div id="noteEntry" style="padding-top:10px;">
+
+                                                            <div id="middleNE">
+                      
+            
+            
+            
+                                                                <input class="govuk-input" id="noteText" placeholder="Type your note here..."></input>
+                                                            </div>
+            
+                                                            <button id="" class="govuk-button" data-module="govuk-button" style="margin-right:0px;margin-top:20px;margin-bottom:20px;" >
+                                                                Save note
+                                                            </button>
+            
+            
+                                                        </div>
+
+                                                    </div>
+
+
+
+
+                                            </div>
+
+
+
+
+                                            
+
+
+
+                                        </div>
+
+
+
+                                    </div>
+
                                     <div class="expandedTitles" style="padding-bottom: 10px;">Correspondence</div>
 
                                     <div>
@@ -744,7 +886,7 @@ font-weight:700;
                                             <div class="govuk-accordion__section-header">
                                                 <h2 class="govuk-accordion__section-heading">
                                                 <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
-                                                    In review (0)
+                                                    Review (0)
                                                 </span>
                                                 </h2>
                                             </div>
@@ -773,8 +915,8 @@ font-weight:700;
                                                 </h2>
                                             </div>
                                             <div id="accordion-default-content-3" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-3">
-                                                <p class='govuk-body correspondence'><a style="color:#006637;" href="#">Letter issued on 09/07/21</a></p>
-                                                <p class='govuk-body correspondence'><a style="color:#006637;" href="#">Letter issued on 24/06/21</a></p>
+                                                <p class='govuk-body correspondence'><a style="color:#006637;" href="#">Letter issued on 09/07/22</a></p>
+                                                <p class='govuk-body correspondence'><a style="color:#006637;" href="#">Letter issued on 24/06/22</a></p>
                                             </div>
                                             </div>
 
@@ -806,7 +948,7 @@ font-weight:700;
                         Official copies
                         <p class="govuk-visually-hidden"> HS2 OfficialCopies Completed </p>
                     </td>
-                    <td class="govuk-table__cell " scope="row" data-sortable="2021-08-01">01/08/21</td>
+                    <td class="govuk-table__cell " scope="row" data-sortable="2022-08-01">01/08/22</td>
                     <td class="govuk-table__cell " scope="row">Completed</td>
                     <td class="govuk-table__cell "  data-sortable="0"></td>
                     <td class="govuk-table__cell" scope="row"><a class="expandy-row-trigger2" href="#"><img class="chevronsize" src="/public/images/icon_govuk_chevrondown.svg"></a></td>
@@ -909,6 +1051,84 @@ font-weight:700;
                                     </div>
                                 </div>                                
                                 <div  class="expandedApplicationSectionBottomRight">
+                                    <div class="expandedTitles" style="padding-bottom: 10px;">Application notes</div>
+                                    <div style="padding-bottom:60px;">
+                                        <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-defaulta" style="margin-bottom: 15px;">
+                                            <div class="govuk-accordion__section ">
+                                                    <div class="govuk-accordion__section-header">
+                                                        <h2 class="govuk-accordion__section-heading">
+                                                        <span class="govuk-accordion__section-button" id="accordion-default-heading-1a">
+                                                            By you (0), By colleagues (0)
+                                                        </span>
+                                                        </h2>
+                                                    </div>
+                                                    <div id="accordion-default-content-1a" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1a" >
+
+
+
+                                                        <!-- <div style="padding-top: 10px;">
+                                                            <div class="note">
+                                                                <div class="noteBottom">
+                                                                    <div class="noteName">John James (you) <span style="font-weight:400;">- 22/09/22 at 14:44</span></div>
+                                                                    <div class="noteText">All points in the requisition have been replied to now</div>
+                                                                </div>
+                                                            </div>
+                                                        </div> -->
+                                                        <!-- <div style="padding-top: 10px;">
+                                                            <div class="note">
+                                                                <div class="noteBottom">
+                                                                    <div class="noteName">John James (you) <span style="font-weight:400;">- 04/09/22 at 12:02</span></div>
+                                                                    <div class="noteText">I've replied to points one of six</div>
+                                                                </div>
+                                                            </div>
+                                                        </div> -->
+                                                        <!-- <div>
+                                                            <div class="note">
+                                                                <div class="noteBottom">
+                                                                    <div class="noteName">Jill Peterson <span style="font-weight:400;">- 06/05/22 at 15:22</span></div>
+                                                                    <div class="noteText">We can reply to this after we hear back from Harold</div>
+                                                                </div>
+                                                            </div>
+                                                        </div> -->
+
+
+                                                        <div id="noteEntry" style="padding-top:10px;">
+
+                                                            <div id="middleNE">
+                      
+            
+            
+            
+                                                                <input class="govuk-input" id="noteText" placeholder="Type your note here..."></input>
+                                                            </div>
+            
+                                                            <button id="" class="govuk-button" data-module="govuk-button" style="margin-right:0px;margin-top:20px;margin-bottom:20px;" >
+                                                                Save note
+                                                            </button>
+            
+            
+                                                        </div>
+
+                                                    </div>
+
+
+
+
+                                            </div>
+
+
+
+
+                                            
+
+
+
+                                        </div>
+
+
+
+                                    </div>
+
                                     <div class="expandedTitles" style="padding-bottom: 10px;">Correspondence</div>
 
                                         <div>
@@ -917,7 +1137,7 @@ font-weight:700;
                                                 <div class="govuk-accordion__section-header">
                                                     <h2 class="govuk-accordion__section-heading">
                                                     <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
-                                                        In review (0)
+                                                        Review (0)
                                                     </span>
                                                     </h2>
                                                 </div>
@@ -976,7 +1196,7 @@ font-weight:700;
                         Official search of whole with priority
                         <p class="govuk-visually-hidden"> Westfields OfficialSearchWhole Completed </p>
                     </td>
-                    <td class="govuk-table__cell " scope="row" data-sortable="2021-05-14">14/05/21</td>
+                    <td class="govuk-table__cell " scope="row" data-sortable="2022-05-14">14/05/22</td>
                     <td class="govuk-table__cell " scope="row">Completed</td>
                     <td class="govuk-table__cell "  data-sortable="0"></td>
                     <td class="govuk-table__cell" scope="row"><a class="expandy-row-trigger2" href="#"><img class="chevronsize" src="/public/images/icon_govuk_chevrondown.svg"></a></td>
@@ -1035,7 +1255,7 @@ font-weight:700;
                                                     HMLR reference
                                                 </div>
                                                 <div class="expandedText">
-                                                    E921HSK
+                                                    E922HSK
                                                 </div>
                                             </div>
                                         </div>
@@ -1044,7 +1264,7 @@ font-weight:700;
                                                 Priority period
                                             </div>
                                             <div class="expandedText">
-                                                14/05/21 - 27/06/21
+                                                14/05/22 - 27/06/22
                                             </div>
                                         </div>
 
@@ -1053,7 +1273,7 @@ font-weight:700;
                                                Files
                                             </div>
                                             <div class="expandedText" style="line-height: 30px;">
-                                                <p class="govuk-body correspondence"><a style="color:#006637;" href="#">Search result dated 29/05/21</a></p>
+                                                <p class="govuk-body correspondence"><a style="color:#006637;" href="#">Search result dated 29/05/22</a></p>
 
                                              </div>
                                              
@@ -1079,6 +1299,85 @@ font-weight:700;
                                     </div>
                                 </div>                                
                                 <div  class="expandedApplicationSectionBottomRight">
+
+                                    <div class="expandedTitles" style="padding-bottom: 10px;">Application notes</div>
+                                    <div style="padding-bottom:60px;">
+                                        <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-defaulta" style="margin-bottom: 15px;">
+                                            <div class="govuk-accordion__section ">
+                                                    <div class="govuk-accordion__section-header">
+                                                        <h2 class="govuk-accordion__section-heading">
+                                                        <span class="govuk-accordion__section-button" id="accordion-default-heading-1a">
+                                                            By you (0), By colleagues (0)
+                                                        </span>
+                                                        </h2>
+                                                    </div>
+                                                    <div id="accordion-default-content-1a" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1a" >
+
+
+
+                                                        <!-- <div style="padding-top: 10px;">
+                                                            <div class="note">
+                                                                <div class="noteBottom">
+                                                                    <div class="noteName">John James (you) <span style="font-weight:400;">- 22/09/22 at 14:44</span></div>
+                                                                    <div class="noteText">All points in the requisition have been replied to now</div>
+                                                                </div>
+                                                            </div>
+                                                        </div> -->
+                                                        <!-- <div style="padding-top: 10px;">
+                                                            <div class="note">
+                                                                <div class="noteBottom">
+                                                                    <div class="noteName">John James (you) <span style="font-weight:400;">- 04/09/22 at 12:02</span></div>
+                                                                    <div class="noteText">I've replied to points one of six</div>
+                                                                </div>
+                                                            </div>
+                                                        </div> -->
+                                                        <!-- <div>
+                                                            <div class="note">
+                                                                <div class="noteBottom">
+                                                                    <div class="noteName">Jill Peterson <span style="font-weight:400;">- 06/05/22 at 15:22</span></div>
+                                                                    <div class="noteText">We can reply to this after we hear back from Harold</div>
+                                                                </div>
+                                                            </div>
+                                                        </div> -->
+
+
+                                                        <div id="noteEntry" style="padding-top:10px;">
+
+                                                            <div id="middleNE">
+                      
+            
+            
+            
+                                                                <input class="govuk-input" id="noteText" placeholder="Type your note here..."></input>
+                                                            </div>
+            
+                                                            <button id="" class="govuk-button" data-module="govuk-button" style="margin-right:0px;margin-top:20px;margin-bottom:20px;" >
+                                                                Save note
+                                                            </button>
+            
+            
+                                                        </div>
+
+                                                    </div>
+
+
+
+
+                                            </div>
+
+
+
+
+                                            
+
+
+
+                                        </div>
+
+
+
+                                    </div>
+
                                     <div class="expandedTitles" style="padding-bottom: 10px;">Correspondence</div>
 
                                         <div>
@@ -1087,7 +1386,7 @@ font-weight:700;
                                                 <div class="govuk-accordion__section-header">
                                                     <h2 class="govuk-accordion__section-heading">
                                                     <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
-                                                        In review (0)
+                                                        Review (0)
                                                     </span>
                                                     </h2>
                                                 </div>
@@ -1137,8 +1436,8 @@ font-weight:700;
                     <tr class="govuk-table__row govuk-link-table">
         
                     <td class="govuk-table__cell " scope="row">
-                        PT121212
-                        <p class="govuk-visually-hidden">PT121212</p>
+                        PT122222
+                        <p class="govuk-visually-hidden">PT122222</p>
                         <!-- THIS IS PAGE {{page}} -->
                     </td>
         
@@ -1147,7 +1446,7 @@ font-weight:700;
                         Official search of whole with priority
                         <p class="govuk-visually-hidden"> Westfields OfficialSearchWhole Completed </p>
                     </td>
-                    <td class="govuk-table__cell " scope="row" data-sortable="2021-05-14">14/05/21</td>
+                    <td class="govuk-table__cell " scope="row" data-sortable="2022-05-14">14/05/22</td>
                     <td class="govuk-table__cell " scope="row">Completed</td>
                     <td class="govuk-table__cell "  data-sortable="0"></td>
                     <td class="govuk-table__cell" scope="row"><a class="expandy-row-trigger2" href="#"><img class="chevronsize" src="/public/images/icon_govuk_chevrondown.svg"></a></td>
@@ -1215,7 +1514,7 @@ font-weight:700;
                                                 Priority period
                                             </div>
                                             <div class="expandedText">
-                                                12/05/21 - 25/06/21
+                                                12/05/22 - 25/06/22
                                             </div>
                                         </div>
 
@@ -1224,7 +1523,7 @@ font-weight:700;
                                                Files
                                             </div>
                                             <div class="expandedText" style="line-height: 30px;">
-                                                <p class="govuk-body correspondence"><a style="color:#006637;" href="#">Search result dated 27/05/21</a></p>
+                                                <p class="govuk-body correspondence"><a style="color:#006637;" href="#">Search result dated 27/05/22</a></p>
 
                                              </div>
                                              
@@ -1250,6 +1549,85 @@ font-weight:700;
                                     </div>
                                 </div>                                
                                 <div  class="expandedApplicationSectionBottomRight">
+
+                                    <div class="expandedTitles" style="padding-bottom: 10px;">Application notes</div>
+                                    <div style="padding-bottom:60px;">
+                                        <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-defaulta" style="margin-bottom: 15px;">
+                                            <div class="govuk-accordion__section ">
+                                                    <div class="govuk-accordion__section-header">
+                                                        <h2 class="govuk-accordion__section-heading">
+                                                        <span class="govuk-accordion__section-button" id="accordion-default-heading-1a">
+                                                            By you (0), By colleagues (0)
+                                                        </span>
+                                                        </h2>
+                                                    </div>
+                                                    <div id="accordion-default-content-1a" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1a" >
+
+
+
+                                                        <!-- <div style="padding-top: 10px;">
+                                                            <div class="note">
+                                                                <div class="noteBottom">
+                                                                    <div class="noteName">John James (you) <span style="font-weight:400;">- 22/09/22 at 14:44</span></div>
+                                                                    <div class="noteText">All points in the requisition have been replied to now</div>
+                                                                </div>
+                                                            </div>
+                                                        </div> -->
+                                                        <!-- <div style="padding-top: 10px;">
+                                                            <div class="note">
+                                                                <div class="noteBottom">
+                                                                    <div class="noteName">John James (you) <span style="font-weight:400;">- 04/09/22 at 12:02</span></div>
+                                                                    <div class="noteText">I've replied to points one of six</div>
+                                                                </div>
+                                                            </div>
+                                                        </div> -->
+                                                        <!-- <div>
+                                                            <div class="note">
+                                                                <div class="noteBottom">
+                                                                    <div class="noteName">Jill Peterson <span style="font-weight:400;">- 06/05/22 at 15:22</span></div>
+                                                                    <div class="noteText">We can reply to this after we hear back from Harold</div>
+                                                                </div>
+                                                            </div>
+                                                        </div> -->
+
+
+                                                        <div id="noteEntry" style="padding-top:10px;">
+
+                                                            <div id="middleNE">
+                      
+            
+            
+            
+                                                                <input class="govuk-input" id="noteText" placeholder="Type your note here..."></input>
+                                                            </div>
+            
+                                                            <button id="" class="govuk-button" data-module="govuk-button" style="margin-right:0px;margin-top:20px;margin-bottom:20px;" >
+                                                                Save note
+                                                            </button>
+            
+            
+                                                        </div>
+
+                                                    </div>
+
+
+
+
+                                            </div>
+
+
+
+
+                                            
+
+
+
+                                        </div>
+
+
+
+                                    </div>
+
                                     <div class="expandedTitles" style="padding-bottom: 10px;">Correspondence</div>
 
                                         <div>
@@ -1258,7 +1636,7 @@ font-weight:700;
                                                 <div class="govuk-accordion__section-header">
                                                     <h2 class="govuk-accordion__section-heading">
                                                     <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
-                                                        In review (0)
+                                                        Review (0)
                                                     </span>
                                                     </h2>
                                                 </div>
@@ -1319,9 +1697,9 @@ font-weight:700;
                         Transfer of part
                         <p class="govuk-visually-hidden"> TransferOfPart Received </p>
                     </td>
-                    <td class="govuk-table__cell " scope="row" data-sortable="2021-05-10">10/05/21</td>
+                    <td class="govuk-table__cell " scope="row" data-sortable="2022-05-10">10/05/22</td>
                     <td class="govuk-table__cell " scope="row">Received</td>
-                    <td class="govuk-table__cell "  data-sortable="0">07/09/2021</td>
+                    <td class="govuk-table__cell "  data-sortable="0">07/09/2022</td>
                     <td class="govuk-table__cell" scope="row"><a class="expandy-row-trigger2" href="#"><img class="chevronsize" src="/public/images/icon_govuk_chevrondown.svg"></a></td>
         
                     </tr>
@@ -1420,6 +1798,85 @@ font-weight:700;
                                     </div>
                                 </div>                                
                                 <div  class="expandedApplicationSectionBottomRight">
+
+                                    <div class="expandedTitles" style="padding-bottom: 10px;">Application notes</div>
+                                    <div style="padding-bottom:60px;">
+                                        <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-defaulta" style="margin-bottom: 15px;">
+                                            <div class="govuk-accordion__section ">
+                                                    <div class="govuk-accordion__section-header">
+                                                        <h2 class="govuk-accordion__section-heading">
+                                                        <span class="govuk-accordion__section-button" id="accordion-default-heading-1a">
+                                                            By you (0), By colleagues (0)
+                                                        </span>
+                                                        </h2>
+                                                    </div>
+                                                    <div id="accordion-default-content-1a" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1a" >
+
+
+
+                                                        <!-- <div style="padding-top: 10px;">
+                                                            <div class="note">
+                                                                <div class="noteBottom">
+                                                                    <div class="noteName">John James (you) <span style="font-weight:400;">- 22/09/22 at 14:44</span></div>
+                                                                    <div class="noteText">All points in the requisition have been replied to now</div>
+                                                                </div>
+                                                            </div>
+                                                        </div> -->
+                                                        <!-- <div style="padding-top: 10px;">
+                                                            <div class="note">
+                                                                <div class="noteBottom">
+                                                                    <div class="noteName">John James (you) <span style="font-weight:400;">- 04/09/22 at 12:02</span></div>
+                                                                    <div class="noteText">I've replied to points one of six</div>
+                                                                </div>
+                                                            </div>
+                                                        </div> -->
+                                                        <!-- <div>
+                                                            <div class="note">
+                                                                <div class="noteBottom">
+                                                                    <div class="noteName">Jill Peterson <span style="font-weight:400;">- 06/05/22 at 15:22</span></div>
+                                                                    <div class="noteText">We can reply to this after we hear back from Harold</div>
+                                                                </div>
+                                                            </div>
+                                                        </div> -->
+
+
+                                                        <div id="noteEntry" style="padding-top:10px;">
+
+                                                            <div id="middleNE">
+                      
+            
+            
+            
+                                                                <input class="govuk-input" id="noteText" placeholder="Type your note here..."></input>
+                                                            </div>
+            
+                                                            <button id="" class="govuk-button" data-module="govuk-button" style="margin-right:0px;margin-top:20px;margin-bottom:20px;" >
+                                                                Save note
+                                                            </button>
+            
+            
+                                                        </div>
+
+                                                    </div>
+
+
+
+
+                                            </div>
+
+
+
+
+                                            
+
+
+
+                                        </div>
+
+
+
+                                    </div>
+
                                     <div class="expandedTitles" style="padding-bottom: 10px;">Correspondence</div>
 
                                     <div>
@@ -1428,7 +1885,7 @@ font-weight:700;
                                             <div class="govuk-accordion__section-header">
                                                 <h2 class="govuk-accordion__section-heading">
                                                 <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
-                                                    In review (0)
+                                                    Review (0)
                                                 </span>
                                                 </h2>
                                             </div>
@@ -1490,9 +1947,9 @@ font-weight:700;
                             Register update
                             <p class="govuk-visually-hidden"> TLAGroup RegisterUpdate Received </p>
                         </td>
-                        <td class="govuk-table__cell " scope="row" data-sortable="2021-08-01">01/08/21</td>
+                        <td class="govuk-table__cell " scope="row" data-sortable="2022-08-01">01/08/22</td>
                         <td class="govuk-table__cell " scope="row">Received</td>
-                        <td class="govuk-table__cell "  data-sortable="0">04/11/2021</td>
+                        <td class="govuk-table__cell "  data-sortable="0">04/11/2022</td>
                         <td class="govuk-table__cell" scope="row"><a class="expandy-row-trigger2" href="#"><img class="chevronsize" src="/public/images/icon_govuk_chevrondown.svg"></a></td>
             
                     </tr>
@@ -1595,6 +2052,85 @@ font-weight:700;
                                     </div>
                                 </div>                                
                                 <div  class="expandedApplicationSectionBottomRight">
+
+                                    <div class="expandedTitles" style="padding-bottom: 10px;">Application notes</div>
+                                    <div style="padding-bottom:60px;">
+                                        <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-defaulta" style="margin-bottom: 15px;">
+                                            <div class="govuk-accordion__section ">
+                                                    <div class="govuk-accordion__section-header">
+                                                        <h2 class="govuk-accordion__section-heading">
+                                                        <span class="govuk-accordion__section-button" id="accordion-default-heading-1a">
+                                                            By you (0), By colleagues (0)
+                                                        </span>
+                                                        </h2>
+                                                    </div>
+                                                    <div id="accordion-default-content-1a" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1a" >
+
+
+
+                                                        <!-- <div style="padding-top: 10px;">
+                                                            <div class="note">
+                                                                <div class="noteBottom">
+                                                                    <div class="noteName">John James (you) <span style="font-weight:400;">- 22/09/22 at 14:44</span></div>
+                                                                    <div class="noteText">All points in the requisition have been replied to now</div>
+                                                                </div>
+                                                            </div>
+                                                        </div> -->
+                                                        <!-- <div style="padding-top: 10px;">
+                                                            <div class="note">
+                                                                <div class="noteBottom">
+                                                                    <div class="noteName">John James (you) <span style="font-weight:400;">- 04/09/22 at 12:02</span></div>
+                                                                    <div class="noteText">I've replied to points one of six</div>
+                                                                </div>
+                                                            </div>
+                                                        </div> -->
+                                                        <!-- <div>
+                                                            <div class="note">
+                                                                <div class="noteBottom">
+                                                                    <div class="noteName">Jill Peterson <span style="font-weight:400;">- 06/05/22 at 15:22</span></div>
+                                                                    <div class="noteText">We can reply to this after we hear back from Harold</div>
+                                                                </div>
+                                                            </div>
+                                                        </div> -->
+
+
+                                                        <div id="noteEntry" style="padding-top:10px;">
+
+                                                            <div id="middleNE">
+                      
+            
+            
+            
+                                                                <input class="govuk-input" id="noteText" placeholder="Type your note here..."></input>
+                                                            </div>
+            
+                                                            <button id="" class="govuk-button" data-module="govuk-button" style="margin-right:0px;margin-top:20px;margin-bottom:20px;" >
+                                                                Save note
+                                                            </button>
+            
+            
+                                                        </div>
+
+                                                    </div>
+
+
+
+
+                                            </div>
+
+
+
+
+                                            
+
+
+
+                                        </div>
+
+
+
+                                    </div>
+
                                     <div class="expandedTitles" style="padding-bottom: 10px;">Correspondence</div>
 
                                     <div>
@@ -1603,7 +2139,7 @@ font-weight:700;
                                             <div class="govuk-accordion__section-header">
                                                 <h2 class="govuk-accordion__section-heading">
                                                 <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
-                                                    In review (0)
+                                                    Review (0)
                                                 </span>
                                                 </h2>
                                             </div>
@@ -1620,8 +2156,8 @@ font-weight:700;
                                                 </h2>
                                             </div>
                                             <div id="accordion-default-content-2" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-2">
-                                                <p class='govuk-body correspondence'><a style="color:#006637;" href="#">Warning of cancellation issued 22/09/21</a></p>
-                                                <p class='govuk-body correspondence'><a style="color:#006637;" href="#">Requisition issued 15/09/21</a></p>
+                                                <p class='govuk-body correspondence'><a style="color:#006637;" href="#">Warning of cancellation issued 22/09/22</a></p>
+                                                <p class='govuk-body correspondence'><a style="color:#006637;" href="#">Requisition issued 15/09/22</a></p>
                                             </div>
                                             </div>
                                             <div class="govuk-accordion__section ">
@@ -1633,8 +2169,8 @@ font-weight:700;
                                                 </h2>
                                             </div>
                                             <div id="accordion-default-content-3" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-3">
-                                                <p class='govuk-body correspondence'><a style="color:#006637;" href="#">Letter issued 26/08/21</a></p>
-                                                <p class='govuk-body correspondence'><a style="color:#006637;" href="#">Notice issued 25/08/21</a></p>
+                                                <p class='govuk-body correspondence'><a style="color:#006637;" href="#">Letter issued 26/08/22</a></p>
+                                                <p class='govuk-body correspondence'><a style="color:#006637;" href="#">Notice issued 25/08/22</a></p>
                                             </div>
                                             </div>
 
@@ -1667,7 +2203,7 @@ font-weight:700;
                         New lease
                           <p class="govuk-visually-hidden"> NewLease Completed</p>
                        </td>
-                       <td class="govuk-table__cell " scope="row" data-sortable="2021-08-02">02/08/21</td>
+                       <td class="govuk-table__cell " scope="row" data-sortable="2022-08-02">02/08/22</td>
                        <td class="govuk-table__cell " scope="row">Completed</td>
                        <td class="govuk-table__cell "  data-sortable="0"></td>
                        <td class="govuk-table__cell" scope="row"><a class="expandy-row-trigger2" href="#"><img class="chevronsize" src="/public/images/icon_govuk_chevrondown.svg"></a></td>
@@ -1745,9 +2281,9 @@ font-weight:700;
                                                Files
                                             </div>
                                             <div class="expandedText" style="line-height: 30px;">
-                                                <p class="govuk-body correspondence"><a style="color:#006637;" href="#">Registration Completion Sheet dated 02/09/21</a></p>
-                                                <p class="govuk-body correspondence"><a style="color:#006637;" href="#">Official Copy of Register dated 02/09/21</a></p>
-                                                <p class="govuk-body correspondence"><a style="color:#006637;" href="#">Official Copy of Title Plan dated 02/09/21</a></p>
+                                                <p class="govuk-body correspondence"><a style="color:#006637;" href="#">Registration Completion Sheet dated 02/09/22</a></p>
+                                                <p class="govuk-body correspondence"><a style="color:#006637;" href="#">Official Copy of Register dated 02/09/22</a></p>
+                                                <p class="govuk-body correspondence"><a style="color:#006637;" href="#">Official Copy of Title Plan dated 02/09/22</a></p>
                                              </div>
                                              
                                         </div>
@@ -1773,6 +2309,85 @@ font-weight:700;
                                     </div>
                                 </div>                                
                                 <div  class="expandedApplicationSectionBottomRight">
+
+                                    <div class="expandedTitles" style="padding-bottom: 10px;">Application notes</div>
+                                    <div style="padding-bottom:60px;">
+                                        <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-defaulta" style="margin-bottom: 15px;">
+                                            <div class="govuk-accordion__section ">
+                                                    <div class="govuk-accordion__section-header">
+                                                        <h2 class="govuk-accordion__section-heading">
+                                                        <span class="govuk-accordion__section-button" id="accordion-default-heading-1a">
+                                                            By you (0), By colleagues (0)
+                                                        </span>
+                                                        </h2>
+                                                    </div>
+                                                    <div id="accordion-default-content-1a" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1a" >
+
+
+
+                                                        <!-- <div style="padding-top: 10px;">
+                                                            <div class="note">
+                                                                <div class="noteBottom">
+                                                                    <div class="noteName">John James (you) <span style="font-weight:400;">- 22/09/22 at 14:44</span></div>
+                                                                    <div class="noteText">All points in the requisition have been replied to now</div>
+                                                                </div>
+                                                            </div>
+                                                        </div> -->
+                                                        <!-- <div style="padding-top: 10px;">
+                                                            <div class="note">
+                                                                <div class="noteBottom">
+                                                                    <div class="noteName">John James (you) <span style="font-weight:400;">- 04/09/22 at 12:02</span></div>
+                                                                    <div class="noteText">I've replied to points one of six</div>
+                                                                </div>
+                                                            </div>
+                                                        </div> -->
+                                                        <!-- <div>
+                                                            <div class="note">
+                                                                <div class="noteBottom">
+                                                                    <div class="noteName">Jill Peterson <span style="font-weight:400;">- 06/05/22 at 15:22</span></div>
+                                                                    <div class="noteText">We can reply to this after we hear back from Harold</div>
+                                                                </div>
+                                                            </div>
+                                                        </div> -->
+
+
+                                                        <div id="noteEntry" style="padding-top:10px;">
+
+                                                            <div id="middleNE">
+                      
+            
+            
+            
+                                                                <input class="govuk-input" id="noteText" placeholder="Type your note here..."></input>
+                                                            </div>
+            
+                                                            <button id="" class="govuk-button" data-module="govuk-button" style="margin-right:0px;margin-top:20px;margin-bottom:20px;" >
+                                                                Save note
+                                                            </button>
+            
+            
+                                                        </div>
+
+                                                    </div>
+
+
+
+
+                                            </div>
+
+
+
+
+                                            
+
+
+
+                                        </div>
+
+
+
+                                    </div>
+
                                     <div class="expandedTitles" style="padding-bottom: 10px;">Correspondence</div>
 
                                     <div>
@@ -1781,7 +2396,7 @@ font-weight:700;
                                             <div class="govuk-accordion__section-header">
                                                 <h2 class="govuk-accordion__section-heading">
                                                 <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
-                                                    In review (0)
+                                                    Review (0)
                                                 </span>
                                                 </h2>
                                             </div>
@@ -1843,9 +2458,9 @@ font-weight:700;
                             Register update
                             <p class="govuk-visually-hidden"> RegisterUpdate Delayed </p>
                         </td>
-                        <td class="govuk-table__cell " scope="row" data-sortable="2021-07-25">25/07/21</td>
+                        <td class="govuk-table__cell " scope="row" data-sortable="2022-07-25">25/07/22</td>
                         <td class="govuk-table__cell " scope="row">Delayed</td>
-                        <td class="govuk-table__cell "  data-sortable="0">24/10/2021</td>
+                        <td class="govuk-table__cell "  data-sortable="0">24/10/2022</td>
                         <td class="govuk-table__cell" scope="row"><a class="expandy-row-trigger2" href="#"><img class="chevronsize" src="/public/images/icon_govuk_chevrondown.svg"></a></td>
                     </tr>
                     <!-- 1 Expanded row -->
@@ -1947,6 +2562,85 @@ font-weight:700;
                                     </div>
                                 </div>                                
                                 <div  class="expandedApplicationSectionBottomRight">
+
+                                    <div class="expandedTitles" style="padding-bottom: 10px;">Application notes</div>
+                                    <div style="padding-bottom:60px;">
+                                        <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-defaulta" style="margin-bottom: 15px;">
+                                            <div class="govuk-accordion__section ">
+                                                    <div class="govuk-accordion__section-header">
+                                                        <h2 class="govuk-accordion__section-heading">
+                                                        <span class="govuk-accordion__section-button" id="accordion-default-heading-1a">
+                                                            By you (0), By colleagues (0)
+                                                        </span>
+                                                        </h2>
+                                                    </div>
+                                                    <div id="accordion-default-content-1a" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1a" >
+
+
+
+                                                        <!-- <div style="padding-top: 10px;">
+                                                            <div class="note">
+                                                                <div class="noteBottom">
+                                                                    <div class="noteName">John James (you) <span style="font-weight:400;">- 22/09/22 at 14:44</span></div>
+                                                                    <div class="noteText">All points in the requisition have been replied to now</div>
+                                                                </div>
+                                                            </div>
+                                                        </div> -->
+                                                        <!-- <div style="padding-top: 10px;">
+                                                            <div class="note">
+                                                                <div class="noteBottom">
+                                                                    <div class="noteName">John James (you) <span style="font-weight:400;">- 04/09/22 at 12:02</span></div>
+                                                                    <div class="noteText">I've replied to points one of six</div>
+                                                                </div>
+                                                            </div>
+                                                        </div> -->
+                                                        <!-- <div>
+                                                            <div class="note">
+                                                                <div class="noteBottom">
+                                                                    <div class="noteName">Jill Peterson <span style="font-weight:400;">- 06/05/22 at 15:22</span></div>
+                                                                    <div class="noteText">We can reply to this after we hear back from Harold</div>
+                                                                </div>
+                                                            </div>
+                                                        </div> -->
+
+
+                                                        <div id="noteEntry" style="padding-top:10px;">
+
+                                                            <div id="middleNE">
+                      
+            
+            
+            
+                                                                <input class="govuk-input" id="noteText" placeholder="Type your note here..."></input>
+                                                            </div>
+            
+                                                            <button id="" class="govuk-button" data-module="govuk-button" style="margin-right:0px;margin-top:20px;margin-bottom:20px;" >
+                                                                Save note
+                                                            </button>
+            
+            
+                                                        </div>
+
+                                                    </div>
+
+
+
+
+                                            </div>
+
+
+
+
+                                            
+
+
+
+                                        </div>
+
+
+
+                                    </div>
+
                                     <div class="expandedTitles" style="padding-bottom: 10px;">Correspondence</div>
 
                                     <div>
@@ -1955,7 +2649,7 @@ font-weight:700;
                                             <div class="govuk-accordion__section-header">
                                                 <h2 class="govuk-accordion__section-heading">
                                                 <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
-                                                    In review (0)
+                                                    Review (0)
                                                 </span>
                                                 </h2>
                                             </div>
@@ -1984,9 +2678,9 @@ font-weight:700;
                                                 </h2>
                                             </div>
                                             <div id="accordion-default-content-3" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-3">
-                                                <p class='govuk-body correspondence'><a style="color:#006637;" href="#">Letter issued 06/08/21</a></p>
-                                                <p class='govuk-body correspondence'><a style="color:#006637;" href="#">Letter issued 05/08/21</a></p>
-                                                <p class='govuk-body correspondence'><a style="color:#006637;" href="#">Letter issued 04/08/21</a></p>
+                                                <p class='govuk-body correspondence'><a style="color:#006637;" href="#">Letter issued 06/08/22</a></p>
+                                                <p class='govuk-body correspondence'><a style="color:#006637;" href="#">Letter issued 05/08/22</a></p>
+                                                <p class='govuk-body correspondence'><a style="color:#006637;" href="#">Letter issued 04/08/22</a></p>
                                             </div>
                                             </div>
 
@@ -2023,9 +2717,9 @@ font-weight:700;
                             Register update
                             <p class="govuk-visually-hidden"> RegisterUpdate Received </p>
                         </td>
-                        <td class="govuk-table__cell " scope="row" data-sortable="2021-07-25">25/07/21</td>
+                        <td class="govuk-table__cell " scope="row" data-sortable="2022-07-25">25/07/22</td>
                         <td class="govuk-table__cell " scope="row">Received</td>
-                        <td class="govuk-table__cell "  data-sortable="0">28/10/2021</td>
+                        <td class="govuk-table__cell "  data-sortable="0">28/10/2022</td>
                         <td class="govuk-table__cell" scope="row"><a class="expandy-row-trigger2" href="#"><img class="chevronsize" src="/public/images/icon_govuk_chevrondown.svg"></a></td>
         
                     </tr>
@@ -2128,6 +2822,85 @@ font-weight:700;
                                     </div>
                                 </div>                                
                                 <div  class="expandedApplicationSectionBottomRight">
+
+                                    <div class="expandedTitles" style="padding-bottom: 10px;">Application notes</div>
+                                    <div style="padding-bottom:60px;">
+                                        <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-defaulta" style="margin-bottom: 15px;">
+                                            <div class="govuk-accordion__section ">
+                                                    <div class="govuk-accordion__section-header">
+                                                        <h2 class="govuk-accordion__section-heading">
+                                                        <span class="govuk-accordion__section-button" id="accordion-default-heading-1a">
+                                                            By you (0), By colleagues (0)
+                                                        </span>
+                                                        </h2>
+                                                    </div>
+                                                    <div id="accordion-default-content-1a" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1a" >
+
+
+
+                                                        <!-- <div style="padding-top: 10px;">
+                                                            <div class="note">
+                                                                <div class="noteBottom">
+                                                                    <div class="noteName">John James (you) <span style="font-weight:400;">- 22/09/22 at 14:44</span></div>
+                                                                    <div class="noteText">All points in the requisition have been replied to now</div>
+                                                                </div>
+                                                            </div>
+                                                        </div> -->
+                                                        <!-- <div style="padding-top: 10px;">
+                                                            <div class="note">
+                                                                <div class="noteBottom">
+                                                                    <div class="noteName">John James (you) <span style="font-weight:400;">- 04/09/22 at 12:02</span></div>
+                                                                    <div class="noteText">I've replied to points one of six</div>
+                                                                </div>
+                                                            </div>
+                                                        </div> -->
+                                                        <!-- <div>
+                                                            <div class="note">
+                                                                <div class="noteBottom">
+                                                                    <div class="noteName">Jill Peterson <span style="font-weight:400;">- 06/05/22 at 15:22</span></div>
+                                                                    <div class="noteText">We can reply to this after we hear back from Harold</div>
+                                                                </div>
+                                                            </div>
+                                                        </div> -->
+
+
+                                                        <div id="noteEntry" style="padding-top:10px;">
+
+                                                            <div id="middleNE">
+                      
+            
+            
+            
+                                                                <input class="govuk-input" id="noteText" placeholder="Type your note here..."></input>
+                                                            </div>
+            
+                                                            <button id="" class="govuk-button" data-module="govuk-button" style="margin-right:0px;margin-top:20px;margin-bottom:20px;" >
+                                                                Save note
+                                                            </button>
+            
+            
+                                                        </div>
+
+                                                    </div>
+
+
+
+
+                                            </div>
+
+
+
+
+                                            
+
+
+
+                                        </div>
+
+
+
+                                    </div>
+
                                     <div class="expandedTitles" style="padding-bottom: 10px;">Correspondence</div>
 
                                     <div>
@@ -2136,7 +2909,7 @@ font-weight:700;
                                             <div class="govuk-accordion__section-header">
                                                 <h2 class="govuk-accordion__section-heading">
                                                 <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
-                                                    In review (0)
+                                                    Review (0)
                                                 </span>
                                                 </h2>
                                             </div>
@@ -2165,7 +2938,7 @@ font-weight:700;
                                                 </h2>
                                             </div>
                                             <div id="accordion-default-content-3" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-3">
-                                                <p class='govuk-body correspondence'><a style="color:#006637;" href="#">Letter issued 06/08/21</a></p>
+                                                <p class='govuk-body correspondence'><a style="color:#006637;" href="#">Letter issued 06/08/22</a></p>
                                             </div>
                                             </div>
 
@@ -2217,7 +2990,7 @@ font-weight:700;
                         <span class="govuk-warning-text__icon" aria-hidden="true" style="margin-top: -7px;">!</span>
                         <strong class="govuk-warning-text__text">
                         <span class="govuk-warning-text__assistive">Warning</span>
-                        <p class="notificationWarningText">These types of applications require you to reply to requisitions, in order to progress them.</p>
+                        <p class="notificationWarningText">These types of applications require you to reply to requisitions, in order to progress them.</p></strong>
                         <button class="govuk-button hideNotificationButton cookie_box_close" data-module="govuk-button" onclick="window.location.href='#'">
                             Hide this message
                         </button>
@@ -2361,7 +3134,7 @@ font-weight:700;
                                                     <div class="govuk-accordion__section-header">
                                                         <h2 class="govuk-accordion__section-heading">
                                                         <span class="govuk-accordion__section-button" id="accordion-default-heading-1a">
-                                                            By you (1), By colleagues (1)
+                                                            By you (<span id="count-value"></span>), By colleagues (1)
                                                         </span>
                                                         </h2>
                                                     </div>
@@ -2373,7 +3146,7 @@ font-weight:700;
                                                             <div class="note">
                                                                 <div class="noteBottom">
                                                                     <div class="noteName">John James (you) <span style="font-weight:400;">- 06/05/22 at 09:44</span></div>
-                                                                    <div class="noteText">I’ve been able to reply to some of the requisition but not all</div>
+                                                                    <div class="noteText">I’ve been able to reply to point one, points two and three are still oustanding</div>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -2437,7 +3210,7 @@ font-weight:700;
                                             <div class="govuk-accordion__section-header">
                                                 <h2 class="govuk-accordion__section-heading">
                                                 <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
-                                                    In review (0)
+                                                    Review (0)
                                                 </span>
                                                 </h2>
                                             </div>
@@ -2524,31 +3297,12 @@ font-weight:700;
 </div>
 
 
-<div class="govuk-grid-column-full" style="padding:0px;border-top:5px solid #00703C;">
-
-        
-        
-        
-    <div style="padding:30px; background: #f3f2f1;">
-        <a class="footlink" style="text-color: grey; text-decoration: none;"><u>Terms and conditions</u></a>
-        <a>|</a>
-        <a class="footlink" style="text-color: grey; text-decoration: none;"><u>Accessibility statement</u></a>
-        <a>|</a>
-        <a class="footlink" style="text-color: grey; text-decoration: none;"><u>Freedom of information</u></a>
-        <a>|</a>
-        <a class="footlink" style="text-color: grey; text-decoration: none;" href="/setup/stored-data"><u>Check data</u></a>
-        <a>
-        <a>|</a>
-        <a class="footlink" style="text-color: grey; text-decoration: none;" href="/prototype-admin/clear-data"><u>Clear data</u></a>
-        <a>
-        <br>
-        <br>
-        <p style="color: #6d6d6d; text-decoration: none;font-size: 16px;margin-bottom:0px;"><i>These links will open in a new window.</i></p>
-    </div>
-                </div>
+<!-- Footer -->
+{% include "includes/notificationsFooter.html" %} 
 
 
-<!-- Content Area - End -->
+
+
 
 
 <script>
@@ -2564,6 +3318,8 @@ font-weight:700;
  
    
  </script>
+ 
+
  
  <script>
 
