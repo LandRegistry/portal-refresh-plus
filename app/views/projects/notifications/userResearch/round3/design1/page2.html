@@ -10,6 +10,38 @@
 
 <style>
 
+
+#cookie_box
+{ 
+	display: none;
+}
+
+#inReview_box
+{ 
+	display: none;
+}
+
+
+.hideNotificationButton {
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin-bottom: 0;
+    margin-top: 5px;
+}
+
+.notificationWarningText {
+    margin-bottom: 10px;
+    font-weight: 700;
+    padding-right: 200px;
+}
+
+.requisitionNotificationBanner {
+    background: #f3f2f1;
+    padding: 15px 25px;
+    margin: 0px 20px 20px 20px;
+}
+
 .navbar-container {
     -webkit-box-shadow: inset 0px 2px 4px 0px rgb(0 0 0 / 15%);
     -moz-box-shadow: inset 0px 2px 4px 0px rgba(0,0,0,0.15);
@@ -2147,6 +2179,19 @@
         </div>
         <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="requiresAction">
             <table  class="govuk-table my-work" style="margin-top: 0px; ">
+
+                <div id="cookie_box" class="requisitionNotificationBanner">
+                    <div class="govuk-warning-text">
+                        <span class="govuk-warning-text__icon" aria-hidden="true" style="margin-top: -7px;">!</span>
+                        <strong class="govuk-warning-text__text">
+                        <span class="govuk-warning-text__assistive">Warning</span>
+                        <p class="notificationWarningText">These types of applications require you to reply to requisitions, in order to progress them.</p></strong>
+                        <button class="govuk-button hideNotificationButton cookie_box_close" data-module="govuk-button" onclick="window.location.href='#'">
+                            Hide this message
+                        </button>
+                    </div>
+                </div>
+
                 <thead class="govuk-table__head">
                     <tr class="govuk-table__row" style="background-color: #ffffff;">
                        <th class="govuk-table__header sortable" scope="col" id="Title">
@@ -2380,6 +2425,19 @@
         </div>
         <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="inReview">
             <table  class="govuk-table my-work" style="margin-top: 0px; ">
+
+                <div id="inReview_box" class="requisitionNotificationBanner">
+                    <div class="govuk-warning-text">
+                        <span class="govuk-warning-text__icon" aria-hidden="true" style="margin-top: -7px;">!</span>
+                        <strong class="govuk-warning-text__text">
+                        <span class="govuk-warning-text__assistive">Warning</span>
+                        <p class="notificationWarningText">We'll review your application and update the status. If we need more information we'll contact you.</p></strong>
+                        <button class="govuk-button hideNotificationButton inReview_box_close" data-module="govuk-button" onclick="window.location.href='#'">
+                            Hide this message
+                        </button>
+                    </div>
+                </div>
+
                 <thead class="govuk-table__head">
                     <tr class="govuk-table__row" style="background-color: #ffffff;">
                        <th class="govuk-table__header sortable" scope="col" id="Title">
