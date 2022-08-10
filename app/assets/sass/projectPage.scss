@@ -125,3 +125,17 @@ margin-bottom:5px;
     color: #6E3619;  
     background-color:#FCD6C3;
 }
+
+.govuk-width-container {
+    max-width: 1200px;
+}
+
+.govuk-grid-column-full {
+    padding: 0 25px 50px 25px;
+    width: 98%;
+    margin: 0 1%;
+}
+
+.backButton {
+    padding-bottom:0px;
+}
