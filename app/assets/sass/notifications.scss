@@ -1327,3 +1327,56 @@ padding: 0px 15px 0px 30px;
 .progressGraphicMiddle {
     display: flex;
 }
+
+.restyledAccordion .govuk-details[open] > .govuk-details__summary:before {
+    clip-path: polygon(50% 50%, 80% 25%, 100% 25%, 50% 70%, 0 25%, 20% 25%);
+    background: #000;
+    width: 20px;
+    height: 22px;
+    left: unset;
+    right: 20px;
+    border-width: 0px;
+}
+
+.restyledAccordion .govuk-details__summary:before {
+    clip-path: polygon(50% 25%, 100% 75%, 80% 75%, 50% 45%, 20% 75%, 0 75%);
+    background: #000;
+    width: 20px;
+    height: 22px;
+    left: unset;
+    right: 20px;
+    border-width: 0px;
+}
+
+.restyledAccordion .govuk-details {
+    background: #f3f2f1;
+    border: 2px solid #f3f2f1;
+}
+
+.restyledAccordion .govuk-details__summary {
+    width: 100%;
+    font-size: 24px;
+    padding: 0px;
+    margin-bottom: 0px;
+}
+
+.restyledAccordion .govuk-details__summary-text {
+    font-size: 24px;
+    font-weight: 600;
+    color: #000000;
+    text-decoration: none;
+    padding: 10px 20px;
+    display: inline-block;
+}
+
+.restyledAccordion .govuk-details__text {
+    border-left: 0px solid #b1b4b6;
+    padding: 30px;
+    background: #ffffff;
+}
+
+.restyledAccordion .govuk-details__summary {
+    width: 100%;
+    font-size: 24px;
+    padding: 0px;
+    margin-bottom:0px;}
