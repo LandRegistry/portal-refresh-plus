@@ -36,6 +36,11 @@ display:none;
     max-width: 715px;
 }
 
+.expandedTitles {
+    font-size: 19px;
+    line-height: 25px;
+}
+
 </style>
 
 
@@ -93,64 +98,94 @@ display:none;
     </div>
 
 
-      <div class="govuk-grid-column-one-half expandedLeftColumn">
+        <div class="govuk-grid-column-one-half expandedLeftColumn">
 
-          <!-- Additional details -->
-          <details class="govuk-details" data-module="govuk-details" open>
-              <summary class="govuk-details__summary">
-                <span class="govuk-details__summary-text" >
-                  Additional details
-                </span>
-              </summary>
-              <div class="govuk-details__text">
+            <!-- Application details -->
+            <details class="govuk-details" data-module="govuk-details" open>
+                <summary class="govuk-details__summary">
+                    <span class="govuk-details__summary-text" >
+                        Application details
+                    </span>
+                </summary>
+
+                <div class="govuk-details__text" style="padding-bottom:0px;">
                   <div class="contentSection">
-                      <!-- <div class="ContentItem">
-                          <div class="expandedTitles">
-                              Details
-                          </div>
-                          <div class="expandedText">
-                              Priority Protected - Awaiting Processing
-                          </div>
-                      </div> -->
 
-                      <div class="ContentItem">
-                          <div class="expandedTitles">
-                              HMLR reference
-                          </div>
-                          <div class="expandedText">
-                              TV78232
-                          </div>
-                      </div>
+                        <div class="ContentItem">
+                            <div class="expandedTitles">
+                                Title number
+                            </div>
+                            <div class="expandedText">
+                                E17-44Q
+                            </div>
+                        </div>
 
-                      <div class="ContentItem">
-                          <div class="expandedTitles">
-                              Parent Titles
-                          </div>
-                          <div class="expandedText">
-                              PPL89232
-                          </div>
-                      </div>
+                        <div class="ContentItem">
+                            <div class="expandedTitles">
+                                HMLR reference
+                            </div>
+                            <div class="expandedText">
+                                S827KLJ
+                            </div>
+                        </div>
 
-                      <!-- <div class="ContentItem">
-                          <div class="expandedTitles">
-                              Priority period
-                          </div>
-                          <div class="expandedText">
-                              12/05/22 - 25/06/22
-                          </div>
-                      </div> -->
+                        <div class="ContentItem">
+                            <div class="expandedTitles">
+                                Customer reference
+                            </div>
+                            <div class="expandedText">
+                                Hampton.Jones44
+                            </div>
+                        </div>
 
-                      <div class="ContentItem">
-                          <div class="expandedTitles">
-                              Files
-                          </div>
-                          <div class="expandedText" style="line-height: 30px;">
-                              <a class="requisitionLink" target="_blank" href="#">Cancellation</a>
-                              </div>
-                      </div>
-                  </div>
-              </div>
-          </details>
+                        <div class="ContentItem">
+                            <div class="expandedTitles">
+                                Parent Titles
+                            </div>
+                            <div class="expandedText">
+                                PPL89232
+                            </div>
+                        </div>
+
+                        <!-- <div class="ContentItem">
+                            <div class="expandedTitles">
+                                Priority period
+                            </div>
+                            <div class="expandedText">
+                                12/05/22 - 25/06/22
+                            </div>
+                        </div> -->
+                        
+                        <!-- <div class="ContentItem">
+                            <div class="expandedTitles">
+                                Details
+                            </div>
+                            <div class="expandedText">
+                                Priority Protected - Awaiting Processing
+                            </div>
+                        </div> -->
+
+                        <div class="ContentItem">
+                            <div class="expandedTitles">
+                                Received by HMLR
+                            </div>
+                            <div class="expandedText">
+                                08/04/2022
+                            </div>
+                        </div>
+
+                        <div class="ContentItem">
+                            <div class="expandedTitles">
+                                Estimated completion date
+                            </div>
+                            <div class="expandedText">
+                                08/07/2022
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </details>
 
           <!-- Application notes -->
           <details class="govuk-details" data-module="govuk-details" open>
@@ -160,37 +195,37 @@ display:none;
                 </span>
               </summary>
               <div class="govuk-details__text">
-                  <div style="padding-top: 10px;">
-                      <div class="note">
-                          <div class="noteBottom">
-                              <div class="noteName">John James (you) <span style="font-weight:400;">- 04/09/22 at 12:02</span></div>
-                              <div class="noteText">I've replied to points one of six</div>
-                          </div>
-                      </div>
-                  </div>
-                  <!-- <div>
-                      <div class="note">
-                          <div class="noteBottom">
-                              <div class="noteName">Jill Peterson <span style="font-weight:400;">- 06/05/22 at 15:22</span></div>
-                              <div class="noteText">We can reply to this after we hear back from Harold</div>
-                          </div>
-                      </div>
-                  </div> -->
-                  
-                  <div id="noteEntry" style="padding-top:10px;">
+                <div style="padding-top: 10px;">
+                    <div class="note">
+                        <div class="noteBottom">
+                            <div class="noteName">John James (you) <span style="font-weight:400;">- 06/05/22 at 09:44</span></div>
+                            <div class="noteText">I’ve been able to reply to point one, points two and three are still oustanding</div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="note">
+                        <div class="noteBottom">
+                            <div class="noteName">Jill Peterson <span style="font-weight:400;">- 06/05/22 at 15:22</span></div>
+                            <div class="noteText">We can reply to this after we hear back from Harold</div>
+                        </div>
+                    </div>
+                </div>
 
-                      <div id="middleNE">
+                <div id="noteList">
+                </div>
+                
+                <div id="noteEntry" style="padding-top:10px;">
+                    <div id="middleNE">
+                        <input class="govuk-input" id="noteText" placeholder="Type your note here..."></input>
+                    </div>
+
+                    <button id="saveBut" class="govuk-button" data-module="govuk-button" style="margin-right:0px;margin-top:20px;margin-bottom:20px;" onclick="show_now();">
+                        Save note
+                    </button>
 
 
-
-
-                          <input class="govuk-input" id="noteText" placeholder="Type your note here..."></input>
-                      </div>
-
-                      <button id="saveBut" class="govuk-button" data-module="govuk-button" style="margin-right:0px;margin-top:20px;margin-bottom:20px;"">
-                          Save note
-                      </button>
-
+               
 
                   </div>
               </div>
@@ -200,70 +235,62 @@ display:none;
 
       <div class="govuk-grid-column-one-half expandedRightColumn">
           
-          <!-- Correspondence -->
-          <details class="govuk-details" data-module="govuk-details" open>
-              <summary class="govuk-details__summary">
+        <!-- Correspondence -->
+        <details class="govuk-details" data-module="govuk-details" open>
+            <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text" >
+                Correspondence
+            </span>
+            </summary>
+            <div class="govuk-details__text">
+                <div class="contentSection">
+
+                    <div class="ContentItem">
+                        <div class="expandedTitles">
+                            Requisition resolved
+                        </div>
+                        <div class="expandedText">
+                            Empty
+                        </div>
+                    </div>
+
+                    <div class="ContentItem">
+                        <div class="expandedTitles">
+                            Information only
+                        </div>
+                        <div class="expandedText">
+                            <ul>
+                                <li>
+                                    <a target="_blank" href="#">Letter of cancellation issued 22/09/22</a>
+                                </li>
+                                <li>
+                                    <a target="_blank" href="#">Letter issued 22/09/22</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </details>
+
+        <!-- Files -->
+        <details class="govuk-details" data-module="govuk-details" open>
+            <summary class="govuk-details__summary">
                 <span class="govuk-details__summary-text" >
-                  Correspondence
+                Files
                 </span>
-              </summary>
-              <div class="govuk-details__text">
-                  <div class="contentSection">
+            </summary>
+            <div class="govuk-details__text" style="padding-bottom:0px;">
+                <div class="contentSection">
 
-                      <div class="ContentItem">
-                          <div class="expandedTitles">
-                              Requisition resolved
-                          </div>
-                          <div class="expandedText">
-                              Empty
-                          </div>
-                      </div>
+                        <div class="expandedText" style="line-height: 30px;">
+                            <a class="requisitionLink" target="_blank" href="#">Cancellation</a>
+                        </div>
 
-                      <div class="ContentItem">
-                          <div class="expandedTitles">
-                              Information only
-                          </div>
-                          <div class="expandedText">
-                              <ul>
-                                  <li>
-                                      <a target="_blank" href="#">Letter of cancellation issued 22/09/22</a>
-                                  </li>
-                                  <li>
-                                      <a target="_blank" href="#">Letter issued 22/09/22</a>
-                                  </li>
-                              </ul>
-                          </div>
-                      </div>
-
-                  </div>
-              </div>
-          </details>
-
-          <!-- Actions -->
-          <details class="govuk-details" data-module="govuk-details" open>
-              <summary class="govuk-details__summary">
-                <span class="govuk-details__summary-text" >
-                  Actions
-                </span>
-              </summary>
-              <div class="govuk-details__text">
-                  <div class="contentSection">
-
-                      <button class="govuk-button govuk-button--secondary" data-module="govuk-button" style="margin-right:15px;margin-bottom:15px;" onclick="window.location.href='#'">
-                          Update application
-                      </button>
-
-                      <button class="govuk-button govuk-button--secondary" data-module="govuk-button" style="margin-right:15px;margin-bottom:15px;" onclick="window.location.href='#'">
-                          Application enquiry
-                      </button>
-                          
-                      <button class="govuk-button govuk-button--secondary" data-module="govuk-button" style="margin-right:15px;margin-bottom:15px;" onclick="window.location.href='#'">
-                          Save as PDF
-                      </button>
-
-                  </div>
-              </div>
-          </details>
+                </div>
+            </div>
+        </details>
 
       </div>
 
