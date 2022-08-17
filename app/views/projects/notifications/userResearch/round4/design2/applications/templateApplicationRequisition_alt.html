@@ -50,16 +50,6 @@ display:none;
     line-height: 25px;
 }
 
-.contentSection > div {
-    flex: 48%;
-    margin-bottom: 20px;
-    padding-right: 2%;
-}
-
-.app-step-nav--large .app-step-nav__toggle-link {
-    display: none;
-}
-
 </style>
 
 
@@ -67,9 +57,6 @@ display:none;
 
   <div class="govuk-grid-row restyledAccordion">
     
-
-
-
     <!-- Back button -->
     <div class="govuk-grid-column-one-third">
         
@@ -95,15 +82,6 @@ display:none;
 
 
     </div>
-
-
-    <!-- <div class="govuk-grid-column-full">
-        <span class="govuk-caption-m">Title number</span>
-        <h1 class="govuk-heading-xl govuk-!-margin-bottom-0">
-            E17-44Q
-        </h1>
-    </div> -->
-
 
     <!-- Application progress visual -->
     <div class="govuk-grid-column-full">
@@ -298,23 +276,39 @@ display:none;
                 <div class="contentSection">
 
                     <div class="ContentItem">
-                        <span class="govuk-caption-m">Title number</span>
-                        <h3 class="govuk-heading-m">E17-44Q</h3>
+                        <div class="expandedTitles">
+                            Title number
+                        </div>
+                        <div class="expandedText">
+                            E17-44Q
+                        </div>
                     </div>
 
                     <div class="ContentItem">
-                        <span class="govuk-caption-m">HMLR reference</span>
-                        <h3 class="govuk-heading-m">S827KLJ</h3>
+                        <div class="expandedTitles">
+                            HMLR reference
+                        </div>
+                        <div class="expandedText">
+                            S827KLJ
+                        </div>
                     </div>
 
                     <div class="ContentItem">
-                        <span class="govuk-caption-m">Customer reference</span>
-                        <h3 class="govuk-heading-m">Hampton.Jones44</h3>
+                        <div class="expandedTitles">
+                            Customer reference
+                        </div>
+                        <div class="expandedText">
+                            Hampton.Jones44
+                        </div>
                     </div>
 
                     <div class="ContentItem">
-                        <span class="govuk-caption-m">Parent Titles</span>
-                        <h3 class="govuk-heading-m">PPL89232</h3>
+                        <div class="expandedTitles">
+                            Parent Titles
+                        </div>
+                        <div class="expandedText">
+                            PPL89232
+                        </div>
                     </div>
 
                     <!-- <div class="ContentItem">
@@ -336,13 +330,21 @@ display:none;
                     </div> -->
 
                     <div class="ContentItem">
-                        <span class="govuk-caption-m">Received by HMLR</span>
-                        <h3 class="govuk-heading-m">08/04/2022</h3>
+                        <div class="expandedTitles">
+                            Received by HMLR
+                        </div>
+                        <div class="expandedText">
+                            08/04/2022
+                        </div>
                     </div>
 
                     <div class="ContentItem">
-                        <span class="govuk-caption-m">Estimated completion date</span>
-                        <h3 class="govuk-heading-m">08/07/2022</h3>
+                        <div class="expandedTitles">
+                            Estimated completion date
+                        </div>
+                        <div class="expandedText">
+                            08/07/2022
+                        </div>
                     </div>
 
                 </div>
@@ -361,18 +363,44 @@ display:none;
                 <div class="contentSection">
 
                     <div class="ContentItem">
-                        <span class="govuk-caption-m">HMLR to review</span>
-                        <h3 class="govuk-heading-m">-</h3>
+                        <div class="expandedTitles">
+                            Requisition issued
+                        </div>
+                        <div class="expandedText">
+                            <ul>
+                                <li>
+                                    <a target="_blank" href="#">Requisition issued 13/07/22</a>
+                                </li>
+                                <!-- <li>
+                                    <a target="_blank" href="#">Letter issued 22/09/22</a>
+                                </li> -->
+                            </ul>
+                        </div>
                     </div>
 
                     <div class="ContentItem">
-                        <span class="govuk-caption-m">Requisition resolved</span>
-                        <h3 class="govuk-heading-m">-</h3>
+                        <div class="expandedTitles">
+                            HMLR to review
+                        </div>
+                        <div class="expandedText">
+                            Empty
+                        </div>
                     </div>
 
                     <div class="ContentItem">
-                        <span class="govuk-caption-m">Information only</span>
-                        <h3 class="govuk-heading-m">
+                        <div class="expandedTitles">
+                            Requisition resolved
+                        </div>
+                        <div class="expandedText">
+                            Empty
+                        </div>
+                    </div>
+
+                    <div class="ContentItem">
+                        <div class="expandedTitles">
+                            Information only
+                        </div>
+                        <div class="expandedText">
                             <ul>
                                 <!-- <li>
                                     <a target="_blank" href="#">Letter of cancellation issued 22/09/22</a>
@@ -381,7 +409,7 @@ display:none;
                                     <a target="_blank" href="#">Letter issued 22/09/22</a>
                                 </li>
                             </ul>
-                        </h3>
+                        </div>
                     </div>
 
                 </div>

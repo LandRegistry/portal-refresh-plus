@@ -65,9 +65,7 @@ display:none;
 }
 
 
-.govuk-link:link, a:link {
-    color: #006637;
-}
+
 
 .govuk-width-container {
     max-width: 100%;
@@ -1381,3 +1379,10 @@ padding: 0px 15px 0px 30px;
     font-size: 24px;
     padding: 0px;
     margin-bottom:0px;}
+
+    .copyLinkBox {
+        right: 15px;
+        position: absolute;
+        top: 57px;
+
+    }

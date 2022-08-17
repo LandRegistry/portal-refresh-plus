@@ -12,7 +12,21 @@
   <link href="/public/custom.css" media="all" rel="stylesheet" type="text/css" />
   <link href="/public/stylesheets/notifications.css" media="all" rel="stylesheet" type="text/css" />
 
-  
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script>
+$(document).ready(function(){
+var $temp = $("<input>");
+var $url = $(location).attr('href');
+$('#shareLink').click(function() {
+$("#shareLinkText").append($temp);
+$temp.val($url).select();
+document.execCommand("copy");
+$temp.remove();
+$("#shareLinkTextLink").text("Application link copied to clipboard");
+});
+});
+</script>
 
   {% for stylesheetUrl in extensionConfig.stylesheets %}
     <link href="{{ stylesheetUrl }}" rel="stylesheet" type="text/css" />

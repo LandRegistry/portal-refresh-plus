@@ -6,6 +6,15 @@
 
 {% include "includes/notificationsNavigation2.html" %} 
 
+{% block pageScripts %}
+  <script src="/public/javascripts/step-by-step-nav.js"></script>
+  <script type="text/javascript">
+    var $element = $('#step-by-step-navigation')
+    var stepByStepNavigation = new GOVUK.Modules.AppStepNav()
+    stepByStepNavigation.start($element)
+  </script>
+{% endblock %}
+
 <style>
 
 .govuk-header {
@@ -20,7 +29,7 @@ display:none;
 
 .buttonPositionRight {
   float:right;
-  margin-left: 10px;
+  margin-left: 15px;
   margin-bottom:20px;;
 }
 
@@ -53,9 +62,11 @@ display:none;
 
 .correspondence li {
     font-size: 19px;
-    padding-bottom: 10px;
+    padding-bottom: 5px;
     font-weight: 600;
+
 }
+
 
 </style>
 
@@ -64,10 +75,13 @@ display:none;
 
   <div class="govuk-grid-row restyledAccordion">
     
+
+
+
     <!-- Back button -->
     <div class="govuk-grid-column-one-third">
         
-      <p><a href="javascript: history.go(-1)" class="govuk-back-link">Back to applications</a></p>
+      <p><a href="/projects/notifications/userResearch/round4/design2/page5#inReview" class="govuk-back-link">Back to applications</a></p>
 
     </div>
 
@@ -88,9 +102,21 @@ display:none;
         Application enquiry
       </button>
 
+      <button class="govuk-button buttonPositionRight govuk-button--secondary" data-module="govuk-button" onclick="window.location.href='#'">
+        Update application
+      </button>
 
 
     </div>
+
+
+    <!-- <div class="govuk-grid-column-full">
+        <span class="govuk-caption-m">Title number</span>
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-0">
+            E17-44Q
+        </h1>
+    </div> -->
+
 
     <!-- Application progress visual -->
     <div class="govuk-grid-column-full">
@@ -105,7 +131,7 @@ display:none;
             </summary>
             <div class="govuk-details__text">
                 <div class="progressGraphicMiddle">
-                    <img src="/public/images/applicationProgress_cancelled.png" class="progressGraphic" alt="documentGrey" style="">
+                    <img src="/public/images/applicationProgress_HMLRtoReview.png" class="progressGraphic" alt="documentGrey" style="">
                 </div>
             </div>
 
@@ -117,6 +143,7 @@ display:none;
 
 
     <div class="govuk-grid-column-one-half expandedLeftColumn">
+
 
         <!-- Application details -->
         <details class="govuk-details" data-module="govuk-details" open>
@@ -131,32 +158,32 @@ display:none;
 
                     <div class="ContentItem">
                         <span class="govuk-caption-m">Title number</span>
-                        <h3 class="govuk-heading-m">PL893723</h3>
+                        <h3 class="govuk-heading-m">E17-44Q</h3>
                     </div>
 
                     <div class="ContentItem">
                         <span class="govuk-caption-m">Application type</span>
-                        <h3 class="govuk-heading-m">New lease</h3>
+                        <h3 class="govuk-heading-m">Register update</h3>
                     </div>
 
                     <div class="ContentItem">
                         <span class="govuk-caption-m">HMLR reference</span>
-                        <h3 class="govuk-heading-m">LP890347</h3>
+                        <h3 class="govuk-heading-m">S827LKJ</h3>
                     </div>
 
-                    <div class="ContentItem">
+                    <!-- <div class="ContentItem">
                         <span class="govuk-caption-m">Status</span>
                         <h3 class="govuk-heading-m">Priority Protected - Awaiting Processing</h3>
-                    </div>
+                    </div> -->
 
                     <div class="ContentItem">
                         <span class="govuk-caption-m">Customer reference</span>
-                        <h3 class="govuk-heading-m">PLTR.Thompson</h3>
+                        <h3 class="govuk-heading-m">Hampton.Jones44</h3>
                     </div>
 
                     <div class="ContentItem">
                         <span class="govuk-caption-m">Parent Titles</span>
-                        <h3 class="govuk-heading-m">TU90833</h3>
+                        <h3 class="govuk-heading-m">PPL89232</h3>
                     </div>
                     
                     <!-- <div class="ContentItem">
@@ -166,12 +193,12 @@ display:none;
 
                     <div class="ContentItem">
                         <span class="govuk-caption-m">Received by HMLR</span>
-                        <h3 class="govuk-heading-m">15/05/22</h3>
+                        <h3 class="govuk-heading-m">06/08/22</h3>
                     </div>
 
                     <div class="ContentItem">
                         <span class="govuk-caption-m">Estimated completion date</span>
-                        <h3 class="govuk-heading-m">19/09/22</h3>
+                        <h3 class="govuk-heading-m">19/11/22</h3>
                     </div>
 
                 </div>
@@ -181,39 +208,39 @@ display:none;
         <!-- Application notes -->
         <details class="govuk-details" data-module="govuk-details" open>
             <summary class="govuk-details__summary">
-            <span class="govuk-details__summary-text" >
+                <span class="govuk-details__summary-text" >
                 Application notes
-            </span>
+                </span>
             </summary>
             <div class="govuk-details__text">
-            <div style="padding-top: 10px;">
-                <div class="note">
-                    <div class="noteBottom">
-                        <div class="noteName">John James (you) <span style="font-weight:400;">- 06/05/22 at 09:44</span></div>
-                        <div class="noteText">I’ve been able to reply to point one, points two and three are still oustanding</div>
+                <div style="padding-top: 10px;">
+                    <div class="note">
+                        <div class="noteBottom">
+                            <div class="noteName">John James (you) <span style="font-weight:400;">- 06/05/22 at 09:44</span></div>
+                            <div class="noteText">I’ve been able to reply to point one, points two and three are still oustanding</div>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div>
-                <div class="note">
-                    <div class="noteBottom">
-                        <div class="noteName">Jill Peterson <span style="font-weight:400;">- 06/05/22 at 15:22</span></div>
-                        <div class="noteText">We can reply to this after we hear back from Harold</div>
+                <div>
+                    <div class="note">
+                        <div class="noteBottom">
+                            <div class="noteName">Jill Peterson <span style="font-weight:400;">- 06/05/22 at 15:22</span></div>
+                            <div class="noteText">We can reply to this after we hear back from Harold</div>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div id="noteList">
-            </div>
-            
-            <div id="noteEntry" style="padding-top:10px;">
-                <div id="middleNE">
-                    <input class="govuk-input" id="noteText" placeholder="Type your note here..."></input>
+                <div id="noteList">
                 </div>
+                
+                <div id="noteEntry" style="padding-top:10px;">
+                    <div id="middleNE">
+                        <input class="govuk-input" id="noteText" placeholder="Type your note here..."></input>
+                    </div>
 
-                <button id="saveBut" class="govuk-button" data-module="govuk-button" style="margin-right:0px;margin-top:20px;margin-bottom:20px;" onclick="show_now();">
-                    Save note
-                </button>
+                    <button id="saveBut" class="govuk-button" data-module="govuk-button" style="margin-right:0px;margin-top:20px;margin-bottom:20px;" onclick="show_now();">
+                        Save note
+                    </button>
 
 
             
@@ -224,8 +251,11 @@ display:none;
 
     </div>
 
-      <div class="govuk-grid-column-one-half expandedRightColumn">
-          
+    <div class="govuk-grid-column-one-half expandedRightColumn">
+        
+
+
+
         <!-- Correspondence -->
         <details class="govuk-details" data-module="govuk-details" open>
             <summary class="govuk-details__summary">
@@ -233,8 +263,20 @@ display:none;
                 Correspondence
             </span>
             </summary>
-            <div class="govuk-details__text">
+            <div class="govuk-details__text" style="padding-bottom:0px;">
                 <div class="contentSection">
+
+                    <div class="ContentItem">
+                        <span class="govuk-caption-m">HMLR to review</span>
+                        <ul class="correspondence">
+                            <li>
+                                <a target="_blank" href="/public/documents/userResearchRequisition.pdf">Requisition issued 13/07/22</a>
+                            </li>
+                            <!-- <li>
+                                <a target="_blank" href="#">Letter issued 12/08/22</a>
+                            </li> -->
+                        </ul>
+                    </div>
 
                     <div class="ContentItem">
                         <span class="govuk-caption-m">Requisition resolved</span>
@@ -243,21 +285,22 @@ display:none;
 
                     <div class="ContentItem">
                         <span class="govuk-caption-m">Information only</span>
-                        <h3 class="govuk-heading-m">
+                        
                             <ul class="correspondence">
                                 <li>
-                                    <a target="_blank" href="#">Letter of cancellation issued 22/09/22</a>
+                                    <a target="_blank" href="#">Letter of cancellation issued 15/08/22</a>
                                 </li>
                                 <li>
-                                    <a target="_blank" href="#">Letter issued 22/09/22</a>
+                                    <a target="_blank" href="#">Letter issued 12/08/22</a>
                                 </li>
                             </ul>
-                        </h3>
+                        
                     </div>
 
                 </div>
             </div>
         </details>
+
 
         <!-- Files -->
         <details class="govuk-details" data-module="govuk-details" open>
@@ -268,16 +311,19 @@ display:none;
             </summary>
             <div class="govuk-details__text" style="padding-bottom:20px;">
                 <div class="contentSection">
-
-                        <div class="expandedText" style="line-height: 30px;">
+                    <h3 class="govuk-heading-m">-</h3>
+                        <!-- <div class="expandedText" style="line-height: 30px;">
                             <a class="requisitionLink" target="_blank" href="#">Cancellation</a>
-                        </div>
+                        </div> -->
+                        <!-- <div class="expandedText" style="line-height: 30px;">
+                            Empty
+                        </div> -->
 
                 </div>
             </div>
         </details>
 
-      </div>
+    </div>
 
 
 

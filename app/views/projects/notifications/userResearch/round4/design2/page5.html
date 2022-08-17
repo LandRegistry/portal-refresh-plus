@@ -17,22 +17,18 @@
     stepByStepNavigation.start($element)
   </script>
 
-  <!-- <script>
+  <script>
     for (let i = 1; i <= 3; i++) {
   const row = document.getElementById(`application-${i}`);
   row.addEventListener("click", () => {
     window.location.href = `applications/application-${i}`;
   });
 }
-  </script> -->
-
-
-
+  </script>
 
 {% endblock %}
 
 <style>
-      [data-href] { cursor: pointer; }
 
     .js-enabled .govuk-tabs__tab {
         font-size: clamp(1.4rem, -0.4333rem + 2.4444vw, 2.5rem);
@@ -309,12 +305,12 @@
           </li>
           <li class="govuk-tabs__list-item">
             <a class="govuk-tabs__tab" href="#requiresAction">
-              Requires action (1)
+              Requires action (0)
             </a>
           </li>
           <li class="govuk-tabs__list-item">
             <a class="govuk-tabs__tab" href="#inReview">
-                HMLR to review (3)
+                HMLR to review (4)
             </a>
           </li>
         </ul>
@@ -679,29 +675,7 @@
                 {% macro rows(page) %}
              
                
-                <!-- Requires action Application 1 -->
-                <tbody class="govuk-table__body">
-                    <tr class="govuk-table__row govuk-link-table" id="application-11" onclick="window.location='applications/application-11';">
-          
-                        <td class="govuk-table__cell " scope="row">
-                            E17-44Q 
-                           <p class="govuk-visually-hidden"> E17-44Q  </p>
-                           <!-- THIS IS PAGE {{page}} -->
-                        </td>
-                        <td class="govuk-table__cell ">Hampton.Jones44</td>
-                        <td class="govuk-table__cell Substantive" id="">
-                           Register update
-                           <p class="govuk-visually-hidden"> RegisterUpdate Delayed </p>
-                        </td>
-                        <td class="govuk-table__cell " scope="row" data-sortable="2022-06-06">06/06/22</td>
-                        <td class="govuk-table__cell " scope="row">Requires action</td>
-                        <td class="govuk-table__cell "  data-sortable="0">06/09/22</td>
-                        <td class="govuk-table__cell" scope="row"><a class="" href="applications/application-11.html">View</a></td>
-          
-                    </tr>
 
-
-                </tbody>
           
 
                 {% endmacro %}
@@ -715,7 +689,7 @@
                 
                 
                         <div>
-                        Displaying 1 - 1 of 1 applications
+                        Displaying 0 - 0 of 0 applications
                         </div>
                 
                         <div style="padding-left:30px;">
@@ -764,6 +738,32 @@
                 {% macro rows(page) %}
              
                
+
+                <!-- Requires action Application 1 -->
+                <tbody class="govuk-table__body">
+                    <tr class="govuk-table__row govuk-link-table" id="application-11replied" onclick="window.location='applications/application-11replied';">
+          
+                        <td class="govuk-table__cell " scope="row">
+                            E17-44Q 
+                           <p class="govuk-visually-hidden"> E17-44Q  </p>
+                           <!-- THIS IS PAGE {{page}} -->
+                        </td>
+                        <td class="govuk-table__cell ">Hampton.Jones44</td>
+                        <td class="govuk-table__cell Substantive" id="">
+                           Register update
+                           <p class="govuk-visually-hidden"> RegisterUpdate Delayed </p>
+                        </td>
+                        <td class="govuk-table__cell " scope="row" data-sortable="2022-06-06">06/06/22</td>
+                        <td class="govuk-table__cell " scope="row">HMLR to review</td>
+                        <td class="govuk-table__cell "  data-sortable="0">06/09/22</td>
+                        <td class="govuk-table__cell" scope="row"><a class="" href="applications/application-11replied.html">View</a></td>
+          
+                    </tr>
+
+
+                </tbody>
+
+
                 <!-- In review Application 1 -->
                 <tbody class="govuk-table__body">
                     <tr class="govuk-table__row govuk-link-table" id="application-12" onclick="window.location='applications/application-12';">
@@ -852,7 +852,7 @@
          
          
                 <div>
-                Displaying 1 - 3 of 3 applications
+                Displaying 1 - 4 of 4 applications
                 </div>
         
                 <div style="padding-left:30px;">
