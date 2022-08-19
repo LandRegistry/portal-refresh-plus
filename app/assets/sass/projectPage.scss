@@ -27,7 +27,7 @@
 }
 
 .simpleListNumbered li {
-padding-bottom:10px;
+padding-bottom:20px;
 }
 
 
@@ -138,4 +138,11 @@ margin-bottom:5px;
 
 .backButton {
     padding-bottom:0px;
+}
+
+.actionableInsights {
+    padding: 30px 30px 10px 30px;
+    background: #f3f2f1;
+    max-width: 600px;
+    border-left:10px solid #b1b4b6;
 }
