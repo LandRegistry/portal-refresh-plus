@@ -736,9 +736,6 @@ tr:hover {
     padding-bottom: 5px;
 }
 
-.govuk-table {
-    border-collapse: inherit;
-}
 
 .govuk-table__header, .govuk-table__cell {
     border-bottom: 0px solid #b1b4b6;
@@ -828,51 +825,6 @@ color:#0b0c0c;
     font-size:19px;
 }
 
-.js-enabled .govuk-tabs__panel {
-    padding: 0px;
-    border: 0px solid #b1b4b6;
-    padding-top: 20px;
-    background: #ffffffff;
-}
-
-.js-enabled .govuk-tabs__list {
-    margin-bottom: 0;
-    border-bottom: 0px solid #b1b4b6;
-}
-
-.js-enabled .govuk-tabs__list-item--selected {
-    position: relative;
-    margin-top: 0px;
-    margin-bottom: 0px;
-    padding-top: 14px;
-    padding-right: 20px;
-    padding-bottom: 14px;
-    padding-left: 20px;
-    border: 0px solid #b1b4b6;
-    border-bottom: 0;
-    background-color: #ffffff;
-}
-
-.js-enabled .govuk-tabs__list-item {
-    padding: 14px 20px;
-}
-
-.js-enabled .govuk-tabs__tab {
-    margin-bottom: 0;
-    font-size: 36px;
-    font-weight: 600;
-    padding-left: 30px;
-    padding-right: 30px;
-}
-
-.govuk-tabs {
-    margin-bottom: 0px;
-    background: #f3f2f1;
-}
-
-.govuk-tabs {
-    margin-top: 0px;
-}
 
 .expandedApplicationSectionTop {
     border-bottom:5px solid #28a45c;
@@ -1155,10 +1107,6 @@ h4 {
     box-shadow: 0 1px 1px rgba(0,0,0,0.5);
 }
 
-.govuk-tabs {
-    margin-bottom: 0px;
-    background: unset;
-}
 
 .stepByStep {
     display: flex;
@@ -1387,6 +1335,68 @@ padding: 0px 15px 0px 30px;
 
     }
 
+
+    .js-enabled .govuk-tabs__tab {
+        font-size: 24px;
+        font-weight: 600;
+        padding: 0px;
+    }
+
+    .js-enabled .govuk-tabs__list-item {
+        padding: 10px 20px;
+    }
+
+    .js-enabled .govuk-tabs__list-item--selected {
+        position: relative;
+        margin-top: -5px;
+        margin-bottom: -1px;
+        padding-top: 14px;
+        padding-right: 19px;
+        padding-bottom: 16px;
+        padding-left: 19px;
+        border: 1px solid #b1b4b6;
+        border-bottom: 0;
+        background-color: #ffffff;
+    }
+
+    .js-enabled .govuk-tabs__list {
+        margin-bottom: 0;
+        border-bottom: 1px solid #b1b4b6;
+    }
+
+
+
+    .js-enabled .govuk-tabs__panel {
+        padding: 0px;
+        border: 0px solid #b1b4b6;
+        padding: 30px;
+        background: #ffffffff;
+        border-left: 1px solid #b1b4b6;
+        border-right: 1px solid #b1b4b6;
+        border-bottom: 1px solid #b1b4b6;
+    }
+
     .govuk-table__header {
         vertical-align: top;
+    }
+    
+    .govuk-table__header, .govuk-table__cell {
+        padding: 10px;
+    }
+    
+    .no-sort-header {
+    
+        padding: 10px;
+    }
+
+    tr {
+        border-bottom: 1px solid #dddddd;
+    }
+    
+    tr:hover {
+        cursor: pointer;
+    }
+
+    .paginationDesign {
+        padding: 30px 0px 0px 15px;
     }

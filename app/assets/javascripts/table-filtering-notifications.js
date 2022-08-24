@@ -1,11 +1,8 @@
 (function () {
-  var table = document.querySelector('.my-work')
+  var table = document.querySelector('.filterTable')
   var rows = table.querySelectorAll('tbody');
   var page = 0;
   var rpp = 10;
-  var pagination = document.getElementById('pagination')
-
-
 
 
   function filterTable(value, columns, classesToHide) {
@@ -51,6 +48,7 @@
 
   // Bind filtering functionality to search box
   var searchBox = document.getElementById('search-input')
+  var applicationGroup = document.getElementById('application-group')
   var applicationType = document.getElementById('application-type2')
   var applicationProgress = document.getElementById('application-progress2')
   var searchForm = document.getElementById('search')
@@ -64,9 +62,10 @@
 
 
   // Change handler on the checkboxes
+  applicationGroupCheckboxes = Array.prototype.slice.call(document.querySelectorAll('[name="application-group"]'));
   applicationProgressCheckboxes = Array.prototype.slice.call(document.querySelectorAll('[name="application-progress2"]'));
   applicationTypeCheckboxes = Array.prototype.slice.call(document.querySelectorAll('[name="application-type2"]'));
-  applicationProgressCheckboxes.concat(applicationTypeCheckboxes).forEach(function(checkbox, index) {
+  applicationProgressCheckboxes.concat(applicationTypeCheckboxes, applicationGroupCheckboxes).forEach(function(checkbox, index) {
     checkbox.addEventListener('change', function(e) {
       updateSearch()
     })
@@ -86,42 +85,23 @@
     resetTable()
 
     if(searchBox.value.length >= 1) {
-      filterTable(searchBox.value, [1, 2])
+      filterTable(searchBox.value, [0,1,2,3,4,5,6,7])
     }
+
+    const applicationGroupChoices = getSelectedCheckboxValues(applicationGroupCheckboxes)
+    if (applicationGroupChoices.length >=1) {
+        filterTable(applicationGroupChoices, [4])}
 
     const applicationTypeChoices = getSelectedCheckboxValues(applicationTypeCheckboxes)
     if (applicationTypeChoices.length >=1) {
-        filterTable(applicationTypeChoices, [3])}
-
+        filterTable(applicationTypeChoices, [4])}
 
     const applicationProgressChoices = getSelectedCheckboxValues(applicationProgressCheckboxes)
     if (applicationProgressChoices.length >=1) {
-        filterTable(applicationProgressChoices, [3])}
+        filterTable(applicationProgressChoices, [4])}
 
 
 
-// //     // paginate
-//     resultSet = Array.prototype.slice.call(rows).filter(function(row) {
-//       return !row.classList.contains('govuk-visually-hidden')
-//     })
-//
-//     // Only paginate if we've got enough
-//     if(resultSet.length > rpp) {
-//       // Find the rows that are not on the current page, and hide them
-//       previousPageRows = resultSet.slice(0, page * rpp)
-//       subsequentPageRows = resultSet.slice((page + 1) * rpp)
-//
-//
-//       previousPageRows.concat(subsequentPageRows).forEach(function(row) {
-//         row.classList.add('govuk-visually-hidden')
-//       })
-//     }
-//
-//     renderPagination(resultSet)
-
-    // if (hideViewed.checked) {
-    //     hideViewedRows()
-    // }
   }
 
   // Do an initial search on page load
@@ -139,29 +119,6 @@
     })
     // hideViewed.checked = false
   })
-
-  // // Pagination control
-  // function renderPagination(resultSet) {
-  //
-  //   var totalPages = Math.ceil(resultSet.length / rpp)
-  //   pagination.innerHTML = ''
-  //   if(totalPages > 1) {
-  //     var link
-  //     for(i=0; i<totalPages; i++) {
-  //         link = document.createElement('a')
-  //         link.textContent = i + 1
-  //         link.href = '#'
-  //         link.style.marginRight = '10px'
-  //         link.setAttribute('data-page', i)
-  //         link.addEventListener('click', function(e) {
-  //           e.preventDefault()
-  //           page = parseInt(this.getAttribute('data-page'))
-  //           updateSearch()
-  //         })
-  //         pagination.appendChild(link)
-  //     }
-  //   }
-  // }
 
 
 
@@ -184,21 +141,3 @@
 
 })()
 
-
-
-// var coll = document.getElementsByClassName("filter");
-// var i;
-//
-// for (i = 0; i < coll.length; i++) {
-//   coll[i].addEventListener("click", function() {
-//     this.classList.toggle("active");
-//     var content = this.nextElementSibling;
-//     if (content.style.display === "block") {
-//       content.style.display = "none";
-//     } else {
-//       content.style.display = "block";
-//     }
-//   });
-// }
-
-// table filter icons //

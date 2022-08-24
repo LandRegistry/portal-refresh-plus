@@ -6,18 +6,8 @@
 {% endfor %}
 
 <script src="/public/javascripts/application.js"></script>
-<script src="/public/javascripts/table-filtering.js"></script>
-<script src="/public/javascripts/expandy-rows.js"></script>
-<!-- <script src="/public/javascripts/expandy-rows-original.js"></script> -->
-<script src="/public/javascripts/sortable-table.js"></script>
+<script src="/public/javascripts/sortable-table-new.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-<script src="/public/javascripts/AddTeam-members-project.js" defer></script>
-<script src="/public/javascripts/expandablePictures.js"></script>
-<script src="/public/javascripts/notificationBannerHide.js"></script>
-<script src="/public/javascripts/inReviewBannerHide.js"></script>
-<script src="/public/javascripts/addNotes.js"></script>
-<script src="/public/javascripts/Official-copies-documents.js" defer></script>
 
 {% if useAutoStoreData %}
   <script src="/public/javascripts/auto-store-data.js"></script>
@@ -90,6 +80,27 @@ SearchDropdown.prototype.render = function(decorated) {
   });
   </script>
 
-
+<script>
+  function filter(event, tableId, filterCol) {
+    let checkboxes = document.getElementsByTagName("input");
+    let rows = document.getElementById(tableId).getElementsByTagName("tr");
+    for(let r = 0;r<rows.length;r++){
+      let cols = rows[r].querySelectorAll(filterCol);
+      rows[r].style = "display: table-row";
+      for(let i = 0;i<checkboxes.length;i++){
+        let value = checkboxes[i].value.toLocaleUpperCase();
+        for(let c= 0; c<cols.length;c++){
+          let cvalue = cols[c].innerText.toLocaleUpperCase();
+          if(cvalue === value && checkboxes[i].checked === false){
+            rows[r].style = "display: none";
+          }
+        }
+      }
+    }
+  }
+  
+  document.querySelectorAll([".option1",".option3"]).forEach(input => input.addEventListener('input', ()=>filter(event,"listingTable",[".check1",".check3"])));
+  
+  </script>
 
   <!-- Content Area - End -->
