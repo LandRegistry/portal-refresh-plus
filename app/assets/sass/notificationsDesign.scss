@@ -574,53 +574,6 @@ a:focus { color:#000000 !important;}
 }
 
 
-.my-work2 tbody tr:hover {
-    cursor: pointer;
-}
-
-.my-work2 thead th:hover {
-    cursor: default;
-}
-
-.my-work2 tr.expandy-row:hover {
-    background-color: transparent;
-    cursor: default;
-}
-
-.my-work2 {
-    font-size: 14pt;
-}
-
-.my-work2 tbody td {
-    border-bottom: 0;
-    border-top: 1px solid #ddd;
-}
-
-.my-work2 tbody tr {}
-
-.my-work2 .viewed td {
-    font-weight: normal;
-}
-
-.my-work2 tr+.expandy-row td {
-    border-top: 0;
-}
-
-.my-work2 .openarrow {
-    display: none;
-}
-
-.my-work2 .closedarrow {
-    display: block;
-}
-
-.my-work2 tr.open .openarrow {
-    display: block;
-}
-
-.my-work2 tr.open .closedarrow {
-    display: none;
-}
 
 .expandy-row-trigger2 {
     text-decoration: none;
@@ -1390,3 +1343,6 @@ padding: 0px 15px 0px 30px;
     .govuk-table__header {
         vertical-align: top;
     }
+
+
+  

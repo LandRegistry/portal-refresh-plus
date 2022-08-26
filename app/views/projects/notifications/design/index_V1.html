@@ -312,8 +312,8 @@
             <tbody class="govuk-table__body">
               <tr class="govuk-table__row govuk-link-table" id="application-1" onclick="window.location='applications/application-1';">
                   <td class="govuk-table__cell " scope="row">
-                     E23-66ABCD 
-                     <p class="govuk-visually-hidden"> E23-66ABCD </p>
+                     E23-66ED 
+                     <p class="govuk-visually-hidden"> E23-66ED </p>
                      <!-- THIS IS PAGE {{page}} -->
                   </td>
                   <td class="govuk-table__cell ">Jones.20313</td>
@@ -378,7 +378,7 @@
                     <!-- THIS IS PAGE {{page}} -->
                 </td>
                 <td class="govuk-table__cell ">Smith.20313</td>
-                <td class="govuk-table__cell Substantive" id="">Official Search of Whole with Priority<p class="govuk-visually-hidden"> Sobstantive Completed  </p></td>
+                <td class="govuk-table__cell Substantive" id="">Official Search of Whole<p class="govuk-visually-hidden"> Sobstantive Completed  </p></td>
                 <td class="govuk-table__cell " scope="row" data-sortable="2021-05-14">14/05/21</td>
                 <td class="govuk-table__cell " scope="row">Completed</td>
                 <td class="govuk-table__cell "  data-sortable="0"></td>
@@ -399,7 +399,7 @@
                 </td>
     
                 <td class="govuk-table__cell ">PTON.Cage.56 </td>
-                <td class="govuk-table__cell Substantive" id="">Official Search of Whole with Priority<p class="govuk-visually-hidden"> Sobstantive Completed  </p></td>
+                <td class="govuk-table__cell Substantive" id="">Official Search of Whole<p class="govuk-visually-hidden"> Sobstantive Completed  </p></td>
                 <td class="govuk-table__cell " scope="row" data-sortable="2021-05-14">14/05/21</td>
                 <td class="govuk-table__cell " scope="row">Completed</td>
                 <td class="govuk-table__cell "  data-sortable="0"></td>
@@ -545,6 +545,85 @@
         <!-- Requires action tab content -->
         <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="requiresAction">
 
+          <table  class="govuk-table my-work" style="margin-top: 0px; ">
+
+            <div id="cookie_box" class="requisitionNotificationBanner">
+              <div class="govuk-warning-text">
+                  <span class="govuk-warning-text__icon" aria-hidden="true" style="margin-top: -7px;">!</span>
+                  <strong class="govuk-warning-text__text">
+                  <span class="govuk-warning-text__assistive">Warning</span>
+                  <p class="notificationWarningText">These types of applications require you to reply to requisitions, in order to progress them.</p></strong>
+                  <button class="govuk-button hideNotificationButton cookie_box_close" data-module="govuk-button" onclick="window.location.href='#'">
+                      Hide this message
+                  </button>
+              </div>
+          </div>
+
+            <thead class="govuk-table__head">
+                <tr class="govuk-table__row" style="background-color: #ffffff;">
+                   <th class="govuk-table__header sortable" scope="col" id="Title">
+                      <button>Title number<span></span></button>
+                   </th>
+                   <th class="govuk-table__header sortable" scope="col">
+                      <button>Customer reference<span></span></button>
+                   </th>
+                   <th class="govuk-table__header" scope="col">Application type</th>
+                   <th class="govuk-table__header sortable sortable--desc" scope="col">
+                      <button>Received by HMLR<span></span></button>
+                   </th>
+                   <th class="govuk-table__header" scope="col">Application progress</th>
+                   <th class="govuk-table__header" scope="col">
+                      <div>Estimated completion date <a style="font-size:12px;display:block;position:absolute;" href="V1-help#ecd" target="_blank">What's this?</a></div>
+                   </th>
+                   <th class="govuk-table__header"scope="col"></th>
+                </tr>
+             </thead>
+            {% macro rows(page) %}
+         
+    
+            <!-- Application 11 -->
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row govuk-link-table" id="application-1" onclick="window.location='applications/application-11';">
+                  <td class="govuk-table__cell " scope="row">
+                    E17-44Q 
+                     <p class="govuk-visually-hidden"> E17-44Q  </p>
+                     <!-- THIS IS PAGE {{page}} -->
+                  </td>
+                  <td class="govuk-table__cell ">Hampton.Jones44</td>
+                  <td class="govuk-table__cell Substantive" id="">
+                     Register Update
+                     <p class="govuk-visually-hidden"> Preliminary RequiresAction </p>
+                  </td>
+                  <td class="govuk-table__cell " scope="row" data-sortable="2022-06-06">06/06/22</td>
+                  <td class="govuk-table__cell " scope="row">Requires action</td>
+                  <td class="govuk-table__cell "  data-sortable="0">06/09/22</td>
+                  <td class="govuk-table__cell" scope="row"><a class="" href="applications/application-11">View</a></td>
+               </tr>
+    
+            </tbody>
+    
+
+    
+    
+    
+            {% endmacro %}
+            {{rows(1)}}
+            {# {{rows(2)}}
+            {{rows(3)}}
+            {{rows(4)}}
+            {{rows(5)}} #}
+         </table>
+                    
+        
+        
+             <div class="govuk-body paginationDesign" style="">
+                <div>
+                Displaying 1 - 1 of 1 applications
+                </div>
+                <div style="padding-left:30px;">
+                  <span>«</span> 1 <span>»</span>
+                </div>
+            </div>
             
       
         </div>
@@ -553,7 +632,127 @@
         <!-- In review tab content -->
         <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="inReview">
 
-            
+          <table  class="govuk-table hmlrToReview" style="margin-top: 0px; ">
+
+            <div id="inReview_box" class="requisitionNotificationBanner">
+              <div class="govuk-warning-text">
+                  <span class="govuk-warning-text__icon" aria-hidden="true" style="margin-top: -7px;">!</span>
+                  <strong class="govuk-warning-text__text">
+                  <span class="govuk-warning-text__assistive">Warning</span>
+                  <p class="notificationWarningText">We'll review your application and update the status. If we need more information we'll contact you.</p></strong>
+                  <button class="govuk-button hideNotificationButton inReview_box_close" data-module="govuk-button" onclick="window.location.href='#'">
+                      Hide this message
+                  </button>
+              </div>
+          </div>
+
+            <thead class="govuk-table__head">
+                <tr class="govuk-table__row" style="background-color: #ffffff;">
+                   <th class="govuk-table__header sortable" scope="col" id="Title">
+                      <button>Title number<span></span></button>
+                   </th>
+                   <th class="govuk-table__header sortable" scope="col">
+                      <button>Customer reference<span></span></button>
+                   </th>
+                   <th class="govuk-table__header" scope="col">Application type</th>
+                   <th class="govuk-table__header sortable sortable--desc" scope="col">
+                      <button>Received by HMLR<span></span></button>
+                   </th>
+                   <th class="govuk-table__header" scope="col">Application progress</th>
+                   <th class="govuk-table__header" scope="col">
+                      <div>Estimated completion date <a style="font-size:12px;display:block;position:absolute;" href="V1-help#ecd" target="_blank">What's this?</a></div>
+                   </th>
+                   <th class="govuk-table__header"scope="col"></th>
+                </tr>
+             </thead>
+            {% macro rows(page) %}
+         
+    
+            <!-- Application 12 -->
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row govuk-link-table" id="application-1" onclick="window.location='applications/application-12';">
+                  <td class="govuk-table__cell " scope="row">
+                    LR891237
+                     <p class="govuk-visually-hidden"> LR891237  </p>
+                     <!-- THIS IS PAGE {{page}} -->
+                  </td>
+                  <td class="govuk-table__cell ">Baker.Smith.12</td>
+                  <td class="govuk-table__cell Substantive" id="">
+                     Register Update
+                     <p class="govuk-visually-hidden"> Preliminary HMLRtoReview </p>
+                  </td>
+                  <td class="govuk-table__cell " scope="row" data-sortable="2022-06-05">05/06/22</td>
+                  <td class="govuk-table__cell " scope="row">HMLR to review</td>
+                  <td class="govuk-table__cell "  data-sortable="0">06/09/22</td>
+                  <td class="govuk-table__cell" scope="row"><a class="" href="applications/application-12">View</a></td>
+               </tr>
+    
+            </tbody>
+
+            <!-- Application 13 -->
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row govuk-link-table" id="application-1" onclick="window.location='applications/application-13';">
+                  <td class="govuk-table__cell " scope="row">
+                    PP83792
+                      <p class="govuk-visually-hidden"> PP83792  </p>
+                      <!-- THIS IS PAGE {{page}} -->
+                  </td>
+                  <td class="govuk-table__cell ">Cullen.Potts.61</td>
+                  <td class="govuk-table__cell Substantive" id="">
+                      Register Update
+                      <p class="govuk-visually-hidden"> Preliminary HMLRtoReview </p>
+                  </td>
+                  <td class="govuk-table__cell " scope="row" data-sortable="2022-06-04">04/06/22</td>
+                  <td class="govuk-table__cell " scope="row">HMLR to review</td>
+                  <td class="govuk-table__cell "  data-sortable="0">04/10/22</td>
+                  <td class="govuk-table__cell" scope="row"><a class="" href="applications/application-13">View</a></td>
+                </tr>
+    
+            </tbody>
+
+            <!-- Application 14 -->
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row govuk-link-table" id="application-1" onclick="window.location='applications/application-14';">
+                  <td class="govuk-table__cell " scope="row">
+                    ST786498
+                     <p class="govuk-visually-hidden"> ST786498  </p>
+                     <!-- THIS IS PAGE {{page}} -->
+                  </td>
+                  <td class="govuk-table__cell ">Jacob.Kellen.76</td>
+                  <td class="govuk-table__cell Substantive" id="">
+                     Register Update
+                     <p class="govuk-visually-hidden"> Preliminary HMLRtoReview </p>
+                  </td>
+                  <td class="govuk-table__cell " scope="row" data-sortable="2022-05-22">22/05/22</td>
+                  <td class="govuk-table__cell " scope="row">HMLR to review</td>
+                  <td class="govuk-table__cell "  data-sortable="0">22/07/22</td>
+                  <td class="govuk-table__cell" scope="row"><a class="" href="applications/application-14">View</a></td>
+               </tr>
+    
+            </tbody>
+    
+
+    
+    
+    
+            {% endmacro %}
+            {{rows(1)}}
+            {# {{rows(2)}}
+            {{rows(3)}}
+            {{rows(4)}}
+            {{rows(5)}} #}
+         </table>
+                    
+        
+        
+             <div class="govuk-body paginationDesign" style="">
+                <div>
+                Displaying 1 - 1 of 1 applications
+                </div>
+                <div style="padding-left:30px;">
+                  <span>«</span> 1 <span>»</span>
+                </div>
+            </div>
       
         </div>
 
