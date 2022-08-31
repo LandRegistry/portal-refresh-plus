@@ -161,3 +161,53 @@ th.govuk-table__header.sortable button:hover {
 }
 
 
+  
+.hmlrToReview tbody tr:hover {
+    cursor: pointer;
+}
+
+.hmlrToReview thead th:hover {
+    cursor: default;
+}
+
+.hmlrToReview tr.expandy-row:hover {
+    background-color: transparent;
+    cursor: default;
+}
+
+.mhmlrToReview {
+    font-size: 14pt;
+}
+
+.hmlrToReview tbody td {
+    border-bottom: 1px solid #b1b4b6;
+    border-top: 0px solid #b1b4b6;
+}
+
+.hmlrToReview .viewed td {
+    font-weight: normal;
+}
+
+.hmlrToReview tr+.expandy-row td {
+    border-top: 0;
+}
+
+.hmlrToReview .openarrow {
+    display: none;
+}
+
+.hmlrToReview .closedarrow {
+    display: block;
+}
+
+.hmlrToReview tr.open .openarrow {
+    display: block;
+}
+
+.hmlrToReview tr.open .closedarrow {
+    display: none;
+}
+
+.hmlrToReview {
+    font-size: 14pt;
+}
