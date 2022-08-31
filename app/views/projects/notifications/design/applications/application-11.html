@@ -67,7 +67,9 @@ display:none;
 
 }
 
-
+.accordionGraphic {
+        padding:30px 0px !important;
+    }
 </style>
 
 
@@ -81,7 +83,7 @@ display:none;
     <!-- Back button -->
     <div class="govuk-grid-column-one-third">
         
-        <p><a href="/projects/notifications/userResearch/round4/design2/page2#requiresAction" class="govuk-back-link">Back to applications</a></p>
+        <p><a href="javascript: history.go(-1)" class="govuk-back-link">Back to applications</a></p>
 
     </div>
 
@@ -121,7 +123,7 @@ display:none;
     <!-- Application progress visual -->
     <div class="govuk-grid-column-full">
 
-      <div class="expandedApplicationProgress restyledAccordion" style="margin:30px 0px;">
+      <div class="expandedApplicationProgress restyledAccordion" style="margin:0px 0px 30px 0px;">
 
         <details class="govuk-details" data-module="govuk-details" open>
             <summary class="govuk-details__summary">
@@ -129,7 +131,7 @@ display:none;
                 Application progress
               </span>
             </summary>
-            <div class="govuk-details__text">
+            <div class="govuk-details__text accordionGraphic">
                 <div class="progressGraphicMiddle">
                     <img src="/public/images/applicationProgress_requiresAction.png" class="progressGraphic" alt="documentGrey" style="">
                 </div>

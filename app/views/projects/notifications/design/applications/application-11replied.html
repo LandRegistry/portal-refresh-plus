@@ -67,6 +67,9 @@ display:none;
 
 }
 
+.accordionGraphic {
+        padding:30px 0px !Important;
+    }
 
 </style>
 
@@ -81,7 +84,7 @@ display:none;
     <!-- Back button -->
     <div class="govuk-grid-column-one-third">
         
-      <p><a href="/projects/notifications/userResearch/round4/design2/page5#inReview" class="govuk-back-link">Back to applications</a></p>
+        <p><a href="javascript: history.go(-1)" class="govuk-back-link">Back to applications</a></p>
 
     </div>
 
@@ -102,7 +105,7 @@ display:none;
         Application enquiry
       </button>
 
-      <button class="govuk-button buttonPositionRight govuk-button--secondary" data-module="govuk-button" onclick="window.location.href='#'">
+      <button class="govuk-button buttonPositionRight govuk-button--secondary" data-module="govuk-button" onclick="window.location.href='page3.html'">
         Update application
       </button>
 
@@ -121,15 +124,15 @@ display:none;
     <!-- Application progress visual -->
     <div class="govuk-grid-column-full">
 
-      <div class="expandedApplicationProgress restyledAccordion" style="margin:30px 0px;">
+      <div class="expandedApplicationProgress restyledAccordion" style="margin:0px 0px 30px 0px;">
 
         <details class="govuk-details" data-module="govuk-details" open>
             <summary class="govuk-details__summary">
-              <span class="govuk-details__summary-text" >
+              <span class="govuk-details__summary-text">
                 Application progress
               </span>
             </summary>
-            <div class="govuk-details__text">
+            <div class="govuk-details__text accordionGraphic">
                 <div class="progressGraphicMiddle">
                     <img src="/public/images/applicationProgress_HMLRtoReview.png" class="progressGraphic" alt="documentGrey" style="">
                 </div>
@@ -143,7 +146,6 @@ display:none;
 
 
     <div class="govuk-grid-column-one-half expandedLeftColumn">
-
 
         <!-- Application details -->
         <details class="govuk-details" data-module="govuk-details" open>
@@ -219,6 +221,7 @@ display:none;
                     <span class="govuk-warning-text__assistive">Warning</span>
                     <p>Only you and your colleagues can see these notes</p></strong>
                 </div>
+
                 <div style="padding-top: 10px;">
                     <div class="note">
                         <div class="noteBottom">
@@ -278,9 +281,6 @@ display:none;
                             <li>
                                 <a target="_blank" href="/public/documents/userResearchRequisition.pdf">Requisition issued 13/07/22</a>
                             </li>
-                            <!-- <li>
-                                <a target="_blank" href="#">Letter issued 12/08/22</a>
-                            </li> -->
                         </ul>
                     </div>
 
