@@ -66,21 +66,20 @@ display:none;
     font-weight: 600;
 
 }
-
 .contentBox {
-    border: 2px solid #0b0c0c;
+    border: 2px solid #f3f2f1;
 }
 
 .contentBoxHeader {
-    background: #0b0c0c;
+    background: #f3f2f1;
     width: 100%;
     display: inline-block;
     margin-bottom: 0px;
 }
 
 .contentBoxTitle {
-    background: #0b0c0c;
-    color: #ffffff;
+    background: #f3f2f1;
+    color: #0b0c0c;
     font-size: 24px;
     padding: 10px 20px;
     display: inline-block;
@@ -93,6 +92,16 @@ display:none;
     background: #ffffff; 
 }
 
+.contentSectionSingle {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.contentSectionSingle > div {
+    flex: 100%;
+    margin-bottom: 10px;
+    padding-right: 0%;
+}
 
 </style>
 
@@ -165,15 +174,138 @@ display:none;
     </div>
 
 
-    <div class="govuk-grid-column-one-half expandedLeftColumn">
-
-        <!-- Requisition issued -->
+    <div class="govuk-grid-column-two-thirds expandedLeftColumn">
 
 
+        <!-- Application details -->
         <div class="govuk-body contentBox" style="margin:0px 0px 30px 0px;">
 
             <div class="govuk-body contentBoxHeader">
                 <div class="contentBoxTitle">
+                    Application details
+                </div>
+            </div>
+            <div class="contentBoxContent">
+                <div class="contentSection">
+
+                    <div class="ContentItem">
+                        <span class="govuk-caption-m">Title number</span>
+                        <h3 class="govuk-heading-m">E17-44Q</h3>
+                    </div>
+
+                    <div class="ContentItem">
+                        <span class="govuk-caption-m">Application type</span>
+                        <h3 class="govuk-heading-m">Register update</h3>
+                    </div>
+
+                    <div class="ContentItem">
+                        <span class="govuk-caption-m">HMLR reference</span>
+                        <h3 class="govuk-heading-m">S827LKJ</h3>
+                    </div>
+
+                    <!-- <div class="ContentItem">
+                        <span class="govuk-caption-m">Status</span>
+                        <h3 class="govuk-heading-m">Priority Protected - Awaiting Processing</h3>
+                    </div> -->
+
+                    <div class="ContentItem">
+                        <span class="govuk-caption-m">Customer reference</span>
+                        <h3 class="govuk-heading-m">Hampton.Jones44</h3>
+                    </div>
+
+                    <div class="ContentItem">
+                        <span class="govuk-caption-m">Parent Titles</span>
+                        <h3 class="govuk-heading-m">PPL89232</h3>
+                    </div>
+                    
+                    <!-- <div class="ContentItem">
+                        <span class="govuk-caption-m">Priority period</span>
+                        <h3 class="govuk-heading-m">15/05/22</h3>
+                    </div> -->
+
+                    <div class="ContentItem">
+                        <span class="govuk-caption-m">Received by HMLR</span>
+                        <h3 class="govuk-heading-m">06/08/22</h3>
+                    </div>
+
+                    <div class="ContentItem" style="margin-bottom:0px;">
+                        <span class="govuk-caption-m">Estimated completion date</span>
+                        <h3 class="govuk-heading-m" style="margin-bottom:0px;">19/11/22</h3>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+
+
+        <!-- Application notes -->
+        <div class="govuk-body contentBox" style="margin:0px 0px 30px 0px;">
+
+            <div class="govuk-body contentBoxHeader">
+                <div class="contentBoxTitle">
+                    Application notes
+                </div>
+            </div>
+            <div class="contentBoxContent">
+
+                <div class="govuk-warning-text" >
+                    <span class="govuk-warning-text__icon" aria-hidden="true" style="margin-top: -7px;">!</span>
+                    <strong class="govuk-warning-text__text">
+                    <span class="govuk-warning-text__assistive">Warning</span>
+                    <p>Only you and your colleagues can see these notes</p></strong>
+                </div>
+
+                <div style="padding-top: 10px;">
+                    <div class="note">
+                        <div class="noteBottom">
+                            <div class="noteName">John James (you) <span style="font-weight:400;">- 06/05/22 at 09:44</span></div>
+                            <div class="noteText">I’ve been able to reply to point one, points two and three are still oustanding</div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="note">
+                        <div class="noteBottom">
+                            <div class="noteName">Jill Peterson <span style="font-weight:400;">- 06/05/22 at 15:22</span></div>
+                            <div class="noteText">We can reply to this after we hear back from Harold</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="noteList">
+                </div>
+                
+                <div id="noteEntry" style="padding-top:10px;">
+                    <div id="middleNE">
+                        <input class="govuk-input" id="noteText" placeholder="Type your note here..."></input>
+                    </div>
+
+                    <button id="saveBut" class="govuk-button" data-module="govuk-button" style="margin-right:0px;margin-top:20px;margin-bottom:0px;" onclick="show_now();">
+                        Save note
+                    </button>
+
+
+            
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+    <div class="govuk-grid-column-one-third expandedRightColumn">
+        
+
+        <!-- Requisition issued -->
+        <div class="govuk-body contentBox" style="margin:0px 0px 30px 0px;border:5px solid #d4351c;">
+
+            <div class="govuk-body contentBoxHeader" style="background: #d4351c;">
+                <div class="contentBoxTitle" style="background: #d4351c;color:#ffffff;">
                     Requisition issued
                 </div>
             </div>
@@ -277,128 +409,6 @@ display:none;
 
         </div>
 
-        <!-- Application notes -->
-        <div class="govuk-body contentBox" style="margin:0px 0px 30px 0px;">
-
-            <div class="govuk-body contentBoxHeader">
-                <div class="contentBoxTitle">
-                    Application notes
-                </div>
-            </div>
-            <div class="contentBoxContent">
-
-                <div class="govuk-warning-text" >
-                    <span class="govuk-warning-text__icon" aria-hidden="true" style="margin-top: -7px;">!</span>
-                    <strong class="govuk-warning-text__text">
-                    <span class="govuk-warning-text__assistive">Warning</span>
-                    <p>Only you and your colleagues can see these notes</p></strong>
-                </div>
-
-                <div style="padding-top: 10px;">
-                    <div class="note">
-                        <div class="noteBottom">
-                            <div class="noteName">John James (you) <span style="font-weight:400;">- 06/05/22 at 09:44</span></div>
-                            <div class="noteText">I’ve been able to reply to point one, points two and three are still oustanding</div>
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <div class="note">
-                        <div class="noteBottom">
-                            <div class="noteName">Jill Peterson <span style="font-weight:400;">- 06/05/22 at 15:22</span></div>
-                            <div class="noteText">We can reply to this after we hear back from Harold</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div id="noteList">
-                </div>
-                
-                <div id="noteEntry" style="padding-top:10px;">
-                    <div id="middleNE">
-                        <input class="govuk-input" id="noteText" placeholder="Type your note here..."></input>
-                    </div>
-
-                    <button id="saveBut" class="govuk-button" data-module="govuk-button" style="margin-right:0px;margin-top:20px;margin-bottom:0px;" onclick="show_now();">
-                        Save note
-                    </button>
-
-
-            
-
-                </div>
-
-            </div>
-
-        </div>
-
-
-    </div>
-
-    <div class="govuk-grid-column-one-half expandedRightColumn">
-        
-
-        <!-- Application details -->
-        <div class="govuk-body contentBox" style="margin:0px 0px 30px 0px;">
-
-            <div class="govuk-body contentBoxHeader">
-                <div class="contentBoxTitle">
-                    Application details
-                </div>
-            </div>
-            <div class="contentBoxContent">
-                <div class="contentSection">
-
-                    <div class="ContentItem">
-                        <span class="govuk-caption-m">Title number</span>
-                        <h3 class="govuk-heading-m">E17-44Q</h3>
-                    </div>
-
-                    <div class="ContentItem">
-                        <span class="govuk-caption-m">Application type</span>
-                        <h3 class="govuk-heading-m">Register update</h3>
-                    </div>
-
-                    <div class="ContentItem">
-                        <span class="govuk-caption-m">HMLR reference</span>
-                        <h3 class="govuk-heading-m">S827LKJ</h3>
-                    </div>
-
-                    <!-- <div class="ContentItem">
-                        <span class="govuk-caption-m">Status</span>
-                        <h3 class="govuk-heading-m">Priority Protected - Awaiting Processing</h3>
-                    </div> -->
-
-                    <div class="ContentItem">
-                        <span class="govuk-caption-m">Customer reference</span>
-                        <h3 class="govuk-heading-m">Hampton.Jones44</h3>
-                    </div>
-
-                    <div class="ContentItem">
-                        <span class="govuk-caption-m">Parent Titles</span>
-                        <h3 class="govuk-heading-m">PPL89232</h3>
-                    </div>
-                    
-                    <!-- <div class="ContentItem">
-                        <span class="govuk-caption-m">Priority period</span>
-                        <h3 class="govuk-heading-m">15/05/22</h3>
-                    </div> -->
-
-                    <div class="ContentItem">
-                        <span class="govuk-caption-m">Received by HMLR</span>
-                        <h3 class="govuk-heading-m">06/08/22</h3>
-                    </div>
-
-                    <div class="ContentItem" style="margin-bottom:0px;">
-                        <span class="govuk-caption-m">Estimated completion date</span>
-                        <h3 class="govuk-heading-m" style="margin-bottom:0px;">19/11/22</h3>
-                    </div>
-
-                </div>
-            </div>
-
-        </div>
-
 
         <!-- Correspondence -->
         <div class="govuk-body contentBox" style="margin:0px 0px 30px 0px;">
@@ -409,19 +419,19 @@ display:none;
                 </div>
             </div>
             <div class="contentBoxContent">
-                <div class="contentSection">
+                <div class="contentSectionSingle">
 
-                    <div class="ContentItem">
+                    <div class="ContentItemSingle">
                         <span class="govuk-caption-m">HMLR to review</span>
                         <h3 class="govuk-heading-m">-</h3>
                     </div>
 
-                    <div class="ContentItem">
+                    <div class="ContentItemSingle">
                         <span class="govuk-caption-m">Requisition resolved</span>
                         <h3 class="govuk-heading-m">-</h3>
                     </div>
 
-                    <div class="ContentItem" style="margin-bottom:0px;">
+                    <div class="ContentItemSingle" style="margin-bottom:0px;">
                         <span class="govuk-caption-m">Information only</span>
                         
                             <ul class="correspondence">
