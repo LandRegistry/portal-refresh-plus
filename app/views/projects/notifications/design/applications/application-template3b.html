@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+{% extends "layouts/layout_Notifications.html" %}
+{% block pageTitle %} View Applications
+{% endblock %}
+{% block content %}
+
+{% include "includes/notificationsNavigation2.html" %} 
+
+{% block pageScripts %}
+  <script src="/public/javascripts/step-by-step-nav.js"></script>
+  <script type="text/javascript">
+    var $element = $('#step-by-step-navigation')
+    var stepByStepNavigation = new GOVUK.Modules.AppStepNav()
+    stepByStepNavigation.start($element)
+  </script>
+{% endblock %}
+
+<style>
+
+.govuk-header {
+display:none;
+}
+
+.govuk-main-wrapper {
+    padding-top: 0px;
+    padding-bottom: 0px;
+    user-select:none;
+}
+
+.buttonPositionRight {
+  float:right;
+  margin-left: 15px;
+  margin-bottom:20px;;
+}
+
+.govuk-button-blue {
+  background-color: #1d70b8;
+}
+
+.govuk-button-blue:hover {
+  background-color: #003078;
+}
+
+.govuk-grid-column-one-half {
+    max-width: 715px;
+}
+
+.expandedTitles {
+    font-size: 19px;
+    line-height: 25px;
+}
+
+.contentSection > div {
+    flex: 48%;
+    margin-bottom: 10px;
+    padding-right: 2%;
+}
+
+/* .app-step-nav--large .app-step-nav__toggle-link {
+    display: none;
+} */
+
+.correspondence li {
+    font-size: 19px;
+    padding-bottom: 5px;
+    font-weight: 600;
+
+}
+.contentBox {
+    border: 2px solid #f3f2f1;
+}
+
+.contentBoxHeader {
+    background: #f3f2f1;
+    width: 100%;
+    display: inline-block;
+    margin-bottom: 0px;
+}
+
+.contentBoxTitle {
+    background: #f3f2f1;
+    color: #0b0c0c;
+    font-size: 24px;
+    padding: 10px 20px;
+    display: inline-block;
+    font-weight:600;
+    margin-bottom: 0px;
+}
+
+.contentBoxContent {
+    padding: 30px;
+    background: #ffffff; 
+}
+
+.contentSectionSingle {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.contentSectionSingle > div {
+    flex: 100%;
+    margin-bottom: 10px;
+    padding-right: 0%;
+}
+
+.accordionGraphic {
+        padding:30px 0px !Important;
+    }
+
+</style>
+
+
+<div style="margin: auto;max-width: 1400px;padding:50px 0px;">
+
+  <div class="govuk-grid-row restyledAccordion">
+    
+
+
+
+    <!-- Back button -->
+    <div class="govuk-grid-column-one-third">
+        
+        <p><a href="javascript: history.go(-1)" class="govuk-back-link">Back to applications</a></p>
+
+    </div>
+
+    <!-- Action buttons -->
+    <div class="govuk-grid-column-two-thirds" style="position:relative;">
+        
+        <div id="shareLinkText" class="copyLinkBox">
+            <p id="shareLinkTextLink" style="text-align: right;"></p>
+        </div>
+
+    <input id="shareLink" type="button" value="Share application link" class="govuk-button govuk-button-blue buttonPositionRight" data-module="govuk-button"/>
+
+      <button class="govuk-button buttonPositionRight govuk-button--secondary" data-module="govuk-button" onclick="window.location.href='#'">
+        Save as PDF
+      </button>
+
+      <button class="govuk-button buttonPositionRight govuk-button--secondary" data-module="govuk-button" onclick="window.location.href='#'">
+        Application enquiry
+      </button>
+
+      <button class="govuk-button buttonPositionRight govuk-button--secondary" data-module="govuk-button" onclick="window.location.href='page3.html'">
+        Update application
+      </button>
+
+
+    </div>
+
+
+    <!-- <div class="govuk-grid-column-full">
+        <span class="govuk-caption-m">Title number</span>
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-0">
+            E17-44Q
+        </h1>
+    </div> -->
+
+
+    <!-- Application progress visual -->
+    <div class="govuk-grid-column-full">
+
+        <div class="govuk-body contentBox" style="margin:0px 0px 30px 0px;">
+
+                <div class="contentBoxHeader">
+                    <div class="contentBoxTitle">
+                    Application progress
+                    </div>
+                </div>
+                <div class="contentBoxContent accordionGraphic">
+                    <div class="progressGraphicMiddle">
+                        <img src="/public/images/applicationProgress_requiresAction.png" class="progressGraphic" alt="documentGrey" style="">
+                    </div>
+                </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="govuk-grid-column-two-thirds expandedLeftColumn">
+
+
+        <!-- Application details -->
+        <div class="govuk-body contentBox" style="margin:0px 0px 30px 0px;">
+
+            <div class="govuk-body contentBoxHeader">
+                <div class="contentBoxTitle">
+                    Application details
+                </div>
+            </div>
+            <div class="contentBoxContent">
+                <div class="contentSection">
+
+                    <div class="ContentItem">
+                        <span class="govuk-caption-m">Title number</span>
+                        <h3 class="govuk-heading-m">E17-44Q</h3>
+                    </div>
+
+                    <div class="ContentItem">
+                        <span class="govuk-caption-m">Application type</span>
+                        <h3 class="govuk-heading-m">Register update</h3>
+                    </div>
+
+                    <div class="ContentItem">
+                        <span class="govuk-caption-m">HMLR reference</span>
+                        <h3 class="govuk-heading-m">S827LKJ</h3>
+                    </div>
+
+                    <!-- <div class="ContentItem">
+                        <span class="govuk-caption-m">Status</span>
+                        <h3 class="govuk-heading-m">Priority Protected - Awaiting Processing</h3>
+                    </div> -->
+
+                    <div class="ContentItem">
+                        <span class="govuk-caption-m">Customer reference</span>
+                        <h3 class="govuk-heading-m">Hampton.Jones44</h3>
+                    </div>
+
+                    <div class="ContentItem">
+                        <span class="govuk-caption-m">Parent Titles</span>
+                        <h3 class="govuk-heading-m">PPL89232</h3>
+                    </div>
+                    
+                    <!-- <div class="ContentItem">
+                        <span class="govuk-caption-m">Priority period</span>
+                        <h3 class="govuk-heading-m">15/05/22</h3>
+                    </div> -->
+
+                    <div class="ContentItem">
+                        <span class="govuk-caption-m">Received by HMLR</span>
+                        <h3 class="govuk-heading-m">06/08/22</h3>
+                    </div>
+
+                    <div class="ContentItem" style="margin-bottom:0px;">
+                        <span class="govuk-caption-m">Estimated completion date</span>
+                        <h3 class="govuk-heading-m" style="margin-bottom:0px;">19/11/22</h3>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+
+
+        <!-- Application notes -->
+        <div class="govuk-body contentBox" style="margin:0px 0px 30px 0px;">
+
+            <div class="govuk-body contentBoxHeader">
+                <div class="contentBoxTitle">
+                    Application notes
+                </div>
+            </div>
+            <div class="contentBoxContent">
+
+                <div class="govuk-warning-text" >
+                    <span class="govuk-warning-text__icon" aria-hidden="true" style="margin-top: -7px;">!</span>
+                    <strong class="govuk-warning-text__text">
+                    <span class="govuk-warning-text__assistive">Warning</span>
+                    <p>Only you and your colleagues can see these notes</p></strong>
+                </div>
+
+                <div style="padding-top: 10px;">
+                    <div class="note">
+                        <div class="noteBottom">
+                            <div class="noteName">John James (you) <span style="font-weight:400;">- 06/05/22 at 09:44</span></div>
+                            <div class="noteText">I’ve been able to reply to point one, points two and three are still oustanding</div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="note">
+                        <div class="noteBottom">
+                            <div class="noteName">Jill Peterson <span style="font-weight:400;">- 06/05/22 at 15:22</span></div>
+                            <div class="noteText">We can reply to this after we hear back from Harold</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="noteList">
+                </div>
+                
+                <div id="noteEntry" style="padding-top:10px;">
+                    <div id="middleNE">
+                        <input class="govuk-input" id="noteText" placeholder="Type your note here..."></input>
+                    </div>
+
+                    <button id="saveBut" class="govuk-button" data-module="govuk-button" style="margin-right:0px;margin-top:20px;margin-bottom:0px;" onclick="show_now();">
+                        Save note
+                    </button>
+
+
+            
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+    <div class="govuk-grid-column-one-third expandedRightColumn">
+        
+
+        <!-- Requisition issued -->
+        <div class="govuk-body contentBox" style="margin:0px 0px 30px 0px;border:5px solid #1d70b8;">
+
+            <div class="govuk-body contentBoxHeader" style="background: #1d70b8;">
+                <div class="contentBoxTitle" style="background: #1d70b8;color:#ffffff;">
+                    Requisition issued
+                </div>
+            </div>
+            <div class="contentBoxContent">
+                <div class="govuk-warning-text" >
+                    <span class="govuk-warning-text__icon" aria-hidden="true" style="margin-top: -7px;">!</span>
+                    <strong class="govuk-warning-text__text">
+                    <span class="govuk-warning-text__assistive">Warning</span>
+                    <p>Check what you need to do to complete a requisition</p></strong>
+                </div>
+
+                <!-- GDS step by step -->
+                <div id="step-by-step-navigation" class="app-step-nav app-step-nav--large app-step-nav--active" data-show-text="Show" data-hide-text="Hide" data-show-all-text="Show all" data-hide-all-text="Hide all" style="margin-bottom:20px;">
+                    <ol class="app-step-nav__steps" style="padding-left: 0px;">
+                        <li class="app-step-nav__step js-step" id="check-youre-allowed-to-drive" >
+                        <div class="app-step-nav__header js-toggle-panel" data-position="1">
+                            <h2 class="app-step-nav__title">
+                            <span class="app-step-nav__circle app-step-nav__circle--number">
+                                <span class="app-step-nav__circle-inner">
+                                <span class="app-step-nav__circle-background">
+                                    <span class="govuk-visually-hidden">Step</span> 1
+                                </span>
+                                </span>
+                            </span>
+                
+                            <span class="js-step-title">
+                                Reply to requisition
+                            </span>
+                            </h2>
+                        </div>
+                
+                        <div class="app-step-nav__panel js-panel js-hidden" id="step-panel-check-youre-allowed-to-drive-1">
+                            <p class="govuk-body">Reply to the requisition in part or full:<br>
+                                <a class="requisitionLink" target="_blank" href="/public/documents/userResearchRequisition.pdf">Requisition issued 13/07/22</a>
+                            </p>
+                                
+                            <button class="govuk-button requisitionButton" data-module="govuk-button" onclick="window.location.href='page3.html'">
+                                Reply to requisition
+                            </button>
+
+                        </div>
+                
+                        </li>
+                
+                        <li class="app-step-nav__step js-step" id="get-a-provisional-licence" >
+                        <div class="app-step-nav__header js-toggle-panel" data-position="2">
+                            <h2 class="app-step-nav__title">
+                            <span class="app-step-nav__circle app-step-nav__circle--number">
+                                <span class="app-step-nav__circle-inner">
+                                <span class="app-step-nav__circle-background">
+                                    <span class="govuk-visually-hidden">Step</span> 2
+                                </span>
+                                </span>
+                            </span>
+                
+                            <span class="js-step-title">
+                                Move application to “HMLR to review”
+                            </span>
+                            </h2>
+                        </div>
+                
+                        <div class="app-step-nav__panel js-panel js-hidden" id="step-panel-get-a-provisional-licence-2">
+                            <p class="govuk-body">After you have replied in full to all open requisitions, move the application to <b>“HMLR to review”</b>. We'll then review your application.</p>
+
+                            <button class="govuk-button" data-module="govuk-button" onclick="window.location.href='application-11replied'">
+                                Move application
+                            </button>
+                        </div>
+                
+                        </li>
+                
+                        <li class="app-step-nav__step js-step" id="driving-lessons-and-practice" >
+                        <div class="app-step-nav__header js-toggle-panel" data-position="3">
+                            <h2 class="app-step-nav__title">
+                            <span class="app-step-nav__circle app-step-nav__circle--number">
+                                <span class="app-step-nav__circle-inner">
+                                <span class="app-step-nav__circle-background">
+                                    <span class="govuk-visually-hidden">Step</span> 3
+                                </span>
+                                </span>
+                            </span>
+                
+                            <span class="js-step-title">
+                                Wait for HM Land Registry’s response
+                            </span>
+                            </h2>
+                        </div>
+                
+                        <div class="app-step-nav__panel js-panel js-hidden" id="step-panel-driving-lessons-and-practice-3">
+                            <p class="app-step-nav__paragraph">We'll review your application and update the status. If we need more information we'll contact you.</p>
+                
+                        </div>
+                
+                        </li>
+                
+                        
+                    </ol>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Correspondence -->
+        <div class="govuk-body contentBox" style="margin:0px 0px 30px 0px;">
+
+            <div class="govuk-body contentBoxHeader">
+                <div class="contentBoxTitle">
+                    Correspondence
+                </div>
+            </div>
+            <div class="contentBoxContent">
+                <div class="contentSectionSingle">
+
+                    <div class="ContentItemSingle">
+                        <span class="govuk-caption-m">HMLR to review</span>
+                        <h3 class="govuk-heading-m">-</h3>
+                    </div>
+
+                    <div class="ContentItemSingle">
+                        <span class="govuk-caption-m">Requisition resolved</span>
+                        <h3 class="govuk-heading-m">-</h3>
+                    </div>
+
+                    <div class="ContentItemSingle" style="margin-bottom:0px;">
+                        <span class="govuk-caption-m">Information only</span>
+                        
+                            <ul class="correspondence">
+                                <li>
+                                    <a target="_blank" href="#">Letter of cancellation issued 15/08/22</a>
+                                </li>
+                                <li>
+                                    <a target="_blank" href="#">Letter issued 12/08/22</a>
+                                </li>
+                            </ul>
+                        
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+
+        <!-- Files -->
+        <div class="govuk-body contentBox" style="margin:0px 0px 30px 0px;">
+
+            <div class="govuk-body contentBoxHeader">
+                <div class="contentBoxTitle">
+                    Files
+                </div>
+            </div>
+            <div class="contentBoxContent">
+                <div class="contentSection">
+
+                    <h3 class="govuk-heading-m" style="margin-bottom:0px;">-</h3>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+  </div>
+
+</div>
+
+
+{% include "includes/notificationsFooter.html" %} 
+
+<!-- Content Area - End -->
+
+{% endblock %}
