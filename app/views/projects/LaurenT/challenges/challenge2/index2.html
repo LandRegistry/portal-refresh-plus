@@ -278,6 +278,150 @@
         {% macro rows(page) %}
      
 
+        <!-- TABS -->
+
+        <div class="govuk-tabs" data-module="govuk-tabs">
+            <h2 class="govuk-tabs__title">
+              Contents
+            </h2>
+            <ul class="govuk-tabs__list">
+              <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+                <a class="govuk-tabs__tab" href="#applications">
+                  Applications
+                </a>
+              </li>
+              <li class="govuk-tabs__list-item">
+                <a class="govuk-tabs__tab" href="#requires-action">
+                  Requires action
+                </a>
+              </li>
+              <li class="govuk-tabs__list-item">
+                <a class="govuk-tabs__tab" href="#hmlr-to-review">
+                  HMLR to review
+                </a>
+              </li>
+            </ul>
+            <div class="govuk-tabs__panel" id="Applications">
+              <table class="govuk-table">
+                <thead class="govuk-table__head">
+
+                    
+                </thead>
+                <tbody class="govuk-table__body">
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">David Francis</td>
+                    <td class="govuk-table__cell">3</td>
+                    <td class="govuk-table__cell">0</td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">Paul Farmer</td>
+                    <td class="govuk-table__cell">1</td>
+                    <td class="govuk-table__cell">0</td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">Rita Patel</td>
+                    <td class="govuk-table__cell">2</td>
+                    <td class="govuk-table__cell">0</td>
+                  </tr>
+                </tbody>
+              </table>
+          
+            </div>
+            <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="past-week">
+              <h2 class="govuk-heading-l">Past week</h2>
+              <table class="govuk-table">
+                <thead class="govuk-table__head">
+                  <tr class="govuk-table__row">
+                    <th scope="col" class="govuk-table__header">Case manager</th>
+                    <th scope="col" class="govuk-table__header">Cases opened</th>
+                    <th scope="col" class="govuk-table__header">Cases closed</th>
+                  </tr>
+                </thead>
+                <tbody class="govuk-table__body">
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">David Francis</td>
+                    <td class="govuk-table__cell">24</td>
+                    <td class="govuk-table__cell">18</td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">Paul Farmer</td>
+                    <td class="govuk-table__cell">16</td>
+                    <td class="govuk-table__cell">20</td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">Rita Patel</td>
+                    <td class="govuk-table__cell">24</td>
+                    <td class="govuk-table__cell">27</td>
+                  </tr>
+                </tbody>
+              </table>
+          
+            </div>
+            <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="past-month">
+              <h2 class="govuk-heading-l">Past month</h2>
+              <table class="govuk-table">
+                <thead class="govuk-table__head">
+                  <tr class="govuk-table__row">
+                    <th scope="col" class="govuk-table__header">Case manager</th>
+                    <th scope="col" class="govuk-table__header">Cases opened</th>
+                    <th scope="col" class="govuk-table__header">Cases closed</th>
+                  </tr>
+                </thead>
+                <tbody class="govuk-table__body">
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">David Francis</td>
+                    <td class="govuk-table__cell">98</td>
+                    <td class="govuk-table__cell">95</td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">Paul Farmer</td>
+                    <td class="govuk-table__cell">122</td>
+                    <td class="govuk-table__cell">131</td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">Rita Patel</td>
+                    <td class="govuk-table__cell">126</td>
+                    <td class="govuk-table__cell">142</td>
+                  </tr>
+                </tbody>
+              </table>
+          
+            </div>
+            <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="past-year">
+              <h2 class="govuk-heading-l">Past year</h2>
+              <table class="govuk-table">
+                <thead class="govuk-table__head">
+                  <tr class="govuk-table__row">
+                    <th scope="col" class="govuk-table__header">Case manager</th>
+                    <th scope="col" class="govuk-table__header">Cases opened</th>
+                    <th scope="col" class="govuk-table__header">Cases closed</th>
+                  </tr>
+                </thead>
+                <tbody class="govuk-table__body">
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">David Francis</td>
+                    <td class="govuk-table__cell">1380</td>
+                    <td class="govuk-table__cell">1472</td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">Paul Farmer</td>
+                    <td class="govuk-table__cell">1129</td>
+                    <td class="govuk-table__cell">1083</td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">Rita Patel</td>
+                    <td class="govuk-table__cell">1539</td>
+                    <td class="govuk-table__cell">1265</td>
+                  </tr>
+                </tbody>
+              </table>
+          
+            </div>
+          </div>
+
+
+
+
         <!-- Application 1 -->
         <tbody class="govuk-table__body">
            <tr class="govuk-table__row govuk-link-table">
@@ -295,7 +439,7 @@
               <td class="govuk-table__cell " scope="row" data-sortable="2021-08-05">05/08/21</td>
               <td class="govuk-table__cell " scope="row">Cancelled</td>
               <td class="govuk-table__cell "  data-sortable="0"></td>
-              <td class="govuk-table__cell" scope="row"><a class="expandy-row-trigger2" href="#">+</a></td>
+              <td class="govuk-table__cell" scope="row"><a class="expandy-row-trigger2" href="#"><img class="chevronsize" src="/public/images/icon_govuk_chevrondown.svg"></a></td>
            </tr>
            <!-- 1 Expanded row -->
 
@@ -393,7 +537,7 @@
                 <td class="govuk-table__cell " scope="row" data-sortable="2021-05-15">15/05/21</td>
                 <td class="govuk-table__cell " scope="row">Received</td>
                 <td class="govuk-table__cell "  data-sortable="0">19/09/21</td>
-                <td class="govuk-table__cell" scope="row"><a class="expandy-row-trigger2" href="#">+</a></td>
+                <td class="govuk-table__cell" scope="row"><a class="expandy-row-trigger2" href="#"><img class="chevronsize" src="/public/images/icon_govuk_chevrondown.svg"></a></td>
 
             </tr>
             <!-- 1 Expanded row -->
@@ -485,7 +629,7 @@
             <td class="govuk-table__cell " scope="row" data-sortable="2021-08-01">01/08/21</td>
             <td class="govuk-table__cell " scope="row">Completed</td>
             <td class="govuk-table__cell "  data-sortable="0"></td>
-            <td class="govuk-table__cell" scope="row"><a class="expandy-row-trigger2" href="#">+</a></td>
+            <td class="govuk-table__cell" scope="row"><a class="expandy-row-trigger2" href="#"><img class="chevronsize" src="/public/images/icon_govuk_chevrondown.svg"></a></td>
 
             </tr>
             <!-- 1 Expanded row -->
@@ -586,7 +730,7 @@
             <td class="govuk-table__cell " scope="row" data-sortable="2021-05-14">14/05/21</td>
             <td class="govuk-table__cell " scope="row">Completed</td>
             <td class="govuk-table__cell "  data-sortable="0"></td>
-            <td class="govuk-table__cell" scope="row"><a class="expandy-row-trigger2" href="#">+</a></td>
+            <td class="govuk-table__cell" scope="row"><a class="expandy-row-trigger2" href="#"><img class="chevronsize" src="/public/images/icon_govuk_chevrondown.svg"></a></td>
 
             </tr>
             <!-- 1 Expanded row -->
@@ -689,7 +833,7 @@
             <td class="govuk-table__cell " scope="row" data-sortable="2021-05-14">14/05/21</td>
             <td class="govuk-table__cell " scope="row">Completed</td>
             <td class="govuk-table__cell "  data-sortable="0"></td>
-            <td class="govuk-table__cell" scope="row"><a class="expandy-row-trigger2" href="#">+</a></td>
+            <td class="govuk-table__cell" scope="row"><a class="expandy-row-trigger2" href="#"><img class="chevronsize" src="/public/images/icon_govuk_chevrondown.svg"></a></td>
 
             </tr>
             <!-- 1 Expanded row -->
@@ -791,7 +935,7 @@
             <td class="govuk-table__cell " scope="row" data-sortable="2021-05-10">10/05/21</td>
             <td class="govuk-table__cell " scope="row">Received</td>
             <td class="govuk-table__cell "  data-sortable="0">07/09/2021</td>
-            <td class="govuk-table__cell" scope="row"><a class="expandy-row-trigger2" href="#">+</a></td>
+            <td class="govuk-table__cell" scope="row"><a class="expandy-row-trigger2" href="#"><img class="chevronsize" src="/public/images/icon_govuk_chevrondown.svg"></a></td>
 
             </tr>
             <!-- 1 Expanded row -->
@@ -886,7 +1030,7 @@
             <td class="govuk-table__cell " scope="row" data-sortable="2021-08-01">01/08/21</td>
             <td class="govuk-table__cell " scope="row">Received</td>
             <td class="govuk-table__cell "  data-sortable="0">04/11/2021</td>
-            <td class="govuk-table__cell" scope="row"><a class="expandy-row-trigger2" href="#">+</a></td>
+            <td class="govuk-table__cell" scope="row"><a class="expandy-row-trigger2" href="#"><img class="chevronsize" src="/public/images/icon_govuk_chevrondown.svg"></a></td>
 
         </tr>
         <!-- 1 Expanded row -->
@@ -984,7 +1128,7 @@
                <td class="govuk-table__cell " scope="row" data-sortable="2021-08-02">02/08/21</td>
                <td class="govuk-table__cell " scope="row">Completed</td>
                <td class="govuk-table__cell "  data-sortable="0"></td>
-               <td class="govuk-table__cell" scope="row"><a class="expandy-row-trigger2" href="#">+</a></td>
+               <td class="govuk-table__cell" scope="row"><a class="expandy-row-trigger2" href="#"><img class="chevronsize" src="/public/images/icon_govuk_chevrondown.svg"></a></td>
 
             </tr>
             <!-- 1 Expanded row -->
@@ -1095,7 +1239,7 @@
                 <td class="govuk-table__cell " scope="row" data-sortable="2021-07-25">25/07/21</td>
                 <td class="govuk-table__cell " scope="row">Delayed</td>
                 <td class="govuk-table__cell "  data-sortable="0">24/10/2021</td>
-                <td class="govuk-table__cell" scope="row"><a class="expandy-row-trigger2" href="#">+</a></td>
+                <td class="govuk-table__cell" scope="row"><a class="expandy-row-trigger2" href="#"><img class="chevronsize" src="/public/images/icon_govuk_chevrondown.svg"></a></td>
             </tr>
             <!-- 1 Expanded row -->
             <tr class="govuk-table__row expandy-row hide-row accordion-default-content-1" style="vertical-align: top;">
@@ -1184,7 +1328,7 @@
                 <td class="govuk-table__cell " scope="row" data-sortable="2021-07-25">25/07/21</td>
                 <td class="govuk-table__cell " scope="row">Received</td>
                 <td class="govuk-table__cell "  data-sortable="0">28/10/2021</td>
-                <td class="govuk-table__cell" scope="row"><a class="expandy-row-trigger2" href="#">+</a></td>
+                <td class="govuk-table__cell" scope="row"><a class="expandy-row-trigger2" href="#"><img class="chevronsize" src="/public/images/icon_govuk_chevrondown.svg"></a></td>
 
             </tr>
             <!-- 1 Expanded row -->
