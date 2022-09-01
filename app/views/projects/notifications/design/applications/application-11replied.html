@@ -66,6 +66,42 @@ display:none;
     font-weight: 600;
 
 }
+.contentBox {
+    border: 2px solid #f3f2f1;
+}
+
+.contentBoxHeader {
+    background: #f3f2f1;
+    width: 100%;
+    display: inline-block;
+    margin-bottom: 0px;
+}
+
+.contentBoxTitle {
+    background: #f3f2f1;
+    color: #0b0c0c;
+    font-size: 24px;
+    padding: 10px 20px;
+    display: inline-block;
+    font-weight:600;
+    margin-bottom: 0px;
+}
+
+.contentBoxContent {
+    padding: 30px;
+    background: #ffffff; 
+}
+
+.contentSectionSingle {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.contentSectionSingle > div {
+    flex: 100%;
+    margin-bottom: 10px;
+    padding-right: 0%;
+}
 
 .accordionGraphic {
         padding:30px 0px !Important;
@@ -81,21 +117,16 @@ display:none;
 
 
 
-    <!-- Back button -->
-    <div class="govuk-grid-column-one-third">
+    <!-- Buttons -->
+    <div class="govuk-grid-column-full" style="position:relative;">
         
-        <p><a href="javascript: history.go(-1)" class="govuk-back-link">Back to applications</a></p>
+        <p style="float:left;"><a href="index_replied.html" class="govuk-back-link">Back to applications</a></p>
 
-    </div>
-
-    <!-- Action buttons -->
-    <div class="govuk-grid-column-two-thirds" style="position:relative;">
-        
         <div id="shareLinkText" class="copyLinkBox">
             <p id="shareLinkTextLink" style="text-align: right;"></p>
         </div>
 
-    <input id="shareLink" type="button" value="Share application link" class="govuk-button govuk-button-blue buttonPositionRight" data-module="govuk-button"/>
+        <input id="shareLink" type="button" value="Share application link" class="govuk-button govuk-button--secondary buttonPositionRight" data-module="govuk-button"/>
 
       <button class="govuk-button buttonPositionRight govuk-button--secondary" data-module="govuk-button" onclick="window.location.href='#'">
         Save as PDF
@@ -124,38 +155,36 @@ display:none;
     <!-- Application progress visual -->
     <div class="govuk-grid-column-full">
 
-      <div class="expandedApplicationProgress restyledAccordion" style="margin:0px 0px 30px 0px;">
+        <div class="govuk-body contentBox" style="margin:0px 0px 30px 0px;">
 
-        <details class="govuk-details" data-module="govuk-details" open>
-            <summary class="govuk-details__summary">
-              <span class="govuk-details__summary-text">
-                Application progress
-              </span>
-            </summary>
-            <div class="govuk-details__text accordionGraphic">
-                <div class="progressGraphicMiddle">
-                    <img src="/public/images/applicationProgress_HMLRtoReview.png" class="progressGraphic" alt="documentGrey" style="">
+                <div class="contentBoxHeader">
+                    <div class="contentBoxTitle">
+                    Application progress
+                    </div>
                 </div>
-            </div>
+                <div class="contentBoxContent accordionGraphic">
+                    <div class="progressGraphicMiddle">
+                        <img src="/public/images/applicationProgress_HMLRtoReview.png" class="progressGraphic" alt="documentGrey" style="">
+                    </div>
+                </div>
 
-        </details>
-
-      </div>
+        </div>
 
     </div>
 
 
-    <div class="govuk-grid-column-one-half expandedLeftColumn">
+    <div class="govuk-grid-column-two-thirds expandedLeftColumn">
+
 
         <!-- Application details -->
-        <details class="govuk-details" data-module="govuk-details" open>
-            <summary class="govuk-details__summary">
-                <span class="govuk-details__summary-text" >
-                    Application details
-                </span>
-            </summary>
+        <div class="govuk-body contentBox" style="margin:0px 0px 30px 0px;">
 
-            <div class="govuk-details__text" style="padding-bottom:0px;">
+            <div class="govuk-body contentBoxHeader">
+                <div class="contentBoxTitle">
+                    Application details
+                </div>
+            </div>
+            <div class="contentBoxContent">
                 <div class="contentSection">
 
                     <div class="ContentItem">
@@ -198,23 +227,28 @@ display:none;
                         <h3 class="govuk-heading-m">06/08/22</h3>
                     </div>
 
-                    <div class="ContentItem">
+                    <div class="ContentItem" style="margin-bottom:0px;">
                         <span class="govuk-caption-m">Estimated completion date</span>
-                        <h3 class="govuk-heading-m">19/11/22</h3>
+                        <h3 class="govuk-heading-m" style="margin-bottom:0px;">19/11/22</h3>
                     </div>
 
                 </div>
             </div>
-        </details>
+
+        </div>
+
+
 
         <!-- Application notes -->
-        <details class="govuk-details" data-module="govuk-details" open>
-            <summary class="govuk-details__summary">
-                <span class="govuk-details__summary-text" >
-                Application notes
-                </span>
-            </summary>
-            <div class="govuk-details__text">
+        <div class="govuk-body contentBox" style="margin:0px 0px 30px 0px;">
+
+            <div class="govuk-body contentBoxHeader">
+                <div class="contentBoxTitle">
+                    Application notes
+                </div>
+            </div>
+            <div class="contentBoxContent">
+
                 <div class="govuk-warning-text" >
                     <span class="govuk-warning-text__icon" aria-hidden="true" style="margin-top: -7px;">!</span>
                     <strong class="govuk-warning-text__text">
@@ -247,7 +281,7 @@ display:none;
                         <input class="govuk-input" id="noteText" placeholder="Type your note here..."></input>
                     </div>
 
-                    <button id="saveBut" class="govuk-button" data-module="govuk-button" style="margin-right:0px;margin-top:20px;margin-bottom:20px;" onclick="show_now();">
+                    <button id="saveBut" class="govuk-button" data-module="govuk-button" style="margin-right:0px;margin-top:20px;margin-bottom:0px;" onclick="show_now();">
                         Save note
                     </button>
 
@@ -255,46 +289,49 @@ display:none;
             
 
                 </div>
+
             </div>
-        </details>
+
+        </div>
+
 
     </div>
 
-    <div class="govuk-grid-column-one-half expandedRightColumn">
+    <div class="govuk-grid-column-one-third expandedRightColumn">
         
 
 
-
         <!-- Correspondence -->
-        <details class="govuk-details" data-module="govuk-details" open>
-            <summary class="govuk-details__summary">
-            <span class="govuk-details__summary-text" >
-                Correspondence
-            </span>
-            </summary>
-            <div class="govuk-details__text" style="padding-bottom:0px;">
-                <div class="contentSection">
+        <div class="govuk-body contentBox" style="margin:0px 0px 30px 0px;">
 
-                    <div class="ContentItem">
+            <div class="govuk-body contentBoxHeader">
+                <div class="contentBoxTitle">
+                    Correspondence
+                </div>
+            </div>
+            <div class="contentBoxContent">
+                <div class="contentSectionSingle">
+
+                    <div class="ContentItemSingle">
                         <span class="govuk-caption-m">HMLR to review</span>
                         <ul class="correspondence">
                             <li>
-                                <a target="_blank" href="/public/documents/userResearchRequisition.pdf">Requisition issued 13/07/22</a>
+                                <a target="_blank" href="#">Requisition issued 13/07/22</a>
                             </li>
                         </ul>
                     </div>
 
-                    <div class="ContentItem">
+                    <div class="ContentItemSingle">
                         <span class="govuk-caption-m">Requisition resolved</span>
                         <h3 class="govuk-heading-m">-</h3>
                     </div>
 
-                    <div class="ContentItem">
+                    <div class="ContentItemSingle" style="margin-bottom:0px;">
                         <span class="govuk-caption-m">Information only</span>
                         
                             <ul class="correspondence">
                                 <li>
-                                    <a target="_blank" href="#">Letter of cancellation issued 15/08/22</a>
+                                    <a target="_blank" href="#">Letter issued 15/08/22</a>
                                 </li>
                                 <li>
                                     <a target="_blank" href="#">Letter issued 12/08/22</a>
@@ -305,29 +342,27 @@ display:none;
 
                 </div>
             </div>
-        </details>
+
+        </div>
 
 
         <!-- Files -->
-        <details class="govuk-details" data-module="govuk-details" open>
-            <summary class="govuk-details__summary">
-                <span class="govuk-details__summary-text" >
-                Files
-                </span>
-            </summary>
-            <div class="govuk-details__text" style="padding-bottom:20px;">
+        <div class="govuk-body contentBox" style="margin:0px 0px 30px 0px;">
+
+            <div class="govuk-body contentBoxHeader">
+                <div class="contentBoxTitle">
+                    Files
+                </div>
+            </div>
+            <div class="contentBoxContent">
                 <div class="contentSection">
-                    <h3 class="govuk-heading-m">-</h3>
-                        <!-- <div class="expandedText" style="line-height: 30px;">
-                            <a class="requisitionLink" target="_blank" href="#">Cancellation</a>
-                        </div> -->
-                        <!-- <div class="expandedText" style="line-height: 30px;">
-                            Empty
-                        </div> -->
+
+                    <h3 class="govuk-heading-m" style="margin-bottom:0px;">-</h3>
 
                 </div>
             </div>
-        </details>
+
+        </div>
 
     </div>
 

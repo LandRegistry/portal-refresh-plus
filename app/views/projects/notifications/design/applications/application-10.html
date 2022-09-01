@@ -66,21 +66,16 @@ display:none;
 
   <div class="govuk-grid-row restyledAccordion">
     
-    <!-- Back button -->
-    <div class="govuk-grid-column-one-third">
+    <!-- Buttons -->
+    <div class="govuk-grid-column-full" style="position:relative;">
         
-      <p><a href="javascript: history.go(-1)" class="govuk-back-link">Back to applications</a></p>
+        <p style="float:left;"><a href="javascript: history.go(-1)" class="govuk-back-link">Back to applications</a></p>
 
-    </div>
-
-    <!-- Action buttons -->
-    <div class="govuk-grid-column-two-thirds" style="position:relative;">
-        
         <div id="shareLinkText" class="copyLinkBox">
             <p id="shareLinkTextLink" style="text-align: right;"></p>
         </div>
 
-    <input id="shareLink" type="button" value="Share application link" class="govuk-button govuk-button-blue buttonPositionRight" data-module="govuk-button"/>
+        <input id="shareLink" type="button" value="Share application link" class="govuk-button govuk-button--secondary buttonPositionRight" data-module="govuk-button"/>
 
       <button class="govuk-button buttonPositionRight govuk-button--secondary" data-module="govuk-button" onclick="window.location.href='#'">
         Save as PDF
@@ -90,7 +85,7 @@ display:none;
         Application enquiry
       </button>
 
-      <button class="govuk-button buttonPositionRight govuk-button--secondary" data-module="govuk-button" onclick="window.location.href='#'">
+      <button class="govuk-button buttonPositionRight govuk-button--secondary" data-module="govuk-button" onclick="window.location.href='page3.html'">
         Update application
       </button>
 
