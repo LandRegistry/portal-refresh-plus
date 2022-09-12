@@ -35,14 +35,14 @@
 
 <style>
 
-  #SectionHeroImage {
-    background-image: url(/public/images/Hero_Large.png);
-      height: 322px;
-      width: 100%;
-      position: relative;
-      background-size: cover;
-      background-position-y: 37%;
-  }
+#SectionHeroImage {
+    background-image: url(/public/images/Hero_heather.png);
+    height: 322px;
+    width: 100%;
+    position: relative;
+    background-size: cover;
+    background-position-y: bottom;
+}
   
   #SectionHeroContent {
       max-width: 1200px;
@@ -60,7 +60,10 @@
       top: auto;
   }
   
-  
+  .govuk-notification-banner__content > * {
+    box-sizing: border-box;
+    max-width: 1200px;
+}
   
   
   </style>
@@ -90,7 +93,7 @@
     <div id="linksPanel" class="govuk-body" style="background: #ffffff;">
 
           <!-- Filters and Search Section - Start -->
-          <h2 class="govuk-heading-l govuk-!-font-size-36" style="margin-bottom:60px;">My Services<button id="edit" class="govuk-button" style="float:right;margin-bottom: 0;" onclick="myFunction()">Edit Links</button></h2> 
+          <h2 class="govuk-heading-l govuk-!-font-size-36" style="margin-bottom:60px;">My Services<button id="edit" class="govuk-button" style="float:right;margin-bottom: 0;" onclick="myFunction()">Edit shortcuts</button></h2> 
           
 
     <div id="linksDisplay">
@@ -595,138 +598,30 @@
 
 
 
-<!-- Divider line -->
-<div class="dividerLine10"></div>
 
-
-
-<!-- News panel -->
-<div id="NewsPanel">
-  <div id="NewsPanelContent" class="govuk-body">
-
-<h2 class="govuk-heading-l govuk-!-font-size-36">News</h2>
-
-
-
-
-    <div id="newsArticle">
-
-
-
-
-
-
-
-      <div class="newsImage">
-        <img src="/public/images/vca2-news.png" style="width:100%;">
-      </div>
-
-      <div class="newsTextSection">
-          <p class="govuk-body govuk-!-font-size-14">10 December 2021 — News story</p>
-          <h3 class="govuk-heading-s newsTextTitle"><a style="color:#006637;" href="#">View colleagues applications</a></h3>
-          <p>A short video designed to showcase the new functionality recently added.</p>
-      </div>
-
-    </div>
-
-
-    <!-- <div id="newsArticle">
-      <div class="newsImage">
-        <img src="/public/images/News_2.png" style="width:100%;">
-      </div>
-
-      <div class="newsTextSection">
-        <p class="govuk-body govuk-!-font-size-14">4 December 2021 — Guidance</p>
-        <h3 class="govuk-heading-s newsTextTitle"><a style="color:#006637;" href="#">View our response to Covid-19</a></h3>
-        <p>How we are delivering our services during the coronavirus outbreak.</p>
-    </div>
-
-    </div> -->
-
-    <div id="newsArticle">
-      <div class="newsImage">
-        <img src="/public/images/ap-news.png" style="width:100%;">
-      </div>
-
-      <div class="newsTextSection">
-        <p class="govuk-body govuk-!-font-size-14">4 December 2021 — Guidance</p>
-        <h3 class="govuk-heading-s newsTextTitle"><a style="color:#006637;" href="#">Requesting an application to be expedited</a></h3>
-        <p>All requests must be made by using the Application Enquiry service.</p>
-    </div>
-
-    </div>
-
-
-    <div id="newsArticle" style="margin-right:0px;">
-      <div class="newsImage">
-        <img src="/public/images/drs-news.png" style="width:100%;">
-      </div>
-
-      <div class="newsTextSection">
-        <p class="govuk-body govuk-!-font-size-14">17 November 2021 — News story</p>
-        <h3 class="govuk-heading-s newsTextTitle"><a style="color:#006637;" href="#">Document registration is changing</a></h3>
-        <p>From November 2022 the Document Registration option will be removed.</p>
-    </div>
-
-    </div>
-
-    <!-- <div id="newsArticle" style="margin-right:0px;">
-      <div class="newsImage">
-        <img src="/public/images/News_3.png" style="width:100%;">
-      </div>
-
-      <div class="newsTextSection">
-        <p class="govuk-body govuk-!-font-size-14">17 November 2021 — Press release</p>
-        <h3 class="govuk-heading-s newsTextTitle"><a style="color:#006637;" href="#">Portal roadmap for 2022</a></h3>
-        <p>See what features are planned for 2021 and have your say for its future.</p>
-    </div>
-
-    </div> -->
-
+<!-- Notification -->
+<div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner" style="max-width:1190px;margin:auto;margin-top:65px;">
+  <div class="govuk-notification-banner__header">
+    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+      Important
+    </h2>
   </div>
-</div> 
+  <div class="govuk-notification-banner__content">
+    <p class="govuk-notification-banner__heading">
+      Document registration is changing
+      
+    </p>
+    <p class="govuk-body" style="max-width:960px;">From November 2022 the Document Registration option within the Document Registration Service will be removed and replace by the Digital Registration Service.</p>
+
+      <p class="govuk-body" style="margin-bottom:0px;">For more information on the change, please visit our <a  href="https://www.gov.uk/guidance/hm-land-registry-digital-applications">digital applications</a> page.</p>
+  </div>
+</div>
 
 
 
 
 <!-- Divider line -->
 <div class="dividerLine10"></div>
-
-
-
-<!-- Your details -->
-<!-- <div id="contentPanel" class="govuk-body"">
-
-
-  
-  <div class="govuk-grid-row">
-
-    <div class="govuk-grid-column-one-third">
-      <h2 class="govuk-heading-l govuk-!-font-size-36" style="margin-top: 0;">Your details</h2>
-    </div>
-    
-    <div class="govuk-grid-column-two-thirds">
-      <h3 class="govuk-heading-m" style="margin-bottom: 5px;">You are logged in as</h3>
-      <p class="govuk-body">xxxxxxxxxx</p>
-
-      <h3 class="govuk-heading-m" style="margin-bottom: 5px;">Your role is</h3>
-      <p class="govuk-body">xxxxxxxxxx</p>
-
-      <h3 class="govuk-heading-m" style="margin-bottom: 5px;">You last logged in on</h3>
-      <p class="govuk-body">19 July 2022 10:19:23 BST</p>
-
-      <p class="govuk-body govuk-!-font-weight-bold"  style="margin-bottom: 0px;">If these details are incorrect, please log out and contact us.</p>
-
-    </div>
-
-  </div>
-
-</div> -->
-
-
-
-<!-- Divider line -->
-<!-- <div class="dividerLine10"></div> -->
 
 
 
@@ -751,6 +646,38 @@
         Postal Application Downloads - no new items to be viewed.</p>
 
       <p class="govuk-body" style="padding-top:10px;margin-bottom:0px;">To be notified when your applications are complete and you have new PDF downloads available. Activate your notification feed in <a href="#" style="color: #006637 !Important;">notifications</a>.</p>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+
+<!-- Divider line -->
+<div class="dividerLine10"></div>
+
+
+
+<!-- Expedite applications -->
+<div id="contentPanel" class="govuk-body"">
+
+
+  
+  <div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-one-third">
+      <h2 class="govuk-heading-l govuk-!-font-size-36" style="margin-top: 0;padding-right: 75px;margin-bottom:0px;">Requesting an application to be expedited</h2>
+    </div>
+    
+    <div class="govuk-grid-column-two-thirds">
+      <p class="govuk-body">Please note that you can only request an application to be expedited by using Application Enquiry service. Requests made via 'Reply to requisition' will not be processed, causing you further delays.</p>
+
+      <p class="govuk-body"><a href="#" style="color: #006637 !Important;">Expedite an application</a></p>
+
+      <!-- <button  style="margin-bottom: 0px;" class="govuk-button govuk-button--secondary"  onclick="window.location.href='https://eservices.landregistry.gov.uk/eservices/ECENQ_EnquiriesViews/newEnquiry.do?menu=informationservices&id=dle_link">Expedite an application</button> -->
+
 
     </div>
 
@@ -800,8 +727,7 @@
 
 
 
-
-<!-- Expedite applications -->
+<!-- Webinars -->
 <div id="contentPanel" class="govuk-body"">
 
 
@@ -809,13 +735,12 @@
   <div class="govuk-grid-row">
 
     <div class="govuk-grid-column-one-third">
-      <h2 class="govuk-heading-l govuk-!-font-size-36" style="margin-top: 0;padding-right: 75px;margin-bottom:0px;">Requesting an application to be expedited</h2>
+      <h2 class="govuk-heading-l govuk-!-font-size-36" style="margin-top: 0;padding-right: 75px;margin-bottom:0px;">Webinars</h2>
     </div>
     
     <div class="govuk-grid-column-two-thirds">
       <h3 class="govuk-heading-m" style="margin-bottom: 5px;">Join our free webinars</h3>
-      <p class="govuk-body">Please note that you can only request an application to be expedited by using Application Enquiry service. Requests made via 'Reply to requisition' will not be processed, causing you further delays.</p>
-      <button  style="margin-bottom: 0px;" class="govuk-button govuk-button--secondary"  onclick="window.location.href='https://eservices.landregistry.gov.uk/eservices/ECENQ_EnquiriesViews/newEnquiry.do?menu=informationservices&id=dle_link">Expedite an application</button>
+      <p class="govuk-body" style="margin-bottom:0px;padding-right: 30px;">Learn how to prepare and send us quality applications. Sessions will help you avoid the most common reasons for a request for information (requisition). Get details of available topics and registration information on <a href="https://www.gov.uk/government/organisations/land-registry/about/personal-information-charter" style="color: #006637 !Important;">GOV.UK</a></p>
 
 
     </div>
@@ -826,26 +751,12 @@
 
 
 
+
+
+
 <!-- Divider line -->
 <div class="dividerLine10"></div>
 
-
-
-<!-- CTA Apply for complex commercial or infrastructure development services -->
-<!-- <div id="contentPanelCTA" class="govuk-body"">
-
-  <div class="govuk-grid-row">
-
-
-      <h2 class="govuk-heading-xl" style="margin-top: 0;color: #ffffff !Important;text-align:center; margin-bottom:20px;">Apply for complex commercial or infrastructure development services</h2>
-
-
-      <p style="color: #ffffff !Important;text-align:center;max-width:960px;margin:auto;font-size: 24px; margin-bottom:20px;"><a href="https://www.gov.uk/government/organisations/land-registry/about/personal-information-charter" style="color: #ffffff !Important;">How to use the Pre-submission Enquiry Service and Application Management Service</a></p>
-
-
-    </div>
-
-</div> -->
 
 
 
@@ -907,34 +818,6 @@
 
 <!-- Divider line -->
 <div class="dividerLine10"></div>
-
-
-
-
-<!-- Apply for complex commercial or infrastructure development services -->
-<div id="contentPanel" class="govuk-body"">
-
-
-  
-  <div class="govuk-grid-row">
-
-    <div class="govuk-grid-column-one-third">
-      <h2 class="govuk-heading-l govuk-!-font-size-36" style="margin-top: 0;padding-right: 75px;margin-bottom:0px;">Apply for complex commercial or infrastructure development services</h2>
-    </div>
-    
-    <div class="govuk-grid-column-two-thirds">
-      <h3 class="govuk-heading-m" style="margin-bottom: 5px;"><a href="https://www.gov.uk/government/organisations/land-registry/about/personal-information-charter" style="color: #006637 !Important;">How to use the Pre-submission Enquiry Service and Application Management Service</a></h3>
-
-    </div>
-
-  </div>
-
-</div>
-
-
-<!-- Divider line -->
-<div class="dividerLine10"></div>
-
 
 
 
@@ -1453,11 +1336,11 @@ const handleEdit = (event) => {
   inEditMode = !inEditMode
 
   if (inEditMode) {
-    button.innerHTML = 'Update Links'
+    button.innerHTML = 'Update shortcuts'
     inputSection.style.display = 'block'
   } else {
     inputSection.style.display = 'none'
-    button.innerHTML = 'Edit Links'
+    button.innerHTML = 'Edit shortcuts'
   }
 
   updateValues()
