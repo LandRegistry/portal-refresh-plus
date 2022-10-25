@@ -68,7 +68,16 @@
   
   </style>
   
-  
+  <div class="govuk-phase-banner" style="padding-left: 30px;border-bottom:0px;">
+    <p class="govuk-phase-banner__content">
+      <strong class="govuk-tag govuk-phase-banner__content__tag">
+        beta
+      </strong>
+      <span class="govuk-phase-banner__text">
+        This is a new design layout – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+      </span>
+    </p>
+  </div>
   
 <!-- Hero image section -->
 <div id="SectionHeroImage">
@@ -107,7 +116,7 @@
                 <div class="linkTextSection">
                   <div class="linkTextSectionContent">
                     <h3 class="govuk-heading-m" id="value-heading0">No Data</h3>
-                    <p class="govuk-body" id="value-subheading0">No Data</p>
+                    <!-- <p class="govuk-body" id="value-subheading0">No Data</p> -->
                     <p class="govuk-body govuk-!-font-weight-bold" style="margin-bottom:0px;"><a id="value-label0" style="color: #006637;" href='#'>No Data</a></p>
                 </div>
               </div>
@@ -117,7 +126,7 @@
                 <div class="linkTextSection">
                   <div class="linkTextSectionContent">
                     <h3 class="govuk-heading-m"  id="value-heading1">No Data</h3>
-                    <p class="govuk-body" id="value-subheading1">No Data</p>
+                    <!-- <p class="govuk-body" id="value-subheading1">No Data</p> -->
                     <p class="govuk-body govuk-!-font-weight-bold" style="margin-bottom:0px;"><a id="value-label1" style="color: #006637" href='#'>No Data</a></p>
                 </div>
               </div>
@@ -127,7 +136,7 @@
                 <div class="linkTextSection">
                   <div class="linkTextSectionContent">
                     <h3 class="govuk-heading-m" id="value-heading2">No Data</h3>
-                    <p class="govuk-body" id="value-subheading2">No Data</p>
+                    <!-- <p class="govuk-body" id="value-subheading2">No Data</p> -->
                     <p class="govuk-body govuk-!-font-weight-bold" style="margin-bottom:0px;"><a id="value-label2" style="color: #006637" href='#'>No Data</a></p>
                 </div>
               </div>
@@ -140,7 +149,7 @@
                 <div class="linkTextSection">
                   <div class="linkTextSectionContent">
                     <h3 class="govuk-heading-m" id="value-heading3">No Data</h3>
-                    <p class="govuk-body" id="value-subheading3">No Data</p>
+                    <!-- <p class="govuk-body" id="value-subheading3">No Data</p> -->
                     <p class="govuk-body govuk-!-font-weight-bold" style="margin-bottom:0px;"><a id="value-label3" style="color: #006637" href='#'>No Data</a></p>
                 </div>
               </div>
@@ -150,7 +159,7 @@
                 <div class="linkTextSection">
                   <div class="linkTextSectionContent">
                     <h3 class="govuk-heading-m" id="value-heading4">No Data</h3>
-                      <p class="govuk-body" id="value-subheading4">No Data</p>
+                      <!-- <p class="govuk-body" id="value-subheading4">No Data</p> -->
                         <p class="govuk-body govuk-!-font-weight-bold" style="margin-bottom:0px;"><a id="value-label4" style="color: #006637" href='#'>No Data</a></p>
                 </div>
               </div>
@@ -160,7 +169,7 @@
                 <div class="linkTextSection">
                   <div class="linkTextSectionContent">
                   <h3 class="govuk-heading-m" id="value-heading5">No Data</h3>
-                    <p class="govuk-body" id="value-subheading5">No Data</p>
+                    <!-- <p class="govuk-body" id="value-subheading5">No Data</p> -->
                     <p class="govuk-body govuk-!-font-weight-bold" style="margin-bottom:0px;"><a id="value-label5" style="color: #006637" href='#'>No Data</a></p>
                 </div>
               </div>
@@ -1322,7 +1331,6 @@ const updateValues = () => {
       // Update the text of the relevant fields
       document.getElementById(`value${index}`).classList.remove('unselected')
       document.getElementById(`value-heading${index}`).innerHTML = service.heading
-      document.getElementById(`value-subheading${index}`).innerHTML = service.subheading
       document.getElementById(`value-label${index}`).innerHTML = service.label
     } else {
       document.getElementById(`value${index}`).classList.add('unselected')
