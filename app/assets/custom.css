@@ -361,16 +361,7 @@
     text-align: center;
   }
   
-  .alert-icon {
-    animation: blink 2s;
-    animation-iteration-count: 3;
-  }
-  
-  @keyframes blink {
-  0% { opacity: 0;}
-  50% { opacity: 1;}
-  100% { opacity: 0; }
-  }
+
   
   .delayed {
     background: #ffb5b5;

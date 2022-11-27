@@ -12,13 +12,12 @@
   function closeRow(row) {
     row.nextElementSibling.classList.add('hide-row')
     row.classList.remove('open')
-    row.querySelector('.expandy-row-trigger3').textContent = '+'
   }
 
   function openRow(row) {
     row.nextElementSibling.classList.remove('hide-row')
     row.classList.add('open')
-    row.querySelector('.expandy-row-trigger3').textContent = '-'
+   
   }
 
   [].forEach.call(expandyRowTriggers, function(item) {

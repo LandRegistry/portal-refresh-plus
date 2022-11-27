@@ -281,6 +281,38 @@ th.govuk-table__header.sortable button:hover {
                     </div>
                 </details>
 
+                <details class="govuk-details" data-module="govuk-details3"  style="padding-left:0px; margin-bottom:15px;">
+                    <summary class="govuk-details__summary" style="">
+                    Review
+                    </summary>
+                    <div class="govuk-details-text">
+                    {{ govukCheckboxes ({
+                        idPrefix: "application-progress2",
+                        name: "application-progress2",
+                    classes: "govuk-checkboxes govuk-checkboxes--small",
+                    fieldset: {
+                    legend: {
+                    text: ""
+                    }
+                    },
+                    items: [
+                    {
+                    value: "Requisition",
+                    text: "Requisitions"   ,
+                    checked: false,
+                    id: "Requisition"
+                    },
+                    {
+                    value: "Warningofcancellation",
+                    text: "Warning of cancellations"   ,
+                    checked: false,
+                    id: "Warningofcancellation"
+                    }
+                    ]
+                    }) }}
+                    </div>
+                </details>
+
                 <details class="govuk-details" data-module="govuk-details2"  style="padding-left:0px;margin-bottom:15px;">
                   <summary class="govuk-details__summary">
                      Progress
@@ -395,6 +427,9 @@ th.govuk-table__header.sortable button:hover {
                <th class="govuk-table__header" scope="col">
                   <div>Estimated completion date <a style="font-size:12px;display:block;" href="V1-help#ecd" target="_blank">What's this?</a></div>
                </th>
+               <th class="govuk-table__header" scope="col">
+                <div>Cancellation date</div>
+             </th>
                <th class="govuk-table__header"scope="col">Show/hide</th>
             </tr>
          </thead>
@@ -417,6 +452,7 @@ th.govuk-table__header.sortable button:hover {
               </td>
               <td class="govuk-table__cell " scope="row" data-sortable="2022-11-05">05/11/22</td>
               <td class="govuk-table__cell " scope="row">Cancelled</td>
+              <td class="govuk-table__cell "  data-sortable="0"></td>
               <td class="govuk-table__cell "  data-sortable="0"></td>
               <td class="govuk-table__cell" scope="row"><a class="expandy-row-trigger2" href="#">+</a></td>
            </tr>
@@ -512,10 +548,11 @@ th.govuk-table__header.sortable button:hover {
                     <!-- THIS IS PAGE {{page}} -->
                 </td>
                 <td class="govuk-table__cell ">PLTR.Thompson</td>
-                <td class="govuk-table__cell Substantive" id="">Register update<p class="govuk-visually-hidden"> Preliminary Delayed  </p></td>
+                <td class="govuk-table__cell Substantive" id="">Register update<p class="govuk-visually-hidden"> Preliminary Requisition Delayed  </p></td>
                 <td class="govuk-table__cell " scope="row" data-sortable="2022-10-15">15/10/22</td>
-                <td class="govuk-table__cell " scope="row">Delayed</td>
+                <td class="govuk-table__cell " scope="row">Delayed<p class="govuk-visually-hidden">Requisition</p></td>
                 <td class="govuk-table__cell "  data-sortable="0">19/01/23</td>
+                <td class="govuk-table__cell "  data-sortable="0"></td>
                 <td class="govuk-table__cell" scope="row"><a class="expandy-row-trigger3" href="#"><img class="alert-icon" title="Open requisition" src="/public/images/icon-alert-triangle.svg"></a></td>
 
             </tr>
@@ -557,7 +594,7 @@ th.govuk-table__header.sortable button:hover {
                         <div>
                             <div style="float:left;line-height: 30px;">
                                 <b>Review</b><br>
-                                <a class="requisitionLink" target="_blank" href="/public/documents/userResearchRequisition.pdf">Requisition issued 13/11/22</a>   
+                                <a class="requisitionLink" target="_blank" href="/public/documents/userResearchRequisition.pdf">Requisition issued 13/11/22</a>      
                             </div>
                             <div style="float:left;padding-left: 50px;line-height: 30px;">
                                 <b>Resolved</b><br>
@@ -597,102 +634,96 @@ th.govuk-table__header.sortable button:hover {
         <!-- Application 3 -->
         <tbody class="govuk-table__body">
             <tr class="govuk-table__row govuk-link-table">
-            <td class="govuk-table__cell "></td>
-            <td class="govuk-table__cell " scope="row">
-                LP09209 
-                <p class="govuk-visually-hidden">LP09209</p>
-                <!-- THIS IS PAGE {{page}} -->
-            </td>
-            <td class="govuk-table__cell ">Bartlett.23124</td>
-            <td class="govuk-table__cell Substantive" id="">Official Copies<p class="govuk-visually-hidden"> Sobstantive Completed  </p></td>
-            <td class="govuk-table__cell " scope="row" data-sortable="2022-08-01">01/08/22</td>
-            <td class="govuk-table__cell " scope="row">Completed</td>
-            <td class="govuk-table__cell "  data-sortable="0"></td>
-            <td class="govuk-table__cell" scope="row"><a class="expandy-row-trigger2" href="#">+</a></td>
+                <td class="govuk-table__cell "></td>
+                <td class="govuk-table__cell " scope="row">
+                    SS23424 
+                    <p class="govuk-visually-hidden">SS23424</p>
+                    <!-- THIS IS PAGE {{page}} -->
+                </td>
+                <td class="govuk-table__cell ">PLTR.Becker</td>
+                <td class="govuk-table__cell Substantive" id="">Register update<p class="govuk-visually-hidden"> Preliminary Requisition Delayed Warningofcancellation </p></td>
+                <td class="govuk-table__cell " scope="row" data-sortable="2022-10-14">14/10/22</td>
+                <td class="govuk-table__cell " scope="row">Delayed<p class="govuk-visually-hidden">Requisition Warningofcancellation</p></td>
+                <td class="govuk-table__cell "  data-sortable="0">19/01/23</td>
+                <td class="govuk-table__cell "  data-sortable="0">12/12/22</td>
+                <td class="govuk-table__cell" scope="row"><a class="expandy-row-trigger3" href="#"><img class="alert-icon" title="Open requisition" src="/public/images/icon-alert-triangle.svg"></a></td>
 
             </tr>
             <!-- 1 Expanded row -->
-            <tr class="govuk-table__row expandy-row hide-row accordion-default-content-1" style="vertical-align: top;">
+            <tr class="govuk-table__row expandy-row3 hide-row accordion-default-content-1" style="vertical-align: top;">
                 <td class="govuk-table__cell" colspan="1"></td>
                 <td class="govuk-table__cell" colspan="7" style="padding-top: 30px;">
-                <div>
-                    <div class="rowContentSection">
+                    <div>
+                        <div class="rowContentSection">
                         <div class="expandedTitles">
-                        Application progress
+                            Application progress
                         </div>
                         <div class="expandedText">
-                        Completed
+                            Delayed
                         </div>
-                    </div>
-                    <div class="rowContentSection">
+                        </div>
+                        <div class="rowContentSection">
                         <div class="expandedTitles">
-                        HMLR reference
+                            HMLR reference
                         </div>
                         <div class="expandedText">
-                            Y917GSY
+                            LP890347
+                        </div>
+                        </div>
+                        <div class="rowContentSection">
+                        <div class="expandedTitles">
+                            Parent Title(s)
+                        </div>
+                        <div class="expandedText">
+                            PPL89232
+                        </div>
                         </div>
                     </div>
-                </div>
-                <div style="float: left;width: 100%;padding: 0px;">
-                    <div class="rowContentSection" style="">
+                    <div style="float: left;width: 100%;padding: 0px;">
+                        <div class="rowContentSection" style="float:left;line-height: 30px;">
                         <div class="expandedTitles">
-                        Correspondence
+                            Correspondence
                         </div>
                         <div>
-                        <div style="float:left;line-height: 30px;min-width: 100px;">
-                            <b>Review</b><br>
+                            <div style="float:left;line-height: 30px;">
+                                <b>Review</b><br>
+                                <a class="requisitionLink" target="_blank" href="/public/documents/userResearchRequisition.pdf">Warning of cancellation issued 12/11/22</a><br>
+                                <a class="requisitionLink" target="_blank" href="/public/documents/userResearchRequisition.pdf">Requisition issued 11/11/22</a>      
+                            </div>
+                            <div style="float:left;padding-left: 50px;line-height: 30px;">
+                                <b>Resolved</b><br>
                                 None
-                        </div>
-                        <div style="float:left;padding-left: 50px;line-height: 30px;">
-                            <b>Resolved</b><br>
-                            <!-- <a style="color:#006637;" target="_blank" href="/public/files/requisition-example-document.pdf">Warning of cancellation issued 22/09/22</a><br>
-                            <a style="color:#006637;" target="_blank" href="/public/files/requisition-example-document.pdf">Requisition issued 15/09/22</a><br> -->
-                            None
-                        </div>
-                        <div style="float:left;padding-left: 50px;line-height: 30px;">
-                            <b>Information only</b><br>
-                            <!-- <a style="color:#006637;" target="_blank" href="/public/files/requisition-example-document.pdf">Letter issued 26/08/22</a><br>
-                            <a style="color:#006637;" target="_blank" href="/public/files/requisition-example-document.pdf">Notice issued 25/08/22</a> -->
-                            None
+                            </div>
+                            <div style="float:left;padding-left: 50px;line-height: 30px;">
+                                <b>Information only</b><br>
+                                <a style="color:#006637;" target="_blank" href="#">Letter issued on 09/10/22</a><br>
+                                <a style="color:#006637;" target="_blank" href="#">Letter issued on 24/10/22</a><br>
+                            </div>
                         </div>
                         </div>
+    
                     </div>
-                </div>
-
-
-                <div style="float: left;width: 100%;padding: 0px;">
-                    <div class="rowContentSection" style="padding-right: 0;">
-                        <div class="expandedTitles">
-                        Files
-                        </div>
-                        <div class="expandedText" style="line-height: 30px;">
-                        <a style="color:#006637;" href="#">Official Copy of Title Plan dated 31/10/19</a><br>
-                        <a style="color:#006637;" href="#">Official Copy of Register dated 31/10/19</a>
-                        </div>
-                    </div>
-                    </div>
-
-                <div style="float: left;width: 100%;padding: 0px;">
+    
+                    <div style="float: left;width: 100%;padding: 0px;">
                     <div class="rowContentSectionLast">
                         <div class="expandedTitles" style="padding-bottom: 10px;">Actions</div>
                         <div class="expandedText">
-                        <div class="expandedText">
+                            <div class="expandedText">
                             <button class="govuk-button govuk-button--secondary" data-module="govuk-button" style="margin-right:10px;" onclick="window.location.href='#'">
                                 Respond
-                            </button>
-                            <button class="govuk-button govuk-button--secondary" data-module="govuk-button" style="margin-right:10px;" onclick="window.location.href='#'">
+                                </button>
+                                <button class="govuk-button govuk-button--secondary" data-module="govuk-button" style="margin-right:10px;" onclick="window.location.href='#'">
                                 Application enquiry
-                            </button>
-                            <button class="govuk-button govuk-button--secondary" data-module="govuk-button" style="margin-right:10px;" onclick="window.location.href='#'">
+                                </button>
+                                <button class="govuk-button govuk-button--secondary" data-module="govuk-button" style="margin-right:10px;" onclick="window.location.href='#'">
                                 Save as PDF
-                            </button>
-                        </div>
+                                </button>
+                            </div>
                         </div>
                     </div>
-            </td>
+                </td>
             </tr>
         </tbody>
- 
 
             
         <!-- Application 4 -->
@@ -708,6 +739,7 @@ th.govuk-table__header.sortable button:hover {
             <td class="govuk-table__cell Substantive" id="">Official Search of Whole with Priority<p class="govuk-visually-hidden"> Sobstantive Completed  </p></td>
             <td class="govuk-table__cell " scope="row" data-sortable="2022-05-14">14/05/22</td>
             <td class="govuk-table__cell " scope="row">Completed</td>
+            <td class="govuk-table__cell "  data-sortable="0"></td>
             <td class="govuk-table__cell "  data-sortable="0"></td>
             <td class="govuk-table__cell" scope="row"><a class="expandy-row-trigger2" href="#">+</a></td>
 
@@ -812,6 +844,7 @@ th.govuk-table__header.sortable button:hover {
             <td class="govuk-table__cell " scope="row" data-sortable="2022-05-14">14/05/22</td>
             <td class="govuk-table__cell " scope="row">Completed</td>
             <td class="govuk-table__cell "  data-sortable="0"></td>
+            <td class="govuk-table__cell "  data-sortable="0"></td>
             <td class="govuk-table__cell" scope="row"><a class="expandy-row-trigger2" href="#">+</a></td>
 
             </tr>
@@ -914,6 +947,7 @@ th.govuk-table__header.sortable button:hover {
             <td class="govuk-table__cell " scope="row" data-sortable="2022-05-10">10/05/22</td>
             <td class="govuk-table__cell " scope="row">Received</td>
             <td class="govuk-table__cell "  data-sortable="0">07/09/2022</td>
+            <td class="govuk-table__cell "  data-sortable="0"></td>
             <td class="govuk-table__cell" scope="row"><a class="expandy-row-trigger2" href="#">+</a></td>
 
             </tr>
@@ -1009,6 +1043,7 @@ th.govuk-table__header.sortable button:hover {
             <td class="govuk-table__cell " scope="row" data-sortable="2022-08-01">01/08/22</td>
             <td class="govuk-table__cell " scope="row">Received</td>
             <td class="govuk-table__cell "  data-sortable="0">04/11/2022</td>
+            <td class="govuk-table__cell "  data-sortable="0"></td>
             <td class="govuk-table__cell" scope="row"><a class="expandy-row-trigger2" href="#">+</a></td>
 
         </tr>
@@ -1106,6 +1141,7 @@ th.govuk-table__header.sortable button:hover {
                <td class="govuk-table__cell Substantive" id="">New Lease<p class="govuk-visually-hidden"> Substantive Completed  </p></td>
                <td class="govuk-table__cell " scope="row" data-sortable="2022-08-02">02/08/22</td>
                <td class="govuk-table__cell " scope="row">Completed</td>
+               <td class="govuk-table__cell "  data-sortable="0"></td>
                <td class="govuk-table__cell "  data-sortable="0"></td>
                <td class="govuk-table__cell" scope="row"><a class="expandy-row-trigger2" href="#">+</a></td>
 
@@ -1218,10 +1254,11 @@ th.govuk-table__header.sortable button:hover {
                 <td class="govuk-table__cell " scope="row" data-sortable="2022-07-25">25/07/22</td>
                 <td class="govuk-table__cell " scope="row">Delayed</td>
                 <td class="govuk-table__cell "  data-sortable="0">24/10/2022</td>
-                <td class="govuk-table__cell" scope="row"><a class="expandy-row-trigger2" href="#">+</a></td>
+                <td class="govuk-table__cell "  data-sortable="0"></td>
+                <td class="govuk-table__cell" scope="row"><a class="expandy-row-trigger3" href="#"><img class="alert-icon" title="Open requisition" src="/public/images/icon-alert-triangle.svg"></a></td>
             </tr>
             <!-- 1 Expanded row -->
-            <tr class="govuk-table__row expandy-row hide-row accordion-default-content-1" style="vertical-align: top;">
+            <tr class="govuk-table__row expandy-row3 hide-row accordion-default-content-1" style="vertical-align: top;">
                 <td class="govuk-table__cell" colspan="1"></td>
                 <td class="govuk-table__cell" colspan="7" style="padding-top: 30px;">
                     <div>
@@ -1307,6 +1344,7 @@ th.govuk-table__header.sortable button:hover {
                 <td class="govuk-table__cell " scope="row" data-sortable="2022-07-25">25/07/22</td>
                 <td class="govuk-table__cell " scope="row">Received</td>
                 <td class="govuk-table__cell "  data-sortable="0">28/10/2022</td>
+                <td class="govuk-table__cell "  data-sortable="0"></td>
                 <td class="govuk-table__cell" scope="row"><a class="expandy-row-trigger2" href="#">+</a></td>
 
             </tr>
