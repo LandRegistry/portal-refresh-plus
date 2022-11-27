@@ -1,0 +1,116 @@
+{% extends "layouts/layout_ProjectPage.html" %}
+
+{% block pageTitle %}
+Requisitions
+{% endblock %}
+
+
+
+{% block content %}
+
+<style>
+    .govuk-accordion__section-heading-text {
+      font-size: 36px;
+      line-height: 1;
+  }
+
+::marker {
+  font-weight:600;
+}
+
+.simpleListNumbered li {
+    padding-bottom: 10px;
+}
+
+</style>
+
+<div class="govuk-grid-row govuk-body">
+  
+  <div class="govuk-grid-column-full backButton">
+      <a href="/index.html" class="govuk-back-link" style="margin-bottom:20px;">Back to projects</a>
+  </div>
+<!-- This is where the project title goes and a small descritpion of what the work covers. -->
+
+    <div class="govuk-grid-column-full govuk-!-padding-bottom-9  govuk-!-padding-top-6">
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-0">
+        Requisitions
+      </h1>
+      
+
+
+    </div>
+
+
+<!-- This is where the accordion content is added. If the signed-off design is not required, simply comment it out. -->
+
+    <div class="govuk-grid-column-full">
+        <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">
+          <div class="govuk-accordion__section ">
+            <div class="govuk-accordion__section-header">
+              <h2 class="govuk-accordion__section-heading">
+                <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
+                  Overview
+                </span>
+              </h2>
+            </div>
+            <div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
+              
+              <p>There has been <a href="/projects/notifications/index.html">user research and design</a> in the past related to surfacing requisitions/informing the user that they need to require action, but this work is bypassing that user research and design, due to the urgency of implementation from the Product Team.</p>
+
+              <h3 class="govuk-heading-m govuk-!-margin-bottom-2 govuk-!-margin-top-7">Project team</h3>
+
+              <ul class="simpleList">
+                <li>Andy Carr - <span class="jobTitle">Interaction design</span></li>
+                <li>John Taylor - <span class="jobTitle">Product owner</span></li>
+                <li>Pat Gannon - <span class="jobTitle">Business analyst</span></li>
+                <li>Gareth Roberts - <span class="jobTitle">Product manager</span></li>
+              </ul>
+            </div>
+          </div>
+
+
+        <div class="govuk-accordion__section ">
+            <div class="govuk-accordion__section-header">
+              <h2 class="govuk-accordion__section-heading">
+                <span class="govuk-accordion__section-button" id="accordion-default-heading-2">
+                  Design
+                </span>
+              </h2>
+            </div>
+            <div id="accordion-default-content-2" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-2">
+              
+              <h3 class="govuk-heading-m govuk-!-margin-bottom-2 govuk-!-margin-top-6">E23-66i - Requisition issued visible from collapsed row</h3>
+              <p>Users need to be able to tell that a requisition has been issued, without having to expand application rows.</p>
+              <ul class="simpleList">
+                <li><a target="_blank" href="design/e23-66i/index_V1.html">Design option 1</a> - The expand/collapse icon has been changed to a warning sign
+                </li>
+              </ul>  
+
+            </div>
+          </div>
+
+          <div class="govuk-accordion__section ">
+            <div class="govuk-accordion__section-header">
+              <h2 class="govuk-accordion__section-heading">
+                <span class="govuk-accordion__section-button" id="accordion-default-heading-3">
+                  User research
+                </span>
+              </h2>
+            </div>
+            <div id="accordion-default-content-3" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-3">
+
+              <p>There has been <a href="/projects/notifications/index.html">user research and design</a> in the past related to surfacing requisitions/informing the user that they need to require action, but this work is bypassing that user research and design, due to the urgency of implementation from the Product Team.</p>
+
+            </div>
+          </div>
+
+
+        </div>
+    </div>
+
+
+
+
+  </div>
+
+{% endblock %}
