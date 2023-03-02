@@ -40,13 +40,98 @@
 {% endblock %}
 
 {% block header %}
-  {# Set serviceName in config.js. #}
-  {{ govukHeader({
-    homepageUrl: "/",
-    serviceName: serviceName,
-    serviceUrl: "/",
-    containerClasses: "govuk-width-container"
-  }) }}
+
+<header class="govuk-header " role="banner" data-module="govuk-header">
+  <div class="govuk-header__container govuk-width-container">
+    
+    <div class="govuk-header__logo">
+      <a href="#" class="govuk-header__link govuk-header__link--homepage">
+        <span class="govuk-header__logotype">
+          <img src="/public/images/HMLR_Logo.svg" alt="hmlrlogo" class="govuk-header__link govuk-header__link--homepage" style="height: 30px;">
+        </span>
+      </a>
+    </div>
+
+    <div class="govuk-header__service">
+      <a href="#" class="govuk-header__link govuk-header__link--service-name">
+        HM Land Registry Portal
+      </a>
+    </div>
+    
+    <div class="govuk-header__content">
+      <ul style="float: right;">
+ 
+        <li class="parent parentIconDown"><a style="padding-right: 25px;" href="#">Services</a></li>
+         
+        <li class="parent"><a href="PortalRefreshFeedback@landregistry.gov.uk">Contact us</a></li>
+  
+        <li class="parent parentIconDown2"><a style="padding-right: 25px;" href="#">Andy Carr </a>
+          <ul class="child" style="right:0;">
+            <div class="govuk-body myAccountContent" style="margin-bottom:0px;">
+
+              <div>
+                <div class="myAccountTitle" style="padding-bottom:3px;">
+                  Logged in as:
+                </div>
+                <div class="myAccount2ndLine" style="padding-bottom:15px;">
+                  Administrator 
+                </div>
+                <div class="myAccountTitle" style="padding-bottom:3px;">
+                User ID:
+              </div>
+              <div class="myAccount2ndLine" style="padding-bottom:15px;">
+                  xxxxxxxxxxxxxx 
+              </div>
+              <div class="myAccountTitle" style="padding-bottom:3px;">
+                You last logged in on
+              </div>
+              <div class="myAccount2ndLine" style="padding-bottom:15px;">
+                  15 July 2022 10:19:23 BST
+              </div>
+              <div class="myAccount2ndLine" style="padding-bottom:15px;">
+                If these details are incorrect, please log out and contact us.                   
+              </div>
+                  <!-- <a href="#" style="margin:0px;color:#00703C;font-weight:700;font-size:14px;">View profile</a> -->
+
+            </div>
+
+            <hr>
+
+            <div class="myAccountTitle" style="padding-bottom:3px;padding-top: 15px;">
+              <b>Primary Business Unit Administrator (BUA):</b> 
+            </div>
+            <div class="myAccount2ndLine">
+              John Taylor
+              <!-- <a href="#" style="margin:0px;color:#00703C;"><b>JohnTaylor@bigbusiness.com</b></a> -->
+            </div>
+
+                <!-- <button id="logOut" class="govuk-button" style="margin-top:20px;">Log out</button> -->
+          </ul>
+        </li>
+        <li class="parent"><a href="#">
+          Log out
+        </li>
+      </ul>
+    </div>
+  </div>
+</header>
+
+<div class="govuk-width-container">
+<div class="govuk-phase-banner" >
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new design layout - your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+</div>
+
+<!-- Hero section -->
+<div id="SectionHeroImage">
+</div>
 {% endblock %}
 
 {% set mainClasses = mainClasses | default("govuk-main-wrapper--auto-spacing") %}
