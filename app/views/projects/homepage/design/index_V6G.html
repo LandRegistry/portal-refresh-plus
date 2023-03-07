@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-{% extends "layout.html" %}
+{% extends "layouts/layout_homepage.html" %}
 {% block pageTitle %} Home
 {% endblock %}
-
-
 {% block content %}
+
+{% include "includes/notificationsCookies.html" %} 
+{% include "includes/notificationsNavigation.html" %} 
 
 <script>
     /* When the user clicks on the button, 
@@ -34,206 +35,73 @@
 
 
 <style>
-.govuk-header__logo {
-  width:105px;
-  margin-bottom: 0;
-}
-
-.govuk-header__service {
-  display: inline-block;
-}
-
-.govuk-header__content {
-  width:59%;
-  float: right;
-  padding:0;
-}
-
-.govuk-header__container {
-  border-bottom: 10px solid #789904;
-}
-
-.govuk-header {
-  border-bottom: 10px solid #789904;
-}
-
-
-.govuk-header__link:hover {
- text-decoration: 3px underline;
- text-decoration-skip-ink: auto;
-}
-
-.parent {display: block;position: relative;float: left;line-height: 50px; font-weight:700; margin-top:-10px;}
-.parent-dropdown {display: block;position: relative;float: left;line-height: 50px; font-weight:700; margin-top:-10px;}
-.parentIconDown {background-image: url("/public/images/icon_govuk_chevrondownWhite.svg"); background-size: 25px; background-repeat: no-repeat; background-position-x: 10px;background-position-y: center;}
-.parentIconDown2 {background-image: url("/public/images/icon_govuk_chevrondownWhite.svg"); background-size: 25px; background-repeat: no-repeat; background-position-x: 10px;background-position-y: center;}
-.parent a{margin: 20px;color: #FFFFFF;text-decoration: none;}
-.parent-dropdown a{margin: 20px;color: #FFFFFF;text-decoration: none;}
-.parent:hover > ul {display:block;position:absolute;}
-.child {display: none;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1);z-index:99999;background: #ffffff;}
-.child li {background-color: #ffffff;line-height: 28px;border-right:#CCC 0px solid; width:100%;}
-.child li a{color:#b1b4b6; font-size:15px;}
-ul{list-style: none;margin: 0;padding: 0px; min-width:10em;}
-li.parent:hover {color:#b1b4b6; box-shadow: inset -20px 0 0 #0b0c0c, inset 20px 0 0 #0b0c0c, inset 0 -3px 0 #b1b4b6}
-li.parent-dropdown:hover {color:#b1b4b6; box-shadow: inset -20px 0 0 #0b0c0c, inset 15px 0 0 #0b0c0c, inset 0 -3px 0 #b1b4b6}
-.parent:hover > a {color:#b1b4b6;}
-.parent-dropdown:hover > a {color:#b1b4b6;}
-.parentIconDown:hover {background-image: url("/public/images/icon_govuk_chevrondownGreen.svg");}
-.parentIconDown2:hover {background-image: url("/public/images/icon_govuk_chevrondownGreen.svg");}
-
-.expand{font-size:12px;float:right;margin-right:5px;}
-.iconRight {background-image: url("/public/images/icon_govuk_chevronrightGreen.svg"); background-size: 25px; background-repeat: no-repeat; background-position-x: 134px;background-position-y: center;}
-
-.parentIconDown3 {
-  background-image: url(/public/images/icon_Basket.svg);
-    background-size: 23px;
-    background-repeat: no-repeat;
-    background-position-x: 16px;
-    background-position-y: 23px;
-    width: 130px;
-
-  }
-
-  .parentIconDown3:hover {
-  background-image: url(/public/images/icon_BasketGreen.svg);
-  }
-
-
-  .notificationContent {
-    padding: 20px;
-    width:290px;
-    margin-bottom: 0px;
-    background: #fff;
-  }
-  
-  .notificationTopRow {
-    width:100%;
-  display:flex;
-  padding-bottom: 3px;
-  }
-  
-  .notificationTitle {
-    font-size:16px;
-    font-weight:700;
-  width:50%;
-  }
-  
-  .myAccountTitle {
-    font-size:16px;
-    font-weight:700;
-  padding-bottom: 3px;
-  }
-  
-  .notificationTime {
-    font-size:12px;
-    font-weight:400;
-    text-align: right;
-    width:50%;
-  }
-  
-  .notification2ndLine {
-    font-size:14px;
-    font-weight:400;
-    width: 100%;
-    padding-bottom:15px;
-  }
-  
-  .myAccount2ndLine {
-    font-size:14px;
-    font-weight:400;
-    width: 100%;
-    padding-bottom:0px;
-  }
-  
-
-  
-  .myAccountLinks a {
-    font-size: 15px;
-      width: 100%;
-      line-height: unset;
-      background-color: unset !important;
-      color: #006637 !important;
-      font-weight: 700;
-      padding: unset;
-  }
-  
-  
-  .NotificationSingle {
-      display: grid;
-      padding-bottom: 20px;
-      border-bottom: 1px solid #dedede;
-      margin-bottom: 20px;
-  }
-  
-  .NotificationSingleLast {
-      display: grid;
-  }
-  
-  .notificationNavNumber {
-    color: #1F8153;
-      background-color: #fff;
-      padding: 5px 9px;
-      border-radius: 500px;
-      font-weight: 700;
-  }
-  
-  .myAccountContent {
-    width:200px;
-    padding: 25px;
-    background: #ffffff;
-  }
-  
-  .myAccountContent a {
-    padding: 0px;
-  }
-  
-  hr {
-    background: #dedede;
-      height: 1px;
-      border-style: none;
-      margin: 15px 0px;
-  }
-  
-  #logOut {
-    margin-bottom: 0px;
-      margin-top: 25px;
-      width: 100%;
-  }
-  
-  #inputs {
-    margin: auto;
-      margin-top: 27px;
-      max-width: 1200px;
-      min-height: 180px;
-  }
-
-
-
-
-
-
-.govuk-main-wrapper--auto-spacing:first-child, .govuk-main-wrapper--l {
-    padding-top: 0px;
-}
-
-.govuk-footer {
-    display: none;
-}
-
-
-
 
 #SectionHeroImage {
-    background-image: url(/public/images/london.png);
-    height: 200px;
+    background-image: url(/public/images/Hero_heather.png);
+    height: 322px;
     width: 100%;
     position: relative;
     background-size: cover;
-    background-position-y:950px;
-    margin-bottom: 40px;
+    background-position-y: bottom;
+}
+
+#SectionHeroContent {
+    max-width: 1200px;
+    margin: auto;
+}
+
+.heroTextBackground {
+    background-color: #006637;
+    padding: 25px;
+    bottom: -48px;
+    margin-bottom: 0;
+    max-width: 35em;
+    padding: 32px 40px;
+    position: absolute;
+    top: auto;
+}
+
+.whiteCTA {
+  background-color: #ffffff;
+  color: #006637;
+  width: 250px;
+  margin-bottom:0px;
+}
+
+.govuk-notification-banner__content > * {
+    box-sizing: border-box;
+    max-width: 1200px;
 }
 
 </style>
+
+<div class="govuk-phase-banner" style="padding-left: 30px;border-bottom:0px;">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new design layout – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+
+<!-- Hero section -->
+<div id="SectionHeroImage">
+
+  <div id="SectionHeroContent">
+      <div class="heroTextBackground">
+        <h1 class="govuk-heading-xl" style="color:#ffffff;margin-bottom: 10px;">
+          HM Land Registry Portal
+        </h1>
+        <p class="govuk-body govuk-!-font-size-24" style="color:#ffffff;margin-bottom:0px;">
+          Access your online services
+        </p>
+      </div>
+  </div>
+
+</div>
+
 
 
 <!-- Edit links section -->
@@ -756,18 +624,36 @@ li.parent-dropdown:hover {color:#b1b4b6; box-shadow: inset -20px 0 0 #0b0c0c, in
 
 </div>
 
+<!-- Notification -->
+<div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner" style="max-width:1190px;margin:auto;margin-top:65px;">
+  <div class="govuk-notification-banner__header">
+    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+      Important
+    </h2>
+  </div>
+  <div class="govuk-notification-banner__content">
+    <p class="govuk-notification-banner__heading">
+      30 November - Digital applications and new Portal homepage
+      
+    </p>
+    <p class="govuk-body">The Digital Registration Service will be the default route to submit applications from 30 November. Thousands of customers have already switched to digital. If you haven’t already, start using the Digital Registration Service today. On 30 November we’ll also update Portal homepage to make it easier to navigate and personalise to suit your needs.</p>
 
+      <p class="govuk-body" style="margin-bottom:0px;">Find out more about <a  href="https://www.gov.uk/guidance/hm-land-registry-digital-applications">Digital applications and the new Portal homepage</a>.</p>
+  </div>
+</div>
 
 <!-- Divider line -->
-<!-- <div class="dividerLine10"></div> -->
+<div class="dividerLine10"></div> 
+
+
 
 
 
 <!-- News panel -->
-<!-- <div id="NewsPanel">
+<div id="NewsPanel">
   <div id="NewsPanelContent" class="govuk-body">
 
-    <h2 class="govuk-heading-l govuk-!-font-size-36">News</h2>
+    <h2 class="govuk-heading-l govuk-!-font-size-36">Latest from HM Land Registry</h2>
 
 
 
@@ -781,7 +667,7 @@ li.parent-dropdown:hover {color:#b1b4b6; box-shadow: inset -20px 0 0 #0b0c0c, in
 
 
       <div class="newsImage">
-        <img src="/public/images/vca2-news.png" style="width:100%;">
+        <img src="/public/images/news-va.png" style="width:100%;">
       </div>
 
       <div class="newsTextSection">
@@ -821,27 +707,8 @@ li.parent-dropdown:hover {color:#b1b4b6; box-shadow: inset -20px 0 0 #0b0c0c, in
     </div>
 
   </div>
-</div>  -->
+</div> 
 
-
-
-<!-- Notification -->
-<div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner" style="max-width:1190px;margin:auto;margin-top:65px;">
-  <div class="govuk-notification-banner__header">
-    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
-      Important
-    </h2>
-  </div>
-  <div class="govuk-notification-banner__content">
-    <p class="govuk-notification-banner__heading">
-      30 November - Digital applications and new Portal homepage
-      
-    </p>
-    <p class="govuk-body">The Digital Registration Service will be the default route to submit applications from 30 November. Thousands of customers have already switched to digital. If you haven’t already, start using the Digital Registration Service today. On 30 November we’ll also update Portal homepage to make it easier to navigate and personalise to suit your needs.</p>
-
-      <p class="govuk-body" style="margin-bottom:0px;">Find out more about <a  href="https://www.gov.uk/guidance/hm-land-registry-digital-applications">Digital applications and the new Portal homepage</a>.</p>
-  </div>
-</div>
 
 <!-- Divider line -->
 <!-- <div class="dividerLine10"></div> -->
@@ -1110,6 +977,9 @@ li.parent-dropdown:hover {color:#b1b4b6; box-shadow: inset -20px 0 0 #0b0c0c, in
 </div>
 
 
+
+<!-- Footer -->
+{% include "includes/officialCopiesFooter.html" %} 
 
 
 
