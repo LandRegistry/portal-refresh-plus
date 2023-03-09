@@ -41,6 +41,60 @@
 
 {% block header %}
 
+<style>
+
+.dropdown .dropbtn {
+  cursor: pointer;
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+  font-weight:700;
+  margin-left:20px;
+}
+
+.dropbtn:hover {
+  color: #b1b4b6;
+}
+
+.dropbtn-clicked {
+  cursor: pointer;
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color: #1d70b8;
+  padding: 14px 16px;
+  background-color: white;
+  font-family: inherit;
+  margin: 0;
+  font-weight:700;
+  margin-left:20px;
+}
+
+.dropdown-section {
+  background-color: #f3f2f1;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f3f2f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+
+
+.show {
+  display: block;
+}
+</style>
+
 <header class="govuk-header " role="banner" data-module="govuk-header">
   <div class="govuk-header__container govuk-width-container">
     
@@ -54,59 +108,64 @@
 
     <div class="govuk-header__service">
       <a href="#" class="govuk-header__link govuk-header__link--service-name">
-        HM Land Registry Portal
+        Portal services
       </a>
     </div>
     
     <div class="govuk-header__content">
       <ul style="float: right;">
- 
-        <li class="parent-dropdown parentIconDown"><a style="padding-left: 20px;" href="#">Services</a></li>
+        
+        <li class="parent-dropdown parentIconDown"><a style="padding-left: 20px;" href="#">Services</li></a>
          
         <li class="parent"><a href="PortalRefreshFeedback@landregistry.gov.uk">Contact us</a></li>
   
-        <li class="parent-dropdown parentIconDown2"><a style="padding-left: 20px;" href="#">Andy Carr </a>
-          <ul class="child" style="right:0;">
-            <div class="govuk-body myAccountContent" style="margin-bottom:0px;">
+        <li class="parent-dropdown parentIconDown2">
+          <div class="dropdown">
+            <button style="padding-left: 20px;" class="dropbtn" onclick="myFunction()">Andy Carr</button>
+            <div class="dropdown-content" id="myDropdown">
+              <ul class="dropdown-section">
+                <div class="govuk-body myAccountContent" style="margin-bottom:0px;">
 
-              <div>
-                <div class="myAccountTitle" style="padding-bottom:3px;">
-                  Logged in as:
+                  <div>
+                    <div class="myAccountTitle" style="padding-bottom:3px;">
+                      Logged in as:
+                    </div>
+                    <div class="myAccount2ndLine" style="padding-bottom:15px;">
+                      Administrator 
+                    </div>
+                    <div class="myAccountTitle" style="padding-bottom:3px;">
+                    User ID:
+                  </div>
+                  <div class="myAccount2ndLine" style="padding-bottom:15px;">
+                      xxxxxxxxxxxxxx 
+                  </div>
+                  <div class="myAccountTitle" style="padding-bottom:3px;">
+                    You last logged in on
+                  </div>
+                  <div class="myAccount2ndLine" style="padding-bottom:15px;">
+                      15 July 2022 10:19:23 BST
+                  </div>
+                  <div class="myAccount2ndLine" style="padding-bottom:15px;">
+                    If these details are incorrect, please log out and contact us.                   
+                  </div>
+                      <!-- <a href="#" style="margin:0px;color:#00703C;font-weight:700;font-size:14px;">View profile</a> -->
+
                 </div>
-                <div class="myAccount2ndLine" style="padding-bottom:15px;">
-                  Administrator 
+
+                <hr>
+
+                <div class="myAccountTitle" style="padding-bottom:3px;padding-top: 15px;">
+                  <b>Primary Business Unit Administrator (BUA):</b> 
                 </div>
-                <div class="myAccountTitle" style="padding-bottom:3px;">
-                User ID:
-              </div>
-              <div class="myAccount2ndLine" style="padding-bottom:15px;">
-                  xxxxxxxxxxxxxx 
-              </div>
-              <div class="myAccountTitle" style="padding-bottom:3px;">
-                You last logged in on
-              </div>
-              <div class="myAccount2ndLine" style="padding-bottom:15px;">
-                  15 July 2022 10:19:23 BST
-              </div>
-              <div class="myAccount2ndLine" style="padding-bottom:15px;">
-                If these details are incorrect, please log out and contact us.                   
-              </div>
-                  <!-- <a href="#" style="margin:0px;color:#00703C;font-weight:700;font-size:14px;">View profile</a> -->
+                <div class="myAccount2ndLine">
+                  John Taylor
+                  <!-- <a href="#" style="margin:0px;color:#00703C;"><b>JohnTaylor@bigbusiness.com</b></a> -->
+                </div>
 
+                    <!-- <button id="logOut" class="govuk-button" style="margin-top:20px;">Log out</button> -->
+              </ul>
             </div>
-
-            <hr>
-
-            <div class="myAccountTitle" style="padding-bottom:3px;padding-top: 15px;">
-              <b>Primary Business Unit Administrator (BUA):</b> 
-            </div>
-            <div class="myAccount2ndLine">
-              John Taylor
-              <!-- <a href="#" style="margin:0px;color:#00703C;"><b>JohnTaylor@bigbusiness.com</b></a> -->
-            </div>
-
-                <!-- <button id="logOut" class="govuk-button" style="margin-top:20px;">Log out</button> -->
-          </ul>
+          </div>
         </li>
         <li class="parent" style="text-align: center;"><a href="#">Log out</a></li>
       </ul>

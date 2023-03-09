@@ -70,16 +70,16 @@
 .parent a{margin: 20px;color: #FFFFFF;text-decoration: none;}
 .parent-dropdown a{margin: 20px;color: #FFFFFF;text-decoration: none;}
 .parent:hover > ul {display:block;position:absolute;}
-.child {display: none;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1);z-index:99999;background: #ffffff;}
+.child {display: none;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1);z-index:99999;background: #f3f2f1;}
 .child li {background-color: #ffffff;line-height: 28px;border-right:#CCC 0px solid; width:100%;}
 .child li a{color:#b1b4b6; font-size:15px;}
 ul{list-style: none;margin: 0;padding: 0px; min-width:10em;}
-li.parent:hover {color:#b1b4b6; box-shadow: inset -20px 0 0 #0b0c0c, inset 20px 0 0 #0b0c0c, inset 0 -3px 0 #b1b4b6}
-li.parent-dropdown:hover {color:#b1b4b6; box-shadow: inset -20px 0 0 #0b0c0c, inset 15px 0 0 #0b0c0c, inset 0 -3px 0 #b1b4b6}
+li.parent:hover {box-shadow: inset -20px 0 0 #0b0c0c, inset 20px 0 0 #0b0c0c, inset 0 -3px 0 #b1b4b6}
+li.parent-dropdown:hover { box-shadow: inset -16px 0 0 #0b0c0c, inset 15px 0 0 #0b0c0c, inset 0 -3px 0 #b1b4b6}
 .parent:hover > a {color:#b1b4b6;}
 .parent-dropdown:hover > a {color:#b1b4b6;}
-.parentIconDown:hover {background-image: url("/public/images/icon_govuk_chevron-down-grey.svg");}
-.parentIconDown2:hover {background-image: url("/public/images/icon_govuk_chevron-down-grey.svg");}
+.parentIconDown:hover {background-image: url("/public/images/chevron-down-grey.png");background-size: 15px; background-repeat: no-repeat; background-position-x: 15px;background-position-y: center;}
+.parentIconDown2:hover {background-image: url("/public/images/chevron-down-grey.png");background-size: 15px; background-repeat: no-repeat; background-position-x: 15px;background-position-y: center;}
 
 .expand{font-size:12px;float:right;margin-right:5px;}
 .iconRight {background-image: url("/public/images/icon_govuk_chevronrightGreen.svg"); background-size: 25px; background-repeat: no-repeat; background-position-x: 134px;background-position-y: center;}
@@ -241,7 +241,7 @@ li.parent-dropdown:hover {color:#b1b4b6; box-shadow: inset -20px 0 0 #0b0c0c, in
     <div id="linksPanel" class="govuk-body" style="background: #ffffff;">
 
           <!-- Filters and Search Section - Start -->
-          <h2 class="govuk-heading-l govuk-!-font-size-36" style="margin-bottom:60px;">My services<button id="edit" class="govuk-button" style="float:right;margin-bottom: 0;" onclick="myFunction()">Edit shortcuts</button></h2> 
+          <h2 class="govuk-heading-l govuk-!-font-size-36" style="margin-bottom:60px;">My services</h2> 
           
 
     <div id="linksDisplay">
@@ -752,9 +752,11 @@ li.parent-dropdown:hover {color:#b1b4b6; box-shadow: inset -20px 0 0 #0b0c0c, in
   
             </select>
           </div>
-
-
 </div>
+<button id="edit" class="govuk-button govuk-button--secondary" data-module="govuk-button" onclick="myFunction()">
+  Edit shortcuts
+</button>
+
 
 
 
@@ -1117,7 +1119,25 @@ li.parent-dropdown:hover {color:#b1b4b6; box-shadow: inset -20px 0 0 #0b0c0c, in
 
 <script>
 
-  const data = [
+  /* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(e) {
+  if (!e.target.matches('.dropbtn')) {
+  var myDropdown = document.getElementById("myDropdown");
+    if (myDropdown.classList.contains('show')) {
+      myDropdown.classList.remove('show');
+    }
+  }
+}
+
+
+
+const data = [
   { 
       id: 'blank', 
       heading:'',  
@@ -1561,16 +1581,6 @@ window.onload = function() {
 </script>
 
 
-<script>
-    function myFunction() {
-    var x = document.getElementById("linksDisplay");
-    if (x.style.display === "none") {
-      x.style.display = "block";
-    } else {
-      x.style.display = "none";
-    }
-  }
-  
-</script>
-
 {% endblock %}
+
+document.getElementById("myDropdown").classList.toggle("show")
