@@ -1125,6 +1125,17 @@ function myFunction() {
   document.getElementById("myDropdown").classList.toggle("show");
 }
 
+
+// menu dropdown button
+$('#dropdown-button').click(function (e) {
+
+  // swap class
+  $("#fdropdown-button" ).removeClass('dropbtn').addClass('dropbtn-clicked')
+
+
+});
+
+
 // Close the dropdown if the user clicks outside of it
 window.onclick = function(e) {
   if (!e.target.matches('.dropbtn')) {
