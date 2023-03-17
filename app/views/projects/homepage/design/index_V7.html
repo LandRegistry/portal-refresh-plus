@@ -1123,18 +1123,10 @@ li.parent-dropdown:hover { box-shadow: inset -16px 0 0 #0b0c0c, inset 15px 0 0 #
 toggle between hiding and showing the dropdown content */
 function myFunction() {
   document.getElementById("myDropdown").classList.toggle("show");
+  document.getElementById("dropdown-button").removeClass("dropbtn").addClass("dropbtn-clicked");
 }
 
-
-// menu dropdown button
-$('#dropdown-button').click(function (e) {
-
-  // swap class
-  $("#drop-down-button" ).removeClass('dropbtn').addClass('dropbtn-clicked')
-
-
-});
-
+.removeClass('highlight').addClass('edited-text-bold')
 
 // Close the dropdown if the user clicks outside of it
 window.onclick = function(e) {

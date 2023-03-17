@@ -146,8 +146,19 @@ th.govuk-table__header.sortable button:hover {
 }
 
 .alert-icon {
-    padding-top:5px;
+    box-sizing: border-box;
+    display: inline-block;
+    left: 5;
     width: 30px;
+    height: 30px;
+    font-weight: 700;
+    font-size: 22px;
+    border: 3px solid #0b0c0c;
+    border-radius: 50%;
+    color: #fff;
+    background: #0b0c0c;
+    line-height: 25px;
+    text-align: center;
 }
 
 </style>
@@ -553,10 +564,10 @@ th.govuk-table__header.sortable button:hover {
         <!-- Application 2 -->
         <tbody class="govuk-table__body">
             <tr class="govuk-table__row govuk-link-table">
-                <td class="govuk-table__cell "><img class="alert-icon" title="Requisition for review" src="/public/images/icon-important.png"></td>
+                <td class="govuk-table__cell "><span class="alert-icon" aria-hidden="true">!</span></td>
                 <td class="govuk-table__cell " scope="row">
-                PL893723 
-                    <p class="govuk-visually-hidden">PL893723</p>
+                    E23-66Q
+                    <p class="govuk-visually-hidden">E23-66Q</p>
                     <!-- THIS IS PAGE {{page}} -->
                 </td>
                 <td class="govuk-table__cell ">PLTR.Thompson</td>
@@ -645,10 +656,10 @@ th.govuk-table__header.sortable button:hover {
         <!-- Application 3 -->
         <tbody class="govuk-table__body">
             <tr class="govuk-table__row govuk-link-table">
-                <td class="govuk-table__cell "><img class="alert-icon" title="Requisition for review" src="/public/images/icon-important.png"></td>
+                <td class="govuk-table__cell "><span class="alert-icon" aria-hidden="true">!</span></td>
                 <td class="govuk-table__cell " scope="row">
-                    SS23424 
-                    <p class="govuk-visually-hidden">SS23424</p>
+                    E23-1J
+                    <p class="govuk-visually-hidden">E23-1J</p>
                     <!-- THIS IS PAGE {{page}} -->
                 </td>
                 <td class="govuk-table__cell ">PLTR.Becker</td>
