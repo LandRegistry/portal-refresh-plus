@@ -43,41 +43,43 @@
 
 <style>
 
-.dropdown .dropbtn {
+.dropdown {
   cursor: pointer;
   font-size: 16px;  
   border: none;
   outline: none;
   color: white;
-  padding: 14px 16px;
   background-color: inherit;
   font-family: inherit;
   margin: 0;
   font-weight:700;
-  margin-left:20px;
+
 }
 
-.dropbtn:hover {
-  color: #b1b4b6;
+.dropbtn {
+  cursor: pointer;
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color: white;
+
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+  font-weight:700;
+  margin-left:36px;
+  margin-right: 16px;
+}
+
+.dropdown-clicked {
+  background-color: #f3f2f1;
+  box-shadow: inset -16px 0 0 #f3f2f1, inset 15px 0 0 #f3f2f1, inset 0 -3px 0 #1d70b8;
+  background-image: url("/public/images/icon_govuk_chevronupWhite.svg"); background-size: 25px; background-repeat: no-repeat; background-position-x: 10px;background-position-y: center; 
 }
 
 .dropbtn-clicked {
   color: #1d70b8;
-  background-color:#f3f2f1;
 }
-
-
-.dropbtn:focus {
-  color: #1d70b8;
-  background-color:#f3f2f1;
-}
-
-.dropdown:active {
-  color: #1d70b8;
-  background-color:#f3f2f1;
-}
-
-
 
 
 .dropdown-section {
@@ -92,7 +94,6 @@
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
 }
-
 
 
 .show {
@@ -124,9 +125,9 @@
          
         <li class="parent"><a href="PortalRefreshFeedback@landregistry.gov.uk">Contact us</a></li>
   
-        <li class="parent-dropdown parentIconDown2" id="account-drop-down">
-          <div class="dropdown">
-            <button style="padding-left: 20px;" class="dropbtn" id="dropdown-button" onclick="myFunction()">Andy Carr</button>
+        <li class="parent-dropdown parentIconDown2" id="dropdown-account-chevron">
+          <div class="dropdown" id="dropdown-account">
+            <button class="dropbtn" id="dropdown-button" onclick="myFunction()">Andy Carr</button>
             <div class="dropdown-content" id="myDropdown">
               <ul class="dropdown-section">
                 <div class="govuk-body myAccountContent" style="margin-bottom:0px;">

@@ -11,21 +11,32 @@
     toggle between hiding and showing the dropdown content */
     function myFunction() {
       document.getElementById("myDropdown").classList.toggle("show");
+      document.getElementById("dropdown-account").classList.toggle("dropdown-clicked");
+      document.getElementById("dropdown-button").classList.toggle("dropbtn-clicked");
     }
     
+
     // Close the dropdown if the user clicks outside of it
-    window.onclick = function(event) {
-      if (!event.target.matches('.dropbtn')) {
-        var dropdowns = document.getElementsByClassName("dropdown-content");
-        var i;
-        for (i = 0; i < dropdowns.length; i++) {
-          var openDropdown = dropdowns[i];
-          if (openDropdown.classList.contains('show')) {
-            openDropdown.classList.remove('show');
-          }
-        }
-      }
+window.onclick = function(e) {
+  if (!e.target.matches('.dropbtn')) {
+
+    var myDropdown = document.getElementById("myDropdown");
+      if (myDropdown.classList.contains('show')) {
+        myDropdown.classList.remove('show');
+      };
+
+    var myDropdown = document.getElementById("dropdown-account");
+    if (myDropdown.classList.contains('dropdown-clicked')) {
+      myDropdown.classList.remove('dropdown-clicked');
+    };
+
+    var myDropdown = document.getElementById("dropdown-button");
+    if (myDropdown.classList.contains('dropbtn-clicked')) {
+      myDropdown.classList.remove('dropbtn-clicked');
     }
+  }
+}
+
 
 </script>
 
@@ -65,21 +76,28 @@
 
 .parent {display: block;position: relative;float: left;line-height: 50px; font-weight:700; margin-top:-10px;}
 .parent-dropdown {display: block;position: relative;float: left;line-height: 50px; font-weight:700; margin-top:-10px;}
+.parent:hover {box-shadow: inset -20px 0 0 #0b0c0c, inset 20px 0 0 #0b0c0c, inset 0 -3px 0 #b1b4b6}
+.parent-dropdown:hover {box-shadow: inset -16px 0 0 #0b0c0c, inset 15px 0 0 #0b0c0c, inset 0 -3px 0 #b1b4b6}
+
+
 .parentIconDown {background-image: url("/public/images/icon_govuk_chevrondownWhite.svg"); background-size: 25px; background-repeat: no-repeat; background-position-x: 10px;background-position-y: center;}
 .parentIconDown2 {background-image: url("/public/images/icon_govuk_chevrondownWhite.svg"); background-size: 25px; background-repeat: no-repeat; background-position-x: 10px;background-position-y: center;}
+.parentIconDown:hover {background-image: url("/public/images/chevron-down-grey.png");background-size: 15px; background-repeat: no-repeat; background-position-x: 15px;background-position-y: center;}
+.parentIconDown2:hover {background-image: url("/public/images/chevron-down-grey.png");background-size: 15px; background-repeat: no-repeat; background-position-x: 15px;background-position-y: center;}
+
+
 .parent a{margin: 20px;color: #FFFFFF;text-decoration: none;}
 .parent-dropdown a{margin: 20px;color: #FFFFFF;text-decoration: none;}
-.parent:hover > ul {display:block;position:absolute;}
+
 .child {display: none;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1);z-index:99999;background: #f3f2f1;}
 .child li {background-color: #ffffff;line-height: 28px;border-right:#CCC 0px solid; width:100%;}
 .child li a{color:#b1b4b6; font-size:15px;}
 ul{list-style: none;margin: 0;padding: 0px; min-width:10em;}
-li.parent:hover {box-shadow: inset -20px 0 0 #0b0c0c, inset 20px 0 0 #0b0c0c, inset 0 -3px 0 #b1b4b6}
-li.parent-dropdown:hover { box-shadow: inset -16px 0 0 #0b0c0c, inset 15px 0 0 #0b0c0c, inset 0 -3px 0 #b1b4b6}
+
+
 .parent:hover > a {color:#b1b4b6;}
-.parent-dropdown:hover > a {color:#b1b4b6;}
-.parentIconDown:hover {background-image: url("/public/images/chevron-down-grey.png");background-size: 15px; background-repeat: no-repeat; background-position-x: 15px;background-position-y: center;}
-.parentIconDown2:hover {background-image: url("/public/images/chevron-down-grey.png");background-size: 15px; background-repeat: no-repeat; background-position-x: 15px;background-position-y: center;}
+.parent-dropdown:hover > button {color:#b1b4b6;}
+
 
 .expand{font-size:12px;float:right;margin-right:5px;}
 .iconRight {background-image: url("/public/images/icon_govuk_chevronrightGreen.svg"); background-size: 25px; background-repeat: no-repeat; background-position-x: 134px;background-position-y: center;}
@@ -1121,22 +1139,12 @@ li.parent-dropdown:hover { box-shadow: inset -16px 0 0 #0b0c0c, inset 15px 0 0 #
 
   /* When the user clicks on the button, 
 toggle between hiding and showing the dropdown content */
-function myFunction() {
-  document.getElementById("myDropdown").classList.toggle("show");
-  document.getElementById("dropdown-button").removeClass("dropbtn").addClass("dropbtn-clicked");
-}
 
-.removeClass('highlight').addClass('edited-text-bold')
 
-// Close the dropdown if the user clicks outside of it
-window.onclick = function(e) {
-  if (!e.target.matches('.dropbtn')) {
-  var myDropdown = document.getElementById("myDropdown");
-    if (myDropdown.classList.contains('show')) {
-      myDropdown.classList.remove('show');
-    }
-  }
-}
+
+
+
+
 
 
 
