@@ -7,18 +7,28 @@
 {% block content %}
 
 <script>
-    /* When the user clicks on the button, 
+
+
+
+          /* When the user clicks on the services button, 
     toggle between hiding and showing the dropdown content */
-    function myFunction() {
-      document.getElementById("myDropdown").classList.toggle("show");
-      document.getElementById("dropdown-account").classList.toggle("dropdown-clicked");
-      document.getElementById("dropdown-button").classList.toggle("dropbtn-clicked");
+    function myFunction1() {
+      document.getElementById("myDropdown-services").classList.toggle("show");
+      document.getElementById("dropdown-services").classList.toggle("dropdown-services-clicked");
+      document.getElementById("dropdown-services-button").classList.toggle("dropbtn-services-clicked");
     }
     
+    /* When the user clicks on the account button, 
+    toggle between hiding and showing the dropdown content */
+    function myFunction2() {
+      document.getElementById("myDropdown-account").classList.toggle("show");
+      document.getElementById("dropdown-account").classList.toggle("dropdown-account-clicked");
+      document.getElementById("dropdown-account-button").classList.toggle("dropbtn-account-clicked");
+    }
 
-    // Close the dropdown if the user clicks outside of it
+    /* Close the dropdown if the user clicks outside of it 
 window.onclick = function(e) {
-  if (!e.target.matches('.dropbtn')) {
+  if (!e.target.matches('.dropbtn-account')) {
 
     var myDropdown = document.getElementById("myDropdown");
       if (myDropdown.classList.contains('show')) {
@@ -36,6 +46,7 @@ window.onclick = function(e) {
     }
   }
 }
+*/
 
 
 </script>
@@ -77,7 +88,7 @@ window.onclick = function(e) {
 .parent {display: block;position: relative;float: left;line-height: 50px; font-weight:700; margin-top:-10px;}
 .parent-dropdown {display: block;position: relative;float: left;line-height: 50px; font-weight:700; margin-top:-10px;}
 .parent:hover {box-shadow: inset -20px 0 0 #0b0c0c, inset 20px 0 0 #0b0c0c, inset 0 -3px 0 #b1b4b6}
-.parent-dropdown:hover {box-shadow: inset -16px 0 0 #0b0c0c, inset 15px 0 0 #0b0c0c, inset 0 -3px 0 #b1b4b6}
+.parent-dropdown:hover {box-shadow: inset -22px 0 0 #0b0c0c, inset 15px 0 0 #0b0c0c, inset 0 -3px 0 #b1b4b6}
 
 
 .parentIconDown {background-image: url("/public/images/icon_govuk_chevrondownWhite.svg"); background-size: 25px; background-repeat: no-repeat; background-position-x: 10px;background-position-y: center;}
@@ -96,7 +107,7 @@ ul{list-style: none;margin: 0;padding: 0px; min-width:10em;}
 
 
 .parent:hover > a {color:#b1b4b6;}
-.parent-dropdown:hover > button {color:#b1b4b6;}
+.parent-dropdown:hover {color:#b1b4b6;}
 
 
 .expand{font-size:12px;float:right;margin-right:5px;}
