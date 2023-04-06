@@ -288,6 +288,12 @@ th.govuk-table__header.sortable button:hover {
                 text: "Review"   ,
                 checked: false,
                 id: "Requisition"
+                },
+                {
+                value: "Warningofcancellation",
+                text: "Warning of cancellation"   ,
+                checked: false,
+                id: "Warningofcancellation"
                 }
                 ]
                 }) }}
@@ -387,18 +393,23 @@ th.govuk-table__header.sortable button:hover {
             </div>
   
             <div>
-  
+                <div style="display: block;">
                  <button id="reset" class="govuk-button govuk-button--secondary" data-module="govuk-button" onclick="window.location.href='#'">
                     Reset search and filters
-                  </button>
+                 </button>
+                </div>
   
+                <div style="display: block;">
                  <button class="govuk-button govuk-button--secondary" data-module="govuk-button"  onclick="window.location.href='/public/files/example-export.csv'">
                      Export applications
-                   </button>
+                 </button>
+                </div>
              
+                <div style="display: block;">
                    <button class="govuk-button govuk-button--secondary" data-module="govuk-button" onclick="window.location.href='#'">
                      Guidance
                    </button>
+                </div>
                  
             </div>
   
