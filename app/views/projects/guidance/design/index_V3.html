@@ -75,7 +75,7 @@ li:hover {
                 <div class="dividerSection">
                     <span class="govuk-caption-xl">Guidance</span>
                     <h1 class="govuk-heading-xl">View applications</h1>
-                    <p class="govuk-body">View applications allows you to search for applications from your business unit, submitted via the HM Land Registry Portal or saved within the Digital Registration Service (DRS). Applications are displayed when saved, live, and for 90 calendar days following their completion or cancellation. This guide helps to explain what the features on the page do.</p>
+                    <p class="govuk-body">View applications allows you to search for applications from your business unit, submitted via HM Land Registry portal or saved within the Digital Registration Service (DRS). Applications are displayed when saved, live, and for 90 calendar days following their completion or cancellation. The purpose of this guide is to explain what each feature in view applications does.</p>
                 </div>
 
 
@@ -86,21 +86,31 @@ li:hover {
                     <div class="govuk-accordion__section-header">
                       <h2 class="govuk-accordion__section-heading">
                         <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
-                          Filtering applications
+                          Filter applications
                         </span>
                       </h2>
                     </div>
                     <div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
-                      <h3 class="govuk-heading-s">Filter by application type</h3>
-                        <p class="govuk-body">Use this to display applications by their type. You can filter by:</p>
+                      <h3 class="govuk-heading-s">Filter by requisition</h3>
+                        <p class="govuk-body">Display applications that have a requisition listed in the ‘Review’ correspondence category. Applications can be filtered by:</p>
+                        <ul class="govuk-list govuk-list--bullet">
+                          <li>Review - These applications have outstanding requisition points raised against them</li>
+                          <li>Warning of cancellation - These applications have had a warning of cancellation letter issued against them relating to outstanding requisition points</li>
+                        </ul>
+                        <div class="govuk-inset-text">
+                          Note: If a response has already been provided from your business unit, HM Land Registry will need to confirm all of the requisition points have been satisfactorily replied to. Once this has been established, an application can be progressed and will no longer show in the results for this filter.
+                        </div>
+
+                        <h3 class="govuk-heading-s">Filter by application type</h3>
+                        <p class="govuk-body">Display applications by their type. Filter by:</p>
                         <ul class="govuk-list govuk-list--bullet">
                           <li>Register update (an application that changes an existing registered title)</li>
                           <li>Register create (an application to make a new registered title)</li>
-                          <li>Register query (an enquiry or search regarding information held at HM Land Registry) </li>
+                          <li>Register query (an enquiry or search regarding information held at HM Land Registry)</li>
                         </ul>
     
                         <h3 class="govuk-heading-s">Filter by application progress</h3>
-                        <p class="govuk-body">Use this to display applications by their current progress status. You can filter by:</p>
+                        <p class="govuk-body">Display applications by their current progress status. Filter by:</p>
                         <ul class="govuk-list govuk-list--bullet">
                           <li>Cancelled</li>
                           <li>Completed</li>
@@ -109,25 +119,24 @@ li:hover {
                           <li>Saved</li>
                         </ul>
     
-                        <h3 class="govuk-heading-s">Note:</h3>
-                          <p class="govuk-body">Delayed results include applications with a progress status of:</p>
+                        <div class="govuk-inset-text">
+                          Note: Delayed results include applications with a progress status of:
                           <ul class="govuk-list govuk-list--bullet">
                             <li>Delayed</li>
                             <li>Delayed Prior Pending Application(s) or Official Search(es)</li>
                             <li>Delayed - Extension of Time Granted </li>
                           </ul>
-    
-                          <p class="govuk-body">Received results include applications with a progress status of: </p>
+                          Received results include applications with a progress status of:
                           <ul class="govuk-list govuk-list--bullet">
                             <li>Received: Priority Protected </li>
                             <li>Received: Priority Protected – Awaiting Processing</li>
                             <li>Received: Priority Protected – Set-up activity underway</li>
                             <li>In progress </li>
                           </ul>
-    
-                          <p class="govuk-body">Applications that are displayed without a progress status will also be shown within the results of the Received filter option.</p>
-    
-                          <p class="govuk-body">Saved results show pre-submitted applications that have been stored by you only, in the Digital Registration Service. Currently, your business unit colleagues’ ‘Saved’ application are not displayed by the service. </p>
+                          Applications that are displayed without a progress status will also be shown within the results of the received filter option.
+                          <br><br>
+                          Saved results show pre-submitted applications that have been stored by you and your business unit colleagues in the Digital Registration Service.
+                        </div>
                     </div>
                   </div>
 
