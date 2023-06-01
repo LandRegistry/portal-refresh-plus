@@ -184,7 +184,7 @@ li:hover {
                 <div class="govuk-accordion__section-header">
                   <h2 class="govuk-accordion__section-heading">
                     <span class="govuk-accordion__section-button" id="accordion-default-heading-6">
-                      Initial application information within the collapsed row
+                      View application information within the collapsed row
                     </span>
                   </h2>
                 </div>
@@ -225,8 +225,26 @@ li:hover {
               <div class="govuk-accordion__section ">
                 <div class="govuk-accordion__section-header">
                   <h2 class="govuk-accordion__section-heading">
+                    <span class="govuk-accordion__section-button" id="accordion-default-heading-5">
+                      Estimated completion date
+                    </span>
+                  </h2>
+                </div>
+                <div id="accordion-default-content-5" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-5">
+                  <p class="govuk-body">Use sort to order your list of applications. You can sort by: </p>
+                  <ul class="govuk-list govuk-list--bullet">
+                    <li>Title number</li>
+                    <li>Customer reference</li>
+                    <li>Received by HMLR </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="govuk-accordion__section ">
+                <div class="govuk-accordion__section-header">
+                  <h2 class="govuk-accordion__section-heading">
                     <span class="govuk-accordion__section-button" id="accordion-default-heading-7">
-                      Additional application information within the expanded row
+                      View application progress within the expanded row
                     </span>
                   </h2>
                 </div>
@@ -252,7 +270,20 @@ li:hover {
                   <p class="govuk-body">Shown for ‘Official Search with Priority’ applications only. The full period during which any application protected by a search retains its priority.</p>
                   <h3 class="govuk-heading-s">Parent title(s) </h3>
                   <p class="govuk-body">This is the existing title or titles out of which a ‘Transfer of Part’ or ‘New Lease’ application has been granted.</p>
-                  <h3 class="govuk-heading-s">Correspondence </h3>
+                  
+                </div>
+              </div>
+
+              <div class="govuk-accordion__section ">
+                <div class="govuk-accordion__section-header">
+                  <h2 class="govuk-accordion__section-heading">
+                    <span class="govuk-accordion__section-button" id="accordion-default-heading-7">
+                      View correspondence
+                    </span>
+                  </h2>
+                </div>
+                <div id="accordion-default-content-7" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-7">
+
                   <p class="govuk-body">Shows notices, requisitions and some letters issued by HM Land Registry connected with an application under these categories.</p>
 
                   <p class="govuk-body">
@@ -269,11 +300,10 @@ li:hover {
                     Note: Items under this category may include correspondence sent to parties outside of your organisation. You will not be able to view the content of these items.
                   </div>
 
-
                   <p class="govuk-body">Correspondence can include these categories.</p>
                   <p class="govuk-body">
                     <b>Letter issued on [date]</b><br>
-                    This is shown when HM Land Registry issues a letter in respect of the application.<br>
+                    This is shown when HM Land Registry issues a letter in respect of the application.
                     <br><br>
                     <b>Notice (Objection):<br>
                     Notice(s) issued on [date] Expires on [date]</b><br>
@@ -291,49 +321,58 @@ li:hover {
                     <br><br>
                     <b>Letter of cancellation issued on [date]</b><br>
                     This is shown when HM Land Registry cancels the application.
-                    <br><br>
-                    <b>Files</b><br>
+                </div>
+              </div>
+
+
+
+              <div class="govuk-accordion__section ">
+                <div class="govuk-accordion__section-header">
+                  <h2 class="govuk-accordion__section-heading">
+                    <span class="govuk-accordion__section-button" id="accordion-default-heading-5">
+                      View files and take actions
+                    </span>
+                  </h2>
+                </div>
+                <div id="accordion-default-content-5" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-5">
+                  <h3 class="govuk-heading-s">Files</h3>
+                  <p>
                     Shows the documentation electronically issued by HM Land Registry to the applicant on completion of the application. These can be viewed and downloaded.
-                    <br><br>
-                    <b>Show/hide details (-)</b><br>
+                  </p>
+                  <h3 class="govuk-heading-s">Respond</h3>
+                  <p class="govuk-body">HM Land Registry correspondence does not need to have been received on an application to use ‘Respond’.</p>
+                  <p class="govuk-body">Respond allows you to:</p>
+                  <ul class="govuk-list govuk-list--bullet">
+                    <li>reply to a requisition or other HM Land Registry correspondence</li>
+                    <li>add documents and notes to the application</li>
+                    <li>request an extension of time in reply to HM Land Registry correspondence</li>
+                  </ul>
+                  <div class="govuk-inset-text">
+                    Note: This feature does not support applications lodged via Network Services.
+                  </div>
+                  <h3 class="govuk-heading-s">Application Enquiry</h3>
+                  <p class="govuk-body">Provides access to additional information held about the application on the HM Land Registry Daylist for 'Register Create’, 'Register Update’ and ‘Official Search (with Priority)’ applications.</p>
+                  <p class="govuk-body">Application Enquiry allows you to:</p>
+                  <ul class="govuk-list govuk-list--bullet">
+                    <li>request an update on the application</li>
+                    <li>apply to expedite the application</li>
+                    <li>view the prior pending applications that affect the applications</li>
+                    <li>view discharge of a charge activity</li>
+                  </ul>
+                  <h3 class="govuk-heading-s">Save as PDF</h3>
+                  <p class="govuk-body">Save a copy of the application details displayed.</p>
+                  <div class="govuk-inset-text">
+                    Note: Not available on the Internet Explorer browser.
+                  </div>
+                  <h3 class="govuk-heading-s">Open application</h3>
+                  <p class="govuk-body">Access pre-submitted applications that have been saved by you only, in Digital Registration Service.</p>
+                  <div class="govuk-inset-text">
+                    Note: This functionality is not available for pre-submitted applications that have been saved by your business unit colleagues.
+                  </div>
+                  <h3 class="govuk-heading-s">Show/hide details (-)</h3>
+                  <p class="govuk-body">
                     Collapses the row so less information about your application is displayed.
                   </p>
-                </div>
-              </div>
-
-              <div class="govuk-accordion__section ">
-                <div class="govuk-accordion__section-header">
-                  <h2 class="govuk-accordion__section-heading">
-                    <span class="govuk-accordion__section-button" id="accordion-default-heading-5">
-                      Estimated completion date
-                    </span>
-                  </h2>
-                </div>
-                <div id="accordion-default-content-5" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-5">
-                  <p class="govuk-body">Use sort to order your list of applications. You can sort by: </p>
-                  <ul class="govuk-list govuk-list--bullet">
-                    <li>Title number</li>
-                    <li>Customer reference</li>
-                    <li>Received by HMLR </li>
-                  </ul>
-                </div>
-              </div>
-
-              <div class="govuk-accordion__section ">
-                <div class="govuk-accordion__section-header">
-                  <h2 class="govuk-accordion__section-heading">
-                    <span class="govuk-accordion__section-button" id="accordion-default-heading-5">
-                      Actions
-                    </span>
-                  </h2>
-                </div>
-                <div id="accordion-default-content-5" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-5">
-                  <p class="govuk-body">Use sort to order your list of applications. You can sort by: </p>
-                  <ul class="govuk-list govuk-list--bullet">
-                    <li>Title number</li>
-                    <li>Customer reference</li>
-                    <li>Received by HMLR </li>
-                  </ul>
                 </div>
               </div>
 
