@@ -189,7 +189,7 @@ li:hover {
                   </h2>
                 </div>
                 <div id="accordion-default-content-6" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-6">
-                  <h3 class="govuk-heading-s">Warning symbol</h3>
+                  <h3 class="govuk-heading-s">Warning symbol<img src="/public/images/icon-important.png" alt="Warning symbol" width="30" style="padding-left: 10px; margin-bottom: -6px;;"></h3>
                   <p class="govuk-body">A warning symbol is displayed when an application has a requisition listed in the ‘Review’ correspondence category.</p>
                   <h3 class="govuk-heading-s">Title number</h3>
                   <p class="govuk-body">Shows the title number for the application (if available).</p>
@@ -231,12 +231,37 @@ li:hover {
                   </h2>
                 </div>
                 <div id="accordion-default-content-5" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-5">
-                  <p class="govuk-body">Use sort to order your list of applications. You can sort by: </p>
+                  <p class="govuk-body">
+                    This is the date by which the application is likely to be completed and is not based on the individual application. It is an estimate of when the majority (90%) of that application type will be completed. ECD:
+                  </p>
                   <ul class="govuk-list govuk-list--bullet">
-                    <li>Title number</li>
-                    <li>Customer reference</li>
-                    <li>Received by HMLR </li>
+                    <li>is displayed for ‘Register Update’ and ‘Register Create’ applications. for example ‘Transfers of Part’ and ‘New Leases’</li>
+                    <li>distinguishes between developer and non-developer ‘Register Create’ application types</li>
+                    <li>is calculated for the application type and not the individual application</li>
+                    <li>is calculated using the time in which 90% of that application type was completed over the previous 30 calendar days</li>
+                    <li>may take up to an hour to be displayed</li>
+                    <li>is calculated on and from the day an application is received by HM Land Registry</li>
+                    <li>updated every 30 calendar days until the application is completed or cancelled</li>
+                    <li>updated if HM Land Registry correspondence is issued (first item of correspondence only)</li>
+                    <li>expedited applications will be prioritised but the ECD displayed will not be updated to reflect this</li>
                   </ul>
+                  <p class="govuk-body">
+                    Where there is no date, one of the following will be displayed.
+                  </p>
+                  <h3 class="govuk-heading-s">Calculating</h3>
+                  <p class="govuk-body">This is shown when the ECD for the application is calculated for the first time.</p>
+                  <h3 class="govuk-heading-s">Exceeded</h3>
+                  <p class="govuk-body">This is shown when the ECD for the application has elapsed - 10% of applications fall into this category.</p>
+                  <h3 class="govuk-heading-s">Unavailable</h3>
+                  <p class="govuk-body">This is shown when an error has occurred, preventing an ECD from being displayed. When available, the date will then appear.</p>
+                  <h3 class="govuk-heading-s">Not applicable</h3>
+                  <p class="govuk-body">This is shown for all ‘Register Query’ application types and applications that have a progress status of ‘Saved’. HM Land Registry does not provide an ECD for these types of applications.</p>
+                  <div class="govuk-inset-text">
+                    Note: On completion or cancellation of an application, any ECD information is removed, leaving the column entry blank.
+                  </div>
+                  <h3 class="govuk-heading-s">Show/hide details (+)</h3>
+                  <p class="govuk-body">Expands the row so more information about the application can be viewed.</p>
+
                 </div>
               </div>
 
@@ -286,41 +311,49 @@ li:hover {
 
                   <p class="govuk-body">Shows notices, requisitions and some letters issued by HM Land Registry connected with an application under these categories.</p>
 
+                  <h3>Review</h3>
                   <p class="govuk-body">
-                    <b>Review</b><br>
-                      These items raise points that are outstanding against the application. Provide a full response to allow the application to proceed. If a response has already been provided, HM Land Registry will need to confirm all points have been satisfactorily replied to before progressing with the application.
-                    <br><br>
-                    <b>Resolved</b><br>
-                      Once HM Land Registry has confirmed all the review points have been satisfactorily replied to, the correspondence item will move from the ‘Review’ section to the ‘Resolved’ section.
-                    <br><br>
-                    <b>Information only</b><br>
+                    These items raise points that are outstanding against the application. Provide a full response to allow the application to proceed. If a response has already been provided, HM Land Registry will need to confirm all points have been satisfactorily replied to before progressing with the application.
+                  </p> 
+                  <h3>Resolved</h3>
+                  <p class="govuk-body">
+                    Once HM Land Registry has confirmed all the review points have been satisfactorily replied to, the correspondence item will move from the ‘Review’ section to the ‘Resolved’ section.
+                  </p>
+                  <h3>Information only</h3>
+                  <p class="govuk-body">
                     These items are for information only and do not need a response.
                   </p>
                   <div class="govuk-inset-text">
                     Note: Items under this category may include correspondence sent to parties outside of your organisation. You will not be able to view the content of these items.
                   </div>
 
-                  <p class="govuk-body">Correspondence can include these categories.</p>
+                  <p class="govuk-body">Correspondence can also include these categories.</p>
+                  <h3>Letter issued on [date]</h3>
                   <p class="govuk-body">
-                    <b>Letter issued on [date]</b><br>
                     This is shown when HM Land Registry issues a letter in respect of the application.
-                    <br><br>
-                    <b>Notice (Objection):<br>
-                    Notice(s) issued on [date] Expires on [date]</b><br>
+                  </p>
+                  <h3>Notice (Objection):<br>
+                    Notice(s) issued on [date] Expires on [date]</h3>
+                  <p class="govuk-body">
                     This is shown when HM Land Registry issues a notice in respect of the application. HM Land Registry serves notices to interested parties to help prevent wrongful registration. A copy notice is not sent to the applicant. Notices inform the recipient that HM Land Registry has received an application or is otherwise proposing an alteration that may adversely affect their interest. These allow for a period of time for objection but also invite the addressee to consent to the application to shorten the period of delay.
-                    <br><br>
-                    <b>Notice (Information):<br>
-                    Notice(s) issued on [date] Expires on [None]</b><br>
+                  </p>
+                  <h3>Notice (Information):<br>
+                    Notice(s) issued on [date] Expires on [None]</h3>
+                  <p class="govuk-body">
                     This is shown when HM Land Registry issues a notice for information purposes only. This type of notice does not have an expiry date and does not require a response.
-                    <br><br>
-                    <b>Requisition(s) issued on [date]</b><br>
+                  </p>
+                  <h3>Requisition(s) issued on [date]</h3>
+                  <p class="govuk-body">
                     This is shown when HM Land Registry issues a requisition asking for additional information in support of the application. A requisition will not be deemed to have been satisfied until all outstanding points raised have been fully replied to.
-                    <br><br>
-                    <b>Warning of cancellation issued on [date]</b><br>
+                  </p>
+                  <h3>Warning of cancellation issued on [date]</h3>
+                  <p class="govuk-body">
                     This is shown when HM Land Registry issues a warning that the application will be cancelled unless a full response to a requisition is received.
-                    <br><br>
-                    <b>Letter of cancellation issued on [date]</b><br>
+                  </p>
+                  <h3>Letter of cancellation issued on [date]</h3>
+                  <p class="govuk-body">
                     This is shown when HM Land Registry cancels the application.
+                  </p>
                 </div>
               </div>
 
