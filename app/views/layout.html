@@ -90,7 +90,7 @@
   font-family: inherit;
   margin: 0;
   font-weight:700;
-  margin-left:36px;
+  padding-left:25px;
   margin-right: 16px;
 }
 
@@ -143,7 +143,7 @@
   display: none;
   position: absolute;
   background-color: #f3f2f1;
-  min-width: 150px;
+  min-width: 180px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
 }
@@ -152,6 +152,12 @@
 .show {
   display: block;
 }
+
+.nav-hover:hover {
+background-color: red;
+}
+
+
 </style>
 
 <header class="govuk-header " role="banner" data-module="govuk-header">
@@ -176,19 +182,21 @@
         
         <li class="parent-dropdown parentIconDown2" id="dropdown-account-chevron">
         <div class="dropdown-services" id="dropdown-services">
-          <button class="dropbtn-services" id="dropdown-services-button" onclick="myFunction1()">Services</button>
+          <div style="margin-right:20px;margin-left:20px;">
+            <button class="dropbtn-services" id="dropdown-services-button" onclick="myFunction1()">Services</button>
+          </div>
           <div class="dropdown-content" id="myDropdown-services">
             <ul class="govuk-list">
               <div class="govuk-body ServicesContent" style="margin-bottom:0px;font-size: 16px;">
-                <li style="padding-bottom:10px;"><a class="govuk-link" href="#" style="text-decoration: underline;">My Portal Home page</a></li>
-                <li style="padding-bottom:10px;"><a class="govuk-link" href="#" style="text-decoration: underline;">NEW: View Applications</a></li>
-                <li style="padding-bottom:10px;"><a class="govuk-link" href="#" style="text-decoration: underline;">Information services</a><a class="govuk-link" href="#" style="float: right; padding: 0; margin:0">></a></li>
-                <li style="padding-bottom:10px;"><a class="govuk-link" href="#" style="text-decoration: underline;">Land Charges Services</a><a class="govuk-link" href="#" style="float: right; padding: 0; margin:0">></a></li>
-                <li style="padding-bottom:10px;"><a class="govuk-link" href="#" style="text-decoration: underline;">Digital Registration Service</a></li>
-                <li style="padding-bottom:10px;"><a class="govuk-link" href="#" style="text-decoration: underline;">Reply to Requisition</a></li>
-                <li style="padding-bottom:10px;"><a class="govuk-link" href="#" style="text-decoration: underline;">Network Services</a><a class="govuk-link" href="#" style="float: right; padding: 0; margin:0">></a></li>
-                <li style="padding-bottom:10px;"><a class="govuk-link" href="#" style="text-decoration: underline;">General Facilities</a><a class="govuk-link" href="#" style="float: right; padding: 0; margin:0">></a></li>
-                <li style="padding-bottom:10px;"><a class="govuk-link" href="#" style="text-decoration: underline;">Administrative Services</a><a class="govuk-link" href="#" style="float: right; padding: 0; margin:0">></a></li>
+                <li style="padding-bottom:25px;"><a class="govuk-link" href="#" style="text-decoration: underline; font-weight: bold;">My Portal Home page</a></li>
+                <li class="nav-hover" style="padding-bottom:25px;"><a class="govuk-link" href="#" style="text-decoration: underline;font-weight: bold;">NEW: View Applications</a></li>
+                <li style="padding-bottom:25px;"><a class="govuk-link" href="#" style="text-decoration: underline;font-weight: bold;">Information services<img src="/public/images/icon_govuk_chevronright-blue.svg" style="width:20px;float:right;margin-top:1px;"></a></li>
+                <li style="padding-bottom:25px;"><a class="govuk-link" href="#" style="text-decoration: underline;font-weight: bold;">Land Charges Services<img src="/public/images/icon_govuk_chevronright-blue.svg" style="width:20px;float:right;margin-top:1px;"></a></li>
+                <li style="padding-bottom:25px;"><a class="govuk-link" href="#" style="text-decoration: underline;font-weight: bold;">Digital Registration <br><span style="padding-left:5px;"></span>Service</a></li>
+                <li style="padding-bottom:25px;"><a class="govuk-link" href="#" style="text-decoration: underline;font-weight: bold;">Reply to Requisition</a></li>
+                <li style="padding-bottom:25px;"><a class="govuk-link" href="#" style="text-decoration: underline;font-weight: bold;">Network Services<img src="/public/images/icon_govuk_chevronright-blue.svg" style="width:20px;float:right;margin-top:1px;"></a></li>
+                <li style="padding-bottom:25px;"><a class="govuk-link" href="#" style="text-decoration: underline;font-weight: bold;">General Facilities<img src="/public/images/icon_govuk_chevronright-blue.svg" style="width:20px;float:right;margin-top:1px;"></a></li>
+                <li style="padding-bottom:15px;"><a class="govuk-link" href="#" style="text-decoration: underline;font-weight: bold;">Administrative Services<img src="/public/images/icon_govuk_chevronright-blue.svg" style="width:20px;float:right;margin-top:1px;"></a></li>
               </div>
              </ul>
           </div>
