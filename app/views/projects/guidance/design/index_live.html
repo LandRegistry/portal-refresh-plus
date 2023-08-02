@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+{% extends "layout_unbranded.html" %}
+{% block pageTitle %} View Applications
+{% endblock %}
+{% block content %}
+
+{% include "includes/notificationsNavigation.html" %}
+<style>
+
+
+.govuk-main-wrapper--auto-spacing:first-child, .govuk-main-wrapper--l {
+    padding-top: 0px;
+}
+
+
+
+.govuk-footer {
+display:none;
+}
+
+
+.govuk-link:link, a:link {
+    color: #006637;
+}
+
+.govuk-width-container {
+    max-width: 100%;
+    padding: 0px !Important;
+}
+
+.navbar-container {
+    background-color: #006637;
+    display:flow-root;
+    padding-right: 15px;
+    -webkit-box-shadow: inset 0px 2px 4px 0px rgb(0 0 0 / 15%);
+    -moz-box-shadow: inset 0px 2px 4px 0px rgba(0,0,0,0.15);
+    box-shadow: inset 0px 2px 4px 0px rgb(0 0 0 / 15%);
+    border-bottom: 0px solid #005ea5;
+}
+
+
+.navbar {
+  overflow: hidden;
+
+  font-family: Arial;
+  float: right;
+}
+
+
+.navbar a {
+    float: left;
+    font-size: 17px;
+    color: white;
+    text-align: center;
+    padding: 0px 25px;
+    text-decoration: none;
+    line-height: 70px;
+    font-weight: 400;
+}
+
+
+
+
+.notificationContent {
+  padding: 20px;
+  width:290px;
+  margin-bottom: 0px;
+  background: #fff;
+}
+
+.notificationTopRow {
+  width:100%;
+display:flex;
+padding-bottom: 3px;
+}
+
+.notificationTitle {
+  font-size:16px;
+  font-weight:700;
+width:50%;
+}
+
+.myAccountTitle {
+  font-size:16px;
+  font-weight:700;
+padding-bottom: 3px;
+}
+
+.notificationTime {
+  font-size:12px;
+  font-weight:400;
+  text-align: right;
+  width:50%;
+}
+
+.notification2ndLine {
+  font-size:14px;
+  font-weight:400;
+  width: 100%;
+  padding-bottom:15px;
+}
+
+.myAccount2ndLine {
+  font-size:14px;
+  font-weight:400;
+  width: 100%;
+  padding-bottom:0px;
+}
+
+.notificationLink a {
+  font-size: 15px;
+    width: 100%;
+    float: left;
+    line-height: unset;
+    background-color: unset !important;
+    color: #00703C !important;
+    font-weight: 700;
+    padding: unset;
+}
+
+.myAccountLinks a {
+  font-size: 15px;
+    width: 100%;
+    line-height: unset;
+    background-color: unset !important;
+    color: #00703C !important;
+    font-weight: 700;
+    padding: unset;
+}
+
+
+.NotificationSingle {
+    display: grid;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #dedede;
+    margin-bottom: 20px;
+}
+
+.NotificationSingleLast {
+    display: grid;
+}
+
+.notificationNavNumber {
+  color: #1F8153;
+    background-color: #fff;
+    padding: 5px 9px;
+    border-radius: 500px;
+    font-weight: 700;
+}
+
+.myAccountContent {
+  width:177px;
+  padding: 25px;
+  background: #ffffff;
+    margin-bottom:0px;
+}
+
+.myAccountContent a {
+  padding: 0px;
+}
+
+hr {
+  background: #dedede;
+    height: 1px;
+    border-style: none;
+    margin: 15px 0px;
+}
+
+#logOut {
+  margin-bottom: 0px;
+    margin-top: 25px;
+    width: 100%;
+}
+
+#inputs {
+    margin: 0% 2%;
+    float:left;
+    margin-top: 27px;
+}
+
+
+.parent {display: block;position: relative;float: left;line-height: 70px;}
+.parentIconDown {background-image: url("/public/images/icon_govuk_chevrondownWhite.svg"); background-size: 25px; background-repeat: no-repeat; background-position-x: 83px;background-position-y: center;}
+.parentIconDown2 {background-image: url("/public/images/icon_govuk_chevrondownWhite.svg"); background-size: 25px; background-repeat: no-repeat; background-position-x: 108px;background-position-y: center;}
+.parent a{margin: 20px;color: #FFFFFF;text-decoration: none;}
+.parent:hover > ul {display:block;position:absolute;}
+.child {display: none;box-shadow: 0px 8px 16px 0px rgb(0 0 0 / 10%);z-index:99999;}
+.child li {background-color: #ffffff;line-height: 40px;border-right:#CCC 0px solid; width:100%;}
+.child li a{color: #00703C; font-size:15px;}
+ul{list-style: none;margin: 0;padding: 0px; min-width:10em;}
+ul ul ul{left: 100%;top: 0;border-left: 1px solid #dedede;}
+/* li:hover {background-color: #ffffff;color:#00703C;} */
+.parent:hover > a {color:#00703C !important;}
+.parentIconDown:hover {background-image: url("/public/images/icon_govuk_chevrondownGreen.svg");}
+.parentIconDown2:hover {background-image: url("/public/images/icon_govuk_chevrondownGreen.svg");}
+.parent li:hover {background-color: #F0F0F0;}
+.expand{font-size:12px;float:right;margin-right:5px;}
+.iconRight {background-image: url("/public/images/icon_govuk_chevronrightGreen.svg"); background-size: 25px; background-repeat: no-repeat; background-position-x: 134px;background-position-y: center;}
+
+.wide960 {
+max-width:960px;
+margin:auto;
+}
+
+.wide1200 {
+max-width:1200px;
+margin:auto;
+}
+
+.govuk-heading-xl {
+    margin-bottom: 25px;
+}
+
+.govuk-heading-l {
+    margin-bottom: 5px;
+}
+
+.govuk-heading-m {
+    margin-bottom: 5px;
+}
+
+.dividerSection{
+  padding-bottom:10px;
+}
+
+.govuk-list > li {
+    margin-bottom: 10px;
+}
+
+.sideMenuLinks {
+  text-decoration: none;
+  font-weight: 700;
+  color:#006637;
+}
+
+.sidebar {
+    flex-grow: 1;
+    flex-basis: 300px;
+    align-self: start;
+    position: sticky;
+    top: 2rem;
+}
+
+.article {
+    flex-basis: 0;
+    flex-grow: 999;
+    min-width: 40%;
+}
+
+
+</style>
+
+
+<!-- Back & clear data top -->
+<!-- Back & clear data top -->
+<div>
+
+<!-- Navigation Menu - Start -->
+
+
+        
+
+<!-- Navigation Menu - End -->
+
+<!-- Content Area - Start -->
+
+<div style="margin: auto;">
+
+    <!-- Filters and Search Section - Start -->
+
+
+
+      
+  <!-- Table Area - Start -->
+
+
+
+    
+
+    
+      <main class="govuk-main-wrapper" style="padding:40px 0px;display: flex;
+      flex-wrap: wrap;max-width:1350px; margin:auto;">
+
+        
+    
+
+              <div class="sidebar">
+                <h3 class="govuk-heading-m">Contents</h3>
+                <ul class="govuk-list" style="font-size: 16px;">
+                  <li><a class="sideMenuLinks" href="#viewmyapplications">View My Applications</a></li>
+                  <li><a class="sideMenuLinks" href="#filter">Filter</a></li>
+                  <li><a class="sideMenuLinks" href="#search">Search</a></li>
+                  <li><a class="sideMenuLinks" href="#exportapplications">Export Applications</a></li>
+                  <li><a class="sideMenuLinks" href="#sort">Sort</a></li>
+                  <li><a class="sideMenuLinks" href="#collapsedrow">Initial Application Information<br>(collapsed row)</a></li>
+                  <li><a class="sideMenuLinks" href="#ecd">Estimated completion date</a></li>
+                  <li><a class="sideMenuLinks" href="#expandedrow">Additional Application Information<br>(expanded row)</a></li>
+                  <li><a class="sideMenuLinks" href="#actions">Actions</a></li>
+                </ul>
+              </div>
+
+
+              <div class="article">
+
+
+                <!-- Intro -->
+                <div class="dividerSection" id="viewmyapplications">
+                    <h1 class="govuk-heading-xl">View applications</h1>
+                    <p class="govuk-body-s">View applications allows you to search for applications from your business unit, submitted via the HM Land Registry Portal or saved within the Digital Registration Service (DRS). Applications are displayed when saved, live, and for 90 calendar days following their completion or cancellation. This guide helps to explain what the features on the page do.</p>
+                </div>
+
+
+                <!-- Filter -->
+                <div class="dividerSection" id="filter">
+                    <h2 class="govuk-heading-m">Filter</h2>
+
+                    <h3 class="govuk-heading-s">Filter by requisition</h3>
+                      <p class="govuk-body-s">Use this to display applications that have a requisition(s) listed in the ‘Review’ correspondence category. You can filter by:</p>
+                      <ul class="govuk-list govuk-list--bullet" style="font-size: 16px;">
+                        <li>Review - These applications have outstanding requisition points raised against them.</li>
+                        <li>Warning of cancellation - These applications have had a Warning of cancellation letter issued against them relating to outstanding requisition points.</li>
+                      </ul>
+                      <h3 class="govuk-heading-s">Note:</h3>
+                      <p class="govuk-body-s">If a response has already been provided from your business unit, HMLR will need to confirm all of the requisition points have been satisfactorily replied to. Once this has been established, your application can be progressed and will no longer show in the results for this filter.</p>
+
+                    <h3 class="govuk-heading-s">Filter by application type</h2>
+                    <p class="govuk-body-s">Use this to display applications by their type. You can filter by:</p>
+                    <ul class="govuk-list govuk-list--bullet" style="font-size: 16px;">
+                      <li>Register update (an application that changes an existing registered title)</li>
+                      <li>Register create (an application to make a new registered title)</li>
+                      <li>Register query (an enquiry or search regarding information held at HM Land Registry) </li>
+                    </ul>
+
+                    <h3 class="govuk-heading-s">Filter by application progress</h2>
+                    <p class="govuk-body-s">Use this to display applications by their current progress status. You can filter by:</p>
+                    <ul class="govuk-list govuk-list--bullet" style="font-size: 16px;">
+                      <li>Cancelled</li>
+                      <li>Completed</li>
+                      <li>Delayed</li>
+                      <li>Received</li>
+                      <li>Saved</li>
+                    </ul>
+
+                    <h3 class="govuk-heading-s">Note:</h2>
+                      <p class="govuk-body-s">Delayed results include applications with a progress status of:</p>
+                      <ul class="govuk-list govuk-list--bullet" style="font-size: 16px;">
+                        <li>Delayed</li>
+                        <li>Delayed Prior Pending Application(s) or Official Search(es)</li>
+                        <li>Delayed - Extension of Time Granted </li>
+                      </ul>
+
+                      <p class="govuk-body-s">Received results include applications with a progress status of: </p>
+                      <ul class="govuk-list govuk-list--bullet" style="font-size: 16px;">
+                        <li>Received: Priority Protected </li>
+                        <li>Received: Priority Protected – Awaiting Processing</li>
+                        <li>Received: Priority Protected – Set-up activity underway</li>
+                        <li>In progress </li>
+                      </ul>
+
+                      <p class="govuk-body-s">Applications that are displayed without a progress status will also be shown within the results of the Received filter option.</p>
+
+                      <p class="govuk-body-s">Saved results show pre-submitted applications that have been stored by you only, in the Digital Registration Service. Currently, your business unit colleagues’ ‘Saved’ application are not displayed by the service. </p>
+                </div>
+                
+
+                <!-- Search -->
+                <div class="dividerSection" id="search">
+                  <h2 class="govuk-heading-m">Search</h2>
+                  <p class="govuk-body-s">Search will locate applications from within your business unit. Only your personally submitted applications will be returned if your business unit has decided to opt out of the view colleagues’ applications functionality.</p>
+                  <p class="govuk-body-s">You can search for applications using:</p>
+                  <ul class="govuk-list govuk-list--bullet" style="font-size: 16px;">
+                    <li>Title number or HMLR reference </li>
+                    <li>Customer reference</li>
+                    <li>Colleague</li>
+                  </ul>
+
+                  <p class="govuk-body-s">For Search by either Title number or HMLR reference, or Customer reference, the results will show applications that contain the characters (a minimum of 3 is required) entered as the search term. For Search by Colleague, the number of names will reduce as more characters are entered. Once a name is selected from the list, that colleague’s applications will be displayed.</p>
+
+                  <h3 class="govuk-heading-s">Note:</h2>
+  
+                    <p class="govuk-body-s">The search field does not recognise some special characters (e.g. ç, à, è, ä, û). When searching for a colleague’s name, please use standard alphabet characters if possible.</p>
+
+
+                  <h3 class="govuk-heading-s">Reset search and filters</h3>
+                  <p class="govuk-body-s">Allows you to clear any existing search term, sort or filter. When the page is reset the system returns to displaying only the applications submitted by you via the portal. </p>
+
+                </div>
+
+
+                <!-- Export applications -->
+                <div class="dividerSection" id="exportapplications">
+                  <h2 class="govuk-heading-m">Export Applications</h2>
+                  <p class="govuk-body-s">Allows you to extract information relating to all or a selected sample of applications based on the search and filter options you have used.</p>
+
+                  <h3 class="govuk-heading-s">Note: </h2>
+                    <p class="govuk-body-s">Currently, the Export Applications function is not available for users of the Internet Explorer (IE) browser.</p>
+                </div>
+
+
+                <!-- Sort -->
+                <div class="dividerSection" id="sort">
+                  <h2 class="govuk-heading-m">Sort</h2>
+                  <p class="govuk-body-s">Use sort to order your list of applications. You can sort by: </p>
+                  <ul class="govuk-list govuk-list--bullet" style="font-size: 16px;">
+                    <li>Title number</li>
+                    <li>Customer reference</li>
+                    <li>Received by HMLR </li>
+                  </ul>
+                </div>
+
+
+                <!-- Initial application information (collapsed row) -->
+                <div class="dividerSection" id="collapsedrow">
+                  <h2 class="govuk-heading-m">Initial Application Information (collapsed row)</h2>
+                  <h3 class="govuk-heading-s">Warning symbol</h3>
+                  <p class="govuk-body-s">A warning symbol is displayed when an application has a requisition listed in the ‘Review’ correspondence category.</p>
+                  <h3 class="govuk-heading-s">Title number</h3>
+                  <p class="govuk-body-s">Shows the title number for the application (if available).</p>
+                  <h3 class="govuk-heading-s">Note 1:</h3>
+                  <p class="govuk-body-s">For multi title applications with a progress status of ‘Saved’, only the lowest title number is displayed. </p>
+                  <h3 class="govuk-heading-s">Note 2:</h3>
+                  <p class="govuk-body-s">For Land Charges Registration View and Land Charges Office Copy applications it shows the Land Charges Registration Number.</p>
+                  <h3 class="govuk-heading-s">Customer reference</h3>
+                  <p class="govuk-body-s">This is the reference provided when the application was submitted.</p>
+                  <h3 class="govuk-heading-s">Application type</h3>
+                  <p class="govuk-body-s">The type of application lodged (for example, Transfer of Part, Official Search of Whole with Priority).</p>
+                  <h3 class="govuk-heading-s">Received by HMLR</h3>
+                  <p class="govuk-body-s">This is the date the application was received by HM Land Registry.</p>
+                  <h3 class="govuk-heading-s">Application progress</h3>
+                  <p class="govuk-body-s">The high-level progress status of the application (for example, Cancelled, Completed, Delayed, Received, Saved). This status is only displayed for applications that update or create a Register. </p>
+                  <h3 class="govuk-heading-s">Note:</h3>
+                  <p class="govuk-body-s">Received results include applications with a progress status of:</p>
+                  <ul class="govuk-list govuk-list--bullet" style="font-size: 16px;">
+                    <li>Received: Priority Protected </li>
+                    <li>Received: Priority Protected – Awaiting Processing</li>
+                    <li>Received: Priority Protected – Set-up activity underway</li>
+                    <li>In progress</li>
+                  </ul>
+                  <p class="govuk-body-s">Applications that are displayed without a progress status will also be shown within the results of the Received filter option. Delayed results include applications with a progress status of:</p>
+                  <ul class="govuk-list govuk-list--bullet" style="font-size: 16px;">
+                    <li>Delayed</li>
+                    <li>Delayed Prior Pending Application(s) or Official Search(es)</li>
+                    <li>Delayed - Extension of Time Granted</li>
+                  </ul>
+                  <h3 class="govuk-heading-m" id="ecd">Estimated completion date (ECD) </h3>
+                  <p class="govuk-body-s">Is a date by which the application is likely to be completed. It is not based on the individual application, but is an estimate of when the majority (90%) of that application type will be completed. </p>
+                  <h3 class="govuk-heading-s">ECD key points</h3>
+                  <ul class="govuk-list govuk-list--bullet" style="font-size: 16px;">
+                    <li>displayed for Register Create (e.g. Transfers of Part and New Leases) and Register Update applications</li>
+                    <li>distinguishes between developer and non-developer Register Create application types</li>
+                    <li>calculated for the application type and not the individual application</li>
+                    <li>calculated using the time in which 90% of that application type was completed over the previous 30 calendar days</li>
+                    <li>may take up to an hour to be displayed </li>
+                    <li>calculated on and from the day an application is received by HMLR</li>
+                    <li>updated every 30 calendar days until the application is completed or cancelled</li>
+                    <li>updated if HMLR correspondence is issued (first item of correspondence only) </li>
+                    <li>expedited applications will be prioritised but the ECD displayed will not be updated to reflect this </li>
+                  </ul>
+                  <p class="govuk-body-s">Where there is no date, one of the following will be displayed: </p>
+                  <ul class="govuk-list govuk-list--bullet" style="font-size: 16px;">
+                    <li><b>Calculating</b><br>
+                      This is shown when the ECD for the application is being calculated for the first time.</li>
+                    <li><b>Exceeded</b><br>
+                      This is shown when the ECD for the application has elapsed - 10% of applications fall into this category.</li>
+                    <li><b>Unavailable</b><br>
+                      This is shown when an error has occurred, preventing an ECD from being displayed. When available, the date will then appear.</li>
+                    <li><b>Not applicable</b><br>
+                      This is shown for all Register Query application types and applications that have a progress status of ‘Saved’. HMLR does not provide an ECD for this type of application.</li>
+                  </ul>
+                  <h3 class="govuk-heading-s">Note:</h3>
+                  <p class="govuk-body-s">On completion or cancellation of an application, any ECD information is removed, leaving the column entry blank.</p>
+                  <h3 class="govuk-heading-s">Show / hide details (+) </h3>
+                  <p class="govuk-body-s">Expands the row so more information about the application can be viewed. </p>
+
+                </div>
+
+
+                <!-- Additional application information (expanded row) -->
+                <div class="dividerSection" id="expandedrow">
+                  <h2 class="govuk-heading-m" style="margin-bottom:25px;">Additional Application Information (expanded row)</h2>
+                  <h3 class="govuk-heading-s">Application progress - details</h3>
+                  <p class="govuk-body-s">This shows the progress of an application by the following stages:</p>
+                  
+                  <ul class="govuk-list govuk-list--bullet" style="font-size: 16px;">
+                    <li><b>Received: Priority Protected</b><br>
+                      The application has been received and added to our Day List. Its priority has been protected, but no processing activity has taken place.</li>
+                    <li><b>Received: Priority Protected – Awaiting Processing</b><br>
+                      This is shown when an application is being held on an office’s backlog list to await processing. No processing activity has yet taken place. The application will normally be dealt with in accordance with its priority order.</li>
+                    <li><b>Received: Priority Protected – Set-up activity underway</b><br>
+                      This is shown when the parent title is a developer title and there are setting up activities that need to be completed before applications can proceed.</li>
+                    <li><b>In Progress</b><br>
+                      Processing activities are taking place. There are no known events or activities causing the application to be delayed at this time. </li>
+                    <li><b>Delayed Prior Pending Applications(s) or Official Search(es)</b><br>
+                      The application has prior pending application(s) or official search(es) with priority on our Day List. </li>
+                    <li><b>Delayed</b><br>
+                      Events or activities are causing progress of the application to be delayed. </li>
+                    <li><b>Delayed - Extension of Time Granted</b><br>
+                      This is shown when a request for additional time to reply to one or more requisition points has been approved. The amount of additional time allowed can vary and is at the discretion of the Chief Land Registrar based upon the individual circumstances. Subject to approval, a minimum of 10 working days is normally granted in the first instance, while subsequent requests will be treated on their merits. Requests for extension of time can be submitted via the ‘Still Need To Contact Us’ link located within the Application Enquiry service</li>
+                  </ul>
+
+                  <h3 class="govuk-heading-s">HMLR reference</h3>
+                  <p class="govuk-body-s">The unique reference HM Land Registry allocates to an application.</p>
+                  <h3 class="govuk-heading-s">Priority period </h3>
+                  <p class="govuk-body-s">Shown for Official Search with Priority applications only. The full period during which any application protected by a search retains its priority. </p>
+                  <h3 class="govuk-heading-s">Parent title(s) </h3>
+                  <p class="govuk-body-s">This is the existing title or titles out of which a Transfer of Part or New Lease application has been granted. </p>
+                  <h3 class="govuk-heading-s">Correspondence </h3>
+                  <p class="govuk-body-s">Shows notices, requisitions and some letters issued by HM Land Registry connected with an application under the categories: </p>
+                  <ul class="govuk-list govuk-list--bullet" style="font-size: 16px;">
+                    <li><b>Review</b><br>
+                      These items raise points that are outstanding against the application. Provide a full response to allow the application to proceed. If a response has already been provided, HMLR will need to confirm all points have been satisfactorily replied to before progressing the application. </li>
+                    <li><b>Resolved</b><br>
+                      Once HMLR has confirmed all the ‘Review’ points have been satisfactorily replied to, the correspondence item will move from the ‘Review’ section to this category. </li>
+                    <li><b>Information only</b><br>
+                      These items are for information only and do not need a response. </li>
+                  </ul>
+
+
+                  <h3 class="govuk-heading-s">Correspondence can include:</h3>
+                  <ul class="govuk-list govuk-list--bullet" style="font-size: 16px;">
+                    <li><b>Letters - Letter issued on [date] </b><br>
+                      This is shown when HM Land Registry issues a letter in respect of the application.<br> </li>
+                    <li><b>Notice (Objection):<br>
+                      <ul class="govuk-list" style="font-size: 16px;">
+                        <li>Notice(s) issued on [date] Expires on [date] </b><br>
+                          This is shown when HM Land Registry issues a Notice in respect of the application. HM Land Registry serves notices to interested parties to help prevent wrongful registration. A copy notice is not sent to the applicant. Notices inform the recipient that HM Land Registry has received an application, or is otherwise proposing an alteration that may adversely affect their interest. These allow a time period for objection, but also invite the addressee to consent to the application in order to shorten the period of delay.</li>
+                      </ul>
+                    </li>
+                    <li><b>Notice (Information):<br>
+                      <ul class="govuk-list" style="font-size: 16px;">
+                        <li>Notice(s) issued on [date] Expires on [None] </b><br>
+                          This is shown when HM Land Registry issues a Notice for information purposes only. This type of Notice does not have an expiry date and does not require a response.</li>
+                        <li><b>Requisition(s) issued on [date] </b><br>
+                          This is shown when HM Land Registry issues a requisition asking for additional information in support of the application. A requisition will not be deemed to have been satisfied until all outstanding points raised have been fully replied to.</li>
+                        <li><b>Warning of Cancellation issued on [date] </b><br>
+                          This is shown when HM Land Registry issues a warning that the application will be cancelled unless a full response to a requisition is received.</li>
+                        <li><b>Letter of Cancellation issued on [date] </b>
+                          This is shown when HM Land Registry have cancelled the application.</li>
+
+                      </ul>
+
+                    </li>
+                    
+
+
+
+                  </ul>
+
+
+                  <h3 class="govuk-heading-s">Files</h3>
+                  <p class="govuk-body-s">Shows the documentation electronically issued by HM Land Registry to the applicant on completion of the application. These can be viewed and downloaded. </p>
+
+                  <h3 class="govuk-heading-s">Show / hide details (-) </h3>
+                  <p class="govuk-body-s">Collapses the row so less information about your application is displayed. </p>
+
+                  <h3 class="govuk-heading-m" id="actions">Actions </h3>
+                  <h3 class="govuk-heading-s">Respond</h3>
+                  <p class="govuk-body-s"> HMLR correspondence does not need to have been received on an application to use ‘Respond’.<br><br>
+                      Respond allows you to:</p>
+                        <ul class="govuk-list govuk-list--bullet" style="font-size: 16px;">
+                          <li>reply to a requisition or other HMLR correspondence </li>
+                          <li>add documents and notes to the application </li>
+                          <li>request an extension of time in reply to HMLR correspondence </li>
+                        </ul>
+                        <b>Note: </b><br>
+                        This feature does not support applications lodged via Network Services. 
+             
+                        <h3 class="govuk-heading-s">Application Enquiry</h3>
+                        <p class="govuk-body-s">This gives access to additional information held about the application on the HMLR Day List for register create, register update and official search (with priority) applications. <br><br>
+                      Application Enquiry allows you to:</p>
+                      <ul class="govuk-list govuk-list--bullet" style="font-size: 16px;">
+                        <li>request an update on the application </li>
+                        <li>apply to expedite the application </li>
+                        <li>view the prior pending applications that affect the application </li>
+                        <li>view discharge of a charge activity </li>
+                      </ul>
+                    </li>
+                    <h3 class="govuk-heading-s">Save as PDF</h3>
+                    <p class="govuk-body-s">Allows you to save a copy of the application details displayed.</p>
+                      <b>Note:</b><br>
+                      Currently, the Save as PDF function is not available for users of the Internet Explorer (IE) browser. 
+                    </li>
+                  </ul>
+
+
+                </div>
+
+              </div>
+
+            
+        
+    
+      </main>
+    </div>
+
+
+
+
+</div>
+
+
+<div class="govuk-grid-column-full" style="padding:0px;border-top:5px solid #00703C;">
+
+        
+        
+        
+  <div style="padding:30px; background: #f3f2f1;">
+
+    <p style="color: #6d6d6d; text-decoration: none;font-size: 16px;margin-bottom:15px;">The following links open in a new tab.</p>
+
+    <a class="footlink" style="text-color: grey; text-decoration: none;"><u>Terms and conditions</u></a>
+    |
+    <a class="footlink" style="text-color: grey; text-decoration: none;"><u>Accessibility statement</u></a>
+    |
+    <a class="footlink" style="text-color: grey; text-decoration: none;"><u>Freedom of information</u></a>
+    |
+    <a class="footlink" style="text-color: grey; text-decoration: none;"><u>© Crown copyright</u></a>
+
+          </div>
+              </div>
+
+
+<!-- Content Area - End -->
+
+{% endblock %}
