@@ -4,7 +4,6 @@
 {% endblock %}
 {% block content %}
 
-{% include "includes/notificationsNavigation.html" %} 
 
 <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 
@@ -163,6 +162,69 @@ th.govuk-table__header.sortable button:hover {
 
 </style>
 
+<div class="navbar-container">
+
+    <a href="./scenarios.html"><img src="/public/images/HMLR_Logo.svg" alt="hmlrlogo" style="height: 44px;float:left;padding-left: 30px;padding-right: 10px;padding-top: 14px;padding-bottom: 5px;"></a>
+
+     <ul id="menu" style="float:left;">
+      <li class="parent"><a style="padding-left:20px;border-left:1px solid #ffffff;" target="_blank" href="https://www.gov.uk/government/organisations/land-registry">HM Land Registry GOV.UK</a></li>
+    </ul> 
+
+
+     <ul id="menu" style="float:right;">
+ 
+        <li class="parent parentIconDown"><a style="padding-right: 25px;" href="#">Services</a></li>
+         
+        <li class="parent"><a href="PortalRefreshFeedback@landregistry.gov.uk">Contact us</a></li>
+  
+        <li class="parent parentIconDown2"><a style="padding-right: 25px;" href="#">John James </a>
+             <ul class="child" style="right:0;">
+             <div class="govuk-body myAccountContent" style="margin-bottom:0px;">
+  
+                   <div>
+                     <div class="myAccountTitle" style="padding-bottom:3px;">
+                       Logged in as:
+                     </div>
+                     <div class="myAccount2ndLine" style="padding-bottom:15px;">
+                        Administrator 
+                     </div>
+                     <div class="myAccountTitle" style="padding-bottom:3px;">
+                      User ID:
+                    </div>
+                    <div class="myAccount2ndLine" style="padding-bottom:15px;">
+                       xxxxxxxxxxxxxx 
+                    </div>
+                    <div class="myAccountTitle" style="padding-bottom:3px;">
+                      You last logged in on
+                    </div>
+                    <div class="myAccount2ndLine" style="padding-bottom:15px;">
+                       15 July 2022 10:19:23 BST
+                    </div>
+                    <div class="myAccount2ndLine" style="padding-bottom:15px;">
+                      If these details are incorrect, please log out and contact us.                   
+                    </div>
+                     <!-- <a href="#" style="margin:0px;color:#00703C;font-weight:700;font-size:14px;">View profile</a> -->
+                   </div>
+  
+                   <hr>
+  
+                   <div class="myAccountTitle" style="padding-bottom:3px;padding-top: 15px;">
+                     <b>Primary Business Unit Administrator (BUA):</b> 
+                   </div>
+                   <div class="myAccount2ndLine">
+                     John Taylor
+                     <!-- <a href="#" style="margin:0px;color:#00703C;"><b>JohnTaylor@bigbusiness.com</b></a> -->
+                   </div>
+   
+                   <!-- <button id="logOut" class="govuk-button" style="margin-top:20px;">Log out</button> -->
+                 </div>
+                 </ul>
+        </li>
+              
+        <li class="parent"><a href="/projects/notifications/userResearch/round2/start.html">Log out</a></li>
+      </ul>      
+  </div>
+
 
 <!-- Back & clear data top -->
 <!-- Back & clear data top -->
@@ -184,7 +246,7 @@ th.govuk-table__header.sortable button:hover {
                   <h1 class="govuk-heading-l" style="font-size:34px;">View applications</h1>
               </div>
       
-              <div class="govuk-body" style="margin-bottom: 50px;">
+              <div class="govuk-body" style="margin-bottom: 30px;">
                  <div class="govuk-form-group" style="margin-bottom: 10px;">
                     <label class="govuk-label form-label-bold" style="font-size:24px">
                        Search by
@@ -259,33 +321,23 @@ th.govuk-table__header.sortable button:hover {
   
   
   
-            <div class="govuk-body" style="margin-bottom: 50px;">
+            <div class="govuk-body" style="margin-bottom: 30px;">
   
-           <!-- <hr style="margin-bottom: 25px;background:#b1b4b6;margin-top: 25px;"> -->
+           <hr style="margin-bottom: 20px;background:#b1b4b6;">
   
              <label class="govuk-label form-label-bold" style="margin-bottom: 15px; font-size:24px">
-              Filters
+              Filter by
               </label>
   
-
-              <details class="govuk-details" data-module="govuk-details3"  style="padding-left:0px; margin-bottom:15px;">
-                <summary class="govuk-details__summary" style="">
-                Requisitions
-                </summary>
-                <div class="govuk-details-text">
+              <div class="govuk-details-text" style="padding-bottom: 15px;">
                 {{ govukCheckboxes ({
                     idPrefix: "application-progress2",
                     name: "application-progress2",
                 classes: "govuk-checkboxes govuk-checkboxes--small",
-                fieldset: {
-                legend: {
-                text: ""
-                }
-                },
                 items: [
                 {
                 value: "Requisition",
-                text: "Review"   ,
+                text: "Requisitions"   ,
                 checked: false,
                 id: "Requisition"
                 },
@@ -298,47 +350,6 @@ th.govuk-table__header.sortable button:hover {
                 ]
                 }) }}
                 </div>
-            </details>
-
-                <details class="govuk-details" data-module="govuk-details3"  style="padding-left:0px; margin-bottom:15px;">
-                    <summary class="govuk-details__summary" style="">
-                    Type
-                    </summary>
-                    <div class="govuk-details-text">
-                    {{ govukCheckboxes ({
-                    idPrefix: "application-type2",
-                    name: "application-type2",
-                    classes: "govuk-checkboxes govuk-checkboxes--small",
-                    fieldset: {
-                    legend: {
-                    text: ""
-                    }
-                    },
-                    items: [
-                    {
-                    value: "Preliminary",
-                    text: "Register update",
-                    checked: false,
-                    id: "Preliminary"
-                    },
-                    {
-                    value: "Substantive",
-                    text: "Register create"   ,
-                    checked: false,
-                    id: "Substantive"
-                    },
-                    {
-                    value: "Sobstantive",
-                    text: "Register query"   ,
-                    checked: false,
-                    id: "Sobstantive"
-                    }
-                    ]
-                    }) }}
-                    </div>
-                </details>
-
-
 
                 <details class="govuk-details" data-module="govuk-details2"  style="padding-left:0px;margin-bottom:15px;">
                   <summary class="govuk-details__summary">
@@ -389,8 +400,50 @@ th.govuk-table__header.sortable button:hover {
                      }) }}
                   </div>
                 </details>
+
+                <details class="govuk-details" data-module="govuk-details3"  style="padding-left:0px; margin-bottom:15px;">
+                    <summary class="govuk-details__summary" style="">
+                    Type
+                    </summary>
+                    <div class="govuk-details-text">
+                    {{ govukCheckboxes ({
+                    idPrefix: "application-type2",
+                    name: "application-type2",
+                    classes: "govuk-checkboxes govuk-checkboxes--small",
+                    fieldset: {
+                    legend: {
+                    text: ""
+                    }
+                    },
+                    items: [
+                    {
+                    value: "Substantive",
+                    text: "Register create"   ,
+                    checked: false,
+                    id: "Substantive"
+                    },
+                    {
+                    value: "Sobstantive",
+                    text: "Register query"   ,
+                    checked: false,
+                    id: "Sobstantive"
+                    },
+                    {
+                        value: "Preliminary",
+                        text: "Register update",
+                        checked: false,
+                        id: "Preliminary"
+                        }
+                    ]
+                    }) }}
+                    </div>
+                </details>
+
+
   
             </div>
+
+            <hr style="margin-bottom: 30px;background:#b1b4b6;">
   
             <div>
                 <div style="display: block;">
@@ -479,7 +532,7 @@ th.govuk-table__header.sortable button:hover {
                  Register Update
                  <p class="govuk-visually-hidden"> Preliminary Cancelled </p>
               </td>
-              <td class="govuk-table__cell " scope="row" data-sortable="2022-11-05">02/08/2023</td>
+              <td class="govuk-table__cell " scope="row" data-sortable="2022-11-05">02/11/2023</td>
               <td class="govuk-table__cell " scope="row">Cancelled</td>
               <td class="govuk-table__cell "  data-sortable="0"></td>
               <td class="govuk-table__cell" scope="row"><a class="expandy-row-trigger2" href="#">+</a></td>
@@ -577,9 +630,9 @@ th.govuk-table__header.sortable button:hover {
                 </td>
                 <td class="govuk-table__cell ">PLTR.Thompson</td>
                 <td class="govuk-table__cell Substantive" id="">Register update<p class="govuk-visually-hidden"> Preliminary Requisition Delayed  </p></td>
-                <td class="govuk-table__cell " scope="row" data-sortable="2022-10-15">15/07/2023</td>
+                <td class="govuk-table__cell " scope="row" data-sortable="2022-10-15">15/10/2023</td>
                 <td class="govuk-table__cell " scope="row">Delayed<p class="govuk-visually-hidden">Requisition</p></td>
-                <td class="govuk-table__cell "  data-sortable="0">19/11/2023</td>
+                <td class="govuk-table__cell "  data-sortable="0">19/01/2024</td>
                 <td class="govuk-table__cell" scope="row"><a class="expandy-row-trigger2" href="#">+</a></td>
 
             </tr> 
@@ -669,9 +722,9 @@ th.govuk-table__header.sortable button:hover {
                 </td>
                 <td class="govuk-table__cell ">PLTR.Becker</td>
                 <td class="govuk-table__cell Substantive" id="">Register update<p class="govuk-visually-hidden"> Preliminary Requisition Delayed Warningofcancellation </p></td>
-                <td class="govuk-table__cell " scope="row" data-sortable="2022-10-14">14/07/2023</td>
+                <td class="govuk-table__cell " scope="row" data-sortable="2022-10-14">14/09/2023</td>
                 <td class="govuk-table__cell " scope="row">Delayed<p class="govuk-visually-hidden">Requisition Warningofcancellation</p></td>
-                <td class="govuk-table__cell "  data-sortable="0">18/11/2023</td>
+                <td class="govuk-table__cell "  data-sortable="0">19/01/2024</td>
                 <td class="govuk-table__cell" scope="row"><a class="expandy-row-trigger2" href="#">+</a></td>
 
             </tr>
@@ -762,7 +815,7 @@ th.govuk-table__header.sortable button:hover {
             </td>
             <td class="govuk-table__cell ">Smith.20313</td>
             <td class="govuk-table__cell Substantive" id="">Official Search of Whole with Priority<p class="govuk-visually-hidden"> Sobstantive Completed  </p></td>
-            <td class="govuk-table__cell " scope="row" data-sortable="2022-05-14">14/07/2023</td>
+            <td class="govuk-table__cell " scope="row" data-sortable="2022-05-14">14/08/2023</td>
             <td class="govuk-table__cell " scope="row">Completed</td>
             <td class="govuk-table__cell "  data-sortable="0"></td>
             <td class="govuk-table__cell" scope="row"><a class="expandy-row-trigger2" href="#">+</a></td>
@@ -865,7 +918,7 @@ th.govuk-table__header.sortable button:hover {
 
             <td class="govuk-table__cell ">PTON.Cage.56 </td>
             <td class="govuk-table__cell Substantive" id="">Register update<p class="govuk-visually-hidden"> Substantive Completed  </p></td>
-            <td class="govuk-table__cell " scope="row" data-sortable="2022-05-14">14/07/2023</td>
+            <td class="govuk-table__cell " scope="row" data-sortable="2022-05-14">14/08/2023</td>
             <td class="govuk-table__cell " scope="row">Completed</td>
             <td class="govuk-table__cell "  data-sortable="0"></td>
 
@@ -959,7 +1012,7 @@ th.govuk-table__header.sortable button:hover {
             <td class="govuk-table__cell Substantive" id="">Transfer of Part<p class="govuk-visually-hidden"> Substantive Received </p></td>
             <td class="govuk-table__cell " scope="row" data-sortable="2022-05-10">10/07/2023</td>
             <td class="govuk-table__cell " scope="row">Received</td>
-            <td class="govuk-table__cell "  data-sortable="0">07/10/2023</td>
+            <td class="govuk-table__cell "  data-sortable="0">07/12/2023</td>
 
             <td class="govuk-table__cell" scope="row"><a class="expandy-row-trigger2" href="#">+</a></td>
 
@@ -1055,7 +1108,7 @@ th.govuk-table__header.sortable button:hover {
              </td>
             <td class="govuk-table__cell " scope="row" data-sortable="2022-08-01">01/06/2023</td>
             <td class="govuk-table__cell " scope="row">Received</td>
-            <td class="govuk-table__cell "  data-sortable="0">04/11/2023</td>
+            <td class="govuk-table__cell "  data-sortable="0">04/01/2024</td>
 
             <td class="govuk-table__cell" scope="row"><a class="expandy-row-trigger2" href="#">+</a></td>
 
@@ -1266,7 +1319,7 @@ th.govuk-table__header.sortable button:hover {
                  </td>
                 <td class="govuk-table__cell " scope="row" data-sortable="2022-07-25">25/05/2023</td>
                 <td class="govuk-table__cell " scope="row">Delayed</td>
-                <td class="govuk-table__cell "  data-sortable="0">24/10/2023</td>
+                <td class="govuk-table__cell "  data-sortable="0">24/02/2024</td>
 
                 <td class="govuk-table__cell" scope="row"><a class="expandy-row-trigger2" href="#">+</a></td>
             </tr>
