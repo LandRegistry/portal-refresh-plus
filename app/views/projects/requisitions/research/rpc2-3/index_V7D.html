@@ -4,6 +4,7 @@
 {% endblock %}
 {% block content %}
 
+
 <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 
 
@@ -223,9 +224,7 @@ th.govuk-table__header.sortable button:hover {
         <li class="parent"><a href="/projects/notifications/userResearch/round2/start.html">Log out</a></li>
       </ul>      
   </div>
-
-
-
+  
 <!-- Back & clear data top -->
 <!-- Back & clear data top -->
 <div>
@@ -234,257 +233,250 @@ th.govuk-table__header.sortable button:hover {
 
 <div style="margin: auto;background: #e6e6e6;display: flex;z-index:9;">
 
-  <!-- Filters and Search Section - Start -->
+    <div id="FiltersAndSearch" style="width: 300px;float: left;padding: 30px;background: #fff;padding-top:50px;min-height: 700px;">
 
-
-  <div id="FiltersAndSearch" style="width: 300px;float: left;padding: 30px;background: #fff;padding-top:50px;min-height: 700px;">
-
-    <div class="" style="">
-      <form id="search" style="">
-
-          <div>
-              <h1 class="govuk-heading-l" style="font-size:34px;">View applications</h1>
-          </div>
+        <div class="" style="">
+          <form id="search" style="">
   
-          <div class="govuk-body" style="margin-bottom: 50px;">
-             <div class="govuk-form-group" style="margin-bottom: 10px;">
-                <label class="govuk-label form-label-bold" style="font-size:24px">
-                   Search by
-                </label>
-                <fieldset class="govuk-fieldset" style="padding:0px;">
-                  <div class="govuk-radios govuk-radios--small" id="myRadioGroup">
-                    <div class="govuk-radios__item">
-                      <input class="govuk-radios__input" type="radio" name="question1" value="A" id="Q1A" checked>
-                      <label class="govuk-label govuk-radios__label" for="changed-name">
-                         HMLR reference or Title number
-                      </label>
-                    </div>
-                    <div class="govuk-radios__item">
-                      <input class="govuk-radios__input" type="radio" name="question1" value="B" id="Q1B">
-                      <label class="govuk-label govuk-radios__label" for="changed-name-2">
-                        Customer reference
-                      </label>
-                    </div>
-                    <div class="govuk-radios__item">
-                      <input class="govuk-radios__input" type="radio" name="question1" value="C" id="Q1C">
-                      <label class="govuk-label govuk-radios__label" for="changed-name-3">
-                         Colleague
-                      </label>
-                    </div>
-                  </div>
-              
-                </fieldset>
+              <div>
+                  <h1 class="govuk-heading-l" style="font-size:34px;">View applications</h1>
+              </div>
+      
+              <div class="govuk-body" style="margin-bottom: 30px;">
+                 <div class="govuk-form-group" style="margin-bottom: 10px;">
+                    <label class="govuk-label form-label-bold" style="font-size:24px">
+                       Search by
+                    </label>
+                    <fieldset class="govuk-fieldset" style="padding:0px;">
+                      <div class="govuk-radios govuk-radios--small" id="myRadioGroup">
+                        <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" type="radio" name="question1" value="A" id="Q1A" checked>
+                          <label class="govuk-label govuk-radios__label" for="changed-name">
+                             HMLR reference or Title number
+                          </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" type="radio" name="question1" value="B" id="Q1B">
+                          <label class="govuk-label govuk-radios__label" for="changed-name-2">
+                            Customer reference
+                          </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" type="radio" name="question1" value="C" id="Q1C">
+                          <label class="govuk-label govuk-radios__label" for="changed-name-3">
+                             Colleague
+                          </label>
+                        </div>
+                      </div>
+                  
+                    </fieldset>
+                 </div>
+  
+  
+  
+                 <!-- Standard search box -->
+                 <div class="govuk-body desc" style="margin-bottom: 0px;display:block;" id="question1A">
+                    <input type="text" id="search-input" class="searchBox" style="width: calc(100% - 66px);">
+                    <button class="searchButton" value="submit" id="search-button" style=""> <img width="20" height="20" style="margin-top:6px;" src="/public/images/search-icon.svg"></button>
+                 </div>
+  
+                 <!-- Standard search box -->
+                 <div class="govuk-body desc" style="margin-bottom: 0px;" id="question1B">
+                    <input type="text" id="search-input" class="searchBox" style="width: calc(100% - 66px);">
+                    <button class="searchButton" value="submit" id="search-button" style=""> <img width="20" height="20" style="margin-top:6px;" src="/public/images/search-icon.svg"></button>
+                 </div>
+  
+                 <!-- Colleague dropdown menu -->
+                 <div class="govuk-body desc" style="margin-bottom: 0px;" id="question1C">
+                    <button class="searchButton" value="submit" id="colleagueSearch" style=""> <img width="20" height="20" style="margin-top:5px;margin-left:1px;" src="/public/images/search-icon.svg"></button>
+                    <select id="cat" class="form-control" onchange="location = this.value;">
+                            <option value="#">Aaron Flynn</option>
+                            <option value="#">Alex Blewett</option>
+                            <option value="">Andy Carr</option>
+                            <option value="#">Duncan Anderson</option>
+                            <option value="#">James Thomas</option>
+                            <option value="#">John Baptiste-Kelly</option>
+                            <option value="V9.html" selected>John James (you)</option>
+                            <option value="V9_JT.html">John Taylor</option>
+                            <option value="#">Jon Parker</option>
+                            <option value="#">Juan Pinto-del-Rio</option>
+                            <option value="#">Lukas Kroening-Maynard</option>
+                            <option value="#">Mark Hornsby</option>
+                            <option value="#">Melvia Mathew</option>
+                            <option value="#">Neil Butler</option>
+                            <option value="#">Nicola Andrews</option>
+                            <option value="#">Pat Gannon</option>
+                            <option value="#">Romani Davies</option>
+                            <option value="#">Simon Skidmore</option>
+                            <option value="#">Sue Watchman</option>
+                            <option value="#">Tony Watson</option>
+                    </select>
+                 </div>
+  
              </div>
-
-
-
-             <!-- Standard search box -->
-             <div class="govuk-body desc" style="margin-bottom: 0px;display:block;" id="question1A">
-                <input type="text" id="search-input" class="searchBox" style="width: calc(100% - 66px);">
-                <button class="searchButton" value="submit" id="search-button" style=""> <img width="20" height="20" style="margin-top:6px;" src="/public/images/search-icon.svg"></button>
-             </div>
-
-             <!-- Standard search box -->
-             <div class="govuk-body desc" style="margin-bottom: 0px;" id="question1B">
-                <input type="text" id="search-input" class="searchBox" style="width: calc(100% - 66px);">
-                <button class="searchButton" value="submit" id="search-button" style=""> <img width="20" height="20" style="margin-top:6px;" src="/public/images/search-icon.svg"></button>
-             </div>
-
-             <!-- Colleague dropdown menu -->
-             <div class="govuk-body desc" style="margin-bottom: 0px;" id="question1C">
-                <button class="searchButton" value="submit" id="colleagueSearch" style=""> <img width="20" height="20" style="margin-top:5px;margin-left:1px;" src="/public/images/search-icon.svg"></button>
-                <select id="cat" class="form-control" onchange="location = this.value;">
-                        <option value="#">Aaron Flynn</option>
-                        <option value="#">Alex Blewett</option>
-                        <option value="">Andy Carr</option>
-                        <option value="#">Duncan Anderson</option>
-                        <option value="#">James Thomas</option>
-                        <option value="#">John Baptiste-Kelly</option>
-                        <option value="V9.html" selected>John James (you)</option>
-                        <option value="V9_JT.html">John Taylor</option>
-                        <option value="#">Jon Parker</option>
-                        <option value="#">Juan Pinto-del-Rio</option>
-                        <option value="#">Lukas Kroening-Maynard</option>
-                        <option value="#">Mark Hornsby</option>
-                        <option value="#">Melvia Mathew</option>
-                        <option value="#">Neil Butler</option>
-                        <option value="#">Nicola Andrews</option>
-                        <option value="#">Pat Gannon</option>
-                        <option value="#">Romani Davies</option>
-                        <option value="#">Simon Skidmore</option>
-                        <option value="#">Sue Watchman</option>
-                        <option value="#">Tony Watson</option>
-                </select>
-             </div>
-
-         </div>
-
-
-
-        <div class="govuk-body" style="margin-bottom: 50px;">
-
-       <!-- <hr style="margin-bottom: 25px;background:#b1b4b6;margin-top: 25px;"> -->
-
-         <label class="govuk-label form-label-bold" style="margin-bottom: 15px; font-size:24px">
-          Filters
-          </label>
-
-
-          <details class="govuk-details" data-module="govuk-details3"  style="padding-left:0px; margin-bottom:15px;">
-            <summary class="govuk-details__summary" style="">
-            Requisitions
-            </summary>
-            <div class="govuk-details-text">
-            {{ govukCheckboxes ({
-                idPrefix: "application-progress2",
-                name: "application-progress2",
-            classes: "govuk-checkboxes govuk-checkboxes--small",
-            fieldset: {
-            legend: {
-            text: ""
-            }
-            },
-            items: [
-            {
-            value: "Requisition",
-            text: "Review"   ,
-            checked: false,
-            id: "Requisition"
-            },
-            {
-            value: "Warningofcancellation",
-            text: "Warning of cancellation"   ,
-            checked: false,
-            id: "Warningofcancellation"
-            }
-            ]
-            }) }}
-            </div>
-        </details>
-
-            <details class="govuk-details" data-module="govuk-details3"  style="padding-left:0px; margin-bottom:15px;">
-                <summary class="govuk-details__summary" style="">
-                Type
-                </summary>
-                <div class="govuk-details-text">
+  
+  
+  
+            <div class="govuk-body" style="margin-bottom: 30px;">
+  
+           <hr style="margin-bottom: 20px;background:#b1b4b6;">
+  
+             <label class="govuk-label form-label-bold" style="margin-bottom: 15px; font-size:24px">
+              Filter by
+              </label>
+  
+              <div class="govuk-details-text" style="padding-bottom: 15px;">
                 {{ govukCheckboxes ({
-                idPrefix: "application-type2",
-                name: "application-type2",
+                    idPrefix: "application-progress2",
+                    name: "application-progress2",
                 classes: "govuk-checkboxes govuk-checkboxes--small",
-                fieldset: {
-                legend: {
-                text: ""
-                }
-                },
                 items: [
                 {
-                value: "Preliminary",
-                text: "Register update",
+                value: "Requisition",
+                text: "Requisitions"   ,
                 checked: false,
-                id: "Preliminary"
+                id: "Requisition"
                 },
                 {
-                value: "Substantive",
-                text: "Register create"   ,
+                value: "",
+                text: "Warning of cancellation"   ,
                 checked: false,
-                id: "Substantive"
+                id: ""
                 },
                 {
-                value: "Sobstantive",
-                text: "Register query"   ,
-                checked: false,
-                id: "Sobstantive"
-                }
+                    value: "Warningofcancellation",
+                    text: "Expedited"   ,
+                    checked: false,
+                    id: "Warningofcancellation"
+                    }
                 ]
                 }) }}
                 </div>
-            </details>
+
+                <details class="govuk-details" data-module="govuk-details2"  style="padding-left:0px;margin-bottom:15px;">
+                  <summary class="govuk-details__summary">
+                     Progress
+                  </summary>
+                  <div class="govuk-details-text">
+                     {{ govukCheckboxes  ({
+                     idPrefix: "application-progress2",
+                     name: "application-progress2",
+                     classes: "govuk-checkboxes govuk-checkboxes--small",
+                     fieldset: {
+                     legend: {
+                     text: ""
+                     }
+                     },
+                     items: [
+                     {
+                     value: "Cancelled",
+                     text: "Cancelled"   ,
+                     checked: false,
+                     id: "Cancelled"
+                     },
+                     {
+                     value: "Completed",
+                     text: "Completed"   ,
+                     checked: false,
+                     id: "Completed"
+                     },
+                     {
+                     value: "Delayed",
+                     text: "Delayed"   ,
+                     checked: false,
+                     id: "Delayed"
+                     },
+                     {
+                     value: "Received",
+                     text: "Received"   ,
+                     checked: false,
+                     id: "Received"
+                     },
+                     {
+                     value: "Saved",
+                     text: "Saved"   ,
+                     checked: false,
+                     id: "Saved"
+                     }
+                     ]
+                     }) }}
+                  </div>
+                </details>
+
+                <details class="govuk-details" data-module="govuk-details3"  style="padding-left:0px; margin-bottom:15px;">
+                    <summary class="govuk-details__summary" style="">
+                    Type
+                    </summary>
+                    <div class="govuk-details-text">
+                    {{ govukCheckboxes ({
+                    idPrefix: "application-type2",
+                    name: "application-type2",
+                    classes: "govuk-checkboxes govuk-checkboxes--small",
+                    fieldset: {
+                    legend: {
+                    text: ""
+                    }
+                    },
+                    items: [
+                    {
+                    value: "Substantive",
+                    text: "Register create"   ,
+                    checked: false,
+                    id: "Substantive"
+                    },
+                    {
+                    value: "Sobstantive",
+                    text: "Register query"   ,
+                    checked: false,
+                    id: "Sobstantive"
+                    },
+                    {
+                        value: "Preliminary",
+                        text: "Register update",
+                        checked: false,
+                        id: "Preliminary"
+                        }
+                    ]
+                    }) }}
+                    </div>
+                </details>
 
 
-
-            <details class="govuk-details" data-module="govuk-details2"  style="padding-left:0px;margin-bottom:15px;">
-              <summary class="govuk-details__summary">
-                 Progress
-              </summary>
-              <div class="govuk-details-text">
-                 {{ govukCheckboxes  ({
-                 idPrefix: "application-progress2",
-                 name: "application-progress2",
-                 classes: "govuk-checkboxes govuk-checkboxes--small",
-                 fieldset: {
-                 legend: {
-                 text: ""
-                 }
-                 },
-                 items: [
-                 {
-                 value: "Cancelled",
-                 text: "Cancelled"   ,
-                 checked: false,
-                 id: "Cancelled"
-                 },
-                 {
-                 value: "Completed",
-                 text: "Completed"   ,
-                 checked: false,
-                 id: "Completed"
-                 },
-                 {
-                 value: "Delayed",
-                 text: "Delayed"   ,
-                 checked: false,
-                 id: "Delayed"
-                 },
-                 {
-                 value: "Received",
-                 text: "Received"   ,
-                 checked: false,
-                 id: "Received"
-                 },
-                 {
-                 value: "Saved",
-                 text: "Saved"   ,
-                 checked: false,
-                 id: "Saved"
-                 }
-                 ]
-                 }) }}
-              </div>
-            </details>
-
-        </div>
-
-        <div>
-            <div style="display: block;">
-             <button id="reset" class="govuk-button govuk-button--secondary" data-module="govuk-button" onclick="window.location.href='#'">
-                Reset search and filters
-             </button>
+  
             </div>
 
-            <div style="display: block;">
-             <button class="govuk-button govuk-button--secondary" data-module="govuk-button"  onclick="window.location.href='/public/files/example-export.csv'">
-                 Export applications
-             </button>
-            </div>
-         
-            <div style="display: block;">
-               <button class="govuk-button govuk-button--secondary" data-module="govuk-button" onclick="window.location.href='#'">
-                 Guidance
-               </button>
-            </div>
+            <hr style="margin-bottom: 30px;background:#b1b4b6;">
+  
+            <div>
+                <div style="display: block;">
+                 <button id="reset" class="govuk-button govuk-button--secondary" data-module="govuk-button" onclick="window.location.href='#'">
+                    Reset search and filters
+                 </button>
+                </div>
+  
+                <div style="display: block;">
+                 <button class="govuk-button govuk-button--secondary" data-module="govuk-button"  onclick="window.location.href='/public/files/example-export.csv'">
+                     Export applications
+                 </button>
+                </div>
              
+                <div style="display: block;">
+                   <button class="govuk-button govuk-button--secondary" data-module="govuk-button" onclick="window.location.href='../../guidance/design/index_live.html'">
+                     Guidance
+                   </button>
+                </div>
+                 
+            </div>
+  
+  
+  
+        </form>
+  
+  
+  
+  
+  
         </div>
-
-
-
-    </form>
-
-
-
-
-
-    </div>
-<!-- Filters and Search Section - End -->
   
   </div>
       
@@ -723,21 +715,21 @@ th.govuk-table__header.sortable button:hover {
         <!-- Application 3 -->
         <tbody class="govuk-table__body">
             <tr class="govuk-table__row govuk-link-table">
-                <td class="govuk-table__cell "><span class="alert-icon" aria-hidden="true">!</span></td>
+                <td class="govuk-table__cell "></td>
                 <td class="govuk-table__cell " scope="row">
                     GG281937
-                    <p class="govuk-visually-hidden">E23-1J</p>
+                    <p class="govuk-visually-hidden">GG281937</p>
                     <!-- THIS IS PAGE {{page}} -->
                 </td>
                 <td class="govuk-table__cell ">PLTR.Becker</td>
                 <td class="govuk-table__cell Substantive" id="">Register update<p class="govuk-visually-hidden"> Preliminary Requisition Delayed Warningofcancellation </p></td>
                 <td class="govuk-table__cell " scope="row" data-sortable="2022-10-14">14/09/2023</td>
-                <td class="govuk-table__cell " scope="row">Delayed<p class="govuk-visually-hidden">Requisition Warningofcancellation</p></td>
-                <td class="govuk-table__cell "  data-sortable="0">19/01/2024</td>
+                <td class="govuk-table__cell " scope="row">Received<p class="govuk-visually-hidden">Received</p></td>
+                <td class="govuk-table__cell "  data-sortable="0">Expedited</td>
                 <td class="govuk-table__cell" scope="row"><a class="expandy-row-trigger2" href="#">+</a></td>
 
             </tr>
-            <!-- 1 Expanded row -->
+            <!-- 3 Expanded row -->
             <tr class="govuk-table__row expandy-row3 hide-row accordion-default-content-1" style="vertical-align: top;">
                 <td class="govuk-table__cell" colspan="1"></td>
                 <td class="govuk-table__cell" colspan="8" style="padding-top: 30px;">
@@ -747,7 +739,7 @@ th.govuk-table__header.sortable button:hover {
                             Application progress
                         </div>
                         <div class="expandedText">
-                            Delayed
+                            Received: Priority Protected - Awaiting Processing
                         </div>
                         </div>
                         <div class="rowContentSection">
@@ -755,7 +747,7 @@ th.govuk-table__header.sortable button:hover {
                             HMLR reference
                         </div>
                         <div class="expandedText">
-                            LP890347
+                            TP890483
                         </div>
                         </div>
                         <div class="rowContentSection">
@@ -775,12 +767,11 @@ th.govuk-table__header.sortable button:hover {
                         <div>
                             <div style="float:left;line-height: 30px;">
                                 <b>Review</b><br>
-                                <a class="requisitionLink" target="_blank" href="/public/documents/userResearchRequisition.pdf">Warning of cancellation issued 02/08/2023</a><br>
-                                <a class="requisitionLink" target="_blank" href="/public/documents/userResearchRequisition.pdf">Requisition issued 20/07/2023</a>      
+                                None
                             </div>
                             <div style="float:left;padding-left: 50px;line-height: 30px;">
                                 <b>Resolved</b><br>
-                                None
+                                <a class="requisitionLink" target="_blank" href="/public/documents/userResearchRequisition.pdf">Requisition issued 20/07/2023</a>  
                             </div>
                             <div style="float:left;padding-left: 50px;line-height: 30px;">
                                 <b>Information only</b><br>

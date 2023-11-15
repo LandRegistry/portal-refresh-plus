@@ -224,6 +224,8 @@ th.govuk-table__header.sortable button:hover {
         <li class="parent"><a href="/projects/notifications/userResearch/round2/start.html">Log out</a></li>
       </ul>      
   </div>
+
+
 <!-- Back & clear data top -->
 <!-- Back & clear data top -->
 <div>
@@ -244,7 +246,7 @@ th.govuk-table__header.sortable button:hover {
                   <h1 class="govuk-heading-l" style="font-size:34px;">View applications</h1>
               </div>
       
-              <div class="govuk-body" style="margin-bottom: 50px;">
+              <div class="govuk-body" style="margin-bottom: 30px;">
                  <div class="govuk-form-group" style="margin-bottom: 10px;">
                     <label class="govuk-label form-label-bold" style="font-size:24px">
                        Search by
@@ -319,33 +321,23 @@ th.govuk-table__header.sortable button:hover {
   
   
   
-            <div class="govuk-body" style="margin-bottom: 50px;">
+            <div class="govuk-body" style="margin-bottom: 30px;">
   
-           <!-- <hr style="margin-bottom: 25px;background:#b1b4b6;margin-top: 25px;"> -->
+           <hr style="margin-bottom: 20px;background:#b1b4b6;">
   
              <label class="govuk-label form-label-bold" style="margin-bottom: 15px; font-size:24px">
-              Filters
+              Filter by
               </label>
   
-
-              <details class="govuk-details" data-module="govuk-details3"  style="padding-left:0px; margin-bottom:15px;">
-                <summary class="govuk-details__summary" style="">
-                Requisitions
-                </summary>
-                <div class="govuk-details-text">
+              <div class="govuk-details-text" style="padding-bottom: 15px;">
                 {{ govukCheckboxes ({
                     idPrefix: "application-progress2",
                     name: "application-progress2",
                 classes: "govuk-checkboxes govuk-checkboxes--small",
-                fieldset: {
-                legend: {
-                text: ""
-                }
-                },
                 items: [
                 {
                 value: "Requisition",
-                text: "Review"   ,
+                text: "Requisitions"   ,
                 checked: false,
                 id: "Requisition"
                 },
@@ -358,47 +350,6 @@ th.govuk-table__header.sortable button:hover {
                 ]
                 }) }}
                 </div>
-            </details>
-
-                <details class="govuk-details" data-module="govuk-details3"  style="padding-left:0px; margin-bottom:15px;">
-                    <summary class="govuk-details__summary" style="">
-                    Type
-                    </summary>
-                    <div class="govuk-details-text">
-                    {{ govukCheckboxes ({
-                    idPrefix: "application-type2",
-                    name: "application-type2",
-                    classes: "govuk-checkboxes govuk-checkboxes--small",
-                    fieldset: {
-                    legend: {
-                    text: ""
-                    }
-                    },
-                    items: [
-                    {
-                    value: "Preliminary",
-                    text: "Register update",
-                    checked: false,
-                    id: "Preliminary"
-                    },
-                    {
-                    value: "Substantive",
-                    text: "Register create"   ,
-                    checked: false,
-                    id: "Substantive"
-                    },
-                    {
-                    value: "Sobstantive",
-                    text: "Register query"   ,
-                    checked: false,
-                    id: "Sobstantive"
-                    }
-                    ]
-                    }) }}
-                    </div>
-                </details>
-
-
 
                 <details class="govuk-details" data-module="govuk-details2"  style="padding-left:0px;margin-bottom:15px;">
                   <summary class="govuk-details__summary">
@@ -449,8 +400,50 @@ th.govuk-table__header.sortable button:hover {
                      }) }}
                   </div>
                 </details>
+
+                <details class="govuk-details" data-module="govuk-details3"  style="padding-left:0px; margin-bottom:15px;">
+                    <summary class="govuk-details__summary" style="">
+                    Type
+                    </summary>
+                    <div class="govuk-details-text">
+                    {{ govukCheckboxes ({
+                    idPrefix: "application-type2",
+                    name: "application-type2",
+                    classes: "govuk-checkboxes govuk-checkboxes--small",
+                    fieldset: {
+                    legend: {
+                    text: ""
+                    }
+                    },
+                    items: [
+                    {
+                    value: "Substantive",
+                    text: "Register create"   ,
+                    checked: false,
+                    id: "Substantive"
+                    },
+                    {
+                    value: "Sobstantive",
+                    text: "Register query"   ,
+                    checked: false,
+                    id: "Sobstantive"
+                    },
+                    {
+                        value: "Preliminary",
+                        text: "Register update",
+                        checked: false,
+                        id: "Preliminary"
+                        }
+                    ]
+                    }) }}
+                    </div>
+                </details>
+
+
   
             </div>
+
+            <hr style="margin-bottom: 30px;background:#b1b4b6;">
   
             <div>
                 <div style="display: block;">
@@ -466,7 +459,7 @@ th.govuk-table__header.sortable button:hover {
                 </div>
              
                 <div style="display: block;">
-                   <button class="govuk-button govuk-button--secondary" data-module="govuk-button" onclick="window.location.href='#'">
+                   <button class="govuk-button govuk-button--secondary" data-module="govuk-button" onclick="window.location.href='../../guidance/design/index_live.html'">
                      Guidance
                    </button>
                 </div>
@@ -632,7 +625,7 @@ th.govuk-table__header.sortable button:hover {
                 <td class="govuk-table__cell "><span class="alert-icon" aria-hidden="true">!</span></td>
                 <td class="govuk-table__cell " scope="row">
                     EF778398
-                    <p class="govuk-visually-hidden">EF778398</p>
+                    <p class="govuk-visually-hidden">E23-66Q</p>
                     <!-- THIS IS PAGE {{page}} -->
                 </td>
                 <td class="govuk-table__cell ">PLTR.Thompson</td>
@@ -681,7 +674,7 @@ th.govuk-table__header.sortable button:hover {
                         <div>
                             <div style="float:left;line-height: 30px;">
                                 <b>Review</b><br>
-                                <a class="requisitionLink" target="_blank" href="/public/documents/userResearchRequisition.pdf">Requisition issued 13/11/2022</a>     
+                                <a class="requisitionLink" target="_blank" href="/public/documents/userResearchRequisition.pdf">Requisition issued 01/08/2023</a>     
                             </div>
                             <div style="float:left;padding-left: 50px;line-height: 30px;">
                                 <b>Resolved</b><br>
@@ -689,8 +682,8 @@ th.govuk-table__header.sortable button:hover {
                             </div>
                             <div style="float:left;padding-left: 50px;line-height: 30px;">
                                 <b>Information only</b><br>
-                                <a style="color:#006637;" target="_blank" href="#">Letter issued on 09/10/2022</a><br>
-                                <a style="color:#006637;" target="_blank" href="#">Letter issued on 24/10/2022</a><br>
+                                <a style="color:#006637;" target="_blank" href="#">Letter issued on 18/07/2023</a><br>
+                                <a style="color:#006637;" target="_blank" href="#">Letter issued on 24/07/2023</a><br>
                             </div>
                         </div>
                         </div>
@@ -724,7 +717,7 @@ th.govuk-table__header.sortable button:hover {
                 <td class="govuk-table__cell "><span class="alert-icon" aria-hidden="true">!</span></td>
                 <td class="govuk-table__cell " scope="row">
                     GG281937
-                    <p class="govuk-visually-hidden">GG281937</p>
+                    <p class="govuk-visually-hidden">E23-1J</p>
                     <!-- THIS IS PAGE {{page}} -->
                 </td>
                 <td class="govuk-table__cell ">PLTR.Becker</td>
@@ -773,8 +766,8 @@ th.govuk-table__header.sortable button:hover {
                         <div>
                             <div style="float:left;line-height: 30px;">
                                 <b>Review</b><br>
-                                <a class="requisitionLink" target="_blank" href="/public/documents/userResearchRequisition.pdf">Warning of cancellation issued 12/11/2022</a><br>
-                                <a class="requisitionLink" target="_blank" href="/public/documents/userResearchRequisition.pdf">Requisition issued 11/11/2022</a>      
+                                <a class="requisitionLink" target="_blank" href="/public/documents/userResearchRequisition.pdf">Warning of cancellation issued 02/08/2023</a><br>
+                                <a class="requisitionLink" target="_blank" href="/public/documents/userResearchRequisition.pdf">Requisition issued 20/07/2023</a>      
                             </div>
                             <div style="float:left;padding-left: 50px;line-height: 30px;">
                                 <b>Resolved</b><br>
@@ -782,8 +775,7 @@ th.govuk-table__header.sortable button:hover {
                             </div>
                             <div style="float:left;padding-left: 50px;line-height: 30px;">
                                 <b>Information only</b><br>
-                                <a style="color:#006637;" target="_blank" href="#">Letter issued on 09/10/2022</a><br>
-                                <a style="color:#006637;" target="_blank" href="#">Letter issued on 24/10/2022</a><br>
+                                <a style="color:#006637;" target="_blank" href="#">Letter issued on 20/07/2023</a><br>
                             </div>
                         </div>
                         </div>
@@ -919,13 +911,13 @@ th.govuk-table__header.sortable button:hover {
             <tr class="govuk-table__row govuk-link-table">
                 <td class="govuk-table__cell "></td>
             <td class="govuk-table__cell " scope="row">
-                PT122222
-                <p class="govuk-visually-hidden">PT122222</p>
+                BG122222
+                <p class="govuk-visually-hidden">BG122222</p>
                 <!-- THIS IS PAGE {{page}} -->
             </td>
 
             <td class="govuk-table__cell ">PTON.Cage.56 </td>
-            <td class="govuk-table__cell Substantive" id="">Official Search of Whole with Priority<p class="govuk-visually-hidden"> Sobstantive Completed  </p></td>
+            <td class="govuk-table__cell Substantive" id="">Register update<p class="govuk-visually-hidden"> Substantive Completed  </p></td>
             <td class="govuk-table__cell " scope="row" data-sortable="2022-05-14">14/08/2023</td>
             <td class="govuk-table__cell " scope="row">Completed</td>
             <td class="govuk-table__cell "  data-sortable="0"></td>
@@ -952,14 +944,6 @@ th.govuk-table__header.sortable button:hover {
                         </div>
                         <div class="expandedText">
                             KK89234
-                        </div>
-                    </div>
-                    <div class="rowContentSection">
-                        <div class="expandedTitles">
-                        Priority period
-                        </div>
-                        <div class="expandedText">
-                            12/05/2022 - 25/06/2022
                         </div>
                     </div>
                 </div>
@@ -991,8 +975,8 @@ th.govuk-table__header.sortable button:hover {
                         <div class="expandedTitles">
                         Files
                         </div>
-                        <div class="expandedText" style="line-height: 30px;">
-                        <a style="color:#006637;" href="#">Search result dated 27/05/2022</a><br>
+                        <div class="expandedText">
+                            Completion or cancellation documents can be accessed in your case management system.
                         </div>
                     </div>
                     </div>
@@ -1002,9 +986,6 @@ th.govuk-table__header.sortable button:hover {
                         <div class="expandedTitles" style="padding-bottom: 10px;">Actions</div>
                         <div class="expandedText">
                         <div class="expandedText">
-                            <button class="govuk-button govuk-button--secondary" data-module="govuk-button" style="margin-right:10px;" onclick="window.location.href='#'">
-                                Respond
-                            </button>
                             <button class="govuk-button govuk-button--secondary" data-module="govuk-button" style="margin-right:10px;" onclick="window.location.href='#'">
                                 Application enquiry
                             </button>
@@ -1046,7 +1027,7 @@ th.govuk-table__header.sortable button:hover {
                         Application progress
                         </div>
                         <div class="expandedText">
-                            Received: Priority Protected - Expedited
+                        Received: In progress
                         </div>
                     </div>
                     <div class="rowContentSection">
@@ -1166,13 +1147,13 @@ th.govuk-table__header.sortable button:hover {
                         </div>
                         <div style="float:left;padding-left: 50px;line-height: 30px;">
                             <b>Resolved</b><br>
-                            <a style="color:#006637;" target="_blank" href="/public/files/requisition-example-document.pdf">Warning of cancellation issued 22/09/2022</a><br>
-                            <a style="color:#006637;" target="_blank" href="/public/files/requisition-example-document.pdf">Requisition issued 15/09/2022</a><br>
+                            <a style="color:#006637;" target="_blank" href="/public/files/requisition-example-document.pdf">Warning of cancellation issued 22/07/2023</a><br>
+                            <a style="color:#006637;" target="_blank" href="/public/files/requisition-example-document.pdf">Requisition issued 01/07/2023</a><br>
                         </div>
                         <div style="float:left;padding-left: 50px;line-height: 30px;">
                             <b>Information only</b><br>
-                            <a style="color:#006637;" target="_blank" href="/public/files/requisition-example-document.pdf">Letter issued 26/08/2022</a><br>
-                            <a style="color:#006637;" target="_blank" href="/public/files/requisition-example-document.pdf">Notice issued 25/08/2022</a>
+                            <a style="color:#006637;" target="_blank" href="/public/files/requisition-example-document.pdf">Letter issued 26/06/2023</a><br>
+                            <a style="color:#006637;" target="_blank" href="/public/files/requisition-example-document.pdf">Notice issued 25/06/2023</a>
                         </div>
                     </div>
                     </div>
@@ -1292,9 +1273,9 @@ th.govuk-table__header.sortable button:hover {
                         Files
                     </div>
                     <div class="expandedText" style="line-height: 30px;">
-                        <a style="color:#006637;" target="_blank" href="#">Registration Completion Sheet dated 02/09/2022</a><br>
-                              <a style="color:#006637;" target="_blank" href="#">Official Copy of Register dated 02/09/2022</a><br>
-                              <a style="color:#006637;" target="_blank" href="#">Official Copy of Title Plan dated 02/09/2022</a><br>
+                        <a style="color:#006637;" target="_blank" href="#">Registration Completion Sheet dated 02/07/2023</a><br>
+                              <a style="color:#006637;" target="_blank" href="#">Official Copy of Register dated 02/07/2023</a><br>
+                              <a style="color:#006637;" target="_blank" href="#">Official Copy of Title Plan dated 02/07/2023</a><br>
                     </div>
                     </div>
                     </div>
@@ -1380,9 +1361,9 @@ th.govuk-table__header.sortable button:hover {
                             </div>
                             <div style="float:left;padding-left: 50px;line-height: 30px;">
                                 <b>Information only</b><br>
-                                <a style="color:#006637;" target="_blank" href="/public/files/requisition-example-document.pdf">Letter issued 06/08/2022</a><br>
-                                <a style="color:#006637;" target="_blank" href="/public/files/requisition-example-document.pdf">Letter issued 05/08/2022</a><br>
-                                <a style="color:#006637;" target="_blank" href="/public/files/requisition-example-document.pdf">Letter issued 04/08/2022</a><br>
+                                <a style="color:#006637;" target="_blank" href="/public/files/requisition-example-document.pdf">Letter issued 06/07/2023</a><br>
+                                <a style="color:#006637;" target="_blank" href="/public/files/requisition-example-document.pdf">Letter issued 05/07/2023</a><br>
+                                <a style="color:#006637;" target="_blank" href="/public/files/requisition-example-document.pdf">Letter issued 04/07/2023</a><br>
                             </div>
                         </div>
                         </div>
@@ -1417,7 +1398,7 @@ th.govuk-table__header.sortable button:hover {
                 <td class="govuk-table__cell "></td>
                 <td class="govuk-table__cell " scope="row">
                 779182770
-                    <p class="govuk-visually-hidden"> 779182770 </p>
+                    <p class="govuk-visually-hidden"> JJ9182770 </p>
                     <!-- THIS IS PAGE {{page}} -->
                 </td>
 
@@ -1427,7 +1408,7 @@ th.govuk-table__header.sortable button:hover {
                     <p class="govuk-visually-hidden"> Preliminary Received </p>
                  </td>
                 <td class="govuk-table__cell " scope="row" data-sortable="2022-07-25">03/04/2023</td>
-                <td class="govuk-table__cell " scope="row">Received</td>
+                <td class="govuk-table__cell " scope="row">Delayed</td>
                 <td class="govuk-table__cell "  data-sortable="0">Exceeded</td>
 
                 <td class="govuk-table__cell" scope="row"><a class="expandy-row-trigger2" href="#">+</a></td>
@@ -1443,7 +1424,7 @@ th.govuk-table__header.sortable button:hover {
                             Application progress
                         </div>
                         <div class="expandedText">
-                            Received: Awaiting Processing
+                            Delayed
                         </div>
                         </div>
                         <div class="rowContentSection">
@@ -1472,9 +1453,9 @@ th.govuk-table__header.sortable button:hover {
                             </div>
                             <div style="float:left;padding-left: 50px;line-height: 30px;">
                                 <b>Information only</b><br>
-                                <a style="color:#006637;" target="_blank" href="/public/files/requisition-example-document.pdf">Letter issued 06/08/2022</a><br>
-                                <a style="color:#006637;" target="_blank" href="/public/files/requisition-example-document.pdf">Letter issued 05/08/2022</a><br>
-                                <a style="color:#006637;" target="_blank" href="/public/files/requisition-example-document.pdf">Letter issued 04/08/2022</a><br>
+                                <a style="color:#006637;" target="_blank" href="/public/files/requisition-example-document.pdf">Letter issued 06/05/2023</a><br>
+                                <a style="color:#006637;" target="_blank" href="/public/files/requisition-example-document.pdf">Letter issued 05/05/2023</a><br>
+                                <a style="color:#006637;" target="_blank" href="/public/files/requisition-example-document.pdf">Letter issued 04/05/2023</a><br>
                             </div>
                         </div>
                         </div>
