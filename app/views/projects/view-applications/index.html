@@ -1,0 +1,137 @@
+{% extends "layouts/layout_ProjectPage.html" %}
+
+{% block pageTitle %}
+Requisitions
+{% endblock %}
+
+
+
+{% block content %}
+
+<style>
+    .govuk-accordion__section-heading-text {
+      font-size: 36px;
+      line-height: 1;
+  }
+
+::marker {
+  font-weight:600;
+}
+
+.simpleListNumbered li {
+    padding-bottom: 10px;
+}
+
+</style>
+
+<div class="govuk-grid-row govuk-body">
+  
+  <div class="govuk-grid-column-full backButton">
+      <a href="/index.html" class="govuk-back-link" style="margin-bottom:20px;">Back to projects</a>
+  </div>
+<!-- This is where the project title goes and a small descritpion of what the work covers. -->
+
+    <div class="govuk-grid-column-full govuk-!-padding-bottom-9  govuk-!-padding-top-6">
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-0">
+        View Applications
+      </h1>
+      
+
+
+    </div>
+
+
+<!-- This is where the accordion content is added. If the signed-off design is not required, simply comment it out. -->
+
+    <div class="govuk-grid-column-full">
+        <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">
+
+          <div class="govuk-accordion__section ">
+            <div class="govuk-accordion__section-header">
+              <h2 class="govuk-accordion__section-heading">
+                <span class="govuk-accordion__section-button" id="accordion-default-heading-2">
+                  Estimated Completion Date (ECD) vs Timeframes
+                </span>
+              </h2>
+            </div>
+            <div id="accordion-default-content-2" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-2">
+      
+              <ul class="simpleList">
+                <li><b>Date:</b> Jan 2024 - TBC</li>
+                <li><b>Designers:</b> Grace Buttall</li>
+                <li><b>User researcher:</b> James Vasey</li>
+                <li><b>Delivery team:</b> Magrathea</li>
+              </ul>
+              <br>
+              <p>Additional context can be found in the <a class="govuk-link" href="https://www.figma.com/file/O8vPiQaEkQqaFSnPeoT28M/View-applications?type=design&node-id=1221%3A4793&mode=design&t=LnCwrhONP3DHPet2-1" target="_blank">figma file</a>.</p>
+
+              <h3 class="govuk-heading-m govuk-!-margin-bottom-2 govuk-!-margin-top-6">Research</h3>
+              <p>Design options sent out in a survey:</p>
+              <ul class="simpleList">
+                <li><b>A</b> - As-is prototype with an estimated completion date</li>
+                <li><b>B</b> - New design where a timeframe is given as 2 dates</li>
+                <li><b>C</b> - New design where the latter date of the timeframe is given</li>
+                <li><b>D</b> - New design where the timeframe is given with no calculated date</li>
+              </ul>  
+              <br>
+              <p><a class="govuk-link" href="./timeframes/scenarios.html" target="_blank">Prototypes for UR</a></p>
+              <p><a class="govuk-link" href="#" target="_blank">User research findings TBC</a></p>
+
+              <h3 class="govuk-heading-m govuk-!-margin-bottom-2 govuk-!-margin-top-6">Agreed actions</h3>
+              <p>TBC</p>
+              <button onclick="window.open('#','_blank')" type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                Final Prototype TBC
+              </button>
+            </div>
+          </div>
+          
+        <div class="govuk-accordion__section ">
+            <div class="govuk-accordion__section-header">
+              <h2 class="govuk-accordion__section-heading">
+                <span class="govuk-accordion__section-button" id="accordion-default-heading-2">
+                  Reduce Progress Chasing (RPC) 2-3
+                </span>
+              </h2>
+            </div>
+            <div id="accordion-default-content-2" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-2">
+      
+              <ul class="simpleList">
+                <li><b>Date:</b> Nov 2023 - TBC</li>
+                <li><b>Designers:</b> Grace Buttall, Michael Harrison</li>
+                <li><b>User researcher:</b> James Vasey</li>
+                <li><b>Delivery team:</b> Magrathea</li>
+              </ul>
+              <br>
+              <p>Additional context can be found in the <a class="govuk-link" href="https://www.figma.com/file/O8vPiQaEkQqaFSnPeoT28M/View-applications?type=design&node-id=399%3A2805&mode=design&t=LnCwrhONP3DHPet2-1" target="_blank">figma file</a>.</p>
+
+              <h3 class="govuk-heading-m govuk-!-margin-bottom-2 govuk-!-margin-top-6">Research</h3>
+              <p>Scenarios taken out for user research:</p>
+              <ul class="simpleList">
+                <li><b>A</b> - View applications as-is</li>
+                <li><b>B</b> - New design for filters surfacing requisition ones</li>
+                <li><b>C</b> - Design showing an application has been expedited in the expanded row for title LP54312</li>
+                <li><b>D</b> - Design showing an application has been expedited in the collapsed row instead of ECD</li>
+              </ul>  
+              <br>
+              <p><a class="govuk-link" href="./rpc2-3/scenarios.html" target="_blank">Prototypes for UR</a></p>
+              <p><a class="govuk-link" href="https://landregistryuk-my.sharepoint.com/:p:/g/personal/james_vasey_landregistry_gov_uk/EWof_KQsWHVAql1W0ETeZbMBFh5abHBchGJ3zLEDykLQPQ?e=DNDqgJ" target="_blank">User research findings</a></p>
+
+              <h3 class="govuk-heading-m govuk-!-margin-bottom-2 govuk-!-margin-top-6">Agreed actions</h3>
+              <p>TBC</p>
+              <button onclick="window.open('#','_blank')" type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                Final Prototype TBC
+              </button>
+            </div>
+          </div>
+
+
+
+        </div>
+    </div>
+
+
+
+
+  </div>
+
+{% endblock %}
