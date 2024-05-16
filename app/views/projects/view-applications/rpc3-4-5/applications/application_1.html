@@ -38,6 +38,41 @@
 li:hover {
   color: #0b0c0c;
 }
+
+.govuk-summary-card__content {
+    padding: 15px 20px;
+}
+
+.govuk-summary-card {
+    margin-bottom: 20px;
+    border: 1px solid #b1b4b6;
+}
+
+.govuk-summary-card__title-wrapper {
+    padding: 15px;
+    border-bottom: 1px solid transparent;
+    background-color: #f3f2f1;
+}
+
+.expedite-button {
+
+    margin-top: 20px;
+    margin-bottom: -20px;
+}    
+
+.delayed-tag {
+    color: #594d00;
+    background: #fff7bf;
+    float: right;
+    margin-top: -50px;
+}
+
+.active-tag {
+    color: #10403c;
+    background: #bfe3e0;
+    float: right;
+    margin-top: -50px;
+}
 </style>
 
 
@@ -50,11 +85,154 @@ li:hover {
 
       <div class="govuk-width-container wide960">
       
-        <a href="#" class="govuk-back-link" style="margin-bottom: 40px">Back to applications</a>
+        <a href="/projects/view-applications/rpc3-4-5/index_V1B.html" class="govuk-back-link" style="margin-bottom: 40px">Back to applications</a>
         <h2 class="govuk-heading-l">JT/Williams/2022c</h2>
 
+        <div class="govuk-summary-card">
+            <div class="govuk-summary-card__title-wrapper">
+              <h2 class="govuk-summary-card__title">
+                Progress
+              </h2>
+                <td class="govuk-table__cell">
+                  <strong class="govuk-tag govuk-tag--yellow delayed-tag" >
+                    Delayed
+                  </strong>
+                </td>
+            </div>
+            <div class="govuk-summary-card__content">
+              <dl class="govuk-summary-list">
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Received by HMLR
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    38
+                  </dd>
+                 
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Estimated completion date
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    UK national resident in UK
+                  </dd>
+                 
+                </div>
+                <div>
+                 
+                    <button type="submit" class="govuk-button govuk-button--secondary expedite-button" data-module="govuk-button">
+                        Expedite
+                    </button>
+                  
+                </div>
+              </dl>
+            </div>
+          </div>
+          <div class="govuk-summary-card">
+            <div class="govuk-summary-card__title-wrapper">
+              <h2 class="govuk-summary-card__title">
+                Application details
+              </h2>
+            </div>
+            <div class="govuk-summary-card__content">
+              <dl class="govuk-summary-list">
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                      HMLR reference
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                      Yes
+                    </dd>
+                   
+                  </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Title number
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    Yes
+                  </dd>
+                 
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Parent titles
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    Partner
+                  </dd>
+                 
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Applicant
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    42
+                  </dd>
+                  
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Application type
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    Unable to work because of long-term sickness or disability
+                  </dd>
+                 
+                </div>
+              </dl>
+            </div>
+          </div>
+          <div class="govuk-summary-card">
+            <div class="govuk-summary-card__title-wrapper">
+              <h2 class="govuk-summary-card__title">
+                Requisition
+              </h2>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">
+                  <strong class="govuk-tag govuk-tag--turquoise active-tag">
+                    Active
+                  </strong>
+                </td>
+              </tr>
+            </div>
+            <div class="govuk-summary-card__content">
+                <p class="govuk-body">
+                    <a href="#" class="govuk-link govuk-link--no-visited-state">Requisition issued 22/04/22</a>
+                </p>
+                <button type="submit" class="govuk-button" data-module="govuk-button" style="margin-right: 10px">
+                    Reply
+                  </button>
+                <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                    Request extension
+                  </button>
+            </div>
+          </div>
+
+          <div class="govuk-summary-card">
+            <div class="govuk-summary-card__title-wrapper">
+              <h2 class="govuk-summary-card__title">
+                Correspondence
+              </h2>
+            </div>
+            <div class="govuk-summary-card__content">
+                <p style="font-weight: bold;">Resolved</p>
+                <p class="govuk-body">
+                    <a href="#" class="govuk-link govuk-link--no-visited-state">Letter issued 05/05/22</a>
+                </p>
+                <p style="font-weight: bold;">Information only</p>
+                <p class="govuk-body">
+                    <a href="#" class="govuk-link govuk-link--no-visited-state">Letter issued 05/05/22</a>
+                </p>
+            </div>
+          </div>
+          <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+            Save as PDF
+          </button>
       </div>
-      
+     
     </main>
   </div>
 </div>
