@@ -1,0 +1,153 @@
+{% extends "layouts/layout_ProjectPage.html" %}
+
+{% block pageTitle %}
+Notifications
+{% endblock %}
+
+
+
+{% block content %}
+
+<style>
+    .govuk-accordion__section-heading-text {
+      font-size: 36px;
+      line-height: 1;
+  }
+
+::marker {
+  font-weight:600;
+}
+
+.simpleListNumbered li {
+    padding-bottom: 10px;
+}
+
+</style>
+
+<div class="govuk-grid-row govuk-body">
+  
+  <div class="govuk-grid-column-full backButton">
+      <a href="/index.html" class="govuk-back-link" style="margin-bottom:20px;">Back to projects</a>
+  </div>
+<!-- This is where the project title goes and a small descritpion of what the work covers. -->
+
+    <div class="govuk-grid-column-full govuk-!-padding-bottom-9  govuk-!-padding-top-6">
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-0">
+        Notifications
+      </h1>
+      
+
+
+    </div>
+
+
+<!-- This is where the accordion content is added. If the signed-off design is not required, simply comment it out. -->
+
+    <div class="govuk-grid-column-full">
+        <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">
+          <div class="govuk-accordion__section ">
+            <div class="govuk-accordion__section-header">
+              <h2 class="govuk-accordion__section-heading">
+                <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
+                  Overview
+                </span>
+              </h2>
+            </div>
+            <div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
+              
+              <p>Previous User research and communications with our Users, discovered the need to see what applications require them to take action, in a clearer and quicker way than is currently available to them.</p>
+
+              <h3 class="govuk-heading-m govuk-!-margin-bottom-2 govuk-!-margin-top-7">Project team</h3>
+
+              <ul class="simpleList">
+                <li>Nicole Deady - <span class="jobTitle">Interaction design</span></li>
+                <li>Jane James - <span class="jobTitle">User research</span></li>
+                <li>Jennifer Bullock - <span class="jobTitle">User research</span></li>
+              </ul>
+            </div>
+          </div>
+
+          
+
+          <div class="govuk-accordion__section ">
+            <div class="govuk-accordion__section-header">
+              <h2 class="govuk-accordion__section-heading">
+                <span class="govuk-accordion__section-button" id="accordion-default-heading-2">
+                  Design
+                </span>
+              </h2>
+            </div>
+            <div id="accordion-default-content-2" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-2">
+              
+              <h3 class="govuk-heading-m govuk-!-margin-bottom-2 govuk-!-margin-top-6">Interactive designs</h3>
+              <ul class="simpleList">
+                <li><a target="_blank" href="design/index_V1.html">A</a> - Users can quickly see what applications require action through the use of a tab system. 
+                </li> 
+              </ul>  
+
+        </div>
+    </div>
+
+
+<!-- This is where you can display pictures in an accessible, expandable gallery. The best picture size to use is 990px by 495px -->
+
+    <!-- <div class="govuk-grid-column-full  govuk-!-padding-top-7">
+      <h2 class="govuk-heading-l govuk-!-margin-bottom-2">
+        Gallery
+      </h2>
+      <p>A selection of concepts and ideas from this project.</p>
+
+      <ul class="js-favs" role=”list”>
+        <li>
+          <button aria-expanded="false">
+            <img src="/public/images/notifications-1.jpg" alt="Original requires action concept" />
+          </button>
+        </li>
+        <li>
+          <button aria-expanded="false">
+            <img src="/public/images/notifications-2.jpg" alt="Homepage design with notifications" />
+          </button>
+        </li>
+        <li>
+          <button aria-expanded="false">
+            <img src="/public/images/notifications-3.jpg" alt="This image showcases a tab system, allowing the user to toggle" />
+          </button>
+        </li>
+        <li>
+          <button aria-expanded="false">
+            <img src="/public/images/notifications-4.jpg" alt="Displaying a visual progress of the application" />
+          </button>
+        </li>
+        <li>
+          <button aria-expanded="false">
+            <img src="/public/images/notifications-5.jpg" alt="An updated expanded application that displays a requisition warning to users" />
+          </button>
+        </li>
+        <li>
+          <button aria-expanded="false">
+            <img src="/public/images/notifications-6.jpg" alt="A collapsable filter panel" />
+          </button>
+        </li>
+        <li>
+          <button aria-expanded="false">
+            <img src="/public/images/notifications-7.jpg" alt="Introduction of note taking functionality" />
+          </button>
+        </li>
+        <li>
+          <button aria-expanded="false">
+            <img src="/public/images/notifications-8.jpg" alt="Cleaner, less grey looking applications screen" />
+          </button>
+        </li>
+        <li>
+          <button aria-expanded="false">
+            <img src="/public/images/notifications-9.jpg" alt="Full page application that can be shared" />
+          </button>
+        </li>
+      </ul>
+
+
+    </div> -->
+
+  </div>
+
+{% endblock %}
