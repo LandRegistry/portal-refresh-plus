@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+{% extends "layouts/layout_homepage.html" %}
+{% block pageTitle %} View applications - Guidance
+{% endblock %}
+{% block content %}
+
+{% include "includes/notificationsNavigation.html" %} 
+
+<style>
+.govuk-width-container-fixed {
+    max-width: 1080px;
+    margin: auto;
+    padding-top: 40px;
+    padding-bottom: 100px;
+}
+
+
+.govuk-heading-s {
+    font-family: 'Roboto', sans-serif;
+}
+
+.govuk-accordion__section-toggle-text {
+  color: #006637;
+}
+
+.govuk-accordion-nav__chevron--down {
+  color: #006637;
+}
+
+.govuk-accordion-nav__chevron {
+  color: #006637;
+}
+
+.govuk-accordion__show-all-text {
+  color: #006637;
+}
+
+li:hover {
+  color: #0b0c0c;
+}
+
+.govuk-summary-card__content {
+    padding: 15px 20px;
+}
+
+.govuk-summary-card {
+    margin-bottom: 20px;
+    border: 1px solid #b1b4b6;
+}
+
+.govuk-summary-card__title-wrapper {
+    padding: 15px;
+    border-bottom: 1px solid transparent;
+    background-color: #f3f2f1;
+}
+
+.expedite-button {
+
+    margin-top: 20px;
+    margin-bottom: -20px;
+}    
+
+.delayed-tag {
+    color: #594d00;
+    background: #fff7bf;
+    float: right;
+    margin-top: -50px;
+}
+
+.active-tag {
+    color: #10403c;
+    background: #bfe3e0;
+    float: right;
+    margin-top: -50px;
+}
+</style>
+
+
+<!-- Back & clear data top -->
+<!-- Back & clear data top -->
+<div>
+  <div style="margin: auto;">
+      
+    <main class="govuk-main-wrapper">
+
+      <div class="govuk-width-container wide960">
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+             <h1>This is a test page</h1>
+             <div class="govuk-form-group">
+                <label class="govuk-label" for="event-name">
+                  Type in anything
+                </label>
+                <input class="govuk-input" id="event-name" name="eventName" type="text">
+              </div>
+              <button type="submit" onclick="window.location.href='/projects/view-applications/rpc4/applications/new-letterB'" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                Submit
+              </button>
+          </div>    
+        </div>
+      </div>
+     
+    </main>
+  </div>
+</div>
+
+
+<div class="govuk-grid-column-full" style="bottom:0;padding:0px;border-top:5px solid #00703C;">
+   
+  <div style="padding:30px; background: #f3f2f1;">
+
+    <p style="color: #6d6d6d; text-decoration: none;font-size: 16px;margin-bottom:15px;">The following links open in a new tab.</p>
+
+    <a class="footlink" style="color: grey; text-decoration: none;"><u>Terms and conditions</u></a>
+    |
+    <a class="footlink" style="color: grey; text-decoration: none;"><u>Accessibility statement</u></a>
+    |
+    <a class="footlink" style="color: grey; text-decoration: none;"><u>Freedom of information</u></a>
+    |
+    <a class="footlink" style="color: grey; text-decoration: none;"><u>© Crown copyright</u></a>
+
+  </div>
+</div>
+
+
+<!-- Content Area - End -->
+
+{% endblock %}
