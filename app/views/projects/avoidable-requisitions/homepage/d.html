@@ -4,7 +4,6 @@
 {% endblock %}
 {% block content %}
 
-{% include "includes/notificationsCookies.html" %} 
 {% include "includes/notificationsNavigation.html" %} 
 
 <script>
@@ -74,130 +73,159 @@
 }
 
 #EditableLinksPanel {
-  padding: 40px 0 0 0;
+  padding: 80px 0 0 0;
 }
+
+.hmlr-card-group__item {
+  padding: 0;
+}
+
+.linkTextSection {
+  border-top: 1px solid #b1b4b6;
+  border-left: none;
+  border-right: none;
+  border-bottom: none;
+  margin: 0 15px;
+  padding: 5px 0 20px 0;
+}
+
+.linkTextSectionContent {
+  padding: 10px 30px 10px 0;
+  background-image: url("/public/images/icon_govuk_chevronrightGreen.svg"); background-size: 25px; background-repeat: no-repeat; background-position-x: right;background-position-y: 10px; 
+}
+
+.dividerLine10 {
+  height: 2px;
+  margin: 25px auto;
+  background-color: #0b0c0c;
+} 
 
 </style>
 
-<div id="linksPanel" class="govuk-body" style="background: #ffffff;">
-  <div class="govuk-phase-banner">
-    <p class="govuk-phase-banner__content">
-      <strong class="govuk-tag govuk-phase-banner__content__tag">
-        Beta
-      </strong>
-      <span class="govuk-phase-banner__text">
-        This is a new design layout – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
-      </span>
-    </p>
-  </div>
-  </div>
-  
-  
-  
-  
-  <!-- Edit links section -->
-  <div id="EditableLinksPanel">
-    
-    
-      <div id="linksPanel" class="govuk-body" style="background: #ffffff;">
-  
-  
-  
-        <h1 class="govuk-heading-xl">
+<div class="govuk-phase-banner" style="padding-left: 30px;border-bottom:0px;">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new design layout – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+
+<!-- Hero section -->
+<div id="SectionHeroImage">
+
+  <div id="SectionHeroContent">
+      <div class="heroTextBackground">
+        <h1 class="govuk-heading-xl" style="color:#ffffff;margin-bottom: 10px;">
           HM Land Registry Portal
         </h1>
+        <p class="govuk-body govuk-!-font-size-24" style="color:#ffffff;margin-bottom:0px;">
+          Access your online services
+        </p>
+      </div>
+  </div>
+
+</div>
+
+
+
+<!-- Edit links section -->
+<div id="EditableLinksPanel">
+    <div id="linksPanel" class="govuk-body" style="background: #ffffff;">
+
+
+
+<div id="contentPanel">
   
-  
-        <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
-          <div class="govuk-notification-banner__header">
-            <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
-              Important
-            </h2>
-          </div>
-          <div class="govuk-notification-banner__content">
-            <p class="govuk-notification-banner__heading">
-              You have 2 applications with unresolved requisitions.
-              <a class="govuk-notification-banner__link" href="#">View applications</a>.
-              <p class="govuk-body">Last updated at 5:30pm on Tuesday 20 May</p>
-            </p>
-          </div>
-        </div>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-third">
+      <h2 class="govuk-heading-l" style="margin-top: 0;">2 <a style="color:#006637;" href="../own-page/dates.html">Unresolved applications</a></h2>
+      <p class="govuk-body">Last updated at 5:30pm on Tuesday 20 May.</p>
+    </div>
+
+    <div class="govuk-grid-column-one-third">
+      <h2 class="govuk-heading-l " style="margin-top: 0;">30 <a style="color:#006637;" href="../own-page/training-3.html">Avoidable requisitions</a></h2>
+      <p>4% of total applications with 5% being the current average across all organisations.</p>
+    </div>
+
+    <div class="govuk-grid-column-one-third">
+      <h2 class="govuk-heading-l " style="margin-top: 0;">Keep up the great performance </h2>
+      <p class="govuk-body">Complete your latest <a style="color:#006637;" href="../own-page/training-3.html"><b>recommended training</b></a> and get your applications right first time.</p>
+    </div>
+
+  </div>
+
+        <!-- Divider line -->
+<div class="dividerLine10"></div> 
+
           <!-- Filters and Search Section - Start -->
-          <h2 class="govuk-heading-l govuk-!-font-size-36" style="margin-bottom:60px;">My services<button id="edit" class="govuk-button" style="float:right;margin-bottom: 0;" onclick="myFunction()">Edit shortcuts</button></h2> 
+          <h2 class="govuk-heading-l govuk-!-font-size-36">My services<button id="edit" class="govuk-button govuk-button--secondary" style="float:right;margin-bottom: 0;" onclick="myFunction()">Edit shortcuts</button></h2> 
           
 
-    <div id="linksDisplay">
+      <div id="linksDisplay">
         <div class="service-values">
 
-    <!-- value 0 is actually the first one in the sequence, so value 2 is actually the third -->
-          <ul id="row1Links" class="govuk-grid-row hmlr-card-group" style="margin-bottom: 30px;">
-
+          <!-- value 0 is actually the first one in the sequence, so value 2 is actually the third -->
+          <ul id="row1Links" class="govuk-grid-row" >
 
             <li class="govuk-grid-column-one-third hmlr-card-group__item" id="value0">
                 <div class="linkTextSection">
                   <div class="linkTextSectionContent">
-                    <h3 class="govuk-heading-m" id="value-heading0">No Data</h3>
-
-                    <p class="govuk-body govuk-!-font-weight-bold" style="margin-bottom:0px;"><a id="value-label0" style="color: #006637;" href='#'>No Data</a></p>
+                    <h3 class="govuk-heading-s govuk-!-margin-bottom-2"><a id="value-heading0" href='#'>No Data</a></h3>
                 </div>
               </div>
             </li>
 
             <li class="govuk-grid-column-one-third hmlr-card-group__item" id="value1">
-                <div class="linkTextSection">
-                  <div class="linkTextSectionContent">
-                    <h3 class="govuk-heading-m"  id="value-heading1">No Data</h3>
-
-                    <p class="govuk-body govuk-!-font-weight-bold" style="margin-bottom:0px;"><a id="value-label1" style="color: #006637" href='page2.html'>No Data</a></p>
+              <div class="linkTextSection">
+                <div class="linkTextSectionContent">
+                  <h3 class="govuk-heading-s govuk-!-margin-bottom-2"><a id="value-heading1" href='#'>No Data</a></h3>
                 </div>
               </div>
             </li>
 
             <li class="govuk-grid-column-one-third hmlr-card-group__item" id="value2">
-                <div class="linkTextSection">
-                  <div class="linkTextSectionContent">
-                    <h3 class="govuk-heading-m" id="value-heading2">No Data</h3>
-
-                    <p class="govuk-body govuk-!-font-weight-bold" style="margin-bottom:0px;"><a id="value-label2" style="color: #006637" href='managedServices.html'>No Data</a></p>
+              <div class="linkTextSection">
+                <div class="linkTextSectionContent">
+                  <h3 class="govuk-heading-s govuk-!-margin-bottom-2"><a id="value-heading2" href='#'>No Data</a></h3>
                 </div>
               </div>
             </li>
-          </div>
+          </ul>
+        </div>
 
-          <ul id="row2Links" class="govuk-grid-row hmlr-card-group">
+        <ul id="row2Links" class="govuk-grid-row">
 
-            <li class="govuk-grid-column-one-third hmlr-card-group__item" id="value3">
-                <div class="linkTextSection">
-                  <div class="linkTextSectionContent">
-                    <h3 class="govuk-heading-m" id="value-heading3">No Data</h3>
-
-                    <p class="govuk-body govuk-!-font-weight-bold" style="margin-bottom:0px;"><a id="value-label3" style="color: #006637" href='#'>No Data</a></p>
-                </div>
+          <li class="govuk-grid-column-one-third hmlr-card-group__item" id="value3">
+            <div class="linkTextSection">
+              <div class="linkTextSectionContent">
+                <h3 class="govuk-heading-s govuk-!-margin-bottom-2"><a id="value-heading3" href='#'>No Data</a></h3>
               </div>
-            </li>
+            </div>
+          </li>
 
-            <li class="govuk-grid-column-one-third hmlr-card-group__item" id="value4">
-                <div class="linkTextSection">
-                  <div class="linkTextSectionContent">
-                    <h3 class="govuk-heading-m" id="value-heading4">No Data</h3>
-
-                        <p class="govuk-body govuk-!-font-weight-bold" style="margin-bottom:0px;"><a id="value-label4" style="color: #006637" href='#'>No Data</a></p>
-                </div>
+          <li class="govuk-grid-column-one-third hmlr-card-group__item" id="value4">
+            <div class="linkTextSection">
+              <div class="linkTextSectionContent">
+                <h3 class="govuk-heading-s govuk-!-margin-bottom-2"><a id="value-heading4" href='#'>No Data</a></h3>
               </div>
-            </li>
+            </div>
+          </li>
 
-            <li class="govuk-grid-column-one-third hmlr-card-group__item" id="value5">
-                <div class="linkTextSection">
-                  <div class="linkTextSectionContent">
-                  <h3 class="govuk-heading-m" id="value-heading5">No Data</h3>
-
-                    <p class="govuk-body govuk-!-font-weight-bold" style="margin-bottom:0px;"><a id="value-label5" style="color: #006637" href='#'>No Data</a></p>
-                </div>
+          <li class="govuk-grid-column-one-third hmlr-card-group__item" id="value5">
+            <div class="linkTextSection">
+              <div class="linkTextSectionContent">
+                <h3 class="govuk-heading-s govuk-!-margin-bottom-2"><a id="value-heading5" href='#'>No Data</a></h3>
               </div>
-            </li>
-          </div>
+            </div>
+          </li>
+        
+        </ul>
+      </div>
 
-        </div> 
+    </div> 
 </div>   
       
 <div id="inputs">
@@ -530,7 +558,7 @@
                 <option value="manageGroups">Manage Groups</option>
                 <option value="managedServices">Managed services</option>
                 <option value="manageUsers">Manage users</option>
-                <option value="mapSearch"</option>
+                <option value="mapSearch"></option>
                 <option value="messageArea">Message Area</option>
                 <option value="Notifications">Notifications</option>
                 <option value="officialCopyDeedsReferred">Official Copy – Deeds referred</option>
@@ -640,10 +668,11 @@
 
 
 
+
+
+
 <!-- Divider line -->
 <div class="dividerLine10"></div> 
-
-
 
 
 
@@ -653,10 +682,13 @@
 
     <h2 class="govuk-heading-l govuk-!-font-size-36">News and updates</h2>
 
+
+
+
     <div id="newsArticle">
 
       <div class="newsImage">
-        <img src="/public/images/homepage/comms-pictures-3.jpg" style="width:100%;">
+        <img src="/public/images/news-va.png" style="width:100%;">
       </div>
 
       <div class="newsTextSection">
@@ -669,7 +701,7 @@
 
     <div id="newsArticle">
       <div class="newsImage">
-        <img src="/public/images/homepage/comms-pictures-2.jpg" style="width:100%;">
+        <img src="/public/images/ap-news.png" style="width:100%;">
       </div>
 
       <div class="newsTextSection">
@@ -682,7 +714,7 @@
 
     <div id="newsArticle" style="margin-right:0px;">
       <div class="newsImage">
-        <img src="/public/images/homepage/comms-pictures-1.jpg" style="width:100%;">
+        <img src="/public/images/drs-news.png" style="width:100%;">
       </div>
 
       <div class="newsTextSection">
@@ -696,6 +728,8 @@
 </div> 
 
 
+
+
 <!-- Divider line -->
 <!-- <div class="dividerLine10"></div> -->
 
@@ -703,7 +737,7 @@
 
 
 <!-- Your details -->
-<!-- <div id="contentPanel" class="govuk-body"">
+<!-- <div id="contentPanel" class="govuk-body">
 
 
   
@@ -832,32 +866,7 @@
 
 
 
-<!-- Divider line -->
-<div class="dividerLine10"></div>
 
-
-
-<!-- Webinars -->
-<div id="contentPanel" class="govuk-body"">
-
-
-  
-  <div class="govuk-grid-row">
-
-    <div class="govuk-grid-column-one-third">
-      <h2 class="govuk-heading-l govuk-!-font-size-36" style="margin-top: 0;padding-right: 75px;margin-bottom:0px;">Webinars</h2>
-    </div>
-    
-    <div class="govuk-grid-column-two-thirds">
-      <h3 class="govuk-heading-m" style="margin-bottom: 5px;">Join our free webinars</h3>
-      <p class="govuk-body" style="margin-bottom:0px;padding-right: 30px;">Learn how to prepare and send us quality applications. Sessions will help you avoid the most common reasons for a request for information (requisition). Get details of available topics and registration information on <a href="https://www.gov.uk/government/organisations/land-registry/about/personal-information-charter" style="color: #006637 !Important;">GOV.UK</a></p>
-
-
-    </div>
-
-  </div>
-
-</div>
 
 
 
@@ -975,379 +984,316 @@
   { 
       id: 'blank', 
       heading:'',  
-      label: '', 
       href: ''
     },
     { 
       id: 'digitalRegistrationService',
-      heading: 'Digital registration service', 
-      label: 'Go to service', 
+      heading: 'Digital registration service',
       href: '#'
     },
     { 
       id: 'viewMyApplications',
       heading: 'View applications', 
-      label: 'Go to service', 
       href: 'page2.html'
     },
     { 
       id: 'applicationEnquiry',
       heading: 'Application enquiry', 
-      label: 'Go to service', 
       href: '#'
     },
     { 
       id: 'localLandCharges',
       heading: 'Local land charges', 
-      label: 'Go to service', 
       href: '#'
     },
     { 
       id: 'officialSearchOfWholeOS1',
       heading: 'Official search of whole (OS1)', 
-      label: 'Go to service', 
       href: '#'
     },
     { 
       id: 'officialSearchOfPartOS2',
       heading: 'Official search of part (OS2)', 
-      label: 'Go to service', 
       href: '#'
     },
     { 
       id: 'officialSearchOfWholeOrPartWithoutPriorityOS3',
       heading: 'Official search of whole or part without priority (OS3)',  
-      label: 'Go to service', 
       href: '#'
     },
     { 
       id: 'cancellationOfOfficialSearchOfWholeOS1',
       heading: 'Cancellation of official Search of Whole (OS1)', 
-      label: 'Go to service', 
       href: '#'
     },
     { 
       id: 'cancellationOfOfficialSearchOfPartOS2',
       heading: 'Cancellation of official Search of Part (OS2)', 
-      label: 'Go to service', 
       href: '#'
     },
     { 
       id: 'documentView',
       heading: 'Document view', 
-      label: 'Go to service', 
       href: '#'
     },
     { 
       id: 'homeRightsSearch',
       heading: 'Home rights search', 
-      label: 'Go to service', 
       href: '#'
     },
     { 
       id: 'officialCopyDeedsReferred',
       heading: 'Official copy – deeds referred', 
-      label: 'Go to service', 
       href: '#'
     },
     { 
       id: 'officialCopyRegisterHistorical', 
       heading: 'Official copy – register (historical)', 
-      label: 'Go to service', 
       href: '#'
     },
     { 
       id: 'officialCopyTitlePlanHistorical',
       heading: 'Official copy – title plan (Historical)', 
-      label: 'Go to service', 
       href: '#'
     },
     { 
       id: 'officialCopyRegisterPlanCI',
       heading: 'Official copy – register, title plan or CI',  
-      label: 'Go to service', 
       href: '#'
     },
     { 
       id: 'searchOfTheIndexMap',
       heading: 'Search of the index map', 
-      label: 'Go to service', 
       href: '#'
     },
     { 
       id: 'registerViewPDF', 
       heading: 'Register view (PDF)', 
-      label: 'Go to service', 
       href: '#'
     },
     { 
       id: 'registerViewHTML',
       heading: 'Register view (HTML)',  
-      label: 'Go to service', 
       href: '#'
     },
     { 
       id: 'searchOfTheIndexFranchisesAndManors', 
       heading: 'Search of the index of Franchises and manors (SIF)', 
-      label: 'Go to service', 
       href: '#'
     },
     { 
       id: 'titlePlanView',
       heading: 'Title plan view', 
-      label: 'Go to service', 
       href: '#'
     },
     { 
       id: 'withdrawlOfficialSearchWithPriority', 
       heading: 'Withdraw official search with priority', 
-      label: 'Go to service', 
       href: '#'
     },
     { 
       id: 'agreedNotice',
       heading: 'Agreed notice',  
-      label: 'Go to service', 
       href: '#'
     },
     { 
       id: 'cancellationOfACaution',
       heading: 'Cancellation of a caution', 
-      label: 'Go to service', 
       href: '#'
     },
     { 
       id: 'cancellationOfANotice', 
       heading: 'Cancellation of a notice (not unilateral)', 
-      label: 'Go to service', 
       href: '#'
     },
     { 
       id: 'changeOfAddressForService',
       heading: 'Change of address for service', 
-      label: 'Go to service', 
       href: '#'
     },
     { 
       id: 'changeOfName',
       heading: 'Change of name', 
-      label: 'Go to service', 
       href: '#'
     },
     { 
       id: 'changeOfPropertyDescription',
       heading: 'Change of property description', 
-      label: 'Go to service', 
       href: '#'
     },
     { 
       id: 'statutoryCharge',
-      heading: 'Statutory charge', 
-      label: 'Go to service', 
+      heading: 'Statutory charge',  
       href: '#'
     },
     { 
       id: 'deathOfJointProprietor',
       heading: 'Death of joint proprietor', 
-      label: 'Go to service', 
       href: '#'
     },
     { 
       id: 'homeRights',
       heading: 'Home rights (E-HR1 notice <br>of home rights)', 
-      label: 'Go to service', 
       href: '#'
     },
     { 
       id: 'cancellationOfHomeRights', 
       heading: 'Cancellation of home rights (e-HR4)', 
-      label: 'Go to service', 
       href: '#'
     },
     { 
       id: 'restrictions', 
       heading: 'Restrictions (standard e-RX1)', 
-      label: 'Go to service', 
       href: '#'
     },
     { 
       id: 'cancellationOfRestriction',
       heading: 'Cancellation of restriction (e-RX3)', 
-      label: 'Go to service', 
       href: '#'
     },
     { 
       id: 'withdrawlOfARestriction',
       heading: 'Withdrawal of a restriction (e-RX4)', 
-      label: 'Go to service', 
       href: '#'
     },
     { 
       id: 'unilateralNotice',
       heading: 'Unilateral notice (e-UN1)', 
-      label: 'Go to service', 
       href: '#'
     },
     { 
       id: 'cancellationOfUnilateralNotice', 
       heading: 'Cancellation of unilateral notice (eUN4)', 
-      label: 'Go to service', 
       href: '#'
     },
     { 
       id: 'removalOfUnilateralNotice',
       heading: 'Removal of a unilateral notice (e-UN2)', 
-      label: 'Go to service', 
       href: '#'
     },
     { 
       id: 'withdrawlOfCaution',
       heading: 'Withdrawl of caution', 
-      label: 'Go to service', 
       href: '#'
     },
     { 
       id: 'dischargeOfCharge',
       heading: 'Discharge of a charge', 
-      label: 'Go to service', 
       href: '#'
     },
     { 
       id: 'enquiryByPropertyDescription',
       heading: 'Enquiry by property description <br>- title view', 
-      label: 'Go to service', 
       href: '#'
     },
     { 
       id: 'bankruptcySearch',
       heading: 'Bankruptcy search', 
-      label: 'Go to service', 
       href: '#'
     },
     { 
       id: 'fullSearch',
       heading: 'Full search', 
-      label: 'Go to service', 
       href: '#'
     },
     { 
       id: 'documentRegistrationService',
       heading: 'Document registration service', 
-      label: 'Go to service', 
       href: '#'
     },
     { 
       id: 'registrationView',
       heading: 'Registration view',  
-      label: 'Go to service', 
       href: '#'
     },
     { 
       id: 'replyToRequisition', 
       heading: 'Reply to requisition', 
-      label: 'Go to service', 
       href: '#'
     },
     { 
       id: 'dataSynchronisationEnquiry',
       heading: 'Data synchronisation enquiry', 
-      label: 'Go to service', 
       href: '#'
     },
     { 
       id: 'dataSynchronisationDownloads',
       heading: 'Data synchronisation downloads', 
-      label: 'Go to service', 
       href: '#'
     },
     { 
       id: 'pdfDownloads',
       heading: 'PDF downloads', 
-      label: 'Go to service', 
       href: '#'
     },
     { 
       id: 'Notifications',
       heading: 'Notifications', 
-      label: 'Go to service', 
       href: '#'
     },
     { 
       id: 'messageArea', 
       heading: 'Message area', 
-      label: 'Go to service', 
       href: '#'
     },
     { 
       id: 'servicesRequested',
       heading: 'Services requested', 
-      label: 'Go to service', 
       href: '#'
     },
     { 
       id: 'alternateDespatchAddress',
       heading: 'Alternate despatch address', 
-      label: 'Go to service', 
       href: '#'
     },
     { 
       id: 'manageBusinessUnits', 
       heading: 'Manage business units', 
-      label: 'Go to service', 
       href: '#'
     },
     { 
       id: 'manageGroups', 
       heading: 'Manage groups', 
-      label: 'Go to service', 
       href: '#'
     },
     { 
       id: 'manageUsers',
       heading: 'Manage users', 
-      label: 'Go to service', 
       href: '#'
     },
     { 
       id: 'createUser',
       heading: 'Create user', 
-      label: 'Go to service', 
       href: '#'
     },
     { 
       id: 'personalDetails', 
       heading: 'Personal details', 
-      label: 'Go to service', 
       href: '#'
     },
     { 
       id: 'changePassword', 
-      heading: 'Change password', 
-      label: 'Go to service', 
+      heading: 'Change password',  
       href: '#'
     },
     { 
       id: 'administratorReport', 
       heading: 'Administrator report', 
-      label: 'Go to service', 
       href: '#'
     },
     { 
       id: 'vddinformation',
       heading: 'VDD information', 
-      label: 'Go to service', 
       href: '#'
     },
     { 
       id: 'managedServices',
       heading: 'Application Management Services', 
-      label: 'Go to service', 
       href: 'managedServices.html'
     },
     { 
       id: 'mapSearch', 
-      heading: 'MapSearch', 
-      label: 'Go to service', 
+      heading: 'MapSearch',
       href: '#'
     },
 
@@ -1377,7 +1323,6 @@ const updateValues = () => {
       // Update the text of the relevant fields
       document.getElementById(`value${index}`).classList.remove('unselected')
       document.getElementById(`value-heading${index}`).innerHTML = service.heading
-      document.getElementById(`value-label${index}`).innerHTML = service.label
     } else {
       document.getElementById(`value${index}`).classList.add('unselected')
     }
