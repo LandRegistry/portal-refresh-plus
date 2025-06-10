@@ -1,10 +1,17 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Data cleared – GOV.UK Prototype Kit
+  Data cleared - GOV.UK Prototype Kit
 {% endblock %}
 
 {% block content %}
+<script>
+  function removeSessionStorage(){
+    sessionStorage.clear();
+    window.location.pathname = '/'
+
+  }
+</script>
 
   <h1 class="govuk-heading-m">
     Data cleared
@@ -15,7 +22,7 @@
   </p>
 
   <p>
-    <a href="/">
+    <a id='cleardatalink' style="cursor:pointer;" onclick="removeSessionStorage()">
       Prototype home page
     </a>
   </p>

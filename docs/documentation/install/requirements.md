@@ -1,12 +1,8 @@
----
-title: Prototype Kit requirements
-caption: Installation guide for new users
----
-# Prototype Kit requirements
+# Requirements
 
 The GOV.UK Prototype Kit runs on Mac, Windows and Linux. At a minimum you’ll need Node.js (install instructions below) and a web browser.
 
-[If you're using an M1 Mac issued in 2020 or later](https://en.wikipedia.org/wiki/Apple_M1#Products_that_include_the_Apple_M1), you might experience issues when you run the Prototype Kit. To get support, [contact the Prototype team](/docs/about).
+If you're using an M1 Mac ([certain Macs launched in 2020 and later](https://en.wikipedia.org/wiki/Apple_M1#Products_that_include_the_Apple_M1)), you might experience issues when you run the Prototype Kit. To get support, please [contact the Design System team](https://design-system.service.gov.uk/get-in-touch/).
 
 ## Software you need
 
@@ -27,18 +23,15 @@ You'll need a terminal application to install, start and stop the kit. Using a t
 
 ### Mac users
 
-Macs come with a terminal application already. It’s located in the `Utilities` folder in the `Applications` folder. You can also find it using spotlight (magnifying glass icon in the top right) and typing 'terminal'.
+Macs come with `Terminal.app`. It’s located in the `Utilities` folder in the `Applications` folder. You can also find it using spotlight (magnifying glass icon in the top right) and typing 'terminal'.
 
 ### Windows users
 
 This guide will use `Git Bash` as a terminal instead of the existing `CMD` application. Git Bash is more fully featured and uses the same commands as Mac and Linux, so instructions in this guide work for all.
 
-Installing `Git Bash` installs 2 things for you: 
+Installing `Git Bash` installs two things for you: a terminal (for entering commands), and Git (used later to share your work with others).
 
-* a terminal (for entering commands) and 
-* Git (used later to share your work with others)
-
-#### Installing Git Bash for Windows users
+#### Installing Git Bash
 
 Download [Git Bash (direct download)](https://git-scm.com/download/win).
 
@@ -83,4 +76,4 @@ node --version
 
 If it’s installed correctly it should show a number starting with 16.
 
-<a href="install-the-kit.md" class="button">Next (How to install the kit)</a>
+<a href="install-the-kit.md" class="button">Next (install the kit)</a>

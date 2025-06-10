@@ -1,7 +1,4 @@
----
-title: Use GOV.UK Notify
----
-# Use GOV.UK Notify to prototype emails and text messages
+# Using GOV.UK Notify to prototype emails and text messages
 
 You can use GOV.UK Notify to send text messages or emails when users
 interact with your prototype. For example you could send users a
@@ -9,9 +6,11 @@ confirmation email at the end of a journey.
 
 ## Sign up for a GOV.UK Notify account
 
-You need an account before you can use GOV.UK Notify to send text messages or emails.
+If you have a government email address you can sign up for an account at
+https://www.gov.uk/notify
 
-If you have a government email address you can [sign up for a GOV.UK Notify account](https://www.gov.uk/notify)
+You need an account before you can use GOV.UK Notify to send text
+messages or emails.
 
 ## Getting an API key
 
@@ -146,4 +145,4 @@ get consent to use them before doing your research.
 
 ## More things you can do with GOV.UK Notify
 
-[Documentation for using the GOV.UK Notify API](https://docs.notifications.service.gov.uk/node.html)
+The complete documentation for using the GOV.UK Notify API is here: https://docs.notifications.service.gov.uk/node.html

@@ -1,7 +1,4 @@
----
-title: Create routes
----
-# Create routes
+# Creating routes
 
 You may want to make prototypes that are more complex than simple HTML files. For example, you may want to respond to input from a form, and show different pages based on answers given by the user.
 
@@ -47,4 +44,4 @@ Template files are found this way: `/views/` + `template` parameter + `.html`. T
 
 In the same way, the template `/examples/hello_world` would point to the `/examples/hello_world.html` file.
 
-[Express documentation for routes](http://expressjs.com/4x/api.html#app.VERB)
+[Read the Express documentation for routes](http://expressjs.com/4x/api.html#app.VERB)

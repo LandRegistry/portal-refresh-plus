@@ -1,7 +1,4 @@
----
-title: Use backwards compatibility to upgrade from version 6
----
-# Use backwards compatibility to upgrade from version 6
+# Using backwards compatibility
 
 Version 7 of the Prototype Kit uses the new GOV.UK Design System. It is not compatible with prototypes built with older versions by default.
 
@@ -27,8 +24,7 @@ If any pages or routes exist in both apps, the one in version 7 will win.
 
 1. Find and replace all instances of **/public/** to **/public/v6/** in your code.
 In Atom, press **cmd shift F**. It looks like this:
-
-![Screenshot of section of the Atom user interface with: a text field that contains '/public/'; a button labelled 'find all'; a text field containing '/public/v6'; and a button labelled 'replace all'.](/public/images/docs/backwards-compatibility-atom.png)
+![Screenshot of Atom find and replace](/public/images/docs/backwards-compatibility-atom.png)
 
 1. [Download the latest Prototype Kit](/docs/download) and unzip it.
 

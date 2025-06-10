@@ -1,8 +1,4 @@
----
-title: How to install the kit
-caption: Installation guide for new users
----
-# How to install the kit
+# Install the kit
 
 ## Download the kit as a zip
 
@@ -75,4 +71,4 @@ npm install
 The install may take about a minute. Whilst installing, it may `WARN` about some items - this is ok. As long as there are no `ERROR`s, you can continue.
 
 
-<a href="run-the-kit.md" class="button">Next (How to run the kit)</a>
+<a href="run-the-kit.md" class="button">Next (run the kit)</a>

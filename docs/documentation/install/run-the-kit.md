@@ -1,8 +1,4 @@
----
-title: How to run the kit
-caption: Installation guide for new users
----
-# How to run the kit
+# Run the kit
 
 You’ll use the terminal to start and stop the kit.
 
@@ -34,14 +30,11 @@ Listening on port 3000 url: http://localhost:3000
 
 ## Check it works
 
-In your web browser, <a href="http://localhost:3000" target="_blank">open http://localhost:3000 (opens in a new tab)</a>
+In your web browser, visit <a href="http://localhost:3000" target="_blank">http://localhost:3000 (opens in a new tab)</a>
 
-<figure>
+You should see the prototype welcome page.
 
-![The heading is GOV.UK Prototype Kit.](/public/images/docs/prototype-kit-homepage.png)
-
-<figcaption class="govuk-body">Screenshot of what your prototype homepage should look like.</figcaption>
-</figure>
+![Screenshot of the Prototype Kit homepage](/public/images/docs/prototype-kit-homepage.png)
 
 ## Quitting the kit
 
@@ -53,7 +46,7 @@ To quit the kit, in the terminal press the `ctrl` and `c` keys together.
 
 The kit is now installed. Congratulations!
 
-The Prototype Kit is updated regularly. We announce new versions of the Prototype Kit in the [#prototype-kit channel on cross-government Slack](https://ukgovernmentdigital.slack.com/messages/prototype-kit/). You should [update to the latest version of the kit](/docs/updating-the-kit) to get the latest components, new features and fixes.
+The Prototype Kit is updated regularly. We announce new versions of the Prototype Kit in the [#prototype-kit channel on cross-government Slack](https://ukgovernmentdigital.slack.com/messages/prototype-kit/). You should [update to the latest version](/docs/updating-the-kit) to get the latest components, new features and fixes.
 
 ## Make your first prototype
 

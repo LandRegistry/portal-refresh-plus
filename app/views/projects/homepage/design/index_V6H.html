@@ -8,6 +8,22 @@
 {% include "includes/notificationsNavigation.html" %} 
 
 <script>
+    /* When the user clicks on the button, 
+    toggle between hiding and showing the dropdown content */
+    function myFunction() {
+      document.getElementById("myDropdown").classList.toggle("show");
+    }
+    
+    // Close the dropdown if the user clicks outside of it
+    window.onclick = function(event) {
+      if (!event.target.matches('.dropbtn')) {
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+          var openDropdown = dropdowns[i];
+          if (openDropdown.classList.contains('show')) {
+            openDropdown.classList.remove('show');
+          }
         }
       }
     }
@@ -19,16 +35,22 @@
 
 
 <style>
+
+#SectionHeroImage {
     background-image: url(/public/images/Hero_heather.png);
     height: 322px;
     width: 100%;
     position: relative;
     background-size: cover;
     background-position-y: bottom;
+}
 
+#SectionHeroContent {
     max-width: 1200px;
     margin: auto;
+}
 
+.heroTextBackground {
     background-color: #006637;
     padding: 25px;
     bottom: -48px;
@@ -37,10 +59,19 @@
     padding: 32px 40px;
     position: absolute;
     top: auto;
+}
 
+.whiteCTA {
+  background-color: #ffffff;
+  color: #006637;
+  width: 250px;
+  margin-bottom:0px;
+}
 
+.govuk-notification-banner__content > * {
     box-sizing: border-box;
     max-width: 1200px;
+}
 
 #EditableLinksPanel {
   padding: 40px 0 0 0;
@@ -109,147 +140,9 @@
 
                     <p class="govuk-body govuk-!-font-weight-bold" style="margin-bottom:0px;"><a id="value-label0" style="color: #006637;" href='#'>No Data</a></p>
                 </div>
-=======
-  .dividerLine11 {
-    max-width: 1200px;
-    margin-top: 161px;
-    margin-right: 75px;
-    margin-left: 295px;
-    margin-bottom: 75px;
-    height:10px;
-    background-color: #006637;
-    
-  }
- 
-
-</style>
-
-<div class="navbar-container">
-
-  <img src="/public/images/HMLR_Logo.svg" alt="hmlrlogo"
-    style="height: 44px;float:left;padding-left: 30px;padding-right: 10px;padding-top: 14px;padding-bottom: 5px;">
-
-  <ul id="menu" style="float:left;">
-    <li class="parent"><a style="padding-left:20px;border-left:1px solid #ffffff;" target="_blank"
-        href="https://www.gov.uk/government/organisations/land-registry">HM Land Registry GOV.UK</a></li>
-  </ul>
-
-
-  <ul id="menu" style="float:right;">
-
-    <li class="parent parentIconDown"><a style="padding-right: 25px;" href="#">Services</a></li>
-
-    <li class="parent"><a href="PortalRefreshFeedback@landregistry.gov.uk">Reply to Requisition</a></li>
-
-    <li class="parent"><a href="PortalRefreshFeedback@landregistry.gov.uk">Contact us</a></li>
-
-    <li class="parent parentIconDown2"><a style="padding-right: 25px;" href="#">John James </a>
-      <ul class="child" style="right:0;">
-        <div class="govuk-body myAccountContent" style="margin-bottom:0px;">
-
-          <div>
-            <div class="myAccountTitle" style="padding-bottom:3px;">
-              Logged in as:
-            </div>
-            <div class="myAccount2ndLine" style="padding-bottom:15px;">
-              Administrator
-            </div>
-            <div class="myAccountTitle" style="padding-bottom:3px;">
-              User ID:
-            </div>
-            <div class="myAccount2ndLine" style="padding-bottom:15px;">
-              xxxxxxxxxxxxxx
-            </div>
-            <div class="myAccountTitle" style="padding-bottom:3px;">
-              You last logged in on
-            </div>
-            <div class="myAccount2ndLine" style="padding-bottom:15px;">
-              15 July 2022 10:19:23 BST
-            </div>
-            <div class="myAccount2ndLine" style="padding-bottom:15px;">
-              If these details are incorrect, please log out and contact us.
-            </div>
-            <!-- <a href="#" style="margin:0px;color:#00703C;font-weight:700;font-size:14px;">View profile</a> -->
-          </div>
-
-          <hr>
-
-          <div class="myAccountTitle" style="padding-bottom:3px;padding-top: 15px;">
-            <b>Primary Business Unit Administrator (BUA):</b>
-          </div>
-          <div class="myAccount2ndLine">
-            John Taylor
-            <!-- <a href="#" style="margin:0px;color:#00703C;"><b>JohnTaylor@bigbusiness.com</b></a> -->
-          </div>
-
-          <!-- <button id="logOut" class="govuk-button" style="margin-top:20px;">Log out</button> -->
-        </div>
-      </ul>
-    </li>
-
-    <li class="parent"><a href="">Log out</a></li>
-  </ul>
-</div>
-
-
-<div class="govuk-phase-banner" style="padding-left: 30px;border-bottom:0px;">
-  <p class="govuk-phase-banner__content">
-    <strong class="govuk-tag govuk-phase-banner__content__tag">
-      beta
-    </strong>
-    <span class="govuk-phase-banner__text">
-      This is a new design layout – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
-    </span>
-  </p>
-</div>
-
-<!-- Hero section -->
-<div id="SectionHeroImage">
-
-  <div id="SectionHeroContent">
-    <div class="heroTextBackground">
-      <h1 class="govuk-heading-xl" style="color:#ffffff;margin-bottom: 10px;">
-        HM Land Registry Portal
-      </h1>
-      <p class="govuk-body govuk-!-font-size-24" style="color:#ffffff;margin-bottom:0px;">
-        Access your online services
-      </p>
-    </div>
-  </div>
-
-</div>
-
-
-<!-- Boxes and selected links -->
-<!-- Edit links section -->
-<div id="EditableLinksPanel">
-  <div id="linksPanel" class="govuk-body" style="background: #ffffff;">
-
-    <!-- Filters and Search Section - Start -->
-    <h2 class="govuk-heading-l govuk-!-font-size-36" style="margin-bottom:60px;">My services<button id="edit"
-        class="govuk-button" style="float:right;margin-bottom: 0;" onclick="myFunction()">Edit shortcuts</button></h2>
-
-
-    <div id="linksDisplay">
-      <div class="service-values">
-
-        <!-- value 0 is actually the first one in the sequence, so value 2 is actually the third -->
-        <ul id="row1Links" class="govuk-grid-row hmlr-card-group" style="margin-bottom: 30px;">
-
-          <li class="govuk-grid-column-one-third hmlr-card-group__item" id="value0">
-            <div class="linkTextSection">
-              <div class="linkTextSectionContent">
-                <h3 class="govuk-heading-m" id="value-heading0">No Data</h3>
-
-                <p class="govuk-body govuk-!-font-weight-bold" style="margin-bottom:0px;"><a id="value-label0"
-                    style="color: #006637;" href='#'>No Data</a></p>
->>>>>>> e03f96cb8aa9654095cfc6a93bd775da289ae545
               </div>
             </li>
-            </div>
-          </li>
 
-<<<<<<< HEAD
             <li class="govuk-grid-column-one-third hmlr-card-group__item" id="value1">
                 <div class="linkTextSection">
                   <div class="linkTextSectionContent">
@@ -257,21 +150,9 @@
 
                     <p class="govuk-body govuk-!-font-weight-bold" style="margin-bottom:0px;"><a id="value-label1" style="color: #006637" href='page2.html'>No Data</a></p>
                 </div>
-=======
-          <li class="govuk-grid-column-one-third hmlr-card-group__item" id="value1">
-            <div class="linkTextSection">
-              <div class="linkTextSectionContent">
-                <h3 class="govuk-heading-m" id="value-heading1">No Data</h3>
-
-                <p class="govuk-body govuk-!-font-weight-bold" style="margin-bottom:0px;"><a id="value-label1"
-                    style="color: #006637" href='page2.html'>No Data</a></p>
->>>>>>> e03f96cb8aa9654095cfc6a93bd775da289ae545
               </div>
             </li>
-            </div>
-          </li>
 
-<<<<<<< HEAD
             <li class="govuk-grid-column-one-third hmlr-card-group__item" id="value2">
                 <div class="linkTextSection">
                   <div class="linkTextSectionContent">
@@ -292,32 +173,9 @@
 
                     <p class="govuk-body govuk-!-font-weight-bold" style="margin-bottom:0px;"><a id="value-label3" style="color: #006637" href='#'>No Data</a></p>
                 </div>
-=======
-          <li class="govuk-grid-column-one-third hmlr-card-group__item" id="value2">
-            <div class="linkTextSection">
-              <div class="linkTextSectionContent">
-                <h3 class="govuk-heading-m" id="value-heading2">No Data</h3>
-
-                <p class="govuk-body govuk-!-font-weight-bold" style="margin-bottom:0px;"><a id="value-label2"
-                    style="color: #006637" href='managedServices.html'>No Data</a></p>
-              </div>
-            </div>
-          </li>
-        </ul>
-
-        <ul id="row2Links" class="govuk-grid-row hmlr-card-group" style="margin-bottom: 30px;">
-          <li class="govuk-grid-column-one-third hmlr-card-group__item" id="value3">
-            <div class="linkTextSection">
-              <div class="linkTextSectionContent">
-                <h3 class="govuk-heading-m" id="value-heading3">No Data</h3>
-
-                <p class="govuk-body govuk-!-font-weight-bold" style="margin-bottom:0px;"><a id="value-label3"
-                    style="color: #006637" href='#'>No Data</a></p>
->>>>>>> e03f96cb8aa9654095cfc6a93bd775da289ae545
               </div>
             </li>
 
-<<<<<<< HEAD
             <li class="govuk-grid-column-one-third hmlr-card-group__item" id="value4">
                 <div class="linkTextSection">
                   <div class="linkTextSectionContent">
@@ -325,19 +183,9 @@
 
                         <p class="govuk-body govuk-!-font-weight-bold" style="margin-bottom:0px;"><a id="value-label4" style="color: #006637" href='#'>No Data</a></p>
                 </div>
-=======
-          <li class="govuk-grid-column-one-third hmlr-card-group__item" id="value4">
-            <div class="linkTextSection">
-              <div class="linkTextSectionContent">
-                <h3 class="govuk-heading-m" id="value-heading4">No Data</h3>
-
-                <p class="govuk-body govuk-!-font-weight-bold" style="margin-bottom:0px;"><a id="value-label4"
-                    style="color: #006637" href='#'>No Data</a></p>
->>>>>>> e03f96cb8aa9654095cfc6a93bd775da289ae545
               </div>
             </li>
 
-<<<<<<< HEAD
             <li class="govuk-grid-column-one-third hmlr-card-group__item" id="value5">
                 <div class="linkTextSection">
                   <div class="linkTextSectionContent">
@@ -352,200 +200,8 @@
         </div> 
 </div>   
       
-=======
-          <li class="govuk-grid-column-one-third hmlr-card-group__item" id="value5">
-            <div class="linkTextSection">
-              <div class="linkTextSectionContent">
-                <h3 class="govuk-heading-m" id="value-heading5">No Data</h3>
-
-                <p class="govuk-body govuk-!-font-weight-bold" style="margin-bottom:0px;"><a id="value-label5"
-                    style="color: #006637" href='#'>No Data</a></p>
-              </div>
-            </div>
-          </li>
-        </ul>
-
-        <ul id="row3Links" class="govuk-grid-row hmlr-card-group" style="margin-bottom: 30px;">
-          <li class="govuk-grid-column-one-third hmlr-card-group__item" id="value6">
-            <div class="linkTextSection">
-              <div class="linkTextSectionContent">
-                <h3 class="govuk-heading-m" id="value-heading6">No Data</h3>
-
-                <p class="govuk-body govuk-!-font-weight-bold" style="margin-bottom:0px;"><a id="value-label6"
-                    style="color: #006637" href='#'>No Data</a></p>
-              </div>
-            </div>
-          </li>
-          <li class="govuk-grid-column-one-third hmlr-card-group__item" id="value7">
-            <div class="linkTextSection">
-              <div class="linkTextSectionContent">
-                <h3 class="govuk-heading-m" id="value-heading7">No Data</h3>
-
-                <p class="govuk-body govuk-!-font-weight-bold" style="margin-bottom:0px;"><a id="value-label7"
-                    style="color: #006637" href='#'>No Data</a></p>
-              </div>
-            </div>
-          </li>
-          <li class="govuk-grid-column-one-third hmlr-card-group__item" id="value8">
-            <div class="linkTextSection">
-              <div class="linkTextSectionContent">
-                <h3 class="govuk-heading-m" id="value-heading8">No Data</h3>
-                <p class="govuk-body govuk-!-font-weight-bold" style="margin-bottom:0px;"><a id="value-label8"
-                    style="color: #006637" href='#'>No Data</a></p>
-              </div>
-            </div>
-          </li>
-        </ul>
-
-      </div>
-    </div>
-  </div>
-
->>>>>>> e03f96cb8aa9654095cfc6a93bd775da289ae545
 <div id="inputs">
-  <div class="govuk-grid-column-one-third" style="margin-bottom: 30px;">
-    <label class="govuk-label form-label-bold" for="input">
-      Position 1
-    </label>
-    <select class="govuk-select selects" name="input" id="input">
-      <option value="placeholder">Select a link...</option>
-      <option value="administratorReport">Administrator Report</option>
-      <option value="agreedNotice">Agreed Notice</option>
-      <option value="alternateDespatchAddress">Alternate despatch address</option>
-      <option value="applicationEnquiry">Application Enquiry</option>
-      <option value="bankruptcySearch">Bankruptcy Search</option>
-      <option value="cancellationOfACaution">Cancellation of a Caution</option>
-      <option value="cancellationOfANotice">Cancellation of a Notice (Not Unilateral)</option>
-      <option value="cancellationOfHomeRights">Cancellation of Home rights (e-HR4)</option>
-      <option value="cancellationOfOfficialSearchOfWholeOS1">Cancellation of Official Search of Whole (OS1)</option>
-      <option value="cancellationOfOfficialSearchOfPartOS2">Cancellation of Official Search of Part (OS2)</option>
-      <option value="cancellationOfRestriction">Cancellation of restriction (e-RX3)</option>
-      <option value="cancellationOfUnilateralNotice">Cancellation of Unilateral Notice (eUN4)</option>
-      <option value="changeOfAddressForService">Change of address for service</option>
-      <option value="changeOfName">Change of Name</option>
-      <option value="changeOfPropertyDescription">Change of Property Description</option>
-      <option value="changePassword">Change Password</option>
-      <option value="createUser">Create User</option>
-      <option value="dataSynchronisationDownloads">Data Synchronisation Downloads</option>
-      <option value="dataSynchronisationEnquiry">Data Synchronisation Enquiry</option>
-      <option value="deathOfJointProprietor">Death of Joint Proprietor</option>
-      <option value="digitalRegistrationService">Digital Registration Service</option>
-      <option value="dischargeOfCharge">Discharge of a Charge</option>
-      <option value="documentRegistrationService">Document Registration Service</option>
-      <option value="documentView">Document View</option>
-      <option value="enquiryByPropertyDescription">Enquiry by Property Description - Title View</option>
-      <option value="fullSearch">Full Search</option>
-      <option value="homeRights">Home Rights (E-HR1 Notice of home rights)</option>
-      <option value="homeRightsSearch">Home Rights Search</option>
-      <option value="localLandCharges">Local Land Charges</option>
-      <option value="manageBusinessUnits">Manage Business Units</option>
-      <option value="manageGroups">Manage Groups</option>
-      <option value="managedServices">Managed services</option>
-      <option value="manageUsers">Manage users</option>
-      <option value="mapSearch">MapSearch</option>
-      <option value="messageArea">Message Area</option>
-      <option value="Notifications">Notifications</option>
-      <option value="officialCopyDeedsReferred">Official Copy – Deeds referred</option>
-      <option value="officialCopyRegisterPlanCI">Official Copy – Register, Title Plan or CI</option>
-      <option value="officialCopyRegisterHistorical">Official Copy – Register (Historical)</option>
-      <option value="officialCopyTitlePlanHistorical">Official Copy – Title Plan (Historical)</option>
-      <option value="officialSearchOfWholeOS1">Official Search of Whole (OS1)</option>
-      <option value="officialSearchOfPartOS2">Official Search of Part (OS2)</option>
-      <option value="officialSearchOfWholeOrPartWithoutPriorityOS3">Official Search of whole or part without priority
-        (OS3)</option>
-      <option value="pdfDownloads">PDF Downloads</option>
-      <option value="personalDetails">Personal Details</option>
-      <option value="registerViewHTML">Register View (HTML)</option>
-      <option value="registerViewPDF">Register View (PDF)</option>
-      <option value="registrationView">Registration View</option>
-      <option value="removalOfUnilateralNotice">Removal of a Unilateral Notice (e-UN2)</option>
-      <option value="replyToRequisition" selected>Reply To Requisition</option>
-      <option value="restrictions">Restrictions (Standard e-RX1)</option>
-      <option value="searchOfTheIndexFranchisesAndManors">Search of the Index of Franchises and Manors (SIF)</option>
-      <option value="searchOfTheIndexMap">Search of the Index Map</option>
-      <option value="servicesRequested">Services Requested</option>
-      <option value="statutoryCharge">Statutory Charge</option>
-      <option value="titlePlanView">Title Plan View</option>
-      <option value="unilateralNotice">Unilateral Notice (e-UN1)</option>
-      <option value="vddinformation">VDD Information</option>
-      <option value="viewMyApplications">View My Applications</option>
-      <option value="withdrawlOfARestriction">Withdrawal of a Restriction (e-RX4)</option>
-      <option value="withdrawlOfCaution">Withdrawl of Caution</option>
-      <option value="withdrawlOfficialSearchWithPriority">Withdraw Official Search with Priority</option>
-    </select>
-  </div>
 
-  <div class="govuk-grid-column-one-third" style="margin-bottom: 30px;">
-    <label class="govuk-label form-label-bold" for="input1">
-      Position 2
-    </label>
-    <select class="govuk-select selects" name="input1" id="input1">
-      <option value="placeholder">Select a link...</option>
-      <option value="administratorReport">Administrator Report</option>
-      <option value="agreedNotice">Agreed Notice</option>
-      <option value="alternateDespatchAddress">Alternate despatch address</option>
-      <option value="applicationEnquiry">Application Enquiry</option>
-      <option value="bankruptcySearch">Bankruptcy Search</option>
-      <option value="cancellationOfACaution">Cancellation of a Caution</option>
-      <option value="cancellationOfANotice">Cancellation of a Notice (Not Unilateral)</option>
-      <option value="cancellationOfHomeRights">Cancellation of Home rights (e-HR4)</option>
-      <option value="cancellationOfOfficialSearchOfWholeOS1">Cancellation of Official Search of Whole (OS1)</option>
-      <option value="cancellationOfOfficialSearchOfPartOS2">Cancellation of Official Search of Part (OS2)</option>
-      <option value="cancellationOfRestriction">Cancellation of restriction (e-RX3)</option>
-      <option value="cancellationOfUnilateralNotice">Cancellation of Unilateral Notice (eUN4)</option>
-      <option value="changeOfAddressForService">Change of address for service</option>
-      <option value="changeOfName">Change of Name</option>
-      <option value="changeOfPropertyDescription">Change of Property Description</option>
-      <option value="changePassword">Change Password</option>
-      <option value="createUser">Create User</option>
-      <option value="dataSynchronisationDownloads">Data Synchronisation Downloads</option>
-      <option value="dataSynchronisationEnquiry">Data Synchronisation Enquiry</option>
-      <option value="deathOfJointProprietor">Death of Joint Proprietor</option>
-      <option value="digitalRegistrationService">Digital Registration Service</option>
-      <option value="dischargeOfCharge">Discharge of a Charge</option>
-      <option value="documentRegistrationService">Document Registration Service</option>
-      <option value="documentView">Document View</option>
-      <option value="enquiryByPropertyDescription">Enquiry by Property Description - Title View</option>
-      <option value="fullSearch">Full Search</option>
-      <option value="homeRights">Home Rights (E-HR1 Notice of home rights)</option>
-      <option value="homeRightsSearch">Home Rights Search</option>
-      <option value="localLandCharges">Local Land Charges</option>
-      <option value="manageBusinessUnits">Manage Business Units</option>
-      <option value="manageGroups">Manage Groups</option>
-      <option value="managedServices">Managed services</option>
-      <option value="manageUsers">Manage users</option>
-      <option value="mapSearch">MapSearch</option>
-      <option value="messageArea">Message Area</option>
-      <option value="Notifications">Notifications</option>
-      <option value="officialCopyDeedsReferred">Official Copy – Deeds referred</option>
-      <option value="officialCopyRegisterPlanCI">Official Copy – Register, Title Plan or CI</option>
-      <option value="officialCopyRegisterHistorical">Official Copy – Register (Historical)</option>
-      <option value="officialCopyTitlePlanHistorical">Official Copy – Title Plan (Historical)</option>
-      <option value="officialSearchOfWholeOS1">Official Search of Whole (OS1)</option>
-      <option value="officialSearchOfPartOS2">Official Search of Part (OS2)</option>
-      <option value="officialSearchOfWholeOrPartWithoutPriorityOS3">Official Search of whole or part without priority
-        (OS3)</option>
-      <option value="pdfDownloads">PDF Downloads</option>
-      <option value="personalDetails">Personal Details</option>
-      <option value="registerViewHTML">Register View (HTML)</option>
-      <option value="registerViewPDF">Register View (PDF)</option>
-      <option value="registrationView">Registration View</option>
-      <option value="removalOfUnilateralNotice">Removal of a Unilateral Notice (e-UN2)</option>
-      <option value="replyToRequisition">Reply To Requisition</option>
-      <option value="restrictions">Restrictions (Standard e-RX1)</option>
-      <option value="searchOfTheIndexFranchisesAndManors">Search of the Index of Franchises and Manors (SIF)</option>
-      <option value="searchOfTheIndexMap">Search of the Index Map</option>
-      <option value="servicesRequested">Services Requested</option>
-      <option value="statutoryCharge">Statutory Charge</option>
-      <option value="titlePlanView">Title Plan View</option>
-      <option value="unilateralNotice">Unilateral Notice (e-UN1)</option>
-      <option value="vddinformation">VDD Information</option>
-      <option value="viewMyApplications" selected>View My Applications</option>
-      <option value="withdrawlOfARestriction">Withdrawal of a Restriction (e-RX4)</option>
-      <option value="withdrawlOfCaution">Withdrawl of Caution</option>
-      <option value="withdrawlOfficialSearchWithPriority">Withdraw Official Search with Priority</option>
-    </select>
-  </div>
 
           <div class="govuk-grid-column-one-third" style="margin-bottom: 30px;">
             <label class="govuk-label form-label-bold" for="input">
@@ -618,77 +274,6 @@
             </select>
           </div>
 
-  <div class="govuk-grid-column-one-third" style="margin-bottom: 30px;">
-    <label class="govuk-label form-label-bold" for="input3">
-      Position 4
-    </label>
-    <select class="govuk-select selects" name="input3" id="input3">
-      <option value="placeholder">Select a link...</option>
-      <option value="administratorReport">Administrator Report</option>
-      <option value="agreedNotice">Agreed Notice</option>
-      <option value="alternateDespatchAddress">Alternate despatch address</option>
-      <option value="applicationEnquiry">Application Enquiry</option>
-      <option value="bankruptcySearch">Bankruptcy Search</option>
-      <option value="cancellationOfACaution">Cancellation of a Caution</option>
-      <option value="cancellationOfANotice">Cancellation of a Notice (Not Unilateral)</option>
-      <option value="cancellationOfHomeRights">Cancellation of Home rights (e-HR4)</option>
-      <option value="cancellationOfOfficialSearchOfWholeOS1">Cancellation of Official Search of Whole (OS1)</option>
-      <option value="cancellationOfOfficialSearchOfPartOS2">Cancellation of Official Search of Part (OS2)</option>
-      <option value="cancellationOfRestriction">Cancellation of restriction (e-RX3)</option>
-      <option value="cancellationOfUnilateralNotice">Cancellation of Unilateral Notice (eUN4)</option>
-      <option value="changeOfAddressForService">Change of address for service</option>
-      <option value="changeOfName">Change of Name</option>
-      <option value="changeOfPropertyDescription">Change of Property Description</option>
-      <option value="changePassword">Change Password</option>
-      <option value="createUser">Create User</option>
-      <option value="dataSynchronisationDownloads">Data Synchronisation Downloads</option>
-      <option value="dataSynchronisationEnquiry">Data Synchronisation Enquiry</option>
-      <option value="deathOfJointProprietor">Death of Joint Proprietor</option>
-      <option value="digitalRegistrationService">Digital Registration Service</option>
-      <option value="dischargeOfCharge">Discharge of a Charge</option>
-      <option value="documentRegistrationService">Document Registration Service</option>
-      <option value="documentView">Document View</option>
-      <option value="enquiryByPropertyDescription">Enquiry by Property Description - Title View</option>
-      <option value="fullSearch">Full Search</option>
-      <option value="homeRights">Home Rights (E-HR1 Notice of home rights)</option>
-      <option value="homeRightsSearch">Home Rights Search</option>
-      <option value="localLandCharges">Local Land Charges</option>
-      <option value="manageBusinessUnits">Manage Business Units</option>
-      <option value="manageGroups">Manage Groups</option>
-      <option value="managedServices">Managed services</option>
-      <option value="manageUsers" selected>Manage users</option>
-      <option value="mapSearch">MapSearch</option>
-      <option value="messageArea">Message Area</option>
-      <option value="Notifications">Notifications</option>
-      <option value="officialCopyDeedsReferred">Official Copy – Deeds referred</option>
-      <option value="officialCopyRegisterPlanCI">Official Copy – Register, Title Plan or CI</option>
-      <option value="officialCopyRegisterHistorical">Official Copy – Register (Historical)</option>
-      <option value="officialCopyTitlePlanHistorical">Official Copy – Title Plan (Historical)</option>
-      <option value="officialSearchOfWholeOS1">Official Search of Whole (OS1)</option>
-      <option value="officialSearchOfPartOS2">Official Search of Part (OS2)</option>
-      <option value="officialSearchOfWholeOrPartWithoutPriorityOS3">Official Search of whole or part without priority
-        (OS3)</option>
-      <option value="pdfDownloads">PDF Downloads</option>
-      <option value="personalDetails">Personal Details</option>
-      <option value="registerViewHTML">Register View (HTML)</option>
-      <option value="registerViewPDF">Register View (PDF)</option>
-      <option value="registrationView">Registration View</option>
-      <option value="removalOfUnilateralNotice">Removal of a Unilateral Notice (e-UN2)</option>
-      <option value="replyToRequisition">Reply To Requisition</option>
-      <option value="restrictions">Restrictions (Standard e-RX1)</option>
-      <option value="searchOfTheIndexFranchisesAndManors">Search of the Index of Franchises and Manors (SIF)</option>
-      <option value="searchOfTheIndexMap">Search of the Index Map</option>
-      <option value="servicesRequested">Services Requested</option>
-      <option value="statutoryCharge">Statutory Charge</option>
-      <option value="titlePlanView">Title Plan View</option>
-      <option value="unilateralNotice">Unilateral Notice (e-UN1)</option>
-      <option value="vddinformation">VDD Information</option>
-      <option value="viewMyApplications">View My Applications</option>
-      <option value="withdrawlOfARestriction">Withdrawal of a Restriction (e-RX4)</option>
-      <option value="withdrawlOfCaution">Withdrawl of Caution</option>
-      <option value="withdrawlOfficialSearchWithPriority">Withdraw Official Search with Priority</option>
-    </select>
-  </div>
 
           <div class="govuk-grid-column-one-third" style="margin-bottom: 30px;">
             <label class="govuk-label form-label-bold" for="input1">
@@ -761,77 +346,6 @@
             </select>
           </div>
 
-  <div class="govuk-grid-column-one-third" style="margin-bottom: 30px;">
-    <label class="govuk-label form-label-bold" for="input4">
-      Position 5
-    </label>
-    <select class="govuk-select selects" name="input4" id="input4">
-      <option value="placeholder">Select a link...</option>
-      <option value="administratorReport">Administrator Report</option>
-      <option value="agreedNotice">Agreed Notice</option>
-      <option value="alternateDespatchAddress">Alternate despatch address</option>
-      <option value="applicationEnquiry">Application Enquiry</option>
-      <option value="bankruptcySearch">Bankruptcy Search</option>
-      <option value="cancellationOfACaution">Cancellation of a Caution</option>
-      <option value="cancellationOfANotice">Cancellation of a Notice (Not Unilateral)</option>
-      <option value="cancellationOfHomeRights">Cancellation of Home rights (e-HR4)</option>
-      <option value="cancellationOfOfficialSearchOfWholeOS1">Cancellation of Official Search of Whole (OS1)</option>
-      <option value="cancellationOfOfficialSearchOfPartOS2">Cancellation of Official Search of Part (OS2)</option>
-      <option value="cancellationOfRestriction">Cancellation of restriction (e-RX3)</option>
-      <option value="cancellationOfUnilateralNotice">Cancellation of Unilateral Notice (eUN4)</option>
-      <option value="changeOfAddressForService">Change of address for service</option>
-      <option value="changeOfName">Change of Name</option>
-      <option value="changeOfPropertyDescription">Change of Property Description</option>
-      <option value="changePassword">Change Password</option>
-      <option value="createUser">Create User</option>
-      <option value="dataSynchronisationDownloads">Data Synchronisation Downloads</option>
-      <option value="dataSynchronisationEnquiry">Data Synchronisation Enquiry</option>
-      <option value="deathOfJointProprietor">Death of Joint Proprietor</option>
-      <option value="digitalRegistrationService">Digital Registration Service</option>
-      <option value="dischargeOfCharge">Discharge of a Charge</option>
-      <option value="documentRegistrationService">Document Registration Service</option>
-      <option value="documentView">Document View</option>
-      <option value="enquiryByPropertyDescription">Enquiry by Property Description - Title View</option>
-      <option value="fullSearch">Full Search</option>
-      <option value="homeRights">Home Rights (E-HR1 Notice of home rights)</option>
-      <option value="homeRightsSearch">Home Rights Search</option>
-      <option value="localLandCharges">Local Land Charges</option>
-      <option value="manageBusinessUnits">Manage Business Units</option>
-      <option value="manageGroups">Manage Groups</option>
-      <option value="managedServices">Managed services</option>
-      <option value="manageUsers">Manage users</option>
-      <option value="mapSearch" </option>
-      <option value="messageArea">Message Area</option>
-      <option value="Notifications">Notifications</option>
-      <option value="officialCopyDeedsReferred">Official Copy – Deeds referred</option>
-      <option value="officialCopyRegisterPlanCI">Official Copy – Register, Title Plan or CI</option>
-      <option value="officialCopyRegisterHistorical">Official Copy – Register (Historical)</option>
-      <option value="officialCopyTitlePlanHistorical">Official Copy – Title Plan (Historical)</option>
-      <option value="officialSearchOfWholeOS1">Official Search of Whole (OS1)</option>
-      <option value="officialSearchOfPartOS2" selected>Official Search of Part (OS2)</option>
-      <option value="officialSearchOfWholeOrPartWithoutPriorityOS3">Official Search of whole or part without priority
-        (OS3)</option>
-      <option value="pdfDownloads">PDF Downloads</option>
-      <option value="personalDetails">Personal Details</option>
-      <option value="registerViewHTML">Register View (HTML)</option>
-      <option value="registerViewPDF">Register View (PDF)</option>
-      <option value="registrationView">Registration View</option>
-      <option value="removalOfUnilateralNotice">Removal of a Unilateral Notice (e-UN2)</option>
-      <option value="replyToRequisition">Reply To Requisition</option>
-      <option value="restrictions">Restrictions (Standard e-RX1)</option>
-      <option value="searchOfTheIndexFranchisesAndManors">Search of the Index of Franchises and Manors (SIF)</option>
-      <option value="searchOfTheIndexMap">Search of the Index Map</option>
-      <option value="servicesRequested">Services Requested</option>
-      <option value="statutoryCharge">Statutory Charge</option>
-      <option value="titlePlanView">Title Plan View</option>
-      <option value="unilateralNotice">Unilateral Notice (e-UN1)</option>
-      <option value="vddinformation">VDD Information</option>
-      <option value="viewMyApplications">View My Applications</option>
-      <option value="withdrawlOfARestriction">Withdrawal of a Restriction (e-RX4)</option>
-      <option value="withdrawlOfCaution">Withdrawl of Caution</option>
-      <option value="withdrawlOfficialSearchWithPriority">Withdraw Official Search with Priority</option>
-    </select>
-  </div>
 
           <div class="govuk-grid-column-one-third" style="margin-bottom: 30px;">
             <label class="govuk-label form-label-bold" for="input2">
@@ -904,78 +418,6 @@
             </select>
           </div>
 
-  <div class="govuk-grid-column-one-third" style="margin-bottom: 30px;">
-    <label class="govuk-label form-label-bold" for="input5">
-      Position 6
-    </label>
-    <select class="govuk-select selects" name="input5" id="input5">
-      <option value="placeholder">Select a link...</option>
-      <option value="administratorReport">Administrator Report</option>
-      <option value="agreedNotice">Agreed Notice</option>
-      <option value="alternateDespatchAddress">Alternate despatch address</option>
-      <option value="applicationEnquiry">Application Enquiry</option>
-      <option value="bankruptcySearch">Bankruptcy Search</option>
-      <option value="cancellationOfACaution">Cancellation of a Caution</option>
-      <option value="cancellationOfANotice">Cancellation of a Notice (Not Unilateral)</option>
-      <option value="cancellationOfHomeRights">Cancellation of Home rights (e-HR4)</option>
-      <option value="cancellationOfOfficialSearchOfWholeOS1">Cancellation of Official Search of Whole (OS1)</option>
-      <option value="cancellationOfOfficialSearchOfPartOS2">Cancellation of Official Search of Part (OS2)</option>
-      <option value="cancellationOfRestriction">Cancellation of restriction (e-RX3)</option>
-      <option value="cancellationOfUnilateralNotice">Cancellation of Unilateral Notice (eUN4)</option>
-      <option value="changeOfAddressForService">Change of address for service</option>
-      <option value="changeOfName">Change of Name</option>
-      <option value="changeOfPropertyDescription">Change of Property Description</option>
-      <option value="changePassword">Change Password</option>
-      <option value="createUser">Create User</option>
-      <option value="dataSynchronisationDownloads">Data Synchronisation Downloads</option>
-      <option value="dataSynchronisationEnquiry">Data Synchronisation Enquiry</option>
-      <option value="deathOfJointProprietor">Death of Joint Proprietor</option>
-      <option value="digitalRegistrationService">Digital Registration Service</option>
-      <option value="dischargeOfCharge">Discharge of a Charge</option>
-      <option value="documentRegistrationService">Document Registration Service</option>
-      <option value="documentView">Document View</option>
-      <option value="enquiryByPropertyDescription">Enquiry by Property Description - Title View</option>
-      <option value="fullSearch">Full Search</option>
-      <option value="homeRights">Home Rights (E-HR1 Notice of home rights)</option>
-      <option value="homeRightsSearch">Home Rights Search</option>
-      <option value="localLandCharges">Local Land Charges</option>
-      <option value="manageBusinessUnits">Manage Business Units</option>
-      <option value="manageGroups">Manage Groups</option>
-      <option value="managedServices">Managed services</option>
-      <option value="manageUsers">Manage users</option>
-      <option value="mapSearch" selected>MapSearch</option>
-      <option value="messageArea">Message Area</option>
-      <option value="Notifications">Notifications</option>
-      <option value="officialCopyDeedsReferred">Official Copy – Deeds referred</option>
-      <option value="officialCopyRegisterPlanCI">Official Copy – Register, Title Plan or CI</option>
-      <option value="officialCopyRegisterHistorical">Official Copy – Register (Historical)</option>
-      <option value="officialCopyTitlePlanHistorical">Official Copy – Title Plan (Historical)</option>
-      <option value="officialSearchOfWholeOS1">Official Search of Whole (OS1)</option>
-      <option value="officialSearchOfPartOS2">Official Search of Part (OS2)</option>
-      <option value="officialSearchOfWholeOrPartWithoutPriorityOS3">Official Search of whole or part without priority
-        (OS3)</option>
-      <option value="pdfDownloads">PDF Downloads</option>
-      <option value="personalDetails">Personal Details</option>
-      <option value="registerViewHTML">Register View (HTML)</option>
-      <option value="registerViewPDF">Register View (PDF)</option>
-      <option value="registrationView">Registration View</option>
-      <option value="removalOfUnilateralNotice">Removal of a Unilateral Notice (e-UN2)</option>
-      <option value="replyToRequisition">Reply To Requisition</option>
-      <option value="restrictions">Restrictions (Standard e-RX1)</option>
-      <option value="searchOfTheIndexFranchisesAndManors">Search of the Index of Franchises and Manors (SIF)</option>
-      <option value="searchOfTheIndexMap">Search of the Index Map</option>
-      <option value="servicesRequested">Services Requested</option>
-      <option value="statutoryCharge">Statutory Charge</option>
-      <option value="titlePlanView">Title Plan View</option>
-      <option value="unilateralNotice">Unilateral Notice (e-UN1)</option>
-      <option value="vddinformation">VDD Information</option>
-      <option value="viewMyApplications">View My Applications</option>
-      <option value="withdrawlOfARestriction">Withdrawal of a Restriction (e-RX4)</option>
-      <option value="withdrawlOfCaution">Withdrawl of Caution</option>
-      <option value="withdrawlOfficialSearchWithPriority">Withdraw Official Search with Priority</option>
-
-    </select>
-  </div>
 
           <div class="govuk-grid-column-one-third" style="margin-bottom: 30px;">
             <label class="govuk-label form-label-bold" for="input3">
@@ -1048,80 +490,7 @@
             </select>
           </div>
 
-  <div class="govuk-grid-column-one-third" style="margin-bottom: 30px;">
-    <label class="govuk-label form-label-bold" for="input7">
-      Position 8
-    </label>
-    <select class="govuk-select selects" name="input7" id="input7">
-      <option value="placeholder">Select a link...</option>
-      <option value="administratorReport">Administrator Report</option>
-      <option value="agreedNotice">Agreed Notice</option>
-      <option value="alternateDespatchAddress">Alternate despatch address</option>
-      <option value="applicationEnquiry">Application Enquiry</option>
-      <option value="bankruptcySearch">Bankruptcy Search</option>
-      <option value="cancellationOfACaution">Cancellation of a Caution</option>
-      <option value="cancellationOfANotice">Cancellation of a Notice (Not Unilateral)</option>
-      <option value="cancellationOfHomeRights">Cancellation of Home rights (e-HR4)</option>
-      <option value="cancellationOfOfficialSearchOfWholeOS1">Cancellation of Official Search of Whole (OS1)</option>
-      <option value="cancellationOfOfficialSearchOfPartOS2">Cancellation of Official Search of Part (OS2)</option>
-      <option value="cancellationOfRestriction">Cancellation of restriction (e-RX3)</option>
-      <option value="cancellationOfUnilateralNotice">Cancellation of Unilateral Notice (eUN4)</option>
-      <option value="changeOfAddressForService">Change of address for service</option>
-      <option value="changeOfName">Change of Name</option>
-      <option value="changeOfPropertyDescription">Change of Property Description</option>
-      <option value="changePassword">Change Password</option>
-      <option value="createUser">Create User</option>
-      <option value="dataSynchronisationDownloads">Data Synchronisation Downloads</option>
-      <option value="dataSynchronisationEnquiry">Data Synchronisation Enquiry</option>
-      <option value="deathOfJointProprietor">Death of Joint Proprietor</option>
-      <option value="digitalRegistrationService">Digital Registration Service</option>
-      <option value="dischargeOfCharge">Discharge of a Charge</option>
-      <option value="documentRegistrationService">Document Registration Service</option>
-      <option value="documentView">Document View</option>
-      <option value="enquiryByPropertyDescription">Enquiry by Property Description - Title View</option>
-      <option value="fullSearch">Full Search</option>
-      <option value="homeRights">Home Rights (E-HR1 Notice of home rights)</option>
-      <option value="homeRightsSearch" selected>Home Rights Search</option>
-      <option value="localLandCharges">Local Land Charges</option>
-      <option value="manageBusinessUnits">Manage Business Units</option>
-      <option value="manageGroups">Manage Groups</option>
-      <option value="managedServices">Managed services</option>
-      <option value="manageUsers">Manage users</option>
-      <option value="mapSearch">MapSearch</option>
-      <option value="messageArea">Message Area</option>
-      <option value="Notifications">Notifications</option>
-      <option value="officialCopyDeedsReferred">Official Copy – Deeds referred</option>
-      <option value="officialCopyRegisterPlanCI">Official Copy – Register, Title Plan or CI</option>
-      <option value="officialCopyRegisterHistorical">Official Copy – Register (Historical)</option>
-      <option value="officialCopyTitlePlanHistorical">Official Copy – Title Plan (Historical)</option>
-      <option value="officialSearchOfWholeOS1">Official Search of Whole (OS1)</option>
-      <option value="officialSearchOfPartOS2">Official Search of Part (OS2)</option>
-      <option value="officialSearchOfWholeOrPartWithoutPriorityOS3">Official Search of whole or part without priority
-        (OS3)</option>
-      <option value="pdfDownloads">PDF Downloads</option>
-      <option value="personalDetails">Personal Details</option>
-      <option value="registerViewHTML">Register View (HTML)</option>
-      <option value="registerViewPDF">Register View (PDF)</option>
-      <option value="registrationView">Registration View</option>
-      <option value="removalOfUnilateralNotice">Removal of a Unilateral Notice (e-UN2)</option>
-      <option value="replyToRequisition">Reply To Requisition</option>
-      <option value="restrictions">Restrictions (Standard e-RX1)</option>
-      <option value="searchOfTheIndexFranchisesAndManors">Search of the Index of Franchises and Manors (SIF)</option>
-      <option value="searchOfTheIndexMap">Search of the Index Map</option>
-      <option value="servicesRequested">Services Requested</option>
-      <option value="statutoryCharge">Statutory Charge</option>
-      <option value="titlePlanView">Title Plan View</option>
-      <option value="unilateralNotice">Unilateral Notice (e-UN1)</option>
-      <option value="vddinformation">VDD Information</option>
-      <option value="viewMyApplications">View My Applications</option>
-      <option value="withdrawlOfARestriction">Withdrawal of a Restriction (e-RX4)</option>
-      <option value="withdrawlOfCaution">Withdrawl of Caution</option>
-      <option value="withdrawlOfficialSearchWithPriority">Withdraw Official Search with Priority</option>
 
-    </select>
-  </div>
-
-<<<<<<< HEAD
           <div class="govuk-grid-column-one-third" style="margin-bottom: 30px;">
             <label class="govuk-label form-label-bold" for="input4">
               Position 5
@@ -1265,87 +634,11 @@
   
             </select>
           </div>
-=======
-  <div class="govuk-grid-column-one-third" style="margin-bottom: 30px;">
-    <label class="govuk-label form-label-bold" for="input8">
-      Position 9
-    </label>
-    <select class="govuk-select selects" name="input8" id="input8">
-      <option value="placeholder">Select a link...</option>
-      <option value="administratorReport">Administrator Report</option>
-      <option value="agreedNotice">Agreed Notice</option>
-      <option value="alternateDespatchAddress">Alternate despatch address</option>
-      <option value="applicationEnquiry">Application Enquiry</option>
-      <option value="bankruptcySearch">Bankruptcy Search</option>
-      <option value="cancellationOfACaution">Cancellation of a Caution</option>
-      <option value="cancellationOfANotice">Cancellation of a Notice (Not Unilateral)</option>
-      <option value="cancellationOfHomeRights">Cancellation of Home rights (e-HR4)</option>
-      <option value="cancellationOfOfficialSearchOfWholeOS1">Cancellation of Official Search of Whole (OS1)</option>
-      <option value="cancellationOfOfficialSearchOfPartOS2">Cancellation of Official Search of Part (OS2)</option>
-      <option value="cancellationOfRestriction">Cancellation of restriction (e-RX3)</option>
-      <option value="cancellationOfUnilateralNotice">Cancellation of Unilateral Notice (eUN4)</option>
-      <option value="changeOfAddressForService">Change of address for service</option>
-      <option value="changeOfName">Change of Name</option>
-      <option value="changeOfPropertyDescription">Change of Property Description</option>
-      <option value="changePassword">Change Password</option>
-      <option value="createUser">Create User</option>
-      <option value="dataSynchronisationDownloads">Data Synchronisation Downloads</option>
-      <option value="dataSynchronisationEnquiry">Data Synchronisation Enquiry</option>
-      <option value="deathOfJointProprietor">Death of Joint Proprietor</option>
-      <option value="digitalRegistrationService">Digital Registration Service</option>
-      <option value="dischargeOfCharge">Discharge of a Charge</option>
-      <option value="documentRegistrationService">Document Registration Service</option>
-      <option value="documentView" selected>Document View</option>
-      <option value="enquiryByPropertyDescription">Enquiry by Property Description - Title View</option>
-      <option value="fullSearch">Full Search</option>
-      <option value="homeRights">Home Rights (E-HR1 Notice of home rights)</option>
-      <option value="homeRightsSearch">Home Rights Search</option>
-      <option value="localLandCharges">Local Land Charges</option>
-      <option value="manageBusinessUnits">Manage Business Units</option>
-      <option value="manageGroups">Manage Groups</option>
-      <option value="managedServices">Managed services</option>
-      <option value="manageUsers">Manage users</option>
-      <option value="mapSearch">MapSearch</option>
-      <option value="messageArea">Message Area</option>
-      <option value="Notifications">Notifications</option>
-      <option value="officialCopyDeedsReferred">Official Copy – Deeds referred</option>
-      <option value="officialCopyRegisterPlanCI">Official Copy – Register, Title Plan or CI</option>
-      <option value="officialCopyRegisterHistorical">Official Copy – Register (Historical)</option>
-      <option value="officialCopyTitlePlanHistorical">Official Copy – Title Plan (Historical)</option>
-      <option value="officialSearchOfWholeOS1">Official Search of Whole (OS1)</option>
-      <option value="officialSearchOfPartOS2">Official Search of Part (OS2)</option>
-      <option value="officialSearchOfWholeOrPartWithoutPriorityOS3">Official Search of whole or part without priority
-        (OS3)</option>
-      <option value="pdfDownloads">PDF Downloads</option>
-      <option value="personalDetails">Personal Details</option>
-      <option value="registerViewHTML">Register View (HTML)</option>
-      <option value="registerViewPDF">Register View (PDF)</option>
-      <option value="registrationView">Registration View</option>
-      <option value="removalOfUnilateralNotice">Removal of a Unilateral Notice (e-UN2)</option>
-      <option value="replyToRequisition">Reply To Requisition</option>
-      <option value="restrictions">Restrictions (Standard e-RX1)</option>
-      <option value="searchOfTheIndexFranchisesAndManors">Search of the Index of Franchises and Manors (SIF)</option>
-      <option value="searchOfTheIndexMap">Search of the Index Map</option>
-      <option value="servicesRequested">Services Requested</option>
-      <option value="statutoryCharge">Statutory Charge</option>
-      <option value="titlePlanView">Title Plan View</option>
-      <option value="unilateralNotice">Unilateral Notice (e-UN1)</option>
-      <option value="vddinformation">VDD Information</option>
-      <option value="viewMyApplications">View My Applications</option>
-      <option value="withdrawlOfARestriction">Withdrawal of a Restriction (e-RX4)</option>
-      <option value="withdrawlOfCaution">Withdrawl of Caution</option>
-      <option value="withdrawlOfficialSearchWithPriority">Withdraw Official Search with Priority</option>
->>>>>>> e03f96cb8aa9654095cfc6a93bd775da289ae545
 
-    </select>
-  </div>
 
-</div>
 </div>
 
 
- <!-- Divider line -->
-<div class="dividerLine10"></div>
 
 <!-- Divider line -->
 <div class="dividerLine10"></div> 
@@ -1369,9 +662,6 @@
       <div class="newsTextSection">
           <h3 class="govuk-heading-s newsTextTitle"><a style="color:#006637;" href="#">View colleagues applications</a></h3>
           <p>A short video designed to showcase the new functionality recently added.</p>
-        <h3 class="govuk-heading-s newsTextTitle"><a style="color:#006637;" href="#">View colleagues applications</a>
-        </h3>
-        <p>A short video designed to showcase the new functionality recently added.</p>
       </div>
 
     </div>
@@ -1383,7 +673,9 @@
       </div>
 
       <div class="newsTextSection">
+        <h3 class="govuk-heading-s newsTextTitle"><a style="color:#006637;" href="#">Requesting an application to be expedited</a></h3>
         <p>All requests must be made by using the Application Enquiry service.</p>
+    </div>
 
     </div>
 
@@ -1395,17 +687,13 @@
 
       <div class="newsTextSection">
         <h3 class="govuk-heading-s newsTextTitle"><a style="color:#006637;" href="#">Document registration is changing</a></h3>
-        <h3 class="govuk-heading-s newsTextTitle"><a style="color:#006637;" href="#">Document registration is
-            changing</a></h3>
         <p>From November 2022 the Document Registration option will be removed.</p>
     </div>
-      </div>
 
     </div>
 
   </div>
 </div> 
-</div>
 
 
 <!-- Divider line -->
@@ -1456,7 +744,6 @@
 
   
   <div class="govuk-grid-row">
-  <div class=" govuk-grid-row">
 
     <div class="govuk-grid-column-one-third">
       <h2 class="govuk-heading-l govuk-!-font-size-36" style="margin-top: 0;">Notifications</h2>
@@ -1465,33 +752,16 @@
     <div class="govuk-grid-column-two-thirds">
       <h3 class="govuk-heading-m" style="margin-bottom: 5px;"><a href="#" style="color: #006637 !Important;">Messages</a></h3>
       <p class="govuk-body">There are <a href="#" style="color: #006637 !Important;">new messages</a> since you logged in.</p>
-  <div class="govuk-grid-column-one-third">
-    <h2 class="govuk-heading-l govuk-!-font-size-36" style="margin-top: 0;">Notifications</h2>
-  </div>
 
       <h3 class="govuk-heading-m" style="margin-bottom: 5px;"><a href="#" style="color: #006637 !Important;">PDF downloads</a></h3>
       <p class="govuk-body">My downloads - new items to be viewed.<br>
         Postal application downloads - no new items to be viewed.</p>
-  <div class="govuk-grid-column-two-thirds">
-    <h3 class="govuk-heading-m" style="margin-bottom: 5px;"><a href="#" style="color: #006637 !Important;">Messages</a>
-    </h3>
-    <p class="govuk-body">There are <a href="#" style="color: #006637 !Important;">new messages</a> since you logged in.
-    </p>
 
       <p class="govuk-body" style="padding-top:10px;margin-bottom:0px;">To be notified when your applications are complete and you have new PDF downloads available. Activate your notification feed in <a href="#" style="color: #006637 !Important;">notifications</a>.</p>
-    <h3 class="govuk-heading-m" style="margin-bottom: 5px;"><a href="#" style="color: #006637 !Important;">PDF
-        downloads</a></h3>
-    <p class="govuk-body">My downloads - new items to be viewed.<br>
-      Postal application downloads - no new items to be viewed.</p>
 
     </div>
-    <p class="govuk-body" style="padding-top:10px;margin-bottom:0px;">To be notified when your applications are complete
-      and you have new PDF downloads available. Activate your notification feed in <a href="#"
-        style="color: #006637 !Important;">notifications</a>.</p>
 
   </div>
-
-</div>
 
 </div>
 
@@ -1507,6 +777,7 @@
 
 
   
+  <div class="govuk-grid-row">
 
     <div class="govuk-grid-column-one-third">
       <h2 class="govuk-heading-l govuk-!-font-size-36" style="margin-top: 0;padding-right: 75px;margin-bottom:0px;">Requesting an application to be expedited</h2>
@@ -1514,26 +785,15 @@
     
     <div class="govuk-grid-column-two-thirds">
       <p class="govuk-body">Please note that you can only request an application to be expedited by using Application Enquiry service. Requests made via 'Reply to requisition' will not be processed, causing you further delays.</p>
-  <div class="govuk-grid-column-one-third">
-    <h2 class="govuk-heading-l govuk-!-font-size-36" style="margin-top: 0;padding-right: 75px;margin-bottom:0px;">
-      Requesting an application to be expedited</h2>
-  </div>
 
       <p class="govuk-body"><a href="#" style="color: #006637 !Important;">Expedite an application</a></p>
-  <div class="govuk-grid-column-two-thirds">
-    <p class="govuk-body">Please note that you can only request an application to be expedited by using Application
-      Enquiry service. Requests made via 'Reply to requisition' will not be processed, causing you further delays.</p>
 
       <!-- <button  style="margin-bottom: 0px;" class="govuk-button govuk-button--secondary"  onclick="window.location.href='https://eservices.landregistry.gov.uk/eservices/ECENQ_EnquiriesViews/newEnquiry.do?menu=informationservices&id=dle_link">Expedite an application</button> -->
-    <p class="govuk-body"><a href="#" style="color: #006637 !Important;">Expedite an application</a></p>
 
-    <!-- <button  style="margin-bottom: 0px;" class="govuk-button govuk-button--secondary"  onclick="window.location.href='https://eservices.landregistry.gov.uk/eservices/ECENQ_EnquiriesViews/newEnquiry.do?menu=informationservices&id=dle_link">Expedite an application</button> -->
 
     </div>
 
   </div>
-
-</div>
 
 </div>
 
@@ -1551,36 +811,22 @@
 
   
   <div class="govuk-grid-row">
-  <div class=" govuk-grid-row">
 
     <div class="govuk-grid-column-one-third">
       <h2 class="govuk-heading-l govuk-!-font-size-36" style="margin-top: 0;">Specialist Support Services</h2>
     </div>
     
     <div class="govuk-grid-column-two-thirds">
-  <div class="govuk-grid-column-one-third">
-    <h2 class="govuk-heading-l govuk-!-font-size-36" style="margin-top: 0;">Specialist Support Services</h2>
-  </div>
 
       <p class="govuk-body" style="max-width: 650px;">Discover the range of expert-led services that are available to support those prior to submitting large-scale or complex applications or starting the development of residential estates. This can range from insider help and advice, to full application management and processing.  
    
         </p>
       <p class="govuk-body"><a href="../../support_services/v1/d/specialist_support_services.html" style="color: #006637 !Important;">See services available and how you could benefit.</a></p>
-  <div class="govuk-grid-column-two-thirds">
 
-    <p class="govuk-body" style="max-width: 650px;">Discover the range of expert-led services that are available to
-      support those prior to submitting large-scale or complex applications or starting the development of residential
-      estates. This can range from insider help and advice, to full application management and processing.
-
-    </p>
-    <p class="govuk-body"><a href="../../support_services/v1/d/specialist_support_services.html"
-        style="color: #006637 !Important;">See services available and how you could benefit.</a></p>
 
     </div>
 
   </div>
-
-</div>
 
 </div>
 
@@ -1597,7 +843,6 @@
 
   
   <div class="govuk-grid-row">
-  <div class=" govuk-grid-row">
 
     <div class="govuk-grid-column-one-third">
       <h2 class="govuk-heading-l govuk-!-font-size-36" style="margin-top: 0;padding-right: 75px;margin-bottom:0px;">Webinars</h2>
@@ -1606,24 +851,11 @@
     <div class="govuk-grid-column-two-thirds">
       <h3 class="govuk-heading-m" style="margin-bottom: 5px;">Join our free webinars</h3>
       <p class="govuk-body" style="margin-bottom:0px;padding-right: 30px;">Learn how to prepare and send us quality applications. Sessions will help you avoid the most common reasons for a request for information (requisition). Get details of available topics and registration information on <a href="https://www.gov.uk/government/organisations/land-registry/about/personal-information-charter" style="color: #006637 !Important;">GOV.UK</a></p>
-  <div class="govuk-grid-column-one-third">
-    <h2 class="govuk-heading-l govuk-!-font-size-36" style="margin-top: 0;padding-right: 75px;margin-bottom:0px;">
-      Webinars</h2>
-  </div>
 
-  <div class="govuk-grid-column-two-thirds">
-    <h3 class="govuk-heading-m" style="margin-bottom: 5px;">Join our free webinars</h3>
-    <p class="govuk-body" style="margin-bottom:0px;padding-right: 30px;">Learn how to prepare and send us quality
-      applications. Sessions will help you avoid the most common reasons for a request for information (requisition).
-      Get details of available topics and registration information on <a
-        href="https://www.gov.uk/government/organisations/land-registry/about/personal-information-charter"
-        style="color: #006637 !Important;">GOV.UK</a></p>
 
     </div>
 
   </div>
-
-</div>
 
 </div>
 
@@ -1645,7 +877,6 @@
 
   
   <div class="govuk-grid-row">
-  <div class=" govuk-grid-row">
 
     <div class="govuk-grid-column-one-third">
       <h2 class="govuk-heading-l govuk-!-font-size-36" style="margin-top: 0;">Service<br>information</h2>
@@ -1654,29 +885,14 @@
     <div class="govuk-grid-column-two-thirds">
       <h3 class="govuk-heading-m" style="margin-bottom: 5px;">Service hours</h3>
       <p class="govuk-body"><a href="https://www.gov.uk/government/publications/technical-manual/technical-manual-version-121#availability-of-hm-land-registry-system" style="color: #006637 !Important;">Service availability</a></p>
-  <div class="govuk-grid-column-one-third">
-    <h2 class="govuk-heading-l govuk-!-font-size-36" style="margin-top: 0;">Service<br>information</h2>
-  </div>
 
-  <div class="govuk-grid-column-two-thirds">
-    <h3 class="govuk-heading-m" style="margin-bottom: 5px;">Service hours</h3>
-    <p class="govuk-body"><a
-        href="https://www.gov.uk/government/publications/technical-manual/technical-manual-version-121#availability-of-hm-land-registry-system"
-        style="color: #006637 !Important;">Service availability</a></p>
 
       <h3 class="govuk-heading-m" style="margin-bottom: 5px;">Planned maintenance</h3>
       <p class="govuk-body" style="margin-bottom:0px;">
         <a href="https://hmlandregistry.blog.gov.uk/service-status/" style="color: #006637 !Important;">Maintenance schedule</a></p>
     </div>
 
-    <h3 class="govuk-heading-m" style="margin-bottom: 5px;">Planned maintenance</h3>
-    <p class="govuk-body" style="margin-bottom:0px;">
-      <a href="https://hmlandregistry.blog.gov.uk/service-status/" style="color: #006637 !Important;">Maintenance
-        schedule</a>
-    </p>
   </div>
-
-</div>
 
 </div>
 
@@ -1692,7 +908,6 @@
 
   
   <div class="govuk-grid-row">
-  <div class=" govuk-grid-row">
 
     <div class="govuk-grid-column-one-third">
       <h2 class="govuk-heading-l govuk-!-font-size-36" style="margin-top: 0;padding-right: 75px;margin-bottom:0px;">Fair processing and personal information</h2>
@@ -1701,24 +916,11 @@
     <div class="govuk-grid-column-two-thirds">
       <h3 class="govuk-heading-m" style="margin-bottom: 5px;"><a href="https://www.gov.uk/government/organisations/land-registry/about/personal-information-charter" style="color: #006637 !Important;">Personal information charter</a></h3>
       <p class="govuk-body" style="margin-bottom:0px;">For use of information for fraud prevention and protection of public funds. Also, if you or your clients require information on how HM Land Registry processes personal information under the Data Protection Act 2018.</p>
-  <div class="govuk-grid-column-one-third">
-    <h2 class="govuk-heading-l govuk-!-font-size-36" style="margin-top: 0;padding-right: 75px;margin-bottom:0px;">Fair
-      processing and personal information</h2>
-  </div>
 
-  <div class="govuk-grid-column-two-thirds">
-    <h3 class="govuk-heading-m" style="margin-bottom: 5px;"><a
-        href="https://www.gov.uk/government/organisations/land-registry/about/personal-information-charter"
-        style="color: #006637 !Important;">Personal information charter</a></h3>
-    <p class="govuk-body" style="margin-bottom:0px;">For use of information for fraud prevention and protection of
-      public funds. Also, if you or your clients require information on how HM Land Registry processes personal
-      information under the Data Protection Act 2018.</p>
 
     </div>
 
   </div>
-
-</div>
 
 </div>
 
@@ -1736,7 +938,6 @@
     <div class="govuk-grid-column-one-third">
       <h2 class="govuk-heading-l govuk-!-font-size-36" style="margin-top: 0;">Current despatch details</h2>
     </div>
-  <div class=" govuk-grid-row">
 
     <div class="govuk-grid-column-two-thirds">
       <h3 class="govuk-heading-m" style="margin-bottom: 5px;">Despatch address</h3>
@@ -1752,31 +953,10 @@
       <h3 class="govuk-heading-m" style="margin-bottom: 5px;">Direct Debit</h3>
       <p class="govuk-body">
         All charges incurred will be charged to the default Variable Direct Debit (Key #xxxxxxxxxxxx) unless this is changed. See Administrative services.</p>
-  <div class="govuk-grid-column-one-third">
-    <h2 class="govuk-heading-l govuk-!-font-size-36" style="margin-top: 0;">Current despatch details</h2>
-  </div>
 
     </div>
-  <div class="govuk-grid-column-two-thirds">
-    <h3 class="govuk-heading-m" style="margin-bottom: 5px;">Despatch address</h3>
-    <p class="govuk-body">
-      DRAKES HILL COURT<br>
-      BURRINGTON WAY<br>
-      HONICKNOWLE<br>
-      PLYMOUTH<br>
-      DEVON<br>
-      PL5 3LP<br>
-    <p class="govuk-body">Any postal search results, official copies etc ordered through business e-services will be
-      sent to this address unless this address is changed. See Administrative services.</p>
-
-    <h3 class="govuk-heading-m" style="margin-bottom: 5px;">Direct Debit</h3>
-    <p class="govuk-body">
-      All charges incurred will be charged to the default Variable Direct Debit (Key #xxxxxxxxxxxx) unless this is
-      changed. See Administrative services.</p>
 
   </div>
-
-</div>
 
 </div>
 
@@ -1784,7 +964,6 @@
 
 <!-- Footer -->
 {% include "includes/officialCopiesFooter.html" %} 
-{% include "includes/officialCopiesFooter.html" %}
 
 
 
@@ -1793,155 +972,80 @@
 <script>
 
   const data = [
-<<<<<<< HEAD
   { 
       id: 'blank', 
       heading:'',  
       label: '', 
-=======
-    {
-      id: 'blank',
-      heading: '',
-      label: '',
->>>>>>> e03f96cb8aa9654095cfc6a93bd775da289ae545
       href: ''
     },
     { 
-    {
       id: 'digitalRegistrationService',
-<<<<<<< HEAD
       heading: 'Digital registration service', 
       label: 'Go to service', 
-=======
-      heading: 'Digital registration service',
-      label: 'Go to service',
->>>>>>> e03f96cb8aa9654095cfc6a93bd775da289ae545
       href: '#'
     },
     { 
-    {
       id: 'viewMyApplications',
-<<<<<<< HEAD
       heading: 'View applications', 
       label: 'Go to service', 
-=======
-      heading: 'View applications',
-      label: 'Go to service',
->>>>>>> e03f96cb8aa9654095cfc6a93bd775da289ae545
       href: 'page2.html'
     },
     { 
-    {
       id: 'applicationEnquiry',
-<<<<<<< HEAD
       heading: 'Application enquiry', 
       label: 'Go to service', 
-=======
-      heading: 'Application enquiry',
-      label: 'Go to service',
->>>>>>> e03f96cb8aa9654095cfc6a93bd775da289ae545
       href: '#'
     },
     { 
-    {
       id: 'localLandCharges',
-<<<<<<< HEAD
       heading: 'Local land charges', 
       label: 'Go to service', 
-=======
-      heading: 'Local land charges',
-      label: 'Go to service',
->>>>>>> e03f96cb8aa9654095cfc6a93bd775da289ae545
       href: '#'
     },
     { 
-    {
       id: 'officialSearchOfWholeOS1',
-<<<<<<< HEAD
       heading: 'Official search of whole (OS1)', 
       label: 'Go to service', 
-=======
-      heading: 'Official search of whole (OS1)',
-      label: 'Go to service',
->>>>>>> e03f96cb8aa9654095cfc6a93bd775da289ae545
       href: '#'
     },
     { 
-    {
       id: 'officialSearchOfPartOS2',
-<<<<<<< HEAD
       heading: 'Official search of part (OS2)', 
       label: 'Go to service', 
-=======
-      heading: 'Official search of part (OS2)',
-      label: 'Go to service',
->>>>>>> e03f96cb8aa9654095cfc6a93bd775da289ae545
       href: '#'
     },
     { 
-    {
       id: 'officialSearchOfWholeOrPartWithoutPriorityOS3',
-<<<<<<< HEAD
       heading: 'Official search of whole or part without priority (OS3)',  
       label: 'Go to service', 
-=======
-      heading: 'Official search of whole or part without priority (OS3)',
-      label: 'Go to service',
->>>>>>> e03f96cb8aa9654095cfc6a93bd775da289ae545
       href: '#'
     },
     { 
-    {
       id: 'cancellationOfOfficialSearchOfWholeOS1',
-<<<<<<< HEAD
       heading: 'Cancellation of official Search of Whole (OS1)', 
       label: 'Go to service', 
-=======
-      heading: 'Cancellation of official Search of Whole (OS1)',
-      label: 'Go to service',
->>>>>>> e03f96cb8aa9654095cfc6a93bd775da289ae545
       href: '#'
     },
     { 
-    {
       id: 'cancellationOfOfficialSearchOfPartOS2',
-<<<<<<< HEAD
       heading: 'Cancellation of official Search of Part (OS2)', 
       label: 'Go to service', 
-=======
-      heading: 'Cancellation of official Search of Part (OS2)',
-      label: 'Go to service',
->>>>>>> e03f96cb8aa9654095cfc6a93bd775da289ae545
       href: '#'
     },
     { 
-    {
       id: 'documentView',
-<<<<<<< HEAD
       heading: 'Document view', 
       label: 'Go to service', 
-=======
-      heading: 'Document view',
-      label: 'Go to service',
->>>>>>> e03f96cb8aa9654095cfc6a93bd775da289ae545
       href: '#'
     },
     { 
-    {
       id: 'homeRightsSearch',
-<<<<<<< HEAD
       heading: 'Home rights search', 
       label: 'Go to service', 
-=======
-      heading: 'Home rights search',
-      label: 'Go to service',
->>>>>>> e03f96cb8aa9654095cfc6a93bd775da289ae545
       href: '#'
     },
     { 
-    {
       id: 'officialCopyDeedsReferred',
-<<<<<<< HEAD
       heading: 'Official copy – deeds referred', 
       label: 'Go to service', 
       href: '#'
@@ -1950,46 +1054,22 @@
       id: 'officialCopyRegisterHistorical', 
       heading: 'Official copy – register (historical)', 
       label: 'Go to service', 
-=======
-      heading: 'Official copy – deeds referred',
-      label: 'Go to service',
       href: '#'
     },
     { 
-    {
-      id: 'officialCopyRegisterHistorical',
-      heading: 'Official copy – register (historical)',
-      label: 'Go to service',
->>>>>>> e03f96cb8aa9654095cfc6a93bd775da289ae545
-      href: '#'
-    },
-    {
       id: 'officialCopyTitlePlanHistorical',
-<<<<<<< HEAD
       heading: 'Official copy – title plan (Historical)', 
       label: 'Go to service', 
-=======
-      heading: 'Official copy – title plan (Historical)',
-      label: 'Go to service',
->>>>>>> e03f96cb8aa9654095cfc6a93bd775da289ae545
       href: '#'
     },
     { 
-    {
       id: 'officialCopyRegisterPlanCI',
-<<<<<<< HEAD
       heading: 'Official copy – register, title plan or CI',  
       label: 'Go to service', 
-=======
-      heading: 'Official copy – register, title plan or CI',
-      label: 'Go to service',
->>>>>>> e03f96cb8aa9654095cfc6a93bd775da289ae545
       href: '#'
     },
     { 
-    {
       id: 'searchOfTheIndexMap',
-<<<<<<< HEAD
       heading: 'Search of the index map', 
       label: 'Go to service', 
       href: '#'
@@ -1998,22 +1078,10 @@
       id: 'registerViewPDF', 
       heading: 'Register view (PDF)', 
       label: 'Go to service', 
-=======
-      heading: 'Search of the index map',
-      label: 'Go to service',
       href: '#'
     },
     { 
-    {
-      id: 'registerViewPDF',
-      heading: 'Register view (PDF)',
-      label: 'Go to service',
->>>>>>> e03f96cb8aa9654095cfc6a93bd775da289ae545
-      href: '#'
-    },
-    {
       id: 'registerViewHTML',
-<<<<<<< HEAD
       heading: 'Register view (HTML)',  
       label: 'Go to service', 
       href: '#'
@@ -2022,22 +1090,10 @@
       id: 'searchOfTheIndexFranchisesAndManors', 
       heading: 'Search of the index of Franchises and manors (SIF)', 
       label: 'Go to service', 
-=======
-      heading: 'Register view (HTML)',
-      label: 'Go to service',
       href: '#'
     },
     { 
-    {
-      id: 'searchOfTheIndexFranchisesAndManors',
-      heading: 'Search of the index of Franchises and manors (SIF)',
-      label: 'Go to service',
->>>>>>> e03f96cb8aa9654095cfc6a93bd775da289ae545
-      href: '#'
-    },
-    {
       id: 'titlePlanView',
-<<<<<<< HEAD
       heading: 'Title plan view', 
       label: 'Go to service', 
       href: '#'
@@ -2046,34 +1102,16 @@
       id: 'withdrawlOfficialSearchWithPriority', 
       heading: 'Withdraw official search with priority', 
       label: 'Go to service', 
-=======
-      heading: 'Title plan view',
-      label: 'Go to service',
       href: '#'
     },
     { 
-    {
-      id: 'withdrawlOfficialSearchWithPriority',
-      heading: 'Withdraw official search with priority',
-      label: 'Go to service',
->>>>>>> e03f96cb8aa9654095cfc6a93bd775da289ae545
-      href: '#'
-    },
-    {
       id: 'agreedNotice',
-<<<<<<< HEAD
       heading: 'Agreed notice',  
       label: 'Go to service', 
-=======
-      heading: 'Agreed notice',
-      label: 'Go to service',
->>>>>>> e03f96cb8aa9654095cfc6a93bd775da289ae545
       href: '#'
     },
     { 
-    {
       id: 'cancellationOfACaution',
-<<<<<<< HEAD
       heading: 'Cancellation of a caution', 
       label: 'Go to service', 
       href: '#'
@@ -2082,81 +1120,40 @@
       id: 'cancellationOfANotice', 
       heading: 'Cancellation of a notice (not unilateral)', 
       label: 'Go to service', 
-=======
-      heading: 'Cancellation of a caution',
-      label: 'Go to service',
       href: '#'
     },
     { 
-    {
-      id: 'cancellationOfANotice',
-      heading: 'Cancellation of a notice (not unilateral)',
-      label: 'Go to service',
->>>>>>> e03f96cb8aa9654095cfc6a93bd775da289ae545
-      href: '#'
-    },
-    {
       id: 'changeOfAddressForService',
-<<<<<<< HEAD
       heading: 'Change of address for service', 
       label: 'Go to service', 
-=======
-      heading: 'Change of address for service',
-      label: 'Go to service',
->>>>>>> e03f96cb8aa9654095cfc6a93bd775da289ae545
       href: '#'
     },
     { 
-    {
       id: 'changeOfName',
-<<<<<<< HEAD
       heading: 'Change of name', 
       label: 'Go to service', 
-=======
-      heading: 'Change of name',
-      label: 'Go to service',
->>>>>>> e03f96cb8aa9654095cfc6a93bd775da289ae545
       href: '#'
     },
-    {
+    { 
       id: 'changeOfPropertyDescription',
-<<<<<<< HEAD
       heading: 'Change of property description', 
       label: 'Go to service', 
-=======
-      heading: 'Change of property description',
-      label: 'Go to service',
->>>>>>> e03f96cb8aa9654095cfc6a93bd775da289ae545
       href: '#'
     },
     { 
-    {
       id: 'statutoryCharge',
-<<<<<<< HEAD
       heading: 'Statutory charge', 
       label: 'Go to service', 
-=======
-      heading: 'Statutory charge',
-      label: 'Go to service',
->>>>>>> e03f96cb8aa9654095cfc6a93bd775da289ae545
       href: '#'
     },
     { 
-    {
       id: 'deathOfJointProprietor',
-<<<<<<< HEAD
       heading: 'Death of joint proprietor', 
       label: 'Go to service', 
-=======
-      heading: 'Death of joint proprietor',
-      label: 'Go to service',
->>>>>>> e03f96cb8aa9654095cfc6a93bd775da289ae545
       href: '#'
     },
     { 
-    {
       id: 'homeRights',
-<<<<<<< HEAD
       heading: 'Home rights (E-HR1 notice <br>of home rights)', 
       label: 'Go to service', 
       href: '#'
@@ -2171,52 +1168,22 @@
       id: 'restrictions', 
       heading: 'Restrictions (standard e-RX1)', 
       label: 'Go to service', 
-=======
-      heading: 'Home rights (E-HR1 notice <br>of home rights)',
-      label: 'Go to service',
       href: '#'
     },
     { 
-    {
-      id: 'cancellationOfHomeRights',
-      heading: 'Cancellation of home rights (e-HR4)',
-      label: 'Go to service',
-      href: '#'
-    },
-    {
-      id: 'restrictions',
-      heading: 'Restrictions (standard e-RX1)',
-      label: 'Go to service',
->>>>>>> e03f96cb8aa9654095cfc6a93bd775da289ae545
-      href: '#'
-    },
-    {
       id: 'cancellationOfRestriction',
-<<<<<<< HEAD
       heading: 'Cancellation of restriction (e-RX3)', 
       label: 'Go to service', 
-=======
-      heading: 'Cancellation of restriction (e-RX3)',
-      label: 'Go to service',
->>>>>>> e03f96cb8aa9654095cfc6a93bd775da289ae545
       href: '#'
     },
     { 
-    {
       id: 'withdrawlOfARestriction',
-<<<<<<< HEAD
       heading: 'Withdrawal of a restriction (e-RX4)', 
       label: 'Go to service', 
-=======
-      heading: 'Withdrawal of a restriction (e-RX4)',
-      label: 'Go to service',
->>>>>>> e03f96cb8aa9654095cfc6a93bd775da289ae545
       href: '#'
     },
     { 
-    {
       id: 'unilateralNotice',
-<<<<<<< HEAD
       heading: 'Unilateral notice (e-UN1)', 
       label: 'Go to service', 
       href: '#'
@@ -2225,106 +1192,52 @@
       id: 'cancellationOfUnilateralNotice', 
       heading: 'Cancellation of unilateral notice (eUN4)', 
       label: 'Go to service', 
-=======
-      heading: 'Unilateral notice (e-UN1)',
-      label: 'Go to service',
       href: '#'
     },
     { 
-    {
-      id: 'cancellationOfUnilateralNotice',
-      heading: 'Cancellation of unilateral notice (eUN4)',
-      label: 'Go to service',
->>>>>>> e03f96cb8aa9654095cfc6a93bd775da289ae545
-      href: '#'
-    },
-    {
       id: 'removalOfUnilateralNotice',
-<<<<<<< HEAD
       heading: 'Removal of a unilateral notice (e-UN2)', 
       label: 'Go to service', 
-=======
-      heading: 'Removal of a unilateral notice (e-UN2)',
-      label: 'Go to service',
->>>>>>> e03f96cb8aa9654095cfc6a93bd775da289ae545
       href: '#'
     },
     { 
-    {
       id: 'withdrawlOfCaution',
-<<<<<<< HEAD
       heading: 'Withdrawl of caution', 
       label: 'Go to service', 
-=======
-      heading: 'Withdrawl of caution',
-      label: 'Go to service',
->>>>>>> e03f96cb8aa9654095cfc6a93bd775da289ae545
       href: '#'
     },
     { 
-    {
       id: 'dischargeOfCharge',
-<<<<<<< HEAD
       heading: 'Discharge of a charge', 
       label: 'Go to service', 
-=======
-      heading: 'Discharge of a charge',
-      label: 'Go to service',
->>>>>>> e03f96cb8aa9654095cfc6a93bd775da289ae545
       href: '#'
     },
     { 
-    {
       id: 'enquiryByPropertyDescription',
-<<<<<<< HEAD
       heading: 'Enquiry by property description <br>- title view', 
       label: 'Go to service', 
-=======
-      heading: 'Enquiry by property description <br>- title view',
-      label: 'Go to service',
->>>>>>> e03f96cb8aa9654095cfc6a93bd775da289ae545
       href: '#'
     },
     { 
-    {
       id: 'bankruptcySearch',
-<<<<<<< HEAD
       heading: 'Bankruptcy search', 
       label: 'Go to service', 
-=======
-      heading: 'Bankruptcy search',
-      label: 'Go to service',
->>>>>>> e03f96cb8aa9654095cfc6a93bd775da289ae545
       href: '#'
     },
     { 
-    {
       id: 'fullSearch',
-<<<<<<< HEAD
       heading: 'Full search', 
       label: 'Go to service', 
-=======
-      heading: 'Full search',
-      label: 'Go to service',
->>>>>>> e03f96cb8aa9654095cfc6a93bd775da289ae545
       href: '#'
     },
     { 
-    {
       id: 'documentRegistrationService',
-<<<<<<< HEAD
       heading: 'Document registration service', 
       label: 'Go to service', 
-=======
-      heading: 'Document registration service',
-      label: 'Go to service',
->>>>>>> e03f96cb8aa9654095cfc6a93bd775da289ae545
       href: '#'
     },
     { 
-    {
       id: 'registrationView',
-<<<<<<< HEAD
       heading: 'Registration view',  
       label: 'Go to service', 
       href: '#'
@@ -2333,58 +1246,28 @@
       id: 'replyToRequisition', 
       heading: 'Reply to requisition', 
       label: 'Go to service', 
-=======
-      heading: 'Registration view',
-      label: 'Go to service',
       href: '#'
     },
     { 
-    {
-      id: 'replyToRequisition',
-      heading: 'Reply to requisition',
-      label: 'Go to service',
->>>>>>> e03f96cb8aa9654095cfc6a93bd775da289ae545
-      href: '#'
-    },
-    {
       id: 'dataSynchronisationEnquiry',
-<<<<<<< HEAD
       heading: 'Data synchronisation enquiry', 
       label: 'Go to service', 
-=======
-      heading: 'Data synchronisation enquiry',
-      label: 'Go to service',
->>>>>>> e03f96cb8aa9654095cfc6a93bd775da289ae545
       href: '#'
     },
     { 
-    {
       id: 'dataSynchronisationDownloads',
-<<<<<<< HEAD
       heading: 'Data synchronisation downloads', 
       label: 'Go to service', 
-=======
-      heading: 'Data synchronisation downloads',
-      label: 'Go to service',
->>>>>>> e03f96cb8aa9654095cfc6a93bd775da289ae545
       href: '#'
     },
     { 
-    {
       id: 'pdfDownloads',
-<<<<<<< HEAD
       heading: 'PDF downloads', 
       label: 'Go to service', 
-=======
-      heading: 'PDF downloads',
-      label: 'Go to service',
->>>>>>> e03f96cb8aa9654095cfc6a93bd775da289ae545
       href: '#'
     },
     { 
-    {
       id: 'Notifications',
-<<<<<<< HEAD
       heading: 'Notifications', 
       label: 'Go to service', 
       href: '#'
@@ -2393,34 +1276,16 @@
       id: 'messageArea', 
       heading: 'Message area', 
       label: 'Go to service', 
-=======
-      heading: 'Notifications',
-      label: 'Go to service',
       href: '#'
     },
     { 
-    {
-      id: 'messageArea',
-      heading: 'Message area',
-      label: 'Go to service',
->>>>>>> e03f96cb8aa9654095cfc6a93bd775da289ae545
-      href: '#'
-    },
-    {
       id: 'servicesRequested',
-<<<<<<< HEAD
       heading: 'Services requested', 
       label: 'Go to service', 
-=======
-      heading: 'Services requested',
-      label: 'Go to service',
->>>>>>> e03f96cb8aa9654095cfc6a93bd775da289ae545
       href: '#'
     },
     { 
-    {
       id: 'alternateDespatchAddress',
-<<<<<<< HEAD
       heading: 'Alternate despatch address', 
       label: 'Go to service', 
       href: '#'
@@ -2435,40 +1300,16 @@
       id: 'manageGroups', 
       heading: 'Manage groups', 
       label: 'Go to service', 
-=======
-      heading: 'Alternate despatch address',
-      label: 'Go to service',
       href: '#'
     },
     { 
-    {
-      id: 'manageBusinessUnits',
-      heading: 'Manage business units',
-      label: 'Go to service',
-      href: '#'
-    },
-    {
-      id: 'manageGroups',
-      heading: 'Manage groups',
-      label: 'Go to service',
->>>>>>> e03f96cb8aa9654095cfc6a93bd775da289ae545
-      href: '#'
-    },
-    {
       id: 'manageUsers',
-<<<<<<< HEAD
       heading: 'Manage users', 
       label: 'Go to service', 
-=======
-      heading: 'Manage users',
-      label: 'Go to service',
->>>>>>> e03f96cb8aa9654095cfc6a93bd775da289ae545
       href: '#'
     },
     { 
-    {
       id: 'createUser',
-<<<<<<< HEAD
       heading: 'Create user', 
       label: 'Go to service', 
       href: '#'
@@ -2489,46 +1330,16 @@
       id: 'administratorReport', 
       heading: 'Administrator report', 
       label: 'Go to service', 
-=======
-      heading: 'Create user',
-      label: 'Go to service',
       href: '#'
     },
     { 
-    {
-      id: 'personalDetails',
-      heading: 'Personal details',
-      label: 'Go to service',
-      href: '#'
-    },
-    {
-      id: 'changePassword',
-      heading: 'Change password',
-      label: 'Go to service',
-      href: '#'
-    },
-    {
-      id: 'administratorReport',
-      heading: 'Administrator report',
-      label: 'Go to service',
->>>>>>> e03f96cb8aa9654095cfc6a93bd775da289ae545
-      href: '#'
-    },
-    {
       id: 'vddinformation',
-<<<<<<< HEAD
       heading: 'VDD information', 
       label: 'Go to service', 
-=======
-      heading: 'VDD information',
-      label: 'Go to service',
->>>>>>> e03f96cb8aa9654095cfc6a93bd775da289ae545
       href: '#'
     },
     { 
-    {
       id: 'managedServices',
-<<<<<<< HEAD
       heading: 'Application Management Services', 
       label: 'Go to service', 
       href: 'managedServices.html'
@@ -2537,57 +1348,31 @@
       id: 'mapSearch', 
       heading: 'MapSearch', 
       label: 'Go to service', 
-=======
-      heading: 'Application Management Services',
-      label: 'Go to service',
-      href: 'managedServices.html'
-    },
-    {
-      id: 'mapSearch',
-      heading: 'MapSearch',
-      label: 'Go to service',
->>>>>>> e03f96cb8aa9654095cfc6a93bd775da289ae545
       href: '#'
     },
 
   ]
 
 let inEditMode = false
-  let inEditMode = false
 
 const button = document.getElementById('edit')
 const currentInputs = document.getElementsByClassName('selects')
 const inputSection = document.getElementById('inputs')
 const valuesSection = document.getElementById('service-values')
-  const button = document.getElementById('edit')
-  const currentInputs = document.getElementsByClassName('selects')
-  const inputSection = document.getElementById('inputs')
-  const valuesSection = document.getElementById('service-values')
 
 const htmlCollectionToArray = (array) => Array.prototype.slice.call(array)
 const selects = htmlCollectionToArray(currentInputs);
-  const htmlCollectionToArray = (array) => Array.prototype.slice.call(array)
-  const selects = htmlCollectionToArray(currentInputs);
 
 const initialiseApp = () => {
   updateValues()
   inputSection.style.display = 'none'
 }
-  const initialiseApp = () => {
-    updateValues()
-    inputSection.style.display = 'none'
-  }
 
 const updateValues = () => {
   for (const [index, select] of selects.entries()) {
     // Find the associated data from our array of mock data
     const service = data.find(element => element.id === select.value)
-  const updateValues = () => {
-    for (const [index, select] of selects.entries()) {
-      // Find the associated data from our array of mock data
-      const service = data.find(element => element.id === select.value)
 
-<<<<<<< HEAD
     if(service) {
       // Update the text of the relevant fields
       document.getElementById(`value${index}`).classList.remove('unselected')
@@ -2595,16 +1380,6 @@ const updateValues = () => {
       document.getElementById(`value-label${index}`).innerHTML = service.label
     } else {
       document.getElementById(`value${index}`).classList.add('unselected')
-=======
-      if (service) {
-        // Update the text of the relevant fields
-        document.getElementById(`value${index}`).classList.remove('unselected')
-        document.getElementById(`value-heading${index}`).innerHTML = service.heading
-        document.getElementById(`value-label${index}`).innerHTML = service.label
-      } else {
-        document.getElementById(`value${index}`).classList.add('unselected')
-      }
->>>>>>> e03f96cb8aa9654095cfc6a93bd775da289ae545
     }
   }
 }
@@ -2612,9 +1387,6 @@ const updateValues = () => {
 const handleEdit = (event) => {
   event.preventDefault()
   inEditMode = !inEditMode
-  const handleEdit = (event) => {
-    event.preventDefault()
-    inEditMode = !inEditMode
 
   if (inEditMode) {
     button.innerHTML = 'Update shortcuts'
@@ -2622,22 +1394,10 @@ const handleEdit = (event) => {
   } else {
     inputSection.style.display = 'none'
     button.innerHTML = 'Edit shortcuts'
-    if (inEditMode) {
-      button.innerHTML = 'Update shortcuts'
-      inputSection.style.display = 'block'
-    } else {
-      inputSection.style.display = 'none'
-      button.innerHTML = 'Edit shortcuts'
-    }
-
-    updateValues()
   }
 
   updateValues()
 }
-  // load data from some database... 
-  initialiseApp()
-  button.addEventListener('click', handleEdit)
 
 // load data from some database... 
 initialiseApp()
@@ -2651,16 +1411,12 @@ button.addEventListener('click', handleEdit)
 window.onload = function() {
   updateValues();
 };
-  window.onload = function () {
-    updateValues();
-  };
 
 </script>
 
 
 <script>
     function myFunction() {
-  function myFunction() {
     var x = document.getElementById("linksDisplay");
     if (x.style.display === "none") {
       x.style.display = "block";
@@ -2669,7 +1425,6 @@ window.onload = function() {
     }
   }
   
-
 </script>
 
 {% endblock %}
