@@ -4,6 +4,7 @@
 {% endblock %}
 {% block content %}
 
+{% include "includes/notificationsCookies.html" %} 
 {% include "includes/notificationsNavigation.html" %} 
 
 <script>
@@ -100,72 +101,56 @@
   background-color: #0b0c0c;
 } 
 
+#EditableLinksPanel {
+  padding: 40px 0 0 0;
+}
+
 </style>
 
-<div class="govuk-phase-banner" style="padding-left: 30px;border-bottom:0px;">
-  <p class="govuk-phase-banner__content">
-    <strong class="govuk-tag govuk-phase-banner__content__tag">
-      beta
-    </strong>
-    <span class="govuk-phase-banner__text">
-      This is a new design layout – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
-    </span>
-  </p>
-</div>
-
-<!-- Hero section -->
-<div id="SectionHeroImage">
-
-  <div id="SectionHeroContent">
-      <div class="heroTextBackground">
-        <h1 class="govuk-heading-xl" style="color:#ffffff;margin-bottom: 10px;">
+<div id="linksPanel" class="govuk-body" style="background: #ffffff;">
+  <div class="govuk-phase-banner">
+    <p class="govuk-phase-banner__content">
+      <strong class="govuk-tag govuk-phase-banner__content__tag">
+        Beta
+      </strong>
+      <span class="govuk-phase-banner__text">
+        This is a new design layout – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+      </span>
+    </p>
+  </div>
+  </div>
+  
+  
+  
+  
+  <!-- Edit links section -->
+  <div id="EditableLinksPanel">
+    
+    
+      <div id="linksPanel" class="govuk-body" style="background: #ffffff;">
+  
+  
+  
+        <h1 class="govuk-heading-xl">
           HM Land Registry Portal
         </h1>
-        <p class="govuk-body govuk-!-font-size-24" style="color:#ffffff;margin-bottom:0px;">
-          Access your online services
-        </p>
-      </div>
-  </div>
-
-</div>
-
-
-
-<!-- Edit links section -->
-<div id="EditableLinksPanel">
-    <div id="linksPanel" class="govuk-body" style="background: #ffffff;">
-
-
-
-<div id="contentPanel">
   
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-one-third">
-      <h2 class="govuk-heading-xl" style="margin-top: 0;">2 <span class="govuk-heading-l govuk-!-font-size-36">unresolved requisitions</span></h2>
-      <p> You have <a style="color:#006637;" href="../own-page/dates.html"><b>2 applications</b></a> with unresolved requisitions.</p>
-      <p class="govuk-body">Last updated at 5:30pm on Tuesday 20 May</p>
-    </div>
-
-    <div class="govuk-grid-column-one-third">
-      <h2 class="govuk-heading-xl" style="margin-top: 0;">30 <span class="govuk-heading-l govuk-!-font-size-36">avoidable requisitions</span></h2>
-      <p>You have received 30 avoidable requisitions in the last 3 months</p>
-    <p><a style="color:#006637;" href="../own-page/dates.html"><b>View your most frequent</b></a></p>
-    </div>
-
-    <div id="newsArticle">
-      <div class="newsImage">
-        <img src="/public/images/news-va.png" style="width:100%;">
-      </div>
-
-      <div class="newsTextSection">
-          <p>Your recommended training: <a style="color:#006637;" href="../own-page/dates.html"><b>How to enter names correctly</b></a></p>
-      </div>
-    </div>
-
-  </div>
-        <!-- Divider line -->
-<div class="dividerLine10"></div> 
-
+  
+        <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+          <div class="govuk-notification-banner__header">
+            <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+              Important
+            </h2>
+          </div>
+          <div class="govuk-notification-banner__content">
+            <p class="govuk-notification-banner__heading">
+              You have 2 applications with unresolved requisitions.
+              <a class="govuk-notification-banner__link" href="#">View applications</a>.
+              <p class="govuk-body">Last updated at 5:30pm on Tuesday 20 May</p>
+            </p>
+          </div>
+        </div>
+        
           <!-- Filters and Search Section - Start -->
           <h2 class="govuk-heading-l govuk-!-font-size-36">My services<button id="edit" class="govuk-button govuk-button--secondary" style="float:right;margin-bottom: 0;" onclick="myFunction()">Edit shortcuts</button></h2> 
           
@@ -674,11 +659,10 @@
 
 
 
-
-
-
 <!-- Divider line -->
 <div class="dividerLine10"></div> 
+
+
 
 
 
@@ -692,6 +676,12 @@
 
 
     <div id="newsArticle">
+
+
+
+
+
+
 
       <div class="newsImage">
         <img src="/public/images/news-va.png" style="width:100%;">
@@ -734,8 +724,6 @@
 </div> 
 
 
-
-
 <!-- Divider line -->
 <!-- <div class="dividerLine10"></div> -->
 
@@ -743,7 +731,7 @@
 
 
 <!-- Your details -->
-<!-- <div id="contentPanel" class="govuk-body">
+<!-- <div id="contentPanel" class="govuk-body"">
 
 
   
@@ -872,7 +860,32 @@
 
 
 
+<!-- Divider line -->
+<div class="dividerLine10"></div>
 
+
+
+<!-- Webinars -->
+<div id="contentPanel" class="govuk-body"">
+
+
+  
+  <div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-one-third">
+      <h2 class="govuk-heading-l govuk-!-font-size-36" style="margin-top: 0;padding-right: 75px;margin-bottom:0px;">Webinars</h2>
+    </div>
+    
+    <div class="govuk-grid-column-two-thirds">
+      <h3 class="govuk-heading-m" style="margin-bottom: 5px;">Join our free webinars</h3>
+      <p class="govuk-body" style="margin-bottom:0px;padding-right: 30px;">Learn how to prepare and send us quality applications. Sessions will help you avoid the most common reasons for a request for information (requisition). Get details of available topics and registration information on <a href="https://www.gov.uk/government/organisations/land-registry/about/personal-information-charter" style="color: #006637 !Important;">GOV.UK</a></p>
+
+
+    </div>
+
+  </div>
+
+</div>
 
 
 
