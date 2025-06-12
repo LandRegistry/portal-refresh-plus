@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+{% extends "layouts/layout_homepage.html" %}
+{% block pageTitle %} View applications - Guidance
+{% endblock %}
+{% block content %}
+
+{% include "includes/notificationsNavigation.html" %} 
+
+<style>
+.govuk-width-container-fixed {
+    max-width: 1080px;
+    margin: auto;
+    padding-top: 40px;
+    padding-bottom: 100px;
+}
+
+
+.govuk-heading-s {
+    font-family: 'Roboto', sans-serif;
+}
+
+.govuk-accordion__section-toggle-text {
+  color: #006637;
+}
+
+.govuk-accordion-nav__chevron--down {
+  color: #006637;
+}
+
+.govuk-accordion-nav__chevron {
+  color: #006637;
+}
+
+.govuk-accordion__show-all-text {
+  color: #006637;
+}
+
+li:hover {
+  color: #0b0c0c;
+}
+
+.govuk-summary-card__content {
+    padding: 15px 20px;
+}
+
+.govuk-summary-card {
+    margin-bottom: 20px;
+    border: 1px solid #b1b4b6;
+}
+
+.govuk-summary-card__title-wrapper {
+    padding: 15px;
+    border-bottom: 1px solid transparent;
+    background-color: #f3f2f1;
+}
+
+.expedite-button {
+
+    margin-top: 20px;
+    margin-bottom: -20px;
+}    
+
+.delayed-tag {
+    color: #594d00;
+    background: #fff7bf;
+    float: right;
+    margin-top: -50px;
+}
+
+.active-tag {
+    color: #10403c;
+    background: #bfe3e0;
+    float: right;
+    margin-top: -50px;
+}
+</style>
+
+
+<!-- Back & clear data top -->
+<!-- Back & clear data top -->
+<div>
+  <div style="margin: auto;">
+      
+    <main class="govuk-main-wrapper">
+
+      <div class="govuk-width-container wide960">
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+              <a href="/projects/notifications-2/design/VA-requisitionB" class="govuk-back-link" style="margin-bottom: 40px; margin-top: -90px;">Back to applications</a>
+                <h2 class="govuk-heading-l">Ainsley.Brown.43</h2>
+
+                <!-- NEW SUMMARY CARD  -->
+
+                <div class="govuk-summary-card">
+                  <div class="govuk-summary-card__title-wrapper">
+                    <h2 class="govuk-summary-card__title">
+                      Progress
+                    </h2>
+                    <td class="govuk-table__cell">
+                      <strong class="govuk-tag govuk-tag--yellow delayed-tag" >
+                       Delayed
+                      </strong>
+                    </td>
+                  </div>
+                      
+                  <div class="govuk-summary-card__content">
+                    <dl class="govuk-summary-list">
+                        <div class="govuk-summary-list__row">
+                          <dt class="govuk-summary-list__key">
+                            Received by HMLR
+                          </dt>
+                          <dd class="govuk-summary-list__value">
+                            25/01/2024
+                          </dd>
+                        </div>
+
+                        <div class="govuk-summary-list__row">
+                          <dt class="govuk-summary-list__key">
+                            Estimated completion date
+                          </dt>
+                          <dd class="govuk-summary-list__value">
+                            25/11/2024
+                          </dd>
+                        </div>
+                    
+                      <!-- <div>
+                        <button type="submit" class="govuk-button govuk-button--secondary expedite-button" data-module="govuk-button">
+                            Expedite
+                        </button>
+                      </div> -->
+                    </dl>
+                  </div>
+                </div>
+              
+                <!-- NEW SUMMARY CARD  -->
+
+              <div class="govuk-summary-card">
+                <div class="govuk-summary-card__title-wrapper">
+                  <h2 class="govuk-summary-card__title">
+                    Application details
+                  </h2>
+                </div>
+                <div class="govuk-summary-card__content">
+                  <dl class="govuk-summary-list">
+                    <div class="govuk-summary-list__row">
+                      <dt class="govuk-summary-list__key">
+                        HMLR reference
+                      </dt>
+                      <dd class="govuk-summary-list__value">
+                        S827LKJ
+                      </dd>
+                    </div>
+                    <div class="govuk-summary-list__row">
+                      <dt class="govuk-summary-list__key">
+                        Title number
+                      </dt>
+                      <dd class="govuk-summary-list__value">
+                        RE918270
+                      </dd>
+                    </div>
+                    <div class="govuk-summary-list__row">
+                      <dt class="govuk-summary-list__key">
+                        Parent titles
+                      </dt>
+                      <dd class="govuk-summary-list__value">
+                        No
+                      </dd>
+                    </div>
+                    <div class="govuk-summary-list__row">
+                      <!-- <dt class="govuk-summary-list__key">
+                        Applicant
+                      </dt>
+                      <dd class="govuk-summary-list__value">
+                        John James
+                      </dd> -->
+                    </div>
+                    <div class="govuk-summary-list__row">
+                      <dt class="govuk-summary-list__key">
+                        Application type
+                      </dt>
+                      <dd class="govuk-summary-list__value">
+                        Register update
+                      </dd>
+                    </div>
+                  </dl>
+                </div>
+              </div>
+
+              <!-- NEW SUMMARY CARD  -->
+
+              <div class="govuk-summary-card">
+                <div class="govuk-summary-card__title-wrapper">
+                  <h2 class="govuk-summary-card__title">
+                    Requisition
+                  </h2>
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">
+                      <strong class="govuk-tag govuk-tag--turquoise active-tag">
+                        Active
+                      </strong>
+                    </td>
+                  </tr>
+                </div>
+                
+                <div class="govuk-summary-card__content">
+                    <p class="govuk-body">
+                      <a href="/public/documents/requisition-letter-prototype.pdf" target=”_blank” class="govuk-link govuk-link--no-visited-state" style="color: #006637;">Requisition issued 22/04/24</a>
+                    </p>
+                    <button type="submit" onclick="window.location.href='/projects/view-applications/rpc4/applications/test-pageB'" class="govuk-button" data-module="govuk-button" style="margin-right: 10px">Respond</button>
+                    <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                      Request extension
+                    </button>
+                </div>
+              
+              </div>
+
+              <!-- NEW SUMMARY CARD  -->
+
+              <div class="govuk-summary-card">
+                <div class="govuk-summary-card__title-wrapper">
+                  <h2 class="govuk-summary-card__title">
+                    Correspondence
+                  </h2>
+                </div>
+
+                <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default" style="margin-left: 20px; margin-top: 10px;">
+                  <div class="govuk-accordion__section">
+                    <div class="govuk-accordion__section-header">
+                      <h2 class="govuk-accordion__section-heading">
+                        <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
+                          Received from HM Land Registry
+                        </span>
+                      </h2>
+                    </div>
+                    <div id="accordion-default-content-1" class="govuk-accordion__section-content">
+                      <p style="font-weight: bold;">Review</p>
+                      <p class="govuk-body">
+                        <a href="#" class="govuk-link govuk-link--no-visited-state" style="color: #006637;">Requisition issued 22/04/24</a>
+                      </p>
+                      <p style="font-weight: bold;">Resolved</p>
+                      <p class="govuk-body">
+                        -
+                      </p>
+                      <p style="font-weight: bold;">Information only</p>
+                      <p class="govuk-body">
+                        <a href="#" class="govuk-link govuk-link--no-visited-state" style="color: #006637;">Letter issued 08/05/2024</a>
+                      </p>
+                    </div>
+                  </div>
+                  <div class="govuk-accordion__section">
+                    <div class="govuk-accordion__section-header">
+                      <h2 class="govuk-accordion__section-heading">
+                        <span class="govuk-accordion__section-button" id="accordion-default-heading-2">
+                          Sent to HM Land Registry
+                        </span>
+                      </h2>
+                    </div>
+                    <div id="accordion-default-content-2" class="govuk-accordion__section-content">
+                      
+                      <p class="govuk-body">
+                        <a href="#" class="govuk-link govuk-link--no-visited-state" style="color: #006637;">Letter sent 14/07/2024</a><br>
+                        <a href="#" class="govuk-link govuk-link--no-visited-state" style="color: #006637;">Letter sent 11/05/2024</a><br>
+                      </p>
+                     
+                    </div>
+                  </div>
+                </div>
+              </div>  
+
+              <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                Save as PDF
+              </button>
+          </div>    
+        </div>
+      </div>
+     
+    </main>
+  </div>
+</div>
+
+
+<div class="govuk-grid-column-full" style="bottom:0;padding:0px;border-top:5px solid #00703C;">
+   
+  <div style="padding:30px; background: #f3f2f1;">
+
+    <p style="color: #6d6d6d; text-decoration: none;font-size: 16px;margin-bottom:15px;">The following links open in a new tab.</p>
+
+    <a class="footlink" style="color: grey; text-decoration: none;"><u>Terms and conditions</u></a>
+    |
+    <a class="footlink" style="color: grey; text-decoration: none;"><u>Accessibility statement</u></a>
+    |
+    <a class="footlink" style="color: grey; text-decoration: none;"><u>Freedom of information</u></a>
+    |
+    <a class="footlink" style="color: grey; text-decoration: none;"><u>© Crown copyright</u></a>
+
+  </div>
+</div>
+
+
+<!-- Content Area - End -->
+
+
+
+{% endblock %}

@@ -1,0 +1,330 @@
+{#- We can't mount GOV.UK Frontend's assets at root as it's done automatically by the extensions framework. -#}
+{%- set assetPath = '/govuk/assets' -%}
+
+{% extends "govuk/template.njk" %}
+
+{% from "govuk/components/accordion/macro.njk"           import govukAccordion %}
+{% from "govuk/components/back-link/macro.njk"           import govukBackLink %}
+{% from "govuk/components/breadcrumbs/macro.njk"         import govukBreadcrumbs %}
+{% from "govuk/components/button/macro.njk"              import govukButton %}
+{% from "govuk/components/character-count/macro.njk"     import govukCharacterCount %}
+{% from "govuk/components/checkboxes/macro.njk"          import govukCheckboxes %}
+{% from "govuk/components/cookie-banner/macro.njk"       import govukCookieBanner %}
+{% from "govuk/components/date-input/macro.njk"          import govukDateInput %}
+{% from "govuk/components/details/macro.njk"             import govukDetails %}
+{% from "govuk/components/error-message/macro.njk"       import govukErrorMessage %}
+{% from "govuk/components/error-summary/macro.njk"       import govukErrorSummary %}
+{% from "govuk/components/fieldset/macro.njk"            import govukFieldset %}
+{% from "govuk/components/file-upload/macro.njk"         import govukFileUpload %}
+{% from "govuk/components/input/macro.njk"               import govukInput %}
+{% from "govuk/components/inset-text/macro.njk"          import govukInsetText %}
+{% from "govuk/components/notification-banner/macro.njk" import govukNotificationBanner %}
+{% from "govuk/components/panel/macro.njk"               import govukPanel %}
+{% from "govuk/components/phase-banner/macro.njk"        import govukPhaseBanner %}
+{% from "govuk/components/radios/macro.njk"              import govukRadios %}
+{% from "govuk/components/select/macro.njk"              import govukSelect %}
+{% from "govuk/components/skip-link/macro.njk"           import govukSkipLink %}
+{% from "govuk/components/summary-list/macro.njk"        import govukSummaryList %}
+{% from "govuk/components/table/macro.njk"               import govukTable %}
+{% from "govuk/components/tabs/macro.njk"                import govukTabs %}
+{% from "govuk/components/tag/macro.njk"                 import govukTag %}
+{% from "govuk/components/textarea/macro.njk"            import govukTextarea %}
+{% from "govuk/components/warning-text/macro.njk"        import govukWarningText %}
+
+{% block head %}
+  {% include "includes/head.html" %}
+{% endblock %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+
+<style>
+
+.dropdown-account {
+  cursor: pointer;
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color: white;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+  font-weight:700;
+}
+
+.dropdown-account-clicked {
+  background-color: #f3f2f1;
+  box-shadow: inset -22px 0 0 #f3f2f1, inset 15px 0 0 #f3f2f1, inset 0 -3px 0 #1d70b8;
+  background-image: url("/public/images/icon_govuk_chevronupBlue.svg"); background-size: 25px; background-repeat: no-repeat; background-position-x: 10px;background-position-y: center; 
+}
+
+.dropdown-services {
+  cursor: pointer;
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color: white;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+  font-weight:700;
+}
+
+.dropdown-services-clicked {
+  background-color: #f3f2f1;
+  box-shadow: inset -22px 0 0 #f3f2f1, inset 15px 0 0 #f3f2f1, inset 0 -3px 0 #1d70b8;
+  background-image: url("/public/images/icon_govuk_chevronupBlue.svg"); background-size: 25px; background-repeat: no-repeat; background-position-x: 10px;background-position-y: center; 
+}
+
+.dropbtn-services {
+  cursor: pointer;
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color: white;
+
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+  font-weight:700;
+  margin-left:36px;
+  margin-right: 16px;
+}
+
+.dropbtn-services:hover {
+  color: #b1b4b6;
+}
+
+.dropbtn-services-clicked {
+  color: #1d70b8;
+}
+
+.dropbtn-services-clicked:hover {
+  color: #1d70b8;
+}
+
+
+.dropbtn-account {
+  cursor: pointer;
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color: white;
+
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+  font-weight:700;
+  margin-left:36px;
+  margin-right: 16px;
+}
+
+.dropbtn-account:hover {
+  color: #b1b4b6;
+}
+
+.dropbtn-account-clicked {
+  color: #1d70b8;
+}
+
+.dropbtn-account-clicked:hover {
+  color: #1d70b8;
+}
+
+
+.dropdown-section {
+  background-color: #f3f2f1;
+}
+
+.dropdown-content {
+  display:none;
+  background-color: #f3f2f1;
+  margin-top: -10px;
+  border-bottom: 10px solid #789904;
+}
+
+
+.show {
+  display: block;
+}
+</style>
+
+<header class="govuk-header " role="banner" data-module="govuk-header">
+  <div class="govuk-header__container govuk-width-container">
+    
+    <div class="govuk-header__logo">
+      <a href="#" class="govuk-header__link govuk-header__link--homepage">
+        <span class="govuk-header__logotype">
+          <img src="/public/images/header-logo.png" alt="hmlrlogo" style="height: 30px;">
+        </span>
+      </a>
+    </div>
+
+    <div class="govuk-header__service">
+      <a href="#" class="govuk-header__link govuk-header__link--service-name">
+        Portal services
+      </a>
+    </div>
+    
+    <div class="govuk-header__content">
+      <ul style="float: right;">
+        
+        <li class="parent-dropdown parentIconDown2" id="dropdown-account-chevron">
+          <div class="dropdown-services" id="dropdown-services">
+            <button class="dropbtn-services" id="dropdown-services-button" onclick="myFunction1()">Services</button>
+          </div>
+        </li>
+         
+        <li class="parent"><a href="PortalRefreshFeedback@landregistry.gov.uk">Contact us</a></li>
+  
+        <li class="parent-dropdown parentIconDown2" id="dropdown-account-chevron">
+          <div class="dropdown-account" id="dropdown-account">
+            <button class="dropbtn-account" id="dropdown-account-button" onclick="myFunction2()">Jane Smith</button>
+          </div>
+        </li>
+        <li class="parent" style="text-align: center;"><a href="#">Log out</a></li>
+      </ul>
+    </div>
+  </div>
+</header>
+
+<div class="dropdown-content" id="myDropdown-services">
+  <div class="govuk-width-container">
+    <div class="govuk-grid-row">
+
+      <div class="govuk-grid-column-two-thirds">
+
+            <h3 class="govuk-heading-m">Information services</h3>
+            <ul class="govuk-list govuk-!-font-weight-bold govuk-body govuk-!-font-size-16">
+              <li><a class="govuk-link" href="#">Request official copies</a></li>
+              <li><a class="govuk-link" href="#">Official Search of Whole with Priority</a></li>
+              <li><a class="govuk-link" href="#">Official Search of Part with Priority</a></li>
+              <li><a class="govuk-link" href="#">Withdraw Official Search with Priority</a></li>
+              <li><a class="govuk-link" href="#">Official Search of Whole without Priority</a></li>
+              <li><a class="govuk-link" href="#">Local Land Charges Search</a></li>
+              <li><a class="govuk-link" href="#">MapSearch</a></li>
+              <li><a class="govuk-link" href="#">Application Enquiry</a></li>
+              <li><a class="govuk-link" href="#">Search of the Index Map</a></li>
+              <li><a class="govuk-link" href="#">Home Rights Search</a></li>
+              <li><a class="govuk-link" href="#">Search of the Index of Relating Franchises and Manors</a></li>
+              <li><a class="govuk-link" href="#">Enquiry by Property Description - Title View</a></li>
+              <li><a class="govuk-link" href="#">Register View - pdf</a></li>
+              <li><a class="govuk-link" href="#">Register View - html</a></li>
+              <li><a class="govuk-link" href="#">Title Plan View</a></li>
+              <li><a class="govuk-link" href="#">Document View</a></li>
+              <li><a class="govuk-link" href="#">Request historical copies</a></li>
+            </ul>
+      </div>
+
+      <div class="govuk-grid-column-one-third">
+        <h3 class="govuk-heading-m">Information services</h3>
+        <ul class="govuk-list govuk-!-font-weight-bold govuk-body govuk-!-font-size-16">
+          <li><a class="govuk-link" href="#">My Portal Home page</a></li>
+          <li><a class="govuk-link" href="#">View Applications</a></li>
+          <li><a class="govuk-link" href="#">Digital Registration Service</a></li>
+          <li><a class="govuk-link" href="#">Reply to Requisition</a></li>
+        </ul>
+      </div>
+      
+
+    </div>
+  </div>
+</div>
+
+<div class="dropdown-content " id="myDropdown-account">
+  <div class="govuk-width-container">
+    <ul class="dropdown-section ">
+      <div class="govuk-body myAccountContent" style="margin-bottom:0px;">
+
+        <div>
+          <div class="myAccountTitle" style="padding-bottom:3px;">
+            Logged in as:
+          </div>
+          <div class="myAccount2ndLine" style="padding-bottom:15px;">
+            Administrator 
+          </div>
+          <div class="myAccountTitle" style="padding-bottom:3px;">
+          User ID:
+        </div>
+        <div class="myAccount2ndLine" style="padding-bottom:15px;">
+            xxxxxxxxxxxxxx 
+        </div>
+        <div class="myAccountTitle" style="padding-bottom:3px;">
+          You last logged in on
+        </div>
+        <div class="myAccount2ndLine" style="padding-bottom:15px;">
+            15 July 2022 10:19:23 BST
+        </div>
+        <div class="myAccount2ndLine" style="padding-bottom:15px;">
+          If these details are incorrect, please log out and contact us.                   
+        </div>
+            <!-- <a href="#" style="margin:0px;color:#00703C;font-weight:700;font-size:14px;">View profile</a> -->
+
+      </div>
+
+      <hr>
+
+      <div class="myAccountTitle" style="padding-bottom:3px;padding-top: 15px;">
+        <b>Primary Business Unit Administrator (BUA):</b> 
+      </div>
+      <div class="myAccount2ndLine">
+        John Taylor
+        <!-- <a href="#" style="margin:0px;color:#00703C;"><b>JohnTaylor@bigbusiness.com</b></a> -->
+      </div>
+
+          <!-- <button id="logOut" class="govuk-button" style="margin-top:20px;">Log out</button> -->
+    </ul>
+  </div>
+</div>
+
+
+<div class="govuk-width-container">
+  <div class="govuk-phase-banner" style="border-bottom: none;">
+    <p class="govuk-phase-banner__content">
+      <strong class="govuk-tag govuk-phase-banner__content__tag">
+        beta
+      </strong>
+      <span class="govuk-phase-banner__text">
+        This is a new design layout - your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+      </span>
+    </p>
+  </div>
+</div>
+
+<!-- Hero section -->
+<div id="SectionHeroImage">
+</div>
+{% endblock %}
+
+{% set mainClasses = mainClasses | default("govuk-main-wrapper--auto-spacing") %}
+
+{% if useAutoStoreData %}
+  {% block footer %}
+    {{ govukFooter({
+      meta: {
+        items: [
+          {
+            href: "https://govuk-prototype-kit.herokuapp.com/",
+            text: "GOV.UK Prototype Kit " + releaseVersion
+          },
+          {
+            href: "/prototype-admin/clear-data",
+            text: "Clear data"
+          }
+        ],
+        visuallyHiddenTitle: "Footer links"
+      }
+    }) }}
+  {% endblock %}
+{% endif %}
+
+{% block bodyEnd %}
+  {% block scripts %}
+    {% include "includes/scripts.html" %}
+    {% block pageScripts %}{% endblock %}
+  {% endblock %}
+  <!-- GOV.UK Prototype Kit {{releaseVersion}} -->
+{% endblock %}

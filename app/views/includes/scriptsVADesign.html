@@ -1,0 +1,112 @@
+<!-- Javascript -->
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
+<script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+{% for scriptUrl in extensionConfig.scripts %}
+  <script src="{{scriptUrl}}"></script>
+{% endfor %}
+
+<script src="/public/javascripts/application.js"></script>
+<script src="/public/javascripts/table-filtering-notifications.js"></script>
+<script src="/public/javascripts/table-filtering-hmlrtoreview.js"></script>
+<script src="/public/javascripts/sortable-table.js"></script>
+<script src="/public/javascripts/sortable-table-hmlrtoreview.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+<script src="/public/javascripts/notificationBannerHide.js"></script>
+<script src="/public/javascripts/inReviewBannerHide.js"></script>
+<script src="/public/javascripts/addNotes.js"></script>
+
+{% if useAutoStoreData %}
+  <script src="/public/javascripts/auto-store-data.js"></script>
+{% endif %}
+
+<script>
+  $(document).ready(function() {
+  $('#cat').select2({
+    placeholder: "Select a colleague"
+    });
+  });
+  </script>
+
+<script>
+  (function($) {
+
+var Defaults = $.fn.select2.amd.require('select2/defaults');
+
+$.extend(Defaults.defaults, {
+    searchInputPlaceholder: 'Search...'
+});
+
+var SearchDropdown = $.fn.select2.amd.require('select2/dropdown/search');
+
+var _renderSearchDropdown = SearchDropdown.prototype.render;
+
+SearchDropdown.prototype.render = function(decorated) {
+
+    // invoke parent method
+    var $rendered = _renderSearchDropdown.apply(this, Array.prototype.slice.apply(arguments));
+
+    this.$search.attr('placeholder', this.options.get('searchInputPlaceholder'));
+
+    return $rendered;
+};
+
+})(window.jQuery);
+</script>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+      $('#attachmentSelection').on('change', function() {
+        if ( this.value == '1')
+        {
+          $("#business").show();
+        }
+        else
+        {
+          $("#business").hide();
+        }
+      });
+  });
+      </script>
+
+<script>
+  const box = document.getElementById('filtersBox');
+  
+  const btn = document.getElementById('showFilters');
+  
+  showFilters.addEventListener('click', function handleClick() {
+    if (filtersBox.style.display === 'none') {
+      filtersBox.style.display = 'block';
+  
+      showFilters.textContent = 'Hide filters';
+    } else {
+      filtersBox.style.display = 'none';
+  
+      showFilters.textContent = 'Show filters';
+    }
+  });
+  </script>
+
+<script>
+  function filter(event, tableId, filterCol) {
+    let checkboxes = document.getElementsByTagName("input");
+    let rows = document.getElementById(tableId).getElementsByTagName("tr");
+    for(let r = 0;r<rows.length;r++){
+      let cols = rows[r].querySelectorAll(filterCol);
+      rows[r].style = "display: table-row";
+      for(let i = 0;i<checkboxes.length;i++){
+        let value = checkboxes[i].value.toLocaleUpperCase();
+        for(let c= 0; c<cols.length;c++){
+          let cvalue = cols[c].innerText.toLocaleUpperCase();
+          if(cvalue === value && checkboxes[i].checked === false){
+            rows[r].style = "display: none";
+          }
+        }
+      }
+    }
+  }
+  
+  document.querySelectorAll([".option1",".option3"]).forEach(input => input.addEventListener('input', ()=>filter(event,"listingTable",[".check1",".check3"])));
+  
+  </script>
+
+  <!-- Content Area - End -->

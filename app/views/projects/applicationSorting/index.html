@@ -1,0 +1,111 @@
+{% extends "layouts/layout_ProjectPage.html" %}
+
+{% block pageTitle %}
+Homepage
+{% endblock %}
+
+{% block content %}
+
+
+
+<div class="govuk-grid-row govuk-body">
+
+<div class="govuk-grid-column-full backButton">
+    <a href="/index.html" class="govuk-back-link" style="margin-bottom:20px;">Back to projects</a>
+</div>
+
+<!-- This is where the project title goes and a small descritpion of what the work covers. -->
+
+    <div class="govuk-grid-column-full govuk-!-padding-bottom-9  govuk-!-padding-top-6">
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-0">
+        Application sorting
+      </h1>
+      
+
+
+    </div>
+
+
+<!-- This is where the accordion content is added. If the signed-off design is not required, simply comment it out. -->
+
+    <div class="govuk-grid-column-full">
+        <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">
+          <div class="govuk-accordion__section ">
+            <div class="govuk-accordion__section-header">
+              <h2 class="govuk-accordion__section-heading">
+                <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
+                  Overview
+                </span>
+              </h2>
+            </div>
+            <div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
+              
+              <p>The aim of this project is to make the current sorting of table data, more accessible. This work had already been implemented in the test environment and retroactively added to this prototype environment. </p>
+
+              <h3 class="govuk-heading-m govuk-!-margin-bottom-2 govuk-!-margin-top-4">Project team</h3>
+
+              <ul class="simpleList">
+                <li>Andy Carr - <span class="jobTitle">Interaction design</span></li>
+                <li>Sue McMahon - <span class="jobTitle">Frontend developer</span></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="govuk-accordion__section ">
+            <div class="govuk-accordion__section-header">
+              <h2 class="govuk-accordion__section-heading">
+                <span class="govuk-accordion__section-button" id="accordion-default-heading-2">
+                  Design
+                </span>
+              </h2>
+            </div>
+            <div id="accordion-default-content-2" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-2">
+
+              <h3 class="govuk-heading-m govuk-!-margin-bottom-2 govuk-!-margin-top-4">Interactive designs</h3>
+              <ul class="simpleList">
+                <li><a target="_blank" href="/projects/applicationSorting/design/index_V1">Design 1</a> - The ASIS (23/08/22) before the sorting update has been added</li>
+                <li><a target="_blank" href="/projects/applicationSorting/design/index_V2">Design 2</a> - New sorting design added to the top of the application table list. This has been styled to match the same design implemented by the development team, but does not include the accessibility benefits in the prototype.</li>
+                
+              </ul> 
+              <p style="padding-top:20px;"><b>Note:</b> The design 2 visual updateis not the desired design in terms of alignments and table header heights due to the additional "What's this?" link text. But this might get iterated out of the design at a later date.</p>
+
+
+
+              <h3 class="govuk-heading-m govuk-!-margin-bottom-2 govuk-!-margin-top-4">Inspiration for sorting table update</h3>
+              <ul class="simpleList">
+                <li><a target="_blank" href="https://w3c.github.io/aria-practices/examples/table/sortable-table.html">Inspiration</a> - This is where the sorting functionality was first seen</li>
+              </ul> 
+
+
+            </div>
+          </div>
+        </div>
+    </div>
+
+<!-- This is where you can display pictures in an accessible, expandable gallery. The best picture size to use is 990px by 495px -->
+
+    <div class="govuk-grid-column-full  govuk-!-padding-top-7">
+      <h2 class="govuk-heading-l govuk-!-margin-bottom-2">
+        Gallery
+      </h2>
+      <p>A selection of concepts and ideas from this project.</p>
+
+      <ul class="js-favs" role=”list”>
+        <li>
+          <button aria-expanded="false">
+            <img src="/public/images/tableSorting-1.jpg" alt="Example of table sorting arrow" />
+          </button>
+        </li>
+        <li>
+          <button aria-expanded="false">
+            <img src="/public/images/tableSorting-2.jpg" alt="Example of table sorting hover status" />
+          </button>
+        </li>
+      </ul>
+
+
+    </div>
+
+  </div>
+
+{% endblock %}

@@ -1,0 +1,89 @@
+{% extends "layouts/layout_ProjectPage.html" %}
+
+{% block pageTitle %}
+Requisitions
+{% endblock %}
+
+
+
+{% block content %}
+
+<style>
+    .govuk-accordion__section-heading-text {
+      font-size: 36px;
+      line-height: 1;
+  }
+
+::marker {
+  font-weight:600;
+}
+
+.simpleListNumbered li {
+    padding-bottom: 10px;
+}
+
+</style>
+
+<div class="govuk-grid-row govuk-body">
+  
+  <div class="govuk-grid-column-full backButton">
+      <a href="/index.html" class="govuk-back-link" style="margin-bottom:20px;">Back to projects</a>
+  </div>
+<!-- This is where the project title goes and a small descritpion of what the work covers. -->
+
+    <div class="govuk-grid-column-full govuk-!-padding-bottom-9  govuk-!-padding-top-6">
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-0">
+        New Homepage
+      </h1>
+      
+
+
+    </div>
+
+
+<!-- This is where the accordion content is added. If the signed-off design is not required, simply comment it out. -->
+
+    <div class="govuk-grid-column-full">
+        <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">
+
+          <div class="govuk-accordion__section ">
+            <div class="govuk-accordion__section-header">
+              <h2 class="govuk-accordion__section-heading">
+                <span class="govuk-accordion__section-button" id="accordion-default-heading-2">
+                  Homepage V7
+                </span>
+              </h2>
+            </div>
+            <div id="accordion-default-content-2" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-2">
+      
+              <ul class="simpleList">
+                <li><b>Date:</b> Summer 2023</li>
+                <li><b>Designers:</b> Grace Buttall</li>
+                <li><b>User researcher:</b> New designs have not been researched</li>
+              </ul>
+              <br>
+              <p>Additional design work can be found in the <a class="govuk-link" href="https://www.figma.com/file/Um9IhPS28yPB5UrREiHkCx/Homepage?type=design&node-id=532%3A80&mode=design&t=DzqMjDR5WJ5xeq9f-1" target="_blank">figma file</a>.</p>
+
+              <h3 class="govuk-heading-m govuk-!-margin-bottom-2 govuk-!-margin-top-6">Designs</h3>
+              <p>The current Homepage has colours and styles not consistant with GOV Design or the new HMLR Design System. It also recieved negative feedback from users saying it's not easy to find the services they need and that it is too much to scroll. There is positive feedback on the shortcuts and requests for more of them as this helps them navigate to the services they need.<br><br>
+              These early designs aimed to address some of these problems without changing the content of the page but remain unfinished with the more finished versions existing in the figma. The main use of these current prototypes is the coded header and how we might iterate to an ideal one based on the HMLR design system. The code wasn't easy to work with as there was a lot of styling and layout code to un-do. In the future when the new header/homepage gets built it might be worth creating a fresh Heroku prototype.</p>
+              <ul class="simpleList">
+                <li><a class="govuk-link" href="./V7/index_V7A.html" target="_blank"><b>Design A</b></a> - First iteration where the header moves across to the HMLR look but keeps the same navigation in header. Navigation links now triggered on click instead of on hover (nested dropdowns not yet coded). Drop down colours taken from GOV.UK. Shortcut styling also changed to a more GOV feel. The rest of the homepage remains the same.</li>
+                <li><a class="govuk-link" href="./V7/index_V7B.html" target="_blank"><b>Design B</b></a> - This design tried out blocking out the navigation dropdown to the full width of the screen similar to GOV.UK but you can see the list of services are just too long to make this design work.</li>
+              </ul>  
+         
+            </div>
+          </div>
+          
+
+
+
+        </div>
+    </div>
+
+
+
+
+  </div>
+
+{% endblock %}

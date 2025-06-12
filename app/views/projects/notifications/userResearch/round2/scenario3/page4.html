@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+{% extends "layout_unbranded.html" %}
+{% block pageTitle %} View my applications
+{% endblock %}
+{% block content %}
+
+<style>
+
+.govuk-width-container {
+    max-width: 100%;
+    padding: 8px !Important;
+}
+
+.govuk-main-wrapper {
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8",chrome=1">
+<meta name="HandheldFriendly" content="true">
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+
+.govuk-details-text {
+  padding-left: 24px;
+}
+
+.govuk-table__header {
+    vertical-align: top;
+}
+
+  /* Style the button that is used to open and close the collapsible content */
+  .collapsible {
+    color: #516715;
+    background-color: transparent;
+    cursor: pointer;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 16px;
+    display: flex;
+    justify-content: left;
+    margin: 15px 0px 0px 0px !important;
+  }
+
+  /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+  .collapsible:hover {
+    background-color: #000000;
+    background-color: #D4E039;
+    color: black;
+  }
+
+  /* Style the collapsible content. Note: hidden by default */
+
+
+
+  .footer-link {
+    color: #747576;
+    width: 100%;
+
+  }
+
+  .footlink-no:hover {
+    color: grey;
+  }
+
+  .footlink:hover {
+    color: #000000;
+    cursor: pointer;
+  }
+
+  .govuk-details__summary {
+    font-size: 19px;
+}
+
+  #submenu {
+          cursor: pointer;
+        }
+
+
+
+        /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+        .collapsible:hover {
+          background-color: #;
+        }
+
+        /* Style the collapsible content. Note: hidden by default */
+        .content {
+          padding-left: 10px;
+          font-size: 12px;
+          display: none;
+          overflow: hidden;
+          font-family: arial;
+          cursor: pointer;
+        }
+
+        .item {
+          width: 190px;
+          padding-top: 1px;
+          padding-bottom: 1px;
+          margin-bottom: 5px;
+          margin-top: 5px;
+        }
+
+        .item:hover {
+            background: #E5EC89;
+        }
+
+        .link:hover {
+          background: #E5EC89;
+          text-decoration: underline;
+        }
+
+        .feedback {
+        cursor: pointer;
+      }
+
+      .govuk-table  {
+                  box-sizing: border-box;
+                  border: 1px solid #dddddd;
+                  position: relative;
+                  border-width: 1px;
+                }
+
+                .expandy-row {
+                  border-: 1px solid;
+                  box-sizing: border-box;
+                  border-width: 1px;
+                }
+
+                .checkbox2 .govuk-checkboxes__item {
+                  width: 100%;
+  margin-bottom: 20px;
+}
+
+.checkbox3 .govuk-checkboxes__item {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.govuk-checkboxes__label {
+    font-size: 16px;
+}
+
+.govuk-fieldset {
+  padding: 20px;
+}
+
+.expandedTitles {
+    font-size: 22px;
+    line-height:25px;
+    font-weight:600;
+    display: block;
+    padding-bottom: 5px;
+}
+
+.expandedText {
+    font-size:14px;
+    font-weight:400;
+    line-height: 25px;
+}
+
+.govuk-grid-column-one-half {
+    max-width: 650px;
+}
+
+.replyButton {
+    background-color: #F3F2F1;
+    border: 1px solid #dedede;
+    padding: 5px 15px 5px 34px;
+    display: inline-block;
+    margin-bottom: 10px;
+    margin-left: 20px;
+    cursor: pointer;
+    background-image: url(/public/images/reply-icon.png);
+    background-repeat: no-repeat;
+    background-position-x: 11px;
+    background-size: 15px;
+    background-position-y: center;
+}
+
+
+.replyButton:hover {
+    background-color: #005ea5;
+    border: 1px solid #005ea5;
+    background-image: url(/public/images/reply-icon-white.png);
+    color:#ffffff;
+}
+
+.govuk-fieldset {
+    padding: 0px;
+}
+.form-label-bold {
+font-weight:600;
+}
+
+.govuk-form-group {
+    margin-bottom: 40px;
+}
+
+.govuk-main-wrapper--auto-spacing:first-child, .govuk-main-wrapper--l {
+    padding-top: 10px;
+}
+
+</style>
+
+
+<!-- Back & clear data top -->
+<!-- Back & clear data top -->
+<div>
+
+    <!-- Header -->
+      <div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-full" id="headerdiv">
+          <a href="/index.html" style="display: inline-block;">
+        <img src="/public/images/headerlogo.svg" alt="hmlrlogo">
+      </a>
+
+        <a class="tooltip" href="#" style="float: right; font-size: 14px; text-decoration: none; margin-top:20px;"> Customer Support <img style="float: right; font-size: 14px; margin-right: -5px; margin-top:-8px;" src="/public/images/popout-modern.png" width="30" height="30">
+
+        <a href="#" style="float: right; font-size: 14px; text-decoration: none; margin-right: 5px; padding-right: 10px; margin-top:20px;"> Logout </a>
+
+        <hr style= "height: 4px;  background-image: linear-gradient(-60deg,#b4d307,#b4d307 50%,#d7e900 0,#d7e900); border: none;">
+        </div>
+
+      </div>
+
+      <!-- Phase banner ----->
+      <div class="govuk-phase-banner">
+          <p class="govuk-phase-banner__content"><strong class="govuk-tag govuk-phase-banner__content__tag">
+          BETA
+        </strong>
+              <span class="govuk-phase-banner__text">
+                This is a new feature - give your
+                <a class="feedback" style="text-decoration: underline; color: #005EA5;">feedback</a>
+                to help us improve it (link opens in a new window)
+        </span>
+          </p>
+      </div>
+
+
+      <!-- Menu -->
+        <div class="">
+          <div style="width:20%;margin-top:20px;float:left;" id="submenu">
+
+          <!--Portal Home Menu item-->
+          <!-- <button class="collapsible"><strong><a href="portalhomepage.html" style="text-decoration: none;">My Portal Homepage</a></strong></button> -->
+          <button class="collapsible"><strong>My Portal Homepage</strong></button>
+
+          <!--VIEW MY APPLICATIONS DROPDOWN-->
+          <button class="collapsible"><strong>NEW: View My Applications</strong></button>
+
+          <!--INFORMATION SERVICES DROPDOWN-->
+          <button class="collapsible"><strong>Information Services</strong></button>
+
+          <!--LAND CHARGES DROPDOWN-->
+          <button class="collapsible"><strong>Land Charges Services</strong></button>
+
+          <!--DOCUMENT REGISTRATION SERVICE-->
+          <button class="collapsible"><strong>Document Registration Service</strong></button>
+          
+
+          <!--REPLY TO REQUISITION-->
+          <button class="collapsible"><strong>Reply to Requisition</strong></button>
+          
+
+          <!--REPLY TO REQUISITION-->
+          <button class="collapsible"><strong>Network Services</strong></button>
+          
+
+          <!--GENERAL FACILITIES-->
+          <button class="collapsible"><strong>General Facilities</strong></button>
+
+          <!--Admin Services-->
+          <button class="collapsible"><strong>Administrative Services</strong></button>
+
+          <!--Additional menu-->
+        </div>
+
+
+
+
+
+
+        <!-- Service title -->
+
+        <div style="width:80%;margin-top:30px;float: left;max-width: 960px;">
+
+        <h1 class="govuk-heading-l">Reply submitted</h1>
+            
+            <p>Thank you for replying to the requisition. We will review your submission and continue to process your application.
+                </p>
+
+
+              <button class="govuk-button" data-module="govuk-button" data-module="govuk-button" onclick="window.location.href='page5'">
+Return to applications
+              </button>
+
+        </div>
+
+
+
+        <!---CONTENT----------------------------------------------------------------->
+
+
+
+
+
+    <!-- </footer> -->
+<div class="govuk-grid-row" style="margin:0px;">
+    <div class="footer-link">
+        <div class="govuk-grid-column-full" id="headerdiv" style="padding:0px !Important;">
+    <div class="govuk-width-container" style="padding:0px !Important;">
+            <br>
+            <br>
+            <hr style="height: 4px;  background-image: linear-gradient(-60deg,#b4d307,#b4d307 50%,#d7e900 0,#d7e900); border: none;">
+
+
+
+    <br>
+    <a class="footlink" style="text-color: grey; text-decoration: none;"><u>Terms and conditions</u></a>
+    <a>|</a>
+    <a class="footlink" style="text-color: grey; text-decoration: none;"><u>Accessibility Statement</u></a>
+    <a>|</a>
+    <a class="footlink" style="text-color: grey; text-decoration: none;"><u>Freedom of information</u></a>
+    <a>|</a>
+    <a class="footlink" style="text-color: grey; text-decoration: none;"><u>© Crown copyright</u></a>
+
+    <a style="float:right;" href="/prototype-admin/clear-data"> Clear data </a>
+    <br>
+    <br>
+    <a class="footlink-no" style="text-color: grey; text-decoration: none;"><i>These links will open in a new window.</i></a>
+    <p></p>
+    </div>
+    </div>
+    </div>
+  </div>
+
+
+
+
+
+{% endblock %}

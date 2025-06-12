@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+{% extends "layouts/layout_Notifications.html" %}
+{% block pageTitle %} View Applications
+{% endblock %}
+{% block content %}
+
+{% include "includes/notificationsNavigation2.html" %} 
+
+<script src="/public/javascripts/sortable-table.js"></script>
+
+
+{% block pageScripts %}
+  <script src="/public/javascripts/step-by-step-nav.js"></script>
+  <script type="text/javascript">
+    var $element = $('#step-by-step-navigation')
+    var stepByStepNavigation = new GOVUK.Modules.AppStepNav()
+    stepByStepNavigation.start($element)
+  </script>
+
+  <script>
+    for (let i = 1; i <= 3; i++) {
+  const row = document.getElementById(`application-${i}`);
+  row.addEventListener("click", () => {
+    window.location.href = `applications/application-${i}`;
+  });
+}
+  </script>
+
+{% endblock %}
+
+<style>
+
+    .js-enabled .govuk-tabs__tab {
+        font-size: clamp(1.4rem, -0.4333rem + 2.4444vw, 2.5rem);
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    
+    
+    .js-enabled .govuk-accordion {
+        border:none;
+    }
+    
+    .expandy-row {
+        background: #D8DDE0 !important;
+    }
+    
+    
+    
+</style>
+
+
+<!-- Back & clear data top -->
+<!-- Back & clear data top -->
+<div>
+
+<!-- Content Area - Start -->
+
+<div style="margin: auto;display: flex;z-index:9;background:#e6e6e6;">
+
+    <!-- Filters and Search Section - Start -->
+
+
+    <div id="FiltersAndSearch" style="width: 300px;float: left;padding: 30px;background: #fff;padding-top:50px;min-height: 700px;">
+
+        <div class="" style="">
+          <form id="search" style="">
+  
+              <div>
+                  <h1 class="govuk-heading-l" style="font-size:34px;">View applications</h1>
+              </div>
+      
+              <div class="govuk-body" style="margin-bottom: 50px;">
+                 <div class="govuk-form-group" style="margin-bottom: 10px;">
+                    <label class="govuk-label form-label-bold" style="font-size:24px">
+                       Search by
+                    </label>
+                    <fieldset class="govuk-fieldset" style="padding:0px;">
+                      <div class="govuk-radios govuk-radios--small" id="myRadioGroup">
+                        <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" type="radio" name="question1" value="A" id="Q1A" checked>
+                          <label class="govuk-label govuk-radios__label" for="changed-name">
+                             HMLR reference or Title number
+                          </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" type="radio" name="question1" value="B" id="Q1B">
+                          <label class="govuk-label govuk-radios__label" for="changed-name-2">
+                            Customer reference
+                          </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" type="radio" name="question1" value="C" id="Q1C">
+                          <label class="govuk-label govuk-radios__label" for="changed-name-3">
+                             Colleague
+                          </label>
+                        </div>
+                      </div>
+                  
+                    </fieldset>
+                 </div>
+  
+  
+  
+                 <!-- Standard search box -->
+                 <div class="govuk-body desc" style="margin-bottom: 0px;display:block;" id="question1A">
+                    <input type="text" id="search-input" class="searchBox" style="width: calc(100% - 66px);">
+                    <button class="searchButton" value="submit" id="search-button" style=""> <img width="20" height="20" style="margin-top:6px;" src="/public/images/search-icon.svg"></button>
+                 </div>
+  
+                 <!-- Standard search box -->
+                 <div class="govuk-body desc" style="margin-bottom: 0px;" id="question1B">
+                    <input type="text" id="search-input" class="searchBox" style="width: calc(100% - 66px);">
+                    <button class="searchButton" value="submit" id="search-button" style=""> <img width="20" height="20" style="margin-top:6px;" src="/public/images/search-icon.svg"></button>
+                 </div>
+  
+                 <!-- Colleague dropdown menu -->
+                 <div class="govuk-body desc" style="margin-bottom: 0px;" id="question1C">
+                    <button class="searchButton" value="submit" id="colleagueSearch" style=""> <img width="20" height="20" style="margin-top:5px;margin-left:1px;" src="/public/images/search-icon.svg"></button>
+                    <select id="cat" class="form-control" onchange="location = this.value;">
+                            <option value="#">Aaron Flynn</option>
+                            <option value="#">Alex Blewett</option>
+                            <option value="">Andy Carr</option>
+                            <option value="#">Duncan Anderson</option>
+                            <option value="#">James Thomas</option>
+                            <option value="#">John Baptiste-Kelly</option>
+                            <option value="V9.html" selected>John James (you)</option>
+                            <option value="V9_JT.html">John Taylor</option>
+                            <option value="#">Jon Parker</option>
+                            <option value="#">Juan Pinto-del-Rio</option>
+                            <option value="#">Lukas Kroening-Maynard</option>
+                            <option value="#">Mark Hornsby</option>
+                            <option value="#">Melvia Mathew</option>
+                            <option value="#">Neil Butler</option>
+                            <option value="#">Nicola Andrews</option>
+                            <option value="#">Pat Gannon</option>
+                            <option value="#">Romani Davies</option>
+                            <option value="#">Simon Skidmore</option>
+                            <option value="#">Sue Watchman</option>
+                            <option value="#">Tony Watson</option>
+                    </select>
+                 </div>
+  
+             </div>
+  
+  
+  
+             <div class="govuk-body" style="margin-bottom: 50px;">
+  
+           <!-- <hr style="margin-bottom: 25px;background:#b1b4b6;margin-top: 25px;"> -->
+  
+             <label class="govuk-label form-label-bold" style="margin-bottom: 15px; font-size:24px">
+              Filters
+              </label>
+  
+                  <details class="govuk-details" data-module="govuk-details3"  style="padding-left:0px; margin-bottom:15px;">
+                      <summary class="govuk-details__summary" style="">
+                      Type
+                      </summary>
+                      <div class="govuk-details-text">
+                      {{ govukCheckboxes ({
+                      idPrefix: "application-type2",
+                      name: "application-type2",
+                      classes: "govuk-checkboxes govuk-checkboxes--small",
+                      fieldset: {
+                      legend: {
+                      text: ""
+                      }
+                      },
+                      items: [
+                      {
+                      value: "Preliminary",
+                      text: "Register update",
+                      checked: false,
+                      id: "Preliminary"
+                      },
+                      {
+                      value: "Substantive",
+                      text: "Register create"   ,
+                      checked: false,
+                      id: "Substantive"
+                      },
+                      {
+                      value: "Sobstantive",
+                      text: "Register query"   ,
+                      checked: false,
+                      id: "Sobstantive"
+                      }
+                      ]
+                      }) }}
+                      </div>
+                  </details>
+   
+  
+  
+               <details class="govuk-details" data-module="govuk-details2"  style="padding-left:0px;margin-bottom:15px;">
+                  <summary class="govuk-details__summary">
+                     Progress
+                  </summary>
+                  <div class="govuk-details-text">
+                     {{ govukCheckboxes  ({
+                     idPrefix: "application-progress2",
+                     name: "application-progress2",
+                     classes: "govuk-checkboxes govuk-checkboxes--small",
+                     fieldset: {
+                     legend: {
+                     text: ""
+                     }
+                     },
+                     items: [
+                     {
+                     value: "Cancelled",
+                     text: "Cancelled"   ,
+                     checked: false,
+                     id: "Cancelled"
+                     },
+                     {
+                     value: "Completed",
+                     text: "Completed"   ,
+                     checked: false,
+                     id: "Completed"
+                     },
+                     {
+                     value: "Delayed",
+                     text: "Delayed"   ,
+                     checked: false,
+                     id: "Delayed"
+                     },
+                     {
+                     value: "Received",
+                     text: "Received"   ,
+                     checked: false,
+                     id: "Received"
+                     },
+                     {
+                     value: "Saved",
+                     text: "Saved"   ,
+                     checked: false,
+                     id: "Saved"
+                     }
+                     ]
+                     }) }}
+                  </div>
+               </details>
+  
+              </div>
+  
+              <div>
+  
+                 <button id="reset" class="govuk-button govuk-button--secondary" data-module="govuk-button" onclick="window.location.href='#'">
+                    Reset search and filters
+                  </button>
+  
+                 <button class="govuk-button govuk-button--secondary" data-module="govuk-button"  onclick="window.location.href='/public/files/example-export.csv'">
+                     Export applications
+                   </button>
+             
+                   <button class="govuk-button govuk-button--secondary" data-module="govuk-button" onclick="window.location.href='#'">
+                     Guidance
+                   </button>
+             
+                   <!-- <button class="govuk-button" data-module="govuk-button" style="width: 285px;" onclick="window.location.href='#'">
+                     Start new application
+                   </button> -->
+                 
+              </div>
+  
+  
+  
+        </form>
+  
+  
+  
+  
+  
+        </div>
+    <!-- Filters and Search Section - End -->
+  
+  </div>
+      
+  <!-- Table Area - Start -->
+  <div style="width:calc(100% - 352px);float:left;; overflow-x: auto;padding:0px 30px 30px 30px;">   
+
+   <div class="govuk-phase-banner">
+      <p class="govuk-phase-banner__content">
+        <strong class="govuk-tag govuk-phase-banner__content__tag">
+          beta
+        </strong>
+        <span class="govuk-phase-banner__text">
+          This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+        </span>
+      </p>
+    </div>
+
+
+    <div class="govuk-tabs" data-module="govuk-tabs">
+        <h2 class="govuk-tabs__title">
+          Contents
+        </h2>
+        <ul class="govuk-tabs__list">
+          <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+            <a class="govuk-tabs__tab" href="#applications">
+              Applications
+            </a>
+          </li>
+          <li class="govuk-tabs__list-item">
+            <a class="govuk-tabs__tab" href="#requiresAction">
+              Requires action (0)
+            </a>
+          </li>
+          <li class="govuk-tabs__list-item">
+            <a class="govuk-tabs__tab" href="#inReview">
+                HMLR to review (4)
+            </a>
+          </li>
+        </ul>
+
+        <!-- Applications tab content -->
+        <div class="govuk-tabs__panel" id="applications">
+            <table  class="govuk-table my-work" style="margin-top: 0px; ">
+                <thead class="govuk-table__head">
+                   <tr class="govuk-table__row" style="background-color: #ffffff;">
+                      <th class="govuk-table__header sortable" scope="col" id="Title">
+                         <div>Title number</div>
+                      </th>
+                      <th class="govuk-table__header sortable" scope="col">
+                         <div>Customer reference</div>
+                      </th>
+                      <th class="govuk-table__header" scope="col">Application type</th>
+                      <th class="govuk-table__header sortable" scope="col">
+                         <div>Received by HMLR</div>
+                      </th>
+                      <th class="govuk-table__header" scope="col">Application status</th>
+                      <th class="govuk-table__header" scope="col">
+                         <div>Estimated completion date</div>
+                      </th>
+                      <th class="govuk-table__header"scope="col"></th>
+                   </tr>
+                </thead>
+                {% macro rows(page) %}
+             
+        
+                <!-- Application 1 -->
+                <tbody class="govuk-table__body">
+                    
+                    <tr class="govuk-table__row govuk-link-table" id="application-1" onclick="window.location='applications/application-1';">
+        
+                        <td class="govuk-table__cell " scope="row">
+                            E23-66AB
+                            <p class="govuk-visually-hidden"> E23-66AB </p>
+                            <!-- THIS IS PAGE {{page}} -->
+                        </td>
+                        <td class="govuk-table__cell ">Jones.20313</td>
+                        <td class="govuk-table__cell Substantive" id="">
+                            Register update
+                            <p class="govuk-visually-hidden"> RegisterUpdate Cancelled </p>
+                        </td>
+                        <td class="govuk-table__cell " scope="row" data-sortable="2022-07-05">05/07/22</td>
+                        <td class="govuk-table__cell " scope="row">Cancelled</td>
+                        <td class="govuk-table__cell "  data-sortable="0"></td>
+                        <td class="govuk-table__cell" scope="row"><a class="" href="applications/application-1">View</a></td>
+        
+                    </tr>
+
+                </tbody>
+        
+
+
+
+                <!-- Application 2 -->
+                <tbody class="govuk-table__body">
+                    <tr class="govuk-table__row govuk-link-table"  id="application-2" onclick="window.location='applications/application-2';">
+                        <td class="govuk-table__cell " scope="row">
+                        PL893723 
+                            <p class="govuk-visually-hidden">PL893723</p>
+                            <!-- THIS IS PAGE {{page}} -->
+                        </td>
+                        <td class="govuk-table__cell ">PLTR.Thompson</td>
+                        <td class="govuk-table__cell Substantive" id="">
+                        New lease
+                            <p class="govuk-visually-hidden"> TLAGroup NewLease Received</p>
+                        </td>
+                        <td class="govuk-table__cell " scope="row" data-sortable="2022-05-15">15/05/22</td>
+                        <td class="govuk-table__cell " scope="row">Received</td>
+                        <td class="govuk-table__cell "  data-sortable="0">19/09/22</td>
+                        <td class="govuk-table__cell" scope="row"><a class="" href="applications/application-2">View</a></td>
+        
+                    </tr>
+
+
+                </tbody>
+
+
+
+
+                <!-- Application 3 -->
+                <tbody class="govuk-table__body">
+                    <tr class="govuk-table__row govuk-link-table" id="application-3" onclick="window.location='applications/application-3';">
+        
+                    <td class="govuk-table__cell " scope="row">
+                        LP09209 
+                        <p class="govuk-visually-hidden">LP09209</p>
+                        <!-- THIS IS PAGE {{page}} -->
+                    </td>
+                    <td class="govuk-table__cell ">Bartlett.23124</td>
+                    <td class="govuk-table__cell Substantive" id="">
+                        Official copies
+                        <p class="govuk-visually-hidden"> HS2 OfficialCopies Completed </p>
+                    </td>
+                    <td class="govuk-table__cell " scope="row" data-sortable="2022-08-01">01/08/22</td>
+                    <td class="govuk-table__cell " scope="row">Completed</td>
+                    <td class="govuk-table__cell "  data-sortable="0"></td>
+                    <td class="govuk-table__cell" scope="row"><a class="" href="applications/application-3">View</a></td>
+        
+                    </tr>
+
+                
+
+
+                </tbody>
+
+
+
+
+                <!-- Application 4 -->
+                <tbody class="govuk-table__body">
+                    <tr class="govuk-table__row govuk-link-table" id="application-4" onclick="window.location='applications/application-4';">
+            
+                        <td class="govuk-table__cell " scope="row">
+                        E23-66EF 
+                            <p class="govuk-visually-hidden"> E23-66EF </p>
+                            <!-- THIS IS PAGE {{page}} -->
+                        </td>
+            
+                        <td class="govuk-table__cell ">Benson.Hall85</td>
+                        <td class="govuk-table__cell Substantive" id="">
+                            Register update
+                            <p class="govuk-visually-hidden"> TLAGroup RegisterUpdate Received </p>
+                        </td>
+                        <td class="govuk-table__cell " scope="row" data-sortable="2022-08-01">01/08/22</td>
+                        <td class="govuk-table__cell " scope="row">Received</td>
+                        <td class="govuk-table__cell "  data-sortable="0">04/11/2022</td>
+                        <td class="govuk-table__cell" scope="row"><a class="" href="applications/application-4">View</a></td>
+            
+                    </tr>
+
+
+                </tbody>
+
+
+                    
+
+                 <!-- Application 5 -->
+                 <tbody class="govuk-table__body">
+                    <tr class="govuk-table__row govuk-link-table" id="application-5" onclick="window.location='applications/application-5';">
+        
+                       <td class="govuk-table__cell " scope="row">
+                        CB892372 
+                          <p class="govuk-visually-hidden">CB892372</p>
+                          <!-- THIS IS PAGE {{page}} -->
+                       </td>
+        
+                       <td class="govuk-table__cell ">JT/392/Williams</td>
+                       <td class="govuk-table__cell Substantive" id="">
+                        New lease
+                          <p class="govuk-visually-hidden"> NewLease Completed</p>
+                       </td>
+                       <td class="govuk-table__cell " scope="row" data-sortable="2022-08-02">02/08/22</td>
+                       <td class="govuk-table__cell " scope="row">Completed</td>
+                       <td class="govuk-table__cell "  data-sortable="0"></td>
+                       <td class="govuk-table__cell" scope="row"><a class="" href="applications/application-5">View</a></td>
+        
+                    </tr>
+
+
+                 </tbody>   
+
+
+
+
+                <!-- Application 6 -->
+                <tbody class="govuk-table__body">
+                    <tr class="govuk-table__row govuk-link-table" id="application-6" onclick="window.location='applications/application-6';">
+        
+                        <td class="govuk-table__cell " scope="row">
+                        E23-66G 
+                            <p class="govuk-visually-hidden"> E23-66G </p>
+                            <!-- THIS IS PAGE {{page}} -->
+                        </td>
+        
+                        <td class="govuk-table__cell ">Ainsley.Brown.43</td>
+                        <td class="govuk-table__cell Substantive" id="">
+                            Register update
+                            <p class="govuk-visually-hidden"> RegisterUpdate Delayed </p>
+                        </td>
+                        <td class="govuk-table__cell " scope="row" data-sortable="2022-07-25">25/07/22</td>
+                        <td class="govuk-table__cell " scope="row">Delayed</td>
+                        <td class="govuk-table__cell "  data-sortable="0">24/10/2022</td>
+                        <td class="govuk-table__cell" scope="row"><a class="" href="applications/application-6">View</a></td>
+                    </tr>
+
+
+                </tbody>
+
+
+
+                    
+                 <!-- Application 7 -->
+                <tbody class="govuk-table__body">
+                    <tr class="govuk-table__row govuk-link-table" id="application-7" onclick="window.location='applications/application-7';">
+        
+                        <td class="govuk-table__cell " scope="row">
+                        E23-66H
+                            <p class="govuk-visually-hidden"> E23-66H </p>
+                            <!-- THIS IS PAGE {{page}} -->
+                        </td>
+        
+                        <td class="govuk-table__cell ">Ainsley.Brown.43</td>
+                        <td class="govuk-table__cell Substantive" id="">
+                            Register update
+                            <p class="govuk-visually-hidden"> RegisterUpdate Received </p>
+                        </td>
+                        <td class="govuk-table__cell " scope="row" data-sortable="2022-07-25">25/07/22</td>
+                        <td class="govuk-table__cell " scope="row">Received</td>
+                        <td class="govuk-table__cell "  data-sortable="0">28/10/2022</td>
+                        <td class="govuk-table__cell" scope="row"><a class="" href="applications/application-7">View</a></td>
+        
+                    </tr>
+
+
+                </tbody>
+        
+        
+
+        
+                <!-- Application 8 -->
+                <tbody class="govuk-table__body">
+                    <tr class="govuk-table__row govuk-link-table" id="application-8" onclick="window.location='applications/application-8';">
+                    <td class="govuk-table__cell " scope="row">
+                        CB980123 
+                        <p class="govuk-visually-hidden">CB980123</p>
+                        <!-- THIS IS PAGE {{page}} -->
+                    </td>
+                    <td class="govuk-table__cell ">Smith.20313</td>
+                    <td class="govuk-table__cell Substantive" id="">
+                        Official search of whole
+                        <p class="govuk-visually-hidden"> Westfields OfficialSearchWhole Completed </p>
+                    </td>
+                    <td class="govuk-table__cell " scope="row" data-sortable="2022-05-14">14/05/22</td>
+                    <td class="govuk-table__cell " scope="row">Completed</td>
+                    <td class="govuk-table__cell "  data-sortable="0"></td>
+                    <td class="govuk-table__cell" scope="row"><a class="" href="applications/application-8">View</a></td>
+        
+                    </tr>
+
+
+                </tbody>
+
+
+
+
+                <!-- Application 9 -->
+                <tbody class="govuk-table__body">
+                    <tr class="govuk-table__row govuk-link-table" id="application-9" onclick="window.location='applications/application-9';">
+        
+                    <td class="govuk-table__cell " scope="row">
+                        PT122222
+                        <p class="govuk-visually-hidden">PT122222</p>
+                        <!-- THIS IS PAGE {{page}} -->
+                    </td>
+        
+                    <td class="govuk-table__cell ">PTON.Cage.56 </td>
+                    <td class="govuk-table__cell Substantive" id="">
+                        Official search of whole
+                        <p class="govuk-visually-hidden"> Westfields OfficialSearchWhole Completed </p>
+                    </td>
+                    <td class="govuk-table__cell " scope="row" data-sortable="2022-05-14">14/05/22</td>
+                    <td class="govuk-table__cell " scope="row">Completed</td>
+                    <td class="govuk-table__cell "  data-sortable="0"></td>
+                    <td class="govuk-table__cell" scope="row"><a class="" href="applications/application-9">View</a></td>
+        
+                    </tr>
+
+                
+
+                </tbody>
+
+
+
+
+                <!-- Application 10 -->
+                <tbody class="govuk-table__body">
+                    <tr class="govuk-table__row govuk-link-table" id="application-10"  onclick="window.location='applications/application-10';">
+        
+                    <td class="govuk-table__cell " scope="row">
+                        LP54312
+                        <p class="govuk-visually-hidden">LP54312</p>
+                        <!-- THIS IS PAGE {{page}} -->
+                    </td>
+                    <td class="govuk-table__cell ">Terry.43123</td>
+                    <td class="govuk-table__cell Substantive" id="">
+                        Transfer of part
+                        <p class="govuk-visually-hidden"> TransferOfPart Received </p>
+                    </td>
+                    <td class="govuk-table__cell " scope="row" data-sortable="2022-05-10">10/05/22</td>
+                    <td class="govuk-table__cell " scope="row">Received</td>
+                    <td class="govuk-table__cell "  data-sortable="0">07/09/2022</td>
+                    <td class="govuk-table__cell" scope="row"><a class="" href="applications/application-10">View</a></td>
+        
+                    </tr>
+
+                </tbody>
+             
+             
+        
+                </tbody>
+                </tbody>
+                {% endmacro %}
+                {{rows(1)}}
+                {# {{rows(2)}}
+                {{rows(3)}}
+                {{rows(4)}}
+                {{rows(5)}} #}
+             </table>
+             <div class="govuk-body paginationDesign" style="">
+         
+         
+                <div>
+                Displaying 1 - 10 of 35 applications
+                </div>
+        
+                <div style="padding-left:30px;">
+                  <span>«</span> 1, 2, 3, 4 <span>»</span>
+                </div>
+            </div>
+      
+        </div>
+
+
+        <!-- Requires action tab content -->
+        <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="requiresAction">
+            <table  class="govuk-table my-work" style="margin-top: 0px; ">
+
+                <div id="cookie_box" class="requisitionNotificationBanner">
+                    <div class="govuk-warning-text">
+                        <span class="govuk-warning-text__icon" aria-hidden="true" style="margin-top: -7px;">!</span>
+                        <strong class="govuk-warning-text__text">
+                        <span class="govuk-warning-text__assistive">Warning</span>
+                        <p class="notificationWarningText">These types of applications require you to reply to requisitions, in order to progress them.</p></strong>
+                        <button class="govuk-button hideNotificationButton cookie_box_close" data-module="govuk-button" onclick="window.location.href='#'">
+                            Hide this message
+                        </button>
+                    </div>
+                </div>
+
+                <thead class="govuk-table__head">
+                    <tr class="govuk-table__row" style="background-color: #ffffff;">
+                       <th class="govuk-table__header sortable" scope="col" id="Title">
+                          <div>Title number</div>
+                       </th>
+                       <th class="govuk-table__header sortable" scope="col">
+                          <div>Customer reference</div>
+                       </th>
+                       <th class="govuk-table__header" scope="col">Application type</th>
+                       <th class="govuk-table__header sortable" scope="col">
+                          <div>Received by HMLR</div>
+                       </th>
+                       <th class="govuk-table__header" scope="col">Application status</th>
+                       <th class="govuk-table__header" scope="col">
+                          <div>Estimated completion date</div>
+                       </th>
+                       <th class="govuk-table__header"scope="col"></th>
+                    </tr>
+                 </thead>
+                {% macro rows(page) %}
+             
+               
+
+          
+
+                {% endmacro %}
+                {{rows(1)}}
+                {# {{rows(2)}}
+                {{rows(3)}}
+                {{rows(4)}}
+                {{rows(5)}} #}
+            </table>
+                    <div class="govuk-body paginationDesign" style="">
+                
+                
+                        <div>
+                        Displaying 0 - 0 of 0 applications
+                        </div>
+                
+                        <div style="padding-left:30px;">
+                        <span>«</span> 1 <span>»</span>
+                        </div>
+                    </div>
+      
+        </div>
+
+
+        <!-- In review tab content -->
+        <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="inReview">
+            <table  class="govuk-table my-work" style="margin-top: 0px; ">
+
+                <div id="inReview_box" class="requisitionNotificationBanner">
+                    <div class="govuk-warning-text">
+                        <span class="govuk-warning-text__icon" aria-hidden="true" style="margin-top: -7px;">!</span>
+                        <strong class="govuk-warning-text__text">
+                        <span class="govuk-warning-text__assistive">Warning</span>
+                        <p class="notificationWarningText">We'll review your application and update the status. If we need more information we'll contact you.</p></strong>
+                        <button class="govuk-button hideNotificationButton inReview_box_close" data-module="govuk-button" onclick="window.location.href='#'">
+                            Hide this message
+                        </button>
+                    </div>
+                </div>
+
+                <thead class="govuk-table__head">
+                    <tr class="govuk-table__row" style="background-color: #ffffff;">
+                       <th class="govuk-table__header sortable" scope="col" id="Title">
+                          <div>Title number</div>
+                       </th>
+                       <th class="govuk-table__header sortable" scope="col">
+                          <div>Customer reference</div>
+                       </th>
+                       <th class="govuk-table__header" scope="col">Application type</th>
+                       <th class="govuk-table__header sortable" scope="col">
+                          <div>Received by HMLR</div>
+                       </th>
+                       <th class="govuk-table__header" scope="col">Application status</th>
+                       <th class="govuk-table__header" scope="col">
+                          <div>Estimated completion date</div>
+                       </th>
+                       <th class="govuk-table__header"scope="col"></th>
+                    </tr>
+                 </thead>
+                {% macro rows(page) %}
+             
+               
+
+                <!-- Requires action Application 1 -->
+                <tbody class="govuk-table__body">
+                    <tr class="govuk-table__row govuk-link-table" id="application-11replied" onclick="window.location='applications/application-11replied';">
+          
+                        <td class="govuk-table__cell " scope="row">
+                            E17-44Q 
+                           <p class="govuk-visually-hidden"> E17-44Q  </p>
+                           <!-- THIS IS PAGE {{page}} -->
+                        </td>
+                        <td class="govuk-table__cell ">Hampton.Jones44</td>
+                        <td class="govuk-table__cell Substantive" id="">
+                           Register update
+                           <p class="govuk-visually-hidden"> RegisterUpdate Delayed </p>
+                        </td>
+                        <td class="govuk-table__cell " scope="row" data-sortable="2022-06-06">06/06/22</td>
+                        <td class="govuk-table__cell " scope="row">HMLR to review</td>
+                        <td class="govuk-table__cell "  data-sortable="0">06/09/22</td>
+                        <td class="govuk-table__cell" scope="row"><a class="" href="applications/application-11replied.html">View</a></td>
+          
+                    </tr>
+
+
+                </tbody>
+
+
+                <!-- In review Application 1 -->
+                <tbody class="govuk-table__body">
+                    <tr class="govuk-table__row govuk-link-table" id="application-12" onclick="window.location='applications/application-12';">
+          
+                        <td class="govuk-table__cell " scope="row">
+                            LR891237
+                           <p class="govuk-visually-hidden"> LR891237</p>
+                           <!-- THIS IS PAGE {{page}} -->
+                        </td>
+                        <td class="govuk-table__cell ">Baker.Smith.12</td>
+                        <td class="govuk-table__cell Substantive" id="">
+                           Register update
+                           <p class="govuk-visually-hidden"> RegisterUpdate Delayed </p>
+                        </td>
+                        <td class="govuk-table__cell " scope="row" data-sortable="2022-06-05">05/06/22</td>
+                        <td class="govuk-table__cell " scope="row">HMLR to review</td>
+                        <td class="govuk-table__cell "  data-sortable="0">06/09/22</td>
+                        <td class="govuk-table__cell" scope="row"><a class="" href="#">View</a></td>
+          
+                     </tr>
+
+                </tbody>
+          
+
+                <!-- In review Application 2 -->
+                <tbody class="govuk-table__body">
+                    <tr class="govuk-table__row govuk-link-table" id="application-13" onclick="window.location='applications/application-13';">
+          
+                        <td class="govuk-table__cell " scope="row">
+                            PP83792
+                           <p class="govuk-visually-hidden"> PP83792</p>
+                           <!-- THIS IS PAGE {{page}} -->
+                        </td>
+                        <td class="govuk-table__cell ">Cullen.Potts.61</td>
+                        <td class="govuk-table__cell Substantive" id="">
+                           Register update
+                           <p class="govuk-visually-hidden"> RegisterUpdate Delayed </p>
+                        </td>
+                        <td class="govuk-table__cell " scope="row" data-sortable="2022-06-04">04/06/22</td>
+                        <td class="govuk-table__cell " scope="row">HMLR to review</td>
+                        <td class="govuk-table__cell "  data-sortable="0">04/10/22</td>
+                        <td class="govuk-table__cell" scope="row"><a class="" href="#">View</a></td>
+          
+                    </tr>
+
+
+                </tbody>                
+        
+
+                <!-- In review Application 3 -->
+                <tbody class="govuk-table__body">
+                    <tr class="govuk-table__row govuk-link-table" id="application-14" onclick="window.location='applications/application-14';">
+            
+                        <td class="govuk-table__cell " scope="row">
+                            ST786498
+                            <p class="govuk-visually-hidden"> ST786498</p>
+                            <!-- THIS IS PAGE {{page}} -->
+                        </td>
+                        <td class="govuk-table__cell ">Jacob.Kellen.76</td>
+                        <td class="govuk-table__cell Substantive" id="">
+                            Register update
+                            <p class="govuk-visually-hidden"> RegisterUpdate Delayed </p>
+                        </td>
+                        <td class="govuk-table__cell " scope="row" data-sortable="2022-05-22">22/05/22</td>
+                        <td class="govuk-table__cell " scope="row">HMLR to review</td>
+                        <td class="govuk-table__cell "  data-sortable="0">22/07/22</td>
+                        <td class="govuk-table__cell" scope="row"><a class="" href="#">View</a></td>
+            
+                        </tr>
+
+
+                </tbody>
+             
+             
+        
+                </tbody>
+                </tbody>
+                {% endmacro %}
+                {{rows(1)}}
+                {# {{rows(2)}}
+                {{rows(3)}}
+                {{rows(4)}}
+                {{rows(5)}} #}
+             </table>
+             <div class="govuk-body paginationDesign" style="">
+         
+         
+                <div>
+                Displaying 1 - 4 of 4 applications
+                </div>
+        
+                <div style="padding-left:30px;">
+                  <span>«</span> 1 <span>»</span>
+                </div>
+            </div>
+      
+        </div>
+
+      </div>
+
+
+     <!-- My Work Table -->
+
+
+  </div>
+
+</div>
+
+
+{% include "includes/notificationsFooter.html" %} 
+
+
+<!-- Content Area - End -->
+
+
+<script>
+    $(document).ready(function() {
+        $("input[name$='question1']").click(function() {
+            var test = $(this).val();
+    
+            $("div.desc").hide();
+            $("#question1" + test).show();
+        });
+    });
+    
+ 
+   
+ </script>
+ 
+ <script>
+
+function clampBuilder( minWidthPx, maxWidthPx, minFontSize, maxFontSize ) {
+  const root = document.querySelector( "html" );
+  const pixelsPerRem = Number( getComputedStyle( root ).fontSize.slice( 0,-2 ) );
+
+  const minWidth = minWidthPx / pixelsPerRem;
+  const maxWidth = maxWidthPx / pixelsPerRem;
+
+  const slope = ( maxFontSize - minFontSize ) / ( maxWidth - minWidth );
+  const yAxisIntersection = -minWidth * slope + minFontSize
+
+  return `clamp( ${ minFontSize }rem, ${ yAxisIntersection }rem + ${ slope * 100 }vw, ${ maxFontSize }rem )`;
+}
+ </script>
+
+
+ <style>
+    .desc {
+    display:none;
+    }
+ </style>
+
+{% endblock %}

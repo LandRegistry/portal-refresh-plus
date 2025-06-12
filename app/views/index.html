@@ -1,0 +1,181 @@
+
+{% extends "layout_unbranded.html" %}
+
+{% block pageTitle %}
+  Portal Refresh Plus
+{% endblock %}
+
+<script>
+  $(document).on('keydown', '.button',function(e){
+    if(e.which==13 || e.which==32)
+        $(this).click()
+});
+</script>
+
+{% block content %}
+
+
+
+<style>
+
+.govuk-heading-xl {
+    margin-bottom: 0px;
+}
+
+  .govuk-heading-l {
+    margin-bottom: 10px;
+}
+
+.govuk-grid-column-full {
+padding-bottom:50px;
+}
+
+ol {
+  padding-inline-start: 20px;
+}
+
+li {
+  padding-bottom:5px;
+}
+
+.projectImage {
+  display:block;
+  width: 100%;
+  border: 1px solid #D8DDE0;
+}
+
+.projectBox:hover {
+display: block;
+background-color: #F3F2F1;
+}
+
+
+.projectTitle {
+margin-top: 15px;
+margin-bottom: 0px;
+}
+
+.projectCode {
+  font-size:16px;
+} 
+
+.govuk-width-container {
+  max-width: 1200px;
+}
+
+a {
+  text-decoration:none;
+  color:#0b0c0c;  
+}
+
+a:link {
+  text-decoration:none;
+  color:#0b0c0c;  
+}
+
+.govuk-heading-xl {
+  margin-top:20px;
+}
+
+.govuk-grid-column-one-third {
+  padding: 25px;
+  margin-bottom: 25px;
+  width: 31.3333%;
+  margin:0 1%;
+}
+
+
+.govuk-grid-column-full {
+  padding: 0 25px 50px 25px;
+  width:98%;
+  margin:0 1%;
+}
+
+</style>
+
+  <div class="govuk-grid-row govuk-body">
+
+    <div class="govuk-grid-column-full govuk-body">
+      <h1 class="govuk-heading-xl">
+        Portal Refresh
+      </h1>
+    </div>
+
+    <a class="govuk-grid-column-one-third projectBox projectBoxHighlight" tabindex="1" href="projects/view-applications/index.html">
+      <div><img class="projectImage" src="/public/images/view-applications-thumbnail.png"></div>
+      <div class="govuk-heading-m projectTitle">View applications</div>
+      <div class="projectCode"></div>
+    </a>
+
+    <a class="govuk-grid-column-one-third projectBox projectBoxHighlight" tabindex="1" href="projects/requisitions/index.html">
+      <div><img class="projectImage" src="/public/images/requisitionsBlur.png"></div>
+      <div class="govuk-heading-m projectTitle">Requisitions</div>
+      <div class="projectCode"></div>
+    </a>
+
+      <a class="govuk-grid-column-one-third projectBox projectBoxHighlight" tabindex="1" href="projects/notifications-2/index.html">
+        <div><img class="projectImage" src="/public/images/notificationsBlur.jpg"></div>
+        <div class="govuk-heading-m projectTitle">Notifications 2.0</div>
+        <div class="projectCode"></div>
+      </a>
+
+      <a class="govuk-grid-column-one-third projectBox projectBoxHighlight" tabindex="1" href="projects/notifications/index.html">
+        <div><img class="projectImage" src="/public/images/notificationsBlur.jpg"></div>
+        <div class="govuk-heading-m projectTitle">Notifications</div>
+        <div class="projectCode"></div>
+      </a>
+
+      <a class="govuk-grid-column-one-third projectBox projectBoxHighlight" tabindex="4"  href="projects/homepage-2/index.html">
+        <div><img class="projectImage" src="/public/images/homepage-v7.png"></div>
+        <div class="govuk-heading-m projectTitle">Homepage 2.0</div>
+      </a>
+
+      <a class="govuk-grid-column-one-third projectBox projectBoxHighlight" tabindex="4"  href="projects/homepage/index.html">
+        <div><img class="projectImage" src="/public/images/homepageBlur2.jpg"></div>
+        <div class="govuk-heading-m projectTitle">New Homepage</div>
+      </a>
+
+
+
+      <a class="govuk-grid-column-one-third projectBox projectBoxHighlight" tabindex="3"  href="projects/searchForPropertyDocuments/index.html">
+        <div><img class="projectImage" src="/public/images/searchforpropertydocumentsBlur2.jpg"></div>
+        <div class="govuk-heading-m projectTitle" style="letter-spacing: -0.8px;">Search for property documents</div>
+        <div class="projectCode"></div>
+      </a>
+      
+
+
+      <a class="govuk-grid-column-one-third projectBox projectBoxHighlight" tabindex="2"  href="projects/projectsAndGroups/index.html">
+        <div><img class="projectImage" src="/public/images/groupBlur.jpg"></div>
+        <div class="govuk-heading-m projectTitle">Projects & Groups</div>
+        <div class="projectCode"></div>
+      </a>
+
+
+
+      <a class="govuk-grid-column-one-third projectBox projectBoxHighlight" tabindex="5"  href="projects/applicationSorting/index.html">
+        <div><img class="projectImage" src="/public/images/tableSortingBlur.jpg"></div>
+        <div class="govuk-heading-m projectTitle">Application sorting</div>
+      </a>
+
+
+
+      <a class="govuk-grid-column-one-third projectBox projectBoxHighlight" tabindex="5"  href="projects/guidance/index.html">
+        <div><img class="projectImage" src="/public/images/guidanceBlur.jpg"></div>
+        <div class="govuk-heading-m projectTitle">Guidance page</div>
+      </a>
+
+
+
+      <a class="govuk-grid-column-one-third projectBox projectBoxHighlight" tabindex="6"  href="projects/errorScreens/index.html">
+      <div><img class="projectImage" src="/public/images/errorscreenBlur.jpg"></div>
+        <div class="govuk-heading-m projectTitle">Error screens</div>
+      </a>       
+
+
+
+
+
+  </div>
+
+{% endblock %}

@@ -1,0 +1,96 @@
+{% extends "layout_unbranded.html" %}
+
+{% block pageTitle %}
+  Lauren's Portal Party
+{% endblock %}
+
+{% block content %}
+<style>
+.govuk-width-container {
+    max-width: 100%;
+    margin-right: 0px;
+    margin-left: 0px;
+}
+
+.govuk-main-wrapper--auto-spacing:first-child, .govuk-main-wrapper--l {
+    padding-top: 0px;
+}
+
+.govuk-main-wrapper {
+    padding-bottom: 0px;
+}
+  img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+
+.column-one-third{
+  width:33.33%;
+  float:left;
+  margin:0;
+  padding:0;
+}
+
+.backgroundBlue{
+  background-color:powderblue;
+}
+
+.center {
+   text-align: center;
+}
+
+
+  </style>
+
+
+<!-- Layout -->
+<div class="column-one-third backgroundBlue">
+  left
+</div>
+<div class="column-one-third" style="background-color:rgb(250, 7, 209);">
+  middle 
+</div>
+<div class="column-one-third" style="background-color:rgb(9, 221, 27);">
+  right
+</div>
+
+
+<!-- Text -->
+<div> Navigation </div>
+<!-- Logo -->
+<div>
+  <img src="/public/images/landreg.jpg" alt="landreg" width="214" height="98" class="center">
+</div>
+
+
+<!-- Icons -->
+
+<!-- Facebook -->
+<div> 
+  <img src="/public/images/facebook.png" alt="facebook" width="37" height="37">
+</div>
+
+<!-- Instagram -->
+<div> 
+  <img src="/public/images/instagram.png" alt="instagram" width="37" height="37">
+</div>
+
+
+<!-- App Store -->
+<div> 
+  <img src="/public/images/appstore.png" alt="appstore" width="37" height="37">
+</div>
+
+<!-- Account -->
+<div> 
+  <img src="/public/images/account.png" alt="account" width="37" height="37">
+</div>
+
+<!-- Basket -->
+<div> 
+  <img src="/public/images/basket.png" alt="basket" width="37" height="37">
+</div>
+{% endblock %}

@@ -1,0 +1,163 @@
+{% extends "layouts/layout_ProjectPage.html" %}
+
+{% block pageTitle %}
+Guidance page
+{% endblock %}
+
+{% block content %}
+
+
+
+<div class="govuk-grid-row govuk-body">
+
+  <div class="govuk-grid-column-full backButton">
+    <a href="/index.html" class="govuk-back-link" style="margin-bottom:20px;">Back to projects</a>
+</div>
+
+<!-- This is where the project title goes and a small descritpion of what the work covers. -->
+
+    <div class="govuk-grid-column-full govuk-!-padding-bottom-9  govuk-!-padding-top-6">
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-0">
+        Guidance page
+      </h1>
+      
+
+
+    </div>
+
+
+<!-- This is where the accordion content is added. If the signed-off design is not required, simply comment it out. -->
+
+    <div class="govuk-grid-column-full">
+        <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">
+          <div class="govuk-accordion__section ">
+            <div class="govuk-accordion__section-header">
+              <h2 class="govuk-accordion__section-heading">
+                <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
+                  Overview
+                </span>
+              </h2>
+            </div>
+            <div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
+              
+              <p>The aim of this project is enable users to create groups and projects. Applications could be associated with a group or project, enabling all members also associated with the group or project, to be able to view them intuitively (rather than searching for them individually).</p>
+
+              <h3 class="govuk-heading-m govuk-!-margin-bottom-2 govuk-!-margin-top-4">Project team</h3>
+
+              <ul class="simpleList">
+                <li>Andy Carr - <span class="jobTitle">Interaction design</span></li>
+                <li>Lauren Dowling - <span class="jobTitle">Interaction design</span></li>
+                <li>James Thomas - <span class="jobTitle">Content design</span></li>
+                <li>Jon Parker - <span class="jobTitle">User research</span></li>
+                <li>Juan Pinto Del Rio - <span class="jobTitle">User research</span></li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- <div class="govuk-accordion__section ">
+            <div class="govuk-accordion__section-header">
+              <h2 class="govuk-accordion__section-heading">
+                <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
+                  Signed-off design
+                </span>
+              </h2>
+            </div>
+            <div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
+              <p class='govuk-body'>Lorem ipsum</p>
+            </div>
+          </div> -->
+
+          <div class="govuk-accordion__section ">
+            <div class="govuk-accordion__section-header">
+              <h2 class="govuk-accordion__section-heading">
+                <span class="govuk-accordion__section-button" id="accordion-default-heading-2">
+                  Design
+                </span>
+              </h2>
+            </div>
+            <div id="accordion-default-content-2" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-2">
+              
+              <h3 class="govuk-heading-m govuk-!-margin-bottom-2 govuk-!-margin-top-4">Interactive designs</h3>
+              <ul class="simpleList">
+                <li><a target="_blank" href="./design/index_V1.html">Design 1</a> - Current design that is live, however the content is outdated</li>
+                <li><a target="_blank" href="./design/index_V2C.html">Design 2</a> - New alternative design 12/06/2023. Accordian design to help make the information easier to read and navigate. Content Audit also carried out on the current live content and changes reflected in this prototype. This is not yet live and has had no user research. It should be re-assessed when it is ready to be built.</li>
+              </ul> 
+              
+
+            </div>
+          </div>
+
+          <div class="govuk-accordion__section ">
+            <div class="govuk-accordion__section-header">
+              <h2 class="govuk-accordion__section-heading">
+                <span class="govuk-accordion__section-button" id="accordion-default-heading-3">
+                  User research
+                </span>
+              </h2>
+            </div>
+            <div id="accordion-default-content-3" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-3">
+
+<p>User research may have been lost when Jon Parker and Juan Pinto del Rio left HM Land Registry. The coded prototype best reflects the findings/direction to take, from the user research at the time.</p>
+
+<h3 class="govuk-heading-m govuk-!-margin-bottom-2 govuk-!-margin-top-7">Interactive designs</h3>
+<ul class="simpleList">
+
+  <li><a target="_blank" href="/projects/projectsAndGroups/userResearch/round1/index">Prototype 1</a> - Allows users to create groups and projects.</li>
+</ul> 
+             
+
+            </div>
+          </div>
+
+
+        </div>
+    </div>
+
+
+<!-- This is where you can display pictures in an accessible, expandable gallery. The best picture size to use is 990px by 495px -->
+
+    <div class="govuk-grid-column-full  govuk-!-padding-top-7">
+      <h2 class="govuk-heading-l govuk-!-margin-bottom-2">
+        Gallery
+      </h2>
+      <p>A selection of concepts and ideas from this project.</p>
+
+      <ul class="js-favs" role=”list”>
+        <li>
+          <button aria-expanded="false">
+            <img src="/public/images/projectsAndGroups-1.jpg" alt="" />
+          </button>
+        </li>
+        <li>
+          <button aria-expanded="false">
+            <img src="/public/images/projectsAndGroups-2.jpg" alt="" />
+          </button>
+        </li>
+        <li>
+          <button aria-expanded="false">
+            <img src="/public/images/projectsAndGroups-3.jpg" alt="" />
+          </button>
+        </li>
+        <li>
+          <button aria-expanded="false">
+            <img src="/public/images/projectsAndGroups-4.jpg" alt="" />
+          </button>
+        </li>
+        <li>
+          <button aria-expanded="false">
+            <img src="/public/images/projectsAndGroups-5.jpg" alt="" />
+          </button>
+        </li>
+        <li>
+          <button aria-expanded="false">
+            <img src="/public/images/projectsAndGroups-6.jpg" alt="" />
+          </button>
+        </li>
+      </ul>
+
+
+    </div>
+
+  </div>
+
+{% endblock %}

@@ -1,0 +1,2307 @@
+<!DOCTYPE html>
+{% extends "layouts/layout_Notifications.html" %}
+{% block pageTitle %} View Applications
+{% endblock %}
+{% block content %}
+
+
+
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script src="/public/javascripts/sortable-table.js"></script>
+
+<style>
+
+.govuk-table__header, .govuk-table__cell {
+    vertical-align: inherit;
+}
+
+.govuk-main-wrapper--auto-spacing:first-child, .govuk-main-wrapper--l {
+    padding-top: 0px;
+}
+
+.form-label-bold {
+    font-weight: 600;
+}
+
+.searchBox {
+    width: 235px;
+    height: 35px;
+    font-size: 16px;
+    padding-left: 35px;
+    margin-top: 0px;
+    float: left;
+    border-color: #000;
+    border-width: 1px;
+    border-radius: 0px;
+    font-family: arial;
+    font-size: 16px;
+    outline: none !important;
+    position: relative;
+    background-image: url(/public/images/icon-search.svg);
+    background-repeat: no-repeat;
+    background-position: center left -2px;
+    background-size: 40px 40px;
+}
+
+.rowContentSection {
+    float: left;
+    padding-right: 100px;
+    padding-bottom: 40px;
+}
+
+.rowContentSectionLast {
+    float: left;
+    padding-right: 100px;
+    padding-bottom: 15px;
+}
+
+.expandedTitles {
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: 600;
+    display: block;
+    padding-bottom: 5px;
+}
+
+.expandedText {
+    font-size: 14pt;
+    font-weight: 400;
+    line-height: 25px;
+}
+
+
+
+
+.govuk-footer {
+display:none;
+}
+
+
+.govuk-link:link, a:link {
+    color: #006637;
+}
+
+.govuk-width-container {
+    max-width: 100%;
+    padding: 0px !Important;
+}
+
+.navbar-container {
+    background-color: #006637;
+    display:flow-root;
+    padding-right: 15px;
+    -webkit-box-shadow: inset 0px 2px 4px 0px rgb(0 0 0 / 15%);
+    -moz-box-shadow: inset 0px 2px 4px 0px rgba(0,0,0,0.15);
+    box-shadow: inset 0px 2px 4px 0px rgb(0 0 0 / 15%);
+    border-bottom: 0px solid #005ea5;
+}
+
+
+.navbar {
+  overflow: hidden;
+
+  font-family: Arial;
+  float: right;
+}
+
+
+.navbar a {
+    float: left;
+    font-size: 17px;
+    color: white;
+    text-align: center;
+    padding: 0px 25px;
+    text-decoration: none;
+    line-height: 70px;
+    font-weight: 400;
+}
+
+
+.dropdown2 {
+  float: left;
+  overflow: hidden;
+}
+
+
+.dropdown2 .dropbtn2 {
+    font-size: 17px;
+    border: none;
+    outline: none;
+    color: white;
+    padding: 0px 25px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+    line-height: 70px;
+    font-weight: 400;
+}
+
+.dropdown2 .dropbtn2:hover {
+    background-color: #1F8153;
+  cursor: pointer;
+}
+
+/* Add a red background color to navbar links on hover */
+.navbar a:hover, .dropdown:hover .dropbtn2 {
+  background-color: #2b9462;
+  cursor: pointer;
+}
+
+/* Dropdown content (hidden by default) */
+.dropdown-content2 {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  border-top: 0px solid #005ea5;
+}
+
+/* Links inside the dropdown */
+.dropdown-content2 a {
+  float: none;
+  color: #00703C;
+  padding: 0px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    line-height: 50px;
+}
+
+/* Add a grey background color to dropdown links on hover */
+.dropdown-content2 a:hover {
+    background-color: #1F8153;
+    color: #fff;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown2:hover .dropdown-content2 {
+  display: block;
+}
+
+
+.notificationContent {
+  padding: 20px;
+  width:290px;
+  margin-bottom: 0px;
+  background: #fff;
+}
+
+.notificationTopRow {
+  width:100%;
+display:flex;
+padding-bottom: 3px;
+}
+
+.notificationTitle {
+  font-size:16px;
+  font-weight:700;
+width:50%;
+}
+
+.myAccountTitle {
+  font-size:16px;
+  font-weight:700;
+padding-bottom: 3px;
+}
+
+.notificationTime {
+  font-size:12px;
+  font-weight:400;
+  text-align: right;
+  width:50%;
+}
+
+.notification2ndLine {
+  font-size:14px;
+  font-weight:400;
+  width: 100%;
+  padding-bottom:15px;
+}
+
+.myAccount2ndLine {
+  font-size:14px;
+  font-weight:400;
+  width: 100%;
+  padding-bottom:0px;
+}
+
+.notificationLink a {
+  font-size: 15px;
+    width: 100%;
+    float: left;
+    line-height: unset;
+    background-color: unset !important;
+    color: #00703C !important;
+    font-weight: 700;
+    padding: unset;
+}
+
+.myAccountLinks a {
+  font-size: 15px;
+    width: 100%;
+    line-height: unset;
+    background-color: unset !important;
+    color: #00703C !important;
+    font-weight: 700;
+    padding: unset;
+}
+
+
+.NotificationSingle {
+    display: grid;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #dedede;
+    margin-bottom: 20px;
+}
+
+.NotificationSingleLast {
+    display: grid;
+}
+
+.notificationNavNumber {
+  color: #1F8153;
+    background-color: #fff;
+    padding: 5px 9px;
+    border-radius: 500px;
+    font-weight: 700;
+}
+
+.myAccountContent {
+  width:177px;
+  padding: 25px;
+  background: #ffffff;
+    margin-bottom:0px;
+}
+
+.myAccountContent a {
+  padding: 0px;
+}
+
+hr {
+  background: #dedede;
+    height: 1px;
+    border-style: none;
+    margin: 15px 0px;
+}
+
+#logOut {
+  margin-bottom: 0px;
+    margin-top: 25px;
+    width: 100%;
+}
+
+#inputs {
+    margin: 0% 2%;
+    float:left;
+    margin-top: 27px;
+}
+
+
+
+.parent {display: block;position: relative;float: left;line-height: 70px;}
+.parentIconDown {background-image: url("/public/images/icon_govuk_chevrondownWhite.svg"); background-size: 25px; background-repeat: no-repeat; background-position-x: 83px;background-position-y: center;}
+.parentIconDown2 {background-image: url("/public/images/icon_govuk_chevrondownWhite.svg"); background-size: 25px; background-repeat: no-repeat; background-position-x: 108px;background-position-y: center;}
+.parent a{margin: 20px;color: #FFFFFF;text-decoration: none;}
+.parent a:focus { color:#000000;}
+.parent:hover > ul {display:block;position:absolute;}
+.child {display: none;box-shadow: 0px 8px 16px 0px rgb(0 0 0 / 10%);z-index:99999;}
+.child li {background-color: #ffffff;line-height: 40px;border-right:#CCC 0px solid; width:100%;}
+.child li a{color: #00703C; font-size:15px;}
+.child li a:focus{color:#000000;}
+ul{list-style: none;margin: 0;padding: 0px; min-width:10em;}
+ul ul ul{left: 100%;top: 0;border-left: 1px solid #dedede;}
+li:hover {background-color: #ffffff;color:#00703C;}
+.parent:hover > a {color:#00703C !important;}
+.parentIconDown:hover {background-image: url("/public/images/icon_govuk_chevrondownGreen.svg");}
+.parentIconDown2:hover {background-image: url("/public/images/icon_govuk_chevrondownGreen.svg");}
+.parent li:hover {background-color: #F0F0F0;}
+.expand{font-size:12px;float:right;margin-right:5px;}
+.iconRight {background-image: url("/public/images/icon_govuk_chevronrightGreen.svg"); background-size: 25px; background-repeat: no-repeat; background-position-x: 134px;background-position-y: center;}
+
+a:focus { color:#000000 !Important;}
+
+.searchBox {
+   border-width: 2px;
+    background-image: unset;
+    padding: 0px 10px;
+    font-size: 19px;
+    border-radius: 0px;
+    height: 40px;
+}
+
+
+.fa {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.fas {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.far {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.govuk-details__summary {
+    color: #00703C;
+}
+
+.govuk-details__summary:hover {
+    color: #00703C;
+}
+
+.govuk-fieldset {
+    padding: 10px 20px;
+}
+
+.govuk-table {
+    background: #ffffff;
+    /* box-shadow: 0px 2px 4px 0px rgb(0 0 0 / 15%);
+    border-radius: 5px;
+    overflow: hidden;
+    margin-bottom: 30px; */
+    margin-bottom:0px;
+}
+
+
+
+.panelNEW.active {
+    overflow: unset;
+    max-height: unset;
+}
+
+.paginationDesign {
+    padding: 10px 15px;
+     background: #ffffff;
+     font-size: 14px;
+     margin-bottom: 0;
+     height: 30px;
+     line-height: 29px;display: flex;flex-direction: row;justify-content: flex-end;border: 0px solid #dedede;
+    border-top: 1px solid #ddd;
+}
+
+
+
+
+#search-button {
+   margin-top: 0px;
+    cursor: pointer;
+    border-radius: 0px;
+    border-style: none;
+    height: 44px;
+    width: 42px;
+    background-color: #006637;
+    border-color: #006637;
+    border-radius: 0;
+}
+
+#search-button:hover {
+   margin-top: 0px;
+    cursor: pointer;
+    border-radius: 0px;
+    border-style: none;
+    height: 44px;
+    width: 42px;
+    background-color: #29ab60;
+    border-color: #29ab60;
+    border-radius: 0px;
+}
+
+#search-button:focus {
+   margin-top: 0px;
+    cursor: pointer;
+    border-radius: 0px;
+    border-style: none;
+    height: 44px;
+    width: 42px;
+   border-color: #fd0;
+    color: #0b0c0c;
+    background-color: #fd0;
+    -webkit-box-shadow: 0 2px 0 #0b0c0c;
+    box-shadow: 0 2px 0 #0b0c0c;
+}
+
+.govuk-radios__label {
+    font-size: 16px;
+}
+
+.govuk-phase-banner {
+    margin-bottom: 30px;
+}
+
+.govuk-button--warning {
+    background-color: #d4351c;
+    box-shadow: 0 2px 0 #55150b;
+}
+
+.govuk-table__header, .govuk-table__cell {
+
+    padding: 10px 0px 10px 20px;
+}
+
+
+.bannerButton:focus {
+   border-color: #fd0;
+    color: #0b0c0c;
+    background-color: #fd0;
+    -webkit-box-shadow: 0 2px 0 #0b0c0c;
+    box-shadow: 0 2px 0 #0b0c0c;
+    outline: 3px solid transparent;
+}
+
+.govuk-button--secondary:focus {
+   border-color: #fd0;
+    color: #0b0c0c;
+    background-color: #fd0;
+    -webkit-box-shadow: 0 2px 0 #0b0c0c;
+    box-shadow: 0 2px 0 #0b0c0c;
+    outline: 3px solid transparent;
+}
+
+.rowContentSectionLast {
+   float: left;
+    padding-right: 100px;
+    padding-bottom: 0px;
+}
+
+.my-work {
+    font-size: 14pt;
+}
+
+.expandedText {
+   font-size: 14pt;
+}
+
+.hmlrButtonGreen {
+    background: #00682f;
+    color: #ffffff;
+    box-shadow: 0 0px 0 #929191;
+    margin-right: 15px;
+    margin-bottom: 15px;
+    font-size: 19px;
+    border-radius: 0px;
+    padding: 11px 20px;
+}
+
+.hmlrButtonGreen:hover {
+    background: #29ab60;
+}
+
+.select2-container {
+    width: 289px !important;
+}
+
+.select2-container--default .select2-selection--single {
+    border-radius: 4px;
+    height: 44px;
+}
+
+.select2-container .select2-selection--single .select2-selection__rendered {
+    padding: 0px 10px;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+    line-height: 44px;
+    font-family: arial;
+    font-size: 19px;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__arrow b {
+    top: 12px;
+}
+
+#colleagueSearch {
+    margin-top: 0px;
+    cursor: pointer;
+    border-radius: 0px;
+    border-style: none;
+    height: 44px;
+    width: 44px;
+    background-color: #006637;
+    border-color: #006637;
+    border-radius: 0px 4px 4px 0px;
+    z-index: 99999;
+    left: 275px;
+    position: absolute;
+}
+
+
+.hide-row {
+    display: none;
+}
+
+.my-work tbody tr:hover {
+    cursor: pointer;
+}
+
+.my-work thead th:hover {
+    cursor: default;
+}
+
+.my-work tr.expandy-row:hover {
+    background-color: transparent;
+    cursor: default;
+}
+
+.my-work {
+    font-size: 14pt;
+}
+
+.my-work tbody td {
+    border-bottom: 1px;
+    border-top: 0px solid #f1f1f1;
+}
+
+.my-work tbody tr {}
+
+.my-work .viewed td {
+    font-weight: normal;
+}
+
+.my-work tr+.expandy-row td {
+    border-top: 0;
+}
+
+.my-work .openarrow {
+    display: none;
+}
+
+.my-work .closedarrow {
+    display: block;
+}
+
+.my-work tr.open .openarrow {
+    display: block;
+}
+
+.my-work tr.open .closedarrow {
+    display: none;
+}
+
+
+.my-work2 tbody tr:hover {
+    cursor: pointer;
+}
+
+.my-work2 thead th:hover {
+    cursor: default;
+}
+
+.my-work2 tr.expandy-row:hover {
+    background-color: transparent;
+    cursor: default;
+}
+
+.my-work2 {
+    font-size: 14pt;
+}
+
+.my-work2 tbody td {
+    border-bottom: 0;
+    border-top: 1px solid #ddd;
+}
+
+.my-work2 tbody tr {}
+
+.my-work2 .viewed td {
+    font-weight: normal;
+}
+
+.my-work2 tr+.expandy-row td {
+    border-top: 0;
+}
+
+.my-work2 .openarrow {
+    display: none;
+}
+
+.my-work2 .closedarrow {
+    display: block;
+}
+
+.my-work2 tr.open .openarrow {
+    display: block;
+}
+
+.my-work2 tr.open .closedarrow {
+    display: none;
+}
+
+.expandy-row-trigger2 {
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 28px;
+    margin-left: 10px;
+    color:#005EA5;
+}
+
+.expandy-row-trigger2 {
+    font-weight: 400;
+    color: #0b0c0c !important;
+}
+
+.expandy-row-trigger2 {
+    margin-left: 0px;
+}
+
+tr:hover {
+    background: #f2f2f2;
+}
+
+.my-work tbody tr:hover {
+    cursor: pointer;
+}
+
+.accordionNEW {
+    background-color: #ffffff;
+    padding: 18px 8px 0px 0px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 19px;
+    transition: 0.4s;
+    color: #00703C;
+    cursor: pointer;
+    margin-top: 9px;
+}
+
+.accordionBorder {
+    border-top: 1px solid #b1b4b6;
+}
+
+.accordionNEW:before {
+    content: "";
+    width: 30px;
+    height: 30px;
+    background: white url(/public/images/down-arrow.svg);
+    background-size: 30px 30px;
+    top: -4px;
+    right: 5px;
+    position: relative;
+    float: left;
+}
+
+.govuk-button::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: -2px;
+    right: -2px;
+    bottom: -4px;
+    left: -2px;
+    background: transparent;
+}
+
+.panelNEW {
+    padding: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+
+.govuk-button--secondary {
+    background-color: #f3f2f1;
+    -webkit-box-shadow: 0 2px 0 #929191;
+    box-shadow: 0 2px 0 #929191;
+    color: #0b0c0c;
+    margin-bottom: 20px;
+}
+
+.govuk-fieldset {
+    padding: 10px 20px 10px 0px;
+}
+
+.govuk-form-group {
+    margin-bottom: 0px;
+}
+
+.open {
+    border-bottom: 1px solid #28a45c !important;
+    background: #28a45c !important;
+    color: #fff !important;
+    font-weight: 600;
+}
+
+.expandy-row {
+    border-bottom: 0px;
+    outline: 5px solid #28a45c;
+    outline-offset: -5px;
+}
+
+.govuk-table__header:last-child, .govuk-table__cell:last-child {
+    padding-right: 20px;
+}
+
+.expandedTitles {
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: 600;
+    display: block;
+    padding-bottom: 5px;
+}
+
+.govuk-table {
+    border-collapse: inherit;
+}
+
+.govuk-table__header, .govuk-table__cell {
+    border-bottom: 0px solid #b1b4b6;
+}
+
+.chevronsize {
+    width: 30px;
+    display: block;
+    margin-top:0px;
+}
+
+.govuk-table__header {
+
+    padding: 15px 0px 15px 20px;
+}
+
+
+.select2-container--default .select2-selection--single {
+    border: 2px solid #000000;
+    border-radius: 0px;
+}
+
+.select2-search--dropdown {
+    border-bottom: 0px solid #000000;
+    position: absolute;
+    top: -39px;
+    left: 1px;
+}
+
+.select2-dropdown {
+    border: 2px solid #000000;
+    border-radius: 0px;
+}
+
+.select2-container--default .select2-results__option--selected {
+    background-color: #ddd;
+}
+
+.select2-container--default {
+color:#0b0c0c;
+}
+
+.select2-container--default .select2-results__option--highlighted.select2-results__option--selectable{
+    background-color: 	#1d70b8;
+    color:#ffffff;
+}
+
+.select2-results__option {
+    padding: 10px 6px 10px 10px;
+    border-bottom: 1px solid #dedede;
+}
+
+.open .govuk-table__cell {
+    padding-bottom: 5px;
+}
+
+.my-work tbody td {
+    border-bottom: 1px solid #ddd;
+    border-top: 0px solid #ddd;
+}
+
+.govuk-table {
+    background: #ffffff;
+    margin-bottom: 0px;
+}
+
+.govuk-table {
+    border: 0px solid #dddddd;
+    border-width: 0px;
+}
+
+.govuk-table__header {
+    border-bottom: 1px solid #dddddd;
+}
+
+.paginationDesign {
+    padding: 10px 15px;
+    background: #ffffff;
+    margin-bottom: 0;
+    height: 30px;
+    line-height: 29px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    border: 0px solid #dedede;
+    border-top: 0px;
+    font-size:19px;
+}
+
+.js-enabled .govuk-tabs__panel {
+    padding: 0px;
+    border: 0px solid #b1b4b6;
+    padding-top: 20px;
+    background: #ffffffff;
+}
+
+.js-enabled .govuk-tabs__list {
+    margin-bottom: 0;
+    border-bottom: 0px solid #b1b4b6;
+}
+
+.js-enabled .govuk-tabs__list-item--selected {
+    position: relative;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-top: 14px;
+    padding-right: 20px;
+    padding-bottom: 14px;
+    padding-left: 20px;
+    border: 0px solid #b1b4b6;
+    border-bottom: 0;
+    background-color: #ffffff;
+}
+
+.js-enabled .govuk-tabs__list-item {
+    padding: 14px 20px;
+}
+
+.js-enabled .govuk-tabs__tab {
+    margin-bottom: 0;
+    font-size: 36px;
+    font-weight: 600;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.govuk-tabs {
+    margin-bottom: 0px;
+    background: #f3f2f1;
+}
+
+.govuk-tabs {
+    margin-top: 0px;
+}
+
+.tableTitle {
+    display:block;
+    background-color:#ffffff;
+    font-size:36px;
+    font-weight:600;
+    padding: 20px;
+    font-family: 'Roboto';
+}
+
+
+</style>
+
+<div class="navbar-container">
+
+    <img src="/public/images/HMLR_Logo.svg" alt="hmlrlogo" style="height: 44px;
+    padding-left: 30px;
+    padding-top: 14px;
+    padding-bottom: 5px;">
+     
+     <ul id="menu" style="float:right;">
+        <li class="parent"><a href="index.html">Home</a></li>
+  
+        <li class="parent parentIconDown"><a style="padding-right: 25px;" href="#">Services</a></li>
+         
+        <li class="parent"><a href="#">Contact us</a></li>
+  
+        <li class="parent parentIconDown2"><a style="padding-right: 25px;" href="#">John James </a>
+             <ul class="child" style="right:0;">
+             <div class="govuk-body myAccountContent" style="margin-bottom:0px;">
+  
+                   <div>
+                     <div class="myAccountTitle" style="padding-bottom:3px;">
+                       Logged in as:
+                     </div>
+                     <div class="myAccount2ndLine">
+                        Administrator 
+                     </div>
+                     <a href="#" style="margin:0px;color:#00703C;font-weight:700;font-size:14px;">View profile</a>
+                   </div>
+  
+                   <hr>
+  
+                   <div class="myAccountTitle" style="padding-bottom:3px;">
+                     <b>Primary Business Unit Administrator (BUA):</b> 
+                   </div>
+                   <div class="myAccount2ndLine">
+                     John Taylor
+                     <!-- <a href="#" style="margin:0px;color:#00703C;"><b>JohnTaylor@bigbusiness.com</b></a> -->
+                   </div>
+  
+  
+  
+  
+                   <button id="logOut" class="govuk-button" style="margin-top:20px;" onclick="window.location.href='/notifications/ur-round1/scenario2/start.html'">Log out</button>
+                 </div>
+                 </ul>
+        </li>
+              
+        <li class="parent"><a href="/notifications/ur-round1/scenario2/start.html">Log out</a></li>
+      </ul>      
+  </div>
+
+<!-- Back & clear data top -->
+<!-- Back & clear data top -->
+<div>
+
+<!-- Content Area - Start -->
+
+<div style="margin: auto;background: #e6e6e6;display: flex;z-index:9;">
+
+    <!-- Filters and Search Section - Start -->
+
+
+    <div id="FiltersAndSearch" style="width: 300px;float: left;padding: 30px;background: #fff;padding-top:50px;min-height: 700px;">
+
+        <div class="" style="">
+          <form id="search" style="">
+  
+              <div>
+                  <h1 class="govuk-heading-l" style="font-size:34px;">View applications</h1>
+              </div>
+      
+              <div class="govuk-body" style="margin-bottom: 50px;">
+                 <div class="govuk-form-group" style="margin-bottom: 10px;">
+                    <label class="govuk-label form-label-bold" style="font-size:24px">
+                       Search by
+                    </label>
+                    <fieldset class="govuk-fieldset" style="padding:0px;">
+                      <div class="govuk-radios govuk-radios--small" id="myRadioGroup">
+                        <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" type="radio" name="question1" value="A" id="Q1A" checked>
+                          <label class="govuk-label govuk-radios__label" for="changed-name">
+                             HMLR reference or Title number
+                          </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" type="radio" name="question1" value="B" id="Q1B">
+                          <label class="govuk-label govuk-radios__label" for="changed-name-2">
+                            Customer reference
+                          </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" type="radio" name="question1" value="C" id="Q1C">
+                          <label class="govuk-label govuk-radios__label" for="changed-name-3">
+                             Colleague
+                          </label>
+                        </div>
+                      </div>
+                  
+                    </fieldset>
+                 </div>
+  
+  
+  
+                 <!-- Standard search box -->
+                 <div class="govuk-body desc" style="margin-bottom: 0px;display:block;" id="question1A">
+                    <input type="text" id="search-input" class="searchBox" style="width: calc(100% - 66px);">
+                    <button class="searchButton" value="submit" id="search-button" style=""> <img width="20" height="20" style="margin-top:6px;" src="/public/images/search-icon.svg"></button>
+                 </div>
+  
+                 <!-- Standard search box -->
+                 <div class="govuk-body desc" style="margin-bottom: 0px;" id="question1B">
+                    <input type="text" id="search-input" class="searchBox" style="width: calc(100% - 66px);">
+                    <button class="searchButton" value="submit" id="search-button" style=""> <img width="20" height="20" style="margin-top:6px;" src="/public/images/search-icon.svg"></button>
+                 </div>
+  
+                 <!-- Colleague dropdown menu -->
+                 <div class="govuk-body desc" style="margin-bottom: 0px;" id="question1C">
+                    <button class="searchButton" value="submit" id="colleagueSearch" style=""> <img width="20" height="20" style="margin-top:5px;margin-left:1px;" src="/public/images/search-icon.svg"></button>
+                    <select id="cat" class="form-control" onchange="location = this.value;">
+                            <option value="#">Aaron Flynn</option>
+                            <option value="#">Alex Blewett</option>
+                            <option value="">Andy Carr</option>
+                            <option value="#">Duncan Anderson</option>
+                            <option value="#">James Thomas</option>
+                            <option value="#">John Baptiste-Kelly</option>
+                            <option value="V9.html" selected>John James (you)</option>
+                            <option value="V9_JT.html">John Taylor</option>
+                            <option value="#">Jon Parker</option>
+                            <option value="#">Juan Pinto-del-Rio</option>
+                            <option value="#">Lukas Kroening-Maynard</option>
+                            <option value="#">Mark Hornsby</option>
+                            <option value="#">Melvia Mathew</option>
+                            <option value="#">Neil Butler</option>
+                            <option value="#">Nicola Andrews</option>
+                            <option value="#">Pat Gannon</option>
+                            <option value="#">Romani Davies</option>
+                            <option value="#">Simon Skidmore</option>
+                            <option value="#">Sue Watchman</option>
+                            <option value="#">Tony Watson</option>
+                    </select>
+                 </div>
+  
+             </div>
+  
+  
+  
+             <div class="govuk-body" style="margin-bottom: 50px;">
+  
+           <!-- <hr style="margin-bottom: 25px;background:#b1b4b6;margin-top: 25px;"> -->
+  
+             <label class="govuk-label form-label-bold" style="margin-bottom: 15px; font-size:24px">
+              Filters
+              </label>
+
+              <details class="govuk-details" data-module="govuk-details3"  style="padding-left:0px; margin-bottom:15px;">
+                <summary class="govuk-details__summary" style="color:#dedede;cursor: default;">
+                Requires action
+                </summary>
+
+            </details>
+  
+                  <details class="govuk-details" data-module="govuk-details3"  style="padding-left:0px; margin-bottom:15px;">
+                      <summary class="govuk-details__summary" style="">
+                      Type
+                      </summary>
+                      <div class="govuk-details-text">
+                      {{ govukCheckboxes ({
+                      idPrefix: "application-type2",
+                      name: "application-type2",
+                      classes: "govuk-checkboxes govuk-checkboxes--small",
+                      fieldset: {
+                      legend: {
+                      text: ""
+                      }
+                      },
+                      items: [
+                      {
+                      value: "Preliminary",
+                      text: "Register update",
+                      checked: false,
+                      id: "Preliminary"
+                      },
+                      {
+                      value: "Substantive",
+                      text: "Register create"   ,
+                      checked: false,
+                      id: "Substantive"
+                      },
+                      {
+                      value: "Sobstantive",
+                      text: "Register query"   ,
+                      checked: false,
+                      id: "Sobstantive"
+                      }
+                      ]
+                      }) }}
+                      </div>
+                  </details>
+   
+  
+  
+               <details class="govuk-details" data-module="govuk-details2"  style="padding-left:0px;margin-bottom:15px;">
+                  <summary class="govuk-details__summary">
+                     Progress
+                  </summary>
+                  <div class="govuk-details-text">
+                     {{ govukCheckboxes  ({
+                     idPrefix: "application-progress2",
+                     name: "application-progress2",
+                     classes: "govuk-checkboxes govuk-checkboxes--small",
+                     fieldset: {
+                     legend: {
+                     text: ""
+                     }
+                     },
+                     items: [
+                     {
+                     value: "Cancelled",
+                     text: "Cancelled"   ,
+                     checked: false,
+                     id: "Cancelled"
+                     },
+                     {
+                     value: "Completed",
+                     text: "Completed"   ,
+                     checked: false,
+                     id: "Completed"
+                     },
+                     {
+                     value: "Delayed",
+                     text: "Delayed"   ,
+                     checked: false,
+                     id: "Delayed"
+                     },
+                     {
+                     value: "Received",
+                     text: "Received"   ,
+                     checked: false,
+                     id: "Received"
+                     },
+                     {
+                     value: "Saved",
+                     text: "Saved"   ,
+                     checked: false,
+                     id: "Saved"
+                     }
+                     ]
+                     }) }}
+                  </div>
+               </details>
+  
+              </div>
+  
+              <div>
+  
+                 <button id="reset" class="govuk-button govuk-button--secondary" data-module="govuk-button" onclick="window.location.href='#'">
+                    Reset search and filters
+                  </button>
+  
+                 <button class="govuk-button govuk-button--secondary" data-module="govuk-button"  onclick="window.location.href='/public/files/example-export.csv'">
+                     Export applications
+                   </button>
+             
+                   <button class="govuk-button govuk-button--secondary" data-module="govuk-button" onclick="window.location.href='#'">
+                     Guidance
+                   </button>
+             
+                   <!-- <button class="govuk-button" data-module="govuk-button" style="width: 285px;" onclick="window.location.href='#'">
+                     Start new application
+                   </button> -->
+                 
+              </div>
+  
+  
+  
+        </form>
+  
+  
+  
+  
+  
+        </div>
+    <!-- Filters and Search Section - End -->
+  
+  </div>
+      
+  <!-- Table Area - Start -->
+  <div style="width:calc(100% - 352px);float:left;; overflow-x: auto;padding:0px 30px 30px 30px;">   
+
+   <div class="govuk-phase-banner">
+      <p class="govuk-phase-banner__content">
+        <strong class="govuk-tag govuk-phase-banner__content__tag">
+          beta
+        </strong>
+        <span class="govuk-phase-banner__text">
+          This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+        </span>
+      </p>
+    </div>
+
+    <table  class="govuk-table my-work" style="margin-top: 0px; ">
+        <div class="tableTitle">Applications</div>
+        <thead class="govuk-table__head">
+           <tr class="govuk-table__row" style="background-color: #ffffff;">
+              <th class="govuk-table__header sortable" scope="col" id="Title">
+                 <div>Title number</div>
+              </th>
+              <th class="govuk-table__header sortable" scope="col">
+                 <div>Customer reference</div>
+              </th>
+              <th class="govuk-table__header" scope="col">Application type</th>
+              <th class="govuk-table__header sortable" scope="col">
+                 <div>Received by HMLR</div>
+              </th>
+              <th class="govuk-table__header" scope="col">Application status</th>
+              <th class="govuk-table__header" scope="col">
+                 <div>Estimated completion date</div>
+              </th>
+              <th class="govuk-table__header"scope="col"></th>
+           </tr>
+        </thead>
+        {% macro rows(page) %}
+     
+        <tbody class="govuk-table__body">
+            <tr class="govuk-table__row govuk-link-table">
+
+                <td class="govuk-table__cell " scope="row">
+                    E18-CDE 
+                   <p class="govuk-visually-hidden"> E18-CDE </p>
+                   <!-- THIS IS PAGE {{page}} -->
+                </td>
+                <td class="govuk-table__cell ">Hampton.Smith67</td>
+                <td class="govuk-table__cell Substantive" id="">
+                   Register update
+                   <p class="govuk-visually-hidden"> RegisterUpdate Received </p>
+                </td>
+                <td class="govuk-table__cell " scope="row" data-sortable="2021-08-05">06/08/21</td>
+                <td class="govuk-table__cell " scope="row">Received</td>
+                <td class="govuk-table__cell "  data-sortable="0">06/09/21</td>
+                <td class="govuk-table__cell" scope="row"><a class="expandy-row-trigger2" href="#"><img class="chevronsize" src="/public/images/icon_govuk_chevrondown.svg"></a></td>
+  
+             </tr>
+            <!-- 1 Expanded row -->
+            <tr class="govuk-table__row expandy-row hide-row accordion-default-content-1" style="vertical-align: top;">
+
+                <td class="govuk-table__cell" colspan="8" style="padding-top: 30px; border: 5px solid #44a477;">
+                    <div>
+                        <div class="rowContentSection">
+                        <div class="expandedTitles">
+                            Application progress
+                        </div>
+                        <div class="expandedText">
+                            Received
+                        </div>
+                        </div>
+                        <div class="rowContentSection">
+                        <div class="expandedTitles">
+                            HMLR reference
+                        </div>
+                        <div class="expandedText">
+                            S827LKJ
+                        </div>
+                        </div>
+                    </div>
+                    <div style="float: left;width: 100%;padding: 0px;">
+                        <div class="rowContentSection" style="">
+                        <div class="expandedTitles">
+                            Correspondence
+                        </div>
+                        <div>
+                            <div style="float:left;line-height: 30px;min-width: 100px;">
+                                <b>Review</b><br>
+                                <a style="color:#006637;" target="_blank" href="/public/files/requisition-example-document.pdf">Warning of cancellation issued 06/07/21</a><br>
+                                <a style="color:#006637;" target="_blank" href="/public/files/requisition-example-document.pdf">Requisition issued 06/08/21</a>
+                            </div>
+                            <div style="float:left;padding-left: 50px;line-height: 30px;min-width: 100px;">
+                                <b>Resolved</b><br>
+                                None
+                            </div>
+                            <div style="float:left;padding-left: 50px;line-height: 30px;">
+                                <b>Information only</b><br>
+                                <a style="color:#006637;" target="_blank" href="/public/files/requisition-example-document.pdf">Letter issued 06/08/21</a><br>
+                                <a style="color:#006637;" target="_blank" href="/public/files/requisition-example-document.pdf">Letter issued 05/08/21</a><br>
+                                <a style="color:#006637;" target="_blank" href="/public/files/requisition-example-document.pdf">Letter issued 04/08/21</a><br>
+                            </div>
+                        </div>
+                        </div>
+    
+                    </div>
+                    <div style="float: left;width: 100%;padding: 0px;">
+                        <div class="rowContentSectionLast">
+                        <div class="expandedTitles" style="padding-bottom: 10px;">Actions</div>
+                        <div class="expandedText">
+                            <div class="expandedText">
+                                <button class="govuk-button govuk-button--secondary" data-module="govuk-button" style="margin-right:10px;" onclick="window.location.href='page3.html'">
+                                Respond
+                                </button>
+                                <button class="govuk-button govuk-button--secondary" data-module="govuk-button" style="margin-right:10px;" onclick="window.location.href='#'">
+                                Application enquiry
+                                </button>
+                                <button class="govuk-button govuk-button--secondary" data-module="govuk-button" style="margin-right:10px;" onclick="window.location.href='#'">
+                                Save as PDF
+                                </button>
+                            </div>
+                        </div>
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+
+        <tbody class="govuk-table__body">
+            <tr class="govuk-table__row govuk-link-table">
+  
+                <td class="govuk-table__cell " scope="row">
+                    E17-44Q 
+                   <p class="govuk-visually-hidden"> E17-44Q  </p>
+                   <!-- THIS IS PAGE {{page}} -->
+                </td>
+                <td class="govuk-table__cell ">Hampton.Jones44</td>
+                <td class="govuk-table__cell Substantive" id="">
+                   Register update
+                   <p class="govuk-visually-hidden"> RegisterUpdate Received </p>
+                </td>
+                <td class="govuk-table__cell " scope="row" data-sortable="2021-08-05">06/08/21</td>
+                <td class="govuk-table__cell " scope="row">Received</td>
+                <td class="govuk-table__cell "  data-sortable="0">06/09/21</td>
+                <td class="govuk-table__cell" scope="row"><a class="expandy-row-trigger2" href="#"><img class="chevronsize" src="/public/images/icon_govuk_chevrondown.svg"></a></td>
+  
+             </tr>
+            <!-- 1 Expanded row -->
+            <tr class="govuk-table__row expandy-row hide-row accordion-default-content-1" style="vertical-align: top;">
+  
+                <td class="govuk-table__cell" colspan="8" style="padding-top: 30px; border: 5px solid #44a477;">
+                    <div>
+
+                        <div class="rowContentSection">
+                        <div class="expandedTitles">
+                            Application progress
+                        </div>
+                        <div class="expandedText">
+                            Received
+                        </div>
+                        </div>
+                        <div class="rowContentSection">
+                        <div class="expandedTitles">
+                            HMLR reference
+                        </div>
+                        <div class="expandedText">
+                            S827LKK
+                        </div>
+                        </div>
+                    </div>
+                    <div style="float: left;width: 100%;padding: 0px;">
+                        <div class="rowContentSection" style="">
+                        <div class="expandedTitles">
+                            Correspondence
+                        </div>
+                        <div>
+                            <div style="float:left;line-height: 30px;min-width: 100px;">
+                                <b>Review</b><br>
+                                None
+                            </div>
+                            <div style="float:left;padding-left: 50px;line-height: 30px;min-width: 100px;">
+                                <b>Resolved</b><br>
+                                None
+                            </div>
+                            <div style="float:left;padding-left: 50px;line-height: 30px;">
+                                <b>Information only</b><br>
+                                <a style="color:#006637;" target="_blank" href="/public/files/requisition-example-document.pdf">Letter issued 06/08/21</a><br>
+                                <a style="color:#006637;" target="_blank" href="/public/files/requisition-example-document.pdf">Letter issued 05/08/21</a><br>
+                                <a style="color:#006637;" target="_blank" href="/public/files/requisition-example-document.pdf">Letter issued 04/08/21</a><br>
+                            </div>
+                        </div>
+                        </div>
+    
+                    </div>
+                    <div style="float: left;width: 100%;padding: 0px;">
+                        <div class="rowContentSectionLast">
+                        <div class="expandedTitles" style="padding-bottom: 10px;">Actions</div>
+                        <div class="expandedText">
+                            <div class="expandedText">
+                                <button class="govuk-button govuk-button--secondary" data-module="govuk-button" style="margin-right:10px;" onclick="window.location.href='route1/page1.html'">
+                                Respond
+                                </button>
+                                <button class="govuk-button govuk-button--secondary" data-module="govuk-button" style="margin-right:10px;" onclick="window.location.href='#'">
+                                Application enquiry
+                                </button>
+                                <button class="govuk-button govuk-button--secondary" data-module="govuk-button" style="margin-right:10px;" onclick="window.location.href='#'">
+                                Save as PDF
+                                </button>
+                            </div>
+                        </div>
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+
+        <!-- Application 2 -->
+        <tbody class="govuk-table__body">
+           <tr class="govuk-table__row govuk-link-table">
+
+              <td class="govuk-table__cell " scope="row">
+                 E23-66ABCD 
+                 <p class="govuk-visually-hidden"> E23-66ABCD </p>
+                 <!-- THIS IS PAGE {{page}} -->
+              </td>
+              <td class="govuk-table__cell ">Jones.20313</td>
+              <td class="govuk-table__cell Substantive" id="">
+                 Register update
+                 <p class="govuk-visually-hidden"> RegisterUpdate Cancelled </p>
+              </td>
+              <td class="govuk-table__cell " scope="row" data-sortable="2021-08-05">05/08/21</td>
+              <td class="govuk-table__cell " scope="row">Cancelled</td>
+              <td class="govuk-table__cell "  data-sortable="0"></td>
+              <td class="govuk-table__cell" scope="row"><a class="expandy-row-trigger2" href="#"><img class="chevronsize" src="/public/images/icon_govuk_chevrondown.svg"></a></td>
+
+           </tr>
+           <!-- 1 Expanded row -->
+           <tr class="govuk-table__row expandy-row hide-row accordion-default-content-1">
+            <td class="govuk-table__cell" colspan="7" style="padding-top: 30px;">
+               <div>
+                  <div class="rowContentSection">
+                     <div class="expandedTitles">
+                        Application progress
+                     </div>
+                     <div class="expandedText">
+                        Cancelled
+                     </div>
+                  </div>
+                  <div class="rowContentSection">
+                     <div class="expandedTitles">
+                        HMLR reference
+                     </div>
+                     <div class="expandedText">
+                        S827LKJ
+                     </div>
+                  </div>
+               </div>
+               <div style="float: left;width: 100%;padding: 0px;">
+                  <div class="rowContentSection" style="    min-width: 735px;">
+                     <div class="expandedTitles">
+                        Correspondence
+                     </div>
+                     <div>
+                        <div style="float:left;line-height: 30px;">
+                           <b>Review</b><br>
+                           <a style="color:#006637;" target="_blank" href="/public/files/requisition-example-document.pdf">Letter of cancellation issued 22/09/21</a><br>
+                           <a style="color:#006637;" target="_blank" href="/public/files/requisition-example-document.pdf">Warning of cancellation issued 15/09/21</a><br>
+                           <a style="color:#006637;" target="_blank" href="/public/files/requisition-example-document.pdf">Requisition issued 01/09/21</a><br>
+                        </div>
+                        <div style="float:left;padding-left: 50px;line-height: 30px;">
+                           <b>Resolved</b><br>
+   
+                           <a style="color:#006637;" target="_blank" href="/public/files/requisition-example-document.pdf">Letter issued 28/08/21</a><br>
+                        </div>
+                        <div style="float:left;padding-left: 50px;line-height: 30px;">
+                           <b>Information only</b><br>
+                           <a style="color:#006637;" target="_blank" href="/public/files/requisition-example-document.pdf">Letter issued 26/08/21</a>
+                        </div>
+                     </div>
+                  </div>
+
+               </div>
+
+               <div style="float: left;width: 100%;padding: 0px;">
+                <div class="rowContentSection">
+                   <div class="expandedTitles">
+                      Files
+                   </div>
+                   <div class="expandedText" style="line-height: 30px;">
+                      <a style="color:#006637;" href="#">Cancellation </a>
+                   </div>
+                </div>
+                </div>
+
+               <div style="float: left;width: 100%;padding: 0px;">
+                <div class="rowContentSectionLast">
+                   <div class="expandedTitles" style="padding-bottom: 10px;">Actions</div>
+                   <div class="expandedText">
+                      <div class="expandedText">
+                         <button class="govuk-button govuk-button--secondary" data-module="govuk-button" style="margin-right:10px;" onclick="window.location.href='#'">
+                            Respond
+                          </button>
+                          <button class="govuk-button govuk-button--secondary" data-module="govuk-button" style="margin-right:10px;" onclick="window.location.href='#'">
+                            Application enquiry
+                          </button>
+                          <button class="govuk-button govuk-button--secondary" data-module="govuk-button" style="margin-right:10px;" onclick="window.location.href='#'">
+                            Save as PDF
+                          </button>
+                      </div>
+                   </div>
+                </div>
+            </td>
+         </tr>
+        </tbody>
+
+        <!-- Application 3 -->
+        <tbody class="govuk-table__body">
+            <tr class="govuk-table__row govuk-link-table">
+                <td class="govuk-table__cell " scope="row">
+                PL893723 
+                    <p class="govuk-visually-hidden">PL893723</p>
+                    <!-- THIS IS PAGE {{page}} -->
+                </td>
+                <td class="govuk-table__cell ">PLTR.Thompson</td>
+                <td class="govuk-table__cell Substantive" id="">
+                New lease
+                    <p class="govuk-visually-hidden"> TLAGroup NewLease Received</p>
+                </td>
+                <td class="govuk-table__cell " scope="row" data-sortable="2021-05-15">15/05/21</td>
+                <td class="govuk-table__cell " scope="row">Received</td>
+                <td class="govuk-table__cell "  data-sortable="0">19/09/21</td>
+                <td class="govuk-table__cell" scope="row"><a class="expandy-row-trigger2" href="#"><img class="chevronsize" src="/public/images/icon_govuk_chevrondown.svg"></a></td>
+
+            </tr>
+            <!-- 1 Expanded row -->
+            <tr class="govuk-table__row expandy-row hide-row accordion-default-content-1" style="vertical-align: top;">
+
+                <td class="govuk-table__cell" colspan="8" style="padding-top: 30px; border: 5px solid #44a477;">
+                    <div>
+                        <div class="rowContentSection">
+                        <div class="expandedTitles">
+                            Application progress
+                        </div>
+                        <div class="expandedText">
+                            Received: Priority Protected - Awaiting Processing
+                        </div>
+                        </div>
+                        <div class="rowContentSection">
+                        <div class="expandedTitles">
+                            HMLR reference
+                        </div>
+                        <div class="expandedText">
+                            LP890347
+                        </div>
+                        </div>
+                        <div class="rowContentSection">
+                        <div class="expandedTitles">
+                            Parent Title(s)
+                        </div>
+                        <div class="expandedText">
+                            PPL89232
+                        </div>
+                        </div>
+                    </div>
+                    <div style="float: left;width: 100%;padding: 0px;">
+                        <div class="rowContentSection" style="float:left;line-height: 30px;">
+                        <div class="expandedTitles">
+                            Correspondence
+                        </div>
+                        <div>
+                            <div style="float:left;line-height: 30px;">
+                                <b>Review</b><br>
+                                None    
+                            </div>
+                            <div style="float:left;padding-left: 50px;line-height: 30px;">
+                                <b>Resolved</b><br>
+                                None
+                            </div>
+                            <div style="float:left;padding-left: 50px;line-height: 30px;">
+                                <b>Information only</b><br>
+                                <a style="color:#006637;" target="_blank" href="#">Letter issued on 09/07/21</a><br>
+                                <a style="color:#006637;" target="_blank" href="#">Letter issued on 24/06/21</a><br>
+                            </div>
+                        </div>
+                        </div>
+    
+                    </div>
+    
+                    <div style="float: left;width: 100%;padding: 0px;">
+                    <div class="rowContentSectionLast">
+                        <div class="expandedTitles" style="padding-bottom: 10px;">Actions</div>
+                        <div class="expandedText">
+                            <div class="expandedText">
+                            <button class="govuk-button govuk-button--secondary" data-module="govuk-button" style="margin-right:10px;" onclick="window.location.href='#'">
+                                Respond
+                                </button>
+                                <button class="govuk-button govuk-button--secondary" data-module="govuk-button" style="margin-right:10px;" onclick="window.location.href='#'">
+                                Application enquiry
+                                </button>
+                                <button class="govuk-button govuk-button--secondary" data-module="govuk-button" style="margin-right:10px;" onclick="window.location.href='#'">
+                                Save as PDF
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+     
+        <!-- Application 4 -->
+        <tbody class="govuk-table__body">
+            <tr class="govuk-table__row govuk-link-table">
+
+            <td class="govuk-table__cell " scope="row">
+                LP09209 
+                <p class="govuk-visually-hidden">LP09209</p>
+                <!-- THIS IS PAGE {{page}} -->
+            </td>
+            <td class="govuk-table__cell ">Bartlett.23124</td>
+            <td class="govuk-table__cell Substantive" id="">
+                Official copies
+                <p class="govuk-visually-hidden"> HS2 OfficialCopies Completed </p>
+            </td>
+            <td class="govuk-table__cell " scope="row" data-sortable="2021-08-01">01/08/21</td>
+            <td class="govuk-table__cell " scope="row">Completed</td>
+            <td class="govuk-table__cell "  data-sortable="0"></td>
+            <td class="govuk-table__cell" scope="row"><a class="expandy-row-trigger2" href="#"><img class="chevronsize" src="/public/images/icon_govuk_chevrondown.svg"></a></td>
+
+            </tr>
+            <!-- 1 Expanded row -->
+            <tr class="govuk-table__row expandy-row hide-row accordion-default-content-1" style="vertical-align: top;">
+
+            <td class="govuk-table__cell" colspan="8" style="padding-top: 30px; border: 5px solid #44a477;">
+                <div>
+                    <div class="rowContentSection">
+                        <div class="expandedTitles">
+                        Application progress
+                        </div>
+                        <div class="expandedText">
+                        Completed
+                        </div>
+                    </div>
+                    <div class="rowContentSection">
+                        <div class="expandedTitles">
+                        HMLR reference
+                        </div>
+                        <div class="expandedText">
+                            Y917GSY
+                        </div>
+                    </div>
+                </div>
+                <div style="float: left;width: 100%;padding: 0px;">
+                    <div class="rowContentSection" style="">
+                        <div class="expandedTitles">
+                        Correspondence
+                        </div>
+                        <div>
+                        <div style="float:left;line-height: 30px;min-width: 100px;">
+                            <b>Review</b><br>
+                                None
+                        </div>
+                        <div style="float:left;padding-left: 50px;line-height: 30px;">
+                            <b>Resolved</b><br>
+                            <!-- <a style="color:#006637;" target="_blank" href="/public/files/requisition-example-document.pdf">Warning of cancellation issued 22/09/21</a><br>
+                            <a style="color:#006637;" target="_blank" href="/public/files/requisition-example-document.pdf">Requisition issued 15/09/21</a><br> -->
+                            None
+                        </div>
+                        <div style="float:left;padding-left: 50px;line-height: 30px;">
+                            <b>Information only</b><br>
+                            <!-- <a style="color:#006637;" target="_blank" href="/public/files/requisition-example-document.pdf">Letter issued 26/08/21</a><br>
+                            <a style="color:#006637;" target="_blank" href="/public/files/requisition-example-document.pdf">Notice issued 25/08/21</a> -->
+                            None
+                        </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div style="float: left;width: 100%;padding: 0px;">
+                    <div class="rowContentSection" style="padding-right: 0;">
+                        <div class="expandedTitles">
+                        Files
+                        </div>
+                        <div class="expandedText" style="line-height: 30px;">
+                        <a style="color:#006637;" href="#">Official Copy of Title Plan dated 31/10/19</a><br>
+                        <a style="color:#006637;" href="#">Official Copy of Register dated 31/10/19</a>
+                        </div>
+                    </div>
+                    </div>
+
+                <div style="float: left;width: 100%;padding: 0px;">
+                    <div class="rowContentSectionLast">
+                        <div class="expandedTitles" style="padding-bottom: 10px;">Actions</div>
+                        <div class="expandedText">
+                        <div class="expandedText">
+                            <button class="govuk-button govuk-button--secondary" data-module="govuk-button" style="margin-right:10px;" onclick="window.location.href='#'">
+                                Respond
+                            </button>
+                            <button class="govuk-button govuk-button--secondary" data-module="govuk-button" style="margin-right:10px;" onclick="window.location.href='#'">
+                                Application enquiry
+                            </button>
+                            <button class="govuk-button govuk-button--secondary" data-module="govuk-button" style="margin-right:10px;" onclick="window.location.href='#'">
+                                Save as PDF
+                            </button>
+                        </div>
+                        </div>
+                    </div>
+            </td>
+            </tr>
+        </tbody>
+ 
+
+            
+        <!-- Application 6 -->
+        <tbody class="govuk-table__body">
+            <tr class="govuk-table__row govuk-link-table">
+            <td class="govuk-table__cell " scope="row">
+                CB980123 
+                <p class="govuk-visually-hidden">CB980123</p>
+                <!-- THIS IS PAGE {{page}} -->
+            </td>
+            <td class="govuk-table__cell ">Smith.20313</td>
+            <td class="govuk-table__cell Substantive" id="">
+                Official search of whole with priority
+                <p class="govuk-visually-hidden"> Westfields OfficialSearchWhole Completed </p>
+            </td>
+            <td class="govuk-table__cell " scope="row" data-sortable="2021-05-14">14/05/21</td>
+            <td class="govuk-table__cell " scope="row">Completed</td>
+            <td class="govuk-table__cell "  data-sortable="0"></td>
+            <td class="govuk-table__cell" scope="row"><a class="expandy-row-trigger2" href="#"><img class="chevronsize" src="/public/images/icon_govuk_chevrondown.svg"></a></td>
+
+            </tr>
+            <!-- 1 Expanded row -->
+            <tr class="govuk-table__row expandy-row hide-row accordion-default-content-1" style="vertical-align: top;">
+
+            <td class="govuk-table__cell" colspan="8" style="padding-top: 30px; border: 5px solid #44a477;">
+                <div>
+                    <div class="rowContentSection">
+                        <div class="expandedTitles">
+                        Application progress
+                        </div>
+                        <div class="expandedText">
+                        Completed
+                        </div>
+                    </div>
+                    <div class="rowContentSection">
+                        <div class="expandedTitles">
+                        HMLR reference
+                        </div>
+                        <div class="expandedText">
+                            E921HSK
+                        </div>
+                    </div>
+                    <div class="rowContentSection">
+                        <div class="expandedTitles">
+                        Priority period
+                        </div>
+                        <div class="expandedText">
+                            14/05/21 - 27/06/21
+                        </div>
+                    </div>
+                </div>
+                <div style="float: left;width: 100%;padding: 0px;">
+                    <div class="rowContentSection" style="">
+                        <div class="expandedTitles">
+                        Correspondence
+                        </div>
+                        <div>
+                        <div style="float:left;line-height: 30px;min-width: 100px;">
+                            <b>Review</b><br>
+                            None
+                        </div>
+                        <div style="float:left;padding-left: 50px;line-height: 30px;min-width: 100px;">
+                            <b>Resolved</b><br>
+                            None
+                        </div>
+                        <div style="float:left;padding-left: 50px;line-height: 30px;">
+                            <b>Information only</b><br>
+                            None
+                        </div>
+                        </div>
+                    </div>
+    
+                </div>
+
+                <div style="float: left;width: 100%;padding: 0px;">
+                    <div class="rowContentSection" style="padding-right: 0;">
+                        <div class="expandedTitles">
+                        Files
+                        </div>
+                        <div class="expandedText" style="line-height: 30px;">
+                        <a style="color:#006637;" href="#">Search result dated 29/05/21</a><br>
+                        </div>
+                    </div>
+                    </div>
+
+                <div style="float: left;width: 100%;padding: 0px;">
+                    <div class="rowContentSectionLast">
+                        <div class="expandedTitles" style="padding-bottom: 10px;">Actions</div>
+                        <div class="expandedText">
+                        <div class="expandedText">
+                            <button class="govuk-button govuk-button--secondary" data-module="govuk-button" style="margin-right:10px;" onclick="window.location.href='#'">
+                                Respond
+                            </button>
+                            <button class="govuk-button govuk-button--secondary" data-module="govuk-button" style="margin-right:10px;" onclick="window.location.href='#'">
+                                Application enquiry
+                            </button>
+                            <button class="govuk-button govuk-button--secondary" data-module="govuk-button" style="margin-right:10px;" onclick="window.location.href='#'">
+                                Save as PDF
+                            </button>
+                        </div>
+                        </div>
+                    </div>
+            </td>
+            </tr>
+        </tbody>
+
+        <!-- Application 7 -->
+        <tbody class="govuk-table__body">
+            <tr class="govuk-table__row govuk-link-table">
+
+            <td class="govuk-table__cell " scope="row">
+                PT121212
+                <p class="govuk-visually-hidden">PT121212</p>
+                <!-- THIS IS PAGE {{page}} -->
+            </td>
+
+            <td class="govuk-table__cell ">PTON.Cage.56 </td>
+            <td class="govuk-table__cell Substantive" id="">
+                Official search of whole with priority
+                <p class="govuk-visually-hidden"> Westfields OfficialSearchWhole Completed </p>
+            </td>
+            <td class="govuk-table__cell " scope="row" data-sortable="2021-05-14">14/05/21</td>
+            <td class="govuk-table__cell " scope="row">Completed</td>
+            <td class="govuk-table__cell "  data-sortable="0"></td>
+            <td class="govuk-table__cell" scope="row"><a class="expandy-row-trigger2" href="#"><img class="chevronsize" src="/public/images/icon_govuk_chevrondown.svg"></a></td>
+
+            </tr>
+            <!-- 1 Expanded row -->
+            <tr class="govuk-table__row expandy-row hide-row accordion-default-content-1" style="vertical-align: top;">
+
+            <td class="govuk-table__cell" colspan="8" style="padding-top: 30px; border: 5px solid #44a477;">
+                <div>
+                    <div class="rowContentSection">
+                        <div class="expandedTitles">
+                        Application progress
+                        </div>
+                        <div class="expandedText">
+                        Completed
+                        </div>
+                    </div>
+                    <div class="rowContentSection">
+                        <div class="expandedTitles">
+                        HMLR reference
+                        </div>
+                        <div class="expandedText">
+                            KK89234
+                        </div>
+                    </div>
+                    <div class="rowContentSection">
+                        <div class="expandedTitles">
+                        Priority period
+                        </div>
+                        <div class="expandedText">
+                            12/05/21 - 25/06/21
+                        </div>
+                    </div>
+                </div>
+                <div style="float: left;width: 100%;padding: 0px;">
+                    <div class="rowContentSection" style="">
+                        <div class="expandedTitles">
+                        Correspondence
+                        </div>
+                        <div>
+                        <div style="float:left;line-height: 30px;min-width: 100px;">
+                            <b>Review</b><br>
+                            None
+                        </div>
+                        <div style="float:left;padding-left: 50px;line-height: 30px;min-width: 100px;">
+                            <b>Resolved</b><br>
+                            None
+                        </div>
+                        <div style="float:left;padding-left: 50px;line-height: 30px;">
+                            <b>Information only</b><br>
+                            None
+                        </div>
+                        </div>
+                    </div>
+    
+                </div>
+
+                <div style="float: left;width: 100%;padding: 0px;">
+                    <div class="rowContentSection" style="padding-right: 0;">
+                        <div class="expandedTitles">
+                        Files
+                        </div>
+                        <div class="expandedText" style="line-height: 30px;">
+                        <a style="color:#006637;" href="#">Search result dated 27/05/21</a><br>
+                        </div>
+                    </div>
+                    </div>
+
+                <div style="float: left;width: 100%;padding: 0px;">
+                    <div class="rowContentSectionLast">
+                        <div class="expandedTitles" style="padding-bottom: 10px;">Actions</div>
+                        <div class="expandedText">
+                        <div class="expandedText">
+                            <button class="govuk-button govuk-button--secondary" data-module="govuk-button" style="margin-right:10px;" onclick="window.location.href='#'">
+                                Respond
+                            </button>
+                            <button class="govuk-button govuk-button--secondary" data-module="govuk-button" style="margin-right:10px;" onclick="window.location.href='#'">
+                                Application enquiry
+                            </button>
+                            <button class="govuk-button govuk-button--secondary" data-module="govuk-button" style="margin-right:10px;" onclick="window.location.href='#'">
+                                Save as PDF
+                            </button>
+                        </div>
+                        </div>
+                    </div>
+            </td>
+            </tr>
+        </tbody>
+                
+        <!-- Application 8 -->
+        <tbody class="govuk-table__body">
+            <tr class="govuk-table__row govuk-link-table">
+
+            <td class="govuk-table__cell " scope="row">
+                LP54312
+                <p class="govuk-visually-hidden">LP54312</p>
+                <!-- THIS IS PAGE {{page}} -->
+            </td>
+            <td class="govuk-table__cell ">Terry.43123</td>
+            <td class="govuk-table__cell Substantive" id="">
+                Transfer of part
+                <p class="govuk-visually-hidden"> TransferOfPart Received </p>
+            </td>
+            <td class="govuk-table__cell " scope="row" data-sortable="2021-05-10">10/05/21</td>
+            <td class="govuk-table__cell " scope="row">Received</td>
+            <td class="govuk-table__cell "  data-sortable="0">07/09/2021</td>
+            <td class="govuk-table__cell" scope="row"><a class="expandy-row-trigger2" href="#"><img class="chevronsize" src="/public/images/icon_govuk_chevrondown.svg"></a></td>
+
+            </tr>
+            <!-- 1 Expanded row -->
+            <tr class="govuk-table__row expandy-row hide-row accordion-default-content-1" style="vertical-align: top;">
+
+            <td class="govuk-table__cell" colspan="8" style="padding-top: 30px; border: 5px solid #44a477;">
+                <div>
+                    <div class="rowContentSection">
+                        <div class="expandedTitles">
+                        Application progress
+                        </div>
+                        <div class="expandedText">
+                        Receieved: In progress
+                        </div>
+                    </div>
+                    <div class="rowContentSection">
+                        <div class="expandedTitles">
+                        HMLR reference
+                        </div>
+                        <div class="expandedText">
+                            A272JSH
+                        </div>
+                    </div>
+                    <div class="rowContentSection">
+                        <div class="expandedTitles">
+                            Parent Title(s)
+                        </div>
+                        <div class="expandedText">
+                            LP14312
+                        </div>
+                    </div>
+
+                </div>
+                <div style="float: left;width: 100%;padding: 0px;">
+                    <div class="rowContentSection" style="">
+                        <div class="expandedTitles">
+                        Correspondence
+                        </div>
+                        <div>
+                        <div style="float:left;line-height: 30px;min-width: 100px;">
+                            <b>Review</b><br>
+                            None
+                        </div>
+                        <div style="float:left;padding-left: 50px;line-height: 30px;min-width: 100px;">
+                            <b>Resolved</b><br>
+                            None
+                        </div>
+                        <div style="float:left;padding-left: 50px;line-height: 30px;">
+                            <b>Information only</b><br>
+                            None
+                        </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div style="float: left;width: 100%;padding: 0px;">
+                    <div class="rowContentSectionLast">
+                        <div class="expandedTitles" style="padding-bottom: 10px;">Actions</div>
+                        <div class="expandedText">
+                        <div class="expandedText">
+                            <button class="govuk-button govuk-button--secondary" data-module="govuk-button" style="margin-right:10px;" onclick="window.location.href='#'">
+                                Respond
+                            </button>
+                            <button class="govuk-button govuk-button--secondary" data-module="govuk-button" style="margin-right:10px;" onclick="window.location.href='#'">
+                                Application enquiry
+                            </button>
+                            <button class="govuk-button govuk-button--secondary" data-module="govuk-button" style="margin-right:10px;" onclick="window.location.href='#'">
+                                Save as PDF
+                            </button>
+                        </div>
+                        </div>
+                    </div> 
+            </td>
+            </tr>
+        </tbody>
+
+        <!-- Application 9 -->
+        <tbody class="govuk-table__body">
+        <tr class="govuk-table__row govuk-link-table">
+
+            <td class="govuk-table__cell " scope="row">
+            E23-66EF 
+                <p class="govuk-visually-hidden"> E23-66EF </p>
+                <!-- THIS IS PAGE {{page}} -->
+            </td>
+
+            <td class="govuk-table__cell ">Benson.Hall85</td>
+            <td class="govuk-table__cell Substantive" id="">
+                Register update
+                <p class="govuk-visually-hidden"> TLAGroup RegisterUpdate Received </p>
+            </td>
+            <td class="govuk-table__cell " scope="row" data-sortable="2021-08-01">01/08/21</td>
+            <td class="govuk-table__cell " scope="row">Received</td>
+            <td class="govuk-table__cell "  data-sortable="0">04/11/2021</td>
+            <td class="govuk-table__cell" scope="row"><a class="expandy-row-trigger2" href="#"><img class="chevronsize" src="/public/images/icon_govuk_chevrondown.svg"></a></td>
+
+        </tr>
+        <!-- 1 Expanded row -->
+        <tr class="govuk-table__row expandy-row hide-row accordion-default-content-1" style="vertical-align: top;">
+
+            <td class="govuk-table__cell" colspan="8" style="padding-top: 30px; border: 5px solid #44a477;">
+                <div>
+                    <div class="rowContentSection">
+                    <div class="expandedTitles">
+                        Application progress
+                    </div>
+                    <div class="expandedText">
+                        Received: Priority Protected - Awaiting Processing
+                    </div>
+                    </div>
+                    <div class="rowContentSection">
+                    <div class="expandedTitles">
+                        HMLR reference
+                    </div>
+                    <div class="expandedText">
+                        LU838923
+                    </div>
+                    </div>
+                </div>
+                <div style="float: left;width: 100%;padding: 0px;">
+                    <div class="rowContentSection" style="padding-right:0px;">
+                    <div class="expandedTitles">
+                        Correspondence
+                    </div>
+                    <div>
+                        <div style="float:left;line-height: 30px;min-width: 100px;">
+                            <b>Review</b><br>
+    None
+                        </div>
+                        <div style="float:left;padding-left: 50px;line-height: 30px;">
+                            <b>Resolved</b><br>
+                            <a style="color:#006637;" target="_blank" href="/public/files/requisition-example-document.pdf">Warning of cancellation issued 22/09/21</a><br>
+                            <a style="color:#006637;" target="_blank" href="/public/files/requisition-example-document.pdf">Requisition issued 15/09/21</a><br>
+                        </div>
+                        <div style="float:left;padding-left: 50px;line-height: 30px;">
+                            <b>Information only</b><br>
+                            <a style="color:#006637;" target="_blank" href="/public/files/requisition-example-document.pdf">Letter issued 26/08/21</a><br>
+                            <a style="color:#006637;" target="_blank" href="/public/files/requisition-example-document.pdf">Notice issued 25/08/21</a>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+
+
+                <div style="float: left;width: 100%;padding: 0px;">
+                    <div class="rowContentSection" style="padding-right: 0;">
+                    <div class="expandedTitles">
+                        Files
+                    </div>
+                    <div class="expandedText" style="line-height: 30px;">
+                        <a style="color:#006637;" href="#">Registration Completion Sheet dated </a><br>
+                        <a style="color:#006637;" href="#">Official Copy of Register</a>
+                    </div>
+                    </div>
+                    </div>
+
+                <div style="float: left;width: 100%;padding: 0px;">
+                    <div class="rowContentSectionLast">
+                    <div class="expandedTitles" style="padding-bottom: 10px;">Actions</div>
+                    <div class="expandedText">
+                        <div class="expandedText">
+                            <button class="govuk-button govuk-button--secondary" data-module="govuk-button" style="margin-right:10px;" onclick="window.location.href='#'">
+                                Respond
+                            </button>
+                            <button class="govuk-button govuk-button--secondary" data-module="govuk-button" style="margin-right:10px;" onclick="window.location.href='#'">
+                                Application enquiry
+                            </button>
+                            <button class="govuk-button govuk-button--secondary" data-module="govuk-button" style="margin-right:10px;" onclick="window.location.href='#'">
+                                Save as PDF
+                            </button>
+                        </div>
+                    </div>
+                    </div>
+            </td>
+        </tr>
+        </tbody>
+            
+         <!-- Application 10 -->
+         <tbody class="govuk-table__body">
+            <tr class="govuk-table__row govuk-link-table">
+
+               <td class="govuk-table__cell " scope="row">
+                CB892372 
+                  <p class="govuk-visually-hidden">CB892372</p>
+                  <!-- THIS IS PAGE {{page}} -->
+               </td>
+
+               <td class="govuk-table__cell ">JT/392/Williams</td>
+               <td class="govuk-table__cell Substantive" id="">
+                New lease
+                  <p class="govuk-visually-hidden"> NewLease Completed</p>
+               </td>
+               <td class="govuk-table__cell " scope="row" data-sortable="2021-08-02">02/08/21</td>
+               <td class="govuk-table__cell " scope="row">Completed</td>
+               <td class="govuk-table__cell "  data-sortable="0"></td>
+               <td class="govuk-table__cell" scope="row"><a class="expandy-row-trigger2" href="#"><img class="chevronsize" src="/public/images/icon_govuk_chevrondown.svg"></a></td>
+
+            </tr>
+            <!-- 1 Expanded row -->
+            <tr class="govuk-table__row expandy-row hide-row accordion-default-content-1" style="vertical-align: top;">
+
+               <td class="govuk-table__cell" colspan="8" style="padding-top: 30px; border: 5px solid #44a477;">
+                  <div>
+                     <div class="rowContentSection">
+                        <div class="expandedTitles">
+                           Application progress
+                        </div>
+                        <div class="expandedText">
+                            Completed
+                        </div>
+                     </div>
+                     <div class="rowContentSection">
+                        <div class="expandedTitles">
+                           HMLR reference
+                        </div>
+                        <div class="expandedText">
+                            AS892372
+                        </div>
+                     </div>
+                     <div class="rowContentSection">
+                        <div class="expandedTitles">
+                            Parent Title(s)
+                        </div>
+                        <div class="expandedText">
+                            LP189999
+                        </div>
+                     </div>
+                  </div>
+                  <div style="float: left;width: 100%;padding: 0px;">
+                     <div class="rowContentSection" style="float:left;line-height: 30px;">
+                        <div class="expandedTitles">
+                           Correspondence
+                        </div>
+                        <div>
+                           <div style="float:left;line-height: 30px;">
+                              <b>Review</b><br>
+                                None    
+                           </div>
+                           <div style="float:left;padding-left: 50px;line-height: 30px;">
+                              <b>Resolved</b><br>
+                                None
+                           </div>
+                           <div style="float:left;padding-left: 50px;line-height: 30px;">
+                              <b>Information only</b><br>
+                              None
+                           </div>
+                        </div>
+                     </div>
+ 
+                  </div>
+  
+
+
+                  <div style="float: left;width: 100%;padding: 0px;">
+                    <div class="rowContentSection" style="padding-right: 0;">
+                    <div class="expandedTitles">
+                        Files
+                    </div>
+                    <div class="expandedText" style="line-height: 30px;">
+                        <a style="color:#006637;" target="_blank" href="#">Registration Completion Sheet dated 02/09/21</a><br>
+                              <a style="color:#006637;" target="_blank" href="#">Official Copy of Register dated 02/09/21</a><br>
+                              <a style="color:#006637;" target="_blank" href="#">Official Copy of Title Plan dated 02/09/21</a><br>
+                    </div>
+                    </div>
+                    </div>
+
+
+                  <div style="float: left;width: 100%;padding: 0px;">
+                   <div class="rowContentSectionLast">
+                      <div class="expandedTitles" style="padding-bottom: 10px;">Actions</div>
+                      <div class="expandedText">
+                         <div class="expandedText">
+                            <button class="govuk-button govuk-button--secondary" data-module="govuk-button" style="margin-right:10px;" onclick="window.location.href='#'">
+                               Respond
+                             </button>
+                             <button class="govuk-button govuk-button--secondary" data-module="govuk-button" style="margin-right:10px;" onclick="window.location.href='#'">
+                               Application enquiry
+                             </button>
+                             <button class="govuk-button govuk-button--secondary" data-module="govuk-button" style="margin-right:10px;" onclick="window.location.href='#'">
+                               Save as PDF
+                             </button>
+                         </div>
+                      </div>
+                   </div>
+               </td>
+            </tr>
+         </tbody>         
+
+
+        
+
+
+
+
+
+     
+     
+
+        </tbody>
+        </tbody>
+        {% endmacro %}
+        {{rows(1)}}
+        {# {{rows(2)}}
+        {{rows(3)}}
+        {{rows(4)}}
+        {{rows(5)}} #}
+     </table>
+     <div class="govuk-body paginationDesign" style="">
+ 
+ 
+        <div>
+        Displaying 1 - 10 of 35 applications
+        </div>
+
+        <div style="padding-left:30px;">
+          <span>«</span> 1, 2, 3, 4 <span>»</span>
+        </div>
+    </div>
+
+
+     <!-- My Work Table -->
+
+
+  </div>
+
+</div>
+
+
+<div class="govuk-grid-column-full" style="padding:0px;border-top:5px solid #00703C;">
+
+        
+        
+        
+    <div style="padding:30px; background: #f3f2f1;">
+        <a class="footlink" style="text-color: grey; text-decoration: none;"><u>Terms and conditions</u></a>
+        <a>|</a>
+        <a class="footlink" style="text-color: grey; text-decoration: none;"><u>Accessibility statement</u></a>
+        <a>|</a>
+        <a class="footlink" style="text-color: grey; text-decoration: none;"><u>Freedom of information</u></a>
+        <a>|</a>
+        <a class="footlink" style="text-color: grey; text-decoration: none;" href="/setup/stored-data"><u>Check data</u></a>
+        <a>
+        <a>|</a>
+        <a class="footlink" style="text-color: grey; text-decoration: none;" href="/prototype-admin/clear-data"><u>Clear data</u></a>
+        <a>
+        <br>
+        <br>
+        <p style="color: #6d6d6d; text-decoration: none;font-size: 16px;margin-bottom:0px;"><i>These links will open in a new window.</i></p>
+    </div>
+                </div>
+
+
+<!-- Content Area - End -->
+
+
+<script>
+    $(document).ready(function() {
+        $("input[name$='question1']").click(function() {
+            var test = $(this).val();
+    
+            $("div.desc").hide();
+            $("#question1" + test).show();
+        });
+    });
+    
+ 
+   
+ </script>
+ 
+ <style>
+    .desc {
+    display:none;
+    }
+ </style>
+
+{% endblock %}

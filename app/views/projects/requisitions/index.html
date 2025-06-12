@@ -1,0 +1,179 @@
+{% extends "layouts/layout_ProjectPage.html" %}
+
+{% block pageTitle %}
+Requisitions
+{% endblock %}
+
+
+
+{% block content %}
+
+<style>
+    .govuk-accordion__section-heading-text {
+      font-size: 36px;
+      line-height: 1;
+  }
+
+::marker {
+  font-weight:600;
+}
+
+.simpleListNumbered li {
+    padding-bottom: 10px;
+}
+
+</style>
+
+<div class="govuk-grid-row govuk-body">
+  
+  <div class="govuk-grid-column-full backButton">
+      <a href="/index.html" class="govuk-back-link" style="margin-bottom:20px;">Back to projects</a>
+  </div>
+<!-- This is where the project title goes and a small descritpion of what the work covers. -->
+
+    <div class="govuk-grid-column-full govuk-!-padding-bottom-9  govuk-!-padding-top-6">
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-0">
+        Requisitions
+      </h1>
+      
+
+
+    </div>
+
+
+<!-- This is where the accordion content is added. If the signed-off design is not required, simply comment it out. -->
+
+    <div class="govuk-grid-column-full">
+        <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">
+          <div class="govuk-accordion__section ">
+            <div class="govuk-accordion__section-header">
+              <h2 class="govuk-accordion__section-heading">
+                <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
+                  Overview
+                </span>
+              </h2>
+            </div>
+            <div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
+              
+              <p>There has been <a href="/projects/notifications/index.html">user research and design</a> in the past related to surfacing requisitions/informing the user that they need to require action, but this work is bypassing that user research and design, due to the urgency of implementation from the Product Team.</p>
+
+              <h3 class="govuk-heading-m govuk-!-margin-bottom-2 govuk-!-margin-top-7">Project team</h3>
+
+              <ul class="simpleList">
+                <li>Andy Carr - <span class="jobTitle">Interaction design</span></li>
+                <li>John Taylor - <span class="jobTitle">Product owner</span></li>
+                <li>Pat Gannon - <span class="jobTitle">Business analyst</span></li>
+                <li>Gareth Roberts - <span class="jobTitle">Product manager</span></li>
+              </ul>
+            </div>
+          </div>
+
+
+        <div class="govuk-accordion__section ">
+            <div class="govuk-accordion__section-header">
+              <h2 class="govuk-accordion__section-heading">
+                <span class="govuk-accordion__section-button" id="accordion-default-heading-2">
+                  Design
+                </span>
+              </h2>
+            </div>
+            <div id="accordion-default-content-2" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-2">
+              
+              <h3 class="govuk-heading-m govuk-!-margin-bottom-2 govuk-!-margin-top-6">E23-66i - Requisition issued visible from collapsed row</h3>
+              <p>Users need to be able to tell that a requisition has been issued, without having to expand application rows.</p>
+              <ul class="simpleList">
+                <li><a target="_blank" href="design/e23-66i/index_V1.html">Design option 1</a> - The expand/collapse icon has been changed to a warning sign. This has previously tested successful with users.
+                </li>
+                <li><a target="_blank" href="design/e23-66i/index_V2.html">Design option 2</a> - The expand/collapse icon has been changed to the letter R, which stands for requisition. My criticism of using the R is that it will require further explanation, where as the icon already tested well without explaination.
+                </li>
+                <li><a target="_blank" href="design/e23-66i/index_V3.html">Design option 3</a> - Keeps the expand/close icon and adds an R. My criticism of using the R is that it will require further explanation, where as the icon already tested well without explaination.
+                </li>
+              </ul>  
+
+              <h3 class="govuk-heading-m govuk-!-margin-bottom-2 govuk-!-margin-top-6">Design 1 combines multiple user stories</h3>
+
+              <ul class="simpleList">
+                <li>This design includes E23-66i - Requisition issued visible from collapsed row</li>
+                <li>This design includes E23-66q - New Review filter section</li>
+                <li>This design includes E23-1k - Option to filter by requisitions</li>
+                <li>This design includes E23-1j - Option to filter by warning of cancellations</li>
+                <li><a target="_blank" href="design/index_V1.html">View design</a></li>
+              </ul>  
+
+              <h3 class="govuk-heading-m govuk-!-margin-bottom-2 govuk-!-margin-top-6">Design 2 combines multiple user stories</h3>
+              <ul class="simpleList">
+                <li>This design includes E23-66i - Requisition issued visible from collapsed row</li>
+                <li>This design includes E23-66q - New Review filter section</li>
+                <li>This design includes E23-1h - Cancellation date displayed in <b>collapsed row</b></li>
+                <li>This design includes E23-1k - Option to filter by requisitions</li>
+                <li>This design includes E23-1j - Option to filter by warning of cancellations</li>
+                <li><a target="_blank" href="design/index_V2.html">View design</a></li>
+              </ul> 
+
+              <h3 class="govuk-heading-m govuk-!-margin-bottom-2 govuk-!-margin-top-6">Design 3 combines multiple user stories</h3>
+              <ul class="simpleList">
+                <li>This design includes E23-66i - Requisition issued visible from collapsed row - letter R</li>
+                <li>This design includes E23-66q - New Review filter section</li>
+                <li>This design includes E23-1h - Cancellation date displayed in <b>collapsed row</b></li>
+                <li>This design includes E23-1k - Option to filter by requisitions</li>
+                <li>This design includes E23-1j - Option to filter by warning of cancellations</li>
+                <li><a target="_blank" href="design/index_V3.html">View design</a> </li>
+              </ul> 
+
+              <h3 class="govuk-heading-m govuk-!-margin-bottom-2 govuk-!-margin-top-6">Design 4 combines multiple user stories</h3>
+              <ul class="simpleList">
+                <li>This design includes E23-66i - Requisition issued visible from collapsed row - warning icon</li>
+                <li>This design includes E23-66q - New Review filter section</li>
+                <li>This design includes E23-1h - Cancellation date displayed in <b>collapsed row</b></li>
+                <li>This design includes E23-1k - Option to filter by requisitions</li>
+                <li>This design includes E23-1j - Option to filter by warning of cancellations</li>
+                <li><a target="_blank" href="design/index_V4.html">View design</a> </li>
+              </ul> 
+
+              
+              <h3 class="govuk-heading-m govuk-!-margin-bottom-2 govuk-!-margin-top-6">Design 5 combines multiple user stories</h3>
+              <ul class="simpleList">
+                <li>This design includes E23-66i - Requisition issued visible from collapsed row - warning icon (left side)</li>
+                <li>This design includes E23-66q - New Review filter section</li>
+                <li>This design includes E23-1k - Option to filter by requisitions</li>
+                <li>This design includes E23-1j - Option to filter by warning of cancellations</li>
+                <li><a target="_blank" href="design/index_V5.html">View design</a> </li>
+              </ul> 
+
+              <h3 class="govuk-heading-m govuk-!-margin-bottom-2 govuk-!-margin-top-6">Design 6 combines multiple user stories</h3>
+              <ul class="simpleList">
+                <li>This design includes E23-66i - Requisition issued visible from collapsed row - warning icon (left side)</li>
+                <li>This design includes E23-66q - New Requisitions filter section</li>
+                <li>This design includes E23-1k - Option to filter by review</li>
+                <li>This design includes E23-1j - Option to filter by warning of cancellations</li>
+                <li><a target="_blank" href="design/index_V6.html">View design</a> </li>
+              </ul> 
+
+            </div>
+          </div>
+
+          <div class="govuk-accordion__section ">
+            <div class="govuk-accordion__section-header">
+              <h2 class="govuk-accordion__section-heading">
+                <span class="govuk-accordion__section-button" id="accordion-default-heading-3">
+                  User research
+                </span>
+              </h2>
+            </div>
+            <div id="accordion-default-content-3" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-3">
+
+              <p>There has been <a href="/projects/notifications/index.html">user research and design</a> in the past related to surfacing requisitions/informing the user that they need to require action, but this work is bypassing that user research and design, due to the urgency of implementation from the Product Team.</p>
+
+            </div>
+          </div>
+
+
+        </div>
+    </div>
+
+
+
+
+  </div>
+
+{% endblock %}

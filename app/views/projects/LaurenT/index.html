@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+{% extends "layout_unbranded.html" %}
+{% block pageTitle %} View Applications
+{% endblock %}
+{% block content %}
+
+<link href="/public/stylesheets/officialCopies.css" media="all" rel="stylesheet" type="text/css" />
+
+<script>
+window.open(url, '_blank').focus();
+</script>
+
+<style>
+
+.govuk-main-wrapper--auto-spacing:first-child, .govuk-main-wrapper--l {
+    padding-top: 0px;
+}
+
+
+
+.govuk-footer {
+display:none;
+}
+
+
+.wide960 {
+max-width:960px;
+margin:auto;
+}
+
+.simpleList li {
+  margin-bottom:5px;
+}
+
+</style>
+
+
+<div class="navbar-container">
+
+    <a href="/"><img src="/public/images/HMLR_Logo.svg" alt="hmlrlogo" style="height: 44px;
+    padding-left: 30px;
+    padding-top: 14px;
+    padding-bottom: 5px;"></a>
+          
+</div>
+
+<!-- Back & clear data top -->
+<!-- Back & clear data top -->
+<div>
+
+<!-- Navigation Menu - Start -->
+
+
+        
+
+<!-- Navigation Menu - End -->
+
+<!-- Content Area - Start -->
+
+<div style="margin: auto;">
+
+    <!-- Filters and Search Section - Start -->
+
+
+
+      
+  <!-- Table Area - Start -->
+
+
+
+    <div class="govuk-width-container wide960">
+
+    
+      <main class="govuk-main-wrapper style="padding:100px 0px;">
+    
+        <div class="govuk-grid-row govuk-body">
+          <div class="govuk-grid-column-full">
+
+            <h1 class="govuk-heading-xl" style="margin-bottom:25px;">Challenges</h1>
+
+            <p class="govuk-body">A selection of coded prototype challenges for personal development.</p>
+
+
+            <h3 class="govuk-heading-m govuk-!-margin-bottom-2 govuk-!-margin-top-6">Challenge 1</h3>
+            <ul class="simpleList">
+              <li>This challenge requires updates in 2 files to replace the plus and minus signs with the up down chevrons.
+              </li>
+              <li>
+                <a target="_blank" href="challenges/challenge1/index.html">Starting point</a>
+              </li>
+              <li>
+                <a target="_blank" href="challenges/challenge1/index2.html">Lauren's submission</a>
+              </li>
+            </ul> 
+
+
+            <h3 class="govuk-heading-m govuk-!-margin-bottom-2 govuk-!-margin-top-9">Challenge 2</h3>
+            <ul class="simpleList">
+              <li>Take the starting design and restyle it to match the end design. To avoid style conflicts, please add all restyling code to the page itself, rather than in a spearate file.
+              </li>
+              <li>
+                <a target="_blank" href="challenges/challenge2/index.html">Starting design</a>
+              </li>
+              <li>
+                <a target="_blank" href="/projects/notifications/userResearch/round4/design1/page2">End design</a>
+              </li>
+              <li>
+                <a target="_blank" href="challenges/challenge2/index2.html">Lauren's submission</a>
+              </li>
+            </ul> 
+
+
+            <h3 class="govuk-heading-m govuk-!-margin-bottom-2 govuk-!-margin-top-9">Challenge 3</h3>
+            <ul class="simpleList">
+              <li>Duplicate your finished challenge 2 design. Remove the expandable rows. Swap the expandable chevrons with links labelled View. Make the view link and the whole row clickable for each application, and link them through to a version of the template page provided e.g. row 1 links to template 1, row 2 links to template 2.
+              </li>
+              <li>
+                <a target="_blank" href="challenges/challenge3/template.html">Template page</a>
+              </li>
+              <li>
+                <a target="_blank" href="challenges/challenge3/index.html">Lauren's submission</a>
+              </li>
+            </ul> 
+
+
+
+          
+
+          </div>
+        </div>
+    
+      </main>
+    </div>
+
+
+
+
+</div>
+
+
+<div class="govuk-grid-column-full" style="padding:0px;border-top:5px solid #00703C;">
+
+        
+        
+        
+  <div style="padding:30px; background: #f3f2f1;">
+
+
+
+          </div>
+              </div>
+
+
+<!-- Content Area - End -->
+
+{% endblock %}
