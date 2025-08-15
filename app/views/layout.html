@@ -156,9 +156,175 @@
 
 
 
+
+
+
+
+/* Add this CSS to your existing <style> section */
+
+/* Mobile menu toggle styling */
+.mobile-menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 10px 15px;
+  position: relative;
+}
+
+.mobile-menu-toggle:before {
+  content: "☰";
+  margin-right: 8px;
+  font-size: 18px;
+}
+
+.mobile-menu-toggle.active:before {
+  content: "✕";
+}
+
+/* Mobile navigation overlay */
+.mobile-nav-overlay {
+  display: none;
+  position: fixed;
+  top: 60px; /* Adjust based on your header height */
+  left: 0;
+  width: 100%;
+  background-color: #0b0c0c;
+  z-index: 1000;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.mobile-nav-content {
+  padding: 20px;
+}
+
+.mobile-nav-section {
+  margin-bottom: 30px;
+}
+
+.mobile-nav-title {
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #1d70b8;
+}
+
+.mobile-nav-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.mobile-nav-list li {
+  margin-bottom: 15px;
+}
+
+.mobile-nav-list a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  display: block;
+  padding: 10px 0;
+  border-bottom: 1px solid #404040;
+}
+
+.mobile-nav-list a:hover {
+  color: #1d70b8;
+  text-decoration: underline;
+}
+
+.mobile-account-info {
+  background-color: #f3f2f1;
+  padding: 15px;
+  margin: 20px -20px -20px -20px;
+  color: #0b0c0c;
+}
+
+.mobile-account-title {
+  font-weight: bold;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.mobile-account-detail {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.mobile-logout-btn {
+  background-color: #d4351c;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 15px;
+}
+
+.mobile-logout-btn:hover {
+  background-color: #b91d09;
+}
+
+/* Responsive breakpoints */
+@media screen and (max-width: 768px) {
+  /* Hide desktop navigation */
+  .govuk-header__service {
+    display: none;
+  }
+  
+  .govuk-header__content {
+    display: none;
+  }
+  
+  /* Show mobile menu toggle */
+  .mobile-menu-toggle {
+    display: block;
+    float: right;
+    margin-top: 12px;
+    margin-right: 15px;
+  }
+  
+  /* Show mobile nav when active */
+  .mobile-nav-overlay.active {
+    display: block;
+    animation: slideDown 0.3s ease-out;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .mobile-menu-toggle {
+    display: none;
+  }
+  
+  .mobile-nav-overlay {
+    display: none !important;
+  }
+}
+
+/* Animation for mobile menu */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 </style>
 
 <header class="govuk-header " role="banner" data-module="govuk-header">
+  <div class="navbar-container">
+    <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">Menu</button>
+    <div class="navbar">
   <div class="govuk-header__container govuk-width-container">
     
     <div class="govuk-header__logo">
@@ -255,7 +421,118 @@
       </ul>
     </div>
   </div>
+</div>
+</div>
 </header>
+
+<!-- Mobile Navigation Overlay - Add this right after your closing </header> tag -->
+<div class="mobile-nav-overlay" id="mobileNav">
+  <div class="mobile-nav-content">
+    
+    <!-- Services Section -->
+    <div class="mobile-nav-section">
+      <div class="mobile-nav-title">Services</div>
+      <ul class="mobile-nav-list">
+        <li><a href="#">My Portal Home page</a></li>
+        <li><a href="#">NEW: View Applications</a></li>
+        <li><a href="#">Information services</a></li>
+        <li><a href="#">Land Charges Services</a></li>
+        <li><a href="#">Digital Registration Service</a></li>
+        <li><a href="#">Reply to Requisition</a></li>
+        <li><a href="#">Network Services</a></li>
+        <li><a href="#">General Facilities</a></li>
+        <li><a href="#">Administrative Services</a></li>
+      </ul>
+    </div>
+
+    <!-- Contact Section -->
+    <div class="mobile-nav-section">
+      <ul class="mobile-nav-list">
+        <li><a href="mailto:PortalRefreshFeedback@landregistry.gov.uk">Contact us</a></li>
+      </ul>
+    </div>
+
+    <!-- Account Info Section -->
+    <div class="mobile-account-info">
+      <div class="mobile-nav-title" style="color: #0b0c0c; border-bottom: 2px solid #0b0c0c;">Account</div>
+      <div class="mobile-account-title">Logged in as:</div>
+      <div class="mobile-account-detail">Andy Carr - Administrator</div>
+      
+      <div class="mobile-account-title">User ID:</div>
+      <div class="mobile-account-detail">xxxxxxxxxxxxxx</div>
+      
+      <div class="mobile-account-title">Last login:</div>
+      <div class="mobile-account-detail">15 July 2022 10:19:23 BST</div>
+      
+      <div class="mobile-account-title">Primary Business Unit Administrator (BUA):</div>
+      <div class="mobile-account-detail">John Taylor</div>
+      
+      <button class="mobile-logout-btn" onclick="logout()">Log out</button>
+    </div>
+
+  </div>
+</div>
+
+<script>
+// Mobile menu toggle functionality
+function toggleMobileMenu() {
+  const mobileNav = document.getElementById('mobileNav');
+  const toggleBtn = document.querySelector('.mobile-menu-toggle');
+  
+  if (mobileNav.classList.contains('active')) {
+    mobileNav.classList.remove('active');
+    toggleBtn.classList.remove('active');
+    document.body.style.overflow = ''; // Re-enable scrolling
+  } else {
+    mobileNav.classList.add('active');
+    toggleBtn.classList.add('active');
+    document.body.style.overflow = 'hidden'; // Prevent background scrolling
+  }
+}
+
+// Close mobile menu when clicking outside
+document.addEventListener('click', function(event) {
+  const mobileNav = document.getElementById('mobileNav');
+  const toggleBtn = document.querySelector('.mobile-menu-toggle');
+  
+  if (!mobileNav.contains(event.target) && !toggleBtn.contains(event.target)) {
+    mobileNav.classList.remove('active');
+    toggleBtn.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+});
+
+// Close mobile menu on window resize to desktop
+window.addEventListener('resize', function() {
+  if (window.innerWidth > 768) {
+    const mobileNav = document.getElementById('mobileNav');
+    const toggleBtn = document.querySelector('.mobile-menu-toggle');
+    mobileNav.classList.remove('active');
+    toggleBtn.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+});
+
+// Logout function (customize as needed)
+function logout() {
+  // Add your logout logic here
+  alert('Logging out...');
+  // window.location.href = '/logout';
+}
+
+// Keep your existing dropdown functions
+function myFunction1() {
+  document.getElementById("myDropdown-services").classList.toggle("show");
+  document.getElementById("dropdown-services").classList.toggle("dropdown-services-clicked");
+  document.getElementById("dropdown-services-button").classList.toggle("dropbtn-services-clicked");
+}
+
+function myFunction2() {
+  document.getElementById("myDropdown-account").classList.toggle("show");
+  document.getElementById("dropdown-account").classList.toggle("dropdown-account-clicked");
+  document.getElementById("dropdown-account-button").classList.toggle("dropbtn-account-clicked");
+}
+</script>
 
 
 <div class="govuk-width-container">

@@ -1,0 +1,960 @@
+<!DOCTYPE html>
+{% extends "layouts/layout_homepage.html" %}
+
+{% block pageTitle %} View Applications
+{% endblock %}
+
+{% block pageScripts %}
+  <script type="text/javascript">
+    var $element = document.querySelector('#step-by-step-navigation')
+    var stepByStepNavigation = new GOVUK.Modules.AppStepNav($element).init()
+  </script>
+{% endblock %}
+
+{% block content %}
+
+{% include "includes/notificationsNavigation.html" %} 
+<style>
+
+
+.app-step-nav__button {
+    color: #006637;
+}
+
+.app-step-nav__button {
+    color: #006637;
+}
+
+.app-step-nav__toggle-link {
+    color:#006637
+}
+
+.app-step-nav__link {
+    color: #006637;
+}
+
+.govuk-main-wrapper--auto-spacing:first-child, .govuk-main-wrapper--l {
+    padding-top: 0px;
+}
+
+
+
+.govuk-footer {
+display:none;
+}
+
+
+.govuk-link:link, a:link {
+    color: #006637;
+}
+
+.govuk-width-container {
+    max-width: 100%;
+    padding: 0px !Important;
+}
+
+.navbar-container {
+    background-color: #006637;
+    display:flow-root;
+    padding-right: 15px;
+    -webkit-box-shadow: inset 0px 2px 4px 0px rgb(0 0 0 / 15%);
+    -moz-box-shadow: inset 0px 2px 4px 0px rgba(0,0,0,0.15);
+    box-shadow: inset 0px 2px 4px 0px rgb(0 0 0 / 15%);
+    border-bottom: 0px solid #005ea5;
+}
+
+
+.navbar {
+  overflow: hidden;
+
+  font-family: Arial;
+  float: right;
+}
+
+
+.navbar a {
+    float: left;
+    font-size: 17px;
+    color: white;
+    text-align: center;
+    padding: 0px 25px;
+    text-decoration: none;
+    line-height: 70px;
+    font-weight: 400;
+}
+
+
+
+
+.notificationContent {
+  padding: 20px;
+  width:290px;
+  margin-bottom: 0px;
+  background: #fff;
+}
+
+.notificationTopRow {
+  width:100%;
+display:flex;
+padding-bottom: 3px;
+}
+
+.notificationTitle {
+  font-size:16px;
+  font-weight:700;
+width:50%;
+}
+
+.myAccountTitle {
+  font-size:16px;
+  font-weight:700;
+padding-bottom: 3px;
+}
+
+.notificationTime {
+  font-size:12px;
+  font-weight:400;
+  text-align: right;
+  width:50%;
+}
+
+.notification2ndLine {
+  font-size:14px;
+  font-weight:400;
+  width: 100%;
+  padding-bottom:15px;
+}
+
+.myAccount2ndLine {
+  font-size:14px;
+  font-weight:400;
+  width: 100%;
+  padding-bottom:0px;
+}
+
+.notificationLink a {
+  font-size: 15px;
+    width: 100%;
+    float: left;
+    line-height: unset;
+    background-color: unset !important;
+    color: #00703C !important;
+    font-weight: 700;
+    padding: unset;
+}
+
+.myAccountLinks a {
+  font-size: 15px;
+    width: 100%;
+    line-height: unset;
+    background-color: unset !important;
+    color: #00703C !important;
+    font-weight: 700;
+    padding: unset;
+}
+
+
+.NotificationSingle {
+    display: grid;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #dedede;
+    margin-bottom: 20px;
+}
+
+.NotificationSingleLast {
+    display: grid;
+}
+
+.notificationNavNumber {
+  color: #1F8153;
+    background-color: #fff;
+    padding: 5px 9px;
+    border-radius: 500px;
+    font-weight: 700;
+}
+
+.myAccountContent {
+  width:177px;
+  padding: 25px;
+  background: #ffffff;
+    margin-bottom:0px;
+}
+
+.myAccountContent a {
+  padding: 0px;
+}
+
+hr {
+  background: #dedede;
+    height: 1px;
+    border-style: none;
+    margin: 15px 0px;
+}
+
+#logOut {
+  margin-bottom: 0px;
+    margin-top: 25px;
+    width: 100%;
+}
+
+#inputs {
+    margin: 0% 2%;
+    float:left;
+    margin-top: 27px;
+}
+
+
+.parent {display: block;position: relative;float: left;line-height: 70px;}
+.parentIconDown {background-image: url("/public/images/icon_govuk_chevrondownWhite.svg"); background-size: 25px; background-repeat: no-repeat; background-position-x: 83px;background-position-y: center;}
+.parentIconDown2 {background-image: url("/public/images/icon_govuk_chevrondownWhite.svg"); background-size: 25px; background-repeat: no-repeat; background-position-x: 108px;background-position-y: center;}
+.parent a{margin: 20px;color: #FFFFFF;text-decoration: none;}
+.parent:hover > ul {display:block;position:absolute;}
+.child {display: none;box-shadow: 0px 8px 16px 0px rgb(0 0 0 / 10%);z-index:99999;}
+.child li {background-color: #ffffff;line-height: 40px;border-right:#CCC 0px solid; width:100%;}
+.child li a{color: #00703C; font-size:15px;}
+ul{list-style: none;margin: 0;padding: 0px; min-width:10em;}
+ul ul ul{left: 100%;top: 0;border-left: 1px solid #dedede;}
+/* li:hover {background-color: #ffffff;color:#00703C;} */
+.parent:hover > a {color:#00703C !important;}
+.parentIconDown:hover {background-image: url("/public/images/icon_govuk_chevrondownGreen.svg");}
+.parentIconDown2:hover {background-image: url("/public/images/icon_govuk_chevrondownGreen.svg");}
+.parent li:hover {background-color: #F0F0F0;}
+.expand{font-size:12px;float:right;margin-right:5px;}
+.iconRight {background-image: url("/public/images/icon_govuk_chevronrightGreen.svg"); background-size: 25px; background-repeat: no-repeat; background-position-x: 134px;background-position-y: center;}
+
+.wide960 {
+max-width:960px;
+margin:auto;
+}
+
+.wide1200 {
+max-width:1200px;
+margin:auto;
+}
+
+.govuk-heading-xl {
+    margin-bottom: 25px;
+}
+
+.govuk-heading-l {
+    margin-bottom: 5px;
+}
+
+.govuk-heading-m {
+    margin-bottom: 5px;
+}
+
+.dividerSection{
+  padding-bottom:50px;
+}
+
+.govuk-list > li {
+    margin-bottom: 10px;
+}
+
+.sideMenuLinks {
+  text-decoration: none;
+  font-weight: 700;
+  color:#006637;
+}
+
+.sidebar {
+    flex-grow: 1;
+    flex-basis: 400px;
+    align-self: start;
+    position: sticky;
+    top: 2rem;
+}
+
+.article {
+    flex-basis: 0;
+    flex-grow: 999;
+    min-width: 40%;
+}
+
+.govuk-details__summary {
+color: #006637;
+}
+
+
+
+
+
+
+* {
+            box-sizing: border-box;
+        }
+        
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 0;
+        }
+        
+
+        .category-label {
+            font-size: 14px;
+            color: #626a6e;
+            font-weight: 600;
+            margin-bottom: 4px;
+            letter-spacing: 0.5px;
+        }
+        
+        .main-title {
+            font-size: 32px;
+            font-weight: bold;
+            color: #0b0c0c;
+            margin: 0 0 8px 0;
+            line-height: 1.2;
+        }
+        
+        .last-updated {
+            font-size: 14px;
+            color: #626a6e;
+            margin: 0;
+        }
+        
+        .info-box {
+            background-color: #f3f2f1;
+            border: 1px solid #b1b4b6;
+            padding: 16px;
+            margin-bottom: 24px;
+            border-radius: 0;
+        }
+        
+        .info-text {
+            font-size: 14px;
+            color: #505a5f;
+            line-height: 1.5;
+            margin: 0;
+        }
+        
+        .chart-title {
+            font-size: 20px;
+            font-weight: 600;
+            color: #0b0c0c;
+            margin: 0 0 16px 0;
+        }
+        
+        .legend {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 32px;
+            font-size: 19px;
+        }
+        
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .legend-line {
+            display: flex;
+            align-items: center;
+        }
+        
+        .legend-stroke {
+            width: 16px;
+            height: 2px;
+            margin-right: 4px;
+        }
+        
+        .legend-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+        }
+        
+        .legend-label {
+            font-weight: 500;
+            color: #505a5f;
+            font-family: arial, sans-serif;
+        }
+        
+        .chart-container {
+            background-color: white;
+            padding-left: 20px;
+            margin-bottom: 24px;
+        }
+        
+        .chart-wrapper {
+
+            position: relative;
+            width: 100%;
+            height: 290px;
+        }
+        
+        .chart-svg {
+            width: 100%;
+            height: 100%;
+        }
+        
+        .grid-line {
+            stroke: #e5e5e5;
+            stroke-width: 0.5;
+        }
+        
+        .axis-line {
+            stroke: #e5e5e5;
+            stroke-width: 1;
+        }
+        
+        .axis-text {
+            font-size: 24px;
+            fill: #505a5f;
+            font-family: arial, sans-serif;
+
+        }
+        
+        .axis-label {
+            font-size: 24px;
+            fill: #505a5f;
+            font-family: arial, sans-serif;
+        }
+        
+        .dept-a-line {
+            stroke: #003078;
+            stroke-width: 3;
+            fill: none;
+        }
+        
+        .dept-b-line {
+            stroke: #28a197;
+            stroke-width: 3;
+            fill: none;
+        }
+        
+        .dept-a-dot {
+            fill: #003078;
+            stroke: white;
+            stroke-width: 1;
+        }
+        
+        .dept-b-dot {
+            fill: #28a197;
+            stroke: white;
+            stroke-width: 1;
+        }
+        
+        .tooltip {
+            position: absolute;
+            background: white;
+            border: 1px solid #b1b4b6;
+            border-radius: 4px;
+            padding: 8px 12px;
+            font-size: 19px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            pointer-events: none;
+            z-index: 1000;
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+        
+        
+        .chart-description {
+            margin-bottom: 24px;
+        }
+        
+        .chart-description summary {
+            font-size: 19px;
+            font-weight: 500;
+            color: #505a5f;
+            cursor: pointer;
+            padding: 4px 0;
+        }
+        
+        .chart-description summary:hover {
+            color: #0b0c0c;
+        }
+        
+        .description-content {
+            margin-top: 8px;
+            padding: 12px;
+            background-color: #f3f2f1;
+            border: 1px solid #b1b4b6;
+            border-radius: 0;
+        }
+        
+        .description-text {
+            font-size: 14px;
+            color: #505a5f;
+            line-height: 1.5;
+            margin: 0;
+        }
+   
+        
+        @media (max-width: 768px) {
+            .legend {
+                flex-direction: column;
+                gap: 19px;
+            }
+            
+            .main-title {
+                font-size: 24px;
+            }
+            
+            .chart-wrapper {
+                height: 300px;
+            }
+        }
+    
+
+</style>
+
+
+<!-- Back & clear data top -->
+<!-- Back & clear data top -->
+
+    
+      <main class="govuk-main-wrapper" style="padding:50px 0px;
+      flex-wrap: wrap;max-width:1200px; margin:auto;">
+
+<span class="govuk-caption-xl">EPA Project</span>
+<h1 class="govuk-heading-xl">Avoidable Error Data and Recommended Training for Submitting Applications to HM Land Registry.</h1>
+
+
+<p class="govuk-body">Use this page to see all the project outcomes in the order they were produced. All links open in a new tab so you won't lose this page.</p>
+
+<div data-module="appstepnav"id="step-by-step-navigation" class="app-step-nav js-hidden app-step-nav--large" data-show-text="Show" data-hide-text="Hide" data-show-all-text="Show all" data-hide-all-text="Hide all steps">
+    <ol class="app-step-nav__steps">
+      <li class="app-step-nav__step js-step" id="check-you-re-allowed-to-drive">
+        <div class="app-step-nav__header js-toggle-panel" data-position="1">
+          <h2 class="app-step-nav__title">
+            <span class="app-step-nav__circle app-step-nav__circle--number">
+              <span class="app-step-nav__circle-inner">
+                <span class="app-step-nav__circle-background">
+                  <span class="govuk-visually-hidden govuk-!-display-none-print"></span><span class="govuk-visually-hidden govuk-!-display-none-print" aria-hidden="true"></span>
+                </span>
+              </span>
+            </span>
+
+            <span class="js-step-title">
+              Project overview
+            </span>
+          </h2>
+        </div>
+
+        <div class="app-step-nav__panel js-panel" id="step-panel-check-you-re-allowed-to-drive-1">
+          <p class="app-step-nav__paragraph">This project was a live brief to help organisations reduce their error rates when submitting applications to HM Land Registry, in particular, errors that could have been easily avoided with the appropriate training. 
+        </p>
+        </div>
+
+      </li>
+
+      <li class="app-step-nav__step js-step" id="get-a-provisional-licence">
+        <div class="app-step-nav__header js-toggle-panel" data-position="2">
+          <h2 class="app-step-nav__title">
+            <span class="app-step-nav__circle app-step-nav__circle--number">
+              <span class="app-step-nav__circle-inner">
+                <span class="app-step-nav__circle-background">
+                  <span class="govuk-visually-hidden govuk-!-display-none-print"></span><span class="govuk-visually-hidden govuk-!-display-none-print" aria-hidden="true"></span>
+                </span>
+              </span>
+            </span>
+
+            <span class="js-step-title">
+              Initial designs
+            </span>
+          </h2>
+        </div>
+
+        <div class="app-step-nav__panel js-panel" id="step-panel-get-a-provisional-licence-2">
+            <p class="app-step-nav__paragraph">The first designs I created were to share with the multidisciplinary team and stakeholders to tease out more of the business requirements and show where there were unanswered user needs.
+                I created these designs in Figma for ease of making quick wireframes and prototypes. It was also helpful for collaboration with other members of the team.
+                
+            </p>
+            <ol class="app-step-nav__list " data-length="1">
+            <li class="app-step-nav__list-item js-list-item ">
+              <a data-position="2.1" class="app-step-nav__link js-link" href="https://www.figma.com/design/awQzPN8qq6y9sscYCmwurC/EPA?node-id=0-1&t=Ag4iRmAvq1Qm69KW-1" target="_blank">View Figma file</a>
+            </li>
+          </ol>
+        </div>
+
+      </li>
+
+      <li class="app-step-nav__step js-step" id="driving-lessons-and-practice">
+        <div class="app-step-nav__header js-toggle-panel" data-position="3">
+          <h2 class="app-step-nav__title">
+            <span class="app-step-nav__circle app-step-nav__circle--number">
+              <span class="app-step-nav__circle-inner">
+                <span class="app-step-nav__circle-background">
+                    <span class="govuk-visually-hidden govuk-!-display-none-print"></span><span class="govuk-visually-hidden govuk-!-display-none-print" aria-hidden="true"></span>
+                </span>
+              </span>
+            </span>
+
+            <span class="js-step-title">
+              Design development
+            </span>
+          </h2>
+        </div>
+
+        <div class="app-step-nav__panel js-panel" id="step-panel-driving-lessons-and-practice-3">
+          <p class="app-step-nav__paragraph">After seeking feedback for the initial designs I went away and tried to design the perfect balance between what the stakeholders wanted, what would encourage users to uptake training, all while maintaining GOV.UK design standards. 
+        </p>
+
+        <ol class="app-step-nav__list " data-length="1">
+            <li class="app-step-nav__list-item js-list-item ">
+              <a data-position="2.1" class="app-step-nav__link js-link" href="https://www.figma.com/design/awQzPN8qq6y9sscYCmwurC/EPA?node-id=0-1&t=Ag4iRmAvq1Qm69KW-1" target="_blank">View Figma file</a>
+            </li>
+          </ol>
+        </div>
+
+      </li>
+
+      <li class="app-step-nav__step js-step" id="book-and-manage-your-theory-test">
+        <div class="app-step-nav__header js-toggle-panel" data-position="5">
+          <h2 class="app-step-nav__title">
+            <span class="app-step-nav__circle app-step-nav__circle--number">
+              <span class="app-step-nav__circle-inner">
+                <span class="app-step-nav__circle-background">
+                  <span class="govuk-visually-hidden govuk-!-display-none-print"></span><span class="govuk-visually-hidden govuk-!-display-none-print" aria-hidden="true"></span>
+                </span>
+              </span>
+            </span>
+
+            <span class="js-step-title">
+              Designs for A B testing
+            </span>
+          </h2>
+        </div>
+
+        <div class="app-step-nav__panel js-panel" id="step-panel-book-and-manage-your-theory-test-5">
+          <p class="app-step-nav__paragraph">As agreed with the team and stakeholders the designs were taken out for A B testing with users. For this I created high-fidelity coded prototypes using the GOV Prototype kit. This meant users could test a prototype that felt like the ‘real thing’ allowing them to focus on the actual design content, giving us the best possible findings. 
+        </p>
+
+          <ol class="app-step-nav__list " data-length="5">
+            <li class="app-step-nav__list-item js-list-item ">
+              <a data-position="5.1" class="app-step-nav__link js-link" href="#" target="_blank">Design A: Data focused</a>
+            </li>
+            <li class="app-step-nav__list-item js-list-item ">
+              <a data-position="5.2" class="app-step-nav__link js-link" href="#" target="_blank">Design B: Training focused </a>
+            </li>
+          </ol>
+        </div>
+
+      </li>
+
+      <li class="app-step-nav__step js-step" id="book-and-manage-your-driving-test">
+        <div class="app-step-nav__header js-toggle-panel" data-position="6">
+          <h2 class="app-step-nav__title">
+            <span class="app-step-nav__circle app-step-nav__circle--number">
+              <span class="app-step-nav__circle-inner">
+                <span class="app-step-nav__circle-background">
+                  <span class="govuk-visually-hidden govuk-!-display-none-print"></span><span class="govuk-visually-hidden govuk-!-display-none-print" aria-hidden="true"></span>
+                </span>
+              </span>
+            </span>
+
+            <span class="js-step-title">
+              Final design
+            </span>
+          </h2>
+        </div>
+
+        <div class="app-step-nav__panel js-panel" id="step-panel-book-and-manage-your-driving-test-6">
+          <p class="app-step-nav__paragraph">?</p>
+
+          <ol class="app-step-nav__list " data-length="5">
+            <li class="app-step-nav__list-item js-list-item ">
+              <a data-position="6.1" class="app-step-nav__link js-link" href="./homepage-final.html" target="_blank">View final design</a>
+            </li>
+          </ol>
+        </div>
+
+      </li>
+
+      <li class="app-step-nav__step js-step" id="when-you-pass">
+        <div class="app-step-nav__header js-toggle-panel" data-position="7">
+          <h2 class="app-step-nav__title">
+            <span class="app-step-nav__circle app-step-nav__circle--number">
+              <span class="app-step-nav__circle-inner">
+                <span class="app-step-nav__circle-background">
+                  <span class="govuk-visually-hidden govuk-!-display-none-print"></span><span class="govuk-visually-hidden govuk-!-display-none-print" aria-hidden="true"></span>
+                </span>
+              </span>
+            </span>
+
+            <span class="js-step-title">
+              Future design vision
+            </span>
+          </h2>
+        </div>
+
+        <div class="app-step-nav__panel js-panel" id="step-panel-when-you-pass-7">
+          <p class="app-step-nav__paragraph">?</p>
+
+          <ol class="app-step-nav__list " data-length="1">
+            <li class="app-step-nav__list-item js-list-item ">
+              <a data-position="7.1" class="app-step-nav__link js-link" href="./homepage-future.html" target="_blank">View the future design vision</a>
+            </li>
+          </ol>
+        </div>
+
+      </li>
+    </ol>
+  </div>
+
+<p class="govuk-hint">Grace Buttall-Jensen</p>      
+
+      </main>
+    </div>
+
+
+
+
+</div>
+
+
+<div class="govuk-grid-column-full" style="padding:0px;border-top:5px solid #00703C;">
+
+        
+        
+        
+  <div style="padding:30px; background: #f3f2f1;">
+
+    <p style="color: #6d6d6d; text-decoration: none;font-size: 16px;margin-bottom:15px;">The following links open in a new tab.</p>
+
+    <a class="footlink" style="text-decoration: none;"><u>Terms and conditions</u></a>
+    |
+    <a class="footlink" style="text-decoration: none;"><u>Accessibility statement</u></a>
+    |
+    <a class="footlink" style="text-decoration: none;"><u>Freedom of information</u></a>
+    |
+    <a class="footlink" style="text-decoration: none;"><u>© Crown copyright</u></a>
+
+          </div>
+              </div>
+
+
+<!-- Content Area - End -->
+<script>
+  // Data
+  const data = [
+      { month: 'May 2024', shortMonth: 'May 24', dataset1: 34, dataset2: 30, showLabel: false },
+      { month: 'Jun 2024', shortMonth: 'Jun 24', dataset1: 32, dataset2: 28, showLabel: true },
+      { month: 'Jul 2024', shortMonth: 'Jul 24', dataset1: 35, dataset2: 31, showLabel: false },
+      { month: 'Aug 2024', shortMonth: 'Aug 24', dataset1: 28, dataset2: 34, showLabel: false },
+      { month: 'Sep 2024', shortMonth: 'Sep 24', dataset1: 42, dataset2: 39, showLabel: true },
+      { month: 'Oct 2024', shortMonth: 'Oct 24', dataset1: 38, dataset2: 33, showLabel: false },
+      { month: 'Nov 2024', shortMonth: 'Nov 24', dataset1: 31, dataset2: 29, showLabel: false },
+      { month: 'Dec 2024', shortMonth: 'Dec 24', dataset1: 25, dataset2: 32, showLabel: true },
+      { month: 'Jan 2025', shortMonth: 'Jan 25', dataset1: 29, dataset2: 35, showLabel: false },
+      { month: 'Feb 2025', shortMonth: 'Feb 25', dataset1: 33, dataset2: 31, showLabel: false },
+      { month: 'Mar 2025', shortMonth: 'Mar 25', dataset1: 37, dataset2: 28, showLabel: true },
+      { month: 'Apr 2025', shortMonth: 'Apr 25', dataset1: 34, dataset2: 30, showLabel: false },
+      { month: 'May 2025', shortMonth: 'May 25', dataset1: 31, dataset2: 33, showLabel: false },
+      { month: 'Jun 2025', shortMonth: 'Jun 25', dataset1: 30, dataset2: 29, showLabel: true },
+      { month: 'Jul 2025', shortMonth: 'Jul 25', dataset1: 30, dataset2: 29, showLabel: false }
+  ];
+
+  // Chart dimensions and margins
+  const margin = { top: 20, right: 30, bottom: 60, left: 80 };
+  const width = 800 - margin.left - margin.right;
+  const height = 400 - margin.top - margin.bottom;
+
+  // Animation state
+  let deptAStep = -1;
+  let deptBStep = -1;
+  let showDeptA = true;
+  let showDeptB = false;
+
+  // Scales
+  const xScale = (index) => (index * width) / (data.length - 1);
+  const yScale = (value) => height - ((value) / (55 - 7)) * height;
+
+  // SVG setup
+  const svg = document.getElementById('chart');
+  svg.innerHTML = '';
+
+  // Create SVG viewBox
+  svg.setAttribute('viewBox', `0 0 ${width + margin.left + margin.right} ${height + margin.top + margin.bottom}`);
+
+  // Create main group
+  const g = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+  g.setAttribute('transform', `translate(${margin.left},${margin.top})`);
+  svg.appendChild(g);
+
+  // Create gridlines
+  for (let i = 0; i <= 6; i++) {
+      const y = (i * height) / 6;
+      const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+      line.setAttribute('x1', 0);
+      line.setAttribute('x2', width);
+      line.setAttribute('y1', y);
+      line.setAttribute('y2', y);
+      line.setAttribute('class', 'grid-line');
+      g.appendChild(line);
+  }
+
+  // Create axes
+  const xAxis = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+  xAxis.setAttribute('x1', 0);
+  xAxis.setAttribute('x2', width);
+  xAxis.setAttribute('y1', height);
+  xAxis.setAttribute('y2', height);
+  xAxis.setAttribute('class', 'axis-line');
+  g.appendChild(xAxis);
+
+  const yAxis = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+  yAxis.setAttribute('x1', 0);
+  yAxis.setAttribute('x2', 0);
+  yAxis.setAttribute('y1', 0);
+  yAxis.setAttribute('y2', height);
+  yAxis.setAttribute('class', 'axis-line');
+  g.appendChild(yAxis);
+
+  // Add x-axis labels
+  data.forEach((d, i) => {
+      if (d.showLabel) {
+          const text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+          text.setAttribute('x', xScale(i));
+          text.setAttribute('y', height + 20);
+          text.setAttribute('text-anchor', 'middle');
+          text.setAttribute('class', 'axis-text');
+          text.textContent = d.shortMonth;
+          g.appendChild(text);
+      }
+  });
+
+  // Add y-axis labels
+  for (let i = 0; i <= 6; i++) {
+      const value = 0 + (i * (50 - 0)) / 5;
+      const text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+      text.setAttribute('x', 0);
+      text.setAttribute('y', height - (i * height) / 5 + 5);
+      text.setAttribute('text-anchor', 'end');
+      text.setAttribute('class', 'axis-text');
+      text.textContent = Math.round(value);
+      g.appendChild(text);
+  }
+
+  // Add y-axis label
+  const yLabel = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+  yLabel.setAttribute('x', -40);
+  yLabel.setAttribute('y', height / 2.2);
+  yLabel.setAttribute('text-anchor', 'middle');
+  yLabel.setAttribute('transform', `rotate(-90, -40, ${height / 2})`);
+  yLabel.setAttribute('class', 'axis-label');
+  yLabel.textContent = '% of requisitions';
+  g.appendChild(yLabel);
+
+  // Create path elements for lines
+  const deptAPath = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+  deptAPath.setAttribute('class', 'dept-a-line');
+  deptAPath.setAttribute('d', '');
+  g.appendChild(deptAPath);
+
+  const deptBPath = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+  deptBPath.setAttribute('class', 'dept-b-line');
+  deptBPath.setAttribute('d', '');
+  g.appendChild(deptBPath);
+
+  // Create groups for dots
+  const deptADots = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+  g.appendChild(deptADots);
+
+  const deptBDots = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+  g.appendChild(deptBDots);
+
+  // Tooltip
+  const tooltip = document.getElementById('tooltip');
+
+  // Generate path data
+  function generatePathData(dataset, step) {
+      if (step < 0) return '';
+      
+      let path = '';
+      for (let i = 0; i <= Math.min(step, data.length - 1); i++) {
+          const x = xScale(i);
+          const y = yScale(data[i][dataset]);
+          
+          if (i === 0) {
+              path += `M ${x} ${y}`;
+          } else {
+              path += ` L ${x} ${y}`;
+          }
+      }
+      return path;
+  }
+
+  // Create dots
+  function createDots(container, dataset, step, className) {
+      container.innerHTML = '';
+      
+      for (let i = 0; i <= Math.min(step, data.length - 1); i++) {
+          const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+          circle.setAttribute('cx', xScale(i));
+          circle.setAttribute('cy', yScale(data[i][dataset]));
+          circle.setAttribute('r', 5);
+          circle.setAttribute('class', className);
+          
+          // Add tooltip events
+          circle.addEventListener('mouseenter', (e) => {
+              const deptName = dataset === 'dataset1' ? 'Department A' : 'Department B';
+              const value = data[i][dataset];
+              const date = data[i].month;
+              
+              tooltip.innerHTML = `
+                  <div style="color: ${dataset === 'dataset1' ? '#003078' : '#28a197'}; font-weight: bold; font-family: arial;">
+                      ${deptName}: ${value}
+                  </div>
+                  <div style="color: #626a6e; font-family:arial;"> (${date})</div>
+              `;
+              
+              const rect = svg.getBoundingClientRect();
+              tooltip.style.left = (e.clientX - rect.left + 10) + 'px';
+              tooltip.style.top = (e.clientY - rect.top - 10) + 'px';
+              tooltip.style.opacity = '1';
+          });
+          
+          circle.addEventListener('mouseleave', () => {
+              tooltip.style.opacity = '0';
+          });
+          
+          container.appendChild(circle);
+      }
+  }
+
+  // Animation function
+  function animate() {
+      // Animate Department A first
+      if (showDeptA && deptAStep < data.length - 1) {
+          deptAStep++;
+          deptAPath.setAttribute('d', generatePathData('dataset1', deptAStep));
+          createDots(deptADots, 'dataset1', deptAStep, 'dept-a-dot');
+          
+          if (deptAStep >= data.length - 1) {
+              // Start Department B after a delay
+              setTimeout(() => {
+                  showDeptB = true;
+                  animateDeptB();
+              }, 300);
+          } else {
+              setTimeout(animate, 150);
+          }
+      }
+  }
+
+  // Animation function for Department B
+  function animateDeptB() {
+      if (showDeptB && deptBStep < data.length - 1) {
+          deptBStep++;
+          deptBPath.setAttribute('d', generatePathData('dataset2', deptBStep));
+          createDots(deptBDots, 'dataset2', deptBStep, 'dept-b-dot');
+          
+          if (deptBStep < data.length - 1) {
+              setTimeout(animateDeptB, 150);
+          }
+      }
+  }
+
+  // Start animation on page load
+  setTimeout(animate, 500);
+</script>
+
+{% endblock %}
